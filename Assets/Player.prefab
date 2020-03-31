@@ -86,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3253291720137500726}
   - component: {fileID: 3253291720137500720}
+  - component: {fileID: 1292523769}
   - component: {fileID: 3253291720137500727}
   m_Layer: 0
   m_Name: Player
@@ -124,6 +125,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   rotationSpeed: 30
+--- !u!114 &1292523769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253291720137500730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94dd8f1d0dbfbd4f8c60feed04897b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3253291720137500727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,13 +149,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vectorKeyBindings:
-  - broadcastVector:
+  bindings:
+  - keys: 050100007700000011010000
+    pressDown: 0
+    press: 1
+    pressUp: 0
+    OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3253291720137500720}
-          m_MethodName: AddMovement
-          m_Mode: 0
+        - m_Target: {fileID: 1292523769}
+          m_MethodName: MoveForward
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -151,22 +168,16 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    vectorKeys:
-    - keys: 0501000077000000
-      vector: {x: 0, y: 0, z: 1}
-    - keys: 6100000001010000
-      vector: {x: -1, y: 0, z: 0}
-    - keys: 7300000002010000
-      vector: {x: 0, y: 0, z: -1}
-    - keys: 6400000003010000
-      vector: {x: 1, y: 0, z: 0}
-  axisKeyBindings:
-  - broadcastAxis:
+  - keys: 010100006100000014010000
+    pressDown: 0
+    press: 1
+    pressUp: 0
+    OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3253291720137500720}
-          m_MethodName: AddRotation
-          m_Mode: 0
+        - m_Target: {fileID: 1292523769}
+          m_MethodName: MoveLeft
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -175,13 +186,78 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    axisKeys:
-    - keys: 0401000071000000
-      axis: 1
-      clockwise: 0
-    - keys: 0601000065000000
-      axis: 1
-      clockwise: 1
+  - keys: 020100007700000012010000
+    pressDown: 0
+    press: 1
+    pressUp: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1292523769}
+          m_MethodName: MoveBack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - keys: 030100006400000013010000
+    pressDown: 0
+    press: 1
+    pressUp: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1292523769}
+          m_MethodName: MoveRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - keys: 0401000071000000
+    pressDown: 0
+    press: 1
+    pressUp: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1292523769}
+          m_MethodName: TurnLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - keys: 0601000065000000
+    pressDown: 0
+    press: 1
+    pressUp: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1292523769}
+          m_MethodName: TurnRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3253291720671564855
 GameObject:
   m_ObjectHideFlags: 0

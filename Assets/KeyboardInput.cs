@@ -3,64 +3,29 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class KeyboardInput : MonoBehaviour
-{
-    [SerializeField] KeyVector3Group[] vectorKeyBindings;
-    [SerializeField] KeyAxisGroup[] axisKeyBindings;
+{    
+    [SerializeField] Keybinding[] bindings;
     
     void Update()
-    {        
-        foreach (var binding in vectorKeyBindings)
-            binding.Update();
-        foreach (var binding in axisKeyBindings)
+    {
+        foreach (var binding in bindings)
             binding.Update();
     }
 }
 
 [Serializable]
-public class KeyVector3Group
+public class Keybinding
 {
-    [SerializeField] Vector3Event broadcastVector;
-    [SerializeField] KeyVector3[] vectorKeys;
+    [SerializeField] KeyCode[] keys;
+    [SerializeField] bool pressDown, press, pressUp;
+    [SerializeField] UnityEvent OnActive;
     
     public void Update()
     {
-        foreach(var item in vectorKeys)
-            foreach (var key in item.keys)
-                if (Input.GetKey(key))
-                    broadcastVector.Invoke(item.vector);        
+        foreach (var key in keys)
+            if (pressDown && Input.GetKeyDown(key) ||
+                pressUp && Input.GetKeyUp(key) ||
+                press && Input.GetKey(key))
+                OnActive.Invoke();
     }
 }
-
-[Serializable]
-public struct KeyVector3
-{
-    public KeyCode[] keys;
-    public Vector3 vector;
-}
-
-[Serializable]
-public class KeyAxisGroup
-{
-    [SerializeField] AxisTypeAndBoolEvent broadcastAxis;
-    [SerializeField] KeyAxis[] axisKeys;
-    
-    public void Update()
-    {
-        foreach(var item in axisKeys)
-            foreach (var key in item.keys)
-                if (Input.GetKey(key))
-                    broadcastAxis.Invoke(item.axis, item.clockwise);         
-    }
-}
-
-[Serializable]
-public class KeyAxis
-{
-    public KeyCode[] keys;
-    public Axis axis;
-    public bool clockwise;
-}
-
-[Serializable] public class AxisTypeAndBoolEvent : UnityEvent<Axis, bool> { }
-
-public enum Axis { X, Y, Z }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public static class StaticAxis
 {
@@ -17,3 +15,4 @@ public static class StaticAxis
         }       
     }
 }
+public enum Axis { X, Y, Z }
