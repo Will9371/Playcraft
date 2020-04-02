@@ -2,6 +2,7 @@
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] Rigidbody rb;
     [SerializeField] float movementSpeed;
     [SerializeField] float rotationSpeed;
     Vector3 moveStep;
@@ -26,7 +27,15 @@ public class Movement : MonoBehaviour
     private void Move()
     {
         moveStep = moveStep.normalized * movementSpeed * Time.deltaTime;
-        transform.Translate(moveStep);  
+        
+        if (rb)
+        {
+            moveStep = transform.TransformDirection(moveStep);
+            rb.MovePosition(transform.position + moveStep);             
+        }
+        else
+            transform.Translate(moveStep); 
+
         moveStep = Vector3.zero;          
     }
     
