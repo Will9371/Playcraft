@@ -5,12 +5,18 @@ public class Movement : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] float movementSpeed;
     [SerializeField] float rotationSpeed;
+    Vector3 moveVector;
+    Vector3 priorMoveVector;
     Vector3 moveStep;
     Vector3 rotationAxis;
     
+    float currentMoveSpeed;
+    
+    [SerializeField] FloatEvent BroadcastMoveSpeed;
+    
     public void AddMovement(Vector3 direction)
     {
-        moveStep += direction;
+        moveVector += direction;
     }
     
     public void AddRotation(Axis axis, bool clockwise)
@@ -26,9 +32,14 @@ public class Movement : MonoBehaviour
     
     private void Move()
     {
-        moveStep = moveStep.normalized * movementSpeed * Time.deltaTime;
+        moveVector = moveVector.normalized * movementSpeed;
+        moveStep = moveVector * Time.deltaTime;
         
-        if (rb)
+        if (moveVector != priorMoveVector)
+            BroadcastMoveSpeed.Invoke(moveVector.magnitude * movementSpeed);         
+        
+       // NOT EXTENSIBLE: delegate to interface if this logic becomes more complex (and both branches needed)
+       if (rb)
         {
             moveStep = transform.TransformDirection(moveStep);
             rb.MovePosition(transform.position + moveStep);             
@@ -36,7 +47,8 @@ public class Movement : MonoBehaviour
         else
             transform.Translate(moveStep); 
 
-        moveStep = Vector3.zero;          
+        priorMoveVector = moveVector;
+        moveVector = Vector3.zero; 
     }
     
     private void Rotate()
