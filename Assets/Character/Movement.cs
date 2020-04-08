@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
         rotationAxis += StaticAxis.GetAxisVector(axis, clockwise);
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
         Rotate();

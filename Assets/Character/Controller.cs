@@ -13,7 +13,11 @@ public class Controller : MonoBehaviour
     const float skinWidth = 0.15f;
     const float castBoxThickness = 0.01f;
 
-    BoxcastOrigins castOrigins;
+    public int horizontalRayCount = 3;
+    public int verticalRayCount = 4;
+    public int frontBackRayCount = 3;
+
+    RaycastOrigins raycastOrigins;
 
     [SerializeField] BoxCollider collider;
 
@@ -25,13 +29,13 @@ public class Controller : MonoBehaviour
         {
             HorizontalCollisions(ref velocity);
         }
-        if(velocity.y != 0)
-        {
-            VerticalCollisions(ref velocity);
-        }
         if(velocity.z != 0)
         {
             FrontBackCollisions(ref velocity);
+        }
+        if (velocity.y != 0)
+        {
+            VerticalCollisions(ref velocity);
         }
 
         transform.Translate(velocity);
@@ -40,39 +44,54 @@ public class Controller : MonoBehaviour
     void HorizontalCollisions(ref Vector3 velocity)
     {
         float directionX = Mathf.Sign(velocity.x);
-        float castLength = Mathf.Abs(velocity.x) + skinWidth;
+        float rayLength = Mathf.Abs(velocity.x) + skinWidth;
 
-        Vector3 castStart = (directionX == -1) ? castOrigins.leftCenter : castOrigins.rightCenter;
-        RaycastHit[] hits = Physics.BoxCastAll(castStart, new Vector3(castBoxThickness, collider.size.y / 2, collider.size.z / 2), Vector3.right * directionX, transform.rotation, castLength, collisionMask);
-        ExtDebug.DrawBoxCastBox(castStart, new Vector3(castBoxThickness, collider.size.y / 2, collider.size.z / 2), transform.rotation, Vector3.right * directionX, castLength, Color.red);
+        Bounds bounds = collider.bounds;
+        bounds.Expand(skinWidth * -2);
 
-        float closestDistance = float.MaxValue;
-        foreach(RaycastHit hit in hits)
+        float latitudeSpacing = bounds.size.y / (verticalRayCount - 1);
+        float longitudeSpacing = bounds.size.z / (horizontalRayCount - 1);
+        for(int i = 0; i < verticalRayCount; i++)
         {
-            if(hit.collider != this.collider && hit.distance - skinWidth < closestDistance) //ignore self collision
+            for(int j = 0; j < horizontalRayCount; j++)
             {
-                closestDistance = hit.distance - skinWidth;
-                velocity.x = (hit.distance - skinWidth) * directionX; 
+                Vector3 rayOrigin = (directionX == -1) ? raycastOrigins.botBackLeft : raycastOrigins.botBackRight;
+                rayOrigin += Vector3.up * (i * latitudeSpacing) + Vector3.forward * (j * longitudeSpacing);
+                RaycastHit hit;
+                Debug.DrawRay(rayOrigin, Vector3.right * directionX * rayLength, Color.red);
+                if(Physics.Raycast(rayOrigin, Vector3.right * directionX, out hit, rayLength, collisionMask))
+                {
+                    velocity.x = (hit.distance - skinWidth) * directionX;
+                    rayLength = hit.distance;
+                }
             }
         }
+        
     }
 
     void VerticalCollisions(ref Vector3 velocity)
     {
         float directionY = Mathf.Sign(velocity.y);
-        float castLength = Mathf.Abs(velocity.y) + skinWidth;
+        float rayLength = Mathf.Abs(velocity.y) + skinWidth;
 
-        Vector3 castStart = (directionY == -1) ? castOrigins.downCenter : castOrigins.upCenter;
-        RaycastHit[] hits = Physics.BoxCastAll(castStart, new Vector3(collider.size.x/2, castBoxThickness, collider.size.z / 2), Vector3.up * directionY, transform.rotation, castLength, collisionMask);
-        ExtDebug.DrawBoxCastBox(castStart, new Vector3(collider.size.x / 2, castBoxThickness, collider.size.z / 2), transform.rotation, Vector3.up * directionY, castLength, Color.red);
+        Bounds bounds = collider.bounds;
+        bounds.Expand(skinWidth * -2);
 
-        float closestDistance = float.MaxValue;
-        foreach (RaycastHit hit in hits)
+        float latitudeSpacing = bounds.size.x / (horizontalRayCount - 1);
+        float longitudeSpacing = bounds.size.z / (frontBackRayCount - 1);
+        for (int i = 0; i < horizontalRayCount; i++)
         {
-            if (hit.collider != this.collider && hit.distance - skinWidth < closestDistance) //ignore self collision
+            for (int j = 0; j < frontBackRayCount; j++)
             {
-                closestDistance = hit.distance - skinWidth;
-                velocity.y = (hit.distance - skinWidth) * directionY;
+                Vector3 rayOrigin = (directionY == -1) ? raycastOrigins.botBackLeft : raycastOrigins.topBackLeft;
+                rayOrigin += Vector3.right * (i * latitudeSpacing + velocity.x + velocity.z) + Vector3.forward * (j * longitudeSpacing + velocity.x + velocity.z);
+                RaycastHit hit;
+                Debug.DrawRay(rayOrigin, Vector3.up * directionY * rayLength, Color.red);
+                if (Physics.Raycast(rayOrigin, Vector3.up * directionY, out hit, rayLength, collisionMask))
+                {
+                    velocity.y = (hit.distance - skinWidth) * directionY;
+                    rayLength = hit.distance;
+                }
             }
         }
     }
@@ -80,19 +99,26 @@ public class Controller : MonoBehaviour
     void FrontBackCollisions(ref Vector3 velocity)
     {
         float directionZ = Mathf.Sign(velocity.z);
-        float castLength = Mathf.Abs(velocity.z) + skinWidth;
+        float rayLength = Mathf.Abs(velocity.z) + skinWidth;
 
-        Vector3 castStart = (directionZ == -1) ? castOrigins.backCenter : castOrigins.frontCenter;
-        RaycastHit[] hits = Physics.BoxCastAll(castStart, new Vector3(collider.size.x / 2, collider.size.y/2, castBoxThickness), Vector3.forward * directionZ, transform.rotation, castLength, collisionMask);
-        ExtDebug.DrawBoxCastBox(castStart, new Vector3(collider.size.x / 2, collider.size.y/2, castBoxThickness), transform.rotation, Vector3.forward * directionZ, castLength, Color.red);
+        Bounds bounds = collider.bounds;
+        bounds.Expand(skinWidth * -2);
 
-        float closestDistance = float.MaxValue;
-        foreach (RaycastHit hit in hits)
+        float latitudeSpacing = bounds.size.y / (verticalRayCount - 1);
+        float longitudeSpacing = bounds.size.x / (horizontalRayCount - 1);
+        for (int i = 0; i < verticalRayCount; i++)
         {
-            if (hit.collider != this.collider && hit.distance - skinWidth < closestDistance) //ignore self collision
+            for (int j = 0; j < horizontalRayCount; j++)
             {
-                closestDistance = hit.distance - skinWidth;
-                velocity.z = (hit.distance - skinWidth) * directionZ;
+                Vector3 rayOrigin = (directionZ == -1) ? raycastOrigins.botBackLeft : raycastOrigins.botFrontLeft;
+                rayOrigin += Vector3.up * (i * latitudeSpacing) + Vector3.right * (j * longitudeSpacing);
+                RaycastHit hit;
+                Debug.DrawRay(rayOrigin, Vector3.forward * directionZ * rayLength, Color.red);
+                if (Physics.Raycast(rayOrigin, Vector3.forward * directionZ, out hit, rayLength, collisionMask))
+                {
+                    velocity.z = (hit.distance - skinWidth) * directionZ;
+                    rayLength = hit.distance;
+                }
             }
         }
     }
@@ -101,18 +127,19 @@ public class Controller : MonoBehaviour
     {
         Bounds bounds = collider.bounds;
         bounds.Expand(skinWidth * -2);
-        castOrigins.leftCenter = new Vector3(bounds.min.x, bounds.center.y, bounds.center.z);
-        castOrigins.rightCenter = new Vector3(bounds.max.x, bounds.center.y, bounds.center.z);
-        castOrigins.downCenter = new Vector3(bounds.center.x, bounds.min.y, bounds.center.z);
-        castOrigins.upCenter = new Vector3(bounds.center.x, bounds.max.y, bounds.center.z);
-        castOrigins.backCenter = new Vector3(bounds.center.x, bounds.center.y, bounds.min.z);
-        castOrigins.frontCenter = new Vector3(bounds.center.x, bounds.center.y, bounds.max.z);
+        raycastOrigins.topFrontRight = new Vector3(bounds.max.x, bounds.max.y, bounds.max.z);
+        raycastOrigins.topFrontLeft = new Vector3(bounds.min.x, bounds.max.y, bounds.max.z);
+        raycastOrigins.topBackRight = new Vector3(bounds.max.x, bounds.max.y, bounds.min.z);
+        raycastOrigins.topBackLeft = new Vector3(bounds.min.x, bounds.max.y, bounds.min.z);
+        raycastOrigins.botFrontRight = new Vector3(bounds.max.x, bounds.min.y, bounds.max.z);
+        raycastOrigins.botFrontLeft = new Vector3(bounds.min.x, bounds.min.y, bounds.max.z);
+        raycastOrigins.botBackRight = new Vector3(bounds.max.x, bounds.min.y, bounds.min.z);
+        raycastOrigins.botBackLeft = new Vector3(bounds.min.x, bounds.min.y, bounds.min.z);
     }
 
-    struct BoxcastOrigins
+    struct RaycastOrigins
     {
-        public Vector3 downCenter, upCenter;
-        public Vector3 frontCenter, backCenter;
-        public Vector3 rightCenter, leftCenter;
+        public Vector3 topFrontRight, topFrontLeft, topBackRight, topBackLeft;
+        public Vector3 botFrontRight, botFrontLeft, botBackRight, botBackLeft;
     }
 }
