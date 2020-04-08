@@ -6,15 +6,21 @@ public class Movement : MonoBehaviour
     [SerializeField] RaycastController control; 
     [SerializeField] float movementSpeed;
     [SerializeField] float rotationSpeed;
+    Vector3 moveVector;
+    Vector3 priorMoveVector;
     Vector3 moveStep;
     Vector3 rotationAxis;
 
     //For non-rb physics
-    [SerializeField] Vector3 gravity = Vector3.zero;
-
+    [SerializeField] Vector3 nonRBGravity = Vector3.zero;
+    
+    float currentMoveSpeed;
+    
+    [SerializeField] FloatEvent BroadcastMoveSpeed;
+    
     public void AddMovement(Vector3 direction)
     {
-        moveStep += direction;
+        moveVector += direction;
     }
     
     public void AddRotation(Axis axis, bool clockwise)
@@ -30,9 +36,14 @@ public class Movement : MonoBehaviour
     
     private void Move()
     {
-        moveStep = moveStep.normalized * movementSpeed * Time.deltaTime;
-
-        if (rb)
+        moveVector = moveVector.normalized * movementSpeed;
+        moveStep = moveVector * Time.deltaTime;
+        
+        if (moveVector != priorMoveVector)
+            BroadcastMoveSpeed.Invoke(moveVector.magnitude * movementSpeed);         
+        
+       // NOT EXTENSIBLE: delegate to interface if this logic becomes more complex (and both branches needed)
+       if (rb)
         {
             moveStep = transform.TransformDirection(moveStep);
             rb.MovePosition(transform.position + moveStep);
@@ -40,12 +51,13 @@ public class Movement : MonoBehaviour
         else if (control != null)
         {
             Vector3 velocity = moveStep;
-            velocity += gravity * Time.deltaTime;
+            velocity += nonRBGravity * Time.deltaTime;
             control.Move(velocity);
         }
         else Debug.LogError("Movement requires Rigidbody or Controller");
 
-        moveStep = Vector3.zero;          
+        priorMoveVector = moveVector;
+        moveVector = Vector3.zero; 
     }
     
     private void Rotate()

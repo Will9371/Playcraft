@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Character" t="Include">
           <e p="DirectionalMoveAdapter.cs" t="Include" />
+          <e p="HumanoidAnimationInterface.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
         </e>
         <e p="Follow.cs" t="Include" />

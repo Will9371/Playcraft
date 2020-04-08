@@ -142,4 +142,13 @@ public class RaycastController : MonoBehaviour
         public Vector3 topFrontRight, topFrontLeft, topBackRight, topBackLeft;
         public Vector3 botFrontRight, botFrontLeft, botBackRight, botBackLeft;
     }
+    /*
+    public struct CollisionInfo
+    {
+        public bool above, front, right;
+        public bool below, back, left;
+
+        pu
+    }*/
+
 }
