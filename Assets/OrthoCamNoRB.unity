@@ -178,6 +178,9 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 512
+  horizontalRayCount: 3
+  verticalRayCount: 4
+  frontBackRayCount: 3
   collider: {fileID: 1602012774}
 --- !u!1 &180359999
 GameObject:
@@ -1138,27 +1141,27 @@ PrefabInstance:
     - target: {fileID: 5053040950538688241, guid: c2a513059ce3ee848a6ff90969a6a141,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.21
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5053040950538688241, guid: c2a513059ce3ee848a6ff90969a6a141,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.000014126301
       objectReference: {fileID: 0}
     - target: {fileID: 5053040950538688241, guid: c2a513059ce3ee848a6ff90969a6a141,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5053040950538688241, guid: c2a513059ce3ee848a6ff90969a6a141,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5053040950538688241, guid: c2a513059ce3ee848a6ff90969a6a141,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5053040950538688241, guid: c2a513059ce3ee848a6ff90969a6a141,
         type: 3}

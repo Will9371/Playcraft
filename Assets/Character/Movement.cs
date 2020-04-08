@@ -3,7 +3,7 @@
 public class Movement : MonoBehaviour
 {
     [SerializeField] Rigidbody rb; //Leave empty and attach a controller for non-rigidbody movement
-    [SerializeField] Controller control; 
+    [SerializeField] RaycastController control; 
     [SerializeField] float movementSpeed;
     [SerializeField] float rotationSpeed;
     Vector3 moveStep;

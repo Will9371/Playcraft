@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class RaycastController : MonoBehaviour
 {
     //NOTE: This controller was made for non-rigidbody movement in a 3D space built from tiles sharing 
     //a uniform size and orientation. To that end, collision is handled by a boxCollider with an
