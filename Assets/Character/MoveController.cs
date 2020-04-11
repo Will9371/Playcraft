@@ -2,7 +2,7 @@
 
 public class MoveController : MonoBehaviour
 {
-    Movement moveSystem;
+    IMove moveSystem;
     
     [SerializeField] float movementSpeed;
     [SerializeField] float rotationSpeed;
@@ -16,7 +16,7 @@ public class MoveController : MonoBehaviour
     
     private void Awake()
     {
-        moveSystem = GetComponent<Movement>();
+        moveSystem = GetComponent<IMove>();
         
         if (moveSystem == null)
             Debug.LogError("Must attach a move system component (RigidbodyMovement or NonRigidbodyMovement)");
@@ -44,7 +44,7 @@ public class MoveController : MonoBehaviour
         moveStep = moveVector * Time.deltaTime;
         
         if (moveVector != priorMoveVector)
-            BroadcastMoveSpeed.Invoke(moveVector.magnitude * movementSpeed);         
+            BroadcastMoveSpeed.Invoke(moveVector.magnitude);     
          
         moveSystem.Step(moveStep);
 
@@ -61,7 +61,7 @@ public class MoveController : MonoBehaviour
     }
 }
 
-public abstract class Movement : MonoBehaviour
+public interface IMove 
 {
-    public abstract void Step(Vector3 step);
+    void Step(Vector3 step);
 }

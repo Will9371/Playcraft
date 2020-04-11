@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class NonRigidbodyMovement : Movement
+public class NonRigidbodyMovement : MonoBehaviour, IMove
 {
     [SerializeField] Vector3 gravity;
     RaycastController raycastController;
@@ -13,7 +13,7 @@ public class NonRigidbodyMovement : Movement
             Debug.LogError("Attach a RaycastController!");
     }
 
-    public override void Step(Vector3 velocity)
+    public void Step(Vector3 velocity)
     {
         velocity += gravity * Time.deltaTime;
         raycastController.ApplyCollisions(ref velocity);

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class RigidbodyMovement : Movement
+public class RigidbodyMovement : MonoBehaviour, IMove
 {
     Rigidbody rb;
     
@@ -12,7 +12,7 @@ public class RigidbodyMovement : Movement
             Debug.LogError("Attach a Rigidbody!");
     }
     
-    public override void Step(Vector3 step)
+    public void Step(Vector3 step)
     {
         step = transform.TransformDirection(step);
         rb.MovePosition(transform.position + step);

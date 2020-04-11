@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
-  rotationSpeed: 60
+  rotationSpeed: 180
   BroadcastMoveSpeed:
     m_PersistentCalls:
       m_Calls: []
