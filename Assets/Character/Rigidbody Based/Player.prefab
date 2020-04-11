@@ -329,6 +329,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - keys: 20000000
+    pressDown: 1
+    press: 0
+    pressUp: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3253291720137500720}
+          m_MethodName: Jump
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &3253291720137500720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   rotationSpeed: 60
+  jumpStrength: 7.5
   BroadcastMoveSpeed:
     m_PersistentCalls:
       m_Calls:
@@ -381,6 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8caea49b9002bd48aafd1b78b38ae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontalJumpDamper: 1
 --- !u!54 &3253291720928076030
 Rigidbody:
   m_ObjectHideFlags: 0

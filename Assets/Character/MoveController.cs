@@ -2,10 +2,16 @@
 
 public class MoveController : MonoBehaviour
 {
+    // Dependencies
     IMove moveSystem;
+    IJump jumpSystem;
     
+    // Parameters
     [SerializeField] float movementSpeed;
     [SerializeField] float rotationSpeed;
+    [SerializeField] float jumpStrength;
+    
+    // Cached variables
     Vector3 moveVector;
     Vector3 priorMoveVector;
     Vector3 moveStep;
@@ -20,6 +26,8 @@ public class MoveController : MonoBehaviour
         
         if (moveSystem == null)
             Debug.LogError("Must attach a move system component (RigidbodyMovement or NonRigidbodyMovement)");
+            
+        jumpSystem = GetComponent<IJump>();
     }
     
     public void AddMovement(Vector3 direction)
@@ -59,9 +67,22 @@ public class MoveController : MonoBehaviour
         transform.Rotate(rotationAxis, rotationStep);
         rotationAxis = Vector3.zero; 
     }
+    
+    public void Jump()
+    {
+        if (jumpSystem == null)
+            return;
+            
+        jumpSystem.Jump(Vector3.up * jumpStrength);
+    }
 }
 
 public interface IMove 
 {
     void Step(Vector3 step);
+}
+
+public interface IJump
+{
+    void Jump(Vector3 vector);
 }
