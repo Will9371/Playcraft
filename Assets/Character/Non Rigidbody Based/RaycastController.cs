@@ -20,8 +20,9 @@ public class RaycastController : MonoBehaviour
     RaycastOrigins raycastOrigins;
 
     [SerializeField] BoxCollider collider;
-
-    public void Move(Vector3 velocity)
+    
+    
+    public void ApplyCollisions(ref Vector3 velocity)
     {
         UpdateBoxcastOrigins();
 
@@ -37,8 +38,6 @@ public class RaycastController : MonoBehaviour
         {
             VerticalCollisions(ref velocity);
         }
-
-        transform.Translate(velocity);
     }
 
     void HorizontalCollisions(ref Vector3 velocity)
@@ -66,7 +65,6 @@ public class RaycastController : MonoBehaviour
                 }
             }
         }
-        
     }
 
     void VerticalCollisions(ref Vector3 velocity)

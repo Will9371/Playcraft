@@ -9,7 +9,10 @@
         <e p="Character" t="Include">
           <e p="DirectionalMoveAdapter.cs" t="Include" />
           <e p="HumanoidAnimationInterface.cs" t="Include" />
-          <e p="Movement.cs" t="Include" />
+          <e p="MoveController.cs" t="Include" />
+          <e p="NonRigidbodyMovement.cs" t="Include" />
+          <e p="RaycastController.cs" t="Include" />
+          <e p="RigidbodyMovement.cs" t="Include" />
         </e>
         <e p="Follow.cs" t="Include" />
         <e p="KeyboardInput.cs" t="Include" />

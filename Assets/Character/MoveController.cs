@@ -1,22 +1,26 @@
 ﻿using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class MoveController : MonoBehaviour
 {
-    [SerializeField] Rigidbody rb; //Leave empty and attach a controller for non-rigidbody movement
-    [SerializeField] RaycastController control; 
+    Movement moveSystem;
+    
     [SerializeField] float movementSpeed;
     [SerializeField] float rotationSpeed;
     Vector3 moveVector;
     Vector3 priorMoveVector;
     Vector3 moveStep;
-    Vector3 rotationAxis;
-
-    //For non-rb physics
-    [SerializeField] Vector3 nonRBGravity = Vector3.zero;
-    
+    Vector3 rotationAxis;    
     float currentMoveSpeed;
     
     [SerializeField] FloatEvent BroadcastMoveSpeed;
+    
+    private void Awake()
+    {
+        moveSystem = GetComponent<Movement>();
+        
+        if (moveSystem == null)
+            Debug.LogError("Must attach a move system component (RigidbodyMovement or NonRigidbodyMovement)");
+    }
     
     public void AddMovement(Vector3 direction)
     {
@@ -41,20 +45,8 @@ public class Movement : MonoBehaviour
         
         if (moveVector != priorMoveVector)
             BroadcastMoveSpeed.Invoke(moveVector.magnitude * movementSpeed);         
-        
-       // NOT EXTENSIBLE: delegate to interface if this logic becomes more complex (and both branches needed)
-       if (rb)
-        {
-            moveStep = transform.TransformDirection(moveStep);
-            rb.MovePosition(transform.position + moveStep);
-        }
-        else if (control != null)
-        {
-            Vector3 velocity = moveStep;
-            velocity += nonRBGravity * Time.deltaTime;
-            control.Move(velocity);
-        }
-        else Debug.LogError("Movement requires Rigidbody or Controller");
+         
+        moveSystem.Step(moveStep);
 
         priorMoveVector = moveVector;
         moveVector = Vector3.zero; 
@@ -67,4 +59,9 @@ public class Movement : MonoBehaviour
         transform.Rotate(rotationAxis, rotationStep);
         rotationAxis = Vector3.zero; 
     }
+}
+
+public abstract class Movement : MonoBehaviour
+{
+    public abstract void Step(Vector3 step);
 }
