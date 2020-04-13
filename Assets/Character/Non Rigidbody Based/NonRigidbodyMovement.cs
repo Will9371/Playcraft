@@ -3,8 +3,8 @@
 public class NonRigidbodyMovement : MonoBehaviour, IMove
 {
     [SerializeField] Vector3 gravity;
-    [SerializeField] float horizontalVelocitySmoothing = 0.25f; //Time
-    [SerializeField] float maxSpeed = 7f;
+    [SerializeField] float horizontalVelocitySmoothing = 0.1f; //Time
+    [SerializeField] float maxSpeed = 1f;
     Vector3 velocitySmoothStorage;
     Vector3 velocity = Vector3.zero;
     RaycastController raycastController;
@@ -19,12 +19,18 @@ public class NonRigidbodyMovement : MonoBehaviour, IMove
 
     public void Step(Vector3 step)
     {
+        step /= Time.deltaTime;
+
         if (raycastController.collisions.above || raycastController.collisions.below)
             velocity.y = 0;
 
         //Apply gravity
         velocity += gravity * Time.deltaTime;
-        velocity += step;
+
+        //Apply horizontal velocity with smoothing
+        Vector3 verticalVelocity = gravity.normalized * Vector3.Dot(gravity.normalized, velocity);
+        Vector3 currentHorizontalVelocity = velocity - verticalVelocity;
+        velocity = Vector3.SmoothDamp(currentHorizontalVelocity, step, ref velocitySmoothStorage, horizontalVelocitySmoothing, maxSpeed) + verticalVelocity;
         
         raycastController.ApplyCollisions(ref velocity);
         transform.Translate(velocity);
