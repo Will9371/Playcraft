@@ -18,6 +18,7 @@ public class RaycastController : MonoBehaviour
     public int frontBackRayCount = 3;
 
     RaycastOrigins raycastOrigins;
+    public CollisionInfo collisions;
 
     [SerializeField] BoxCollider collider;
     
@@ -25,6 +26,7 @@ public class RaycastController : MonoBehaviour
     public void ApplyCollisions(ref Vector3 velocity)
     {
         UpdateBoxcastOrigins();
+        collisions.Reset();
 
         if(velocity.x != 0)
         {
@@ -62,6 +64,9 @@ public class RaycastController : MonoBehaviour
                 {
                     velocity.x = (hit.distance - skinWidth) * directionX;
                     rayLength = hit.distance;
+
+                    collisions.left = directionX == -1;
+                    collisions.right = directionX == 1;
                 }
             }
         }
@@ -89,6 +94,9 @@ public class RaycastController : MonoBehaviour
                 {
                     velocity.y = (hit.distance - skinWidth) * directionY;
                     rayLength = hit.distance;
+
+                    collisions.below = directionY == -1;
+                    collisions.above = directionY == 1;
                 }
             }
         }
@@ -116,6 +124,9 @@ public class RaycastController : MonoBehaviour
                 {
                     velocity.z = (hit.distance - skinWidth) * directionZ;
                     rayLength = hit.distance;
+
+                    collisions.back = directionZ == -1;
+                    collisions.back = directionZ == 1;
                 }
             }
         }
@@ -140,13 +151,17 @@ public class RaycastController : MonoBehaviour
         public Vector3 topFrontRight, topFrontLeft, topBackRight, topBackLeft;
         public Vector3 botFrontRight, botFrontLeft, botBackRight, botBackLeft;
     }
-    /*
+    
     public struct CollisionInfo
     {
         public bool above, front, right;
         public bool below, back, left;
 
-        pu
-    }*/
+        public void Reset()
+        {
+            above = front = right = false;
+            below = back = left = false;
+        }
+    }
 
 }
