@@ -17,11 +17,12 @@ public class RaycastController : MonoBehaviour
     public int verticalRayCount = 4;
     public int frontBackRayCount = 3;
 
+    float maxClimbAngle = 50f;
+
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
     [SerializeField] BoxCollider collider;
-    
     
     public void ApplyCollisions(ref Vector3 velocity)
     {
@@ -62,11 +63,33 @@ public class RaycastController : MonoBehaviour
                 Debug.DrawRay(rayOrigin, Vector3.right * directionX * rayLength, Color.red);
                 if(Physics.Raycast(rayOrigin, Vector3.right * directionX, out hit, rayLength, collisionMask))
                 {
-                    velocity.x = (hit.distance - skinWidth) * directionX;
-                    rayLength = hit.distance;
+                    float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
+                    if (i == 0 && slopeAngle <= maxClimbAngle)
+                    {
+                        float distanceToSlopeStart = 0;
+                        if(slopeAngle != collisions.slopeAngleOld)
+                        {
+                            distanceToSlopeStart = hit.distance - skinWidth;
+                            velocity.x -= distanceToSlopeStart * directionX;
+                        }
+                        print("X slope is " + slopeAngle);
+                        ClimbSlope(ref velocity, slopeAngle);
+                        velocity.x += distanceToSlopeStart * directionX;
+                    }
+                    
+                    if (i != 0 && (!collisions.climbingSlope || slopeAngle > maxClimbAngle))
+                    {
+                        velocity.x = (hit.distance - skinWidth) * directionX;
+                        rayLength = hit.distance;
 
-                    collisions.left = directionX == -1;
-                    collisions.right = directionX == 1;
+                        if(collisions.climbingSlope)
+                        {
+                            velocity.y = Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(velocity.x);
+                        }
+
+                        collisions.left = directionX == -1;
+                        collisions.right = directionX == 1;
+                    }
                 }
             }
         }
@@ -94,6 +117,11 @@ public class RaycastController : MonoBehaviour
                 {
                     velocity.y = (hit.distance - skinWidth) * directionY;
                     rayLength = hit.distance;
+
+                    if(collisions.climbingSlope)
+                    {
+                        velocity.x = velocity.y / Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(velocity.x);
+                    }
 
                     collisions.below = directionY == -1;
                     collisions.above = directionY == 1;
@@ -132,6 +160,21 @@ public class RaycastController : MonoBehaviour
         }
     }
 
+    void ClimbSlope(ref Vector3 velocity, float slopeAngle)
+    {
+        //TODO: convert this to handle x + z
+        float moveDistance = Mathf.Abs(velocity.x);
+        float climbVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
+
+        if(velocity.y <= climbVelocityY) { 
+            velocity.y = climbVelocityY;
+            velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
+            collisions.below = true;
+            collisions.climbingSlope = true;
+            collisions.slopeAngle = slopeAngle;
+        }
+    }
+
     void UpdateBoxcastOrigins()
     {
         Bounds bounds = collider.bounds;
@@ -157,10 +200,17 @@ public class RaycastController : MonoBehaviour
         public bool above, front, right;
         public bool below, back, left;
 
+        public bool climbingSlope;
+        public float slopeAngle, slopeAngleOld;
+
         public void Reset()
         {
             above = front = right = false;
             below = back = left = false;
+            climbingSlope = false;
+
+            slopeAngleOld = slopeAngle;
+            slopeAngle = 0;
         }
     }
 
