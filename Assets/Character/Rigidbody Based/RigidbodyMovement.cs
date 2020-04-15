@@ -21,7 +21,8 @@ public class RigidbodyMovement : MonoBehaviour, IMove, IJump
     {
         if (!grounded)
             return;
-            
+
+        step *= Time.deltaTime;
         step = transform.TransformDirection(step);
         rb.MovePosition(transform.position + step);
         this.step = step;

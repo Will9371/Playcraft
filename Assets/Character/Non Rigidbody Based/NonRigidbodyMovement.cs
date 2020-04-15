@@ -19,8 +19,6 @@ public class NonRigidbodyMovement : MonoBehaviour, IMove
 
     public void Step(Vector3 step)
     {
-        step /= Time.deltaTime;
-
         if (raycastController.collisions.above || raycastController.collisions.below)
             velocity.y = 0;
 

@@ -49,7 +49,7 @@ public class MoveController : MonoBehaviour
     private void Move()
     {
         moveVector = moveVector.normalized * movementSpeed;
-        moveStep = moveVector * Time.deltaTime;
+        moveStep = moveVector;
         
         if (moveVector != priorMoveVector)
             BroadcastMoveSpeed.Invoke(moveVector.magnitude);     
