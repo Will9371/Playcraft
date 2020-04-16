@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 
+// Humanoid specific interface between input source and movement system
 public class DirectionalMoveAdapter : MonoBehaviour
 {
-    Movement movement;
-    
+    MoveController movement;
+        
     private void Awake()
     {
-        movement = GetComponent<Movement>();
+        movement = GetComponent<MoveController>();
     }
     
     public void MoveForward()
