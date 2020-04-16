@@ -17,7 +17,7 @@ public class NonRigidbodyMovement : MonoBehaviour, IMove
             Debug.LogError("Attach a RaycastController!");
     }
 
-    public void Step(Vector3 step)
+    public void Tick(MoveData data)
     {
         if (raycastController.collisions.above || raycastController.collisions.below)
             velocity.y = 0;
@@ -28,7 +28,7 @@ public class NonRigidbodyMovement : MonoBehaviour, IMove
         //Apply horizontal velocity with smoothing
         Vector3 verticalVelocity = gravity.normalized * Vector3.Dot(gravity.normalized, velocity);
         Vector3 currentHorizontalVelocity = velocity - verticalVelocity;
-        velocity = Vector3.SmoothDamp(currentHorizontalVelocity, step, ref velocitySmoothStorage, horizontalVelocitySmoothing, maxSpeed) + verticalVelocity;
+        velocity = Vector3.SmoothDamp(currentHorizontalVelocity, data.velocity, ref velocitySmoothStorage, horizontalVelocitySmoothing, maxSpeed) + verticalVelocity;
         
         raycastController.ApplyCollisions(ref velocity);
         transform.Translate(velocity);

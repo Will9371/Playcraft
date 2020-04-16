@@ -4,10 +4,10 @@ public class RigidbodyMovement : MonoBehaviour, IMove, IJump
 {
     Rigidbody rb;
     
-    [SerializeField] [Range(0f, 1f)] float horizontalJumpDamper = 0.5f;
+    [SerializeField] [Range(0f, 1f)] float horizontalJumpDamper = 1f;
         
     bool grounded;
-    Vector3 step;
+    MoveData data;
     
     private void Awake()
     {
@@ -17,21 +17,22 @@ public class RigidbodyMovement : MonoBehaviour, IMove, IJump
             Debug.LogError("Attach a Rigidbody!");
     }
     
-    public void Step(Vector3 step)
+    public void Tick(MoveData data)
     {
         if (!grounded)
             return;
 
-        step *= Time.deltaTime;
-        step = transform.TransformDirection(step);
-        rb.MovePosition(transform.position + step);
-        this.step = step;
+        this.data = data;
+        rb.MovePosition(data.WorldStep);
     }
     
     public void Jump(Vector3 verticalForce)
     {
+        if (!grounded)
+            return;
+    
         grounded = false;
-        var horizontalVelocity = step * horizontalJumpDamper / Time.fixedDeltaTime;
+        var horizontalVelocity = data.WorldVelocity * horizontalJumpDamper;
         rb.AddForce(verticalForce + horizontalVelocity, ForceMode.VelocityChange);
     }
     

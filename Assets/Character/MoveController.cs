@@ -5,6 +5,7 @@ public class MoveController : MonoBehaviour
     // Dependencies
     IMove moveSystem;
     IJump jumpSystem;
+    MoveData moveData;
     
     // Parameters
     [SerializeField] float movementSpeed;
@@ -23,6 +24,7 @@ public class MoveController : MonoBehaviour
     private void Awake()
     {
         moveSystem = GetComponent<IMove>();
+        moveData = new MoveData(moveSystem, transform);
         
         if (moveSystem == null)
             Debug.LogError("Must attach a move system component (RigidbodyMovement or NonRigidbodyMovement)");
@@ -47,14 +49,11 @@ public class MoveController : MonoBehaviour
     }
     
     private void Move()
-    {
-        moveVector = moveVector.normalized * movementSpeed;
-        moveStep = moveVector;
-        
+    {        
         if (moveVector != priorMoveVector)
             BroadcastMoveSpeed.Invoke(moveVector.magnitude);     
          
-        moveSystem.Step(moveStep);
+        moveData.Tick(moveVector.normalized, movementSpeed);
 
         priorMoveVector = moveVector;
         moveVector = Vector3.zero; 
@@ -69,20 +68,39 @@ public class MoveController : MonoBehaviour
     }
     
     public void Jump()
-    {
-        if (jumpSystem == null)
-            return;
-            
-        jumpSystem.Jump(Vector3.up * jumpStrength);
+    {            
+        jumpSystem?.Jump(Vector3.up * jumpStrength);
     }
 }
 
-public interface IMove 
-{
-    void Step(Vector3 step);
-}
+public interface IMove { void Tick(MoveData data); }
 
-public interface IJump
+public interface IJump { void Jump(Vector3 vector); }
+
+public class MoveData
 {
-    void Jump(Vector3 vector);
+    IMove system;
+    Transform transform;
+
+    public MoveData(IMove system, Transform transform)
+    {
+        this.system = system;
+        this.transform = transform;
+    }
+
+    public Vector3 direction;
+    public float speed;
+    
+    public void Tick(Vector3 direction, float speed)
+    {
+        this.direction = direction;
+        this.speed = speed;
+        
+        system.Tick(this);
+    }
+    
+    public Vector3 velocity { get { return direction * speed; } }
+    public Vector3 step { get { return velocity * Time.deltaTime; } }
+    public Vector3 WorldStep { get { return transform.position + transform.TransformDirection(step); } }
+    public Vector3 WorldVelocity { get { return transform.TransformDirection(velocity); } }
 }
