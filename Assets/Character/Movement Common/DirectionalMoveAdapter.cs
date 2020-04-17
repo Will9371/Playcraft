@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-// Humanoid specific interface between input source and movement system
+// Interface between input source and movement system
+// Workaround for lack of Vector3 support in static UnityEvents
 public class DirectionalMoveAdapter : MonoBehaviour
 {
     MoveController movement;

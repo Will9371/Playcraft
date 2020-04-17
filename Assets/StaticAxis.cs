@@ -14,5 +14,18 @@ public static class StaticAxis
             default: Debug.LogError("Invalid axis " + axis); return Vector3.zero;
         }       
     }
+    
+    public static float AngleAroundAxis(Vector3 dirA, Vector3 dirB, Vector3 axis) 
+    {
+        // Project A and B onto the plane orthogonal to axis
+        dirA = dirA - Vector3.Project(dirA, axis);
+        dirB = dirB - Vector3.Project(dirB, axis);
+       
+        // Find (positive) angle between A and B
+        float angle = Vector3.Angle(dirA, dirB);
+       
+        // Return angle multiplied with 1 or -1
+        return angle * (Vector3.Dot(axis, Vector3.Cross(dirA, dirB)) < 0 ? -1 : 1);
+    }
 }
 public enum Axis { X, Y, Z }
