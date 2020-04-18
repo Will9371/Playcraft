@@ -5,21 +5,35 @@ public class HumanoidAnimationInterface : MonoBehaviour
 {
     Animator animator;
     
-    [SerializeField] float armSwingSpeed = .01f;
+    [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
     [SerializeField] AnimationClip walkClip, idleClip;
+    
+    string priorAnimation;
+    
     
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        animator.Play(walkClip.ToString());
     }
     
-    // REFACTOR: delegate conditions, logic, and parameters to animation states
     public void SetSpeed(float speed)
     {
-        var anim = speed > 0 ? walkClip.name : idleClip.name;
-        animator.CrossFade(anim, .3f);
+        Refresh(GetAnimation(speed));
+    }
     
-        if (speed > 0)
-            animator.speed = armSwingSpeed * speed;
+    // Delegate to interface
+    private string GetAnimation(float speed)
+    {
+        return speed > 0 ? walkClip.name : idleClip.name;
+    }
+    
+    public void Refresh(string currentAnimation)
+    {                
+        if (currentAnimation == priorAnimation)
+            return;
+
+        animator.CrossFade(currentAnimation, defaultCrossFade);
+        priorAnimation = currentAnimation;
     }
 }
