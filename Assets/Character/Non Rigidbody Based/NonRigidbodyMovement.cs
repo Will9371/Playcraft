@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 
-public class NonRigidbodyMovement : MonoBehaviour, IMove
+public class NonRigidbodyMovement : MonoBehaviour
 {
     [SerializeField] Vector3 gravity;
     [SerializeField] float horizontalVelocitySmoothing = 0.1f; //Time
     [SerializeField] float maxSpeed = 1f;
     Vector3 velocitySmoothStorage;
-    Vector3 velocity = Vector3.zero;
+    public Vector3 velocity = Vector3.zero;
     RaycastController raycastController;
+    MoveData data;
     
     private void Awake()
     {
@@ -16,8 +17,13 @@ public class NonRigidbodyMovement : MonoBehaviour, IMove
         if (raycastController == null)
             Debug.LogError("Attach a RaycastController!");
     }
-
-    public void Tick(MoveData data)
+    
+    public void SetMoveData(MoveData data)
+    {
+        this.data = data;
+    }
+    
+    private void Update()
     {
         if (raycastController.collisions.above || raycastController.collisions.below)
             velocity.y = 0;

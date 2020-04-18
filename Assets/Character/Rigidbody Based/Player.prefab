@@ -44,7 +44,7 @@ CapsuleCollider:
   m_Radius: 0.25
   m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.755, z: 0}
 --- !u!1 &3253291719986428273
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3253291719986428273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.725, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3253291719510476277}
@@ -86,8 +86,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3253291720137500726}
   - component: {fileID: 3253291720137500727}
-  - component: {fileID: 3253291720137500720}
   - component: {fileID: 1292523769}
+  - component: {fileID: 3253291720137500720}
   - component: {fileID: 3253291720928076032}
   - component: {fileID: 3253291720928076030}
   m_Layer: 0
@@ -252,35 +252,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &3253291720137500720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3253291720137500730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 5
-  rotationSpeed: 60
-  jumpStrength: 7.5
-  BroadcastMoveSpeed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 470642806}
-        m_MethodName: SetSpeed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1292523769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +264,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94dd8f1d0dbfbd4f8c60feed04897b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3253291720137500720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253291720137500730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BroadcastMoveData:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3253291720928076032}
+        m_MethodName: SetMoveData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 470642806}
+        m_MethodName: SetMoveData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  walkSpeed: 5
+  rotationSpeed: 120
+  jumpStrength: 4
 --- !u!114 &3253291720928076032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8caea49b9002bd48aafd1b78b38ae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalJumpDamper: 1
+  jumpHorizontalDamper: 0.5
+  grounded: 0
 --- !u!54 &3253291720928076030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -334,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbed984803bbd4449cc66a0a344017f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armSwingSpeed: 0.01
+  defaultCrossFade: 0.2
   walkClip: {fileID: 7400000, guid: b1a5e04ae51004842aba06704a6c2903, type: 3}
   idleClip: {fileID: 7400000, guid: dffa50cfe77e0434bbfa71245b3dd529, type: 3}
 --- !u!1001 &1813659874488864180

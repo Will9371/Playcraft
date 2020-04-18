@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Follow
   m_EditorClassIdentifier: 
   moveToTarget: 1
-  stoppingDistance: 1.5
   faceTarget: 1
+  followRange:
+    closeThresholds: {x: 1.5, y: 2}
+    farThresholds: {x: 8, y: 10}

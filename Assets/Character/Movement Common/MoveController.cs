@@ -1,35 +1,33 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class MoveController : MonoBehaviour
 {
-    // Dependencies
-    IMove moveSystem;
-    IJump jumpSystem;
     MoveData moveData;
+    [Serializable] class MoveDataEvent : UnityEvent<MoveData> { }
+    [SerializeField] MoveDataEvent BroadcastMoveData;
     
     // Parameters
-    [SerializeField] float movementSpeed;
-    [SerializeField] float rotationSpeed;
-    [SerializeField] float jumpStrength;
+    [SerializeField] float walkSpeed;
+    public float rotationSpeed;
+    public float jumpStrength;
     
     // Cached variables
     Vector3 moveVector;
-    Vector3 priorMoveVector;
     Vector3 moveStep;
     Vector3 rotationAxis;    
-    float currentMoveSpeed;
-    
-    [SerializeField] FloatEvent BroadcastMoveSpeed;
-    
+    float moveSpeed;
+        
     private void Awake()
     {
-        moveSystem = GetComponent<IMove>();
-        moveData = new MoveData(moveSystem, transform);
-        
-        if (moveSystem == null)
-            Debug.LogError("Must attach a move system component (RigidbodyMovement or NonRigidbodyMovement)");
-            
-        jumpSystem = GetComponent<IJump>();
+        moveData = new MoveData(this);
+        BroadcastMoveData.Invoke(moveData);
+    }
+    
+    private void Start()
+    {
+        moveSpeed = walkSpeed;
     }
     
     public void AddMovement(Vector3 direction)
@@ -42,20 +40,15 @@ public class MoveController : MonoBehaviour
         rotationAxis += StaticAxis.GetAxisVector(axis, clockwise);
     }
     
-    private void FixedUpdate()
+    private void Update()
     {
         Move();
         Rotate();
     }
     
     private void Move()
-    {        
-        if (moveVector != priorMoveVector)
-            BroadcastMoveSpeed.Invoke(moveVector.magnitude);     
-         
-        moveData.Tick(moveVector.normalized, movementSpeed);
-
-        priorMoveVector = moveVector;
+    {
+        moveData.velocity = moveVector * moveSpeed; 
         moveVector = Vector3.zero; 
     }
     
@@ -69,38 +62,28 @@ public class MoveController : MonoBehaviour
     
     public void Jump()
     {            
-        jumpSystem?.Jump(Vector3.up * jumpStrength);
+        moveData.beginJumpFlag = true;
     }
 }
 
-public interface IMove { void Tick(MoveData data); }
-
-public interface IJump { void Jump(Vector3 vector); }
-
 public class MoveData
 {
-    IMove system;
-    Transform transform;
+    readonly Transform transform;
+    public float jumpStrength;
 
-    public MoveData(IMove system, Transform transform)
+    public MoveData(MoveController system)
     {
-        this.system = system;
-        this.transform = transform;
-    }
-
-    public Vector3 direction;
-    public float speed;
-    
-    public void Tick(Vector3 direction, float speed)
-    {
-        this.direction = direction;
-        this.speed = speed;
-        
-        system.Tick(this);
+        transform = system.transform;
+        jumpStrength = system.jumpStrength;
     }
     
-    public Vector3 velocity { get { return direction * speed; } }
+    public Vector3 velocity;
+    public bool beginJumpFlag; 
+    
+    public Vector3 direction { get { return velocity.normalized; } }
+    public float speed { get { return velocity.magnitude; } }
     public Vector3 step { get { return velocity * Time.deltaTime; } }
-    public Vector3 WorldStep { get { return transform.position + transform.TransformDirection(step); } }
-    public Vector3 WorldVelocity { get { return transform.TransformDirection(velocity); } }
+    public Vector3 nextPosition { get { return transform.position + transform.TransformVector(step); } }
+    public Vector3 worldVelocity { get { return transform.TransformVector(velocity); } }
+        
 }

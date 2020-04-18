@@ -363,12 +363,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  BroadcastMoveData:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 243540379200616489}
+        m_MethodName: SetMoveData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  walkSpeed: 0
   rotationSpeed: 180
   jumpStrength: 0
-  BroadcastMoveSpeed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &243540379200616488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +429,7 @@ MonoBehaviour:
   movement: {fileID: 0}
   target: {fileID: 0}
   state: {fileID: 11400000, guid: a538b5280516e97498921b852c12218c, type: 2}
+  inRangeOfTarget: 0
   minimumTurnAngle: 5
 --- !u!1 &4990335110852504751
 GameObject:

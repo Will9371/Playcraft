@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-public class RigidbodyMovement : MonoBehaviour, IMove, IJump
+public class RigidbodyMovement : MonoBehaviour
 {
     Rigidbody rb;
-    
-    [SerializeField] [Range(0f, 1f)] float horizontalJumpDamper = 1f;
-        
-    bool grounded;
     MoveData data;
+    
+    [SerializeField] [Range(0f, 1f)] float jumpHorizontalDamper;
+            
+    public bool grounded;
     
     private void Awake()
     {
@@ -17,23 +17,35 @@ public class RigidbodyMovement : MonoBehaviour, IMove, IJump
             Debug.LogError("Attach a Rigidbody!");
     }
     
-    public void Tick(MoveData data)
+    public void SetMoveData(MoveData data)
+    {
+        this.data = data;
+    }
+    
+    private void Update()
     {
         if (!grounded)
             return;
 
-        this.data = data;
-        rb.MovePosition(data.WorldStep);
+        rb.MovePosition(data.nextPosition);
+        
+        if (data.beginJumpFlag)
+        {
+            data.beginJumpFlag = false;
+            Jump(data.jumpStrength);
+        }
     }
     
-    public void Jump(Vector3 verticalForce)
+    private void Jump(float verticalForce)
     {
         if (!grounded)
             return;
     
         grounded = false;
-        var horizontalVelocity = data.WorldVelocity * horizontalJumpDamper;
-        rb.AddForce(verticalForce + horizontalVelocity, ForceMode.VelocityChange);
+        
+        var vertical = Vector3.up * verticalForce;
+        var horizontal = data.worldVelocity * jumpHorizontalDamper;
+        rb.velocity = vertical + horizontal;
     }
     
     private void OnCollisionEnter(Collision other)
