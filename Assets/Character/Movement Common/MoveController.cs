@@ -10,6 +10,7 @@ public class MoveController : MonoBehaviour
     
     // Parameters
     [SerializeField] float walkSpeed;
+    [SerializeField] float runSpeed;
     public float rotationSpeed;
     public float jumpStrength;
     
@@ -64,6 +65,11 @@ public class MoveController : MonoBehaviour
     {            
         moveData.beginJumpFlag = true;
     }
+    
+    public void ToggleSpeed()
+    {
+        moveSpeed = moveSpeed == walkSpeed ? runSpeed : walkSpeed;
+    }
 }
 
 public class MoveData
@@ -78,7 +84,8 @@ public class MoveData
     }
     
     public Vector3 velocity;
-    public bool beginJumpFlag; 
+    public bool beginJumpFlag;
+    public bool grounded;
     
     public Vector3 direction { get { return velocity.normalized; } }
     public float speed { get { return velocity.magnitude; } }

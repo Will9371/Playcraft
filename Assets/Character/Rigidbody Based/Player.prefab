@@ -252,6 +252,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - keys: 0d000000
+    pressDown: 1
+    press: 0
+    pressUp: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3253291720137500720}
+          m_MethodName: ToggleSpeed
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1292523769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +320,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   walkSpeed: 5
+  runSpeed: 20
   rotationSpeed: 120
   jumpStrength: 4
 --- !u!114 &3253291720928076032
@@ -317,7 +336,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHorizontalDamper: 0.5
-  grounded: 0
 --- !u!54 &3253291720928076030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -347,8 +365,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultCrossFade: 0.2
-  walkClip: {fileID: 7400000, guid: b1a5e04ae51004842aba06704a6c2903, type: 3}
   idleClip: {fileID: 7400000, guid: dffa50cfe77e0434bbfa71245b3dd529, type: 3}
+  walkClip: {fileID: 7400000, guid: b1a5e04ae51004842aba06704a6c2903, type: 3}
+  runClip: {fileID: 7400000, guid: 1cb8ed3cbba15f0479fbae54e0a963df, type: 3}
+  jumpClip: {fileID: -6757386051548642978, guid: 0d9d26e2162aa4d11ab075b34c029673,
+    type: 3}
+  runSpeed: 10
 --- !u!1001 &1813659874488864180
 PrefabInstance:
   m_ObjectHideFlags: 0

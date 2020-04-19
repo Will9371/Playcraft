@@ -6,9 +6,7 @@ public class RigidbodyMovement : MonoBehaviour
     MoveData data;
     
     [SerializeField] [Range(0f, 1f)] float jumpHorizontalDamper;
-            
-    public bool grounded;
-    
+                
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -24,7 +22,7 @@ public class RigidbodyMovement : MonoBehaviour
     
     private void Update()
     {
-        if (!grounded)
+        if (!data.grounded)
             return;
 
         rb.MovePosition(data.nextPosition);
@@ -38,10 +36,10 @@ public class RigidbodyMovement : MonoBehaviour
     
     private void Jump(float verticalForce)
     {
-        if (!grounded)
+        if (!data.grounded)
             return;
     
-        grounded = false;
+        data.grounded = false;
         
         var vertical = Vector3.up * verticalForce;
         var horizontal = data.worldVelocity * jumpHorizontalDamper;
@@ -50,6 +48,6 @@ public class RigidbodyMovement : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        grounded = true;
+        data.grounded = true;
     }
 }

@@ -6,7 +6,8 @@ public class HumanoidAnimationInterface : MonoBehaviour
     MoveData moveData;
     
     [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
-    [SerializeField] AnimationClip walkClip, idleClip;
+    [SerializeField] AnimationClip idleClip, walkClip, runClip, jumpClip;
+    [SerializeField] float runSpeed;
         
     string priorAnimation;
     
@@ -23,13 +24,20 @@ public class HumanoidAnimationInterface : MonoBehaviour
     
     private void Update()
     {
-        Refresh(GetAnimation(moveData.speed));
+        Refresh(GetAnimation(moveData.speed).name);
     }
     
     // Game specific logic -> delegate to interface or SO
-    private string GetAnimation(float speed)
+    private AnimationClip GetAnimation(float speed)
     {
-        return speed > 0 ? walkClip.name : idleClip.name;
+        if (!moveData.grounded)
+            return jumpClip;
+        if (speed >= runSpeed)
+            return runClip;
+        if (speed > 0)
+            return walkClip;
+            
+        return idleClip;
     }
     
     private void Refresh(string currentAnimation)
