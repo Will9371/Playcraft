@@ -59,8 +59,7 @@ public class RaycastController : MonoBehaviour
                 Vector3 rayOrigin = (directionX == -1) ? raycastOrigins.botBackLeft : raycastOrigins.botBackRight;
                 rayOrigin += Vector3.up * (i * latitudeSpacing) + Vector3.forward * (j * longitudeSpacing);
                 RaycastHit hit;
-                if(i == 0)
-                    Debug.DrawRay(rayOrigin, Vector3.right * directionX * rayLength, Color.red);
+                Debug.DrawRay(rayOrigin, Vector3.right * directionX * rayLength, Color.red);
                 if(Physics.Raycast(rayOrigin, Vector3.right * directionX, out hit, rayLength, collisionMask))
                 {
                     float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
@@ -147,8 +146,7 @@ public class RaycastController : MonoBehaviour
                 Vector3 rayOrigin = (directionZ == -1) ? raycastOrigins.botBackLeft : raycastOrigins.botFrontLeft;
                 rayOrigin += Vector3.up * (i * latitudeSpacing) + Vector3.right * (j * longitudeSpacing);
                 RaycastHit hit;
-                if(i == 0)
-                    Debug.DrawRay(rayOrigin, Vector3.forward * directionZ * rayLength, Color.red);
+                Debug.DrawRay(rayOrigin, Vector3.forward * directionZ * rayLength, Color.red);
                 if (Physics.Raycast(rayOrigin, Vector3.forward * directionZ, out hit, rayLength, collisionMask))
                 {
                     float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);

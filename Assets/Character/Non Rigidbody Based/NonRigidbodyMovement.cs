@@ -23,7 +23,7 @@ public class NonRigidbodyMovement : MonoBehaviour
         this.data = data;
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         if (raycastController.collisions.above || raycastController.collisions.below)
             velocity.y = 0;
