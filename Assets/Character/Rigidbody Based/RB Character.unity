@@ -349,9 +349,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 470642806, guid: c0a29c31bcb11a549a263867b8da262d, type: 3}
-      propertyPath: jumpClip
+      propertyPath: walkLeft
       value: 
-      objectReference: {fileID: -6757386051548642978, guid: 0d9d26e2162aa4d11ab075b34c029673,
+      objectReference: {fileID: -1684538353075855503, guid: 1c52c953c83c2254a9fa72d50250f028,
+        type: 3}
+    - target: {fileID: 470642806, guid: c0a29c31bcb11a549a263867b8da262d, type: 3}
+      propertyPath: walkRight
+      value: 
+      objectReference: {fileID: -591692918647068772, guid: 1c52c953c83c2254a9fa72d50250f028,
+        type: 3}
+    - target: {fileID: 470642806, guid: c0a29c31bcb11a549a263867b8da262d, type: 3}
+      propertyPath: standTurnLeft
+      value: 
+      objectReference: {fileID: 7400010, guid: 6fb3851da6a6f5948ab6892bee8ba920, type: 3}
+    - target: {fileID: 470642806, guid: c0a29c31bcb11a549a263867b8da262d, type: 3}
+      propertyPath: standTurnRight
+      value: 
+      objectReference: {fileID: 7400000, guid: 6fb3851da6a6f5948ab6892bee8ba920, type: 3}
+    - target: {fileID: 470642806, guid: c0a29c31bcb11a549a263867b8da262d, type: 3}
+      propertyPath: runLeft
+      value: 
+      objectReference: {fileID: 6148109966606671466, guid: 1062212255550964e974f3ffb3cbaae3,
+        type: 3}
+    - target: {fileID: 470642806, guid: c0a29c31bcb11a549a263867b8da262d, type: 3}
+      propertyPath: runRight
+      value: 
+      objectReference: {fileID: -5286009312453217497, guid: 1062212255550964e974f3ffb3cbaae3,
         type: 3}
     - target: {fileID: 3253291720137500726, guid: c0a29c31bcb11a549a263867b8da262d,
         type: 3}

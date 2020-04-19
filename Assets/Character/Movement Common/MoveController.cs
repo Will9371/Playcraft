@@ -58,6 +58,7 @@ public class MoveController : MonoBehaviour
         rotationAxis = rotationAxis.normalized;
         var rotationStep = rotationAxis.magnitude * rotationSpeed * Time.deltaTime;
         transform.Rotate(rotationAxis, rotationStep);
+        moveData.rotation = rotationAxis.y;
         rotationAxis = Vector3.zero; 
     }
     
@@ -84,6 +85,7 @@ public class MoveData
     }
     
     public Vector3 velocity;
+    public float rotation;
     public bool beginJumpFlag;
     public bool grounded;
     
