@@ -34,7 +34,8 @@ public class AI : MonoBehaviour
     
     public void MoveToTarget()
     {
-        movement.AddMovement(Vector3.forward); 
+        var direction = state.faceTarget ? Vector3.forward : targetDirection;
+        movement.AddMovement(direction); 
     }
         
     public void TurnToTarget()

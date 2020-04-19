@@ -5,7 +5,7 @@ using UnityEngine;
 public class AIState : ScriptableObject
 {
     [SerializeField] bool moveToTarget;
-    [SerializeField] bool faceTarget;
+    public bool faceTarget;
     [SerializeField] RangeCheck followRange;
 
     public void Tick(AI self) 
