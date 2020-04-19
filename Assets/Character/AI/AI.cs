@@ -17,6 +17,8 @@ public class AI : MonoBehaviour
     public Vector3 targetDirection { get { return targetVector.normalized; } }
     public float targetDistance { get { return targetVector.magnitude; } }
     
+    public bool inRangeOfTarget;
+    
     void Awake()
     {
         movement = GetComponent<MoveController>();
@@ -32,18 +34,17 @@ public class AI : MonoBehaviour
     
     public void MoveToTarget()
     {
-        movement.AddMovement(Vector3.forward); 
+        var direction = state.faceTarget ? Vector3.forward : targetDirection;
+        movement.AddMovement(direction); 
     }
-    
-    public float minimumTurnAngle = 5f;    // Remove: prevent overshoot in TurnToTarget
-    
+        
     public void TurnToTarget()
     {          
-        var angle = StaticAxis.AngleAroundAxis(forward, targetVector, Vector3.up);
+        var targetDelta = StaticAxis.AngleAroundAxis(forward, targetVector, Vector3.up);
+        var maxDelta = (targetDelta > 0f ? 1f : -1f) * movement.rotationSpeed * Time.deltaTime;
+        var overshoot = Mathf.Abs(maxDelta) > Mathf.Abs(targetDelta);
         
-        if (angle > minimumTurnAngle)
-            movement.AddRotation(Axis.Y, true);
-        else if (angle < -minimumTurnAngle)
-            movement.AddRotation(Axis.Y, false);         
+        if (!overshoot)
+            movement.AddRotation(Axis.Y, targetDelta > 0f);
     }
 }

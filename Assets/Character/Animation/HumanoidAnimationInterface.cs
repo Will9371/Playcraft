@@ -1,39 +1,77 @@
-﻿
+﻿using System;
 using UnityEngine;
 
 public class HumanoidAnimationInterface : MonoBehaviour
 {
     Animator animator;
+    MoveData moveData;
     
     [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
-    [SerializeField] AnimationClip walkClip, idleClip;
-    
+
+    [SerializeField] AnimatedMoveState[] moveStates;
+    [SerializeField] AnimationClip jumpClip;
+
+        
     string priorAnimation;
     
     
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        animator.Play(walkClip.ToString());
     }
     
-    public void SetSpeed(float speed)
+    public void SetMoveData(MoveData moveData)
     {
-        Refresh(GetAnimation(speed));
+        this.moveData = moveData;
     }
     
-    // Delegate to interface
-    private string GetAnimation(float speed)
+    private void Update()
     {
-        return speed > 0 ? walkClip.name : idleClip.name;
+        Refresh(GetAnimation(moveData.speed).name);
     }
     
-    public void Refresh(string currentAnimation)
+    // Game specific logic -> delegate to interface or SO
+    private AnimationClip GetAnimation(float speed)
+    {
+        if (!moveData.grounded)
+            return jumpClip;
+        
+        foreach (var state in moveStates)
+            if (state.InRange(moveData.speed))
+                return state.GetClip(moveData.rotation);
+                
+        Debug.Log("move clip not found!");
+        return moveStates[0].forward;
+    }
+    
+    private void Refresh(string currentAnimation)
     {                
         if (currentAnimation == priorAnimation)
             return;
 
         animator.CrossFade(currentAnimation, defaultCrossFade);
         priorAnimation = currentAnimation;
+    }
+}
+
+[Serializable]
+public class AnimatedMoveState
+{
+    public Vector2 speedRange;
+    public AnimationClip forward, turnLeft, turnRight;
+    
+    public bool InRange(float speed)
+    {
+        return speed >= speedRange.x && speed <= speedRange.y;
+    }
+    
+    public AnimationClip GetClip(float rotation)
+    {
+        if (rotation > 0.5f)
+            return turnRight;
+        if (rotation < -0.5f)
+            return turnLeft;
+        
+        return forward;
     }
 }
