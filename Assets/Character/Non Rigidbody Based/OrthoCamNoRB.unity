@@ -1034,11 +1034,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5053040950538688240, guid: c2a513059ce3ee848a6ff90969a6a141,
-        type: 3}
-      propertyPath: bindings.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5053040950538688241, guid: c2a513059ce3ee848a6ff90969a6a141,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2337,6 +2332,12 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4990335110527205739, guid: 8a66fbf8638e0ec4a95ed069dbda98f9,
+        type: 3}
+      propertyPath: startingState
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920,
+        type: 2}
     - target: {fileID: 4990335110527205741, guid: 8a66fbf8638e0ec4a95ed069dbda98f9,
         type: 3}
       propertyPath: m_LocalPosition.x

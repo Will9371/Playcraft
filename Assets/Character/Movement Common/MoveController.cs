@@ -4,26 +4,31 @@ using UnityEngine.Events;
 
 public class MoveController : MonoBehaviour
 {
-    MoveData data;
-    [SerializeField] MoveState idleState, walkState, runState;
+    [HideInInspector] public MoveData movement;
+    [SerializeField] MoveState startingState;
     [Serializable] class MoveDataEvent : UnityEvent<MoveData> { }
     [SerializeField] MoveDataEvent BroadcastMoveData;
+    
+    [HideInInspector] public InputData input;
+    [Serializable] class InputDataEvent : UnityEvent<InputData> { }
+    [SerializeField] InputDataEvent BroadcastInputData;
         
     // Parameters
     public float rotationSpeed;
     public float jumpStrength;
     
     // Cached variables (from input)
-    Vector3 moveInput;
-    Vector3 moveStep;
+    [HideInInspector] public Vector3 moveInput;
     Vector3 rotationAxis;
-    bool runFlag;
         
     private void Awake()
     {
-        data = new MoveData(this);
-        data.state = GetState();
-        BroadcastMoveData.Invoke(data);
+        movement = new MoveData(this);
+        movement.state = startingState;
+        BroadcastMoveData.Invoke(movement);
+        
+        input = new InputData();
+        BroadcastInputData.Invoke(input);
     }
     
     public void AddMovement(Vector3SO direction)
@@ -55,9 +60,8 @@ public class MoveController : MonoBehaviour
     private void Move()
     {
         moveInput = moveInput.normalized;
-        data.state = GetState();
-        
-        data.velocity = moveInput * data.state.moveSpeed; 
+        input.movement = moveInput;
+        movement.velocity = input.movement * movement.state.moveSpeed; 
         moveInput = Vector3.zero; 
     }
     
@@ -66,30 +70,28 @@ public class MoveController : MonoBehaviour
         rotationAxis = rotationAxis.normalized;
         var rotationStep = rotationAxis.magnitude * rotationSpeed * Time.deltaTime;
         transform.Rotate(rotationAxis, rotationStep);
-        data.rotation = rotationAxis.y;
+        movement.rotation = rotationAxis.y;
         rotationAxis = Vector3.zero; 
     }
     
     public void Jump()
     {            
-        data.OnRequestJump(jumpStrength);
+        movement.OnRequestJump(jumpStrength);
     }
     
     public void SetRun(bool active)
     {
-        runFlag = active;
+        input.runFlag = active;
     }
-    
-    // DELEGATE to SO so different systems can use different state machines
-    private MoveState GetState()
-    {
-        if (moveInput == Vector3.zero)
-            return idleState;
-        if (runFlag)
-            return runState;
+}
 
-        return data.state = walkState;
-    }
+public class InputData
+{
+    public Vector3 movement;
+    public bool runFlag;
+    
+    public void Normalize() { movement = movement.normalized; }
+    public void Zero() { movement = Vector3.zero; }
 }
 
 public class MoveData

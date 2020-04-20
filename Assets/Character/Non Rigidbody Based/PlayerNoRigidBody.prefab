@@ -376,9 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
-  walkState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}
-  runState: {fileID: 11400000, guid: be0398aa60df4054c88391e45ae7bfc3, type: 2}
+  startingState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}
   BroadcastMoveData:
     m_PersistentCalls:
       m_Calls:
@@ -393,8 +391,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  BroadcastInputData:
+    m_PersistentCalls:
+      m_Calls: []
   rotationSpeed: 180
   jumpStrength: 0
+  moveInput: {x: 0, y: 0, z: 0}
 --- !u!114 &5053040950538688240
 MonoBehaviour:
   m_ObjectHideFlags: 0
