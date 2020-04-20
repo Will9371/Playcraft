@@ -31,9 +31,19 @@ public class MoveController : MonoBehaviour
         moveSpeed = walkSpeed;
     }
     
+    public void AddMovement(Vector3SO direction)
+    {
+        AddMovement(direction.value);
+    }
+    
     public void AddMovement(Vector3 direction)
     {
         moveVector += direction;
+    }
+    
+    public void AddRotation(TurnDirection turn)
+    {
+        AddRotation(turn.axis, turn.clockwise);
     }
     
     public void AddRotation(Axis axis, bool clockwise)

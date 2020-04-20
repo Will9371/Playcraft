@@ -86,7 +86,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3253291720137500726}
   - component: {fileID: 3253291720137500727}
-  - component: {fileID: 1292523769}
   - component: {fileID: 3253291720137500720}
   - component: {fileID: 3253291720928076032}
   - component: {fileID: 3253291720928076030}
@@ -133,12 +132,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1292523769}
-          m_MethodName: MoveForward
-          m_Mode: 1
+        - m_Target: {fileID: 3253291720137500720}
+          m_MethodName: AddMovement
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: 087a11123cfca154abb2b4e493191519,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -151,12 +151,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1292523769}
-          m_MethodName: MoveLeft
-          m_Mode: 1
+        - m_Target: {fileID: 3253291720137500720}
+          m_MethodName: AddMovement
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: 87ddabc8b7414874db895b6c135621be,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -169,12 +170,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1292523769}
-          m_MethodName: MoveBack
-          m_Mode: 1
+        - m_Target: {fileID: 3253291720137500720}
+          m_MethodName: AddMovement
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: f7a6b7309162cda41b8d94f8d004816b,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -187,12 +189,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1292523769}
-          m_MethodName: MoveRight
-          m_Mode: 1
+        - m_Target: {fileID: 3253291720137500720}
+          m_MethodName: AddMovement
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: 69179b0d12d5729459d7210275fa963d,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -205,12 +208,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1292523769}
-          m_MethodName: TurnLeft
-          m_Mode: 1
+        - m_Target: {fileID: 3253291720137500720}
+          m_MethodName: AddRotation
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: 6563908233ce57448b1d1270a9a1c534,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TurnDirection, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -223,12 +227,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1292523769}
-          m_MethodName: TurnRight
-          m_Mode: 1
+        - m_Target: {fileID: 3253291720137500720}
+          m_MethodName: AddRotation
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: 96763a318136a4347b29724e6dca1c92,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TurnDirection, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -270,18 +275,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1292523769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3253291720137500730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c94dd8f1d0dbfbd4f8c60feed04897b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3253291720137500720
 MonoBehaviour:
   m_ObjectHideFlags: 0
