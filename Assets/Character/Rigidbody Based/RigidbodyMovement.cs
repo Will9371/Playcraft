@@ -18,6 +18,7 @@ public class RigidbodyMovement : MonoBehaviour
     public void SetMoveData(MoveData data)
     {
         this.data = data;
+        data.OnRequestJump += Jump;
     }
     
     private void Update()
@@ -26,12 +27,6 @@ public class RigidbodyMovement : MonoBehaviour
             return;
 
         rb.MovePosition(data.nextPosition);
-        
-        if (data.beginJumpFlag)
-        {
-            data.beginJumpFlag = false;
-            Jump(data.jumpStrength);
-        }
     }
     
     private void Jump(float verticalForce)

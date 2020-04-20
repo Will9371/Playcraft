@@ -135,7 +135,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &22157561
 Transform:
@@ -154,6 +154,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 92.607, z: 0}
+--- !u!114 &439588542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3253291720137500720, guid: c0a29c31bcb11a549a263867b8da262d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1121843956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &535477153
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +183,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &535477154
 MeshCollider:
@@ -265,7 +277,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &740715560
 Transform:
@@ -348,6 +360,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3253291720137500720, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: startingState
+      value: 
+      objectReference: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f,
+        type: 2}
+    - target: {fileID: 3253291720137500720, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: idleState
+      value: 
+      objectReference: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f,
+        type: 2}
+    - target: {fileID: 3253291720137500720, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: walkState
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920,
+        type: 2}
+    - target: {fileID: 3253291720137500720, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: runState
+      value: 
+      objectReference: {fileID: 11400000, guid: be0398aa60df4054c88391e45ae7bfc3,
+        type: 2}
     - target: {fileID: 3253291720137500726, guid: c0a29c31bcb11a549a263867b8da262d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,10 +439,105 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].keys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].OnActive.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[7].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetRun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[7].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[7].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[7].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].keys.Array.data[0]
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].pressDown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 439588542}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetRun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[8].pressUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253291720137500727, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: bindings.Array.data[7].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3253291720137500730, guid: c0a29c31bcb11a549a263867b8da262d,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289254024659874899, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289254024667223829, guid: c0a29c31bcb11a549a263867b8da262d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a29c31bcb11a549a263867b8da262d, type: 3}
@@ -433,7 +564,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1215554193
 BoxCollider:
@@ -618,7 +749,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1980932526
 Transform:
@@ -711,7 +842,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2076877596
 Transform:

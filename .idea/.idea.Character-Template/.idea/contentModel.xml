@@ -12,11 +12,12 @@
             <e p="AIState.cs" t="Include" />
           </e>
           <e p="Animation" t="Include">
+            <e p="AnimatedMoveState.cs" t="Include" />
             <e p="HumanoidAnimationInterface.cs" t="Include" />
           </e>
           <e p="Movement Common" t="Include">
-            <e p="DirectionalMoveAdapter.cs" t="Include" />
             <e p="MoveController.cs" t="Include" />
+            <e p="MoveState.cs" t="Include" />
             <e p="TurnDirection.cs" t="Include" />
           </e>
           <e p="Non Rigidbody Based" t="Include">

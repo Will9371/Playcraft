@@ -338,7 +338,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5053040950538688241}
   - component: {fileID: 5053040950538688247}
-  - component: {fileID: 7711854081523181118}
   - component: {fileID: 5053040950538688240}
   - component: {fileID: 130641844}
   - component: {fileID: 130641845}
@@ -377,6 +376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
+  walkState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}
+  runState: {fileID: 11400000, guid: be0398aa60df4054c88391e45ae7bfc3, type: 2}
   BroadcastMoveData:
     m_PersistentCalls:
       m_Calls:
@@ -391,21 +393,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  walkSpeed: 10
   rotationSpeed: 180
   jumpStrength: 0
---- !u!114 &7711854081523181118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053040950538688253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c94dd8f1d0dbfbd4f8c60feed04897b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5053040950538688240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,12 +415,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7711854081523181118}
-          m_MethodName: MoveForward
-          m_Mode: 1
+        - m_Target: {fileID: 5053040950538688247}
+          m_MethodName: AddMovement
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: 087a11123cfca154abb2b4e493191519,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -444,12 +434,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7711854081523181118}
-          m_MethodName: MoveLeft
-          m_Mode: 1
+        - m_Target: {fileID: 5053040950538688247}
+          m_MethodName: AddMovement
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: 87ddabc8b7414874db895b6c135621be,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -462,12 +453,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7711854081523181118}
-          m_MethodName: MoveBack
-          m_Mode: 1
+        - m_Target: {fileID: 5053040950538688247}
+          m_MethodName: AddMovement
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: f7a6b7309162cda41b8d94f8d004816b,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -480,48 +472,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7711854081523181118}
-          m_MethodName: MoveRight
-          m_Mode: 1
+        - m_Target: {fileID: 5053040950538688247}
+          m_MethodName: AddMovement
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 0401000071000000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7711854081523181118}
-          m_MethodName: TurnLeft
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 0601000065000000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7711854081523181118}
-          m_MethodName: TurnRight
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: 69179b0d12d5729459d7210275fa963d,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -561,6 +518,7 @@ MonoBehaviour:
   gravity: {x: 0, y: -1, z: 0}
   horizontalVelocitySmoothing: 0.25
   maxSpeed: 7
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &5053040950689728438
 GameObject:
   m_ObjectHideFlags: 0
