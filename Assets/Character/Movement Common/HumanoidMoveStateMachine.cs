@@ -1,25 +1,43 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class HumanoidMoveStateMachine : MonoBehaviour
 {
-    MoveData movement;
-    InputData input;
-
+    [SerializeField] MoveState defaultState;
     [SerializeField] MoveState idleState, walkState, runState;
+    MoveState priorState;
     MoveState state;
+    bool isRunning;
     
-    public void SetMoveData(MoveData movement) { this.movement = movement; }
-    public void SetInputData(InputData input) { this.input = input; }
-
-    private void Update()
-    {    
-        if (input.movement == Vector3.zero)
+    [Serializable] class MoveStateEvent : UnityEvent<MoveState> { }
+    [SerializeField] MoveStateEvent BroadcastState;
+    
+    private void Start()
+    {
+        state = defaultState;
+        priorState = defaultState;
+        BroadcastState.Invoke(defaultState);
+    }
+    
+    public void ReceiveInput(Vector3 moveInput)
+    {
+        if (moveInput == Vector3.zero)
             state = idleState;
-        else if (input.runFlag)
+        else if (isRunning)
             state = runState;
         else
             state = walkState;
+        
+        if (state == priorState)
+            return;
             
-        movement.state = state;
+        BroadcastState.Invoke(state);
+        priorState = state;
+    }
+    
+    public void SetRunning(bool isRunning)
+    {
+        this.isRunning = isRunning;
     }
 }

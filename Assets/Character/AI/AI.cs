@@ -4,7 +4,7 @@
 public class AI : MonoBehaviour
 {
     // Dependencies
-    [HideInInspector] public MoveController movement;
+    [HideInInspector] public InputMovement movement;
 
     // Properties
     public Transform target;
@@ -21,7 +21,7 @@ public class AI : MonoBehaviour
     
     void Awake()
     {
-        movement = GetComponent<MoveController>();
+        movement = GetComponent<InputMovement>();
         
         if (!movement)
             Debug.Log("AI requires a MoveController!");

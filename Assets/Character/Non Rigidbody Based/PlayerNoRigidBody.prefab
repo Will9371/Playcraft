@@ -377,11 +377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}
-  BroadcastMoveData:
+  OnMove:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 130641845}
-        m_MethodName: SetMoveData
+        m_MethodName: SetInputVelocity
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -391,9 +391,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  BroadcastInputData:
-    m_PersistentCalls:
-      m_Calls: []
   rotationSpeed: 180
   jumpStrength: 0
   moveInput: {x: 0, y: 0, z: 0}
@@ -448,7 +445,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keys: 020100007700000012010000
+  - keys: 020100007300000012010000
     pressDown: 0
     press: 1
     pressUp: 0

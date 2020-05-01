@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 1965778608358519453}
   - component: {fileID: 1718113688346994879}
   - component: {fileID: 2022307449}
+  - component: {fileID: 9218176918057000686}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -138,23 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
-  BroadcastMoveData:
+  rotationSpeed: 120
+  OnMove:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1965778608358519651}
-        m_MethodName: SetMoveData
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2175093141208901341}
-        m_MethodName: SetMoveData
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -165,7 +155,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2022307449}
-        m_MethodName: SetMoveData
+        m_MethodName: ReceiveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -175,11 +165,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  BroadcastInputData:
+  OnRotate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2022307449}
-        m_MethodName: SetInputData
+      - m_Target: {fileID: 2175093141208901341}
+        m_MethodName: SetRotation
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -189,9 +179,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  rotationSpeed: 120
-  jumpStrength: 7.5
-  moveInput: {x: 0, y: 0, z: 0}
 --- !u!114 &1965778608358519651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +191,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8caea49b9002bd48aafd1b78b38ae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHorizontalDamper: 0.5
+  OnMove:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9218176918057000686}
+        m_MethodName: SetVelocity
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &1965778608358519453
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -249,9 +249,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7916474db42b7fa42937c439ce54e2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
   idleState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
   walkState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}
   runState: {fileID: 11400000, guid: be0398aa60df4054c88391e45ae7bfc3, type: 2}
+  BroadcastState:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1965778608358519651}
+        m_MethodName: SetState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2175093141208901341}
+        m_MethodName: SetState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9218176918057000686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965778609719589465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf035da10e142a345a48da4ad3e06220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpStrength: 6
+  jumpHorizontalDamper: 0.5
+  OnJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1965778608358519651}
+        m_MethodName: Enable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLand:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1965778608358519651}
+        m_MethodName: Enable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &8234506089160515789
 PrefabInstance:
   m_ObjectHideFlags: 0

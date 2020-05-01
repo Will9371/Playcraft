@@ -88,8 +88,9 @@ GameObject:
   - component: {fileID: 3253291720137500727}
   - component: {fileID: 3253291720137500720}
   - component: {fileID: 3253291720928076032}
+  - component: {fileID: 6268961998943727520}
   - component: {fileID: 3253291720928076030}
-  - component: {fileID: 1121843959}
+  - component: {fileID: 850437961}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -247,7 +248,7 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3253291720137500720}
+        - m_Target: {fileID: 6268961998943727520}
           m_MethodName: Jump
           m_Mode: 1
           m_Arguments:
@@ -265,8 +266,8 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3253291720137500720}
-          m_MethodName: SetRun
+        - m_Target: {fileID: 850437961}
+          m_MethodName: SetRunning
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -283,8 +284,8 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3253291720137500720}
-          m_MethodName: SetRun
+        - m_Target: {fileID: 850437961}
+          m_MethodName: SetRunning
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -306,12 +307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
-  BroadcastMoveData:
+  OnMove:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3253291720928076032}
-        m_MethodName: SetMoveData
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -321,8 +321,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 470642806}
-        m_MethodName: SetMoveData
+      - m_Target: {fileID: 850437961}
+        m_MethodName: ReceiveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -332,22 +332,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1121843959}
-        m_MethodName: SetMoveData
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  BroadcastInputData:
+  OnRotate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1121843959}
-        m_MethodName: SetInputData
+      - m_Target: {fileID: 470642806}
+        m_MethodName: SetRotation
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -372,7 +361,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8caea49b9002bd48aafd1b78b38ae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnMove:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6268961998943727520}
+        m_MethodName: SetVelocity
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  enabled: 0
+--- !u!114 &6268961998943727520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253291720137500730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf035da10e142a345a48da4ad3e06220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpStrength: 6
   jumpHorizontalDamper: 0.5
+  grounded: 0
+  OnJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3253291720928076032}
+        m_MethodName: Enable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLand:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3253291720928076032}
+        m_MethodName: Enable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!54 &3253291720928076030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -389,7 +435,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 3
---- !u!114 &1121843959
+--- !u!114 &850437961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -401,9 +447,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7916474db42b7fa42937c439ce54e2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
   idleState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
   walkState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}
   runState: {fileID: 11400000, guid: be0398aa60df4054c88391e45ae7bfc3, type: 2}
+  BroadcastState:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 470642806}
+        m_MethodName: SetState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3253291720928076032}
+        m_MethodName: SetState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &470642806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultCrossFade: 0.2
+  jumpClip: {fileID: 0}
 --- !u!1001 &1813659874488864180
 PrefabInstance:
   m_ObjectHideFlags: 0

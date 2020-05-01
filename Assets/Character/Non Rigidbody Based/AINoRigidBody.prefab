@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4990335110527205741
 Transform:
   m_ObjectHideFlags: 0
@@ -363,11 +363,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BroadcastMoveData:
+  startingState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}
+  OnMove:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 243540379200616489}
-        m_MethodName: SetMoveData
+        m_MethodName: SetInputVelocity
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -377,9 +378,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  walkSpeed: 0
   rotationSpeed: 180
   jumpStrength: 0
+  moveInput: {x: 0, y: 0, z: 0}
 --- !u!114 &243540379200616488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +415,7 @@ MonoBehaviour:
   gravity: {x: 0, y: -1, z: 0}
   horizontalVelocitySmoothing: 0.25
   maxSpeed: 7
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &6167948555555360307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +432,6 @@ MonoBehaviour:
   target: {fileID: 0}
   state: {fileID: 11400000, guid: a538b5280516e97498921b852c12218c, type: 2}
   inRangeOfTarget: 0
-  minimumTurnAngle: 5
 --- !u!1 &4990335110852504751
 GameObject:
   m_ObjectHideFlags: 0

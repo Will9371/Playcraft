@@ -1,17 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HumanoidAnimationInterface : MonoBehaviour
 {
-    Animator animator;
-    MoveData moveData;
-    
+    Animator animator;    
     [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
 
-    //[SerializeField] AnimationClip jumpClip;
-
-        
+    string animation;
     string priorAnimation;
+    
+    MoveState state;
+    public float rotation;
     
     
     private void Awake()
@@ -19,24 +17,24 @@ public class HumanoidAnimationInterface : MonoBehaviour
         animator = GetComponent<Animator>();
     }
     
-    public void SetMoveData(MoveData moveData)
+    public void SetState(MoveState state)
     {
-        this.moveData = moveData;
+        this.state = state;
+    }
+    
+    public void SetRotation(Vector3 rotation)
+    {
+        this.rotation = rotation.y;
     }
     
     private void Update()
     {
-        var state = moveData.state.animations;
-        var clip = state.GetClip(moveData.rotation);
-        Refresh(clip.name);
-    }
-    
-    private void Refresh(string currentAnimation)
-    {  
-        if (currentAnimation == priorAnimation)
+        animation = state.animations.GetClip(rotation).name;
+      
+        if (animation == priorAnimation)
             return;
 
-        animator.CrossFade(currentAnimation, defaultCrossFade, 0);
-        priorAnimation = currentAnimation;
+        animator.CrossFade(animation, defaultCrossFade, 0);
+        priorAnimation = animation;
     }
 }

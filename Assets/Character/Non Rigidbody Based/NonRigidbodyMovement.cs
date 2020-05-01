@@ -6,10 +6,10 @@ public class NonRigidbodyMovement : MonoBehaviour
     [SerializeField] float horizontalVelocitySmoothing = 0.1f; //Time
     [SerializeField] float maxSpeed = 1f;
     Vector3 velocitySmoothStorage;
+    Vector3 inputVelocity;
     public Vector3 velocity = Vector3.zero;
     RaycastController raycastController;
-    MoveData data;
-    
+        
     private void Awake()
     {
         raycastController = GetComponent<RaycastController>();
@@ -18,9 +18,9 @@ public class NonRigidbodyMovement : MonoBehaviour
             Debug.LogError("Attach a RaycastController!");
     }
     
-    public void SetMoveData(MoveData data)
+    public void SetInputVelocity(Vector3 inputVelocity)
     {
-        this.data = data;
+        this.inputVelocity = inputVelocity;
     }
     
     private void FixedUpdate()
@@ -34,7 +34,7 @@ public class NonRigidbodyMovement : MonoBehaviour
         //Apply horizontal velocity with smoothing
         Vector3 verticalVelocity = gravity.normalized * Vector3.Dot(gravity.normalized, velocity);
         Vector3 currentHorizontalVelocity = velocity - verticalVelocity;
-        velocity = Vector3.SmoothDamp(currentHorizontalVelocity, data.velocity, ref velocitySmoothStorage, horizontalVelocitySmoothing, maxSpeed) + verticalVelocity;
+        velocity = Vector3.SmoothDamp(currentHorizontalVelocity, inputVelocity, ref velocitySmoothStorage, horizontalVelocitySmoothing, maxSpeed) + verticalVelocity;
         
         raycastController.ApplyCollisions(ref velocity);
         transform.Translate(velocity);

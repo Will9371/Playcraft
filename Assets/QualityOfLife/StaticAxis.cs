@@ -27,5 +27,10 @@ public static class StaticAxis
         // Return angle multiplied with 1 or -1
         return angle * (Vector3.Dot(axis, Vector3.Cross(dirA, dirB)) < 0 ? -1 : 1);
     }
+    
+    public static Vector3 LocalVector(Transform transform, Vector3 distance)
+    {
+        return transform.position + transform.TransformVector(distance);
+    }
 }
 public enum Axis { X, Y, Z }

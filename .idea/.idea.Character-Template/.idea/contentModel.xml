@@ -17,7 +17,7 @@
           </e>
           <e p="Movement Common" t="Include">
             <e p="HumanoidMoveStateMachine.cs" t="Include" />
-            <e p="MoveController.cs" t="Include" />
+            <e p="InputMovement.cs" t="Include" />
             <e p="MoveState.cs" t="Include" />
             <e p="TurnDirection.cs" t="Include" />
           </e>
@@ -26,7 +26,8 @@
             <e p="RaycastController.cs" t="Include" />
           </e>
           <e p="Rigidbody Based" t="Include">
-            <e p="RigidbodyMovement.cs" t="Include" />
+            <e p="JumpPhysics.cs" t="Include" />
+            <e p="MovePhysics.cs" t="Include" />
           </e>
         </e>
         <e p="Follow.cs" t="Include" />
