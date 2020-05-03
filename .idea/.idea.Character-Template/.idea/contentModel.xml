@@ -8,8 +8,11 @@
       <e p="Assets" t="Include">
         <e p="Character" t="Include">
           <e p="AI" t="Include">
-            <e p="AI.cs" t="Include" />
-            <e p="AIState.cs" t="Include" />
+            <e p="FaceTarget.cs" t="Include" />
+            <e p="FindClosestTarget.cs" t="Include" />
+            <e p="FindCollidersByTag.cs" t="Include" />
+            <e p="FollowForward.cs" t="Include" />
+            <e p="MaintainTransformList.cs" t="Include" />
           </e>
           <e p="Animation" t="Include">
             <e p="AnimatedMoveState.cs" t="Include" />
@@ -32,8 +35,11 @@
         </e>
         <e p="Follow.cs" t="Include" />
         <e p="QualityOfLife" t="Include">
+          <e p="ContactEventBase.cs" t="Include" />
           <e p="KeyboardInput.cs" t="Include" />
+          <e p="RangeCheck.cs" t="Include" />
           <e p="StaticAxis.cs" t="Include" />
+          <e p="TransformMath.cs" t="Include" />
           <e p="UnityEvents.cs" t="Include" />
           <e p="Vector3SO.cs" t="Include" />
         </e>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,3 +8,7 @@ using UnityEngine.Events;
 [Serializable] public class FloatEvent : UnityEvent<float> { }
 [Serializable] public class IntEvent : UnityEvent<int> { }
 [Serializable] public class StringEvent : UnityEvent<string> { }
+[Serializable] public class TransformEvent : UnityEvent<Transform> { }
+[Serializable] public class ColliderEvent : UnityEvent<Collider> { }
+
+[Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }

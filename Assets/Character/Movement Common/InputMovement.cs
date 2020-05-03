@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class InputMovement : MonoBehaviour
 {    
@@ -10,25 +12,12 @@ public class InputMovement : MonoBehaviour
     private Vector3 moveInput;
     Vector3 rotationAxis;
     
-    public void AddMovement(Vector3SO direction)
-    {
-        AddMovement(direction.value);
-    }
+    public void AddMovement(Vector3SO direction) { AddMovement(direction.value); }  
+    public void AddMovement(Vector3 direction) { moveInput += direction; }
     
-    public void AddMovement(Vector3 direction)
-    {
-        moveInput += direction;
-    }
-    
-    public void AddRotation(TurnDirection turn)
-    {
-        AddRotation(turn.axis, turn.clockwise);
-    }
-    
-    public void AddRotation(Axis axis, bool clockwise)
-    {            
-        rotationAxis += StaticAxis.GetAxisVector(axis, clockwise);
-    }
+    public void AddRotation(TurnDirection turn) { AddRotation(turn.axis, turn.clockwise); }
+    public void AddRotation(Axis axis, bool clockwise) { AddRotation(StaticAxis.GetAxisVector(axis, clockwise)); }
+    public void AddRotation(Vector3 rotation) { rotationAxis += rotation; }
     
     private void Update()
     {
@@ -52,3 +41,5 @@ public class InputMovement : MonoBehaviour
         rotationAxis = Vector3.zero; 
     }
 }
+
+[Serializable] public class TurnAxisEvent : UnityEvent<Axis, bool> { }
