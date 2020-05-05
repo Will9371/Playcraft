@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0d9d26e2162aa4d11ab075b34c029673
+guid: 71495bf8686cada4e9cf19159271dee6
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
@@ -1446,6 +1446,12 @@ ModelImporter:
   - first:
       74: 5735413055835740234
     second: MidAir
+  - first:
+      74: -3544255934867108276
+    second: IdleJump
+  - first:
+      74: 5539831331247536789
+    second: Jump
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -1475,7 +1481,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: IdleJumpUp
+      name: IdleJump
       takeName: _207_Idle_JumpUpMedium_NoHands1Step_Idle
       internalID: 0
       firstFrame: 56
@@ -1831,7 +1837,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: JumpUp
+      name: Jump
       takeName: _207_Idle_JumpUpMedium_NoHands1Step_Idle
       internalID: 0
       firstFrame: 125

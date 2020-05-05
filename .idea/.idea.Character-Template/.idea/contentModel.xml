@@ -16,8 +16,11 @@
             <e p="MaintainTransformList.cs" t="Include" />
           </e>
           <e p="Animation" t="Include">
-            <e p="AnimatedMoveState.cs" t="Include" />
-            <e p="HumanoidAnimationInterface.cs" t="Include" />
+            <e p="Humanoid" t="Include">
+              <e p="AnimatedMoveState.cs" t="Include" />
+              <e p="HumanoidAnimationInterface.cs" t="Include" />
+              <e p="RespondToAnimatedState.cs" t="Include" />
+            </e>
           </e>
           <e p="Flying 1st Person" t="Include">
             <e p="FreeMovement.cs" t="Include" />
@@ -40,9 +43,11 @@
         </e>
         <e p="Follow.cs" t="Include" />
         <e p="QualityOfLife" t="Include">
+          <e p="AnimationProgressEvent.cs" t="Include" />
           <e p="ContactEventBase.cs" t="Include" />
           <e p="KeyboardInput.cs" t="Include" />
           <e p="MouseInput.cs" t="Include" />
+          <e p="ProgressEvent.cs" t="Include" />
           <e p="RangeCheck.cs" t="Include" />
           <e p="StaticAxis.cs" t="Include" />
           <e p="TransformMath.cs" t="Include" />

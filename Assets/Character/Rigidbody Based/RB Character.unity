@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 535477154}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -785,6 +785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI
       objectReference: {fileID: 0}
+    - target: {fileID: 1965778609719589465, guid: ebf8ef7322d179b47b229ff2f646cfc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebf8ef7322d179b47b229ff2f646cfc5, type: 3}
 --- !u!1001 &4272629969887435718
@@ -794,11 +799,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3253291719510476276, guid: c0a29c31bcb11a549a263867b8da262d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 3253291720137500726, guid: c0a29c31bcb11a549a263867b8da262d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -807,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 3253291720137500726, guid: c0a29c31bcb11a549a263867b8da262d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0.186
       objectReference: {fileID: 0}
     - target: {fileID: 3253291720137500726, guid: c0a29c31bcb11a549a263867b8da262d,
         type: 3}

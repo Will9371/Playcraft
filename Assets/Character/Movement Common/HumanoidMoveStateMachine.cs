@@ -5,13 +5,20 @@ using UnityEngine.Events;
 public class HumanoidMoveStateMachine : MonoBehaviour
 {
     [SerializeField] MoveState defaultState;
-    [SerializeField] MoveState idleState, walkState, runState;
-    MoveState priorState;
-    MoveState state;
-    public bool isRunning;
     
     [Serializable] class MoveStateEvent : UnityEvent<MoveState> { }
     [SerializeField] MoveStateEvent BroadcastState;
+    
+    [Header("Movement States")]
+    [SerializeField] MoveState idleState;
+    [SerializeField] MoveState walkState;
+    [SerializeField] MoveState runState;
+    [SerializeField] MoveState jumpState;
+    
+    MoveState priorState;
+    MoveState state;
+    bool isRunning;
+    bool isJumping;
     
     private void Start()
     {
@@ -22,7 +29,9 @@ public class HumanoidMoveStateMachine : MonoBehaviour
     
     public void ReceiveInput(Vector3 moveInput)
     {
-        if (moveInput == Vector3.zero)
+        if (isJumping)
+            state = jumpState;
+        else if (moveInput == Vector3.zero)
             state = idleState;
         else if (isRunning)
             state = runState;
@@ -36,8 +45,8 @@ public class HumanoidMoveStateMachine : MonoBehaviour
         priorState = state;
     }
     
-    public void SetRunning(bool isRunning)
-    {
-        this.isRunning = isRunning;
-    }
+    public void SetRunning(bool isRunning) { this.isRunning = isRunning; }
+    
+    public void Jump() { isJumping = true; }
+    public void Land() { isJumping = false; }
 }

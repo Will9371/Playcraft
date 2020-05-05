@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class JumpPhysics : MonoBehaviour
 {
-    Rigidbody rb;
+    [SerializeField] Rigidbody rb;
     
     [SerializeField] float jumpStrength;
     [SerializeField] [Range(0f, 1f)] float jumpHorizontalDamper;
@@ -16,8 +16,8 @@ public class JumpPhysics : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        
+        if (rb == null)
+            rb = GetComponent<Rigidbody>();        
         if (rb == null)
             Debug.LogError("Attach a Rigidbody!");
     }
@@ -29,6 +29,7 @@ public class JumpPhysics : MonoBehaviour
     
     public void Jump()
     {
+        //Debug.Log("Jump method reached " + grounded);
         if (!grounded)
             return;
     
@@ -36,11 +37,12 @@ public class JumpPhysics : MonoBehaviour
         
         var vertical = Vector3.up * jumpStrength;
         var horizontal = velocity * jumpHorizontalDamper;
+        //Debug.Log(vertical + " " + horizontal);
         rb.velocity = vertical + horizontal;
         OnJump.Invoke();
     }
     
-    private void OnCollisionEnter(Collision other)
+    public void Land()
     {
         grounded = true;
         OnLand.Invoke();
