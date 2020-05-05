@@ -20,7 +20,8 @@
             <e p="HumanoidAnimationInterface.cs" t="Include" />
           </e>
           <e p="Flying 1st Person" t="Include">
-            <e p="Flier.cs" t="Include" />
+            <e p="FreeMovement.cs" t="Include" />
+            <e p="Rotator.cs" t="Include" />
           </e>
           <e p="Movement Common" t="Include">
             <e p="HumanoidMoveStateMachine.cs" t="Include" />
