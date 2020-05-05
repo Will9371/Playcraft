@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa37708c2ce3fbc43b6a337db51fdd9b, type: 3}
-  m_Name: Idle
+  m_Name: Crouch Idle
   m_EditorClassIdentifier: 
-  speedRange: {x: 0, y: 0}
-  forward: {fileID: 7400000, guid: dffa50cfe77e0434bbfa71245b3dd529, type: 3}
-  turnLeft: {fileID: 7400010, guid: 6fb3851da6a6f5948ab6892bee8ba920, type: 3}
-  turnRight: {fileID: -70654669273599342, guid: 6fb3851da6a6f5948ab6892bee8ba920,
+  forward: {fileID: 4749916858553617154, guid: d89ea37480b6d75458aa38843e9688dc, type: 3}
+  turnLeft: {fileID: 8151605367406830102, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}
+  turnRight: {fileID: 3228160940899143219, guid: d89ea37480b6d75458aa38843e9688dc,
     type: 3}

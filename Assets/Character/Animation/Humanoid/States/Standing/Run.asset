@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa37708c2ce3fbc43b6a337db51fdd9b, type: 3}
-  m_Name: Walk
+  m_Name: Run
   m_EditorClassIdentifier: 
-  speedRange: {x: 0, y: 0}
-  forward: {fileID: 7400000, guid: b1a5e04ae51004842aba06704a6c2903, type: 3}
-  turnLeft: {fileID: -1684538353075855503, guid: 1c52c953c83c2254a9fa72d50250f028,
+  forward: {fileID: 7400000, guid: 1cb8ed3cbba15f0479fbae54e0a963df, type: 3}
+  turnLeft: {fileID: 6148109966606671466, guid: 1062212255550964e974f3ffb3cbaae3,
     type: 3}
-  turnRight: {fileID: -591692918647068772, guid: 1c52c953c83c2254a9fa72d50250f028,
+  turnRight: {fileID: -5286009312453217497, guid: 1062212255550964e974f3ffb3cbaae3,
     type: 3}
