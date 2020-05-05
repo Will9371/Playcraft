@@ -19,6 +19,9 @@
             <e p="AnimatedMoveState.cs" t="Include" />
             <e p="HumanoidAnimationInterface.cs" t="Include" />
           </e>
+          <e p="Flying 1st Person" t="Include">
+            <e p="Flier.cs" t="Include" />
+          </e>
           <e p="Movement Common" t="Include">
             <e p="HumanoidMoveStateMachine.cs" t="Include" />
             <e p="InputMovement.cs" t="Include" />
@@ -38,6 +41,7 @@
         <e p="QualityOfLife" t="Include">
           <e p="ContactEventBase.cs" t="Include" />
           <e p="KeyboardInput.cs" t="Include" />
+          <e p="MouseInput.cs" t="Include" />
           <e p="RangeCheck.cs" t="Include" />
           <e p="StaticAxis.cs" t="Include" />
           <e p="TransformMath.cs" t="Include" />
