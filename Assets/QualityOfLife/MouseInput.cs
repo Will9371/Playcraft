@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class MouseInput : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] float minClicktime;
 
     [SerializeField] Vector2Event OnMouseDrag;
@@ -13,6 +14,7 @@ public class MouseInput : MonoBehaviour
     [SerializeField] float yDragSensitivity = 1f;
     [SerializeField] FloatEvent OnMouseDragY;
     [SerializeField] UnityEvent OnLeftClick, OnRightClick;
+    #pragma warning restore 0649
 
     // Cached
     float lastMouseY, mouseYDelta;

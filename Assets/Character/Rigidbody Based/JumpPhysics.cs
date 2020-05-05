@@ -3,16 +3,18 @@ using UnityEngine.Events;
 
 public class JumpPhysics : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] Rigidbody rb;
     
     [SerializeField] float jumpStrength;
     [SerializeField] [Range(0f, 1f)] float jumpHorizontalDamper;
     
-    bool grounded;
-    Vector3 velocity;
-    
     [SerializeField] UnityEvent OnJump;
     [SerializeField] UnityEvent OnLand;
+    #pragma warning disable 0649
+    
+    bool grounded;
+    Vector3 velocity;
 
     private void Awake()
     {

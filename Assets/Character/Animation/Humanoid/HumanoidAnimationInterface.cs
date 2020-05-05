@@ -9,15 +9,17 @@ public class HumanoidAnimationInterface : MonoBehaviour
     Animator animator;    
     [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
 
-    string animation;
+    new string animation;
     string priorAnimation;
     
     MoveState state;
     float rotation;
     
-     AnimatorStateInfo animatorInfo { get { return animator.GetCurrentAnimatorStateInfo(0); } }
-     [Serializable] public class AnimatedStateEvent : UnityEvent<AnimatedMoveState, float> { }
-     [SerializeField] AnimatedStateEvent OnBeginAnimation;
+    AnimatorStateInfo animatorInfo { get { return animator.GetCurrentAnimatorStateInfo(0); } }
+    [Serializable] public class AnimatedStateEvent : UnityEvent<AnimatedMoveState, float> { }
+    #pragma warning disable 0649
+    [SerializeField] AnimatedStateEvent OnBeginAnimation;
+    #pragma warning restore 0649
     
     
     private void Awake()

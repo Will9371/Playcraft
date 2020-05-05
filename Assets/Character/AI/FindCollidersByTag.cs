@@ -2,9 +2,11 @@
 
 public class FindCollidersByTag : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] string[] respondToTags;
     [SerializeField] ColliderEvent OnEnter;
     [SerializeField] ColliderEvent OnExit;
+    #pragma warning restore 0649
     
     void OnCollisionEnter(Collision other) { OnTriggerEnter(other.collider); }
     void OnCollisionExit(Collision other) { OnTriggerExit(other.collider); }

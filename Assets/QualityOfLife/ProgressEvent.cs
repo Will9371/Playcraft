@@ -6,7 +6,10 @@ using UnityEngine.Events;
 public class ProgressEvent : MonoBehaviour 
 {
     public PercentEvent[] actions;
+    
+    #pragma warning disable 0649
     [SerializeField] bool overrideInputValidation;
+    #pragma warning restore 0649
     
     // Enforce valid input: events organized by increasing percent threshold
     private void OnValidate()

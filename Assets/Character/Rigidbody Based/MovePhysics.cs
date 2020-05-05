@@ -2,12 +2,16 @@
 
 public class MovePhysics : MonoBehaviour
 {
+    public new bool enabled = true;
+    
+    #pragma warning disable 0649
+    [SerializeField] Vector3Event OnMove;
+    #pragma warning restore 0649
+    
     Rigidbody rb;
     MoveState state;
-    [SerializeField] Vector3Event OnMove;
-    
-    new bool enabled;
-                
+    float savedSpeed;
+                    
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,22 +20,18 @@ public class MovePhysics : MonoBehaviour
             Debug.LogError("Attach a Rigidbody!");
     }
     
-    public void SetState(MoveState state)
-    {
-        this.state = state;
-    }
-    
-    public void Enable(bool enabled)
-    {
-        this.enabled = enabled;
-    }
+    public void Enable(bool enabled) { this.enabled = enabled; }
+    public void SetState(MoveState state) { this.state = state; }
     
     public void Move(Vector3 direction)
     {
         if (!enabled)
             return;
     
-        var velocity = direction * state.moveSpeed;
+        var speed = state.disableSpeedControl ? savedSpeed : state.moveSpeed;
+        savedSpeed = speed;
+        
+        var velocity = direction * speed;
         var step = velocity * Time.deltaTime;
         var nextPosition = transform.position + transform.TransformVector(step);
         rb.MovePosition(nextPosition);

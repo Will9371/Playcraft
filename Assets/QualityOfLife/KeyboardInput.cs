@@ -4,7 +4,9 @@ using UnityEngine.Events;
 
 public class KeyboardInput : MonoBehaviour
 {    
+    #pragma warning disable 0649
     [SerializeField] Keybinding[] bindings;
+    #pragma warning restore 0649
     
     void Update()
     {
@@ -16,9 +18,11 @@ public class KeyboardInput : MonoBehaviour
 [Serializable]
 public class Keybinding
 {
+    #pragma warning disable 0649
     [SerializeField] KeyCode[] keys;
     [SerializeField] bool pressDown, press, pressUp;
     [SerializeField] UnityEvent OnActive;
+    #pragma warning restore 0649
     
     public void Update()
     {

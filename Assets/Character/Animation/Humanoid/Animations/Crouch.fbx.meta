@@ -596,7 +596,13 @@ ModelImporter:
     second: CrouchTurnLeft
   - first:
       74: 5546707964091274436
+    second: CrouchWalkRight
+  - first:
+      74: 5546707964091274436
     second: CrouchWalkRightB
+  - first:
+      74: 1827888793077688885
+    second: CrouchWalkRightA
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -684,7 +690,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: CrouchWalkRight
+      name: CrouchWalkRightB
       takeName: Take 001
       internalID: 0
       firstFrame: 2193
@@ -800,7 +806,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: CrouchWalkRightB
+      name: CrouchWalkRight
       takeName: Take 001
       internalID: 0
       firstFrame: 1542

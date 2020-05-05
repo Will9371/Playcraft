@@ -2,8 +2,10 @@
 
 public class RespondToAnimatedState : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] AnimatedMoveState[] respondToStates;
     [SerializeField] FloatEvent BroadcastDuration;
+    #pragma warning restore 0649
 
     public void CheckState(AnimatedMoveState state, float duration)
     {

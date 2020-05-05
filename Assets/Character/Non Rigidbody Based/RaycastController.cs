@@ -21,7 +21,9 @@ public class RaycastController : MonoBehaviour
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
-    [SerializeField] BoxCollider collider;
+    #pragma warning disable 0649
+    [SerializeField] new BoxCollider collider;
+    #pragma warning restore 0649
     
     public void ApplyCollisions(ref Vector3 velocity)
     {

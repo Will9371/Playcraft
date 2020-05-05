@@ -4,8 +4,10 @@ using UnityEngine.Events;
 
 public class FindClosestTarget : MonoBehaviour
 {    
+    #pragma warning disable 0649
     [SerializeField] TransformEvent OnSetTarget;
     [SerializeField] UnityEvent OnClearTarget;
+    #pragma warning restore 0649
     
     public void FindClosest(List<Transform> targets)
     {    

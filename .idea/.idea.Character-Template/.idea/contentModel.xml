@@ -27,9 +27,14 @@
             <e p="Rotator.cs" t="Include" />
           </e>
           <e p="Movement Common" t="Include">
-            <e p="HumanoidMoveStateMachine.cs" t="Include" />
             <e p="InputMovement.cs" t="Include" />
-            <e p="MoveState.cs" t="Include" />
+            <e p="State Machine" t="Include">
+              <e p="CrouchingMoveStateLogic.cs" t="Include" />
+              <e p="HumanoidMoveStateMachine.cs" t="Include" />
+              <e p="MoveState.cs" t="Include" />
+              <e p="MoveStateLogic.cs" t="Include" />
+              <e p="StandingMoveStateLogic.cs" t="Include" />
+            </e>
             <e p="TurnDirection.cs" t="Include" />
           </e>
           <e p="Non Rigidbody Based" t="Include">
@@ -43,7 +48,6 @@
         </e>
         <e p="Follow.cs" t="Include" />
         <e p="QualityOfLife" t="Include">
-          <e p="AnimationProgressEvent.cs" t="Include" />
           <e p="ContactEventBase.cs" t="Include" />
           <e p="KeyboardInput.cs" t="Include" />
           <e p="MouseInput.cs" t="Include" />

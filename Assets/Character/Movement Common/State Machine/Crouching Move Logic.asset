@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c22f7b83cde3a4588a3fb271495adf, type: 3}
-  m_Name: Jump
+  m_Script: {fileID: 11500000, guid: c913d931554427a4bae62921fc1a5bcb, type: 3}
+  m_Name: Crouching Move Logic
   m_EditorClassIdentifier: 
-  animations: {fileID: 11400000, guid: ad11f680ef958a748aceb18897ef5ad3, type: 2}
-  disableSpeedControl: 1
-  moveSpeed: 0
+  idleState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
+  walkState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}

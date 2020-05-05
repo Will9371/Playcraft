@@ -6,8 +6,10 @@ public class InputMovement : MonoBehaviour
 {    
     public float rotationSpeed;
     
+    #pragma warning disable 0649
     [SerializeField] Vector3Event OnMove;
     [SerializeField] Vector3Event OnRotate;
+    #pragma warning restore 0649
             
     private Vector3 moveInput;
     Vector3 rotationAxis;

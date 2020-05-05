@@ -3,9 +3,11 @@ using UnityEngine.Events;
 
 public class DistanceThreshold : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] Vector2 distanceThresholds;
     [SerializeField] UnityEvent OnCloseRange;
     [SerializeField] UnityEvent OnFarRange;
+    #pragma warning restore 0649
     
     Transform target;
     float distanceToTarget { get { return Vector3.Distance(transform.position, target.position); } }

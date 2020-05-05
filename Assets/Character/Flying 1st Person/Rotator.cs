@@ -2,8 +2,11 @@
 
 public class Rotator : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] bool invertX;
     [SerializeField] bool invertY = true;
+    #pragma warning restore 0649
+    
     private float x, y;
 
     public void Rotate(Vector2 value)
