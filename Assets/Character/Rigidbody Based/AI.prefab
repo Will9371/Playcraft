@@ -44,7 +44,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1653384966
 MonoBehaviour:
@@ -353,6 +353,7 @@ MonoBehaviour:
   idleState: {fileID: 11400000, guid: ffb8cec718b12f94fbf4fc90cdc2b07f, type: 2}
   walkState: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920, type: 2}
   runState: {fileID: 11400000, guid: be0398aa60df4054c88391e45ae7bfc3, type: 2}
+  isRunning: 0
   BroadcastState:
     m_PersistentCalls:
       m_Calls:
@@ -430,6 +431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7596273463301515496}
   - component: {fileID: 967080275}
+  - component: {fileID: 2252648559515229480}
   - component: {fileID: 967080276}
   - component: {fileID: 967080278}
   m_Layer: 0
@@ -490,7 +492,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnSetNoTarget:
+      - m_Target: {fileID: 2252648559515229480}
+        m_MethodName: ReceiveTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnClearTarget:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 967080276}
@@ -514,6 +527,58 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2252648559515229480}
+        m_MethodName: ClearTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2252648559515229480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5922641581499045191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344c80dae2593544d889ae38df3a0554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceThresholds: {x: 2, y: 3}
+  OnCloseRange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2022307449}
+        m_MethodName: SetRunning
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFarRange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2022307449}
+        m_MethodName: SetRunning
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &967080276
 MonoBehaviour:
@@ -555,6 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5b40d6a17ac7e4b90a2c4257c24a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forwardVector: {x: 0, y: 0, z: 1}
   followRange:
     closeThresholds: {x: 1, y: 2}
     farThresholds: {x: 8, y: 10}

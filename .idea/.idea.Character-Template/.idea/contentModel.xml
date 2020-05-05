@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Character" t="Include">
           <e p="AI" t="Include">
+            <e p="DistanceThreshold.cs" t="Include" />
             <e p="FaceTarget.cs" t="Include" />
             <e p="FindClosestTarget.cs" t="Include" />
             <e p="FindCollidersByTag.cs" t="Include" />

@@ -5,12 +5,12 @@ using UnityEngine.Events;
 public class FindClosestTarget : MonoBehaviour
 {    
     [SerializeField] TransformEvent OnSetTarget;
-    [SerializeField] UnityEvent OnSetNoTarget;
+    [SerializeField] UnityEvent OnClearTarget;
     
     public void FindClosest(List<Transform> targets)
     {    
         if (targets.Count == 0)
-            OnSetNoTarget.Invoke();
+            OnClearTarget.Invoke();
         else
         {
             var target = TransformMath.GetClosest(targets, transform.position);

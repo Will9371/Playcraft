@@ -8,7 +8,7 @@ public class HumanoidMoveStateMachine : MonoBehaviour
     [SerializeField] MoveState idleState, walkState, runState;
     MoveState priorState;
     MoveState state;
-    bool isRunning;
+    public bool isRunning;
     
     [Serializable] class MoveStateEvent : UnityEvent<MoveState> { }
     [SerializeField] MoveStateEvent BroadcastState;

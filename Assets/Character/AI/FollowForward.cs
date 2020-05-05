@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-// REFACTOR: Generalize to follow along other (static) directions
+// Move forward when target is within range
+// Can follow a target when used in combination with a rotation component
 // Dynamic direction is beyond the scope of this component
 public class FollowForward : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class FollowForward : MonoBehaviour
     public void SetTarget(Transform target) { this.target = target; }
     public void ClearTarget() { target = null; }
     
+    [SerializeField] Vector3 forwardVector = new Vector3(0, 0, 1);
     [SerializeField] RangeCheck followRange;
     [SerializeField] Vector3Event OnMove;
     
@@ -22,6 +24,6 @@ public class FollowForward : MonoBehaviour
         inRange = followRange.InRange(targetDistance, inRange);
         
         if (inRange)
-            OnMove.Invoke(Vector3.forward);
+            OnMove.Invoke(forwardVector);
     }
 }
