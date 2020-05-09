@@ -15,7 +15,7 @@ public class FindClosestTarget : MonoBehaviour
             OnClearTarget.Invoke();
         else
         {
-            var target = TransformMath.GetClosest(targets, transform.position);
+            var target = VectorMath.GetClosest(targets, transform.position);
             OnSetTarget.Invoke(target);
         }
     }

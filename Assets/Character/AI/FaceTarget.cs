@@ -9,7 +9,8 @@ public class FaceTarget : MonoBehaviour
     #pragma warning disable 0649
     [SerializeField] float minStartTurnAngle = 45f;
     [SerializeField] float minStopTurnAngle = 2f;
-    [SerializeField] TurnAxisEvent BroadcastTurnAxis;
+    //[SerializeField] TurnAxisEvent BroadcastTurnAxis;
+    [SerializeField] Vector3Event OnTurn;
     #pragma warning restore 0649
     
     Vector3 forward { get { return transform.forward; } }
@@ -28,6 +29,11 @@ public class FaceTarget : MonoBehaviour
                      isTurning && targetAngleAbs >= minStopTurnAngle;  
                      
         if (isTurning)
-            BroadcastTurnAxis.Invoke(Axis.Y, angleToTarget > 0f);
+        {
+            var turnClockwise = angleToTarget > 0f;
+            var axis = turnClockwise ? Vector3.up : -Vector3.up;
+            OnTurn.Invoke(axis);
+        }
+            //BroadcastTurnAxis.Invoke(Axis.Y, angleToTarget > 0f);
     }
 }

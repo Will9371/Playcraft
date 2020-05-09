@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\willp\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\willp\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Character-Template.900128765.00" t="ExcludeRecursive" />
+    <e p="C:\Users\willp\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\willp\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Character-Template.900128765.00" t="ExcludeRecursive" />
     <e p="D:\Github\Character-Template" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -24,13 +24,14 @@
           </e>
           <e p="Flying 1st Person" t="Include">
             <e p="FreeMovement.cs" t="Include" />
-            <e p="Rotator.cs" t="Include" />
+            <e p="TwoAxisRotation.cs" t="Include" />
           </e>
           <e p="Movement Common" t="Include">
             <e p="Crouching" t="Include">
               <e p="CrouchingMoveStateLogic.cs" t="Include" />
             </e>
             <e p="InputMovement.cs" t="Include" />
+            <e p="InputRotation.cs" t="Include" />
             <e p="Standing" t="Include">
               <e p="StandingMoveStateLogic.cs" t="Include" />
             </e>
@@ -48,17 +49,25 @@
           <e p="Rigidbody Based" t="Include">
             <e p="JumpPhysics.cs" t="Include" />
             <e p="MovePhysics.cs" t="Include" />
+            <e p="SimpleRotation.cs" t="Include" />
+          </e>
+          <e p="Rigidbody First Person" t="Include">
+            <e p="JumpToPosition.cs" t="Include" />
+            <e p="MoveToTarget.cs" t="Include" />
+            <e p="SingleAxisRotation.cs" t="Include" />
           </e>
         </e>
-        <e p="FollowInstant.cs" t="Include" />
         <e p="QualityOfLife" t="Include">
-          <e p="ContactEventBase.cs" t="Include" />
+          <e p="FollowInstant.cs" t="Include" />
           <e p="KeyboardInput.cs" t="Include" />
           <e p="MouseInput.cs" t="Include" />
           <e p="ProgressEvent.cs" t="Include" />
           <e p="RangeCheck.cs" t="Include" />
-          <e p="StaticAxis.cs" t="Include" />
-          <e p="TransformMath.cs" t="Include" />
+          <e p="Static Methods" t="Include">
+            <e p="RangeMath.cs" t="Include" />
+            <e p="StaticAxis.cs" t="Include" />
+            <e p="VectorMath.cs" t="Include" />
+          </e>
           <e p="UnityEvents.cs" t="Include" />
           <e p="Vector3SO.cs" t="Include" />
         </e>

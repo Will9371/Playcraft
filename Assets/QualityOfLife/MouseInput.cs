@@ -83,8 +83,8 @@ public class MouseInput : MonoBehaviour
         }
 
         OnMouseDrag.Invoke(new Vector2(mouseXDelta * xDragSensitivity, mouseYDelta * yDragSensitivity));
-        OnMouseDragX.Invoke(mouseYDelta * xDragSensitivity);
-        OnMouseDragY.Invoke(mouseXDelta * yDragSensitivity);
+        OnMouseDragX.Invoke(mouseXDelta * xDragSensitivity);
+        OnMouseDragY.Invoke(mouseYDelta * yDragSensitivity);
     }
 
     private void GetMouseScroll()

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public static class TransformMath
+public static class VectorMath
 {
     public static Transform GetClosest(List<Transform> list, Vector3 position)
     {
