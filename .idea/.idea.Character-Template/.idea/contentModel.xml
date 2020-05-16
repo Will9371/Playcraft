@@ -59,8 +59,10 @@
         </e>
         <e p="QualityOfLife" t="Include">
           <e p="FollowInstant.cs" t="Include" />
-          <e p="KeyboardInput.cs" t="Include" />
-          <e p="MouseInput.cs" t="Include" />
+          <e p="InputSystems" t="Include">
+            <e p="KeyboardInput.cs" t="Include" />
+            <e p="MouseInput.cs" t="Include" />
+          </e>
           <e p="ProgressEvent.cs" t="Include" />
           <e p="RangeCheck.cs" t="Include" />
           <e p="Static Methods" t="Include">
@@ -68,8 +70,13 @@
             <e p="StaticAxis.cs" t="Include" />
             <e p="VectorMath.cs" t="Include" />
           </e>
+          <e p="TestReceiver.cs" t="Include" />
           <e p="UnityEvents.cs" t="Include" />
           <e p="Vector3SO.cs" t="Include" />
+        </e>
+        <e p="VR" t="Include">
+          <e p="XRInput.cs" t="Include" />
+          <e p="XRInput2D.cs" t="Include" />
         </e>
       </e>
       <e p="Character-Template.sln" t="IncludeFlat" />
