@@ -4,15 +4,13 @@ using UnityEngine.Events;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[Serializable] public class BoolEvent : UnityEvent<bool> { }
-
 public class XRInput : MonoBehaviour
 {
-    [SerializeField] XRController controller;         
+    [SerializeField] XRController controller;
     [SerializeField] XRBinding[] bindings;
-                
-    void Update()
-    {               
+    
+    private void Update()
+    {
         foreach (var binding in bindings)
             binding.Update(controller.inputDevice);
     }
@@ -22,25 +20,46 @@ public class XRInput : MonoBehaviour
 public class XRBinding
 {
     [SerializeField] XRButton button;
-    [SerializeField] PressType condition;
+    [SerializeField] PressType pressType;
     [SerializeField] UnityEvent OnActive;
-
+    
     bool isPressed;
     bool wasPressed;
-    
+
     public void Update(InputDevice device)
     {
         device.TryGetFeatureValue(XRStatics.GetFeature(button), out isPressed);
+        bool active = false;
         
-        switch (condition)
+        switch (pressType)
         {
-            case PressType.Continuous: if (isPressed) OnActive.Invoke(); break;
-            case PressType.Begin: if (isPressed && !wasPressed) OnActive.Invoke(); break;
-            case PressType.End: if (!isPressed && wasPressed) OnActive.Invoke(); break;
+            case PressType.Continuous: active = isPressed; break;
+            case PressType.Begin: active = isPressed && !wasPressed; break;
+            case PressType.End: active = !isPressed && wasPressed; break;
         }
         
+        if (active) OnActive.Invoke();
         wasPressed = isPressed;
     }
+}
+
+public enum XRButton
+{
+    Trigger,
+    Grip,
+    Primary,
+    PrimaryTouch,
+    Secondary,
+    SecondaryTouch,
+    Primary2DAxisClick,
+    Primary2DAxisTouch
+}
+
+public enum PressType
+{
+    Begin,
+    End,
+    Continuous
 }
 
 public static class XRStatics
@@ -55,28 +74,9 @@ public static class XRStatics
             case XRButton.PrimaryTouch: return CommonUsages.primaryTouch;
             case XRButton.Secondary: return CommonUsages.secondaryButton;
             case XRButton.SecondaryTouch: return CommonUsages.secondaryTouch;
-            case XRButton.Primary2DAxisClick: return CommonUsages.primary2DAxisClick; 
+            case XRButton.Primary2DAxisClick: return CommonUsages.primary2DAxisClick;
             case XRButton.Primary2DAxisTouch: return CommonUsages.primary2DAxisTouch;
-            case XRButton.Menu: return CommonUsages.menuButton; 
-            default: Debug.LogError(button + " not found"); return CommonUsages.primaryButton;
+            default: Debug.LogError("button " + button + " not found"); return CommonUsages.triggerButton;      
         }
     }
-}
-
-public enum PressType
-{
-    Begin, End, Continuous
-}
-
-public enum XRButton
-{
-    Trigger,
-    Grip,
-    Primary,
-    PrimaryTouch,
-    Secondary,
-    SecondaryTouch,
-    Primary2DAxisClick,
-    Primary2DAxisTouch,
-    Menu
 }

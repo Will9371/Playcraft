@@ -75,6 +75,7 @@
           <e p="Vector3SO.cs" t="Include" />
         </e>
         <e p="VR" t="Include">
+          <e p="PrintToConsole.cs" t="Include" />
           <e p="XRInput.cs" t="Include" />
           <e p="XRInput2D.cs" t="Include" />
         </e>
