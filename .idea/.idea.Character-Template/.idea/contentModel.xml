@@ -7,6 +7,11 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Character" t="Include">
+          <e p="3rd Person RB" t="Include">
+            <e p="JumpPhysics.cs" t="Include" />
+            <e p="MovePhysics.cs" t="Include" />
+            <e p="SimpleRotation.cs" t="Include" />
+          </e>
           <e p="AI" t="Include">
             <e p="DistanceThreshold.cs" t="Include" />
             <e p="FaceTarget.cs" t="Include" />
@@ -46,11 +51,6 @@
             <e p="NonRigidbodyMovement.cs" t="Include" />
             <e p="RaycastController.cs" t="Include" />
           </e>
-          <e p="Rigidbody Based" t="Include">
-            <e p="JumpPhysics.cs" t="Include" />
-            <e p="MovePhysics.cs" t="Include" />
-            <e p="SimpleRotation.cs" t="Include" />
-          </e>
           <e p="Rigidbody First Person" t="Include">
             <e p="JumpToPosition.cs" t="Include" />
             <e p="MoveToTarget.cs" t="Include" />
@@ -76,6 +76,8 @@
         </e>
         <e p="VR" t="Include">
           <e p="PrintToConsole.cs" t="Include" />
+          <e p="RelativeVector2.cs" t="Include" />
+          <e p="SplitVector.cs" t="Include" />
           <e p="XRInput.cs" t="Include" />
           <e p="XRInput2D.cs" t="Include" />
         </e>

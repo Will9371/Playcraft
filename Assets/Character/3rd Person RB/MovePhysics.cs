@@ -25,7 +25,7 @@ public class MovePhysics : MonoBehaviour
     
     public void Move(Vector3 direction)
     {
-        if (!enabled)
+        if (!enabled || state == null)
             return;
     
         var speed = state.disableSpeedControl ? savedSpeed : state.moveSpeed;

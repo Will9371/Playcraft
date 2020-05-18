@@ -1,0 +1,46 @@
+﻿using System;
+using UnityEngine;
+
+public class SplitVector : MonoBehaviour
+{
+    [SerializeField] SplitVectorInstance[] splitVectors;
+
+    public void Split(Vector2 value)
+    {
+        foreach (var vector in splitVectors)
+            vector.Input(value);
+    }
+}
+
+[Serializable]
+public class SplitVectorInstance
+{
+    [SerializeField] Axis inputAxis;
+    [SerializeField] Axis outputAxis;
+    [SerializeField] Vector3Event OnOutput;
+    
+    public void Input(float value) { Input(new Vector3(value, 0f, 0f)); }
+    public void Input(Vector2 value) { Input(new Vector3(value.x, value.y, 0f)); }
+    
+    public void Input(Vector3 value)
+    {
+        switch (inputAxis)
+        {
+            case Axis.X: Output3(value.x); break;
+            case Axis.Y: Output3(value.y); break;
+            case Axis.Z: Output3(value.z); break;
+            default: Debug.Log("Invalid input axis " + inputAxis); break;
+        }
+    }
+    
+    public void Output3(float value)
+    {
+        switch (outputAxis)
+        {
+            case Axis.X: OnOutput.Invoke(new Vector3(value, 0f, 0f)); break;
+            case Axis.Y: OnOutput.Invoke(new Vector3(0f, value, 0f)); break;
+            case Axis.Z: OnOutput.Invoke(new Vector3(0f, 0f, value)); break;
+            default: Debug.Log("Invalid output axis " + outputAxis); break;
+        }
+    }
+}

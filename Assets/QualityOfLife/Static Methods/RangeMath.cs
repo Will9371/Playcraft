@@ -11,13 +11,20 @@ public class RangeMath : MonoBehaviour
         return value;
     }
     
-    public static int CycleInt(int value, int arraySize)
+    public static int CycleInt(int value, int max)
     {
         value++;
         
-        if (value >= arraySize)
+        if (value >= max)
             value = 0;
         
+        return value;
+    }
+    
+    public static float KeepWithin(float value, float max)
+    {
+        if (value > max/2f) return value - max;
+        if (value < -max/2f) return value + max;
         return value;
     }
 }
