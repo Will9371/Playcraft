@@ -32,6 +32,7 @@ public class MovePhysics : MonoBehaviour
         savedSpeed = speed;
         
         var velocity = direction * speed;
+        //Debug.Log(velocity + " " + direction + " " + speed);
         var step = velocity * Time.deltaTime;
         var nextPosition = transform.position + transform.TransformVector(step);
         rb.MovePosition(nextPosition);

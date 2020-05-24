@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1297533899}
-  - component: {fileID: 3581189086681746347}
+  - component: {fileID: 1644206553086052188}
   - component: {fileID: 1297533901}
   - component: {fileID: 1297533900}
   - component: {fileID: 1297533902}
@@ -34,9 +34,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9134359523930778134}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3581189086681746347
+--- !u!114 &1644206553086052188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,14 +45,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1297533898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
+  m_Script: {fileID: 11500000, guid: 50b33db04afd4ec468ffc0b0e4f00e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   bindings:
-  - keys: 20000000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+  - button: 2
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -222,7 +221,7 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &547108475333647254
+--- !u!1 &1458747578
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,98 +229,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2678375390852572365}
-  - component: {fileID: 5449105843861458324}
-  - component: {fileID: 4281588191065783414}
+  - component: {fileID: 1458747579}
+  - component: {fileID: 1458747581}
+  - component: {fileID: 1458747583}
+  - component: {fileID: 184019413981688328}
+  - component: {fileID: 1458747580}
   m_Layer: 0
-  m_Name: Turn System
+  m_Name: Move Turn System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2678375390852572365
+--- !u!4 &1458747579
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547108475333647254}
+  m_GameObject: {fileID: 1458747578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9134359523930778134}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5449105843861458324
+--- !u!114 &1458747581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547108475333647254}
+  m_GameObject: {fileID: 1458747578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e3d73529b8231842b97e03e1cf98e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 7100000004010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4281588191065783414}
-          m_MethodName: AddRotation
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 9812adc5a67550b48a1631810e5ae3fa,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 6500000006010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4281588191065783414}
-          m_MethodName: AddRotation
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: c03a47bf7b3dfcc4b9bb35725e1f9f41,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &4281588191065783414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547108475333647254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db351339f20ebc64295cb230d4abb075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnRotate:
+  controller: {fileID: 0}
+  OnActive:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 470642806}
-        m_MethodName: SetRotation
+      - m_Target: {fileID: 1458747583}
+        m_MethodName: Convert
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -331,8 +282,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1763476754}
-        m_MethodName: Rotate
+  alwaysActive: 1
+--- !u!114 &1458747583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458747578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7bc8ee60a458294294d81eccb2f58bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  target: {fileID: 3253291720137500726}
+  OnOutput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 184019413981688328}
+        m_MethodName: ClampNegativeYtoX
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -342,6 +311,99 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &184019413981688328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458747578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e432e4c2968c4b45b026c565a9a7b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnOutput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1458747580}
+        m_MethodName: Split
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1458747580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458747578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520e768474e477749a35b8e5e6ef3878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splitVectors:
+  - inputAxis: 1
+    outputAxis: 2
+    OnOutput:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3253291720928076032}
+          m_MethodName: Move
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3031914306664122560}
+          m_MethodName: ReceiveInput
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - inputAxis: 0
+    outputAxis: 1
+    OnOutput:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1763476754}
+          m_MethodName: Rotate
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 470642806}
+          m_MethodName: SetRotation
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2207606578616185067
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,8 +432,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7678248056576589924}
-  - {fileID: 2678375390852572365}
+  - {fileID: 1458747579}
   - {fileID: 1297533899}
   - {fileID: 726943038431613853}
   m_Father: {fileID: 3253291720137500726}
@@ -509,7 +570,7 @@ GameObject:
   - component: {fileID: 3253291720928076030}
   - component: {fileID: 1763476754}
   m_Layer: 0
-  m_Name: Player
+  m_Name: XR Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8caea49b9002bd48aafd1b78b38ae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 0
+  enabled: 1
   OnMove:
     m_PersistentCalls:
       m_Calls:
@@ -615,164 +676,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &8332339237086887003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7678248056576589924}
-  - component: {fileID: 1371263641995757612}
-  - component: {fileID: 5094967136761315162}
-  m_Layer: 0
-  m_Name: Move System
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7678248056576589924
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332339237086887003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 9134359523930778134}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1371263641995757612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332339237086887003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bindings:
-  - keys: 050100007700000011010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5094967136761315162}
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 087a11123cfca154abb2b4e493191519,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 010100006100000014010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5094967136761315162}
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 87ddabc8b7414874db895b6c135621be,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 020100007700000012010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5094967136761315162}
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: f7a6b7309162cda41b8d94f8d004816b,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 030100006400000013010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5094967136761315162}
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 69179b0d12d5729459d7210275fa963d,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &5094967136761315162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332339237086887003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnMove:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3253291720928076032}
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3031914306664122560}
-        m_MethodName: ReceiveInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8516811395321901229
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 726943038431613853}
-  - component: {fileID: 2463092660405816397}
+  - component: {fileID: 9199994211415263875}
   m_Layer: 0
   m_Name: Toggle Actions
   m_TagString: Untagged
@@ -802,9 +705,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9134359523930778134}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2463092660405816397
+--- !u!114 &9199994211415263875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -813,14 +716,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8516811395321901229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
+  m_Script: {fileID: 11500000, guid: 50b33db04afd4ec468ffc0b0e4f00e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   bindings:
-  - keys: 300100002f010000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+  - button: 0
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -835,10 +737,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keys: 63000000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+  - button: 4
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:

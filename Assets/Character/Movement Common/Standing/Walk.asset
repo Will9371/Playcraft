@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c22f7b83cde3a4588a3fb271495adf, type: 3}
   m_Name: Walk
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   animations: {fileID: 11400000, guid: 72b5b9d035cd0f840a74058888d16130, type: 2}
+  disableSpeedControl: 0
+  moveSpeed: 2.5
