@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bb4bd900e4cf645950e855d984f0ea, type: 3}
+  m_Name: Standing Move Logic
+  m_EditorClassIdentifier: 
+  idleState: {fileID: 11400000, guid: 3514b927c1546e84bb3dfb52e2ff8884, type: 2}
+  walkState: {fileID: 11400000, guid: 3d10d41e68541e34591876a5dc9ce7fd, type: 2}
+  runState: {fileID: 11400000, guid: 51869984296e59d439cbfb0e76685759, type: 2}
+  jumpState: {fileID: 11400000, guid: 3c2ba5c2be6d9974a9ba7a82428907ed, type: 2}
