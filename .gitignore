@@ -54,7 +54,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-# *Playcraft*
+!*Playcraft Install.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
