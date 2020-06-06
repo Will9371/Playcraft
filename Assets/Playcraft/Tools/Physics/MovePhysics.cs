@@ -12,7 +12,7 @@ namespace Playcraft
         
         Rigidbody rb;
         MoveState state;
-        float savedSpeed;
+        float priorSpeed;
                         
         private void Awake()
         {
@@ -30,15 +30,13 @@ namespace Playcraft
             if (!enabled || state == null)
                 return;
         
-            var speed = state.disableSpeedControl ? savedSpeed : state.moveSpeed;
-            savedSpeed = speed;
+            var speed = state.disableSpeedControl ? priorSpeed : state.moveSpeed;            
+            var horizontal = transform.TransformVector(direction * speed);
+            var velocity = new Vector3(horizontal.x, rb.velocity.y, horizontal.z);
             
-            var velocity = direction * speed;
-            //Debug.Log(velocity + " " + direction + " " + speed);
-            var step = velocity * Time.deltaTime;
-            var nextPosition = transform.position + transform.TransformVector(step);
-            rb.MovePosition(nextPosition);
-            OnMove.Invoke(transform.TransformVector(velocity));
+            rb.velocity = velocity;
+            OnMove.Invoke(velocity);
+            priorSpeed = speed;
         }
     }
 }

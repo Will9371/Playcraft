@@ -41,7 +41,7 @@
               <e p="PrintToConsole.cs" t="Include" />
             </e>
             <e p="Input" t="Include">
-              <e p="InputMovement.cs" t="Include" />
+              <e p="CombineAsyncVectors.cs" t="Include" />
               <e p="InputRotation.cs" t="Include" />
               <e p="KeyboardInput.cs" t="Include" />
               <e p="MouseInput.cs" t="Include" />
@@ -69,6 +69,7 @@
             <e p="Transform" t="Include">
               <e p="FollowInstant.cs" t="Include" />
               <e p="FreeMovement.cs" t="Include" />
+              <e p="GetTargetDirection.cs" t="Include" />
               <e p="JumpToPosition.cs" t="Include" />
               <e p="MoveToTarget.cs" t="Include" />
               <e p="ScaleToTarget.cs" t="Include" />
@@ -82,7 +83,6 @@
             <e p="Vector" t="Include">
               <e p="ClampVector2.cs" t="Include" />
               <e p="CycleVector3.cs" t="Include" />
-              <e p="GetTargetDirection.cs" t="Include" />
               <e p="RelativeVector2.cs" t="Include" />
               <e p="SplitVector.cs" t="Include" />
             </e>

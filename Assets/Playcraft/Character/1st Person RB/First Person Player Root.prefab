@@ -216,7 +216,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 3
+  m_CollisionDetection: 2
 --- !u!114 &3872703113005314523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,8 +602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1772335105772393527}
-  jumpStrength: 6
-  jumpHorizontalDamper: 0.2
+  jumpStrength: 5
+  jumpHorizontalDamper: 1
   OnJump:
     m_PersistentCalls:
       m_Calls:
@@ -1149,7 +1149,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keys: 020100007700000012010000
+  - keys: 020100007300000012010000
     pressDown: 0
     press: 1
     pressUp: 0
@@ -1281,8 +1281,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 500
   field of view: 60
   orthographic: 0
   orthographic size: 5

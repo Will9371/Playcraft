@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1965778608358519453}
-  jumpStrength: 6
+  jumpStrength: 5
   jumpHorizontalDamper: 0.5
   OnJump:
     m_PersistentCalls:
@@ -672,12 +672,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4423799979692842087}
-        m_MethodName: SetState
-        m_Mode: 2
+        m_MethodName: SetRunning
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 5e01c050611c2284c9d78d30b5982920,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: MoveState, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -687,12 +686,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4423799979692842087}
-        m_MethodName: SetState
-        m_Mode: 2
+        m_MethodName: SetRunning
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: be0398aa60df4054c88391e45ae7bfc3,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: MoveState, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -744,8 +742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7916474db42b7fa42937c439ce54e2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingStateLogic: {fileID: 11400000, guid: 483a33537122b8e4386255ed5a722941, type: 2}
-  crouchingStateLogic: {fileID: 11400000, guid: 75ce7daa54239ba4aa6205ff1762111c,
+  standingStateLogic: {fileID: 11400000, guid: 6c95f18d5d63bd744a3d22ce4e6dad2d, type: 2}
+  crouchingStateLogic: {fileID: 11400000, guid: 53a9a352231d61a4687d937c6a52c6e3,
     type: 2}
   BroadcastState:
     m_PersistentCalls:

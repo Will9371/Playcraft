@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animations: {fileID: 11400000, guid: b12b962595e27c341bd71b0542c1c5d4, type: 2}
   disableSpeedControl: 0
-  moveSpeed: 20
+  moveSpeed: 5
