@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class FilterFloatByRange : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] Vector2 range;
-    [SerializeField] UnityEvent OnSuccess;
-    [SerializeField] UnityEvent OnFail;
-    
-    public void Input(float value)
+    public class FilterFloatByRange : MonoBehaviour
     {
-        if (value >= range.x && value <= range.y)
-            OnSuccess.Invoke();
-        else
-            OnFail.Invoke();
+        #pragma warning disable 0649
+        [SerializeField] Vector2 range;
+        [SerializeField] UnityEvent OnSuccess;
+        [SerializeField] UnityEvent OnFail;
+        #pragma warning restore 0649
+        
+        public void Input(float value)
+        {
+            if (value >= range.x && value <= range.y)
+                OnSuccess.Invoke();
+            else
+                OnFail.Invoke();
+        }
     }
 }

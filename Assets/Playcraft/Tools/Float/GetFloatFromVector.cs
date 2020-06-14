@@ -5,7 +5,7 @@ namespace Playcraft
 {
     public class GetFloatFromVector : MonoBehaviour
     {
-        [SerializeField] IOData[] bindings;
+        [SerializeField] IOData[] bindings = default;
 
         public void Input(Vector3 input)
         {
@@ -21,8 +21,10 @@ namespace Playcraft
         
         [Serializable] class IOData
         {
+            #pragma warning disable 0649
             public Axis inputAxis;
             public FloatEvent Output;
+            #pragma warning restore 0649
             
             public void Input(Vector3 input)
             {

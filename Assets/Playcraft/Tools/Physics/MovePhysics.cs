@@ -14,11 +14,16 @@ namespace Playcraft
         MoveState state;
         float priorSpeed;
                         
-        //private void Awake()
-        //{            
-        //    if (rb == null)
-        //        Debug.LogError("Attach a Rigidbody!");
-        //}
+        private void Awake()
+        {            
+            if (rb == null)
+            {
+                rb = GetComponent<Rigidbody>();
+                
+                if (rb == null)
+                    Debug.LogError("Attach or assign a Rigidbody to " + gameObject.name);
+            }
+        }
         
         public void Enable(bool enabled) { this.enabled = enabled; }
         public void SetState(MoveState state) { this.state = state; }

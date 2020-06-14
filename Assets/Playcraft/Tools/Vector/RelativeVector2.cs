@@ -4,9 +4,11 @@ namespace Playcraft
 {
     public class RelativeVector2 : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] Transform source;
         [SerializeField] Transform target;
         [SerializeField] Vector2Event OnOutput;
+        #pragma warning restore 0649
 
         public void Convert(Vector2 input)
         {

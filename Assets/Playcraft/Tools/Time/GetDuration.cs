@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 
-public class GetDuration : MonoBehaviour
+namespace Playcraft
 {
-    float startTime;
-    [SerializeField] FloatEvent Output;
+    public class GetDuration : MonoBehaviour
+    {
+        float startTime;
+        [SerializeField] FloatEvent Output = default;
 
-    public void Begin()
-    {
-        startTime = Time.time;
-    }
-    
-    public void End()
-    {
-        Output.Invoke(Time.time - startTime);
-        Begin();
+        public void Begin()
+        {
+            startTime = Time.time;
+        }
+        
+        public void End()
+        {
+            Output.Invoke(Time.time - startTime);
+            Begin();
+        }
     }
 }

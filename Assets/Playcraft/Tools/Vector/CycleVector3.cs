@@ -4,8 +4,11 @@ namespace Playcraft
 {
     public class CycleVector3 : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] Vector3[] values;
         [SerializeField] Vector3Event Output;
+        #pragma warning restore 0649   
+        
         int index;
         
         public void Cycle()

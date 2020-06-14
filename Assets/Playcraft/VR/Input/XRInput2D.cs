@@ -4,9 +4,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class XRInput2D : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] XRController controller;
     [SerializeField] Vector2Event OnActive;
     [SerializeField] bool alwaysActive;
+    #pragma warning restore 0649
     
     Vector2 value;
     

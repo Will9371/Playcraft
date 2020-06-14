@@ -29,9 +29,11 @@ namespace Playcraft
         
         [Serializable] class MouseClickInput
         {
+            #pragma warning disable 0649
             [SerializeField] MouseButton button;
             [SerializeField] PressType pressType;
             [SerializeField] UnityEvent Output;
+            #pragma warning restore 0649
                         
             public void Update()
             {

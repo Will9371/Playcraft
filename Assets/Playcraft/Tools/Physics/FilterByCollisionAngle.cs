@@ -4,10 +4,12 @@ namespace Playcraft
 {
     public class FilterByCollisionAngle : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] Vector3 referenceDirection = Vector3.up;
         [SerializeField] [Range(0f, 360f)] float maxAngle = 45f;
         [SerializeField] [Range(-1f, 1f)] float minDot = .5f;
         [SerializeField] CollisionEvent OnSuccess;
+        #pragma warning restore 0649
         
         private float priorMaxAngle;
         private float priorMinDot;

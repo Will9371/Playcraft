@@ -4,7 +4,7 @@ namespace Playcraft
 {
     public class JumpToPosition : MonoBehaviour
     {
-        [SerializeField] Transform[] locations;
+        [SerializeField] Transform[] locations = default;
         int index;
         
         public void CycleLocation()
