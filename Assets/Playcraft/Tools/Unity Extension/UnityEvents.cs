@@ -10,5 +10,6 @@ using UnityEngine.Events;
 [Serializable] public class StringEvent : UnityEvent<string> { }
 [Serializable] public class TransformEvent : UnityEvent<Transform> { }
 [Serializable] public class ColliderEvent : UnityEvent<Collider> { }
+[Serializable] public class CollisionEvent : UnityEvent<Collision> { }
 
 [Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }

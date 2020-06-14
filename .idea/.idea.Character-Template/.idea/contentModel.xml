@@ -60,8 +60,10 @@
               <e p="FindCollidersByTag.cs" t="Include" />
             </e>
             <e p="Physics" t="Include">
+              <e p="FilterByCollisionAngle.cs" t="Include" />
               <e p="JumpPhysics.cs" t="Include" />
               <e p="MovePhysics.cs" t="Include" />
+              <e p="RespondToTouch.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
               <e p="MouseStatics.cs" t="Include" />

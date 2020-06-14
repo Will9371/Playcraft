@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 1772335105772393527}
   - component: {fileID: 3872703113005314523}
   - component: {fileID: 4952012253901217936}
+  - component: {fileID: 952274423}
   m_Layer: 0
   m_Name: First Person Character
   m_TagString: Untagged
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 1
+  rb: {fileID: 1772335105772393527}
   OnMove:
     m_PersistentCalls:
       m_Calls:
@@ -246,6 +248,35 @@ MonoBehaviour:
   invert: 0
   clamp: 0
   range: {x: 0, y: 0}
+--- !u!114 &952274423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772335104449076467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvents: []
+  collisionEvents:
+  - touchType: 0
+    Output:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8303397518738010857}
+          m_MethodName: Input
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1772335104834997688
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,8 +578,8 @@ GameObject:
   - component: {fileID: 3872703112539111170}
   - component: {fileID: 291725131096293218}
   - component: {fileID: 3872703112539111175}
-  - component: {fileID: 3872703112539111193}
-  - component: {fileID: 3872703112539111174}
+  - component: {fileID: 8303397518738010857}
+  - component: {fileID: 93436690}
   m_Layer: 0
   m_Name: Jump System
   m_TagString: Untagged
@@ -664,20 +695,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!135 &3872703112539111193
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3872703112539111171}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0.2, z: 0}
---- !u!114 &3872703112539111174
+--- !u!114 &8303397518738010857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,12 +704,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3872703112539111171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd80cf0953fd3db48b412d6b5e5db38f, type: 3}
+  m_Script: {fileID: 11500000, guid: 20368a606726b714190cf9e666fae0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respondToTags:
-  - Floor
-  OnEnter:
+  referenceDirection: {x: 0, y: 1, z: 0}
+  maxAngle: 45.000008
+  minDot: 0.9238795
+  OnSuccess:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3872703112539111175}
@@ -705,9 +724,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnExit:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!54 &93436690
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872703112539111171}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4868197825395983460
 GameObject:
   m_ObjectHideFlags: 0

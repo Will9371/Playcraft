@@ -1108,26 +1108,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5053040950538688240, guid: c2a513059ce3ee848a6ff90969a6a141,
-        type: 3}
-      propertyPath: bindings.Array.data[0].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Playcraft.Vector3SO, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5053040950538688240, guid: c2a513059ce3ee848a6ff90969a6a141,
-        type: 3}
-      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Playcraft.Vector3SO, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5053040950538688240, guid: c2a513059ce3ee848a6ff90969a6a141,
-        type: 3}
-      propertyPath: bindings.Array.data[3].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Playcraft.Vector3SO, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5053040950538688240, guid: c2a513059ce3ee848a6ff90969a6a141,
-        type: 3}
-      propertyPath: bindings.Array.data[2].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Playcraft.Vector3SO, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5053040950538688241, guid: c2a513059ce3ee848a6ff90969a6a141,
         type: 3}
       propertyPath: m_LocalPosition.x

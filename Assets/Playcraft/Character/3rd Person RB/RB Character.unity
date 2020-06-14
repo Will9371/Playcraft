@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 535477154}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -793,11 +793,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 383362526210060272, guid: db21f41c1fc234f4a9dff66f951abd01,
-        type: 3}
-      propertyPath: actions.Array.data[0].percent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2916073864329382918, guid: db21f41c1fc234f4a9dff66f951abd01,
         type: 3}
       propertyPath: m_Name

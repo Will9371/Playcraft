@@ -7,20 +7,18 @@ namespace Playcraft
         public new bool enabled = true;
         
         #pragma warning disable 0649
+        [SerializeField] Rigidbody rb;
         [SerializeField] Vector3Event OnMove;
         #pragma warning restore 0649
         
-        Rigidbody rb;
         MoveState state;
         float priorSpeed;
                         
-        private void Awake()
-        {
-            rb = GetComponent<Rigidbody>();
-            
-            if (rb == null)
-                Debug.LogError("Attach a Rigidbody!");
-        }
+        //private void Awake()
+        //{            
+        //    if (rb == null)
+        //        Debug.LogError("Attach a Rigidbody!");
+        //}
         
         public void Enable(bool enabled) { this.enabled = enabled; }
         public void SetState(MoveState state) { this.state = state; }

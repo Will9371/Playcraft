@@ -356,11 +356,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 1
+  rb: {fileID: 1965778608358519453}
   OnMove:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9218176918057000686}
-        m_MethodName: SetVelocity
+      - m_Target: {fileID: 117538898934897613}
+        m_MethodName: AddMovement
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -59,5 +59,15 @@ namespace Playcraft
             if (cross.z > 0) angle = 360 - angle;
             return angle;
         }
+        
+        public static float AngleToDot(float angle)
+        {
+            return Mathf.Cos(Mathf.Deg2Rad * angle/2);
+        }
+        
+        public static float DotToAngle(float dot)
+        {
+            return Mathf.Acos(dot) * Mathf.Rad2Deg * 2f;
+        }
     }
 }

@@ -26,12 +26,6 @@ namespace Playcraft
                 Debug.LogError("Attach a Rigidbody!");
         }
         
-        // Remove -> Get horizontal velocity as needed
-        public void SetVelocity(Vector3 velocity)
-        {
-            //this.velocity = velocity;
-        }
-        
         public void Jump()
         {
             //Debug.Log("Jump method reached " + grounded);
@@ -39,17 +33,13 @@ namespace Playcraft
                 return;
         
             grounded = false;
-            
-            //var vertical = Vector3.up * jumpStrength;
-            //var horizontal = velocity * jumpHorizontalDamper;
-            //Debug.Log(vertical + " " + horizontal);
-            //rb.velocity = vertical + horizontal;
             rb.velocity += jumpStrength * Vector3.up;
             OnJump.Invoke();
         }
         
         public void Land()
         {
+            //Debug.Log("Landing...");
             grounded = true;
             OnLand.Invoke();
         }
