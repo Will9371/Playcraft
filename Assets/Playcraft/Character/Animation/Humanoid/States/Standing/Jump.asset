@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa37708c2ce3fbc43b6a337db51fdd9b, type: 3}
   m_Name: Jump
   m_EditorClassIdentifier: 
-  forward: {fileID: 7400000, guid: ad2c22b77c40de04dad71e2398bc28a0, type: 2}
-  turnLeft: {fileID: -739437337286607732, guid: 51dd2e4c869794f75a0df7d54b210214,
-    type: 3}
-  turnRight: {fileID: 3734171467291410243, guid: 51dd2e4c869794f75a0df7d54b210214,
-    type: 3}
+  forward: {fileID: 7400000, guid: 03a0909aa9670bf4999e2b004d76a036, type: 2}
+  turnLeft: {fileID: 7400000, guid: 03a0909aa9670bf4999e2b004d76a036, type: 2}
+  turnRight: {fileID: 7400000, guid: 03a0909aa9670bf4999e2b004d76a036, type: 2}
+  strafeLeft: {fileID: 7400000, guid: 03a0909aa9670bf4999e2b004d76a036, type: 2}
+  strafeRight: {fileID: 7400000, guid: 03a0909aa9670bf4999e2b004d76a036, type: 2}
+  backward: {fileID: 7400000, guid: 03a0909aa9670bf4999e2b004d76a036, type: 2}

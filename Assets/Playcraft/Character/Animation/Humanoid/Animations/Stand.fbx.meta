@@ -1427,7 +1427,7 @@ ModelImporter:
     second: l_hipProxy_geo
   - first:
       74: 7400000
-    second: Idle
+    second: Stand
   - first:
       74: 7400002
     second: Idle_Glance
@@ -1466,7 +1466,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Stand
       takeName: _87_a_U1_M_P_idle_Neutral__Fb_p0_No_1
       internalID: 0
       firstFrame: 445

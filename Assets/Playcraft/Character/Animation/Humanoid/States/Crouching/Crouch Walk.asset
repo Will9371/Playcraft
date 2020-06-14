@@ -18,3 +18,9 @@ MonoBehaviour:
     type: 3}
   turnRight: {fileID: 3591959375861464648, guid: d89ea37480b6d75458aa38843e9688dc,
     type: 3}
+  strafeLeft: {fileID: 6956144732926445036, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}
+  strafeRight: {fileID: 3591959375861464648, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}
+  backward: {fileID: -7180294270926287462, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}

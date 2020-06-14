@@ -1424,10 +1424,10 @@ ModelImporter:
     second: //RootNode
   - first:
       74: -591692918647068772
-    second: WalkRight
+    second: WalkTurnRight
   - first:
       74: -1684538353075855503
-    second: WalkLeft
+    second: WalkTurnLeft
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -1457,7 +1457,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WalkRight
+      name: WalkTurnRight
       takeName: _7_a_U1_M_P_WalkForwardTurnRight_NtrlMedium__Fb_Dia2m_No_0_PJ_1
       internalID: 0
       firstFrame: 90.6
@@ -1486,7 +1486,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: WalkLeft
+      name: WalkTurnLeft
       takeName: _7_a_U1_M_P_WalkForwardTurnRight_NtrlMedium__Fb_Dia2m_No_0_PJ_1
       internalID: 0
       firstFrame: 90.6

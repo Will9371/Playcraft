@@ -578,16 +578,16 @@ ModelImporter:
     second: Up_Teeth_Mesh
   - first:
       74: 4749916858553617154
-    second: CrouchIdle
+    second: Crouch
   - first:
       74: -7180294270926287462
-    second: CrouchWalk
+    second: CrouchWalkForward
   - first:
       74: 3591959375861464648
-    second: CrouchWalkRight
+    second: CrouchWalkTurnRight
   - first:
       74: 6956144732926445036
-    second: CrouchWalkLeft
+    second: CrouchWalkTurnLeft
   - first:
       74: 3228160940899143219
     second: CrouchTurnRight
@@ -632,7 +632,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: CrouchIdle
+      name: Crouch
       takeName: Take 001
       internalID: 0
       firstFrame: 264
@@ -661,7 +661,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: CrouchWalk
+      name: CrouchWalkForward
       takeName: Take 001
       internalID: 0
       firstFrame: 105
@@ -719,7 +719,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: CrouchWalkLeft
+      name: CrouchWalkTurnLeft
       takeName: Take 001
       internalID: 0
       firstFrame: 1542
@@ -806,7 +806,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: CrouchWalkRight
+      name: CrouchWalkTurnRight
       takeName: Take 001
       internalID: 0
       firstFrame: 1542

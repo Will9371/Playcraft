@@ -1436,10 +1436,10 @@ ModelImporter:
     second: //RootNode
   - first:
       74: -5286009312453217497
-    second: RunRight
+    second: RunTurnRight
   - first:
       74: 6148109966606671466
-    second: RunLeft
+    second: RunTurnLeft
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -1469,7 +1469,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RunRight
+      name: RunTurnRight
       takeName: _30_a_U1_M_P_RunForwardTurnRight_NtrlWide__Fb_Dia3m_No_0_PJ_4
       internalID: 0
       firstFrame: 98.5
@@ -1498,7 +1498,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: RunLeft
+      name: RunTurnLeft
       takeName: _30_a_U1_M_P_RunForwardTurnRight_NtrlWide__Fb_Dia3m_No_0_PJ_4
       internalID: 0
       firstFrame: 98.5

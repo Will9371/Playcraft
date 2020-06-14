@@ -15,7 +15,13 @@ namespace Playcraft
         string priorAnimation;
         
         MoveState state;
+        public void SetState(MoveState state) { this.state = state; }
+
         float rotation;
+        public void SetRotation(Vector3 value) { rotation = value.y; }
+
+        Vector3 moveDirection;
+        public void SetMoveDirection(Vector3 value) { moveDirection = value; }
         
         AnimatorStateInfo animatorInfo { get { return animator.GetCurrentAnimatorStateInfo(0); } }
         [Serializable] public class AnimatedStateEvent : UnityEvent<AnimatedMoveState, float> { }
@@ -28,20 +34,10 @@ namespace Playcraft
         {
             animator = GetComponent<Animator>();
         }
-        
-        public void SetState(MoveState state)
-        {
-            this.state = state;
-        }
-        
-        public void SetRotation(Vector3 rotation)
-        {
-            this.rotation = rotation.y;
-        }
-        
+                
         private void Update()
         {
-            animation = state.animations.GetClip(rotation).name;
+            animation = state.animations.GetClip(rotation, moveDirection).name;
           
             if (animation == priorAnimation)
                 return;
