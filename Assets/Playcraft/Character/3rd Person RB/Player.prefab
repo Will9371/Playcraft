@@ -1,32 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &383362527027385418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6951688404279292713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cbed984803bbd4449cc66a0a344017f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCrossFade: 0.2
-  OnBeginAnimation:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 383362526210060273}
-        m_MethodName: CheckState
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &383362525780384902
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,9 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - keys: 770000001101000005010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -92,9 +63,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 610000001401000001010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -111,9 +80,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 730000001201000002010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -130,9 +97,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 640000001301000003010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -292,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2916073863538771138}
   jumpStrength: 6
-  jumpHorizontalDamper: 0.2
+  jumpHorizontalDamper: 1
   OnJump:
     m_PersistentCalls:
       m_Calls:
@@ -390,9 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - keys: 20000000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -453,9 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - keys: 0401000071000000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -472,9 +433,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 0601000065000000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -773,6 +732,33 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.755, z: 0}
+--- !u!114 &383362527027385418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951688404279292713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbed984803bbd4449cc66a0a344017f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCrossFade: 0.2
+  OnBeginAnimation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 383362526210060273}
+        m_MethodName: CheckState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8313698758039540881
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,9 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - keys: 300100002f010000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -836,9 +820,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 63000000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:

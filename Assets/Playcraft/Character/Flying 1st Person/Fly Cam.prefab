@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 604444084182638546}
   - component: {fileID: 4399053689265857550}
   - component: {fileID: 4399053689265857551}
-  - component: {fileID: 2024374964}
+  - component: {fileID: 2240752668755696832}
   m_Layer: 0
   m_Name: Fly Cam
   m_TagString: MainCamera
@@ -83,9 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - keys: 7700000011010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -102,9 +100,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 6100000014010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -121,9 +117,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 7300000012010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -140,9 +134,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 6400000013010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -170,21 +162,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c475d5b6f50f54584be9933a14ad5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minClicktime: 0
-  OnMouseDrag:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 604444084182638546}
-        m_MethodName: Rotate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  clickInput:
+  - button: 1
+    pressType: 0
+    Output:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2240752668755696832}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - button: 1
+    pressType: 1
+    Output:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2240752668755696832}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   scrollSensitivity: 1
   OnMouseScroll:
     m_PersistentCalls:
@@ -200,23 +210,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  xDragSensitivity: 0.5
-  OnMouseDragX:
-    m_PersistentCalls:
-      m_Calls: []
-  yDragSensitivity: 0.5
-  OnMouseDragY:
-    m_PersistentCalls:
-      m_Calls: []
-  OnLeftClick:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRightClick:
-    m_PersistentCalls:
-      m_Calls: []
-  locked: 0
-  scrollLocked: 0
---- !u!114 &2024374964
+--- !u!114 &2240752668755696832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,15 +219,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4399053689265857547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d54ad851c8b42b418029f1ef973ebeb, type: 3}
+  m_Script: {fileID: 11500000, guid: f11bf417e28b18849940ae5a1d9ac426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invertX: 0
-  invertY: 1
-  clampX: 0
-  xRange: {x: 0, y: 0}
-  clampY: 0
-  yRange: {x: 0, y: 0}
+  xDragSensitivity: 0.3
+  yDragSensitivity: 0.3
+  OutputMouseDelta:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 604444084182638546}
+        m_MethodName: Rotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8856837606691077171
 GameObject:
   m_ObjectHideFlags: 0

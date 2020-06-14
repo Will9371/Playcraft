@@ -22,17 +22,29 @@ namespace Playcraft
     {
         #pragma warning disable 0649
         [SerializeField] KeyCode[] keys;
-        [SerializeField] bool pressDown, press, pressUp;
+        [SerializeField] PressType pressType;
         [SerializeField] UnityEvent OnActive;
         #pragma warning restore 0649
         
         public void Update()
         {
+            bool active = false;
+        
             foreach (var key in keys)
-                if (pressDown && Input.GetKeyDown(key) ||
-                    pressUp && Input.GetKeyUp(key) ||
-                    press && Input.GetKey(key))
-                    OnActive.Invoke();
+            {            
+                switch (pressType)
+                {
+                    case PressType.Down: active = Input.GetKeyDown(key); break;
+                    case PressType.Up: active = Input.GetKeyUp(key); break;
+                    case PressType.Continuous: active = Input.GetKey(key); break;
+                }
+                
+                if (active) break;
+            }
+            
+            if (active) OnActive.Invoke();
         }
     }
+    
+    public enum PressType { Down, Up, Continuous }
 }

@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f291ebbb9c3e14eaaec95a886817b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 1
+  rotationAxis: 1
   invert: 0
   clamp: 0
   range: {x: 0, y: 0}
@@ -354,9 +354,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194890740162744324}
-  - component: {fileID: 9088692938719476061}
   - component: {fileID: 1069001487668742335}
   - component: {fileID: 4952012253671196645}
+  - component: {fileID: 408056632}
+  - component: {fileID: 408056636}
   m_Layer: 0
   m_Name: Turn System
   m_TagString: Untagged
@@ -378,57 +379,6 @@ Transform:
   m_Father: {fileID: 5439602199166328543}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9088692938719476061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614458334175407967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bindings:
-  - keys: 7100000004010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1069001487668742335}
-          m_MethodName: AddRotation
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 9812adc5a67550b48a1631810e5ae3fa,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 6500000006010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1069001487668742335}
-          m_MethodName: AddRotation
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: c03a47bf7b3dfcc4b9bb35725e1f9f41,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1069001487668742335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,35 +417,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c475d5b6f50f54584be9933a14ad5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minClicktime: 0
-  OnMouseDrag:
-    m_PersistentCalls:
-      m_Calls: []
+  clickInput:
+  - button: 1
+    pressType: 0
+    Output:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 408056632}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - button: 1
+    pressType: 1
+    Output:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 408056632}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   scrollSensitivity: 1
   OnMouseScroll:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &408056632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614458334175407967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11bf417e28b18849940ae5a1d9ac426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   xDragSensitivity: 0.3
-  OnMouseDragX:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4952012253901217936}
-        m_MethodName: Rotate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   yDragSensitivity: 0.3
-  OnMouseDragY:
+  OutputMouseDelta:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4952012252342631461}
-        m_MethodName: Rotate
+      - m_Target: {fileID: 408056636}
+        m_MethodName: Input
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -505,14 +482,60 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnLeftClick:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRightClick:
-    m_PersistentCalls:
-      m_Calls: []
-  locked: 0
-  scrollLocked: 0
+      - m_Target: {fileID: 408056636}
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &408056636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614458334175407967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9810dcf2c9164d9bb39cfa1d5a025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindings:
+  - inputAxis: 0
+    Output:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4952012253901217936}
+          m_MethodName: Rotate
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - inputAxis: 1
+    Output:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4952012252342631461}
+          m_MethodName: Rotate
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3872703112539111171
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,9 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - keys: 20000000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -732,9 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - keys: 300100002f010000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -750,9 +769,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 63000000
-    pressDown: 1
-    press: 0
-    pressUp: 0
+    pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -1112,9 +1129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bindings:
   - keys: 050100007700000011010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -1131,9 +1146,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 010100006100000014010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -1150,9 +1163,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 020100007300000012010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -1169,9 +1180,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - keys: 030100006400000013010000
-    pressDown: 0
-    press: 1
-    pressUp: 0
+    pressType: 2
     OnActive:
       m_PersistentCalls:
         m_Calls:
@@ -1335,7 +1344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f291ebbb9c3e14eaaec95a886817b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 0
+  rotationAxis: 0
   invert: 1
   clamp: 1
   range: {x: -80, y: 80}

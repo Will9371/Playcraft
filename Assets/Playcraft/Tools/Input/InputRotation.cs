@@ -19,6 +19,7 @@ namespace Playcraft
         public void AddRotation(Vector3SO direction) { AddRotation(direction.value); }
         public void AddRotation(Vector3 rotation) { rotationAxis += rotation; }
         
+        
         private void Update()
         {
             rotationAxis = rotationAxis.normalized;

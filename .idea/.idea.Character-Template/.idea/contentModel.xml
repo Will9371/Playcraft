@@ -40,10 +40,15 @@
             <e p="Debug" t="Include">
               <e p="PrintToConsole.cs" t="Include" />
             </e>
+            <e p="Float" t="Include">
+              <e p="FilterFloatByRange.cs" t="Include" />
+              <e p="GetFloatFromVector.cs" t="Include" />
+            </e>
             <e p="Input" t="Include">
               <e p="CombineAsyncVectors.cs" t="Include" />
               <e p="InputRotation.cs" t="Include" />
               <e p="KeyboardInput.cs" t="Include" />
+              <e p="MouseDrag.cs" t="Include" />
               <e p="MouseInput.cs" t="Include" />
             </e>
             <e p="List" t="Include">
@@ -59,11 +64,13 @@
               <e p="MovePhysics.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
+              <e p="MouseStatics.cs" t="Include" />
               <e p="RangeMath.cs" t="Include" />
               <e p="StaticAxis.cs" t="Include" />
               <e p="VectorMath.cs" t="Include" />
             </e>
             <e p="Time" t="Include">
+              <e p="GetDuration.cs" t="Include" />
               <e p="ProgressEvent.cs" t="Include" />
             </e>
             <e p="Transform" t="Include">

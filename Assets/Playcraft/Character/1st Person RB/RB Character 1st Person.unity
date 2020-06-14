@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 740715561}
   m_Layer: 0
   m_Name: Steep Slope
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 1980932527}
   m_Layer: 0
   m_Name: Moderate Slope
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 2076877597}
   m_Layer: 0
   m_Name: Shallow Slope
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -737,7 +737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130291365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2543553, y: 2.508502, z: 5.6896143}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
