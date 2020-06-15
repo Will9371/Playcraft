@@ -8,12 +8,20 @@ public class GetTransformFromArray : MonoBehaviour
     
     int index;
     
-    public void Cycle()
+    public void Set(int value)
     {
-        index++;
+        index = value;
+        Output.Invoke(transforms[index]);
+    }
+    
+    public void Cycle(bool reverse)
+    {
+        index = reverse ? index - 1 : index + 1;
         
         if (index >= transforms.Length)
             index = 0;
+        else if (index < 0)
+            index = transforms.Length - 1;
         
         Output.Invoke(transforms[index]);
     }
