@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e76f150fdaf82b40ba3aeaa7adccc17, type: 3}
+  m_Name: Jump CrossFade Lookup
+  m_EditorClassIdentifier: 
+  overrideStates:
+  - state: {fileID: 11400000, guid: a584578609e812c4b9ae4adc2b6ac3f1, type: 2}
+    normalizedTime: 0.05
+  - state: {fileID: 11400000, guid: b12b962595e27c341bd71b0542c1c5d4, type: 2}
+    normalizedTime: 0.3

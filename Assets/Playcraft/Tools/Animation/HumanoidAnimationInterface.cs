@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,24 +9,25 @@ namespace Playcraft
     {
         Animator animator;    
         [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
+        [SerializeField] JumpCrossFadeLookup jumpFadeLookup = default;
 
-        new string animation;
-        string priorAnimation;
+        AnimationClip priorClip;
         
+        MoveState priorState;
         MoveState state;
-        public void SetState(MoveState state) { this.state = state; }
+        public void SetState(MoveState state) 
+        { 
+            priorState = this.state == null ? state : this.state;
+            this.state = state; 
+        }
 
         float rotation;
         public void SetRotation(Vector3 value) { rotation = value.y; }
 
         Vector3 moveDirection;
         public void SetMoveDirection(Vector3 value) { moveDirection = value; }
-        
-        AnimatorStateInfo animatorInfo { get { return animator.GetCurrentAnimatorStateInfo(0); } }
         [Serializable] public class AnimatedStateEvent : UnityEvent<AnimatedMoveState, float> { }
-        #pragma warning disable 0649
-        [SerializeField] AnimatedStateEvent OnBeginAnimation;
-        #pragma warning restore 0649
+        [SerializeField] AnimatedStateEvent OnBeginAnimation = default;
         
         
         private void Awake()
@@ -37,22 +37,24 @@ namespace Playcraft
                 
         private void Update()
         {
-            animation = state.animations.GetClip(rotation, moveDirection).name;
+            var clip = state.animations.GetClip(rotation, moveDirection);
           
-            if (animation == priorAnimation)
+            if (clip == priorClip)
                 return;
 
-            StartCoroutine(PlayRoutine());
+            StartCoroutine(PlayRoutine(clip));
         }
         
-        IEnumerator PlayRoutine()
-        {
-            animator.CrossFade(animation, defaultCrossFade, 0);
-            priorAnimation = animation;
+        IEnumerator PlayRoutine(AnimationClip clip)
+        {            
+            var fade = jumpFadeLookup.GetTime(priorState.animations, defaultCrossFade);
+            animator.CrossFade(clip.name, fade, 0);
+            priorClip = clip;
             
-            var fadeOutTime = animatorInfo.length * defaultCrossFade;
+            var length = clip.length * Mathf.Abs(animator.GetCurrentAnimatorStateInfo(0).speed);
+            var fadeOutTime = length * fade;
             yield return new WaitForSeconds(fadeOutTime);
-            var timeRemaining = animatorInfo.length - (animatorInfo.length * defaultCrossFade);
+            var timeRemaining = length - (length * fade);
             
             OnBeginAnimation.Invoke(state.animations, timeRemaining);
         }

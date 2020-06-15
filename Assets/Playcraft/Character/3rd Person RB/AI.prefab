@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultCrossFade: 0.3
+  jumpFadeLookup: {fileID: 11400000, guid: 933fb882a3cf443498897d13d88f2077, type: 2}
   OnBeginAnimation:
     m_PersistentCalls:
       m_Calls: []

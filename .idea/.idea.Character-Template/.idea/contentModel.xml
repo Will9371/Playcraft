@@ -31,6 +31,7 @@
             <e p="Animation" t="Include">
               <e p="AnimatedMoveState.cs" t="Include" />
               <e p="HumanoidAnimationInterface.cs" t="Include" />
+              <e p="JumpCrossFadeLookup.cs" t="Include" />
               <e p="RespondToAnimatedState.cs" t="Include" />
             </e>
             <e p="Data Containers" t="Include">
