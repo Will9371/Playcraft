@@ -52,22 +52,21 @@
               <e p="MouseDrag.cs" t="Include" />
               <e p="MouseInput.cs" t="Include" />
             </e>
-            <e p="List" t="Include">
-              <e p="MaintainTransformList.cs" t="Include" />
-            </e>
             <e p="Perception" t="Include">
               <e p="DistanceThreshold.cs" t="Include" />
               <e p="FindClosestTarget.cs" t="Include" />
               <e p="FindCollidersByTag.cs" t="Include" />
             </e>
             <e p="Physics" t="Include">
-              <e p="FilterByCollisionAngle.cs" t="Include" />
+              <e p="FilterByAngle.cs" t="Include" />
+              <e p="GetCollisionVector.cs" t="Include" />
               <e p="JumpPhysics.cs" t="Include" />
               <e p="MovePhysics.cs" t="Include" />
               <e p="RespondToTouch.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
               <e p="MouseStatics.cs" t="Include" />
+              <e p="RandomStatics.cs" t="Include" />
               <e p="RangeMath.cs" t="Include" />
               <e p="StaticAxis.cs" t="Include" />
               <e p="VectorMath.cs" t="Include" />
@@ -75,12 +74,15 @@
             <e p="Time" t="Include">
               <e p="GetDuration.cs" t="Include" />
               <e p="ProgressEvent.cs" t="Include" />
+              <e p="TimedEvent.cs" t="Include" />
             </e>
             <e p="Transform" t="Include">
               <e p="FollowInstant.cs" t="Include" />
               <e p="FreeMovement.cs" t="Include" />
               <e p="GetTargetDirection.cs" t="Include" />
+              <e p="GetTransformFromArray.cs" t="Include" />
               <e p="JumpToPosition.cs" t="Include" />
+              <e p="MaintainTransformList.cs" t="Include" />
               <e p="MoveToTarget.cs" t="Include" />
               <e p="ScaleToTarget.cs" t="Include" />
               <e p="SimpleRotation.cs" t="Include" />
@@ -89,6 +91,10 @@
             </e>
             <e p="Unity Extension" t="Include">
               <e p="UnityEvents.cs" t="Include" />
+            </e>
+            <e p="UnityEvent Relays" t="Include">
+              <e p="EmptyRelay.cs" t="Include" />
+              <e p="TransformRelay.cs" t="Include" />
             </e>
             <e p="Vector" t="Include">
               <e p="ClampVector2.cs" t="Include" />

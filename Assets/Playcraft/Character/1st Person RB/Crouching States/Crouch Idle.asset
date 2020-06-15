@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c22f7b83cde3a4588a3fb271495adf, type: 3}
+  m_Name: Crouch Idle
+  m_EditorClassIdentifier: 
+  animations: {fileID: 11400000, guid: 5e61b50b4dc3a3643b126acde7ae18aa, type: 2}
+  disableSpeedControl: 0
+  moveSpeed: 0

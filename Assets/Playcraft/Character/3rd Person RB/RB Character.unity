@@ -600,6 +600,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1891893364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 383362526210060274, guid: db21f41c1fc234f4a9dff66f951abd01,
+    type: 3}
+  m_PrefabInstance: {fileID: 383362525604739980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf035da10e142a345a48da4ad3e06220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1980932525
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +805,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1022233911, guid: db21f41c1fc234f4a9dff66f951abd01, type: 3}
+      propertyPath: OutputCollisionOnSuccess.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022233911, guid: db21f41c1fc234f4a9dff66f951abd01, type: 3}
+      propertyPath: OutputCollisionOnSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022233911, guid: db21f41c1fc234f4a9dff66f951abd01, type: 3}
+      propertyPath: OutputCollisionOnSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022233911, guid: db21f41c1fc234f4a9dff66f951abd01, type: 3}
+      propertyPath: OutputCollisionOnSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1891893364}
+    - target: {fileID: 1022233911, guid: db21f41c1fc234f4a9dff66f951abd01, type: 3}
+      propertyPath: OutputCollisionOnSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Land
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022233911, guid: db21f41c1fc234f4a9dff66f951abd01, type: 3}
+      propertyPath: OutputCollisionOnSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2916073864329382918, guid: db21f41c1fc234f4a9dff66f951abd01,
         type: 3}
       propertyPath: m_Name
@@ -2786,6 +2822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965778609719589465, guid: ebf8ef7322d179b47b229ff2f646cfc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2175093141208901341, guid: ebf8ef7322d179b47b229ff2f646cfc5,
         type: 3}

@@ -7,9 +7,11 @@ namespace Playcraft
 {
     public class HumanoidAnimationInterface : MonoBehaviour
     {
-        Animator animator;    
+        #pragma warning disable 0649
+        [SerializeField] Animator animator;    
         [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
-        [SerializeField] JumpCrossFadeLookup jumpFadeLookup = default;
+        [SerializeField] JumpCrossFadeLookup jumpFadeLookup;
+        #pragma warning restore 0649
 
         AnimationClip priorClip;
         
@@ -29,11 +31,6 @@ namespace Playcraft
         [Serializable] public class AnimatedStateEvent : UnityEvent<AnimatedMoveState, float> { }
         [SerializeField] AnimatedStateEvent OnBeginAnimation = default;
         
-        
-        private void Awake()
-        {
-            animator = GetComponent<Animator>();
-        }
                 
         private void Update()
         {

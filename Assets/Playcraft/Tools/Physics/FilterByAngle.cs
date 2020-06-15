@@ -2,13 +2,16 @@
 
 namespace Playcraft
 {
-    public class FilterByCollisionAngle : MonoBehaviour
+    public class FilterByAngle : MonoBehaviour
     {
         #pragma warning disable 0649
         [SerializeField] Vector3 referenceDirection = Vector3.up;
+        [Tooltip("Leave as null to use world space")]
+        [SerializeField] Transform referenceTransform;
         [SerializeField] [Range(0f, 360f)] float maxAngle = 45f;
         [SerializeField] [Range(-1f, 1f)] float minDot = .5f;
-        [SerializeField] CollisionEvent OnSuccess;
+        [SerializeField] CollisionEvent OutputCollisionOnSuccess;
+        [SerializeField] BoolEvent OutputResult;
         #pragma warning restore 0649
         
         private float priorMaxAngle;
@@ -27,12 +30,20 @@ namespace Playcraft
         
         public void Input(Collision other)
         {
-            //Debug.Log(other.contacts[0].normal);
-            var direction = other.contacts[0].normal;
-            var dot = Vector3.Dot(direction, referenceDirection);
+            if (Input(other.contacts[0].normal))
+                OutputCollisionOnSuccess.Invoke(other);
+        }
+        
+        public bool Input(Vector3 direction)
+        {
+            var localReferenceDirection = referenceDirection;
+            if (referenceTransform != null)
+                localReferenceDirection = referenceTransform.TransformVector(referenceDirection);
             
-            if (dot >= minDot)
-                OnSuccess.Invoke(other);
+            var dot = Vector3.Dot(direction, localReferenceDirection);
+            var result = dot >= minDot;
+            OutputResult.Invoke(result);
+            return result;
         }
     }
 }

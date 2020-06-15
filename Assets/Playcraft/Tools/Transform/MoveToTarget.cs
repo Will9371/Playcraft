@@ -4,20 +4,33 @@ namespace Playcraft
 {
     public class MoveToTarget : MonoBehaviour
     {
-        public Transform target;
-        public float speed;
+        [SerializeField] Transform target;
+        [SerializeField] bool outputContinuousOnArrive;
+        public void SetTarget(Transform value) { target = value; }
         
-        Vector3 targetVector { get { return target.position - transform.position; } }
-        Vector3 targetDirection { get { return targetVector.normalized; } }
-        Vector3 step { get { return targetDirection * speed * Time.deltaTime; } }
-        float targetDistance { get { return Vector3.Distance(target.position, transform.position); } }
+        [SerializeField] float speed;
+        public void SetSpeed(float value) { speed = value; }
+        
+        bool wasAtTarget;
 
         void Update()
-        {    
-            if (targetDistance > step.magnitude)
-                transform.Translate(step, Space.World);
-            else
-                transform.position = target.position;
+        {
+            if (!target) return;
+            
+            var targetDirection = (target.position - transform.position).normalized;
+            var step = targetDirection * speed * Time.deltaTime;
+            var targetDistance = Vector3.Distance(target.position, transform.position);
+            var atTarget = targetDistance <= step.magnitude;
+            
+            if (!atTarget) transform.Translate(step, Space.World);
+            else transform.position = target.position;
+            
+            if (atTarget && (!wasAtTarget || outputContinuousOnArrive))
+            {
+                var response = target.GetComponent<TransformRelay>();
+                if (response) response.Input(transform);
+            }
+            wasAtTarget = atTarget;
         }
     }
 }
