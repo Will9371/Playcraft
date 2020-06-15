@@ -2,9 +2,11 @@
 
 public class GetTransformFromArray : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] Transform[] transforms;
     [SerializeField] TransformEvent Output;
     [SerializeField] bool allowRepeat;
+    #pragma warning restore 0649
     
     int index;
     

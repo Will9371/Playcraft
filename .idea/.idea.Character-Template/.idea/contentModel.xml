@@ -62,6 +62,7 @@
               <e p="GetCollisionVector.cs" t="Include" />
               <e p="JumpPhysics.cs" t="Include" />
               <e p="MovePhysics.cs" t="Include" />
+              <e p="MovePositionRB.cs" t="Include" />
               <e p="RespondToTouch.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
@@ -84,6 +85,7 @@
               <e p="JumpToPosition.cs" t="Include" />
               <e p="MaintainTransformList.cs" t="Include" />
               <e p="MoveToTarget.cs" t="Include" />
+              <e p="MoveTransform.cs" t="Include" />
               <e p="ScaleToTarget.cs" t="Include" />
               <e p="SimpleRotation.cs" t="Include" />
               <e p="SingleAxisRotation.cs" t="Include" />
