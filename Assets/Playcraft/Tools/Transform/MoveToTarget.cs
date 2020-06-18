@@ -20,18 +20,16 @@ namespace Playcraft
             if (!target) return;
             
             var targetDirection = (target.position - transform.position).normalized;
-            //var velocity = targetDirection * speed;
             var step = targetDirection * speed * Time.deltaTime;
             var targetDistance = Vector3.Distance(target.position, transform.position);
             var atTarget = targetDistance <= step.magnitude;
             
             if (!atTarget) transform.Translate(step, Space.World);
-            if (atTarget) transform.position = target.position;
             
             if (atTarget && (!wasAtTarget || outputContinuousOnArrive))
             {
-                var response = target.GetComponent<TransformRelay>();
-                if (response) response.Input(transform);
+                var response = target.GetComponent<GameObjectRelay>();
+                if (response) response.Input(gameObject);
             }
             wasAtTarget = atTarget;
         }

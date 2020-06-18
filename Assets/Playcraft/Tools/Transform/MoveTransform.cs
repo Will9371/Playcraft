@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 
-public class MoveTransform : MonoBehaviour
+namespace Playcraft
 {
-    public void MoveStep(Vector3 input)
+    public class MoveTransform : MonoBehaviour
     {
-        transform.Translate(input * Time.deltaTime);
+        public void MoveStep(Vector3 input)
+        {
+            transform.Translate(input * Time.deltaTime);
+        }
     }
 }

@@ -9,6 +9,7 @@ using UnityEngine.Events;
 [Serializable] public class FloatEvent : UnityEvent<float> { }
 [Serializable] public class IntEvent : UnityEvent<int> { }
 [Serializable] public class StringEvent : UnityEvent<string> { }
+[Serializable] public class GameObjectEvent : UnityEvent<GameObject> { }
 [Serializable] public class TransformEvent : UnityEvent<Transform> { }
 [Serializable] public class ColliderEvent : UnityEvent<Collider> { }
 [Serializable] public class CollisionEvent : UnityEvent<Collision> { }

@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class TimedEvent : MonoBehaviour
+namespace Playcraft
 {
-    #pragma warning disable 0649
-    [SerializeField] float time;
-    [SerializeField] UnityEvent OnEnd;
-    #pragma warning restore 0649
-    
-    public void Begin()
+    public class TimedEvent : MonoBehaviour
     {
-        Invoke("End", time);
-    }
-    
-    private void End()
-    {
-        OnEnd.Invoke();
+        #pragma warning disable 0649
+        [SerializeField] float time;
+        [SerializeField] UnityEvent OnEnd;
+        #pragma warning restore 0649
+        
+        public void Begin() { Invoke(nameof(End), time); }
+
+        private void End() { OnEnd.Invoke(); }
+        
+        public void Cancel() { CancelInvoke(nameof(End)); }
+        
+        public void SetTime(float value) { time = value; }
     }
 }

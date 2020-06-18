@@ -527,9 +527,9 @@ GameObject:
   - component: {fileID: 1325498916}
   - component: {fileID: 1325498915}
   - component: {fileID: 1325498914}
+  - component: {fileID: 1325498918}
   - component: {fileID: 1325498913}
   - component: {fileID: 1325498917}
-  - component: {fileID: 1325498918}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
