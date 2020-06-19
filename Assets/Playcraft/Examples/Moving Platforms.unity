@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 76831768}
-  - component: {fileID: 76831770}
+  - component: {fileID: 76831769}
   m_Layer: 0
   m_Name: Waypoint (0)
   m_TagString: Untagged
@@ -152,7 +152,7 @@ Transform:
   m_Father: {fileID: 1454555334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &76831770
+--- !u!114 &76831769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,13 +161,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 76831767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fde0691e1ebf9048970de4f74cfb438, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7fefbe81c02c4fb48d068f8377ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1454555335}
+      - m_Target: {fileID: 1454555336}
         m_MethodName: Cycle
         m_Mode: 6
         m_Arguments:
@@ -175,8 +175,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Target Reached
-          m_BoolArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &152448454
 GameObject:
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 152448455}
-  - component: {fileID: 152448457}
+  - component: {fileID: 152448456}
   m_Layer: 0
   m_Name: Waypoint (1)
   m_TagString: Untagged
@@ -209,7 +209,7 @@ Transform:
   m_Father: {fileID: 1454555334}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &152448457
+--- !u!114 &152448456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,13 +218,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 152448454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fde0691e1ebf9048970de4f74cfb438, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7fefbe81c02c4fb48d068f8377ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1454555335}
+      - m_Target: {fileID: 1454555336}
         m_MethodName: Randomize
         m_Mode: 1
         m_Arguments:
@@ -232,7 +232,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Target Reached
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &389565215
@@ -399,7 +399,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1454555335}
-        m_MethodName: Set
+        m_MethodName: Input
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1139369583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fde0691e1ebf9048970de4f74cfb438, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7fefbe81c02c4fb48d068f8377ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Output:
@@ -444,14 +444,14 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Target Reached
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1325498914}
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: daf5862482818864dace3d69ef13aeab,
+          m_ObjectArgument: {fileID: 2100000, guid: 36a3063f7e139f147bec746ab430e6fc,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -468,7 +468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1315719946}
-  - component: {fileID: 1315719948}
+  - component: {fileID: 1315719947}
   m_Layer: 0
   m_Name: Waypoint (2)
   m_TagString: Untagged
@@ -490,7 +490,7 @@ Transform:
   m_Father: {fileID: 1454555334}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1315719948
+--- !u!114 &1315719947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -499,13 +499,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315719945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fde0691e1ebf9048970de4f74cfb438, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7fefbe81c02c4fb48d068f8377ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1454555335}
+      - m_Target: {fileID: 1454555336}
         m_MethodName: Cycle
         m_Mode: 6
         m_Arguments:
@@ -513,8 +513,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Target Reached
-          m_BoolArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1325498912
 GameObject:
@@ -625,7 +625,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 76831768}
   outputContinuousOnArrive: 0
-  speed: 5
+  speed: 20
+  stoppingDistance: 0
 --- !u!54 &1325498918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -651,6 +652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1454555334}
+  - component: {fileID: 1454555336}
   - component: {fileID: 1454555335}
   m_Layer: 0
   m_Name: Path
@@ -708,7 +710,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  allowRepeat: 0
+--- !u!114 &1454555336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454555333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e21e58f6576d494bbc11ee8e358491f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimum: 0
+  maximum: 3
+  Output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1454555335}
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  disableRepeat: 0
+  disableSpecific: 1
+  specificDisable: 1
 --- !u!1 &1905318954
 GameObject:
   m_ObjectHideFlags: 0

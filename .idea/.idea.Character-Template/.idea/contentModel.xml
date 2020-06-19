@@ -28,9 +28,10 @@
             </e>
           </e>
           <e p="Examples" t="Include">
-            <e p="Willowisp" t="Include">
+            <e p="Color Catcher" t="Include">
               <e p="Scripts" t="Include">
                 <e p="MatchAllColors.cs" t="Include" />
+                <e p="SetLevelData.cs" t="Include" />
                 <e p="SwapWispBlockerData.cs" t="Include" />
                 <e p="WispBlockerOverride.cs" t="Include" />
                 <e p="WispDetect.cs" t="Include" />
@@ -51,43 +52,8 @@
               <e p="JumpCrossFadeLookup.cs" t="Include" />
               <e p="RespondToAnimatedState.cs" t="Include" />
             </e>
-            <e p="Bool" t="Include">
-              <e p="SplitBool.cs" t="Include" />
-            </e>
-            <e p="Component Access" t="Include">
-              <e p="ColliderAccess.cs" t="Include" />
-              <e p="GameObjectAccess.cs" t="Include" />
-              <e p="JumpToPositionAccess.cs" t="Include" />
-              <e p="MoveToTargetAccess.cs" t="Include" />
-              <e p="TransformAccess.cs" t="Include" />
-            </e>
-            <e p="Data Containers" t="Include">
-              <e p="IntArray.cs" t="Include" />
-              <e p="TurnDirection.cs" t="Include" />
-              <e p="Vector3SO.cs" t="Include" />
-            </e>
             <e p="Debug" t="Include">
               <e p="PrintToConsole.cs" t="Include" />
-            </e>
-            <e p="Float" t="Include">
-              <e p="FilterFloatByRange.cs" t="Include" />
-              <e p="GetFloatFromVector.cs" t="Include" />
-            </e>
-            <e p="GameObject" t="Include">
-              <e p="GetGameObjectFromArray.cs" t="Include" />
-            </e>
-            <e p="Input" t="Include">
-              <e p="CombineAsyncVectors.cs" t="Include" />
-              <e p="InputRotation.cs" t="Include" />
-              <e p="KeyboardInput.cs" t="Include" />
-              <e p="MouseDrag.cs" t="Include" />
-              <e p="MouseInput.cs" t="Include" />
-            </e>
-            <e p="Int" t="Include">
-              <e p="Counter.cs" t="Include" />
-              <e p="GetIntFromRange.cs" t="Include" />
-              <e p="GetRandomInt.cs" t="Include" />
-              <e p="IntCondition.cs" t="Include" />
             </e>
             <e p="Perception" t="Include">
               <e p="DistanceThreshold.cs" t="Include" />
@@ -100,10 +66,6 @@
               <e p="JumpPhysics.cs" t="Include" />
               <e p="MovePhysics.cs" t="Include" />
               <e p="MovePositionRB.cs" t="Include" />
-              <e p="RespondToTouch.cs" t="Include" />
-            </e>
-            <e p="Scene" t="Include">
-              <e p="SceneController.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
               <e p="MouseStatics.cs" t="Include" />
@@ -112,48 +74,117 @@
               <e p="StaticAxis.cs" t="Include" />
               <e p="VectorMath.cs" t="Include" />
             </e>
-            <e p="Time" t="Include">
-              <e p="GetDuration.cs" t="Include" />
-              <e p="ProgressEvent.cs" t="Include" />
-              <e p="TimedEvent.cs" t="Include" />
-            </e>
-            <e p="Transform" t="Include">
-              <e p="FollowInstant.cs" t="Include" />
-              <e p="FreeMovement.cs" t="Include" />
-              <e p="GetTargetDirection.cs" t="Include" />
-              <e p="GetTransformFromArray.cs" t="Include" />
-              <e p="JumpToPosition.cs" t="Include" />
-              <e p="MaintainTransformList.cs" t="Include" />
-              <e p="MoveToTarget.cs" t="Include" />
-              <e p="MoveTransform.cs" t="Include" />
-              <e p="ScaleToTarget.cs" t="Include" />
-              <e p="SimpleRotation.cs" t="Include" />
-              <e p="SingleAxisRotation.cs" t="Include" />
-              <e p="SwapPositions.cs" t="Include" />
-              <e p="TwoAxisRotation.cs" t="Include" />
-            </e>
-            <e p="UI" t="Include">
-              <e p="DisplayText.cs" t="Include" />
+            <e p="Type Based" t="Include">
+              <e p="Bool" t="Include">
+                <e p="SplitBool.cs" t="Include" />
+              </e>
+              <e p="Float" t="Include">
+                <e p="FilterFloatByRange.cs" t="Include" />
+                <e p="GetFloatFromArray.cs" t="Include" />
+                <e p="GetFloatFromVector.cs" t="Include" />
+              </e>
+              <e p="GameObject" t="Include">
+                <e p="GetGameObjectFromArray.cs" t="Include" />
+              </e>
+              <e p="Int" t="Include">
+                <e p="Counter.cs" t="Include" />
+                <e p="GetIntByThreshold.cs" t="Include" />
+                <e p="GetIntFromRange.cs" t="Include" />
+                <e p="GetRandomInt.cs" t="Include" />
+                <e p="IntCondition.cs" t="Include" />
+              </e>
+              <e p="Transform" t="Include">
+                <e p="FollowInstant.cs" t="Include" />
+                <e p="FreeMovement.cs" t="Include" />
+                <e p="GetTargetDirection.cs" t="Include" />
+                <e p="GetTransformFromArray.cs" t="Include" />
+                <e p="JumpToPosition.cs" t="Include" />
+                <e p="MaintainTransformList.cs" t="Include" />
+                <e p="MoveToTarget.cs" t="Include" />
+                <e p="MoveTransform.cs" t="Include" />
+                <e p="ScaleToTarget.cs" t="Include" />
+                <e p="SimpleRotation.cs" t="Include" />
+                <e p="SingleAxisRotation.cs" t="Include" />
+                <e p="SwapPositions.cs" t="Include" />
+                <e p="TwoAxisRotation.cs" t="Include" />
+              </e>
+              <e p="Vector" t="Include">
+                <e p="ClampVector2.cs" t="Include" />
+                <e p="CycleVector3.cs" t="Include" />
+                <e p="RelativeVector2.cs" t="Include" />
+                <e p="SetRotation.cs" t="Include" />
+                <e p="SplitVector.cs" t="Include" />
+              </e>
             </e>
             <e p="Unity Extension" t="Include">
-              <e p="EnableEvent.cs" t="Include" />
               <e p="Lookup.cs" t="Include" />
               <e p="MonoSim.cs" t="Include" />
               <e p="Singleton.cs" t="Include" />
-              <e p="StartEvent.cs" t="Include" />
               <e p="UnityEvents.cs" t="Include" />
             </e>
-            <e p="UnityEvent Relays" t="Include">
-              <e p="EmptyRelay.cs" t="Include" />
-              <e p="GameObjectRelay.cs" t="Include" />
-              <e p="TransformRelay.cs" t="Include" />
+            <e p="Unity Hooks" t="Include">
+              <e p="Input" t="Include">
+                <e p="CombineAsyncVectors.cs" t="Include" />
+                <e p="InputRotation.cs" t="Include" />
+                <e p="KeyboardInput.cs" t="Include" />
+                <e p="MouseDrag.cs" t="Include" />
+                <e p="MouseInput.cs" t="Include" />
+              </e>
+              <e p="Monobehaviour" t="Include">
+                <e p="EnableEvent.cs" t="Include" />
+                <e p="RespondToTouch.cs" t="Include" />
+                <e p="StartEvent.cs" t="Include" />
+              </e>
+              <e p="Scene" t="Include">
+                <e p="ApplicationHelper.cs" t="Include" />
+                <e p="SceneController.cs" t="Include" />
+              </e>
+              <e p="Time" t="Include">
+                <e p="GetDuration.cs" t="Include" />
+                <e p="ProgressEvent.cs" t="Include" />
+                <e p="TimedEvent.cs" t="Include" />
+              </e>
+              <e p="UI" t="Include">
+                <e p="DisplayText.cs" t="Include" />
+              </e>
             </e>
-            <e p="Vector" t="Include">
-              <e p="ClampVector2.cs" t="Include" />
-              <e p="CycleVector3.cs" t="Include" />
-              <e p="RelativeVector2.cs" t="Include" />
-              <e p="SetRotation.cs" t="Include" />
-              <e p="SplitVector.cs" t="Include" />
+            <e p="UnityEvent Helpers" t="Include">
+              <e p="Component Access" t="Include">
+                <e p="ColliderAccess.cs" t="Include" />
+                <e p="GameObjectAccess.cs" t="Include" />
+                <e p="JumpToPositionAccess.cs" t="Include" />
+                <e p="MoveToTargetAccess.cs" t="Include" />
+                <e p="TransformAccess.cs" t="Include" />
+              </e>
+              <e p="Data Containers" t="Include">
+                <e p="IntArray.cs" t="Include" />
+                <e p="TurnDirection.cs" t="Include" />
+                <e p="Vector3SO.cs" t="Include" />
+              </e>
+              <e p="Observer" t="Include">
+                <e p="Access" t="Include">
+                  <e p="IntEventAccess.cs" t="Include" />
+                </e>
+                <e p="Invokers" t="Include">
+                  <e p="GameEvent.cs" t="Include" />
+                  <e p="IntGameEvent.cs" t="Include" />
+                  <e p="SimpleGameEvent.cs" t="Include" />
+                  <e p="Vector2GameEvent.cs" t="Include" />
+                  <e p="Vector3GameEvent.cs" t="Include" />
+                </e>
+                <e p="Listeners" t="Include">
+                  <e p="GameEventListener.cs" t="Include" />
+                  <e p="IntEventListener.cs" t="Include" />
+                  <e p="UnityEventListener.cs" t="Include" />
+                  <e p="Vector2EventListener.cs" t="Include" />
+                  <e p="Vector3EventListener.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Relays" t="Include">
+                <e p="EmptyRelay.cs" t="Include" />
+                <e p="GameObjectRelay.cs" t="Include" />
+                <e p="TransformRelay.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="VR" t="Include">

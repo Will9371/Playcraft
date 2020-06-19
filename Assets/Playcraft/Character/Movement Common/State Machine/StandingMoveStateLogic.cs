@@ -2,7 +2,7 @@
 
 namespace Playcraft
 {
-    [CreateAssetMenu(menuName = "Character/Move State Machine/Standing")]
+    [CreateAssetMenu(menuName = "Playcraft/Character/Move State Machine/Standing")]
     public class StandingMoveStateLogic : MoveStateLogic
     {
         #pragma warning disable 0649

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    [CreateAssetMenu(menuName = "Character/Jump CrossFade Lookup", fileName = "Jump CrossFade Lookup")]
+    [CreateAssetMenu(menuName = "Playcraft/Character/Jump CrossFade Lookup", fileName = "Jump CrossFade Lookup")]
     public class JumpCrossFadeLookup : ScriptableObject
     {
         [SerializeField] JumpCrossFadeOverride[] overrideStates = default;

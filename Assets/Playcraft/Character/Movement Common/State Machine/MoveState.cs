@@ -2,7 +2,7 @@
 
 namespace Playcraft
 {
-    [CreateAssetMenu(menuName = "Character/Move State Machine/State")]
+    [CreateAssetMenu(menuName = "Playcraft/Character/Move State Machine/State")]
     public class MoveState : ScriptableObject
     {
         public AnimatedMoveState animations;

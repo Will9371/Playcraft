@@ -2,7 +2,7 @@
 
 namespace Playcraft
 {
-    [CreateAssetMenu(menuName = "Character/Animation State")]
+    [CreateAssetMenu(menuName = "Playcraft/Character/Animation State")]
     public class AnimatedMoveState : ScriptableObject
     {
         public AnimationClip forward, turnLeft, turnRight, strafeLeft, strafeRight, backward;
