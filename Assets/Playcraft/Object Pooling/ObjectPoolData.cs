@@ -1,15 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace Playcraft.Pooling
 {
-    namespace Pooling
+    [Serializable] public class ObjectPoolData 
     {
-        [Serializable]
-        public class ObjectPoolData 
-        {
-            public GameObject prefab;
-            public int startSize;
-        }
+        public GameObject prefab;
+        public int startSize;
     }
 }

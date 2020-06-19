@@ -4,9 +4,11 @@ namespace Playcraft
 {
     public class IntCondition : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] Equality condition;
         [SerializeField] int value;
         [SerializeField] BoolEvent Output;
+        #pragma warning restore 0649
     
         public void Input(int query)
         {

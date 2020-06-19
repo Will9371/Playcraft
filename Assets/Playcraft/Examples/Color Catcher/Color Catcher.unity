@@ -239,6 +239,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5389524c4fb0a0646b0c6604433c227e, type: 3}
+--- !u!1 &114779450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6839140501297341339, guid: 94d6c4d6cef98f7438b131c90e041fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 672349554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &114779451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114779450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f287688619ef749982623c75d2bdf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &137334505
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,6 +894,41 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4843766119012797464, guid: 94d6c4d6cef98f7438b131c90e041fcf,
+        type: 3}
+      propertyPath: FloatArrayResponse.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843766119012797464, guid: 94d6c4d6cef98f7438b131c90e041fcf,
+        type: 3}
+      propertyPath: FloatArrayResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843766119012797464, guid: 94d6c4d6cef98f7438b131c90e041fcf,
+        type: 3}
+      propertyPath: FloatArrayResponse.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843766119012797464, guid: 94d6c4d6cef98f7438b131c90e041fcf,
+        type: 3}
+      propertyPath: FloatArrayResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 114779451}
+    - target: {fileID: 4843766119012797464, guid: 94d6c4d6cef98f7438b131c90e041fcf,
+        type: 3}
+      propertyPath: FloatArrayResponse.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Print
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843766119012797464, guid: 94d6c4d6cef98f7438b131c90e041fcf,
+        type: 3}
+      propertyPath: FloatArrayResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843766119012797464, guid: 94d6c4d6cef98f7438b131c90e041fcf,
+        type: 3}
+      propertyPath: FloatArrayResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Advance low validating...
+      objectReference: {fileID: 0}
     - target: {fileID: 4879403960037739857, guid: 94d6c4d6cef98f7438b131c90e041fcf,
         type: 3}
       propertyPath: target
@@ -1392,7 +1445,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 672349554}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 114779450}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c80a6d41384eee041881343f7ea0f432, type: 3}
@@ -1645,6 +1698,7 @@ GameObject:
   - component: {fileID: 1279662680}
   - component: {fileID: 1279662683}
   - component: {fileID: 1279662682}
+  - component: {fileID: 1279662684}
   m_Layer: 0
   m_Name: Initialize Object
   m_TagString: Untagged
@@ -1797,7 +1851,18 @@ MonoBehaviour:
   - 6
   Output:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1279662679}
+        m_MethodName: SetSpeedSelf
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1279662683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,6 +1882,32 @@ MonoBehaviour:
       - m_Target: {fileID: 1279662682}
         m_MethodName: Input
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1279662684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279662676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87c5ecd23791c644bdbc44d85aad54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAwake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1279662682}
+        m_MethodName: Input
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2332,7 +2423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   values:
-  - 3
+  - 10
   - 2
   - 1.5
   - 1
@@ -2740,7 +2831,7 @@ Transform:
   m_GameObject: {fileID: 1657472241}
   m_LocalRotation: {x: 0, y: 0, z: 0.3987491, w: 0.91706014}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1.5}
   m_Children:
   - {fileID: 750155940}
   - {fileID: 4898482197405354124}
@@ -2978,8 +3069,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1743056459}
-  - component: {fileID: 1743056460}
-  - component: {fileID: 1743056458}
   - component: {fileID: 1743056461}
   m_Layer: 0
   m_Name: Level System
@@ -2988,19 +3077,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1743056458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743056457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f932546f1df5c4f972cc6142344e53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invoker: {fileID: 11400000, guid: 1b7a03c6104f8f9428bc284fc87be235, type: 2}
 --- !u!4 &1743056459
 Transform:
   m_ObjectHideFlags: 0
@@ -3011,39 +3087,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1951766451}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1743056460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743056457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3b838117634454091444d8c5405db7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minimums: 00000000030000000f0000001e000000
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1743056458}
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  startOutputAtOne: 0
-  ignoreRepeat: 1
 --- !u!114 &1743056461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3056,9 +3104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1285e06b0b1ced548ab09f887dbec3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreRef: {fileID: 1743056460}
+  scoreRef: {fileID: 1951766449}
   spawnTimeRef: {fileID: 1501562443}
-  riseSpeedRef: {fileID: 1279662682}
+  riseSpeedRef:
+  - {fileID: 1279662682}
   fastSpeedRef:
   - {fileID: 1086451715}
   - {fileID: 59066970}
@@ -3070,9 +3119,9 @@ MonoBehaviour:
   - {fileID: 1309885527}
   levels:
   - minimumScore: 0
-    timeBetweenSpawns: 3
+    timeBetweenSpawns: 10
     riseSpeeds: 3
-    fastSpeeds: 5
+    fastSpeeds: 5.1
   - minimumScore: 3
     timeBetweenSpawns: 2
     riseSpeeds: 4
@@ -3085,7 +3134,7 @@ MonoBehaviour:
     timeBetweenSpawns: 1
     riseSpeeds: 6
     fastSpeeds: 8
-  validate: 1
+  validate: 0
 --- !u!1 &1768878242 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1746000096725792, guid: 5389524c4fb0a0646b0c6604433c227e,
@@ -3239,6 +3288,80 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1951766448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1951766451}
+  - component: {fileID: 1951766449}
+  - component: {fileID: 1951766450}
+  m_Layer: 0
+  m_Name: Scorekeeper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1951766449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951766448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3b838117634454091444d8c5405db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimums: 00000000030000000f0000001e000000
+  Output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1951766450}
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  startOutputAtOne: 0
+  ignoreRepeat: 1
+--- !u!114 &1951766450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951766448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f932546f1df5c4f972cc6142344e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invoker: {fileID: 11400000, guid: 1b7a03c6104f8f9428bc284fc87be235, type: 2}
+--- !u!4 &1951766451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951766448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1743056459}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971578626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,8 +3837,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1743056460}
-        m_MethodName: GetIndexByValue
+      - m_Target: {fileID: 1951766450}
+        m_MethodName: Input
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3741,8 +3864,8 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1743056460}
-        m_MethodName: GetIndexByValue
+      - m_Target: {fileID: 1951766450}
+        m_MethodName: Input
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

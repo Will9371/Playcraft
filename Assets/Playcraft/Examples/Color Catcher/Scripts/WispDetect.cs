@@ -5,7 +5,7 @@ namespace Playcraft.Examples.ColorCatcher
     public class WispDetect : MonoBehaviour
     {
         [HideInInspector] public WispType type;
-        [SerializeField] BoolEvent Output;
+        [SerializeField] BoolEvent Output = default;
 
         public void Input(Collider other)
         {

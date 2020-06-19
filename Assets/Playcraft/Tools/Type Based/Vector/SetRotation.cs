@@ -1,24 +1,28 @@
-﻿using Playcraft;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SetRotation : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] float[] rotations;
-    [SerializeField] Axis axis;
-    
-    public void Input(int index)
+    public class SetRotation : MonoBehaviour
     {
-        var x = transform.rotation.eulerAngles.x;
-        var y = transform.rotation.eulerAngles.y;
-        var z = transform.rotation.eulerAngles.z;
-        
-        switch (axis)
+        #pragma warning disable 0649
+        [SerializeField] float[] rotations;
+        [SerializeField] Axis axis;
+        #pragma warning restore 0649
+    
+        public void Input(int index)
         {
-            case Axis.X: x = rotations[index]; break;
-            case Axis.Y: y = rotations[index]; break;
-            case Axis.Z: z = rotations[index]; break;
-        }
+            var x = transform.rotation.eulerAngles.x;
+            var y = transform.rotation.eulerAngles.y;
+            var z = transform.rotation.eulerAngles.z;
         
-        transform.eulerAngles = new Vector3(x, y, z);
-    }
+            switch (axis)
+            {
+                case Axis.X: x = rotations[index]; break;
+                case Axis.Y: y = rotations[index]; break;
+                case Axis.Z: z = rotations[index]; break;
+            }
+        
+            transform.eulerAngles = new Vector3(x, y, z);
+        }
+    }   
 }

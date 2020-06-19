@@ -4,10 +4,12 @@ namespace Playcraft
 {
     public class GetIntByThreshold : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] int[] minimums;
         [SerializeField] IntEvent Output;
         [SerializeField] bool startOutputAtOne;
         [SerializeField] bool ignoreRepeat;
+        #pragma warning restore 0649
         
         int priorResult = -1;
         

@@ -5,12 +5,14 @@ namespace Playcraft.Examples.ColorCatcher
 {
     public class SetLevelData : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] GetIntByThreshold scoreRef;
         [SerializeField] GetFloatFromArray spawnTimeRef;
-        [SerializeField] GetFloatFromArray riseSpeedRef;
+        [SerializeField] GetFloatFromArray[] riseSpeedRef;
         [SerializeField] GetFloatFromArray[] fastSpeedRef;
         [SerializeField] LevelData[] levels;
         [SerializeField] bool validate;
+        #pragma warning restore 0649
     
         private void OnValidate()
         {
@@ -32,7 +34,9 @@ namespace Playcraft.Examples.ColorCatcher
         
             scoreRef.SetMinimums(scores);
             spawnTimeRef.SetValues(spawnTimes);
-            riseSpeedRef.SetValues(riseSpeeds);
+            
+            foreach (var speed in riseSpeedRef)
+                speed.SetValues(riseSpeeds);
         
             foreach (var speed in fastSpeedRef)
                 speed.SetValues(fastSpeeds);
@@ -40,10 +44,12 @@ namespace Playcraft.Examples.ColorCatcher
     
         [Serializable] struct LevelData
         {
+            #pragma warning disable 0649
             public int minimumScore;
             public float timeBetweenSpawns;
             public float riseSpeeds;
             public float fastSpeeds;
+            #pragma warning restore 0649
         }
     }
 }

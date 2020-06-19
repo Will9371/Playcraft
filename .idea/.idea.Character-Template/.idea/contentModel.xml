@@ -111,6 +111,8 @@
               <e p="Vector" t="Include">
                 <e p="ClampVector2.cs" t="Include" />
                 <e p="CycleVector3.cs" t="Include" />
+                <e p="MoveTowards.cs" t="Include" />
+                <e p="MoveTowardsDrift.cs" t="Include" />
                 <e p="RelativeVector2.cs" t="Include" />
                 <e p="SetRotation.cs" t="Include" />
                 <e p="SplitVector.cs" t="Include" />
@@ -131,6 +133,7 @@
                 <e p="MouseInput.cs" t="Include" />
               </e>
               <e p="Monobehaviour" t="Include">
+                <e p="AwakeEvent.cs" t="Include" />
                 <e p="EnableEvent.cs" t="Include" />
                 <e p="RespondToTouch.cs" t="Include" />
                 <e p="StartEvent.cs" t="Include" />
@@ -163,9 +166,13 @@
               </e>
               <e p="Observer" t="Include">
                 <e p="Access" t="Include">
+                  <e p="FloatArrayEventAccess.cs" t="Include" />
+                  <e p="FloatEventAccess.cs" t="Include" />
                   <e p="IntEventAccess.cs" t="Include" />
                 </e>
                 <e p="Invokers" t="Include">
+                  <e p="FloatArrayGameEvent.cs" t="Include" />
+                  <e p="FloatGameEvent.cs" t="Include" />
                   <e p="GameEvent.cs" t="Include" />
                   <e p="IntGameEvent.cs" t="Include" />
                   <e p="SimpleGameEvent.cs" t="Include" />
@@ -173,6 +180,8 @@
                   <e p="Vector3GameEvent.cs" t="Include" />
                 </e>
                 <e p="Listeners" t="Include">
+                  <e p="FloatArrayEventListener.cs" t="Include" />
+                  <e p="FloatEventListener.cs" t="Include" />
                   <e p="GameEventListener.cs" t="Include" />
                   <e p="IntEventListener.cs" t="Include" />
                   <e p="UnityEventListener.cs" t="Include" />

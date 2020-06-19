@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 1325498918}
   - component: {fileID: 1325498913}
   - component: {fileID: 1325498917}
+  - component: {fileID: 1325498919}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -624,9 +625,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 76831768}
-  outputContinuousOnArrive: 0
   speed: 20
-  stoppingDistance: 0
+  stoppingDistance: 0.1
+  Output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1325498919}
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &1325498918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -643,6 +657,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1325498919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325498912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8f82711adf9ca42ad31fdafc09106a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1454555333
 GameObject:
   m_ObjectHideFlags: 0

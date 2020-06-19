@@ -69,5 +69,123 @@ namespace Playcraft
         {
             return Mathf.Acos(dot) * Mathf.Rad2Deg * 2f;
         }
+        
+        public static float MoveTowards(float current, float target, float speed)
+        {
+            if (current == target) return current;
+            
+            var direction = current < target ? 1 : -1;
+            current += speed * direction * Time.deltaTime;
+            
+            var overshoot = direction == 1 ? current > target : current < target;
+            if (overshoot) current = target;
+            
+            return current;
+        }
+        
+        public static Vector3 MoveTowards(Vector3 current, Vector3 target, float speed)
+        {
+            var x = MoveTowards(current.x, target.x, speed);
+            var y = MoveTowards(current.y, target.y, speed);
+            var z = MoveTowards(current.z, target.z, speed);
+            return new Vector3(x, y, z);
+        }
+
+        public static Vector2 RotateTowards(Vector2 current, Vector2 target, float speed, float timeStep = 0f)
+        {
+            if (timeStep == 0f) timeStep = Time.deltaTime;
+
+            var currentAngle = AngleDirection(current);
+            var targetAngle = AngleDirection(target);
+
+            currentAngle = RotateToAngle(currentAngle, targetAngle, speed * timeStep);
+
+            var newDirection = DegreeToVector2(currentAngle);
+            newDirection.y *= -1f;	// HACK: check for error in DegreeToVector2
+            return newDirection;
+        }
+        
+        // In degrees
+        public static float RotateToAngle(float currentAngle, float desiredAngle, float speed)
+        {
+            // Exit early: no change requested
+            if(speed == 0) return currentAngle;
+
+            // Validate input
+            desiredAngle = MakeValidAngle(desiredAngle);
+
+            // Exit early: no change required
+            if(currentAngle == desiredAngle) return currentAngle;
+
+            // Special case: turning towards 0 degrees
+            if (desiredAngle == 0f) return RotateToZero(currentAngle, speed);
+
+            // Set direction of rotation
+            bool isClockwise = Mathf.DeltaAngle(currentAngle, desiredAngle) > 0;
+            if (!isClockwise) speed = -speed;
+
+            // Prevent rotation jitter by returning destination on overshoot
+            // Ignore edge case of crossing zero because it yields false positives on overshoot
+            bool isCrossingZero = (isClockwise && desiredAngle < currentAngle) || (!isClockwise && desiredAngle > currentAngle);
+            bool isOvershoot = (isClockwise && currentAngle + speed > desiredAngle) || (!isClockwise && currentAngle + speed < desiredAngle);
+            if (isOvershoot && !isCrossingZero) return desiredAngle;
+
+            float newAngle = MakeValidAngle(currentAngle + speed);
+            return newAngle;
+        }
+
+        private static float RotateToZero(float angle, float speed)
+        {
+            angle = angle % 360;
+
+            if (angle > 0 && angle <= 180)
+            {
+                angle -= speed;
+                if (angle < 0) angle = 0;
+            }
+            else if (angle > 180)
+            {
+                angle += speed;
+                if (angle > 360) angle = 0;
+            }
+            else if (angle < 0 && angle >= -180)
+            {
+                angle += speed;
+                if (angle > 0) angle = 0;
+            }
+            else if (angle < -180)
+            {
+                angle -= speed;
+                if (angle <= -360) angle = 0;
+            }
+
+            return angle;
+        }
+
+        public static float MakeValidAngle(float value)
+        {
+            value %= 360;
+            if(value < 0) value += 360;
+            return value;
+        }
+
+        public static float MakeValidAngle(float value, float max)
+        {
+            max = Mathf.Clamp(max, 0, 360);
+            if(IsBetween(value, 0, max)) return value;
+            
+            if(max != 360) Mathf.Clamp(value, 0, max);
+            else
+            {
+                value %= max;
+                if(value < 0) value += max;
+            }
+            return value;
+        }
+        
+        public static bool IsBetween<T>(this T value, T min, T max, bool minInclusive = true, bool maxInclusive = true) where T : System.IComparable<T>
+        {
+            return (minInclusive ? min.CompareTo(value) <= 0 : min.CompareTo(value) < 0) && (maxInclusive ? value.CompareTo(max) <= 0 : value.CompareTo(max) < 0);
+        }
     }
 }

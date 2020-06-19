@@ -3,10 +3,6 @@ using UnityEngine.Events;
 
 public class EnableEvent : MonoBehaviour
 {
-    [SerializeField] UnityEvent Output;
-
-    void OnEnable()
-    {
-        Output.Invoke();
-    }
+    [SerializeField] UnityEvent Output = default;
+    void OnEnable() { Output.Invoke(); }
 }

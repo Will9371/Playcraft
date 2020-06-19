@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace Playcraft
 {
@@ -6,9 +8,9 @@ namespace Playcraft
     {
         #pragma warning disable 0649
         [SerializeField] Transform target;
-        [SerializeField] bool outputContinuousOnArrive;        
         [SerializeField] float speed;
         [SerializeField] float stoppingDistance;
+        [SerializeField] MoveEvent Output;
         #pragma warning restore 0649
         
         bool wasAtTarget;
@@ -16,17 +18,17 @@ namespace Playcraft
         public void SetTarget(Transform value) { target = value; }
         public void SetSpeed(float value) { speed = value; }
 
+
         void Update()
         {
             if (!target) return;
             
-            var stepDistance = speed * Time.deltaTime;
             var targetDistance = Vector3.Distance(target.position, transform.position);
             var atTarget = targetDistance <= stoppingDistance;
             
-            transform.position = Vector3.MoveTowards(transform.position, target.position, stepDistance);
+            Output.Invoke(transform.position, target.position, speed);
             
-            if (atTarget && (!wasAtTarget || outputContinuousOnArrive))
+            if (atTarget && !wasAtTarget)
             {
                 var response = target.GetComponent<GameObjectRelay>();
                 if (response) response.Input(gameObject);
@@ -34,4 +36,6 @@ namespace Playcraft
             wasAtTarget = atTarget;
         }
     }
+    
+    [Serializable] public class MoveEvent : UnityEvent<Vector3, Vector3, float> { }
 }

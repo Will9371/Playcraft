@@ -24,7 +24,7 @@ namespace Playcraft
             }
         }
 
-        [SerializeField] bool dontDestroyOnLoad;
+        [SerializeField] bool dontDestroyOnLoad = false;
 
         private void Awake()
         {

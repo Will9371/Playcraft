@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayText : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] Text display;
-    
-    public void Display(string value) { display.text = value; }
-    public void Display(int value) { display.text = value.ToString(); }
+    public class DisplayText : MonoBehaviour
+    {
+        [SerializeField] Text display = default;
+        
+        public void Display(string value) { display.text = value; }
+        public void Display(int value) { display.text = value.ToString(); }
+    }
 }
