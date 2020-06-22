@@ -16,3 +16,5 @@ using UnityEngine.Events;
 [Serializable] public class CollisionEvent : UnityEvent<Collision> { }
 
 [Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }
+
+[Serializable] public class GameObjectBoolEvent : UnityEvent<GameObject, bool> { }

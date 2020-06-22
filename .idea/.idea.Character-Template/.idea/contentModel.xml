@@ -12,6 +12,13 @@
         </e>
         <e p="Playcraft" t="Include">
           <e p="Character" t="Include">
+            <e p="1st Person RB" t="Include">
+              <e p="Pickup" t="Include">
+                <e p="InteractWithCollider.cs" t="Include" />
+                <e p="LiftCondition.cs" t="Include" />
+                <e p="Pickup.cs" t="Include" />
+              </e>
+            </e>
             <e p="AI" t="Include">
               <e p="FaceTarget.cs" t="Include" />
               <e p="FollowForward.cs" t="Include" />
@@ -191,6 +198,7 @@
               </e>
               <e p="Relays" t="Include">
                 <e p="EmptyRelay.cs" t="Include" />
+                <e p="GameObjectBoolRelay.cs" t="Include" />
                 <e p="GameObjectRelay.cs" t="Include" />
                 <e p="TransformRelay.cs" t="Include" />
               </e>
