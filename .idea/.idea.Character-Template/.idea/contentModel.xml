@@ -37,7 +37,9 @@
           <e p="Examples" t="Include">
             <e p="Color Catcher" t="Include">
               <e p="Scripts" t="Include">
+                <e p="GetBlockerData.cs" t="Include" />
                 <e p="MatchAllColors.cs" t="Include" />
+                <e p="MoveBlocker.cs" t="Include" />
                 <e p="SetLevelData.cs" t="Include" />
                 <e p="SwapWispBlockerData.cs" t="Include" />
                 <e p="WispBlockerOverride.cs" t="Include" />
@@ -126,6 +128,7 @@
               </e>
             </e>
             <e p="Unity Extension" t="Include">
+              <e p="LerpSingleton.cs" t="Include" />
               <e p="Lookup.cs" t="Include" />
               <e p="MonoSim.cs" t="Include" />
               <e p="Singleton.cs" t="Include" />

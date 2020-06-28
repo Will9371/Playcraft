@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7839091756788150965}
   - component: {fileID: 7839091756788150967}
   - component: {fileID: 9107744701945268931}
+  - component: {fileID: 3150126130465031515}
   m_Layer: 0
   m_Name: Guard Base
   m_TagString: Untagged
@@ -180,6 +181,8 @@ MonoBehaviour:
   data:
     material: {fileID: 2100000, guid: 36a3063f7e139f147bec746ab430e6fc, type: 2}
     type: 0
+    index: 0
+    restPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &9107744701945268931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,3 +195,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56206b224e8a9fb4a9978030763b9879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3150126130465031515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839091756788150974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b96bd11c68291d4ea9035268c089c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 7839091756788150967}
+  controller: {fileID: 0}

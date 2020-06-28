@@ -3,51 +3,45 @@
 namespace Playcraft.Examples.ColorCatcher
 {
     public class SwapWispBlockerData : MonoBehaviour
-    {
-        public void Swap(IntArray data) { Swap(data.values[0], data.values[1]); }
-
-        public void Swap(int aIndex, int bIndex)
+    {        
+        [SerializeField] GetBlockerData data;
+        [SerializeField] float slideTime = 0.2f;
+        
+        int count => data.count;
+        public bool cooldown;        
+                        
+        
+        private void BeginSlide(int fromIndex, int toIndex)
         {
-            var a = transform.GetChild(aIndex).GetComponent<WispBlockerOverride>();
-            var b = transform.GetChild(bIndex).GetComponent<WispBlockerOverride>();
-            var aData = a.data;
-            var bData = b.data;
-            
-            a.Set(bData);
-            b.Set(aData);
+            if (cooldown) return;
+            var slider = data.GetSlider(fromIndex).move;
+            var destination = data.GetSlider(toIndex);
+            slider.BeginSlide(destination, slideTime);
+        }
+        
+        public void EndSlide()
+        {
+            cooldown = false;
+        }
+
+        public void Swap(IntArray data) { Swap(data.values[0], data.values[1]); }
+        private void Swap(int a, int b)
+        {
+            BeginSlide(a, b);
+            BeginSlide(b, a);
+            cooldown = true;
         }
         
         public void Cycle(bool clockwise)
-        {
-            var count = transform.childCount;
-            var components = new WispBlockerOverride[count];
-            var data = new BlockerData[count];
-            
+        {            
             for (int i = 0; i < count; i++)
             {
-                components[i] = transform.GetChild(i).GetComponent<WispBlockerOverride>();
-                data[i] = components[i].data;
+                var original = i;                
+                original = RangeMath.CycleInt(original, count - 1, !clockwise);
+                BeginSlide(original, i);
             }
             
-            for (int i = 0; i < count; i++)
-            {
-                var from = i;
-                
-                if (clockwise)
-                {
-                    from--;
-                    if (from < 0) 
-                        from = count - 1;
-                }
-                else
-                {
-                    from++;
-                    if (from >= count)
-                        from = 0;
-                }
-                
-                components[i].Set(data[from]);
-            }
+            cooldown = true;
         }
     }
 }

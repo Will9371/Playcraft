@@ -8,22 +8,25 @@ namespace Playcraft.Examples.ColorCatcher
         
         Renderer rend;
         WispDetect detect;
+        public MoveBlocker move { get; private set; }
         
         private void Awake()
         {
             rend = GetComponent<Renderer>();
             detect = GetComponent<WispDetect>();
+            move = GetComponent<MoveBlocker>();
             
-            Set();
+            data.restPosition = transform.position;
+            Reset();
         }
         
         public void Set(BlockerData value)
         {
-            data = value;
-            Set();
+            rend.material = value.material;
+            detect.type = value.type;
         }
         
-        public void Set()
+        public void Reset()
         {
             rend.material = data.material;
             detect.type = data.type;

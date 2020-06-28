@@ -17,5 +17,7 @@ namespace Playcraft.Examples.ColorCatcher
     {
         public Material material;
         public WispType type;
+        public int index;
+        public Vector3 restPosition;
     }  
 }

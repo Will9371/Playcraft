@@ -11,12 +11,14 @@ namespace Playcraft
             return value;
         }
         
-        public static int CycleInt(int value, int max)
+        public static int CycleInt(int value, int max, bool clockwise = true)
         {
-            value++;
+            value = clockwise ? value + 1 : value - 1;
             
-            if (value >= max)
+            if (value > max)
                 value = 0;
+            else if (value < 0)
+                value = max;
             
             return value;
         }
