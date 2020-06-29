@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+// REFACTOR: 3rd person character (and AI) to eliminate reliance on MoveState
+// following example in 1st person character, then remove variable from this class
 namespace Playcraft
 {
     public class MovePhysics : MonoBehaviour
@@ -11,8 +13,13 @@ namespace Playcraft
         [SerializeField] Vector3Event OnMove;
         #pragma warning restore 0649
         
-        MoveState state;
+        [SerializeField] MoveState state;
+        float speed;
         float priorSpeed;
+        
+        [SerializeField] float baseSpeed;
+        float speedMultiplier = 1f;
+        public void SetSpeedMultiplier(float value) { speedMultiplier = value; }
                         
         private void Awake()
         {            
@@ -30,10 +37,13 @@ namespace Playcraft
         
         public void Move(Vector3 direction)
         {
-            if (!enabled || state == null)
-                return;
+            if (!enabled) return;
         
-            var speed = state.disableSpeedControl ? priorSpeed : state.moveSpeed;            
+            if (state != null)
+                speed = state.disableSpeedControl ? priorSpeed : state.moveSpeed; 
+            else
+                speed = baseSpeed * speedMultiplier;
+                  
             var horizontal = transform.TransformVector(direction * speed);
             var velocity = new Vector3(horizontal.x, rb.velocity.y, horizontal.z);
             

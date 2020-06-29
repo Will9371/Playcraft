@@ -18,6 +18,10 @@
                 <e p="LiftCondition.cs" t="Include" />
                 <e p="Pickup.cs" t="Include" />
               </e>
+              <e p="Swim" t="Include">
+                <e p="WaterInteract.cs" t="Include" />
+                <e p="WaterTag.cs" t="Include" />
+              </e>
             </e>
             <e p="AI" t="Include">
               <e p="FaceTarget.cs" t="Include" />
@@ -85,7 +89,9 @@
             </e>
             <e p="Type Based" t="Include">
               <e p="Bool" t="Include">
+                <e p="MultiCondition.cs" t="Include" />
                 <e p="SplitBool.cs" t="Include" />
+                <e p="ToggleState.cs" t="Include" />
               </e>
               <e p="Float" t="Include">
                 <e p="FilterFloatByRange.cs" t="Include" />
@@ -171,6 +177,7 @@
               </e>
               <e p="Data Containers" t="Include">
                 <e p="IntArray.cs" t="Include" />
+                <e p="TagSO.cs" t="Include" />
                 <e p="TurnDirection.cs" t="Include" />
                 <e p="Vector3SO.cs" t="Include" />
               </e>
@@ -179,6 +186,8 @@
                   <e p="FloatArrayEventAccess.cs" t="Include" />
                   <e p="FloatEventAccess.cs" t="Include" />
                   <e p="IntEventAccess.cs" t="Include" />
+                  <e p="SimpleEventAccess.cs" t="Include" />
+                  <e p="StateEventAccess.cs" t="Include" />
                 </e>
                 <e p="Invokers" t="Include">
                   <e p="FloatArrayGameEvent.cs" t="Include" />
@@ -186,6 +195,7 @@
                   <e p="GameEvent.cs" t="Include" />
                   <e p="IntGameEvent.cs" t="Include" />
                   <e p="SimpleGameEvent.cs" t="Include" />
+                  <e p="StateGameEvent.cs" t="Include" />
                   <e p="Vector2GameEvent.cs" t="Include" />
                   <e p="Vector3GameEvent.cs" t="Include" />
                 </e>
@@ -194,7 +204,8 @@
                   <e p="FloatEventListener.cs" t="Include" />
                   <e p="GameEventListener.cs" t="Include" />
                   <e p="IntEventListener.cs" t="Include" />
-                  <e p="UnityEventListener.cs" t="Include" />
+                  <e p="SimpleEventListener.cs" t="Include" />
+                  <e p="StateEventListener.cs" t="Include" />
                   <e p="Vector2EventListener.cs" t="Include" />
                   <e p="Vector3EventListener.cs" t="Include" />
                 </e>

@@ -5,6 +5,6 @@ namespace Playcraft
     public class FloatEventAccess : MonoBehaviour
     {
         [SerializeField] FloatGameEvent invoker = default;
-        public void Input(int value) { invoker.Raise(value); }
+        public void Input(float value) { invoker.Raise(value); }
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Playcraft
 {
-    [CreateAssetMenu(fileName = "Game Event", menuName = "Playcraft/Events/Float")]
-    public class FloatGameEvent : GameEvent
+    [CreateAssetMenu(fileName = "Game Event", menuName = "Playcraft/Events/Tag")]
+    public class StateGameEvent : GameEvent
     {
-        public void Raise(float value)
+        public void Raise(TagSO value)
         {
             for (int i = listeners.Count - 1; i >= 0; i--)
                 listeners[i].OnEventRaised(value);
