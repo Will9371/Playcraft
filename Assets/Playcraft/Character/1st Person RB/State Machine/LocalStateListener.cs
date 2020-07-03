@@ -1,34 +1,39 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LocalStateListener : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] LocalStateHub stateHub;
-    [SerializeField] StateCondition[] conditions;
-    
-    private void OnEnable()
+    public class LocalStateListener : MonoBehaviour
     {
-        stateHub.OnStateEnter += RespondToState;
-    }
-    
-    private void OnDisable()
-    {
-        stateHub.OnStateEnter -= RespondToState;
-    }
+        #pragma warning disable 0649
+        [SerializeField] LocalStateHub stateHub;
+        [SerializeField] StateCondition[] conditions;
+        #pragma warning restore 0649
         
-    public void RespondToState(TagSO value) 
-    {            
-        foreach (var item in conditions)
-            if (item.state == value)
-                item.OnEnter.Invoke();
-    }
+        private void OnEnable()
+        {
+            stateHub.OnStateEnter += RespondToState;
+        }
+        
+        private void OnDisable()
+        {
+            stateHub.OnStateEnter -= RespondToState;
+        }
+            
+        public void RespondToState(TagSO value) 
+        {            
+            foreach (var item in conditions)
+                if (item.state == value)
+                    item.OnEnter.Invoke();
+        }
 
-    [Serializable] struct StateCondition
-    {
-        public TagSO state;
-        public UnityEvent OnEnter;
+        [Serializable] struct StateCondition
+        {
+            #pragma warning disable 0649
+            public TagSO state;
+            public UnityEvent OnEnter;
+            #pragma warning restore 0649
+        }
     }
 }

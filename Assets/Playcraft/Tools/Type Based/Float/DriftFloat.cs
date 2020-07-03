@@ -1,18 +1,22 @@
-﻿using Playcraft;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DriftFloat : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] float speed = 3f;
-    [SerializeField] FloatEvent Output;
-
-    public float value;
-    public float desiredValue;
-    public void SetDesiredValue(float value) { desiredValue = value; }
-
-    private void Update()
+    public class DriftFloat : MonoBehaviour
     {
-        value = VectorMath.MoveTowards(value, desiredValue, speed);
-        Output.Invoke(value);
+        #pragma warning disable 0649
+        [SerializeField] float speed = 3f;
+        [SerializeField] FloatEvent Output;
+        #pragma warning restore 0649
+
+        public float value;
+        public float desiredValue;
+        public void SetDesiredValue(float value) { desiredValue = value; }
+
+        private void Update()
+        {
+            value = VectorMath.MoveTowards(value, desiredValue, speed);
+            Output.Invoke(value);
+        }
     }
 }

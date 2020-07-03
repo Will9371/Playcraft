@@ -6,8 +6,10 @@ namespace Playcraft
 {
     public class StateEventListener : GameEventListener
     {
+        #pragma warning disable 0649
         [SerializeField] bool debug;
         [SerializeField] StateCondition[] conditions;
+        #pragma warning restore 0649
         
         public override void OnEventRaised(TagSO value) 
         {
@@ -22,7 +24,9 @@ namespace Playcraft
     
     [Serializable] struct StateCondition
     {
+        #pragma warning disable 0649
         public TagSO state;
         public UnityEvent OnEnter;
+        #pragma warning restore 0649
     }
 }

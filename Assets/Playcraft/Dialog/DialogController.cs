@@ -7,10 +7,12 @@ namespace Playcraft
 {
     public class DialogController : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] Text narrative;
         [SerializeField] ResponseOption[] responses;
         [SerializeField] DialogNode node;
         [SerializeField] UnityEvent OnDialogEnd;
+        #pragma warning restore 0649
         
         private void Start()
         {
@@ -44,8 +46,10 @@ namespace Playcraft
         
         [Serializable] struct ResponseOption
         {
+            #pragma warning disable 0649
             public GameObject button;
             public Text text;
+            #pragma warning restore 0649
         }
     }
 }

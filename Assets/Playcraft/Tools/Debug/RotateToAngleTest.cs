@@ -1,19 +1,23 @@
-﻿using Playcraft;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class RotateToAngleTest : MonoBehaviour
+namespace Playcraft.Testing
 {
-    [SerializeField] float angle;
-    [SerializeField] float desiredAngle; 
-    [SerializeField] float turnSpeed = 30f;
-    [SerializeField] float timeStep = .01f;  
-    [SerializeField] bool tick;
-
-    private void OnValidate()
+    public class RotateToAngleTest : MonoBehaviour
     {
-        if (!tick) return;
-        
-        angle = VectorMath.RotateToAngle(angle, desiredAngle, turnSpeed * timeStep);
-        tick = false;
+        #pragma warning disable 0649
+        [SerializeField] float angle;
+        [SerializeField] float desiredAngle; 
+        [SerializeField] float turnSpeed = 30f;
+        [SerializeField] float timeStep = .01f;  
+        [SerializeField] bool tick;
+        #pragma warning restore 0649
+
+        private void OnValidate()
+        {
+            if (!tick) return;
+            
+            angle = VectorMath.RotateToAngle(angle, desiredAngle, turnSpeed * timeStep);
+            tick = false;
+        }
     }
 }

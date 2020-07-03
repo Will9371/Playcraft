@@ -4,13 +4,14 @@ namespace Playcraft
 {
     public class LiftCondition : MonoBehaviour
     {    
+        #pragma warning disable 0649
         [SerializeField] ColliderEvent OnGrab;
         [SerializeField] ColliderEvent OnDrop;
+        #pragma warning restore 0649
         
         bool keyPressed;    
         Collider touchedObject;
 
-        // For example: access pickup directly rather than working through UnityEvents
         public void ReceiveInput(bool isPressed)
         {
             keyPressed = isPressed;

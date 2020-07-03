@@ -4,8 +4,10 @@ namespace Playcraft.Examples.ColorCatcher
 {
     public class SwapWispBlockerData : MonoBehaviour
     {        
+        #pragma warning disable 0649
         [SerializeField] GetBlockerData data;
         [SerializeField] float slideTime = 0.2f;
+        #pragma warning restore 0649
         
         int count => data.count;
         public bool cooldown;        

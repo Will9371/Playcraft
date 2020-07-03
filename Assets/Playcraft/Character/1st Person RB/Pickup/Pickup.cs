@@ -4,7 +4,7 @@ namespace Playcraft
 {
     public class Pickup : MonoBehaviour
     {
-        [SerializeField] Rigidbody rb;
+        [SerializeField] Rigidbody rb = default;
         Transform objectToFollow;
         
         public void Input(GameObject source, bool isPickingUp)

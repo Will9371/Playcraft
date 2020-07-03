@@ -30,13 +30,6 @@
             <e p="AI" t="Include">
               <e p="FaceTarget.cs" t="Include" />
               <e p="FollowForward.cs" t="Include" />
-              <e p="Navigation" t="Include">
-                <e p="AvoidObstacles.cs" t="Include" />
-                <e p="GetSteeringDirection.cs" t="Include" />
-                <e p="KinematicBounce.cs" t="Include" />
-                <e p="NavAgentControl.cs" t="Include" />
-                <e p="NavigationDebugger.cs" t="Include" />
-              </e>
               <e p="RangeCheck.cs" t="Include" />
             </e>
             <e p="Movement Common" t="Include">
@@ -47,6 +40,13 @@
                 <e p="MoveStateLogic.cs" t="Include" />
                 <e p="StandingMoveStateLogic.cs" t="Include" />
               </e>
+            </e>
+            <e p="Navigation" t="Include">
+              <e p="AvoidObstacles.cs" t="Include" />
+              <e p="GetSteeringDirection.cs" t="Include" />
+              <e p="NavAgentControl.cs" t="Include" />
+              <e p="NavigationDebugger.cs" t="Include" />
+              <e p="OffsetDirection.cs" t="Include" />
             </e>
           </e>
           <e p="Dialog" t="Include">
@@ -148,6 +148,7 @@
                 <e p="TwoAxisRotation.cs" t="Include" />
               </e>
               <e p="Vector" t="Include">
+                <e p="BounceDirection.cs" t="Include" />
                 <e p="ClampVector2.cs" t="Include" />
                 <e p="CycleVector3.cs" t="Include" />
                 <e p="DriftDirection.cs" t="Include" />
@@ -156,7 +157,6 @@
                 <e p="GetTargetDirection.cs" t="Include" />
                 <e p="MoveTowards.cs" t="Include" />
                 <e p="MoveTowardsDrift.cs" t="Include" />
-                <e p="OffsetDirection.cs" t="Include" />
                 <e p="RelativeVector2.cs" t="Include" />
                 <e p="SetRotation.cs" t="Include" />
                 <e p="SplitVector.cs" t="Include" />

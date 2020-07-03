@@ -1,19 +1,23 @@
-﻿using Playcraft;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class RotateTowardsTest : MonoBehaviour
+namespace Playcraft.Testing
 {
-    [SerializeField] Vector2 direction;
-    [SerializeField] Vector2 desiredDirection;
-    [SerializeField] float turnSpeed;
-    [SerializeField] float timeStep = .01f;
-    [SerializeField] bool tick;
-
-    private void OnValidate()
+    public class RotateTowardsTest : MonoBehaviour
     {
-        if (!tick) return;
-        
-        direction = VectorMath.RotateTowards(direction, desiredDirection, turnSpeed, timeStep);
-        tick = false;
+        #pragma warning disable 0649
+        [SerializeField] Vector2 direction;
+        [SerializeField] Vector2 desiredDirection;
+        [SerializeField] float turnSpeed;
+        [SerializeField] float timeStep = .01f;
+        [SerializeField] bool tick;
+        #pragma warning restore 0649
+
+        private void OnValidate()
+        {
+            if (!tick) return;
+            
+            direction = VectorMath.RotateTowards(direction, desiredDirection, turnSpeed, timeStep);
+            tick = false;
+        }
     }
 }

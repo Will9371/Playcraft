@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-public class FlattenVector : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] Vector3Event Output;
-
-    public void Input(Vector3 value)
+    public class FlattenVector : MonoBehaviour
     {
-        value = new Vector3(value.x, 0f, value.z);
-        Output.Invoke(value.normalized);
+        [SerializeField] Vector3Event Output = default;
+
+        public void Input(Vector3 value)
+        {
+            value = new Vector3(value.x, 0f, value.z);
+            Output.Invoke(value.normalized);
+        }
     }
 }

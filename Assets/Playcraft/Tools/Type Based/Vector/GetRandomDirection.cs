@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 
-public class GetRandomDirection : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] Vector3Event Output;
-    [SerializeField] bool flatten;
-
-    public void Input()
+    public class GetRandomDirection : MonoBehaviour
     {
-        var direction = Random.insideUnitSphere;
-        if (flatten) direction.y = 0;
-        direction = direction.normalized;
-        Output.Invoke(direction);
+        #pragma warning disable 0649
+        [SerializeField] Vector3Event Output;
+        [SerializeField] bool flatten;
+        #pragma warning restore 0649
+
+        public void Input()
+        {
+            var direction = Random.insideUnitSphere;
+            if (flatten) direction.y = 0;
+            direction = direction.normalized;
+            Output.Invoke(direction);
+        }
     }
 }

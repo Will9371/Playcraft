@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-// REFACTOR: 3rd person character (and AI) to eliminate reliance on MoveState
+// REFACTOR 3rd person character (and AI) to eliminate reliance on MoveState
 // following example in 1st person character, then remove variable from this class
 namespace Playcraft
 {
@@ -11,13 +11,13 @@ namespace Playcraft
         #pragma warning disable 0649
         [SerializeField] Rigidbody rb;
         [SerializeField] Vector3Event OnMove;
+        [SerializeField] MoveState state;
+        [SerializeField] float baseSpeed;
         #pragma warning restore 0649
         
-        [SerializeField] MoveState state;
         float speed;
         float priorSpeed;
         
-        [SerializeField] float baseSpeed;
         float speedMultiplier = 1f;
         public void SetSpeedMultiplier(float value) { speedMultiplier = value; }
                         

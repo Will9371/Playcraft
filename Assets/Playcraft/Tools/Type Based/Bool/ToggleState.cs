@@ -6,7 +6,7 @@ namespace Playcraft
     {
         bool priorState;
         public bool state;
-        [SerializeField] BoolEvent Output;
+        [SerializeField] BoolEvent Output = default;
         
         public void Toggle(bool newState)
         {

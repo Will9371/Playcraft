@@ -4,7 +4,7 @@ namespace Playcraft.Examples.ColorCatcher
 {
     public class MatchAllColors : MonoBehaviour
     {
-        [SerializeField] GetBlockerData data;
+        [SerializeField] GetBlockerData data = default;
         
         public void Set(int index)
         {

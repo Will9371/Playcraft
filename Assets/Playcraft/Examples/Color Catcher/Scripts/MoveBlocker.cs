@@ -7,8 +7,10 @@ namespace Playcraft.Examples.ColorCatcher
     {
         LerpSingleton moveController => LerpSingleton.instance;
     
+        #pragma warning disable 0649
         [SerializeField] WispBlockerOverride self;  
-        [SerializeField] SwapWispBlockerData controller; 
+        [SerializeField] SwapWispBlockerData controller;
+        #pragma warning restore 0649
                 
         Vector3 toPoint;
         int toIndex;
