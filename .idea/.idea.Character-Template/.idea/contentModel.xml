@@ -18,6 +18,10 @@
                 <e p="LiftCondition.cs" t="Include" />
                 <e p="Pickup.cs" t="Include" />
               </e>
+              <e p="State Machine" t="Include">
+                <e p="LocalStateHub.cs" t="Include" />
+                <e p="LocalStateListener.cs" t="Include" />
+              </e>
               <e p="Swim" t="Include">
                 <e p="WaterInteract.cs" t="Include" />
                 <e p="WaterTag.cs" t="Include" />
@@ -26,6 +30,13 @@
             <e p="AI" t="Include">
               <e p="FaceTarget.cs" t="Include" />
               <e p="FollowForward.cs" t="Include" />
+              <e p="Navigation" t="Include">
+                <e p="AvoidObstacles.cs" t="Include" />
+                <e p="GetSteeringDirection.cs" t="Include" />
+                <e p="KinematicBounce.cs" t="Include" />
+                <e p="NavAgentControl.cs" t="Include" />
+                <e p="NavigationDebugger.cs" t="Include" />
+              </e>
               <e p="RangeCheck.cs" t="Include" />
             </e>
             <e p="Movement Common" t="Include">
@@ -37,6 +48,10 @@
                 <e p="StandingMoveStateLogic.cs" t="Include" />
               </e>
             </e>
+          </e>
+          <e p="Dialog" t="Include">
+            <e p="DialogController.cs" t="Include" />
+            <e p="DialogNode.cs" t="Include" />
           </e>
           <e p="Examples" t="Include">
             <e p="Color Catcher" t="Include">
@@ -66,7 +81,10 @@
               <e p="RespondToAnimatedState.cs" t="Include" />
             </e>
             <e p="Debug" t="Include">
+              <e p="AngleDirectionTest.cs" t="Include" />
               <e p="PrintToConsole.cs" t="Include" />
+              <e p="RotateToAngleTest.cs" t="Include" />
+              <e p="RotateTowardsTest.cs" t="Include" />
             </e>
             <e p="Perception" t="Include">
               <e p="DistanceThreshold.cs" t="Include" />
@@ -79,6 +97,7 @@
               <e p="JumpPhysics.cs" t="Include" />
               <e p="MovePhysics.cs" t="Include" />
               <e p="MovePositionRB.cs" t="Include" />
+              <e p="RBMove.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
               <e p="MouseStatics.cs" t="Include" />
@@ -94,6 +113,7 @@
                 <e p="ToggleState.cs" t="Include" />
               </e>
               <e p="Float" t="Include">
+                <e p="DriftFloat.cs" t="Include" />
                 <e p="FilterFloatByRange.cs" t="Include" />
                 <e p="GetFloatFromArray.cs" t="Include" />
                 <e p="GetFloatFromVector.cs" t="Include" />
@@ -110,13 +130,17 @@
               </e>
               <e p="Transform" t="Include">
                 <e p="FollowInstant.cs" t="Include" />
+                <e p="FollowInstantPartial.cs" t="Include" />
                 <e p="FreeMovement.cs" t="Include" />
                 <e p="GetTargetDirection.cs" t="Include" />
                 <e p="GetTransformFromArray.cs" t="Include" />
                 <e p="JumpToPosition.cs" t="Include" />
+                <e p="LookRotation.cs" t="Include" />
                 <e p="MaintainTransformList.cs" t="Include" />
+                <e p="MoveFixed.cs" t="Include" />
                 <e p="MoveToTarget.cs" t="Include" />
                 <e p="MoveTransform.cs" t="Include" />
+                <e p="RespondToTargetDistance.cs" t="Include" />
                 <e p="ScaleToTarget.cs" t="Include" />
                 <e p="SimpleRotation.cs" t="Include" />
                 <e p="SingleAxisRotation.cs" t="Include" />
@@ -126,8 +150,13 @@
               <e p="Vector" t="Include">
                 <e p="ClampVector2.cs" t="Include" />
                 <e p="CycleVector3.cs" t="Include" />
+                <e p="DriftDirection.cs" t="Include" />
+                <e p="FlattenVector.cs" t="Include" />
+                <e p="GetRandomDirection.cs" t="Include" />
+                <e p="GetTargetDirection.cs" t="Include" />
                 <e p="MoveTowards.cs" t="Include" />
                 <e p="MoveTowardsDrift.cs" t="Include" />
+                <e p="OffsetDirection.cs" t="Include" />
                 <e p="RelativeVector2.cs" t="Include" />
                 <e p="SetRotation.cs" t="Include" />
                 <e p="SplitVector.cs" t="Include" />
@@ -147,6 +176,7 @@
                 <e p="KeyboardInput.cs" t="Include" />
                 <e p="MouseDrag.cs" t="Include" />
                 <e p="MouseInput.cs" t="Include" />
+                <e p="MouseRaycast.cs" t="Include" />
               </e>
               <e p="Monobehaviour" t="Include">
                 <e p="AwakeEvent.cs" t="Include" />
@@ -215,6 +245,7 @@
                 <e p="GameObjectBoolRelay.cs" t="Include" />
                 <e p="GameObjectRelay.cs" t="Include" />
                 <e p="TransformRelay.cs" t="Include" />
+                <e p="Vector3Relay.cs" t="Include" />
               </e>
             </e>
           </e>

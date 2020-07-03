@@ -8,5 +8,10 @@ namespace Playcraft
         {
             transform.position = location.position;
         }
+        
+        public void SetPosition(RaycastHit hit)
+        {
+            transform.position = hit.point;
+        }
     }
 }

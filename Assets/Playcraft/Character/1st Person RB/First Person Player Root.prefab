@@ -150,7 +150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1089270648}
   - component: {fileID: 5284839890453930887}
-  - component: {fileID: 7748126881014984665}
   m_Layer: 0
   m_Name: Swim
   m_TagString: Untagged
@@ -187,8 +186,8 @@ MonoBehaviour:
   EnterWater:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7748126881014984665}
-        m_MethodName: Input
+      - m_Target: {fileID: 5872375064048547360}
+        m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 7cfcc37d09f2eda42acaea22e8af43a1,
@@ -202,8 +201,8 @@ MonoBehaviour:
   ExitWater:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7748126881014984665}
-        m_MethodName: Input
+      - m_Target: {fileID: 5872375064048547360}
+        m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9,
@@ -214,19 +213,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7748126881014984665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089270647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad1e244134f97c14baaae1c697e14ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invoker: {fileID: 11400000, guid: 6b0dce6282bebb244aeb08596b54c3a1, type: 2}
 --- !u!1 &1412503996
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +465,6 @@ GameObject:
   - component: {fileID: 1569552876}
   - component: {fileID: 1569552875}
   - component: {fileID: 1569552877}
-  - component: {fileID: 8090910810915058905}
   m_Layer: 0
   m_Name: Crouch
   m_TagString: Untagged
@@ -572,8 +557,8 @@ MonoBehaviour:
   OnTrue:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8090910810915058905}
-        m_MethodName: Input
+      - m_Target: {fileID: 5872375064048547360}
+        m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: bb64fbf7a6281a249af932d4a8f4a6cb,
@@ -587,8 +572,8 @@ MonoBehaviour:
   OnFalse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8090910810915058905}
-        m_MethodName: Input
+      - m_Target: {fileID: 5872375064048547360}
+        m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9,
@@ -599,19 +584,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &8090910810915058905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569552873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad1e244134f97c14baaae1c697e14ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invoker: {fileID: 11400000, guid: 6b0dce6282bebb244aeb08596b54c3a1, type: 2}
 --- !u!1 &1844034509
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +594,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1844034510}
   - component: {fileID: 1844034511}
-  - component: {fileID: 5289484451547157534}
   m_Layer: 0
   m_Name: Run
   m_TagString: Untagged
@@ -662,15 +633,15 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5289484451547157534}
-          m_MethodName: Input
+        - m_Target: {fileID: 5872375064048547360}
+          m_MethodName: SetState
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: 5725286efdd9fdd4692a384d73c3e978,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
             m_IntArgument: 0
-            m_FloatArgument: 2
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -679,8 +650,8 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5289484451547157534}
-          m_MethodName: Input
+        - m_Target: {fileID: 5872375064048547360}
+          m_MethodName: SetState
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9,
@@ -691,19 +662,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &5289484451547157534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844034509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad1e244134f97c14baaae1c697e14ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invoker: {fileID: 11400000, guid: 6b0dce6282bebb244aeb08596b54c3a1, type: 2}
 --- !u!1 &1772335104354677053
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +676,7 @@ GameObject:
   - component: {fileID: 4952012252105749770}
   - component: {fileID: 4952012252105749773}
   - component: {fileID: 4952012252105749772}
-  - component: {fileID: 1228549107}
+  - component: {fileID: 8031970966274440883}
   m_Layer: 8
   m_Name: Torso
   m_TagString: Player
@@ -843,7 +801,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1228549107
+--- !u!114 &8031970966274440883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -852,11 +810,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1772335104354677053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 105cad438d1055849b4e5a440b749184, type: 3}
+  m_Script: {fileID: 11500000, guid: 6de6d7522df28b948ac98f566f7477ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6b0dce6282bebb244aeb08596b54c3a1, type: 2}
-  debug: 0
+  stateHub: {fileID: 5872375064048547360}
   conditions:
   - state: {fileID: 11400000, guid: bb64fbf7a6281a249af932d4a8f4a6cb, type: 2}
     OnEnter:
@@ -917,7 +874,7 @@ GameObject:
   - component: {fileID: 3872703113005314523}
   - component: {fileID: 4952012253901217936}
   - component: {fileID: 952274423}
-  - component: {fileID: 1111888405343602931}
+  - component: {fileID: 4649463475249023272}
   m_Layer: 0
   m_Name: First Person Character
   m_TagString: Untagged
@@ -958,6 +915,7 @@ MonoBehaviour:
   OnMove:
     m_PersistentCalls:
       m_Calls: []
+  state: {fileID: 0}
   baseSpeed: 3
 --- !u!54 &1772335105772393527
 Rigidbody:
@@ -1033,7 +991,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1111888405343602931
+--- !u!114 &4649463475249023272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1042,11 +1000,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1772335104449076467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 105cad438d1055849b4e5a440b749184, type: 3}
+  m_Script: {fileID: 11500000, guid: 6de6d7522df28b948ac98f566f7477ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6b0dce6282bebb244aeb08596b54c3a1, type: 2}
-  debug: 0
+  stateHub: {fileID: 5872375064048547360}
   conditions:
   - state: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9, type: 2}
     OnEnter:
@@ -1151,7 +1108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5439602199166328543}
-  - component: {fileID: 5944161545558061577}
+  - component: {fileID: 3977422947248918604}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Player
@@ -1179,7 +1136,7 @@ Transform:
   m_Father: {fileID: 1772335104449076479}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5944161545558061577
+--- !u!114 &3977422947248918604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1188,17 +1145,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3106468389801690146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 105cad438d1055849b4e5a440b749184, type: 3}
+  m_Script: {fileID: 11500000, guid: 6de6d7522df28b948ac98f566f7477ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6b0dce6282bebb244aeb08596b54c3a1, type: 2}
-  debug: 0
+  stateHub: {fileID: 5872375064048547360}
   conditions:
   - state: {fileID: 11400000, guid: bb64fbf7a6281a249af932d4a8f4a6cb, type: 2}
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3872703112539111171}
+        - m_Target: {fileID: 1844034509}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -1209,7 +1165,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1844034509}
+        - m_Target: {fileID: 3872703112539111171}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -1224,7 +1180,7 @@ MonoBehaviour:
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3872703112539111171}
+        - m_Target: {fileID: 1844034509}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -1235,7 +1191,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 1844034509}
+        - m_Target: {fileID: 3872703112539111171}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -1261,7 +1217,7 @@ MonoBehaviour:
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3872703112539111171}
+        - m_Target: {fileID: 1844034509}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -1272,7 +1228,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1844034509}
+        - m_Target: {fileID: 3872703112539111171}
           m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
@@ -1713,7 +1669,7 @@ GameObject:
   - component: {fileID: 4952012253957007495}
   - component: {fileID: 1090515929}
   - component: {fileID: 1599968735309439614}
-  - component: {fileID: 1075752029}
+  - component: {fileID: 3367613131216450307}
   m_Layer: 8
   m_Name: Eyes Model
   m_TagString: Untagged
@@ -1852,7 +1808,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1075752029
+--- !u!114 &3367613131216450307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1861,11 +1817,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4952012253957007493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 105cad438d1055849b4e5a440b749184, type: 3}
+  m_Script: {fileID: 11500000, guid: 6de6d7522df28b948ac98f566f7477ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6b0dce6282bebb244aeb08596b54c3a1, type: 2}
-  debug: 0
+  stateHub: {fileID: 5872375064048547360}
   conditions:
   - state: {fileID: 11400000, guid: bb64fbf7a6281a249af932d4a8f4a6cb, type: 2}
     OnEnter:
@@ -2109,7 +2064,7 @@ GameObject:
   - component: {fileID: 1305048767}
   - component: {fileID: 4952012252342631461}
   - component: {fileID: 8770049280371213174}
-  - component: {fileID: 2023168199}
+  - component: {fileID: 252024190867507345}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2268,7 +2223,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2023168199
+--- !u!114 &252024190867507345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2277,11 +2232,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5717022068954061944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 105cad438d1055849b4e5a440b749184, type: 3}
+  m_Script: {fileID: 11500000, guid: 6de6d7522df28b948ac98f566f7477ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 6b0dce6282bebb244aeb08596b54c3a1, type: 2}
-  debug: 0
+  stateHub: {fileID: 5872375064048547360}
   conditions:
   - state: {fileID: 11400000, guid: bb64fbf7a6281a249af932d4a8f4a6cb, type: 2}
     OnEnter:
@@ -2444,6 +2398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7621573511501805003}
+  - component: {fileID: 5872375064048547360}
   m_Layer: 0
   m_Name: First Person Player Root
   m_TagString: Untagged
@@ -2467,3 +2422,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5872375064048547360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641029021126307334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7357b75c790ed84b88c2c40560ff064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 0}

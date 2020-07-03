@@ -14,8 +14,7 @@ using UnityEngine.Events;
 [Serializable] public class TransformEvent : UnityEvent<Transform> { }
 [Serializable] public class ColliderEvent : UnityEvent<Collider> { }
 [Serializable] public class CollisionEvent : UnityEvent<Collision> { }
-
+[Serializable] public class RaycastHitEvent : UnityEvent<RaycastHit> { }
 [Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }
-
 [Serializable] public class GameObjectBoolEvent : UnityEvent<GameObject, bool> { }
 [Serializable] public class TagEvent : UnityEvent<TagSO> { }

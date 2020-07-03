@@ -10,6 +10,7 @@ namespace Playcraft
         bool keyPressed;    
         Collider touchedObject;
 
+        // For example: access pickup directly rather than working through UnityEvents
         public void ReceiveInput(bool isPressed)
         {
             keyPressed = isPressed;

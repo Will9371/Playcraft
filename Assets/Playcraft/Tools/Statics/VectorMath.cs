@@ -28,9 +28,27 @@ namespace Playcraft
             return new Vector3(value.x, 0f, value.y);
         }
         
+        public static Vector2 Vector3to2(Vector3 value)
+        {
+            return new Vector2(value.x, value.z);
+        }
+        
+        public static Vector2 DegreeToVector2(float degree, Vector2 zeroVector)
+        {
+            var offset = Vector2ToDegree(zeroVector);
+            return DegreeToVector2(degree + offset);
+        }
+        
         public static Vector2 DegreeToVector2(float degree)
         {
             return RadianToVector2(degree * Mathf.Deg2Rad);
+        }
+        
+        // Not tested
+        public static Vector2 RadianToVector2(float radian, Vector2 zero)
+        {
+            var offset = Vector2ToDegree(zero) * Mathf.Deg2Rad;
+            return RadianToVector2(radian + offset);
         }
         
         // Assumes 0 = up
@@ -48,14 +66,19 @@ namespace Playcraft
         
         public static Vector2 PerspectiveVector(Vector2 input, Vector2 source, Vector2 target)
         {    
-            var angle = AngleDirection(input) + AngleDirection(source) - AngleDirection(target);
+            var angle = Vector2ToDegree(input) + Vector2ToDegree(source) - Vector2ToDegree(target);
             return DegreeToVector2(angle);
         }
         
-        public static float AngleDirection(Vector2 vector)
+        public static float Vector2ToDegree(Vector2 vector)
         {
-            float angle = Vector2.Angle(Vector2.up, vector);
-            Vector3 cross = Vector3.Cross(Vector2.up, vector);
+            return Vector2ToDegree(vector, Vector2.up);
+        }
+        
+        public static float Vector2ToDegree(Vector2 value, Vector2 zero)
+        {
+            float angle = Vector2.Angle(zero, value);
+            Vector3 cross = Vector3.Cross(zero, value);
             if (cross.z > 0) angle = 360 - angle;
             return angle;
         }
@@ -90,18 +113,17 @@ namespace Playcraft
             var z = MoveTowards(current.z, target.z, speed);
             return new Vector3(x, y, z);
         }
-
+        
         public static Vector2 RotateTowards(Vector2 current, Vector2 target, float speed, float timeStep = 0f)
         {
             if (timeStep == 0f) timeStep = Time.deltaTime;
 
-            var currentAngle = AngleDirection(current);
-            var targetAngle = AngleDirection(target);
+            var currentAngle = Vector2ToDegree(current);
+            var targetAngle = Vector2ToDegree(target);
 
             currentAngle = RotateToAngle(currentAngle, targetAngle, speed * timeStep);
 
             var newDirection = DegreeToVector2(currentAngle);
-            newDirection.y *= -1f;	// HACK: check for error in DegreeToVector2
             return newDirection;
         }
         
