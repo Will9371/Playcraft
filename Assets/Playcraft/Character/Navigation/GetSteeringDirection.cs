@@ -8,11 +8,17 @@ namespace Playcraft.Navigation
         #pragma warning disable 0649
         [SerializeField] NavMeshAgent agent;
         [SerializeField] Transform target;
-        public void SetTarget(Transform value) { target = value; }
         [SerializeField] float pathRefreshRate = 0.5f;
         [SerializeField] float minDistance;
         [SerializeField] Vector3Event Output;
         #pragma warning restore 0649
+        
+        public void SetTarget(Transform value) { target = value; }
+        public void SetTargetPosition(RaycastHit value) { SetTargetPosition(value.point); }
+        public void SetTargetPosition(Vector3 value) { targetPosition = value; }
+        public void ClearTargetPosition() { targetPosition = null; }
+        
+        Vector3? targetPosition;
         
         private void Start()
         {
@@ -21,14 +27,16 @@ namespace Playcraft.Navigation
         
         private void CalculatePath()
         {
-            if (!target) return;
-            agent.SetDestination(target.position);
+            if (!target && targetPosition == null) return;
+            var destination = target ? target.position : targetPosition;
+            agent.SetDestination((Vector3)destination);
         }
         
         private void Update()
         {
-            if (!target) return;
-            var atTarget = Vector3.Distance(transform.position, target.position) <= minDistance;
+            if (!target && targetPosition == null) return;
+            var destination = target ? target.position : targetPosition;
+            var atTarget = Vector3.Distance(transform.position, (Vector3)destination) <= minDistance;
             
             if (!atTarget)
             {

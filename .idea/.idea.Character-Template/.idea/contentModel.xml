@@ -155,6 +155,7 @@
                 <e p="CycleVector3.cs" t="Include" />
                 <e p="DriftDirection.cs" t="Include" />
                 <e p="FlattenVector.cs" t="Include" />
+                <e p="GetNearestDirection.cs" t="Include" />
                 <e p="GetRandomDirection.cs" t="Include" />
                 <e p="MoveTowards.cs" t="Include" />
                 <e p="MoveTowardsDrift.cs" t="Include" />
@@ -210,6 +211,7 @@
                 <e p="IntArray.cs" t="Include" />
                 <e p="TagSO.cs" t="Include" />
                 <e p="TurnDirection.cs" t="Include" />
+                <e p="Vector3Array.cs" t="Include" />
                 <e p="Vector3SO.cs" t="Include" />
               </e>
               <e p="Observer" t="Include">
