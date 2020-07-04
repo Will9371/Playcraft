@@ -675,6 +675,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4540285478664608357}
   - component: {fileID: 4540285478664608356}
+  - component: {fileID: 5828275746072906204}
+  - component: {fileID: 1802119217}
+  - component: {fileID: 1802119214}
   m_Layer: 0
   m_Name: Screen Dialog
   m_TagString: Untagged
@@ -718,6 +721,103 @@ MonoBehaviour:
   - button: {fileID: 4540285478378065816}
     text: {fileID: 4540285477137053099}
   node: {fileID: 11400000, guid: 2287b797e9a6af54aab51d9e664b593c, type: 2}
+  RelayEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5828275746072906204}
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5828275746072906204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4540285478664608359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcacc0b8f8f6d94486426809dab9a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAdd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1802119217}
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1802119217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4540285478664608359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2891b053e33704a4eb613fb95ce63136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elements:
+  - id: {fileID: 11400000, guid: 9424889002ee6c64d9fc4c5b2b8663f0, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1802119214}
+          m_MethodName: Print
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 9424889002ee6c64d9fc4c5b2b8663f0,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Element 0 reached
+            m_BoolArgument: 0
+          m_CallState: 2
+  - id: {fileID: 11400000, guid: e65c0490d73d27940b3f46ec7cf2ee61, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1802119214}
+          m_MethodName: Print
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: e65c0490d73d27940b3f46ec7cf2ee61,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Element 1 reached
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1802119214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4540285478664608359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f287688619ef749982623c75d2bdf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4540285478811502309
 GameObject:
   m_ObjectHideFlags: 0

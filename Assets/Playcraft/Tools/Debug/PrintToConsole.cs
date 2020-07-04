@@ -11,5 +11,6 @@ namespace Playcraft
         public void Print(int value) { Print(value.ToString()); }
         public void Print(float value) { Print(value.ToString("F4")); }
         public void Print(bool value) { Print(value.ToString()); }
+        public void Print(TagSO value) { Print(value.name); }
     }
 }

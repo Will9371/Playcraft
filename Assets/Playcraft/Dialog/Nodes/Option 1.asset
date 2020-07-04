@@ -20,3 +20,5 @@ MonoBehaviour:
     response: Can you repeat that?
   - node: {fileID: 11400000, guid: a97f7ee76e1014d4da59537839c5f1aa, type: 2}
     response: Goodbye
+  events:
+  - {fileID: 11400000, guid: 9424889002ee6c64d9fc4c5b2b8663f0, type: 2}

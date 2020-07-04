@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
+// Consider refactor this & DialogNode class to separate state machine from text display
 namespace Playcraft
 {
     public class DialogController : MonoBehaviour
@@ -11,7 +11,7 @@ namespace Playcraft
         [SerializeField] Text narrative;
         [SerializeField] ResponseOption[] responses;
         [SerializeField] DialogNode node;
-        [SerializeField] UnityEvent OnDialogEnd;
+        [SerializeField] TagEvent RelayEvent;
         #pragma warning restore 0649
         
         private void Start()
@@ -33,15 +33,15 @@ namespace Playcraft
                     
                 responses[i].button.SetActive(withinList);
             }
-            
-            if (nodeResponseCount <= 0)
-                OnDialogEnd.Invoke(); 
         }
         
         public void Transition(int index)
         {
             node = node.responses[index].node;
             Display();
+            
+            foreach (var item in node.events)
+                RelayEvent.Invoke(item);
         }
         
         [Serializable] struct ResponseOption

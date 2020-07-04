@@ -18,10 +18,6 @@
                 <e p="LiftCondition.cs" t="Include" />
                 <e p="Pickup.cs" t="Include" />
               </e>
-              <e p="State Machine" t="Include">
-                <e p="LocalStateHub.cs" t="Include" />
-                <e p="LocalStateListener.cs" t="Include" />
-              </e>
               <e p="Swim" t="Include">
                 <e p="WaterInteract.cs" t="Include" />
                 <e p="WaterTag.cs" t="Include" />
@@ -52,6 +48,7 @@
           <e p="Dialog" t="Include">
             <e p="DialogController.cs" t="Include" />
             <e p="DialogNode.cs" t="Include" />
+            <e p="FilterRepeatEvent.cs" t="Include" />
           </e>
           <e p="Examples" t="Include">
             <e p="Color Catcher" t="Include">
@@ -98,6 +95,11 @@
               <e p="MovePhysics.cs" t="Include" />
               <e p="MovePositionRB.cs" t="Include" />
               <e p="RBMove.cs" t="Include" />
+            </e>
+            <e p="State Machine" t="Include">
+              <e p="LocalStateHub.cs" t="Include" />
+              <e p="LocalStateListener.cs" t="Include" />
+              <e p="RespondToEventID.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
               <e p="MouseStatics.cs" t="Include" />
@@ -154,7 +156,6 @@
                 <e p="DriftDirection.cs" t="Include" />
                 <e p="FlattenVector.cs" t="Include" />
                 <e p="GetRandomDirection.cs" t="Include" />
-                <e p="GetTargetDirection.cs" t="Include" />
                 <e p="MoveTowards.cs" t="Include" />
                 <e p="MoveTowardsDrift.cs" t="Include" />
                 <e p="RelativeVector2.cs" t="Include" />

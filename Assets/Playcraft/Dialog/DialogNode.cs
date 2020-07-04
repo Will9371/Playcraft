@@ -8,6 +8,7 @@ namespace Playcraft
     {
         public string narrative;
         public ResponseOptions[] responses;
+        public TagSO[] events;
         
         [Serializable] public struct ResponseOptions
         {
