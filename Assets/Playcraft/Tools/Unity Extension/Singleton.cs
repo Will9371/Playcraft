@@ -28,6 +28,12 @@ namespace Playcraft
 
         private void Awake()
         {
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+        
             if (dontDestroyOnLoad)
             {
                 DontDestroyOnLoad(gameObject);

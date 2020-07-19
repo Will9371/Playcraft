@@ -10,18 +10,27 @@ namespace Playcraft
         #pragma warning disable 0649
         [SerializeField] Animator animator;    
         [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
+        [SerializeField] AnimatedMoveState jumpAnimations;
         [SerializeField] JumpCrossFadeLookup jumpFadeLookup;
         #pragma warning restore 0649
 
         AnimationClip priorClip;
         
-        MoveState priorState;
-        MoveState state;
-        public void SetState(MoveState state) 
-        { 
-            priorState = this.state == null ? state : this.state;
-            this.state = state; 
-        }
+        //MoveState priorState;
+        //MoveState state;
+        //public void SetState(MoveState state) 
+        //{ 
+        //    priorState = this.state == null ? state : this.state;
+        //    this.state = state; 
+        //}
+        
+        AnimatedMoveState priorAnimations;
+        AnimatedMoveState animations;
+        public void SetAnimations(AnimatedMoveState value) 
+        {
+            priorAnimations = animations == null ? value : animations; 
+            animations = value; 
+        } 
 
         float rotation;
         public void SetRotation(Vector3 value) { rotation = value.y; }
@@ -33,8 +42,8 @@ namespace Playcraft
         
                 
         private void Update()
-        {
-            var clip = state.animations.GetClip(rotation, moveDirection);
+        {            
+            var clip = animations.GetClip(rotation, moveDirection);
           
             if (clip == priorClip)
                 return;
@@ -44,16 +53,20 @@ namespace Playcraft
         
         IEnumerator PlayRoutine(AnimationClip clip)
         {            
-            var fade = jumpFadeLookup.GetTime(priorState.animations, defaultCrossFade);
+            //Debug.Log(priorState + " " + fade);
+            var fade = defaultCrossFade;
+            if (animations == jumpAnimations)
+                fade = jumpFadeLookup.GetTime(priorAnimations, defaultCrossFade);
+            
             animator.CrossFade(clip.name, fade, 0);
             priorClip = clip;
             
             var length = clip.length * Mathf.Abs(animator.GetCurrentAnimatorStateInfo(0).speed);
             var fadeOutTime = length * fade;
             yield return new WaitForSeconds(fadeOutTime);
-            var timeRemaining = length - (length * fade);
+            var timeRemaining = length - length * fade;
             
-            OnBeginAnimation.Invoke(state.animations, timeRemaining);
+            OnBeginAnimation.Invoke(animations, timeRemaining);
         }
     }
 }

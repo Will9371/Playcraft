@@ -204,6 +204,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &555958977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8194789581028212937, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4540285477978190410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f287688619ef749982623c75d2bdf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1503598227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5907246316247389229, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4540285477978190410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe47bb87ebbb2147b2b2325d3c618a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1657161014
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +457,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: Test.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1503598227}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Increment
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: found the secret...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 555958977}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Print
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131512681151360685, guid: 782acc7ec594c084f85c6b93f3e3a14a,
+        type: 3}
+      propertyPath: elements.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Found the ending...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 782acc7ec594c084f85c6b93f3e3a14a, type: 3}

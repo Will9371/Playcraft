@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa37708c2ce3fbc43b6a337db51fdd9b, type: 3}
+  m_Name: Run
+  m_EditorClassIdentifier: 
+  idle: {fileID: 7400000, guid: dffa50cfe77e0434bbfa71245b3dd529, type: 3}
+  idleLeft: {fileID: 7400010, guid: 6fb3851da6a6f5948ab6892bee8ba920, type: 3}
+  idleRight: {fileID: -70654669273599342, guid: 6fb3851da6a6f5948ab6892bee8ba920,
+    type: 3}
+  forward: {fileID: 7400000, guid: 1cb8ed3cbba15f0479fbae54e0a963df, type: 3}
+  turnLeft: {fileID: 6148109966606671466, guid: 1062212255550964e974f3ffb3cbaae3,
+    type: 3}
+  turnRight: {fileID: -5286009312453217497, guid: 1062212255550964e974f3ffb3cbaae3,
+    type: 3}
+  strafeLeft: {fileID: 7400000, guid: ea92f534aa05ca54fb524b41e5cac7bd, type: 2}
+  strafeRight: {fileID: 7400000, guid: 4311cd6201182a847a2028218fb581fd, type: 2}
+  backward: {fileID: 7400000, guid: 2c8690123321ec64681337c2249b981d, type: 2}

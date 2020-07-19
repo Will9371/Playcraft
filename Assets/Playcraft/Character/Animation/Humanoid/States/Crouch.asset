@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa37708c2ce3fbc43b6a337db51fdd9b, type: 3}
+  m_Name: Crouch
+  m_EditorClassIdentifier: 
+  idle: {fileID: 4749916858553617154, guid: d89ea37480b6d75458aa38843e9688dc, type: 3}
+  idleLeft: {fileID: 8151605367406830102, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}
+  idleRight: {fileID: 3228160940899143219, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}
+  forward: {fileID: -7180294270926287462, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}
+  turnLeft: {fileID: 6956144732926445036, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}
+  turnRight: {fileID: 3591959375861464648, guid: d89ea37480b6d75458aa38843e9688dc,
+    type: 3}
+  strafeLeft: {fileID: 7400000, guid: f8de3c53deae628429a060abd81edfdb, type: 2}
+  strafeRight: {fileID: 7400000, guid: 295deca8611f1fa428539419001bfb7a, type: 2}
+  backward: {fileID: 7400000, guid: e87ca4c0cc350124a9a00b203ffe221f, type: 2}

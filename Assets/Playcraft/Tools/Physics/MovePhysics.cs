@@ -1,25 +1,29 @@
 ﻿using UnityEngine;
 
-// REFACTOR 3rd person character (and AI) to eliminate reliance on MoveState
-// following example in 1st person character, then remove variable from this class
 namespace Playcraft
 {
     public class MovePhysics : MonoBehaviour
-    {
-        public new bool enabled = true;
-        
+    {        
         #pragma warning disable 0649
         [SerializeField] Rigidbody rb;
         [SerializeField] Vector3Event OnMove;
-        [SerializeField] MoveState state;
         [SerializeField] float baseSpeed;
         #pragma warning restore 0649
         
-        float speed;
-        float priorSpeed;
+        float priorSpeedMultiplier;
+        float inputSpeedMultiplier = 1f;
+        public void SetSpeedMultiplier(float value) { inputSpeedMultiplier = value; }
+        float speedMultiplier => slide ? priorSpeedMultiplier : inputSpeedMultiplier;
+        float speed => baseSpeed * speedMultiplier;
         
-        float speedMultiplier = 1f;
-        public void SetSpeedMultiplier(float value) { speedMultiplier = value; }
+        Vector3 inputDirection;
+        Vector3 priorDirection;
+        public void SetDirection(Vector3 value) { inputDirection = value; }
+        Vector3 direction => slide ? priorDirection : inputDirection;
+        
+        bool slide;
+        public void SetSlide(bool value) { slide = value; }
+           
                         
         private void Awake()
         {            
@@ -32,24 +36,22 @@ namespace Playcraft
             }
         }
         
-        public void Enable(bool enabled) { this.enabled = enabled; }
-        public void SetState(MoveState state) { this.state = state; }
+        Vector3 horizontal;
+        Vector3 velocity;
         
-        public void Move(Vector3 direction)
+        public void Update()
         {
-            if (!enabled) return;
-        
-            if (state != null)
-                speed = state.disableSpeedControl ? priorSpeed : state.moveSpeed; 
-            else
-                speed = baseSpeed * speedMultiplier;
-                  
-            var horizontal = transform.TransformVector(direction * speed);
-            var velocity = new Vector3(horizontal.x, rb.velocity.y, horizontal.z);
+            horizontal = transform.TransformVector(direction * speed);
+            velocity = new Vector3(horizontal.x, rb.velocity.y, horizontal.z);
             
             rb.velocity = velocity;
             OnMove.Invoke(velocity);
-            priorSpeed = speed;
+            
+            if (!slide)
+            {
+                priorSpeedMultiplier = inputSpeedMultiplier;
+                priorDirection = inputDirection;
+            }
         }
     }
 }

@@ -1,29 +1,40 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Consider refactor this & DialogNode class to separate state machine from text display
 namespace Playcraft
 {
     public class DialogController : MonoBehaviour
     {
+        [Serializable] class DialogNodeEvent : UnityEvent<DialogNode> { }
+    
         #pragma warning disable 0649
-        [SerializeField] Text narrative;
-        [SerializeField] ResponseOption[] responses;
         [SerializeField] DialogNode node;
+        [SerializeField] ResponseOption[] responses;
         [SerializeField] TagEvent RelayEvent;
+        [SerializeField] DialogNodeEvent RelayNode;
         #pragma warning restore 0649
         
         private void Start()
         {
-            Display();
+            RelayNode.Invoke(node);
         }
         
-        private void Display()
+        public void Transition(int index)
         {
-            narrative.text = node.narrative;
-            var nodeResponseCount = node.responses.Length;
+            node = node.responses[index].node;
+            RelayNode.Invoke(node);
             
+            foreach (var item in node.events)
+                RelayEvent.Invoke(item);
+        }
+        
+        // REFACTOR: move to buttons
+        public void DisplayOptions()
+        {
+            var nodeResponseCount = node.responses.Length;
+        
             for (int i = 0; i < responses.Length; i++)
             {
                 var withinList = i < nodeResponseCount;
@@ -34,22 +45,14 @@ namespace Playcraft
                 responses[i].button.SetActive(withinList);
             }
         }
-        
-        public void Transition(int index)
-        {
-            node = node.responses[index].node;
-            Display();
-            
-            foreach (var item in node.events)
-                RelayEvent.Invoke(item);
-        }
-        
-        [Serializable] struct ResponseOption
-        {
-            #pragma warning disable 0649
-            public GameObject button;
-            public Text text;
-            #pragma warning restore 0649
-        }
+    }
+    
+    // REFACTOR: move to buttons
+    [Serializable] struct ResponseOption
+    {
+        #pragma warning disable 0649
+        public GameObject button;
+        public Text text;
+        #pragma warning restore 0649
     }
 }

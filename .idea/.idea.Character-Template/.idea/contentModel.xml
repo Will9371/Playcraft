@@ -49,6 +49,9 @@
             <e p="DialogController.cs" t="Include" />
             <e p="DialogNode.cs" t="Include" />
             <e p="FilterRepeatEvent.cs" t="Include" />
+            <e p="GetNarrativeFromDialogNode.cs" t="Include" />
+            <e p="SimpleDialogDisplay.cs" t="Include" />
+            <e p="TypewriterText.cs" t="Include" />
           </e>
           <e p="Examples" t="Include">
             <e p="Color Catcher" t="Include">
@@ -85,8 +88,8 @@
             </e>
             <e p="Perception" t="Include">
               <e p="DistanceThreshold.cs" t="Include" />
+              <e p="FilterCollidersByTag.cs" t="Include" />
               <e p="FindClosestTarget.cs" t="Include" />
-              <e p="FindCollidersByTag.cs" t="Include" />
             </e>
             <e p="Physics" t="Include">
               <e p="FilterByAngle.cs" t="Include" />
@@ -168,6 +171,7 @@
               <e p="LerpSingleton.cs" t="Include" />
               <e p="Lookup.cs" t="Include" />
               <e p="MonoSim.cs" t="Include" />
+              <e p="SetFramerate.cs" t="Include" />
               <e p="Singleton.cs" t="Include" />
               <e p="UnityEvents.cs" t="Include" />
             </e>
@@ -201,10 +205,12 @@
             </e>
             <e p="UnityEvent Helpers" t="Include">
               <e p="Component Access" t="Include">
+                <e p="BoolRelayAccess.cs" t="Include" />
                 <e p="ColliderAccess.cs" t="Include" />
                 <e p="GameObjectAccess.cs" t="Include" />
                 <e p="JumpToPositionAccess.cs" t="Include" />
                 <e p="MoveToTargetAccess.cs" t="Include" />
+                <e p="RelayAccess.cs" t="Include" />
                 <e p="TransformAccess.cs" t="Include" />
               </e>
               <e p="Data Containers" t="Include">
@@ -244,9 +250,10 @@
                 </e>
               </e>
               <e p="Relays" t="Include">
-                <e p="EmptyRelay.cs" t="Include" />
+                <e p="BoolRelay.cs" t="Include" />
                 <e p="GameObjectBoolRelay.cs" t="Include" />
                 <e p="GameObjectRelay.cs" t="Include" />
+                <e p="Relay.cs" t="Include" />
                 <e p="TransformRelay.cs" t="Include" />
                 <e p="Vector3Relay.cs" t="Include" />
               </e>

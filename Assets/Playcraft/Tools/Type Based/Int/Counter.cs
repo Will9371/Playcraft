@@ -19,9 +19,21 @@ namespace Playcraft
             Output.Invoke(count);
         }
         
+        public void Increment(bool countUp)
+        {
+            if (countUp) Increment();
+            else Decrement();
+        }
+        
         public void Add(int value)
         {
             count += value;
+            Output.Invoke(value);
+        }
+        
+        public void Set(int value)
+        {
+            count = value;
             Output.Invoke(value);
         }
     }

@@ -14,17 +14,20 @@ namespace Playcraft
         [SerializeField] Vector3Event OnTurn;
         #pragma warning restore 0649
         
-        Vector3 forward { get { return transform.forward; } }
-        Vector3 targetVector { get { return !target ? Vector3.zero : target.position - transform.position; } }
-        float angleToTarget { get { return StaticAxis.AngleAroundAxis(forward, targetVector, Vector3.up); } }
-        float targetAngleAbs { get { return Mathf.Abs(angleToTarget); } }
+        Vector3 forward => transform.forward;
+        Vector3 targetVector => !target ? Vector3.zero : target.position - transform.position; 
+        float angleToTarget => StaticAxis.AngleAroundAxis(forward, targetVector, Vector3.up);
+        float targetAngleAbs => Mathf.Abs(angleToTarget); 
         
         bool isTurning;
         
+        public float debugTargetAngle;
 
         void Update()
         {
             if (!target) return;
+            
+            debugTargetAngle = angleToTarget;
                 
             isTurning = !isTurning && targetAngleAbs >= minStartTurnAngle || 
                          isTurning && targetAngleAbs >= minStopTurnAngle;  

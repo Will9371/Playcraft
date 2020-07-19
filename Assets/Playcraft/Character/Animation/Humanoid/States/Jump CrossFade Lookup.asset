@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Jump CrossFade Lookup
   m_EditorClassIdentifier: 
   overrideStates:
-  - state: {fileID: 11400000, guid: a584578609e812c4b9ae4adc2b6ac3f1, type: 2}
+  - state: {fileID: 11400000, guid: 72b5b9d035cd0f840a74058888d16130, type: 2}
     normalizedTime: 0.05
   - state: {fileID: 11400000, guid: b12b962595e27c341bd71b0542c1c5d4, type: 2}
     normalizedTime: 0.3

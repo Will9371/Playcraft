@@ -22,7 +22,8 @@ namespace Playcraft
         }
             
         public void RespondToState(TagSO value) 
-        {            
+        {
+            //Debug.Log(gameObject + " responding to " + value);            
             foreach (var item in conditions)
                 if (item.state == value)
                     item.OnEnter.Invoke();
