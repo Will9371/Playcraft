@@ -26,8 +26,10 @@ namespace Playcraft
         public void Input(float value) { Input(new Vector3(value, 0f, 0f)); }
         public void Input(Vector2 value) { Input(new Vector3(value.x, value.y, 0f)); }
         
+        //public Vector3 debugInput;
         public void Input(Vector3 value)
         {
+            //debugInput = value;
             switch (inputAxis)
             {
                 case Axis.X: Output3(value.x); break;
@@ -37,8 +39,10 @@ namespace Playcraft
             }
         }
         
+        //public float debugOutput;
         public void Output3(float value)
         {
+            //debugOutput = value;
             switch (outputAxis)
             {
                 case Axis.X: OnOutput.Invoke(new Vector3(value, 0f, 0f)); break;

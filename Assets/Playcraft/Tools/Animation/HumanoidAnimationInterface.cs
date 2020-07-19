@@ -13,16 +13,6 @@ namespace Playcraft
         [SerializeField] AnimatedMoveState jumpAnimations;
         [SerializeField] JumpCrossFadeLookup jumpFadeLookup;
         #pragma warning restore 0649
-
-        AnimationClip priorClip;
-        
-        //MoveState priorState;
-        //MoveState state;
-        //public void SetState(MoveState state) 
-        //{ 
-        //    priorState = this.state == null ? state : this.state;
-        //    this.state = state; 
-        //}
         
         AnimatedMoveState priorAnimations;
         AnimatedMoveState animations;
@@ -40,10 +30,12 @@ namespace Playcraft
         [Serializable] public class AnimatedStateEvent : UnityEvent<AnimatedMoveState, float> { }
         [SerializeField] AnimatedStateEvent OnBeginAnimation = default;
         
-                
+        AnimationClip priorClip;
+        AnimationClip clip;
+        
         private void Update()
         {            
-            var clip = animations.GetClip(rotation, moveDirection);
+            clip = animations.GetClip(rotation, moveDirection);
           
             if (clip == priorClip)
                 return;

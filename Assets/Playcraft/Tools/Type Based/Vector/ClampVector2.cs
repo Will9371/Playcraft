@@ -5,6 +5,7 @@ namespace Playcraft
     public class ClampVector2 : MonoBehaviour
     {
         [SerializeField] Vector2Event OnOutput = default;
+        //public Vector2 debugOutput;
 
         public void ClampNegativeYtoX(Vector2 input)
         {
@@ -14,6 +15,7 @@ namespace Playcraft
                 input.y = 0;
             }
             
+            //debugOutput = input;
             OnOutput.Invoke(input);
         }
     }
