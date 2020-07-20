@@ -128,7 +128,6 @@
             <e p="Type Based" t="Include">
               <e p="Bool" t="Include">
                 <e p="BinaryThreshold.cs" t="Include" />
-                <e p="BinaryToEvent.cs" t="Include" />
                 <e p="MultiCondition.cs" t="Include" />
                 <e p="SplitBool.cs" t="Include" />
                 <e p="ToggleState.cs" t="Include" />
