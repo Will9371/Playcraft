@@ -5,6 +5,11 @@ namespace Playcraft
 {
     public static class VectorMath
     {
+        public static Vector3 EqualVector3(float size)
+        {
+            return new Vector3(size, size, size);
+        }
+    
         public static Transform GetClosest(List<Transform> list, Vector3 position)
         {
             var shortestDistance = Mathf.Infinity;

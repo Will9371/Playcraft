@@ -99,6 +99,20 @@
               <e p="MovePositionRB.cs" t="Include" />
               <e p="RBMove.cs" t="Include" />
             </e>
+            <e p="Scriptable Object" t="Include">
+              <e p="AudioClipArray.cs" t="Include" />
+              <e p="ColorSO.cs" t="Include" />
+              <e p="IntArray.cs" t="Include" />
+              <e p="ObjectArraySO.cs" t="Include" />
+              <e p="TagSO.cs" t="Include" />
+              <e p="TurnDirection.cs" t="Include" />
+              <e p="Vector3Array.cs" t="Include" />
+              <e p="Vector3SO.cs" t="Include" />
+            </e>
+            <e p="Sound" t="Include">
+              <e p="Footsteps.cs" t="Include" />
+              <e p="MultiSound.cs" t="Include" />
+            </e>
             <e p="State Machine" t="Include">
               <e p="LocalStateHub.cs" t="Include" />
               <e p="LocalStateListener.cs" t="Include" />
@@ -113,6 +127,8 @@
             </e>
             <e p="Type Based" t="Include">
               <e p="Bool" t="Include">
+                <e p="BinaryThreshold.cs" t="Include" />
+                <e p="BinaryToEvent.cs" t="Include" />
                 <e p="MultiCondition.cs" t="Include" />
                 <e p="SplitBool.cs" t="Include" />
                 <e p="ToggleState.cs" t="Include" />
@@ -133,6 +149,9 @@
                 <e p="GetRandomInt.cs" t="Include" />
                 <e p="IntCondition.cs" t="Include" />
               </e>
+              <e p="Raycast" t="Include">
+                <e p="FindHitsInPath.cs" t="Include" />
+              </e>
               <e p="Transform" t="Include">
                 <e p="FollowInstant.cs" t="Include" />
                 <e p="FollowInstantPartial.cs" t="Include" />
@@ -152,8 +171,13 @@
                 <e p="SwapPositions.cs" t="Include" />
                 <e p="TwoAxisRotation.cs" t="Include" />
               </e>
+              <e p="Trinary" t="Include">
+                <e p="EdgeDetect.cs" t="Include" />
+                <e p="TrinaryToEvent.cs" t="Include" />
+              </e>
               <e p="Vector" t="Include">
                 <e p="BounceDirection.cs" t="Include" />
+                <e p="CalculateParabolicArc.cs" t="Include" />
                 <e p="ClampVector2.cs" t="Include" />
                 <e p="CycleVector3.cs" t="Include" />
                 <e p="DriftDirection.cs" t="Include" />
@@ -190,6 +214,10 @@
                 <e p="RespondToTouch.cs" t="Include" />
                 <e p="StartEvent.cs" t="Include" />
               </e>
+              <e p="Renderer" t="Include">
+                <e p="LineRendererInterface.cs" t="Include" />
+                <e p="RendererInterface.cs" t="Include" />
+              </e>
               <e p="Scene" t="Include">
                 <e p="ApplicationHelper.cs" t="Include" />
                 <e p="SceneController.cs" t="Include" />
@@ -212,13 +240,6 @@
                 <e p="MoveToTargetAccess.cs" t="Include" />
                 <e p="RelayAccess.cs" t="Include" />
                 <e p="TransformAccess.cs" t="Include" />
-              </e>
-              <e p="Data Containers" t="Include">
-                <e p="IntArray.cs" t="Include" />
-                <e p="TagSO.cs" t="Include" />
-                <e p="TurnDirection.cs" t="Include" />
-                <e p="Vector3Array.cs" t="Include" />
-                <e p="Vector3SO.cs" t="Include" />
               </e>
               <e p="Observer" t="Include">
                 <e p="Access" t="Include">
@@ -260,9 +281,22 @@
             </e>
           </e>
           <e p="VR" t="Include">
+            <e p="Hands" t="Include">
+              <e p="Robot" t="Include">
+                <e p="HandAnimationController.cs" t="Include" />
+              </e>
+            </e>
             <e p="Input" t="Include">
               <e p="XRInput.cs" t="Include" />
               <e p="XRInput2D.cs" t="Include" />
+            </e>
+            <e p="Surface Teleport" t="Include">
+              <e p="RangeIndicator.cs" t="Include" />
+              <e p="ScrollTransparent.shader" t="Include" />
+              <e p="SplitTeleportResult.cs" t="Include" />
+              <e p="TeleportCutoffPath.cs" t="Include" />
+              <e p="TeleportRig.cs" t="Include" />
+              <e p="TeleportSurface.cs" t="Include" />
             </e>
           </e>
         </e>
