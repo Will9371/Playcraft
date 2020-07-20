@@ -173,6 +173,7 @@
               </e>
               <e p="Trinary" t="Include">
                 <e p="EdgeDetect.cs" t="Include" />
+                <e p="SplitTrinary.cs" t="Include" />
                 <e p="TrinaryToEvent.cs" t="Include" />
               </e>
               <e p="Vector" t="Include">
@@ -293,7 +294,6 @@
             <e p="Surface Teleport" t="Include">
               <e p="RangeIndicator.cs" t="Include" />
               <e p="ScrollTransparent.shader" t="Include" />
-              <e p="SplitTeleportResult.cs" t="Include" />
               <e p="TeleportCutoffPath.cs" t="Include" />
               <e p="TeleportRig.cs" t="Include" />
               <e p="TeleportSurface.cs" t="Include" />

@@ -2,25 +2,28 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable] public class TrinaryEvent : UnityEvent<Trinary> { }
-public enum Trinary { True, False, Unknown }
-
-public class TrinaryToEvent : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] TrinaryEventData[] actions;
+    [Serializable] public class TrinaryEvent : UnityEvent<Trinary> { }
+    public enum Trinary { True, False, Unknown }
 
-    public void Input(Trinary value)
+    public class TrinaryToEvent : MonoBehaviour
     {
-        foreach (var element in actions)
-            if (element.value == value)
-                element.OnActivate.Invoke();
-    }
-}
+        [SerializeField] TrinaryEventData[] actions = default;
 
-[Serializable]
-public struct TrinaryEventData
-{
-    public Trinary value;
-    public UnityEvent OnActivate;
+        public void Input(Trinary value)
+        {
+            foreach (var element in actions)
+                if (element.value == value)
+                    element.OnActivate.Invoke();
+        }
+    }
+
+    [Serializable]
+    public struct TrinaryEventData
+    {
+        public Trinary value;
+        public UnityEvent OnActivate;
+    }
 }
 

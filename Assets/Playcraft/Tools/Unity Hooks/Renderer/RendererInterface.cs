@@ -1,19 +1,21 @@
-﻿using System;
-using Playcraft;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
-public class RendererInterface : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] Renderer rend;
-    [SerializeField] string shaderColorId;
-
-    public void SetColor(ColorSO color) { SetColor(color.Value); } 
-    public void SetColor(Color color) { rend.material.color = color; }
-    
-    public void SetMaterialColor(ColorSO color) { SetMaterialColor(color.Value); }
-    public void SetMaterialColor(Color color)
+    public class RendererInterface : MonoBehaviour
     {
-        rend.material.SetColor(shaderColorId, color);
+        #pragma warning disable 0649
+        [SerializeField] Renderer rend;
+        [SerializeField] string shaderColorId;
+        #pragma warning restore 0649
+
+        public void SetColor(ColorSO color) { SetColor(color.Value); } 
+        public void SetColor(Color color) { rend.material.color = color; }
+        
+        public void SetMaterialColor(ColorSO color) { SetMaterialColor(color.Value); }
+        public void SetMaterialColor(Color color)
+        {
+            rend.material.SetColor(shaderColorId, color);
+        }
     }
 }

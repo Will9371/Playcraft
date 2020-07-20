@@ -6,7 +6,7 @@ namespace Playcraft
 {
     public class RespondToEventID : MonoBehaviour
     {
-        [SerializeField] EventResponse[] elements;
+        [SerializeField] EventResponse[] elements = default;
 
         public void Input(TagSO value)
         {        
@@ -17,8 +17,10 @@ namespace Playcraft
         
         [Serializable] struct EventResponse
         {
+            #pragma warning disable 0649
             public TagSO id;
             public UnityEvent Response;
+            #pragma warning restore 0649
         }
     }
 }

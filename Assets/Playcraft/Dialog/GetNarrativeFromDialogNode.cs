@@ -1,12 +1,15 @@
 ﻿using Playcraft;
 using UnityEngine;
 
-public class GetNarrativeFromDialogNode : MonoBehaviour
+namespace Playcraft.Dialog
 {
-    [SerializeField] StringEvent RelayString;
-    
-    public void Input(DialogNode node)
+    public class GetNarrativeFromDialogNode : MonoBehaviour
     {
-        RelayString.Invoke(node.narrative);
+        [SerializeField] StringEvent RelayString = default;
+        
+        public void Input(DialogNode node)
+        {
+            RelayString.Invoke(node.narrative);
+        }
     }
 }

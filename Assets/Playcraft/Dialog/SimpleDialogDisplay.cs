@@ -1,15 +1,17 @@
-﻿using Playcraft;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class SimpleDialogDisplay : MonoBehaviour
+namespace Playcraft.Dialog
 {
-    [SerializeField] Text narrative;
-    [SerializeField] DialogController controller;
-
-    public void Input(DialogNode node)
+    public class SimpleDialogDisplay : MonoBehaviour
     {
-        narrative.text = node.narrative;
-        controller.DisplayOptions();
+        [SerializeField] Text narrative = default;
+        [SerializeField] DialogController controller = default;
+
+        public void Input(DialogNode node)
+        {
+            narrative.text = node.narrative;
+            controller.DisplayOptions();
+        }
     }
 }

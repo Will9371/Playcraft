@@ -3,28 +3,33 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class TypewriterText : MonoBehaviour
+namespace Playcraft.Dialog
 {
-    [SerializeField] Text text;
-    [SerializeField] UnityEvent OnComplete;
-    [Tooltip("In characters per second")]
-    [SerializeField] float speed = 10;
-
-    public void Input(string value)
+    public class TypewriterText : MonoBehaviour
     {
-        StartCoroutine(TypeText(value));
-    }
-    
-    IEnumerator TypeText(string value)
-    {
-        text.text = "";
+        #pragma warning disable 0649
+        [SerializeField] Text text;
+        [SerializeField] UnityEvent OnComplete;
+        [Tooltip("In characters per second")]
+        [SerializeField] float speed = 10;
+        #pragma warning restore 0649
 
-        foreach (var character in value)
+        public void Input(string value)
         {
-            text.text += character;
-            yield return new WaitForSeconds(1/speed);
+            StartCoroutine(TypeText(value));
         }
         
-        OnComplete.Invoke();
+        IEnumerator TypeText(string value)
+        {
+            text.text = "";
+
+            foreach (var character in value)
+            {
+                text.text += character;
+                yield return new WaitForSeconds(1/speed);
+            }
+            
+            OnComplete.Invoke();
+        }
     }
 }

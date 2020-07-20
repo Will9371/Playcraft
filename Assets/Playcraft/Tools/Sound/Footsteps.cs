@@ -1,71 +1,75 @@
 ﻿using UnityEngine;
 
-public interface IMoveAndRotate
+namespace Playcraft
 {
-    float moveSpeed { get; }
-    float turnSpeed { get; }
-}
-
-public class Footsteps : MonoBehaviour
-{
-    [SerializeField] float stepsPerMeter = 2f;
-    [SerializeField] float stepsPerAngle = 0.02f;
-    [SerializeField] float maxStepCheckTime = .5f;
-
-    [SerializeField] GameObject movementContainer;
-
-    IMoveAndRotate movement;
-    MultiSound sound;
-    
-    bool grounded;
-    public void SetGrounded(bool value) { grounded = value; }
-
-    bool isMoving;
-    bool isTurning;
-    float nextStepDelay = 0.5f;
-
-    private void Start()
+    public interface IMoveAndRotate
     {
-        sound = GetComponent<MultiSound>();
-        //ground = GetComponent<GroundCheck>();
-        movement = movementContainer.GetComponent<IMoveAndRotate>();
+        float moveSpeed { get; }
+        float turnSpeed { get; }
+    }
+
+    public class Footsteps : MonoBehaviour
+    {
+        #pragma warning disable 0649
+        [SerializeField] float stepsPerMeter = 2f;
+        [SerializeField] float stepsPerAngle = 0.02f;
+        [SerializeField] float maxStepCheckTime = .5f;
+        [SerializeField] GameObject movementContainer;
+        #pragma warning restore 0649
+
+        IMoveAndRotate movement;
+        MultiSound sound;
         
-        Invoke("RequestStep", nextStepDelay);
-    }
+        bool grounded;
+        public void SetGrounded(bool value) { grounded = value; }
 
-    public void SetMovement(bool isMoving)
-    {
-        //Debug.Log("Moving = " + isMoving);
-        this.isMoving = isMoving;
-    }
+        bool isMoving;
+        bool isTurning;
+        float nextStepDelay = 0.5f;
 
-    public void SetTurning(bool isTurning)
-    {
-        //Debug.Log("Turning = " + isTurning);
-        this.isTurning = isTurning;
-    }
-
-    private void RequestStep()
-    {
-        if (grounded)
+        private void Start()
         {
-            if (isMoving)
-            {
-                nextStepDelay = 1 / (movement.moveSpeed * stepsPerMeter);
-                sound.PlayRandom();
-            }
-            else if (isTurning)
-            {
-                nextStepDelay = 1 / (movement.turnSpeed * stepsPerAngle);
-                sound.PlayRandom();
-            }
-            else
-                nextStepDelay = 0.5f;
+            sound = GetComponent<MultiSound>();
+            //ground = GetComponent<GroundCheck>();
+            movement = movementContainer.GetComponent<IMoveAndRotate>();
+            
+            Invoke("RequestStep", nextStepDelay);
         }
 
-        if (nextStepDelay > maxStepCheckTime)
-            nextStepDelay = maxStepCheckTime;
-        
-        Invoke("RequestStep", nextStepDelay);
+        public void SetMovement(bool isMoving)
+        {
+            //Debug.Log("Moving = " + isMoving);
+            this.isMoving = isMoving;
+        }
+
+        public void SetTurning(bool isTurning)
+        {
+            //Debug.Log("Turning = " + isTurning);
+            this.isTurning = isTurning;
+        }
+
+        private void RequestStep()
+        {
+            if (grounded)
+            {
+                if (isMoving)
+                {
+                    nextStepDelay = 1 / (movement.moveSpeed * stepsPerMeter);
+                    sound.PlayRandom();
+                }
+                else if (isTurning)
+                {
+                    nextStepDelay = 1 / (movement.turnSpeed * stepsPerAngle);
+                    sound.PlayRandom();
+                }
+                else
+                    nextStepDelay = 0.5f;
+            }
+
+            if (nextStepDelay > maxStepCheckTime)
+                nextStepDelay = maxStepCheckTime;
+            
+            Invoke("RequestStep", nextStepDelay);
+        }
     }
 }

@@ -1,29 +1,29 @@
 ﻿using UnityEngine;
 
-public class EdgeDetect : MonoBehaviour
+namespace Playcraft
 {
-    enum NormalState { False, True, Unchanged }
-
-    [SerializeField] NormalState defaultState;
-    [SerializeField] BoolEvent OnEdgeDetect;
-    
-    bool priorState;
-    bool state;
-
-    public void SetState(bool state) { this.state = state; }
-
-    void Update()
+    public class EdgeDetect : MonoBehaviour
     {
-        if (state != priorState)
-            OnEdgeDetect.Invoke(state);
+        [SerializeField] Trinary defaultState = default;
+        [SerializeField] BoolEvent OnEdgeDetect = default;
         
-        priorState = state;
-        
-        switch (defaultState)
+        bool priorState;
+        bool state;
+        public void SetState(bool state) { this.state = state; }
+
+        void Update()
         {
-            case NormalState.False: state = false; break;
-            case NormalState.True: state = true; break;
-            case NormalState.Unchanged: break;
+            if (state != priorState)
+                OnEdgeDetect.Invoke(state);
+            
+            priorState = state;
+            
+            switch (defaultState)
+            {
+                case Trinary.False: state = false; break;
+                case Trinary.True: state = true; break;
+                case Trinary.Unknown: break;
+            }
         }
     }
 }

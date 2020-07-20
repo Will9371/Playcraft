@@ -4,11 +4,12 @@ namespace Playcraft
 {
     public class RangeIndicator : MonoBehaviour
     {
+        #pragma warning disable 0649
         public float maxRange;
         public float currentRange;
         public float expandSpeed;
-
         [SerializeField] Transform followXZ;
+        #pragma warning restore 0649
 
         Projector projector;
 

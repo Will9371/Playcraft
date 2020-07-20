@@ -3,10 +3,11 @@ using UnityEngine.Events;
 
 public class BinaryThreshold : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] Vector2 thresholds;
-    
     [SerializeField] UnityEvent OutputHigh;
     [SerializeField] UnityEvent OutputLow;
+    #pragma warning restore 0649
     
     public bool isHigh;
     //public float debugValue;
