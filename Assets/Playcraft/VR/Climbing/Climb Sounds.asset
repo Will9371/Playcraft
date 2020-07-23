@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72448396b277f84abba01605b05f313, type: 3}
+  m_Name: Climb Sounds
+  m_EditorClassIdentifier: 
+  values:
+  - {fileID: 8300000, guid: a76b6185495f3604f9bd58f321d17f69, type: 3}
+  - {fileID: 8300000, guid: 829b125e39edd8640bc2538b03438351, type: 3}
+  - {fileID: 8300000, guid: 4672e833e9bed054697183f60d96068a, type: 3}
+  - {fileID: 8300000, guid: ff65d0fc8c43fb145a844ab14db3a4a7, type: 3}

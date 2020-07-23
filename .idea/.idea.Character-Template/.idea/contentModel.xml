@@ -282,6 +282,15 @@
             </e>
           </e>
           <e p="VR" t="Include">
+            <e p="Climbing" t="Include">
+              <e p="Climb.cs" t="Include" />
+              <e p="Climbable.cs" t="Include" />
+              <e p="ClimbFeet.cs" t="Include" />
+              <e p="ExpandingSphere.cs" t="Include" />
+              <e p="FilterClimbable.cs" t="Include" />
+              <e p="LocalPositionOverride.cs" t="Include" />
+              <e p="PlayerOffset.cs" t="Include" />
+            </e>
             <e p="Hands" t="Include">
               <e p="Robot" t="Include">
                 <e p="HandAnimationController.cs" t="Include" />
