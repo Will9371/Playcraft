@@ -202,6 +202,7 @@
             <e p="Unity Hooks" t="Include">
               <e p="Input" t="Include">
                 <e p="CombineAsyncVectors.cs" t="Include" />
+                <e p="Enums.cs" t="Include" />
                 <e p="InputRotation.cs" t="Include" />
                 <e p="KeyboardInput.cs" t="Include" />
                 <e p="MouseDrag.cs" t="Include" />
@@ -289,8 +290,19 @@
             <e p="Input" t="Include">
               <e p="XRInput.cs" t="Include" />
               <e p="XRInput2D.cs" t="Include" />
+              <e p="XRStatics.cs" t="Include" />
             </e>
             <e p="Surface Teleport" t="Include">
+              <e p="Optimized" t="Include">
+                <e p="ArcTeleport.cs" t="Include" />
+                <e p="BinaryThreshold.cs" t="Include" />
+                <e p="CalculateParabolicArc.cs" t="Include" />
+                <e p="FindHitsInPath.cs" t="Include" />
+                <e p="IndexedRaycastHit.cs" t="Include" />
+                <e p="LineRendererInterface.cs" t="Include" />
+                <e p="TeleportCutoffPath.cs" t="Include" />
+                <e p="TeleportResult.cs" t="Include" />
+              </e>
               <e p="RangeIndicator.cs" t="Include" />
               <e p="ScrollTransparent.shader" t="Include" />
               <e p="TeleportCutoffPath.cs" t="Include" />

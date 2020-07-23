@@ -17,5 +17,10 @@ namespace Playcraft
         {
             rend.material.SetColor(shaderColorId, color);
         }
+        
+        public void SetVisible(bool value)
+        {
+            rend.enabled = value;
+        }
     }
 }

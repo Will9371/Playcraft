@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.XR;
+﻿using Playcraft.VR;
+using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class XRInput2D : MonoBehaviour
@@ -20,7 +20,7 @@ public class XRInput2D : MonoBehaviour
     
     public void GetAxisValue()
     {
-        controller.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out value);        
+        XRStatics.Get2DAxisValue(controller.inputDevice);      
         OnActive.Invoke(value);
     }
 }

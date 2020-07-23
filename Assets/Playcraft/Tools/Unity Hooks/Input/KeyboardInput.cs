@@ -44,7 +44,5 @@ namespace Playcraft
             
             if (active) OnActive.Invoke();
         }
-    }
-    
-    public enum PressType { Down, Up, Continuous }
+    }    
 }
