@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
 
-public class PlayerOffset : MonoBehaviour
+namespace Playcraft.VR
 {
-    private SphereCollider playerCol;
-    [SerializeField] Transform playerHeadLocation;
-    Vector3 headOffset;
-
-    private void Awake()
+    public class PlayerOffset : MonoBehaviour
     {
-        playerCol = GetComponent<SphereCollider>();
-    }
+        private SphereCollider playerCol;
+        [SerializeField] Transform playerHeadLocation = default;
+        Vector3 headOffset;
 
-    private void Update()
-    {
-        headOffset = transform.position - playerHeadLocation.position;
-        headOffset = new Vector3(-headOffset.x, -headOffset.y, -headOffset.z);
-        playerCol.center = headOffset;
+        private void Awake()
+        {
+            playerCol = GetComponent<SphereCollider>();
+        }
+
+        private void Update()
+        {
+            headOffset = transform.position - playerHeadLocation.position;
+            headOffset = new Vector3(-headOffset.x, -headOffset.y, -headOffset.z);
+            playerCol.center = headOffset;
+        }
     }
 }

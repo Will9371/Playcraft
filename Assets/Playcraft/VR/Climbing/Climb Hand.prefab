@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 671002493372908518}
   - component: {fileID: 671002493372908517}
   m_Layer: 0
-  m_Name: Climb
+  m_Name: Climb Hand
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,10 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwStrength: 0.7
+  rb: {fileID: 0}
   rig: {fileID: 0}
   otherHand: {fileID: 0}
-  isGrabbing: 0
-  isTouchingGrabbable: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls:
@@ -262,6 +261,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isGrabbing: 0
+  isTouchingGrabbable: 0
 --- !u!114 &671002493372908523
 MonoBehaviour:
   m_ObjectHideFlags: 0

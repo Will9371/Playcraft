@@ -10,7 +10,6 @@ public class XRInput2D : MonoBehaviour
     [SerializeField] bool alwaysActive;
     #pragma warning restore 0649
     
-    Vector2 value;
     
     private void Update()
     {
@@ -20,7 +19,6 @@ public class XRInput2D : MonoBehaviour
     
     public void GetAxisValue()
     {
-        XRStatics.Get2DAxisValue(controller.inputDevice);      
-        OnActive.Invoke(value);
+        OnActive.Invoke(XRStatics.Get2DAxisValue(controller.inputDevice));
     }
 }

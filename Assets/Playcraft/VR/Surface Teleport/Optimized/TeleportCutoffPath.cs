@@ -19,25 +19,24 @@ namespace Playcraft.Optimized.VR
         {    
             for (int i = 0; i < hitData.Count; i++)
             {
-                var surface = hitData[i].hit.collider.GetComponent<TeleportSurface>();
-                
-                if (surface)
-                    return ParseHit(ref path, hitData[i], surface);
+                surface = hitData[i].hit.collider.GetComponent<ComponentTags>();
+                if (!surface) continue;
+                return ParseHit(ref path, hitData[i], surface);
             }
                 
             return new TeleportResult(path[path.Length - 1], Trinary.Unknown);
         }
         
         IndexedRaycastHit indexedHit;
-        TeleportSurface surface;
+        ComponentTags surface;
         RaycastHit hit => indexedHit.hit;
         int cutoffIndex => indexedHit.index;
         Vector3 cutoffPoint => hit.point;
-        bool validHit => surface.valid;
+        bool validHit => surface.IsValid(TagID.Teleport);
         float hitAngle => Vector3.Angle(hit.normal, Vector3.up);
-        Trinary success => (validHit && hitAngle < maxSlope) ? Trinary.True : Trinary.False;
+        Trinary success => validHit && hitAngle < maxSlope ? Trinary.True : Trinary.False;
             
-        private TeleportResult ParseHit(ref Vector3[] path, IndexedRaycastHit indexedHit, TeleportSurface surface)
+        private TeleportResult ParseHit(ref Vector3[] path, IndexedRaycastHit indexedHit, ComponentTags surface)
         {
             this.indexedHit = indexedHit;
             this.surface = surface;
