@@ -21,6 +21,12 @@ namespace Playcraft.VR
             }
         }
         
+        public static bool IsPressed(InputDevice device, XRButton button)
+        {
+            device.TryGetFeatureValue(GetFeature(button), out bool value);
+            return value;
+        }
+        
         public static Vector2 Get2DAxisValue(InputDevice device)
         {
             device.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 value);

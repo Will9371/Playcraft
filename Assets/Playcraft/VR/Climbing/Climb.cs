@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Playcraft.VR
 {
-    public class Climb : MonoBehaviour//, IPrioritizedAction
+    public class Climb : MonoBehaviour
     {
         #pragma warning disable 0649
         [SerializeField] float throwStrength;
@@ -22,13 +22,6 @@ namespace Playcraft.VR
         private Vector3 moveCur, movePrev, moveDelta;
         private static int CurrentHandValue;
         
-        
-        #region Prioritization
-        public int GetPriority() { return 0; }
-        public bool CanExecute() { return isTouchingGrabbable; }
-        public void Execute() { BeginPull(false); }
-        public void Stop() { Release(); }
-        #endregion
         
         #region State Management
         
@@ -85,10 +78,11 @@ namespace Playcraft.VR
         
         #endregion
         
+        
         #region Movement
         
         private void Update()
-        {
+        {        
             if (isGrabbing && !otherHand.isGrabbing)
                 MoveRig();
         }

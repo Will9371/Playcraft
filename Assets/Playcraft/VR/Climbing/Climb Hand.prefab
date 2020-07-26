@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 671002493372908519}
   - component: {fileID: 7360030203177000442}
-  - component: {fileID: 5224054265483777297}
   - component: {fileID: 9107880488599065517}
   - component: {fileID: 671002493372908516}
   - component: {fileID: 671002493372908523}
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 671002493372908512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 1417947017459063982}
   m_Father: {fileID: 0}
@@ -84,52 +83,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &5224054265483777297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671002493372908512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9107880488599065517}
-          m_MethodName: InputEntry
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - touchType: 1
-    collisionType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9107880488599065517}
-          m_MethodName: InputExit
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
 --- !u!114 &9107880488599065517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd8cae509dc0234abc1fc7a076a3fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interaction: 2
   OnEnter:
     m_PersistentCalls:
       m_Calls:
@@ -383,7 +337,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8228822106324446328
 GameObject:
@@ -444,7 +398,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1331d0fb3393da24aa88e20d9b1f66a0, type: 2}
+  - {fileID: 2100000, guid: 0a4855a96b54302409de4898d42499ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -472,7 +426,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8228822106324446328}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0db246b8cec4eb34596d355ff1040847, type: 3}
   m_Name: 

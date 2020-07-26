@@ -34,7 +34,7 @@ namespace Playcraft.VR
 
         public void Update(InputDevice device)
         {
-            device.TryGetFeatureValue(XRStatics.GetFeature(button), out isPressed);
+            isPressed = XRStatics.IsPressed(device, button);
             bool active = false;
             
             switch (pressType)

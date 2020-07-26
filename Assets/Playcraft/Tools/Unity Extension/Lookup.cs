@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 // Globally-accessible point of access to prefabs and scriptable object resources
 public class Lookup : ScriptableObject
