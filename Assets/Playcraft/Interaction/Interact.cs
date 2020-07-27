@@ -3,7 +3,7 @@
 namespace Playcraft
 {
     public class Interact : MonoBehaviour
-    {    
+    {        
         Interactable interactable;
         
         bool interactionLocked;
@@ -19,6 +19,7 @@ namespace Playcraft
         
         public void SetInteractable(GameObject other, bool activate)
         {
+            //Debug.Log(other);
             if (interactionLocked) return;
         
             var _interactable = other.GetComponent<Interactable>();

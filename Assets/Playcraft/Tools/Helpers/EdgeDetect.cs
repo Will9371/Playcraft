@@ -1,12 +1,12 @@
 ﻿// Required ticks functionality not verified
 namespace Playcraft.Optimized
 {
-    public class EdgeDetect
+    public class Edge_Detect
     {
         public bool changeHigh;
         public bool changeLow;
         
-        public EdgeDetect(int ticksRequired = 1)
+        public Edge_Detect(int ticksRequired = 1)
         {
             this.ticksRequired = ticksRequired;
         }

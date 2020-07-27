@@ -82,11 +82,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3446401166425215926}
-        m_MethodName: RequestActivate
-        m_Mode: 0
+        m_MethodName: Activate
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -448,4 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def187d787f229247a129a21839e2fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pivot: 1
+  matchRotation: 1
   target: {fileID: 0}

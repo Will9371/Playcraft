@@ -916,7 +916,6 @@ GameObject:
   - component: {fileID: 3403923577405371592}
   - component: {fileID: 3403923577405371595}
   - component: {fileID: 3403923577405371594}
-  - component: {fileID: 3403923577405371573}
   - component: {fileID: 3403923577405371572}
   m_Layer: 0
   m_Name: Interaction Area
@@ -1017,8 +1016,8 @@ MonoBehaviour:
     Output:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3403923577405371573}
-          m_MethodName: ReceiveTouch
+        - m_Target: {fileID: 3403923577405371572}
+          m_MethodName: SetInteractable
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1033,9 +1032,9 @@ MonoBehaviour:
     Output:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3403923577405371573}
-          m_MethodName: ClearTouch
-          m_Mode: 1
+        - m_Target: {fileID: 3403923577405371572}
+          m_MethodName: ClearInteractable
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1063,12 +1062,13 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3403923577405371573}
-          m_MethodName: ReceiveInput
-          m_Mode: 6
+        - m_Target: {fileID: 3403923577405371572}
+          m_MethodName: Activate
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1079,57 +1079,18 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3403923577405371573}
-          m_MethodName: ReceiveInput
-          m_Mode: 6
+        - m_Target: {fileID: 3403923577405371572}
+          m_MethodName: Activate
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 11400000, guid: d0434972a2612c3459c141a329b95525,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &3403923577405371573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3403923577405371574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea8dc074bb9da94a9fd756f5bbba3d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnGrab:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3403923577405371572}
-        m_MethodName: RequestActivate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDrop:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3403923577405371572}
-        m_MethodName: RequestDeactivate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3403923577405371572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,12 +1153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8caea49b9002bd48aafd1b78b38ae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 1
   rb: {fileID: 4009807951914563901}
   OnMove:
     m_PersistentCalls:
       m_Calls: []
-  state: {fileID: 0}
   baseSpeed: 3
 --- !u!54 &4009807951914563901
 Rigidbody:

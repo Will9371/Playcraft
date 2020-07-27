@@ -22,5 +22,11 @@ namespace Playcraft
         
         public void SetMaterialColor(ColorSO color) { SetMaterialColor(color.value); }
         public void SetMaterialColor(Color color) { line.material.SetColor(shaderColorId, color); }
+        
+        public void SetEndPosition(Vector3 value)
+        {
+            var index = line.positionCount - 1;
+            line.SetPosition(index, value);
+        }
     }
 }
