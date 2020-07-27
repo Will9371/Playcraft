@@ -6,9 +6,11 @@ namespace Playcraft
 {
     public class ReliableTrigger : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] ColliderEvent Enter;
         [SerializeField] ColliderEvent Exit;
         [SerializeField] int requiredTransitionFrames = 3;
+        #pragma warning restore 0649
 
         Edge_Detect edge;
         

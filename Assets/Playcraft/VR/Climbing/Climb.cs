@@ -14,16 +14,23 @@ namespace Playcraft.VR
         [SerializeField] UnityEvent OnFail;
         [SerializeField] UnityEvent OnRelease;
         #pragma warning restore 0649
-
-        bool grabInput;
+        
         public bool isGrabbing;
         public bool isTouchingGrabbable;
-
-        private Vector3 moveCur, movePrev, moveDelta;
-        private static int CurrentHandValue;
         
+        bool grabInput;
+        Vector3 position, priorPosition, deltaPosition;
+        
+        GameObject grabbedObject;
+        Vector3 grabbedPosition, priorGrabbedPosition, deltaGrabbedPosition;
         
         #region State Management
+        
+        public void SetTouchingGrabbable(GameObject grabbedObject, bool isGrabbing)
+        {
+            this.grabbedObject = grabbedObject;
+            SetTouchingGrabbable(isGrabbing);
+        }
         
         public void SetTouchingGrabbable(bool value) 
         { 
@@ -46,7 +53,7 @@ namespace Playcraft.VR
         
             if (isTouchingGrabbable)
             {
-                movePrev = Vector3.zero;
+                priorPosition = Vector3.zero;
 
                 isGrabbing = true;
                 otherHand.isGrabbing = false;
@@ -89,23 +96,31 @@ namespace Playcraft.VR
         
         private void MoveRig()
         {
-            moveCur = transform.position;
+            position = transform.position;
+            grabbedPosition = grabbedObject.transform.position;            
 
             // Initialize on starting frame
-            if (movePrev == Vector3.zero)
-                movePrev = moveCur;
+            if (priorPosition == Vector3.zero)
+            {
+                priorPosition = position;
+                priorGrabbedPosition = grabbedPosition;
+            }
             else
             {
-                moveDelta = movePrev - moveCur;
-                rb.MovePosition(rig.position + moveDelta);
-                moveCur += moveDelta;
-                movePrev = moveCur;
+                deltaGrabbedPosition = grabbedPosition - priorGrabbedPosition;
+                deltaPosition = priorPosition - position + deltaGrabbedPosition;
+                
+                rb.MovePosition(rig.position + deltaPosition);
+                position += deltaPosition;
+                
+                priorPosition = position;
+                priorGrabbedPosition = grabbedPosition;
             }
         }
 
         private void ThrowSelf()
         {
-            rb.velocity = (moveDelta / Time.deltaTime) * throwStrength;
+            rb.velocity = (deltaPosition / Time.deltaTime) * throwStrength;
         }
         
         #endregion

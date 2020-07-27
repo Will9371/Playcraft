@@ -4,8 +4,10 @@ namespace Playcraft
 {
     public class GetTargetVector : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] bool otherIsTarget;
         [SerializeField] Vector3Event Output;
+        #pragma warning restore 0649
         
         Vector3 ownPosition => transform.position;
         
