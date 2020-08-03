@@ -56,7 +56,7 @@ namespace Playcraft.VR
                 priorPosition = Vector3.zero;
 
                 isGrabbing = true;
-                otherHand.isGrabbing = false;
+                otherHand.Ungrab();
 
                 rb.useGravity = false;
                 rb.velocity = Vector3.zero;
@@ -79,6 +79,11 @@ namespace Playcraft.VR
                 ThrowSelf();
             }
 
+            Ungrab();
+        }
+        
+        public void Ungrab()
+        {
             isGrabbing = false;
             OnRelease.Invoke();
         }
@@ -88,7 +93,7 @@ namespace Playcraft.VR
         
         #region Movement
         
-        private void Update()
+        private void LateUpdate()
         {        
             if (isGrabbing && !otherHand.isGrabbing)
                 MoveRig();
@@ -110,7 +115,8 @@ namespace Playcraft.VR
                 deltaGrabbedPosition = grabbedPosition - priorGrabbedPosition;
                 deltaPosition = priorPosition - position + deltaGrabbedPosition;
                 
-                rb.MovePosition(rig.position + deltaPosition);
+                //rb.MovePosition(rig.position + deltaPosition);
+                rig.Translate(deltaPosition);
                 position += deltaPosition;
                 
                 priorPosition = position;

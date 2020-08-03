@@ -260,6 +260,7 @@
               </e>
               <e p="UI" t="Include">
                 <e p="DisplayText.cs" t="Include" />
+                <e p="ItemListController.cs" t="Include" />
               </e>
             </e>
             <e p="UnityEvent Helpers" t="Include">

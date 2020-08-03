@@ -161,21 +161,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2337567814349460007}
   speed: 2
+  smoothTime: 1
   stoppingDistance: 0.2
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2337567813876842179}
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &2337567813876842179
 MonoBehaviour:
   m_ObjectHideFlags: 0
