@@ -933,3 +933,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e36eb07a93c07c4db441bc5d6e5d294, type: 3}
+--- !u!1 &2130978241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4399053689265857547, guid: 3e36eb07a93c07c4db441bc5d6e5d294,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130978240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2130978242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4399053689265857549, guid: 3e36eb07a93c07c4db441bc5d6e5d294,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130978240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130978241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7612afadb92c6b4abc26db626b29d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2130978243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130978241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdcd27db34fa4bb49b1aab5b975a8458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSensitivity: 1
+  OnMouseScroll:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2130978242}
+        m_MethodName: Accelerate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

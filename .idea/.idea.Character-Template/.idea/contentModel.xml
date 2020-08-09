@@ -89,7 +89,7 @@
             <e p="ObjectSpawner.cs" t="Include" />
             <e p="SpawnPrefab.cs" t="Include" />
           </e>
-          <e p="Tools" t="Include">
+          <e p="Quality of Life" t="Include">
             <e p="Animation" t="Include">
               <e p="AnimatedMoveState.cs" t="Include" />
               <e p="HumanoidAnimationInterface.cs" t="Include" />
@@ -105,6 +105,10 @@
             <e p="Helpers" t="Include">
               <e p="EdgeDetect.cs" t="Include" />
               <e p="MovingAverage.cs" t="Include" />
+            </e>
+            <e p="Logic" t="Include">
+              <e p="BinaryConditions.cs" t="Include" />
+              <e p="BooleanLogic.cs" t="Include" />
             </e>
             <e p="Perception" t="Include">
               <e p="DistanceThreshold.cs" t="Include" />
@@ -142,7 +146,6 @@
               <e p="RespondToEventIDWithGameObject.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
-              <e p="MouseStatics.cs" t="Include" />
               <e p="RandomStatics.cs" t="Include" />
               <e p="RangeMath.cs" t="Include" />
               <e p="StaticAxis.cs" t="Include" />
@@ -159,6 +162,7 @@
               </e>
               <e p="Color" t="Include">
                 <e p="CycleColor.cs" t="Include" />
+                <e p="SetColor.cs" t="Include" />
               </e>
               <e p="Float" t="Include">
                 <e p="DriftFloat.cs" t="Include" />
@@ -235,9 +239,6 @@
                 <e p="Enums.cs" t="Include" />
                 <e p="InputRotation.cs" t="Include" />
                 <e p="KeyboardInput.cs" t="Include" />
-                <e p="MouseDrag.cs" t="Include" />
-                <e p="MouseInput.cs" t="Include" />
-                <e p="MouseRaycast.cs" t="Include" />
               </e>
               <e p="Monobehaviour" t="Include">
                 <e p="AwakeEvent.cs" t="Include" />
@@ -257,10 +258,6 @@
                 <e p="GetDuration.cs" t="Include" />
                 <e p="ProgressEvent.cs" t="Include" />
                 <e p="TimedEvent.cs" t="Include" />
-              </e>
-              <e p="UI" t="Include">
-                <e p="DisplayText.cs" t="Include" />
-                <e p="ItemListController.cs" t="Include" />
               </e>
             </e>
             <e p="UnityEvent Helpers" t="Include">
@@ -312,6 +309,22 @@
                 <e p="Vector3Relay.cs" t="Include" />
               </e>
             </e>
+          </e>
+          <e p="UI" t="Include">
+            <e p="Cursor" t="Include">
+              <e p="CursorInterface.cs" t="Include" />
+              <e p="EventTriggerInterface.cs" t="Include" />
+              <e p="GetMouseInput.cs" t="Include" />
+              <e p="GetMouseScroll.cs" t="Include" />
+              <e p="MouseClickCollider.cs" t="Include" />
+              <e p="MouseClickInput.cs" t="Include" />
+              <e p="MouseDrag.cs" t="Include" />
+              <e p="MouseRaycast.cs" t="Include" />
+              <e p="MouseStatics.cs" t="Include" />
+            </e>
+            <e p="DisplayText.cs" t="Include" />
+            <e p="ItemListController.cs" t="Include" />
+            <e p="SetImageColor.cs" t="Include" />
           </e>
           <e p="VR" t="Include">
             <e p="Climbing" t="Include">

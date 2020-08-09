@@ -41,22 +41,3 @@ namespace Playcraft
         }
     }
 }
-
-//[SerializeField] GameObjectEvent Activate;
-//[SerializeField] GameObjectEvent Deactivate;
-
-//bool active;    
-
-/*public void Input(bool active)
-{
-    this.active = active;
-    if (!interactor) return;
-
-    if (active && interactor != null)
-        Activate.Invoke(interactor);
-    else if (!active && interactor != null)
-        Deactivate.Invoke(interactor);
-}*/
-
-//if (interactor != null && active)
-//    Deactivate.Invoke(interactor);

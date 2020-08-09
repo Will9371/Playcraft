@@ -8,16 +8,12 @@ public class ItemListController : MonoBehaviour
     [SerializeField] GameObject itemTemplate;
     #pragma warning restore 0649
         
-    RectTransform itemRect;    // Stores size of item template
+    // Stores size of item template
+    RectTransform itemRect;
     
     public List<GameObject> items = new List<GameObject>();
     
     private void Start()
-    {
-        Initialize();
-    }
-    
-    private void Initialize()
     {
         itemTemplate.SetActive(false);       
     }
@@ -33,7 +29,6 @@ public class ItemListController : MonoBehaviour
         var newItem = Instantiate(itemTemplate, content);
         newItem.SetActive(true);    
         items.Add(newItem);
-        
         return newItem;
     }
     
