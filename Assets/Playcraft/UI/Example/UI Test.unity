@@ -121,6 +121,359 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &222899325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222899326}
+  - component: {fileID: 222899331}
+  - component: {fileID: 222899330}
+  - component: {fileID: 222899327}
+  - component: {fileID: 222899329}
+  - component: {fileID: 222899328}
+  - component: {fileID: 222899332}
+  m_Layer: 5
+  m_Name: Interactable Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &222899326
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222899325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1249680607}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -106.09, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &222899327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222899325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289e2d84b562f494d9415088274109f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindings:
+  - button: 0
+    interaction: 0
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899329}
+          m_MethodName: SetVariableTrue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 0
+    interaction: 1
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899329}
+          m_MethodName: SetVariableFalse
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 1
+    interaction: 0
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899329}
+          m_MethodName: SetVariableTrue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 1
+    interaction: 1
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899329}
+          m_MethodName: SetVariableFalse
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 0
+    interaction: 3
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899329}
+          m_MethodName: SetVariableTrue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 0
+    interaction: 4
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899329}
+          m_MethodName: SetVariableFalse
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &222899328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222899325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1240c76ecfd72448289917aec73915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 222899330}
+--- !u!114 &222899329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222899325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cabc205511bca046b1e6ac70c3e428a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evaluateOnSetVariable: 1
+  expressions:
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899328}
+          m_MethodName: SetColor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: de4d306c7b3de8e49972ee6314d2d997,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899328}
+          m_MethodName: SetColor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 0ed9bbc258b154847833a7afac0cb7be,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899328}
+          m_MethodName: SetColor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 88d76e65a4d17e64b900160363ea3c13,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 1
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899328}
+          m_MethodName: SetColor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 01f1235067798884b8c7517d42e46a30,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 1
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 222899328}
+          m_MethodName: SetColor
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: cadc79be1e03ba04ea9da483a0e15f6c,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &222899330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222899325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: c1323432bc63e204388a0fe226161b63, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &222899331
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222899325}
+  m_CullTransparentMesh: 0
+--- !u!114 &222899332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222899325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f39cf7a08f3d74fa237727492267a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: 0
 --- !u!1 &256410616
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +485,7 @@ GameObject:
   - component: {fileID: 256410619}
   - component: {fileID: 256410618}
   - component: {fileID: 256410617}
-  - component: {fileID: 256410621}
-  - component: {fileID: 256410620}
+  - component: {fileID: 256410622}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -206,7 +558,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &256410620
+--- !u!114 &256410622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,1334 +567,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 256410616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d795df6e438944a8433576fd5a5341, type: 3}
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Output:
-    m_PersistentCalls:
-      m_Calls: []
-  layerMask:
+  m_EventMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  triggerInteraction: 0
---- !u!114 &256410621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256410616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c475d5b6f50f54584be9933a14ad5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickInput:
-  - button: 1
-    pressType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 256410620}
-          m_MethodName: GetHit
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - button: 1
-    pressType: 1
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 256410620}
-          m_MethodName: GetHit
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 3682fbd3489a2a24f83b85e3d53ca08e,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - button: 2
-    pressType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 256410620}
-          m_MethodName: GetHit
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - button: 2
-    pressType: 1
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 256410620}
-          m_MethodName: GetHit
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 1ef1a2c260610464e95cc07222f5721f,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!1 &449786862
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 449786863}
-  - component: {fileID: 449786869}
-  - component: {fileID: 449786868}
-  - component: {fileID: 449786867}
-  - component: {fileID: 449786866}
-  - component: {fileID: 449786865}
-  - component: {fileID: 449786864}
-  m_Layer: 5
-  m_Name: Panel - Left Right Click Enter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &449786863
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449786862}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1249680607}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.09, y: -100}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &449786864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449786862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1240c76ecfd72448289917aec73915, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 449786868}
---- !u!114 &449786865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449786862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cabc205511bca046b1e6ac70c3e428a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evaluateOnSetVariable: 1
-  expressions:
-  - orBlocks:
-    - andBlock:
-      - id: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb, type: 2}
-        desired: 0
-        value: 0
-      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
-        desired: 0
-        value: 0
-      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
-        desired: 0
-        value: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786864}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: de4d306c7b3de8e49972ee6314d2d997,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - orBlocks:
-    - andBlock:
-      - id: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb, type: 2}
-        desired: 1
-        value: 0
-      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
-        desired: 0
-        value: 0
-      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
-        desired: 0
-        value: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786864}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 0ed9bbc258b154847833a7afac0cb7be,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - orBlocks:
-    - andBlock:
-      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
-        desired: 1
-        value: 0
-      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
-        desired: 0
-        value: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786864}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 88d76e65a4d17e64b900160363ea3c13,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - orBlocks:
-    - andBlock:
-      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
-        desired: 0
-        value: 0
-      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
-        desired: 1
-        value: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786864}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 01f1235067798884b8c7517d42e46a30,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - orBlocks:
-    - andBlock:
-      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
-        desired: 1
-        value: 0
-      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
-        desired: 1
-        value: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786864}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: cadc79be1e03ba04ea9da483a0e15f6c,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &449786866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449786862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bebb031015a0d254d8b9e33a42ae2b96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bindings:
-  - button: 0
-    interaction: 0
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786865}
-          m_MethodName: SetVariableTrue
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - button: 0
-    interaction: 1
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786865}
-          m_MethodName: SetVariableFalse
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - button: 1
-    interaction: 0
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786865}
-          m_MethodName: SetVariableTrue
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - button: 1
-    interaction: 1
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786865}
-          m_MethodName: SetVariableFalse
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &449786867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449786862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786866}
-          m_MethodName: PointerDown
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786866}
-          m_MethodName: PointerUp
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786865}
-          m_MethodName: SetVariableTrue
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 449786865}
-          m_MethodName: SetVariableFalse
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &449786868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449786862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &449786869
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449786862}
-  m_CullTransparentMesh: 0
---- !u!1 &483114442
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 483114444}
-  - component: {fileID: 483114443}
-  m_Layer: 0
-  m_Name: Digital Logic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &483114443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483114442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cabc205511bca046b1e6ac70c3e428a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evaluateOnSetVariable: 0
-  expressions:
-  - orBlocks:
-    - andBlock:
-      - id: {fileID: 0}
-        desired: 0
-        value: 0
-      - id: {fileID: 0}
-        desired: 0
-        value: 0
-    - andBlock:
-      - id: {fileID: 0}
-        desired: 0
-        value: 0
-      - id: {fileID: 0}
-        desired: 0
-        value: 0
-    True:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!4 &483114444
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483114442}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &573281436
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 573281443}
-  - component: {fileID: 573281442}
-  - component: {fileID: 573281441}
-  - component: {fileID: 573281440}
-  - component: {fileID: 573281439}
-  - component: {fileID: 573281438}
-  - component: {fileID: 573281437}
-  m_Layer: 0
-  m_Name: Sphere - Left Right Click
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &573281437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573281436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff20f587e8b04f44e9c63a1d701600f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerResponseOnConditionChange: 1
-  conditions:
-  - condition: 4
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 573281439}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: de4d306c7b3de8e49972ee6314d2d997,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - condition: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 573281439}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 88d76e65a4d17e64b900160363ea3c13,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - condition: 1
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 573281439}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 01f1235067798884b8c7517d42e46a30,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - condition: 3
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 573281439}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: cadc79be1e03ba04ea9da483a0e15f6c,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &573281438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573281436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2891b053e33704a4eb613fb95ce63136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  elements:
-  - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 573281437}
-          m_MethodName: SetConditionA
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - id: {fileID: 11400000, guid: 3682fbd3489a2a24f83b85e3d53ca08e, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 573281437}
-          m_MethodName: SetConditionA
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 573281437}
-          m_MethodName: SetConditionB
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - id: {fileID: 11400000, guid: 1ef1a2c260610464e95cc07222f5721f, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 573281437}
-          m_MethodName: SetConditionB
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  locked: 0
---- !u!114 &573281439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573281436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925bde6da8a21d443b714c2932150e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderer: {fileID: 573281441}
---- !u!135 &573281440
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573281436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &573281441
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573281436}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &573281442
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573281436}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &573281443
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573281436}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: -2.5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1010084646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1010084650}
-  - component: {fileID: 1010084649}
-  - component: {fileID: 1010084648}
-  - component: {fileID: 1010084647}
-  - component: {fileID: 1010084652}
-  - component: {fileID: 1010084654}
-  - component: {fileID: 1010084653}
-  m_Layer: 0
-  m_Name: Sphere - Left Enter Click
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!135 &1010084647
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010084646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1010084648
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010084646}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1010084649
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010084646}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1010084650
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010084646}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 2.5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1010084652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010084646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 466cac5780032984892931744a2bcf75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bindings:
-  - interaction: 0
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1010084654}
-          m_MethodName: SetConditionA
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: enter
-            m_BoolArgument: 1
-          m_CallState: 2
-  - interaction: 1
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1010084654}
-          m_MethodName: SetConditionA
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: exit
-            m_BoolArgument: 0
-          m_CallState: 2
-  - interaction: 2
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1010084654}
-          m_MethodName: SetConditionB
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: down
-            m_BoolArgument: 1
-          m_CallState: 2
-  - interaction: 3
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1010084654}
-          m_MethodName: SetConditionB
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: up
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1010084653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010084646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925bde6da8a21d443b714c2932150e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderer: {fileID: 1010084648}
---- !u!114 &1010084654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010084646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff20f587e8b04f44e9c63a1d701600f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerResponseOnConditionChange: 1
-  conditions:
-  - condition: 4
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1010084653}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: de4d306c7b3de8e49972ee6314d2d997,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - condition: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1010084653}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 0ed9bbc258b154847833a7afac0cb7be,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - condition: 3
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1010084653}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 01f1235067798884b8c7517d42e46a30,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!1 &1050411921
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1050411922}
-  - component: {fileID: 1050411927}
-  - component: {fileID: 1050411926}
-  - component: {fileID: 1050411925}
-  - component: {fileID: 1050411924}
-  - component: {fileID: 1050411929}
-  - component: {fileID: 1050411928}
-  m_Layer: 5
-  m_Name: Panel - Left Right Click
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1050411922
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050411921}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1249680607}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.09, y: 100}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1050411924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050411921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bebb031015a0d254d8b9e33a42ae2b96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bindings:
-  - button: 0
-    interaction: 0
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411929}
-          m_MethodName: SetConditionA
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: left click down
-            m_BoolArgument: 1
-          m_CallState: 2
-  - button: 0
-    interaction: 1
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411929}
-          m_MethodName: SetConditionA
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: left click up
-            m_BoolArgument: 0
-          m_CallState: 2
-  - button: 1
-    interaction: 0
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411929}
-          m_MethodName: SetConditionB
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: right click down
-            m_BoolArgument: 1
-          m_CallState: 2
-  - button: 1
-    interaction: 1
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411929}
-          m_MethodName: SetConditionB
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: right click up
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1050411925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050411921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411924}
-          m_MethodName: PointerDown
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411924}
-          m_MethodName: PointerUp
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1050411926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050411921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: ad15f6e8969968341b542600c4b8eb14, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1050411927
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050411921}
-  m_CullTransparentMesh: 0
---- !u!114 &1050411928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050411921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1240c76ecfd72448289917aec73915, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 1050411926}
---- !u!114 &1050411929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050411921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff20f587e8b04f44e9c63a1d701600f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerResponseOnConditionChange: 1
-  conditions:
-  - condition: 4
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411928}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: de4d306c7b3de8e49972ee6314d2d997,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - condition: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411928}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 88d76e65a4d17e64b900160363ea3c13,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - condition: 1
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411928}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 01f1235067798884b8c7517d42e46a30,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - condition: 3
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1050411928}
-          m_MethodName: SetColor
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: cadc79be1e03ba04ea9da483a0e15f6c,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_MaxRayIntersections: 0
 --- !u!1 &1104498143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,8 +822,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1050411922}
-  - {fileID: 449786863}
+  - {fileID: 222899326}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1801,3 +831,375 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1452050815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452050822}
+  - component: {fileID: 1452050821}
+  - component: {fileID: 1452050820}
+  - component: {fileID: 1452050819}
+  - component: {fileID: 1452050816}
+  - component: {fileID: 1452050817}
+  - component: {fileID: 1452050818}
+  - component: {fileID: 1452050823}
+  m_Layer: 0
+  m_Name: Interactable Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1452050816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452050815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289e2d84b562f494d9415088274109f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindings:
+  - button: 0
+    interaction: 0
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050817}
+          m_MethodName: SetVariableTrue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - button: 0
+    interaction: 1
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050817}
+          m_MethodName: SetVariableFalse
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 1
+    interaction: 0
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050817}
+          m_MethodName: SetVariableTrue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - button: 1
+    interaction: 1
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050817}
+          m_MethodName: SetVariableFalse
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 0
+    interaction: 3
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050817}
+          m_MethodName: SetVariableTrue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 0
+    interaction: 4
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050817}
+          m_MethodName: SetVariableFalse
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1452050817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452050815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cabc205511bca046b1e6ac70c3e428a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evaluateOnSetVariable: 1
+  expressions:
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050818}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: de4d306c7b3de8e49972ee6314d2d997,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 97df08c966c76c84384a5f405fffd1bb, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050818}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 0ed9bbc258b154847833a7afac0cb7be,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050818}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 88d76e65a4d17e64b900160363ea3c13,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 1
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050818}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 01f1235067798884b8c7517d42e46a30,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 264f3f7651c3c9a47a97fe32e7ed2d21, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 32f3bb72790e7e349ae22855f8fb9026, type: 2}
+        desired: 1
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1452050818}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: cadc79be1e03ba04ea9da483a0e15f6c,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1452050818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452050815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925bde6da8a21d443b714c2932150e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 1452050820}
+--- !u!135 &1452050819
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452050815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1452050820
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452050815}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1452050821
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452050815}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1452050822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452050815}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452050823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452050815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e87ba5c6dc5cc4dbac16c71f83608a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

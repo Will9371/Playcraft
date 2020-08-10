@@ -8,7 +8,7 @@ public class BinaryConditions : MonoBehaviour
     public enum Condition { A_Only, B_Only, OR, AND, NOR, XOR, XNOR }
     
     [SerializeField] bool triggerResponseOnConditionChange = true;
-    [SerializeField] ConditionalResponse[] conditions;
+    [SerializeField] ConditionalResponse[] conditions = default;
     
     bool a;
     bool b;

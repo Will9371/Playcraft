@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
+// DEPRECATED: use RespondToMouse
+
 // Purpose: detect interactions with UI elements
 // Input: pointer data from Unity's EventTrigger component
 // Process: filter data by button id and interaction type
@@ -11,7 +13,7 @@ namespace Playcraft
 {
     public class EventTriggerInterface : MonoBehaviour
     {
-        [SerializeField] PointerBinding[] bindings;
+        [SerializeField] PointerBinding[] bindings = default;
 
         public void PointerDown(BaseEventData data) { Respond(data, PressType.Down); }
         public void PointerUp(BaseEventData data) { Respond(data, PressType.Up); }

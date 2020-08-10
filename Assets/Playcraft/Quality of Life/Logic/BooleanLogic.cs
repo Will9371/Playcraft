@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class BooleanLogic : MonoBehaviour
 {
     [SerializeField] bool evaluateOnSetVariable = true;
-    [SerializeField] Expression[] expressions;
+    [SerializeField] Expression[] expressions = default;
     
     public void SetVariableTrue(TagSO id) { SetVariable(id, true); }
     public void SetVariableFalse(TagSO id) { SetVariable(id, false); }

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+// DEPRECATED: use PhysicsRaycaster on camera, RespondToMouse on interactables
+// (Potential use: object that needs to respond to multiple sources, including mouse)
+
 // Input: external trigger, optional event tag
 // Process: check if mouse is over a valid collider
 // Output: RaycastHit (if any), relay event tag to hit if it has and attached RespondToEventID

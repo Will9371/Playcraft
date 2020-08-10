@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+// DEPRECATED: use RespondToMouse
+
 // Converts Mouse Events to UnityEvent pattern. Only works for left-click.
 // For left/right click detection, use GetMouseInput + MouseRaycast + RespondToEventID
 namespace Playcraft
@@ -10,7 +12,7 @@ namespace Playcraft
     {
         public enum MouseEvent { Enter, Exit, Down, Up, Over, Drag, UpAsButton }
 
-        [SerializeField] MouseEventBindings[] bindings;   
+        [SerializeField] MouseEventBindings[] bindings = default;   
 
         void OnMouseEnter() { Respond(MouseEvent.Enter); }
         void OnMouseExit() { Respond(MouseEvent.Exit); }

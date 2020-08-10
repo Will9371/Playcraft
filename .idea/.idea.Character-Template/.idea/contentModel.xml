@@ -313,14 +313,17 @@
           <e p="UI" t="Include">
             <e p="Cursor" t="Include">
               <e p="CursorInterface.cs" t="Include" />
-              <e p="EventTriggerInterface.cs" t="Include" />
+              <e p="DragObject.cs" t="Include" />
+              <e p="DragUI.cs" t="Include" />
+              <e p="GetMouseDrag.cs" t="Include" />
               <e p="GetMouseInput.cs" t="Include" />
               <e p="GetMouseScroll.cs" t="Include" />
-              <e p="MouseClickCollider.cs" t="Include" />
-              <e p="MouseClickInput.cs" t="Include" />
-              <e p="MouseDrag.cs" t="Include" />
-              <e p="MouseRaycast.cs" t="Include" />
-              <e p="MouseStatics.cs" t="Include" />
+              <e p="Obsolete" t="Include">
+                <e p="EventTriggerInterface.cs" t="Include" />
+                <e p="MouseClickCollider.cs" t="Include" />
+                <e p="MouseRaycast.cs" t="Include" />
+              </e>
+              <e p="RespondToMouse.cs" t="Include" />
             </e>
             <e p="DisplayText.cs" t="Include" />
             <e p="ItemListController.cs" t="Include" />

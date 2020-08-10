@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
+// Input: Game Engine, set active/inactive
+// Process: continuous check for mouse drag
+// Output: drag distance per frame as Vector2 (0 if inactive)
 namespace Playcraft
 {
-    public class MouseDrag : MonoBehaviour
+    public class GetMouseDrag : MonoBehaviour
     {
         #pragma warning disable 0649
         [SerializeField] float xDragSensitivity = 1f;
