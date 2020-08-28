@@ -6,14 +6,16 @@ namespace Playcraft.Pooling
     public class ObjectSpawner : MonoBehaviour 
     {
         List<GameObject> pooledObjects = new List<GameObject>();
-        GameObject pooledObject; 		
-        int currentPoolSize = 0;
-        int index = 0; 	
+        
+        ObjectPoolData data;
+        GameObject pooledObject => data.prefab; 		
+        int currentPoolSize;
+        int index; 	
 
-        public void Initialize(GameObject pooledObject, int startPoolSize)
+        public void Initialize(ObjectPoolData data)
         {
-            this.pooledObject = pooledObject;
-            currentPoolSize = startPoolSize;
+            this.data = data;
+            currentPoolSize = data.startSize;
 
             for (int i = 0; i < currentPoolSize; i++)
                 Add(false);
@@ -23,7 +25,14 @@ namespace Playcraft.Pooling
         {
             GameObject selected = GetPooledObject();
 
-            selected.transform.position = spawnLoc;
+            if (data.isOnCanvas)
+            {
+                var rect = selected.transform as RectTransform;
+                if (rect != null) rect.anchoredPosition3D = spawnLoc;
+            }
+            else
+                selected.transform.position = spawnLoc;
+            
             selected.transform.SetParent(gameObject.transform);  
             selected.SetActive(true);
 

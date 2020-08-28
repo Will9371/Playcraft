@@ -21,17 +21,24 @@ namespace Playcraft.VR
         bool grabInput;
         Vector3 position, priorPosition, deltaPosition;
         
-        GameObject grabbedObject;
+        public GameObject grabbedObject;
         Vector3 grabbedPosition, priorGrabbedPosition, deltaGrabbedPosition;
         
         #region State Management
+        
+        IPosition movingGrabbable;
         
         public void SetTouchingGrabbable(GameObject grabbedObject, bool isGrabbing)
         {
             this.grabbedObject = grabbedObject;
             SetTouchingGrabbable(isGrabbing);
+            
+            movingGrabbable = grabbedObject.GetComponent<IPosition>();
+            if (movingGrabbable != null && isGrabbing) 
+                movingGrabbable.position = transform.position;
         }
         
+        // * Consider merge into above overload
         public void SetTouchingGrabbable(bool value) 
         { 
             isTouchingGrabbable = value; 
@@ -93,16 +100,16 @@ namespace Playcraft.VR
         
         #region Movement
         
-        private void LateUpdate()
+        void LateUpdate()
         {        
             if (isGrabbing && !otherHand.isGrabbing)
                 MoveRig();
         }
         
-        private void MoveRig()
+        void MoveRig()
         {
             position = transform.position;
-            grabbedPosition = grabbedObject.transform.position;            
+            grabbedPosition = movingGrabbable == null ? Vector3.zero : movingGrabbable.position;
 
             // Initialize on starting frame
             if (priorPosition == Vector3.zero)
@@ -115,16 +122,16 @@ namespace Playcraft.VR
                 deltaGrabbedPosition = grabbedPosition - priorGrabbedPosition;
                 deltaPosition = priorPosition - position + deltaGrabbedPosition;
                 
-                //rb.MovePosition(rig.position + deltaPosition);
+                //rb.MovePosition(rig.position + deltaPosition);    // Causes jittery movement
                 rig.Translate(deltaPosition);
                 position += deltaPosition;
                 
                 priorPosition = position;
                 priorGrabbedPosition = grabbedPosition;
-            }
+            }            
         }
 
-        private void ThrowSelf()
+        void ThrowSelf()
         {
             rb.velocity = (deltaPosition / Time.deltaTime) * throwStrength;
         }

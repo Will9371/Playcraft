@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable] public class Vector3Event : UnityEvent<Vector3> { }
+[Serializable] public class Vector3x2Event : UnityEvent<Vector3, Vector3> { }
 [Serializable] public class Vector3ArrayEvent : UnityEvent<Vector3[]> { }
 [Serializable] public class Vector2Event : UnityEvent<Vector2> { }
 [Serializable] public class BoolEvent : UnityEvent<bool> { }
@@ -20,3 +21,7 @@ using UnityEngine.Events;
 [Serializable] public class GameObjectBoolEvent : UnityEvent<GameObject, bool> { }
 [Serializable] public class TagEvent : UnityEvent<TagSO> { }
 [Serializable] public class GameObjectTagEvent : UnityEvent<TagSO, GameObject> { }
+[Serializable] public class GameObjectVector3Event : UnityEvent<GameObject, Vector3> { }
+[Serializable] public class ColorEvent : UnityEvent<Color> { }
+[Serializable] public class Collider2DEvent : UnityEvent<Collider2D> { }
+

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df6a31ec318a254eae9af3311b7aaaf, type: 3}
   m_Name: Opening
   m_EditorClassIdentifier: 
-  narrative: Hello World!
+  narrative: This is a dialog tree
   responses:
   - node: {fileID: 11400000, guid: f29a57af39ebdae46a45d6d2f3420f0b, type: 2}
-    response: Hello yourself...
+    response: Click here for option 1
   - node: {fileID: 11400000, guid: a97f7ee76e1014d4da59537839c5f1aa, type: 2}
-    response: Goodbye!
+    response: Click here for option 2
+  events: []

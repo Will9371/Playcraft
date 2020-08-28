@@ -13,5 +13,7 @@ namespace Playcraft
         public void Print(bool value) { Print(value.ToString()); }
         public void Print(TagSO value) { Print(value.name); }
         public void Print(RaycastHit value) { Print(value.point); }
+        public void Print(Collider value) { Print(value.name); }
+        public void Print(MessageLink value) { Print(value.name); }
     }
 }

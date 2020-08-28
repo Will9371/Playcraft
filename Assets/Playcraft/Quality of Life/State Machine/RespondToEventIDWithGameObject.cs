@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+// DEPRECATE
 namespace Playcraft
 {
     public class RespondToEventIDWithGameObject : MonoBehaviour

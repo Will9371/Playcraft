@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3830873632427303543}
   - component: {fileID: 5093912891410594439}
-  - component: {fileID: 6503771851827412074}
   - component: {fileID: 4756838593835643453}
   - component: {fileID: 3830873632427303540}
   - component: {fileID: 3830873632427303547}
@@ -63,52 +62,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6503771851827412074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830873632427303536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50b33db04afd4ec468ffc0b0e4f00e30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  bindings:
-  - button: 0
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3830873632427303540}
-          m_MethodName: Release
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - button: 0
-    pressType: 1
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3830873632427303540}
-          m_MethodName: RequestGrab
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &4756838593835643453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +141,7 @@ MonoBehaviour:
       m_Calls: []
   isGrabbing: 0
   isTouchingGrabbable: 0
+  grabbedObject: {fileID: 0}
 --- !u!114 &3830873632427303547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,5 +262,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}

@@ -42,7 +42,7 @@ namespace Playcraft
         public void Update()
         {
             horizontal = transform.TransformVector(direction * speed);
-            velocity = new Vector3(horizontal.x, rb.velocity.y, horizontal.z);
+            velocity = slide ? rb.velocity : new Vector3(horizontal.x, rb.velocity.y, horizontal.z);
             
             rb.velocity = velocity;
             OnMove.Invoke(velocity);

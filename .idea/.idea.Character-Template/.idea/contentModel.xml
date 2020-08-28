@@ -79,9 +79,17 @@
             <e p="ReliableTrigger.cs" t="Include" />
           </e>
           <e p="Interaction" t="Include">
-            <e p="Interact.cs" t="Include" />
-            <e p="Interactable.cs" t="Include" />
-            <e p="LockInteractor.cs" t="Include" />
+            <e p="ColorInteractable.cs" t="Include" />
+            <e p="DragInteractable.cs" t="Include" />
+            <e p="FilterMessageLink.cs" t="Include" />
+            <e p="MessageLink.cs" t="Include" />
+            <e p="Obsolete" t="Include">
+              <e p="Interactable.cs" t="Include" />
+              <e p="Interactor.cs" t="Include" />
+              <e p="LockInteractor.cs" t="Include" />
+            </e>
+            <e p="PickupInteractor.cs" t="Include" />
+            <e p="TwoHandInteractor.cs" t="Include" />
           </e>
           <e p="Object Pooling" t="Include">
             <e p="ObjectPoolData.cs" t="Include" />
@@ -122,6 +130,7 @@
               <e p="JumpPhysics.cs" t="Include" />
               <e p="MovePhysics.cs" t="Include" />
               <e p="MovePositionRB.cs" t="Include" />
+              <e p="RBInterface.cs" t="Include" />
               <e p="RBMove.cs" t="Include" />
             </e>
             <e p="Scriptable Object" t="Include">
@@ -140,10 +149,12 @@
               <e p="MultiSound.cs" t="Include" />
             </e>
             <e p="State Machine" t="Include">
+              <e p="EventResponder.cs" t="Include" />
               <e p="LocalStateHub.cs" t="Include" />
               <e p="LocalStateListener.cs" t="Include" />
               <e p="RespondToEventID.cs" t="Include" />
               <e p="RespondToEventIDWithGameObject.cs" t="Include" />
+              <e p="StateMachine.cs" t="Include" />
             </e>
             <e p="Statics" t="Include">
               <e p="RandomStatics.cs" t="Include" />
@@ -162,6 +173,8 @@
               </e>
               <e p="Color" t="Include">
                 <e p="CycleColor.cs" t="Include" />
+                <e p="FilterColliderByMatchedColor.cs" t="Include" />
+                <e p="FilterColliderByMatchedImageColor.cs" t="Include" />
                 <e p="SetColor.cs" t="Include" />
               </e>
               <e p="Float" t="Include">
@@ -181,7 +194,9 @@
                 <e p="IntCondition.cs" t="Include" />
               </e>
               <e p="Raycast" t="Include">
+                <e p="DetectChangeRaycastHit.cs" t="Include" />
                 <e p="FindHitsInPath.cs" t="Include" />
+                <e p="ScreenRaycast.cs" t="Include" />
               </e>
               <e p="Transform" t="Include">
                 <e p="FollowInstant.cs" t="Include" />
@@ -216,6 +231,7 @@
                 <e p="FlattenVector.cs" t="Include" />
                 <e p="GetNearestDirection.cs" t="Include" />
                 <e p="GetRandomDirection.cs" t="Include" />
+                <e p="GetRandomPositionInRange.cs" t="Include" />
                 <e p="GetTargetVector.cs" t="Include" />
                 <e p="MoveTowards.cs" t="Include" />
                 <e p="MoveTowardsDrift.cs" t="Include" />
@@ -245,6 +261,7 @@
                 <e p="EnableEvent.cs" t="Include" />
                 <e p="RespondToTouch.cs" t="Include" />
                 <e p="StartEvent.cs" t="Include" />
+                <e p="UpdateEvent.cs" t="Include" />
               </e>
               <e p="Renderer" t="Include">
                 <e p="LineRendererInterface.cs" t="Include" />
@@ -258,6 +275,7 @@
                 <e p="GetDuration.cs" t="Include" />
                 <e p="ProgressEvent.cs" t="Include" />
                 <e p="TimedEvent.cs" t="Include" />
+                <e p="TimedIDRelay.cs" t="Include" />
               </e>
             </e>
             <e p="UnityEvent Helpers" t="Include">
@@ -321,11 +339,11 @@
               <e p="Obsolete" t="Include">
                 <e p="EventTriggerInterface.cs" t="Include" />
                 <e p="MouseClickCollider.cs" t="Include" />
-                <e p="MouseRaycast.cs" t="Include" />
               </e>
               <e p="RespondToMouse.cs" t="Include" />
             </e>
             <e p="DisplayText.cs" t="Include" />
+            <e p="DynamicBar.cs" t="Include" />
             <e p="ItemListController.cs" t="Include" />
             <e p="SetImageColor.cs" t="Include" />
           </e>
@@ -337,6 +355,15 @@
               <e p="PlayerOffset.cs" t="Include" />
             </e>
             <e p="Enums.cs" t="Include" />
+            <e p="Examples" t="Include">
+              <e p="1st Person" t="Include">
+                <e p="Monkey Bars" t="Include">
+                  <e p="GetOtherPosition.cs" t="Include" />
+                  <e p="GetPosition.cs" t="Include" />
+                  <e p="GetRelativePosition.cs" t="Include" />
+                </e>
+              </e>
+            </e>
             <e p="Hands" t="Include">
               <e p="Robot" t="Include">
                 <e p="HandAnimationController.cs" t="Include" />

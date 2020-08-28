@@ -1363,51 +1363,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2891b053e33704a4eb613fb95ce63136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elements:
-  - id: {fileID: 11400000, guid: 9424889002ee6c64d9fc4c5b2b8663f0, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8194789581028212937}
-          m_MethodName: Print
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Found the secret...
-            m_BoolArgument: 0
-          m_CallState: 2
-  - id: {fileID: 11400000, guid: e65c0490d73d27940b3f46ec7cf2ee61, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8194789581028212937}
-          m_MethodName: Print
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Found the ending...
-            m_BoolArgument: 0
-          m_CallState: 2
-  Test:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8194789581028212937}
-        m_MethodName: Print
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Found....something...
-          m_BoolArgument: 0
-        m_CallState: 2
+  responder:
+    elements:
+    - id: {fileID: 11400000, guid: 9424889002ee6c64d9fc4c5b2b8663f0, type: 2}
+      Response:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5907246316247389229}
+            m_MethodName: Increment
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - id: {fileID: 11400000, guid: e65c0490d73d27940b3f46ec7cf2ee61, type: 2}
+      Response:
+        m_PersistentCalls:
+          m_Calls: []
+  elements: []
+  locked: 0
 --- !u!114 &8194789581028212937
 MonoBehaviour:
   m_ObjectHideFlags: 0

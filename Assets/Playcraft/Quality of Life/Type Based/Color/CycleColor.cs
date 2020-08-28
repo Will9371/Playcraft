@@ -4,28 +4,31 @@ namespace Playcraft
 {
     public class CycleColor : MonoBehaviour
     {
-        [SerializeField] new Renderer renderer = default;
         [SerializeField] Color[] colors = default;
+        [SerializeField] ColorEvent Color; 
         
         int index;
         
-        void Start()
+        public void Cycle(int change)
         {
-            if (renderer == null) renderer = GetComponent<Renderer>();
-        }
-        
-        public void Cycle()
-        {
-            index++;
-            if (index >= colors.Length) index = 0;
-            renderer.material.color = colors[index];
+            index += change;
+            
+            while (index >= colors.Length) index -= colors.Length;
+            while (index < 0) index += colors.Length;
+            
+            Set(index);
         }
         
         public void Set(int index)
         {
             if (index >= colors.Length) return;
             this.index = index;
-            renderer.material.color = colors[index];
+            Color.Invoke(colors[index]);
+        }
+        
+        public void Randomize()
+        {
+            Set(Random.Range(0, colors.Length));
         }
     }
 }

@@ -6,20 +6,23 @@ namespace Playcraft.Pooling
     {
         #pragma warning disable 0649
         [SerializeField] GameObject prefab;
+        [SerializeField] bool useTransformToPosition = true;
         [SerializeField] Transform location;
+        [SerializeField] Vector3 position;
         [SerializeField] GameObjectEvent OutputSpawn;
         #pragma warning restore 0649
         
-        ObjectPoolMaster pool { get { return ObjectPoolMaster.instance; } }
-        Vector3 position { get { return location.position; } }
+        public void SetPrefab(GameObject value) { prefab = value; }
+        public void SetLocation(Transform value) { location = value; }
+        public void SetPosition(Vector3 value) { position = value; }
+        
+        ObjectPoolMaster pool => ObjectPoolMaster.instance; 
+        Vector3 spawnPosition => useTransformToPosition ? location.position : position; 
         
         public void Spawn()
         {
-            var spawn = pool.Spawn(prefab, position);
+            var spawn = pool.Spawn(prefab, spawnPosition);
             OutputSpawn.Invoke(spawn);
         }
-        
-        public void SetPrefab(GameObject value) { prefab = value; }
-        public void SetLocation(Transform value) { location = value; }
     }
 }

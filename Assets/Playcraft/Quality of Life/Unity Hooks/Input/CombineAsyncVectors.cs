@@ -8,16 +8,26 @@ namespace Playcraft
         [SerializeField] Vector3Event OnMove;
         #pragma warning restore 0649
                 
-        Vector3 moveInput;
+        Vector3 input;
         
         public void AddMovement(Vector3SO direction) { AddMovement(direction.value); }  
-        public void AddMovement(Vector3 direction) { moveInput += direction; }
-        
+        public void AddMovement(Vector3 direction) { input += direction; }
+                
         private void Update()
         {
-            moveInput = moveInput.normalized;
-            OnMove.Invoke(moveInput);
-            moveInput = Vector3.zero; 
+            input = input.normalized;
+            OnMove.Invoke(input);
+            input = Vector3.zero; 
         }
+        
+        /*bool locked;
+        Vector3 lockedDirection;
+        public void SetDirectionLock(bool value) 
+        { 
+            locked = value;
+            lockedDirection = input.normalized;
+        }
+        
+        public Vector3 direction => locked ? lockedDirection : input;*/
     }
 }

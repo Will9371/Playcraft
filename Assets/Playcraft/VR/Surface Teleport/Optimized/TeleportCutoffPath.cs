@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Playcraft.VR;
 
 namespace Playcraft.Optimized.VR
 {

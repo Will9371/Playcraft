@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
+// DEPRECATE: use MessageLink
 namespace Playcraft
 {
-    public class Interact : MonoBehaviour
-    {        
+    public class Interactor : MonoBehaviour
+    {
+        //[SerializeField] TagEvent Relay = default;
+        //public void Input(TagSO value) { Relay.Invoke(value); }
+        [SerializeField] UnityEvent Success;
+            
         Interactable interactable;
         
         bool interactionLocked;
@@ -19,21 +25,23 @@ namespace Playcraft
         
         public void SetInteractable(GameObject other, bool activate)
         {
-            //Debug.Log(other);
             if (interactionLocked) return;
         
             var _interactable = other.GetComponent<Interactable>();
             if (!_interactable || _interactable.interactorLocked) return;
             interactable = _interactable;
             
-            if (activate) interactable.SetInteractor(gameObject);
+            if (activate) interactable.SetInteractor(this);
             else interactable.ClearInteractor();
         }
         
+        // Sends message to interactable
         public void Activate(TagSO value)
         {
             if (!interactable) return;
-            interactable.Input(value);
-        }
+            var result = interactable.Input(value);
+            if (result) Success.Invoke();
+            //Relay.Invoke(value);
+        }        
     }
 }

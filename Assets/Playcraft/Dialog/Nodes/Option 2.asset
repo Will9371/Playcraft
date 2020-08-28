@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df6a31ec318a254eae9af3311b7aaaf, type: 3}
   m_Name: Option 2
   m_EditorClassIdentifier: 
-  narrative: Catcha on the flip!
+  narrative: This is a simple node...
   responses:
   - node: {fileID: 11400000, guid: 2287b797e9a6af54aab51d9e664b593c, type: 2}
-    response: Start over....
+    response: Return to beginning
   - node: {fileID: 11400000, guid: 660ad0ebcd8f9fa43bd84e5b05055672, type: 2}
-    response: Heeey, I've got an idea!
+    response: Progress to ending
+  events: []

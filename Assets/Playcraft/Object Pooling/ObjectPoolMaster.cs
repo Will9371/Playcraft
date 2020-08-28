@@ -12,26 +12,30 @@ namespace Playcraft.Pooling
         {
             foreach (var pool in pools)
             {
-                if (pool == null)
-                    continue;
-
-                GeneratePool(pool.prefab, pool.startSize);
+                if (pool == null) continue;
+                GeneratePool(pool);
             }
         }
 
-        private void GeneratePool(GameObject template, int startingPoolSize)
+        private void GeneratePool(ObjectPoolData data)
         {    
             GameObject pool = new GameObject();
-            pool.name = template.name;
+            pool.name = data.prefab.name;
             pool.transform.parent = transform;
     
-            if (template == null)
+            if (data.prefab == null)
                 Debug.LogError("Prefab not set for " + pool.name + " object pool");
+                
+            if (data.isOnCanvas) 
+            {
+                var canvas = pool.AddComponent<Canvas>();
+                canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            }
 
             ObjectSpawner spawner = pool.AddComponent<ObjectSpawner>();
-            spawner.Initialize(template, startingPoolSize);
+            spawner.Initialize(data);
     
-            objectPoolDict.Add(template, spawner);
+            objectPoolDict.Add(data.prefab, spawner);
         }
 
         public GameObject Spawn(GameObject prefabToSpawn, Vector3 spawnLocation)

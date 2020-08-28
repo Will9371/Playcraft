@@ -3,7 +3,15 @@ using UnityEngine;
 
 public class SetColor : MonoBehaviour
 {
-    [SerializeField] new Renderer renderer = default;
+    [SerializeField] new Renderer renderer;
+    [SerializeField] bool enabled = true;
+    
+    public void SetEnabled(bool value) { enabled = value; }
+    
     public void Input(ColorSO value) { Input(value.value); }
-    public void Input(Color value) { renderer.material.color = value; }
+    public void Input(Color value) 
+    { 
+        if (!enabled) return;
+        renderer.material.color = value; 
+    }
 }
