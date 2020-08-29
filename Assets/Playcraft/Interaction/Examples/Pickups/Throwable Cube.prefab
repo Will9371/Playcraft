@@ -94,7 +94,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befabf7b2d803e44db0470cd6ee6a7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {fileID: 8747485772756009088}
+  Color:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8747485772756009088}
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   defaultColor: {r: 1, g: 0, b: 0, a: 1}
   highlightColor: {r: 1, g: 1, b: 0, a: 1}
   activeColor: {r: 1, g: 0, b: 1, a: 1}
@@ -274,7 +287,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!114 &9098599839944809167
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -156,7 +156,6 @@ MonoBehaviour:
   RelayMessage:
     m_PersistentCalls:
       m_Calls: []
-  bindings: []
   responses:
     elements:
     - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
@@ -265,6 +264,8 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+  link: {fileID: 0}
+  ignoreInput: 0
   ignoreLink: 0
 --- !u!1 &3658508257268926932
 GameObject:
@@ -359,7 +360,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befabf7b2d803e44db0470cd6ee6a7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {fileID: 6618564471549111080}
+  Color:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6618564471549111080}
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   defaultColor: {r: 1, g: 0, b: 0, a: 1}
   highlightColor: {r: 1, g: 1, b: 0, a: 1}
   activeColor: {r: 1, g: 0, b: 1, a: 1}

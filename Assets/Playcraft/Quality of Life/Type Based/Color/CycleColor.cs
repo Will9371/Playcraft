@@ -4,8 +4,10 @@ namespace Playcraft
 {
     public class CycleColor : MonoBehaviour
     {
-        [SerializeField] Color[] colors = default;
+        #pragma warning disable 0649
+        [SerializeField] Color[] colors;
         [SerializeField] ColorEvent Color; 
+        #pragma warning restore 0649
         
         int index;
         

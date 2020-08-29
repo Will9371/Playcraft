@@ -1,38 +1,39 @@
-﻿using Playcraft;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-public class DetectChangeRaycastHit : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] ScreenRaycast raycast;
-    [SerializeField] ColliderEvent Enter;
-    [SerializeField] ColliderEvent Exit;
-
-    Collider hit;
-    Collider priorHit;
-    
-    //public void SetHit(RaycastHit value) { hit = value.collider; }
-    
-    bool forceClear;
-    public void ForceClear() { forceClear = true; }
-
-    void Update()
+    public class DetectChangeRaycastHit : MonoBehaviour
     {
-        hit = raycast.GetResult().collider;
-    
-        if (forceClear)
-        {
-            hit = null;
-            forceClear = false;
-        }
-    
-        if (hit != priorHit)
-        {
-            if (priorHit) Exit.Invoke(priorHit);
-            if (hit) Enter.Invoke(hit);
-        }
+        #pragma warning disable 0649
+        [SerializeField] ScreenRaycast raycast;
+        [SerializeField] ColliderEvent Enter;
+        [SerializeField] ColliderEvent Exit;
+        #pragma warning restore 0649
+
+        Collider hit;
+        Collider priorHit;
             
-        priorHit = hit;
-        hit = null;
+        bool forceClear;
+        public void ForceClear() { forceClear = true; }
+
+        void Update()
+        {
+            hit = raycast.GetResult().collider;
+        
+            if (forceClear)
+            {
+                hit = null;
+                forceClear = false;
+            }
+        
+            if (hit != priorHit)
+            {
+                if (priorHit) Exit.Invoke(priorHit);
+                if (hit) Enter.Invoke(hit);
+            }
+                
+            priorHit = hit;
+            hit = null;
+        }
     }
 }

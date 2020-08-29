@@ -12,14 +12,14 @@ namespace Playcraft
     
         #pragma warning disable 0649
         [Tooltip("Set this v")]
-        [SerializeField] RBInterface rigidbody;
+        [SerializeField] new RBInterface rigidbody;
         [SerializeField] GetVelocity speedometer;
         [SerializeField] OffsetType offsetType;
         [SerializeField] bool matchTargetRotation = true;
         [SerializeField] bool throwOnRelease;
         #pragma warning restore 0649
             
-        public void SetTarget(Interactor value) { SetTarget(value.transform); }
+        //public void SetTarget(Interactor value) { SetTarget(value.transform); }
         public void SetTarget(GameObject value) { SetTarget(value.transform); }
         public void SetTarget(Transform value) 
         {

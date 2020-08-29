@@ -1,20 +1,24 @@
 ﻿using System;
 using UnityEngine;
 
-// ADDED
-public class GetRandomPositionInRange : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] MinMaxVector3 range;
-    [SerializeField] Vector3Event Output;
-    
-    public void Input()
+    public class GetRandomPositionInRange : MonoBehaviour
     {
-        Output.Invoke(RandomStatics.RandomInRange(range));
+        #pragma warning disable 0649
+        [SerializeField] MinMaxVector3 range;
+        [SerializeField] Vector3Event Output;
+        #pragma warning restore 0649
+        
+        public void Input()
+        {
+            Output.Invoke(RandomStatics.RandomInRange(range));
+        }
     }
-}
 
-[Serializable] public struct MinMaxVector3
-{
-    public Vector3 minimum;
-    public Vector3 maximum;
+    [Serializable] public struct MinMaxVector3
+    {
+        public Vector3 minimum;
+        public Vector3 maximum;
+    }
 }

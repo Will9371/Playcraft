@@ -908,7 +908,12 @@ PrefabInstance:
     - target: {fileID: 4221961808748114568, guid: 84a75642cd593594696bf97a2c3ded7c,
         type: 3}
       propertyPath: m_Name
-      value: SurfaceTeleport (optimized)
+      value: SurfaceTeleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221961808748114568, guid: 84a75642cd593594696bf97a2c3ded7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4221961808748114569, guid: 84a75642cd593594696bf97a2c3ded7c,
         type: 3}

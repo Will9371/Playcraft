@@ -1,13 +1,15 @@
-﻿using Playcraft;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FilterMessageLink : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] MessageLinkEvent Output;
-    
-    public void Input(Collider value)
+    public class FilterMessageLink : MonoBehaviour
     {
-        var link = value.GetComponent<MessageLink>();
-        if (link) Output.Invoke(link);
+        [SerializeField] MessageLinkEvent Output = default;
+        
+        public void Input(Collider value)
+        {
+            var link = value.GetComponent<MessageLink>();
+            if (link) Output.Invoke(link);
+        }
     }
 }

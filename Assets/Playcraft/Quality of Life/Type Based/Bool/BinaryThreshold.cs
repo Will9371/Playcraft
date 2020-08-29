@@ -1,31 +1,39 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 namespace Playcraft
 {
-    public class BinaryThreshold : MonoBehaviour
+    public class BinaryThreshold
     {
-        #pragma warning disable 0649
-        [SerializeField] Vector2 thresholds;
-        [SerializeField] UnityEvent OutputHigh;
-        [SerializeField] UnityEvent OutputLow;
-        #pragma warning restore 0649
+        readonly Vector2 thresholds;
+        bool isHigh;
         
-        public bool isHigh;
-
-        public void Input(Vector2 value) { Input(value.magnitude); }
-        public void Input(float value)
+        public BinaryThreshold(Vector2 thresholds, bool startHigh)
         {
-            if (!isHigh && value > thresholds.y)
-            {
-                OutputHigh.Invoke();
-                isHigh = true;
-            }
-            else if (isHigh && value < thresholds.x)
-            {
-                OutputLow.Invoke(); 
-                isHigh = false;
-            }
+            this.thresholds = thresholds;
+            isHigh = startHigh;
+            wasHigh = startHigh;
+        }
+            
+        public bool Input(Vector2 value) { return Input(value.magnitude); }
+        public bool Input(float value)
+        {
+            if (!isHigh && value > thresholds.y) isHigh = true;
+            else if (isHigh && value < thresholds.x) isHigh = false;
+            return isHigh;
+        }
+        
+        bool wasHigh;
+        
+        public Trinary DetectChange(float value)
+        {
+            Input(value);
+    
+            var result = Trinary.Unknown;
+            if (!wasHigh && isHigh) result = Trinary.True;
+            if (wasHigh && !isHigh) result = Trinary.False;
+            
+            wasHigh = isHigh;
+            return result;
         }
     }
 }

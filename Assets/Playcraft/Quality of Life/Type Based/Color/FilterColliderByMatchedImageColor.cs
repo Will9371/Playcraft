@@ -1,24 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-// ADDED
-public class FilterColliderByMatchedImageColor : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] Image image;
-    [SerializeField] ColliderEvent Success;
-    [SerializeField] ColliderEvent Fail;
-    
-    void OnEnable()
+    public class FilterColliderByMatchedImageColor : MonoBehaviour
     {
-        if (!image) image = GetComponent<Image>();
-    }
-    
-    public void Input(Collider other)
-    {
-        var otherImage = other.GetComponent<Image>();
-        if (otherImage == null) return;
-        var isMatch = image.color == otherImage.color;
-        var response = isMatch ? Success : Fail;
-        response.Invoke(other);
+        #pragma warning disable 0649
+        [SerializeField] Image image;
+        [SerializeField] ColliderEvent Success;
+        [SerializeField] ColliderEvent Fail;
+        #pragma warning restore 0649
+        
+        void OnEnable()
+        {
+            if (!image) image = GetComponent<Image>();
+        }
+        
+        public void Input(Collider other)
+        {
+            var otherImage = other.GetComponent<Image>();
+            if (otherImage == null) return;
+            var isMatch = image.color == otherImage.color;
+            var response = isMatch ? Success : Fail;
+            response.Invoke(other);
+        }
     }
 }

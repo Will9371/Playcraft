@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class UpdateEvent : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] UnityEvent OnUpdate;
-    void Update() { OnUpdate.Invoke(); }
+    public class UpdateEvent : MonoBehaviour
+    {
+        [SerializeField] UnityEvent OnUpdate = default;
+        void Update() { OnUpdate.Invoke(); }
+    }
 }

@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Playcraft
 {
-    public class FindHitsInPath : MonoBehaviour
-    {
-        [Serializable] public class PathWithHitsEvent : UnityEvent<Vector3[], List<IndexedRaycastHit>> { }
-        [SerializeField] PathWithHitsEvent Output = default;
+    public class FindHitsInPath
+    {    
+        Transform source;
+        
+        public FindHitsInPath(Transform source)
+        {
+            this.source = source;
+        }
 
-        public void Input(Vector3[] path)
+        public List<IndexedRaycastHit> Input(Vector3[] path)
         {
             var hits = new List<IndexedRaycastHit>();
-            
+                
             for (int i = 1; i < path.Length; i++)
             {
-                var last = transform.TransformPoint(path[i - 1]);
-                var current = transform.TransformPoint(path[i]);
+                var last = source.TransformPoint(path[i - 1]);
+                var current = source.TransformPoint(path[i]);
 
                 RaycastHit hit;
                 var distance = Vector3.Distance(last, current);
@@ -26,12 +28,12 @@ namespace Playcraft
                 if (Physics.Raycast(last, direction, out hit, distance))
                     hits.Add(new IndexedRaycastHit(hit, i));
             }
-            
-            Output.Invoke(path, hits);
+                
+            return hits;
         }
     }
-
-    public struct IndexedRaycastHit
+    
+    /*public struct IndexedRaycastHit
     {
         public IndexedRaycastHit(RaycastHit hit, int index)
         {
@@ -41,5 +43,5 @@ namespace Playcraft
 
         public RaycastHit hit;
         public int index;
-    }
+    }*/
 }
