@@ -98,6 +98,9 @@
             <e p="ObjectSpawner.cs" t="Include" />
             <e p="SpawnPrefab.cs" t="Include" />
           </e>
+          <e p="Project Specific" t="Include">
+            <e p="Enums.cs" t="Include" />
+          </e>
           <e p="Quality of Life" t="Include">
             <e p="Animation" t="Include">
               <e p="AnimatedMoveState.cs" t="Include" />
@@ -166,6 +169,7 @@
             </e>
             <e p="Type Based" t="Include">
               <e p="Bool" t="Include">
+                <e p="BinaryThreshold.cs" t="Include" />
                 <e p="BinaryThresholdComponent.cs" t="Include" />
                 <e p="MultiCondition.cs" t="Include" />
                 <e p="SplitBool.cs" t="Include" />
@@ -196,7 +200,9 @@
               </e>
               <e p="Raycast" t="Include">
                 <e p="DetectChangeRaycastHit.cs" t="Include" />
+                <e p="FindHitsInPath.cs" t="Include" />
                 <e p="FindHitsInPathComponent.cs" t="Include" />
+                <e p="IndexedRaycastHit.cs" t="Include" />
                 <e p="ScreenRaycast.cs" t="Include" />
               </e>
               <e p="Transform" t="Include">
@@ -225,6 +231,7 @@
               </e>
               <e p="Vector" t="Include">
                 <e p="BounceDirection.cs" t="Include" />
+                <e p="CalculateParabolicArc.cs" t="Include" />
                 <e p="CalculateParabolicArcComponent.cs" t="Include" />
                 <e p="ClampVector2.cs" t="Include" />
                 <e p="CycleVector3.cs" t="Include" />
@@ -265,6 +272,7 @@
                 <e p="UpdateEvent.cs" t="Include" />
               </e>
               <e p="Renderer" t="Include">
+                <e p="LineRendererInterface.cs" t="Include" />
                 <e p="LineRendererInterfaceComponent.cs" t="Include" />
                 <e p="RendererInterface.cs" t="Include" />
               </e>
@@ -380,20 +388,17 @@
             </e>
             <e p="RespondToComponent.cs" t="Include" />
             <e p="Surface Teleport" t="Include">
-              <e p="Optimized" t="Include">
-                <e p="ArcTeleport.cs" t="Include" />
-                <e p="BinaryThreshold.cs" t="Include" />
-                <e p="CalculateParabolicArc.cs" t="Include" />
-                <e p="FindHitsInPath.cs" t="Include" />
-                <e p="IndexedRaycastHit.cs" t="Include" />
-                <e p="LineRendererInterface.cs" t="Include" />
-                <e p="TeleportCutoffPath.cs" t="Include" />
-                <e p="TeleportResult.cs" t="Include" />
+              <e p="Line Color" t="Include">
+                <e p="ScrollTransparent.shader" t="Include" />
               </e>
-              <e p="RangeIndicator.cs" t="Include" />
-              <e p="ScrollTransparent.shader" t="Include" />
-              <e p="TeleportCutoffPathComponent.cs" t="Include" />
-              <e p="TeleportRig.cs" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="ArcTeleport.cs" t="Include" />
+                <e p="RangeIndicator.cs" t="Include" />
+                <e p="TeleportCutoffPath.cs" t="Include" />
+                <e p="TeleportCutoffPathComponent.cs" t="Include" />
+                <e p="TeleportResult.cs" t="Include" />
+                <e p="TeleportRig.cs" t="Include" />
+              </e>
             </e>
             <e p="ZipLine" t="Include">
               <e p="DetectObject.cs" t="Include" />

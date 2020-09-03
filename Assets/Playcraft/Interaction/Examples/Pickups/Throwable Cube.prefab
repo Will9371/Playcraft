@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3020664134820359097}
   - component: {fileID: 250480545509509227}
   - component: {fileID: 7878153197128767197}
-  - component: {fileID: 966805331376148487}
   - component: {fileID: 8747485772756009088}
   - component: {fileID: 5772432216234326831}
   m_Layer: 0
@@ -61,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a1a6835373bfb64fab21a1ef87201f8, type: 2}
+  - {fileID: 2100000, guid: 220d86aee1de6074a8f001177d479f9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,37 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &966805331376148487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187036358721036924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befabf7b2d803e44db0470cd6ee6a7c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8747485772756009088}
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  defaultColor: {r: 1, g: 0, b: 0, a: 1}
-  highlightColor: {r: 1, g: 1, b: 0, a: 1}
-  activeColor: {r: 1, g: 0, b: 1, a: 1}
-  highlight: 0
-  active: 0
 --- !u!114 &8747485772756009088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,56 +111,13 @@ MonoBehaviour:
   expressions:
   - orBlocks:
     - andBlock:
-      - id: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008, type: 2}
+      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
         desired: 1
         value: 0
-      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+      - id: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b, type: 2}
         desired: 0
         value: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8747485772756009088}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: cadc79be1e03ba04ea9da483a0e15f6c,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - orBlocks:
-    - andBlock:
-      - id: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008, type: 2}
-        desired: 0
-        value: 0
-      - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
-        desired: 1
-        value: 0
-      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
-        desired: 0
-        value: 0
-    True:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8747485772756009088}
-          m_MethodName: Input
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 0ed9bbc258b154847833a7afac0cb7be,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - orBlocks:
-    - andBlock:
-      - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
+      - id: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d, type: 2}
         desired: 0
         value: 0
     True:
@@ -213,12 +138,38 @@ MonoBehaviour:
   - orBlocks:
     - andBlock:
       - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b, type: 2}
         desired: 1
         value: 0
-      - id: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008, type: 2}
-        desired: 1
+      - id: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d, type: 2}
+        desired: 0
         value: 0
-      - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8747485772756009088}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 0ed9bbc258b154847833a7afac0cb7be,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d, type: 2}
         desired: 1
         value: 0
     True:
@@ -228,7 +179,183 @@ MonoBehaviour:
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: e39daa15e3aaf7943aa316efa7c351e5,
+            m_ObjectArgument: {fileID: 11400000, guid: 88d76e65a4d17e64b900160363ea3c13,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8747485772756009088}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: e0487a3e40f2c80418865dd13d6e83a1,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d, type: 2}
+        desired: 1
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8747485772756009088}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 30031e741b3712146b9269a697f3c3ac,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d, type: 2}
+        desired: 1
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8747485772756009088}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: e6c3de9843dbdaf4391222ec19e366e3,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d, type: 2}
+        desired: 1
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8747485772756009088}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 37251d3573e9f16459a246009eba04b7,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b, type: 2}
+        desired: 0
+        value: 0
+      - id: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8747485772756009088}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: de4d306c7b3de8e49972ee6314d2d997,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
+        desired: 1
+        value: 0
+      - id: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8747485772756009088}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 30c02b51584e0cf48b57f99f0434171d,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - orBlocks:
+    - andBlock:
+      - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
+        desired: 0
+        value: 0
+    True:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8747485772756009088}
+          m_MethodName: Input
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 706e65c6bc5d4494cb6c4023849973a7,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
             m_IntArgument: 0
@@ -519,6 +646,70 @@ MonoBehaviour:
             m_Mode: 2
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b,
+                type: 2}
+              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - id: {fileID: 11400000, guid: a79709afce2e8744a9f396033d4bd32a, type: 2}
+      Response:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5772432216234326831}
+            m_MethodName: SetVariableTrue
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b,
+                type: 2}
+              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - id: {fileID: 11400000, guid: 721142e4d817cd447ba4bdb166e2e15b, type: 2}
+      Response:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5772432216234326831}
+            m_MethodName: SetVariableFalse
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b,
+                type: 2}
+              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - id: {fileID: 11400000, guid: 9bb924d50bca0254d8aa37b66339d3ec, type: 2}
+      Response:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5772432216234326831}
+            m_MethodName: SetVariableTrue
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d,
+                type: 2}
+              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - id: {fileID: 11400000, guid: cd9e69f71b16e1641a2eb076a02509f5, type: 2}
+      Response:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 5772432216234326831}
+            m_MethodName: SetVariableFalse
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d,
                 type: 2}
               m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
               m_IntArgument: 0

@@ -24,6 +24,7 @@ namespace Playcraft.VR
             foreach (var interaction in interactions)
                 interaction.potentialLink = other;
             
+            messenger.SetLink(other);
             messenger.Output(enter, other);
         }
         
@@ -39,11 +40,13 @@ namespace Playcraft.VR
                 interaction.potentialLink = null;
             
             messenger.Output(exit, other);
+            messenger.ClearLink();
         }
         
         public void Activate(TagSO message)
         {
             var interaction = GetInteraction(message, true);
+            //Debug.Log("Found interaction for " + message + ": " + (interaction != null));    // OK
             if (interaction == null) return;
             
             var otherInteraction = otherInteractor.GetInteraction(message, true);
@@ -53,11 +56,11 @@ namespace Playcraft.VR
                 return;
             
             interaction.activeLink = interaction.potentialLink;
-            messenger.SetLink(interaction.potentialLink);
+            //messenger.SetLink(interaction.potentialLink);
             messenger.Output(message);
         }
         
-        public Interaction GetInteraction(TagSO message, bool activeSearch)
+        Interaction GetInteraction(TagSO message, bool activeSearch)
         {
             foreach (var interaction in interactions)
                 if (interaction.IsMe(message, activeSearch))
@@ -69,11 +72,12 @@ namespace Playcraft.VR
         public void Deactivate(TagSO message)
         {
             var interaction = GetInteraction(message, false);
+            //Debug.Log("Found interaction for " + message + ": " + (interaction != null));    // OK
             if (interaction == null || interaction.activeLink == null) return;
                 
-            interaction.activeLink = null;
             messenger.Output(message);
-            messenger.ClearLink();
+            //messenger.ClearLink();    // ERROR
+            interaction.activeLink = null;
         }
         
         [Serializable] public class Interaction
