@@ -100,6 +100,7 @@
           </e>
           <e p="Project Specific" t="Include">
             <e p="Enums.cs" t="Include" />
+            <e p="Lookup.cs" t="Include" />
           </e>
           <e p="Quality of Life" t="Include">
             <e p="Animation" t="Include">
@@ -117,6 +118,7 @@
             <e p="Helpers" t="Include">
               <e p="EdgeDetect.cs" t="Include" />
               <e p="MovingAverage.cs" t="Include" />
+              <e p="NormalizedPercent.cs" t="Include" />
             </e>
             <e p="Logic" t="Include">
               <e p="BinaryConditions.cs" t="Include" />
@@ -205,6 +207,14 @@
                 <e p="IndexedRaycastHit.cs" t="Include" />
                 <e p="ScreenRaycast.cs" t="Include" />
               </e>
+              <e p="Rotation" t="Include">
+                <e p="LookRotation.cs" t="Include" />
+                <e p="RotateTowards.cs" t="Include" />
+                <e p="SimpleRotation.cs" t="Include" />
+                <e p="SingleAxisRotation.cs" t="Include" />
+                <e p="SlerpToLookAt.cs" t="Include" />
+                <e p="TwoAxisRotation.cs" t="Include" />
+              </e>
               <e p="Transform" t="Include">
                 <e p="FollowInstant.cs" t="Include" />
                 <e p="FollowInstantPartial.cs" t="Include" />
@@ -212,17 +222,13 @@
                 <e p="GetTargetDirection.cs" t="Include" />
                 <e p="GetTransformFromArray.cs" t="Include" />
                 <e p="JumpToPosition.cs" t="Include" />
-                <e p="LookRotation.cs" t="Include" />
                 <e p="MaintainTransformList.cs" t="Include" />
                 <e p="MoveFixed.cs" t="Include" />
                 <e p="MoveToTarget.cs" t="Include" />
                 <e p="MoveTransform.cs" t="Include" />
                 <e p="RespondToTargetDistance.cs" t="Include" />
                 <e p="ScaleToTarget.cs" t="Include" />
-                <e p="SimpleRotation.cs" t="Include" />
-                <e p="SingleAxisRotation.cs" t="Include" />
                 <e p="SwapPositions.cs" t="Include" />
-                <e p="TwoAxisRotation.cs" t="Include" />
               </e>
               <e p="Trinary" t="Include">
                 <e p="EdgeDetect.cs" t="Include" />
@@ -251,7 +257,6 @@
             <e p="Unity Extension" t="Include">
               <e p="ComponentTags.cs" t="Include" />
               <e p="LerpSingleton.cs" t="Include" />
-              <e p="Lookup.cs" t="Include" />
               <e p="MonoSim.cs" t="Include" />
               <e p="SetFramerate.cs" t="Include" />
               <e p="Singleton.cs" t="Include" />
@@ -399,6 +404,15 @@
                 <e p="TeleportResult.cs" t="Include" />
                 <e p="TeleportRig.cs" t="Include" />
               </e>
+            </e>
+            <e p="Sword" t="Include">
+              <e p="AIBlade.cs" t="Include" />
+              <e p="AIBody.cs" t="Include" />
+              <e p="PlayerBlade.cs" t="Include" />
+              <e p="ROWShield.cs" t="Include" />
+              <e p="SwingState.cs" t="Include" />
+              <e p="SwingStateMachine.cs" t="Include" />
+              <e p="TelegraphIntent.cs" t="Include" />
             </e>
             <e p="ZipLine" t="Include">
               <e p="DetectObject.cs" t="Include" />

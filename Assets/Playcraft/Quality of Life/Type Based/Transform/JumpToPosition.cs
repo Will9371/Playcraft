@@ -4,14 +4,10 @@ namespace Playcraft
 {
     public class JumpToPosition : MonoBehaviour
     {
-        public void SetPosition(Transform location)
-        {
-            transform.position = location.position;
-        }
+        public void SetPosition(Transform value) { SetPosition(value.position); }
+        public void SetPosition(RaycastHit value) { SetPosition(value.point); }
+        public void SetPosition(Vector3 value) { transform.position = value; }
         
-        public void SetPosition(RaycastHit hit)
-        {
-            transform.position = hit.point;
-        }
+        public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
     }
 }

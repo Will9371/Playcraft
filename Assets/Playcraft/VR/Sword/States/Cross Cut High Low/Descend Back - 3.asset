@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437c3c46e771b664a9a118307b3093c8, type: 3}
+  m_Name: Descend Back - 3
+  m_EditorClassIdentifier: 
+  direction: {fileID: 11400000, guid: f38d112059b81ef44af7a7550720641a, type: 2}
+  nextStates:
+  - state: {fileID: 11400000, guid: 913179d681906fa4c859319148b88d38, type: 2}
+    chance: 0.668
+  - state: {fileID: 11400000, guid: 9af2dedc8df84564eb8fd9a77fb0f2b2, type: 2}
+    chance: 0.332
+  autoNormalize: 1

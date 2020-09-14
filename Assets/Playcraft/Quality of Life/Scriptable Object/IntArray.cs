@@ -2,7 +2,7 @@
 
 namespace Playcraft
 {
-    [CreateAssetMenu(menuName = "Playcraft/Basic Data Types/Int Array", fileName = "Int Array")]
+    [CreateAssetMenu(menuName = "Playcraft/Data Types/Int Array", fileName = "Int Array")]
     public class IntArray : ScriptableObject
     {
         public int[] values;
