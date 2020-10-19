@@ -9,7 +9,9 @@ public class ToggleInteraction : MonoBehaviour
     GameObject source => isActive ? null : gameObject;
 
     ISetObject objectRelay;
+    ISetObject cachedObjectRelay;
     IMessage interactable;
+    IMessage cachedInteractable;
     bool isActive;
 
     public void SetInteractable(Collider value) 
@@ -18,6 +20,9 @@ public class ToggleInteraction : MonoBehaviour
         if (_interactable == null) return;
         interactable = _interactable;
         objectRelay = value.GetComponent<ISetObject>();
+
+        cachedInteractable = interactable;
+        cachedObjectRelay = objectRelay;
     }
 
     public void RemoveInteractable(Collider value) 
@@ -30,9 +35,18 @@ public class ToggleInteraction : MonoBehaviour
 
     public void Interact()
     {
-        if (interactable == null) return;
-        if (objectRelay != null) objectRelay.SetObject(source); 
-        interactable.Message(message);
+        if (objectRelay != null) 
+            objectRelay.SetObject(source); 
+        else if (isActive && cachedObjectRelay != null)
+            cachedObjectRelay.SetObject(source);
+
+        if (interactable != null)
+            interactable.Message(message);
+        else if (isActive && cachedInteractable != null)
+            cachedInteractable.Message(message);
+        else
+            return;
+
         isActive = !isActive;
     }
 }
