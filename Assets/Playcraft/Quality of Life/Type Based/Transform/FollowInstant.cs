@@ -18,7 +18,11 @@ namespace Playcraft
         [SerializeField] bool throwOnRelease;
         #pragma warning restore 0649
             
-        public void SetTarget(GameObject value) { SetTarget(value.transform); }
+        public void SetTarget(GameObject value) 
+        {
+            if (value == null) ClearTarget(); 
+            else SetTarget(value.transform); 
+        }
         public void SetTarget(Transform value) 
         {
             if (lockTarget || value == target) return;

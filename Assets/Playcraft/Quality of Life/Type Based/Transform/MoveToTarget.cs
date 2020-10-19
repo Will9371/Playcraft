@@ -34,7 +34,7 @@ namespace Playcraft
             if (atTarget && !wasAtTarget)
             {
                 var response = target.GetComponent<GameObjectRelay>();
-                if (response) response.Input(gameObject);
+                if (response) response.SetObject(gameObject);
             }
             wasAtTarget = atTarget;
         }

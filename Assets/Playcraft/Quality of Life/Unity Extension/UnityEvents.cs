@@ -25,3 +25,5 @@ using UnityEngine.Events;
 [Serializable] public class ColorEvent : UnityEvent<Color> { }
 [Serializable] public class Collider2DEvent : UnityEvent<Collider2D> { }
 
+[Serializable] public class IMessageEvent : UnityEvent<IMessage> { }
+

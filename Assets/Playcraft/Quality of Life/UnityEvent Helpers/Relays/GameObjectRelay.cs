@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class GameObjectRelay : MonoBehaviour
+public class GameObjectRelay : MonoBehaviour, ISetObject
 {
     [SerializeField] GameObjectEvent Output = default;
-    public void Input(GameObject value) { Output.Invoke(value); }
+    public void SetObject(GameObject value) { Output.Invoke(value); }
 }

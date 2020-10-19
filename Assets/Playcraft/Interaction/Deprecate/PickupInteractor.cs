@@ -12,13 +12,14 @@ namespace Playcraft
         [SerializeField] UnityEvent OnDrop;
         #pragma warning restore 0649
         
+        bool isHolding;
+        
         public void SetHoldingAndInteract(bool value)
         {
             SetHolding(value);
             Interact();
         }
 
-        bool isHolding;
         public void SetHolding(bool value) 
         { 
             isHolding = value; 

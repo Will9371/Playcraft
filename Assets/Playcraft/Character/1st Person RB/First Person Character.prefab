@@ -913,7 +913,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3403923577405371575}
-  - component: {fileID: 5970639789976380525}
   m_Layer: 0
   m_Name: Interaction
   m_TagString: Untagged
@@ -933,62 +932,55 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6157969439533311738}
+  - {fileID: 338940106506581415}
+  - {fileID: 3925291835184511483}
   m_Father: {fileID: 4009807950553526773}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5970639789976380525
+--- !u!1 &3771585120874364783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3925291835184511483}
+  - component: {fileID: 960813790127017935}
+  m_Layer: 0
+  m_Name: Enter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3925291835184511483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771585120874364783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3403923577405371575}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &960813790127017935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3403923577405371574}
+  m_GameObject: {fileID: 3771585120874364783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ceece866f02314991d9ff2e5eedbc1, type: 3}
+  m_Script: {fileID: 11500000, guid: b2b3c40906bdba340907c9317f23b1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RelaySource:
-    m_PersistentCalls:
-      m_Calls: []
-  RelayMessage:
-    m_PersistentCalls:
-      m_Calls: []
-  responses:
-    elements:
-    - id: {fileID: 11400000, guid: bd09f5de7554d7647946b8e9b219b2d9, type: 2}
-      Response:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 3686674326907425493}
-            m_MethodName: SetHolding
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-    - id: {fileID: 11400000, guid: d01c2209c8461e1418aa3ac10430f8a3, type: 2}
-      Response:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 3686674326907425493}
-            m_MethodName: SetHolding
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-  link: {fileID: 0}
-  ignoreInput: 0
-  ignoreLink: 0
+  message: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
 --- !u!1 &4009807950553526777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,6 +1355,50 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &4851831545168527299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 338940106506581415}
+  - component: {fileID: 4761076936606835289}
+  m_Layer: 0
+  m_Name: Exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &338940106506581415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851831545168527299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3403923577405371575}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4761076936606835289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851831545168527299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b3c40906bdba340907c9317f23b1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 11400000, guid: 84211f740ce3d2b4e9853a607a4c68ba, type: 2}
 --- !u!1 &7575576706125702552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,9 +1942,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6157969439533311738}
   - component: {fileID: 6208001766595283053}
-  - component: {fileID: 3686674326907425493}
+  - component: {fileID: 204815397532241959}
   m_Layer: 0
-  m_Name: Input
+  m_Name: Activate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1946,7 +1982,7 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3686674326907425493}
+        - m_Target: {fileID: 204815397532241959}
           m_MethodName: Interact
           m_Mode: 1
           m_Arguments:
@@ -1955,9 +1991,9 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &3686674326907425493
+--- !u!114 &204815397532241959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1966,12 +2002,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8272226260970801749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c3e3164e5d5fd4fb8338019ed12195, type: 3}
+  m_Script: {fileID: 11500000, guid: c99f588bc548c7f48aab95442ca9c7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messenger: {fileID: 5970639789976380525}
-  handFreeMessage: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
-  handFullMessage: {fileID: 11400000, guid: a72e396432365f24a80e71a09e750685, type: 2}
-  OnDrop:
-    m_PersistentCalls:
-      m_Calls: []
+  activate: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
+  deactivate: {fileID: 11400000, guid: a72e396432365f24a80e71a09e750685, type: 2}

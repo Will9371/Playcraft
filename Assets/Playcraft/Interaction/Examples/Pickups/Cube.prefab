@@ -92,7 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3840110429326916694}
   - component: {fileID: 2910051527457000708}
-  - component: {fileID: 7166605885742833453}
+  - component: {fileID: 2014897397}
+  - component: {fileID: 2014897399}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -127,7 +128,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7166605885742833453
+--- !u!114 &2014897397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,10 +137,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 539676950095915884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ceece866f02314991d9ff2e5eedbc1, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7fefbe81c02c4fb48d068f8377ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RelaySource:
+  Output:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6699151717164216679}
@@ -153,9 +154,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  RelayMessage:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!114 &2014897399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539676950095915884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13f1fff139163a4c9bebba35d1cc533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   responses:
     elements:
     - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
@@ -214,18 +224,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
-          - m_Target: {fileID: 7166605885742833453}
-            m_MethodName: Output
-            m_Mode: 2
-            m_Arguments:
-              m_ObjectArgument: {fileID: 11400000, guid: bd09f5de7554d7647946b8e9b219b2d9,
-                type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
     - id: {fileID: 11400000, guid: a72e396432365f24a80e71a09e750685, type: 2}
       Response:
         m_PersistentCalls:
@@ -252,21 +250,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 7166605885742833453}
-            m_MethodName: Output
-            m_Mode: 2
-            m_Arguments:
-              m_ObjectArgument: {fileID: 11400000, guid: d01c2209c8461e1418aa3ac10430f8a3,
-                type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-  link: {fileID: 0}
-  ignoreInput: 0
-  ignoreLink: 0
 --- !u!1 &3658508257268926932
 GameObject:
   m_ObjectHideFlags: 0
