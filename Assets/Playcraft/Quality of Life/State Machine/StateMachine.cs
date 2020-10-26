@@ -9,16 +9,16 @@ using UnityEngine.Events;
 // Returns: next state if success, current state if fail
 [Serializable] public class StateMachine
 {
-    public TagSO current;
+    public SO current;
     public Transition[] transitions;
     
-    public void ActOnNextIfValid(TagSO next)
+    public void ActOnNextIfValid(SO next)
     {
         if (IsValidTransition(next))
             ActOnCurrent();
     }
     
-    public bool IsValidTransition(TagSO next)
+    public bool IsValidTransition(SO next)
     {
         var transition = GetTransition();
         if (transition == null) return false;
@@ -44,8 +44,8 @@ using UnityEngine.Events;
     
     [Serializable] public class Transition
     {
-        public TagSO state;
-        public TagSO[] options;
+        public SO state;
+        public SO[] options;
         public UnityEvent Response;
     }
 }

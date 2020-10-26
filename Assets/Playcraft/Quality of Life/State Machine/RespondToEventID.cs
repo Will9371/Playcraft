@@ -11,7 +11,7 @@ namespace Playcraft
         
         public void SetLock(bool value) { locked = value; }
 
-        public void Input(TagSO value)
+        public void Input(SO value)
         {
             if (locked) return;
             var response = responder.GetResponse(value);

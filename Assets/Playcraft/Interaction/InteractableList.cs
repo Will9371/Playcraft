@@ -4,8 +4,10 @@ using UnityEngine;
 // NOT USED
 public class InteractableList : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] IMessageEvent OnAdd;
     [SerializeField] IMessageEvent OnRemove;
+    #pragma warning restore 0649
 
     List<IMessage> values = new List<IMessage>();
 
@@ -37,13 +39,13 @@ public class InteractableList : MonoBehaviour
         values.Clear();
     }
 
-    public void MessageAll(TagSO message)
+    public void MessageAll(SO message)
     {
         foreach (var value in values)
             value.Message(message);
     }
 
-    public void MessageIndex(TagSO message, int index = 0)
+    public void MessageIndex(SO message, int index = 0)
     {
         if (count <= index) return;
         values[index].Message(message);

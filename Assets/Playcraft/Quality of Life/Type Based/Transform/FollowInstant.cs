@@ -30,11 +30,11 @@ namespace Playcraft
             otherBeginRotation = target.rotation;
         }
         
-        public void SetTarget(MessageLink link)
-        {
-            if (link == null) ClearTarget();
-            else SetTarget(link.transform);
-        }
+        //public void SetTarget(MessageLink link)
+        //{
+        //    if (link == null) ClearTarget();
+        //    else SetTarget(link.transform);
+        //}
         
         public void ClearTarget() { target = null; }
         

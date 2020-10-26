@@ -1,7 +1,9 @@
-﻿using System;
+﻿/*
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+// OBSOLETE
 namespace Playcraft
 {
     [Serializable] public class MessageLinkEvent : UnityEvent<MessageLink> { }
@@ -53,37 +55,37 @@ namespace Playcraft
         }
         
         // verify needed
-        public void TryOutput(TagSO message)
+        public void TryOutput(SO message)
         {
             if (ignoreLink) return;
             Output(message);
         }
 
-        public void Output(TagSO message)
+        public void Output(SO message)
         {
             if (link == null) return;
             link.Input(this, message);
         }
         
-        public void Output(TagSO message, MessageLink recipient)
+        public void Output(SO message, MessageLink recipient)
         {
             recipient.Input(message);
         }
         
-        public void Input(MessageLink source, TagSO message)
+        public void Input(MessageLink source, SO message)
         {
             if (ignoreInput) return;
             SetLink(source);
             React(message);
         }
         
-        public void Input(TagSO message)
+        public void Input(SO message)
         {
             if (ignoreInput) return;
             React(message);
         }
         
-        void React(TagSO message)
+        void React(SO message)
         {
             var response = responses.GetResponse(message);
             response?.Invoke(); 
@@ -91,3 +93,4 @@ namespace Playcraft
         }
     }
 }
+*/

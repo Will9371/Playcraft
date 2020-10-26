@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class LocalStateHub : MonoBehaviour
 {
-    TagSO priorState;
-    public TagSO state;    // For debug
-    public Action<TagSO> OnStateEnter;
+    SO priorState;
+    public SO state;    // For debug
+    public Action<SO> OnStateEnter;
     
-    public void SetState(TagSO value)
+    public void SetState(SO value)
     {
         priorState = state == null ? value : state;
         state = value;

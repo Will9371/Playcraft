@@ -8,7 +8,7 @@ namespace Playcraft
     {
         [SerializeField] EventResponse[] elements = default;
 
-        public void Input(TagSO value, GameObject source)
+        public void Input(SO value, GameObject source)
         {
             foreach (var item in elements)
                 if (item.id == value)
@@ -18,7 +18,7 @@ namespace Playcraft
         [Serializable] struct EventResponse
         {
             #pragma warning disable 0649
-            public TagSO id;
+            public SO id;
             public GameObjectEvent Response;
             #pragma warning restore 0649
         }

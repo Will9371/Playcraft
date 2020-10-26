@@ -5,10 +5,10 @@ namespace Playcraft
 {
     public class FilterRepeatEvent : MonoBehaviour
     {
-        List<TagSO> list = new List<TagSO>();
+        List<SO> list = new List<SO>();
         [SerializeField] TagEvent OnAdd = default;
         
-        public void Input(TagSO value)
+        public void Input(SO value)
         {
             if (list.Contains(value)) return;
             list.Add(value);

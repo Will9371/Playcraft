@@ -5,6 +5,6 @@ namespace Playcraft
     public class StateEventAccess : MonoBehaviour
     {
         [SerializeField] StateGameEvent invoker = default;
-        public void Input(TagSO value) { invoker.Raise(value); }
+        public void Input(SO value) { invoker.Raise(value); }
     }
 }

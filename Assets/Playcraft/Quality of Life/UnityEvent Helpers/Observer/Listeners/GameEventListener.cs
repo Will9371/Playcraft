@@ -14,6 +14,6 @@ namespace Playcraft
         public virtual void OnEventRaised(float[] value) { }
         public virtual void OnEventRaised(Vector2 value) { }
         public virtual void OnEventRaised(Vector3 value) { }
-        public virtual void OnEventRaised(TagSO value) { }
+        public virtual void OnEventRaised(SO value) { }
     }
 }

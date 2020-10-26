@@ -3,9 +3,11 @@
 // NOT USED
 public class SphereInteractor : MonoBehaviour
 {
+    #pragma warning disable 0649
     [SerializeField] float range = .5f;
-    [SerializeField] TagSO pickupMessage;
-    [SerializeField] TagSO dropMessage;
+    [SerializeField] SO pickupMessage;
+    [SerializeField] SO dropMessage;
+    #pragma warning restore 0649
 
     IMessage itemInHand;
 

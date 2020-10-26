@@ -8,7 +8,7 @@ using UnityEngine.Events;
 {
     public EventResponse[] elements;
 
-    public UnityEvent GetResponse(TagSO value)
+    public UnityEvent GetResponse(SO value)
     {                
         foreach (var item in elements)
             if (item.id == value)
@@ -19,7 +19,7 @@ using UnityEngine.Events;
 
     [Serializable] public struct EventResponse
     {
-        public TagSO id;
+        public SO id;
         public UnityEvent Response;
     }
 }

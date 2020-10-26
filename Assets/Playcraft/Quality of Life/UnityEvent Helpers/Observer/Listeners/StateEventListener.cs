@@ -11,7 +11,7 @@ namespace Playcraft
         [SerializeField] StateCondition[] conditions;
         #pragma warning restore 0649
         
-        public override void OnEventRaised(TagSO value) 
+        public override void OnEventRaised(SO value) 
         {
             if (debug)
                 Debug.Log(gameObject.name + " receiving state " + value.name); 
@@ -25,7 +25,7 @@ namespace Playcraft
     [Serializable] struct StateCondition
     {
         #pragma warning disable 0649
-        public TagSO state;
+        public SO state;
         public UnityEvent OnEnter;
         #pragma warning restore 0649
     }

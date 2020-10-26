@@ -1803,9 +1803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7916474db42b7fa42937c439ce54e2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingStateLogic: {fileID: 11400000, guid: 483a33537122b8e4386255ed5a722941, type: 2}
-  crouchingStateLogic: {fileID: 11400000, guid: 75ce7daa54239ba4aa6205ff1762111c,
-    type: 2}
+  standingStateLogic: {fileID: 0}
+  crouchingStateLogic: {fileID: 0}
   BroadcastState:
     m_PersistentCalls:
       m_Calls:
@@ -2016,7 +2015,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -3347,6 +3346,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnStay:
+    m_PersistentCalls:
+      m_Calls: []
   OnExit:
     m_PersistentCalls:
       m_Calls: []

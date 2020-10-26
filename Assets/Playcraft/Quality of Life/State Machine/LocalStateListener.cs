@@ -21,7 +21,7 @@ namespace Playcraft
             stateHub.OnStateEnter -= RespondToState;
         }
             
-        public void RespondToState(TagSO value) 
+        public void RespondToState(SO value) 
         {
             //Debug.Log(gameObject + " responding to " + value);            
             foreach (var item in conditions)
@@ -32,7 +32,7 @@ namespace Playcraft
         [Serializable] struct StateCondition
         {
             #pragma warning disable 0649
-            public TagSO state;
+            public SO state;
             public UnityEvent OnEnter;
             #pragma warning restore 0649
         }

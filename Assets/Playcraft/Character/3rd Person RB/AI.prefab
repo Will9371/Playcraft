@@ -84,7 +84,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -99,7 +99,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 5725286efdd9fdd4692a384d73c3e978,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -311,6 +311,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnStay:
+    m_PersistentCalls:
+      m_Calls: []
   OnExit:
     m_PersistentCalls:
       m_Calls:
@@ -651,7 +654,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 5725286efdd9fdd4692a384d73c3e978,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -666,12 +669,13 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  state: 0
 --- !u!114 &7470420329147731596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,7 +865,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: bb64fbf7a6281a249af932d4a8f4a6cb,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -876,12 +880,13 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  state: 0
 --- !u!1 &5754397523625807686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1067,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1080,7 +1085,7 @@ GameObject:
   - component: {fileID: 5754397524106179521}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

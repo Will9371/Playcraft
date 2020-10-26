@@ -19,8 +19,8 @@ using UnityEngine.Events;
 [Serializable] public class RaycastHitEvent : UnityEvent<RaycastHit> { }
 [Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }
 [Serializable] public class GameObjectBoolEvent : UnityEvent<GameObject, bool> { }
-[Serializable] public class TagEvent : UnityEvent<TagSO> { }
-[Serializable] public class GameObjectTagEvent : UnityEvent<TagSO, GameObject> { }
+[Serializable] public class TagEvent : UnityEvent<SO> { }
+[Serializable] public class GameObjectTagEvent : UnityEvent<SO, GameObject> { }
 [Serializable] public class GameObjectVector3Event : UnityEvent<GameObject, Vector3> { }
 [Serializable] public class ColorEvent : UnityEvent<Color> { }
 [Serializable] public class Collider2DEvent : UnityEvent<Collider2D> { }

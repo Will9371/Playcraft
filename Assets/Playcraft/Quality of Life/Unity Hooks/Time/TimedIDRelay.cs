@@ -7,9 +7,9 @@ public class TimedIDRelay : MonoBehaviour
     [SerializeField] TagEvent OnEnd;
     #pragma warning restore 0649
     
-    TagSO id;
+    SO id;
     
-    public void Begin(TagSO value) 
+    public void Begin(SO value) 
     {
         id = value;
         Invoke(nameof(End), time); 

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5813652446834805782}
   - component: {fileID: 1365947157699841374}
   - component: {fileID: 8265729958209970866}
-  - component: {fileID: 8900352161909768742}
-  - component: {fileID: 7523383050293963332}
+  - component: {fileID: 7590482177622581645}
+  - component: {fileID: 6120158670808988196}
   m_Layer: 0
   m_Name: Draggable
   m_TagString: Untagged
@@ -115,7 +115,7 @@ MonoBehaviour:
   offsetType: 1
   matchTargetRotation: 0
   throwOnRelease: 0
---- !u!114 &8900352161909768742
+--- !u!114 &7590482177622581645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,14 +124,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6294700720740349864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ceece866f02314991d9ff2e5eedbc1, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7fefbe81c02c4fb48d068f8377ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RelaySource:
+  Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7523383050293963332}
-        m_MethodName: SetSource
+      - m_Target: {fileID: 8265729958209970866}
+        m_MethodName: SetTarget
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -141,17 +141,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  RelayMessage:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!114 &6120158670808988196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294700720740349864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13f1fff139163a4c9bebba35d1cc533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   responses:
     elements:
     - id: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008, type: 2}
       Response:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 7523383050293963332}
-            m_MethodName: Grab
+          - m_Target: {fileID: 8265729958209970866}
+            m_MethodName: Follow
             m_Mode: 6
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -165,8 +174,8 @@ MonoBehaviour:
       Response:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 7523383050293963332}
-            m_MethodName: Grab
+          - m_Target: {fileID: 8265729958209970866}
+            m_MethodName: Follow
             m_Mode: 6
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -176,36 +185,3 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    - id: {fileID: 11400000, guid: 84211f740ce3d2b4e9853a607a4c68ba, type: 2}
-      Response:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 7523383050293963332}
-            m_MethodName: MessageSource
-            m_Mode: 2
-            m_Arguments:
-              m_ObjectArgument: {fileID: 11400000, guid: 84211f740ce3d2b4e9853a607a4c68ba,
-                type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-  link: {fileID: 0}
-  ignoreLink: 0
---- !u!114 &7523383050293963332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6294700720740349864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6bda461141928247bc925d950be47ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  follow: {fileID: 8265729958209970866}
-  messenger: {fileID: 8900352161909768742}
-  grabReturnMessage: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008, type: 2}

@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 535477155}
   - component: {fileID: 535477158}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,7 +408,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62618b78024d72945b04cb8f9d84e89c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1648,6 +1648,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 8.38
       objectReference: {fileID: 0}
+    - target: {fileID: 5754397524045323789, guid: ebf8ef7322d179b47b229ff2f646cfc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8822989609759292823, guid: ebf8ef7322d179b47b229ff2f646cfc5,
         type: 3}
       propertyPath: jumpAnimations
@@ -1733,6 +1738,16 @@ PrefabInstance:
       propertyPath: OnFalse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 598943851}
+    - target: {fileID: 2716846687104412280, guid: fe9012954016e18478308a54eddae2a0,
+        type: 3}
+      propertyPath: OnTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: SO, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716846687104412280, guid: fe9012954016e18478308a54eddae2a0,
+        type: 3}
+      propertyPath: OnFalse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: SO, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe9012954016e18478308a54eddae2a0, type: 3}
 --- !u!1001 &2973581133470813405

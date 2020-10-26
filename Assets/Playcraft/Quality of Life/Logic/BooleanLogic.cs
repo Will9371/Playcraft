@@ -7,9 +7,9 @@ public class BooleanLogic : MonoBehaviour
     [SerializeField] bool evaluateOnSetVariable = true;
     [SerializeField] Expression[] expressions = default;
     
-    public void SetVariableTrue(TagSO id) { SetVariable(id, true); }
-    public void SetVariableFalse(TagSO id) { SetVariable(id, false); }
-    public void SetVariable(TagSO id, bool value)
+    public void SetVariableTrue(SO id) { SetVariable(id, true); }
+    public void SetVariableFalse(SO id) { SetVariable(id, false); }
+    public void SetVariable(SO id, bool value)
     {
         foreach (var expression in expressions)
             expression.SetVariable(id, value);
@@ -29,7 +29,7 @@ public class BooleanLogic : MonoBehaviour
         public OrBlock[] orBlocks;
         public UnityEvent True;
         
-        public void SetVariable(TagSO id, bool value)
+        public void SetVariable(SO id, bool value)
         {
             foreach (var block in orBlocks)
                 block.SetVariable(id, value);
@@ -50,7 +50,7 @@ public class BooleanLogic : MonoBehaviour
         {
             public Variable[] andBlock;
         
-            public void SetVariable(TagSO id, bool value)
+            public void SetVariable(SO id, bool value)
             {
                 foreach (var variable in andBlock)
                     if (variable.id == id)
@@ -70,7 +70,7 @@ public class BooleanLogic : MonoBehaviour
             
             [Serializable] public class Variable
             {
-                public TagSO id;
+                public SO id;
                 public bool desired;
                 public bool value;
         

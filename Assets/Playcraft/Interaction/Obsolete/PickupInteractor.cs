@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 using UnityEngine.Events;
 
+// OBSOLETE
 namespace Playcraft
 {
     public class PickupInteractor : MonoBehaviour
     {
         #pragma warning disable 0649
         [SerializeField] MessageLink messenger;
-        [SerializeField] TagSO handFreeMessage;
-        [SerializeField] TagSO handFullMessage;
+        [SerializeField] SO handFreeMessage;
+        [SerializeField] SO handFullMessage;
         [SerializeField] UnityEvent OnDrop;
         #pragma warning restore 0649
         
@@ -39,3 +41,4 @@ namespace Playcraft
         }
     }
 }
+*/

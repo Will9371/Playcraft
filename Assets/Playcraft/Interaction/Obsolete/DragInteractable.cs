@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 
 namespace Playcraft
 {
+    // DEPRECATE
     public class DragInteractable : MonoBehaviour
     {
         #pragma warning disable 0649
@@ -11,6 +13,13 @@ namespace Playcraft
         
         public bool active;
         
+        public void SetSource(GameObject value)
+        {
+            if (active) return;
+            follow.SetTarget(value.transform);
+        }
+        
+        // REMOVE
         public void SetSource(MessageLink value)
         {
             if (active) return;
@@ -21,13 +30,15 @@ namespace Playcraft
         {    
             active = value;
             follow.Follow(value);
-            messenger.SetIgnoreLink(value); 
+            //messenger.SetIgnoreLink(value); 
         }
         
-        public void MessageSource(TagSO message)
+        // REMOVE
+        public void MessageSource(SO message)
         {
             if (active) return;
             messenger.Output(message);
         }
     }
 }
+*/

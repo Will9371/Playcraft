@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 
+// OBSOLETE
 namespace Playcraft
 {
     public class FilterMessageLink : MonoBehaviour
@@ -13,3 +15,4 @@ namespace Playcraft
         }
     }
 }
+*/

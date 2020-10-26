@@ -469,7 +469,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1726640838829594622}
   - component: {fileID: 783070897635010220}
-  - component: {fileID: 4740166916125996165}
+  - component: {fileID: 2005095015}
+  - component: {fileID: 2005095017}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -504,7 +505,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4740166916125996165
+--- !u!114 &2005095015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -513,10 +514,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2720671105009156292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ceece866f02314991d9ff2e5eedbc1, type: 3}
+  m_Script: {fileID: 11500000, guid: dfb7fefbe81c02c4fb48d068f8377ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RelaySource:
+  Output:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9098599839944809167}
@@ -530,9 +531,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  RelayMessage:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!114 &2005095017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2720671105009156292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13f1fff139163a4c9bebba35d1cc533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   responses:
     elements:
     - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
@@ -545,11 +555,11 @@ MonoBehaviour:
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
-              m_BoolArgument: 1
+              m_BoolArgument: 0
             m_CallState: 2
     - id: {fileID: 11400000, guid: 84211f740ce3d2b4e9853a607a4c68ba, type: 2}
       Response:
@@ -561,7 +571,7 @@ MonoBehaviour:
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -571,18 +581,33 @@ MonoBehaviour:
       Response:
         m_PersistentCalls:
           m_Calls:
+          - m_Target: {fileID: 9098599839944809167}
+            m_MethodName: PhysicalFollow
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
           - m_Target: {fileID: 5772432216234326831}
             m_MethodName: SetVariableTrue
             m_Mode: 2
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
-              m_BoolArgument: 1
+              m_BoolArgument: 0
             m_CallState: 2
+    - id: {fileID: 11400000, guid: d0434972a2612c3459c141a329b95525, type: 2}
+      Response:
+        m_PersistentCalls:
+          m_Calls:
           - m_Target: {fileID: 9098599839944809167}
             m_MethodName: PhysicalFollow
             m_Mode: 6
@@ -592,30 +617,15 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
-              m_BoolArgument: 1
+              m_BoolArgument: 0
             m_CallState: 2
-    - id: {fileID: 11400000, guid: d0434972a2612c3459c141a329b95525, type: 2}
-      Response:
-        m_PersistentCalls:
-          m_Calls:
           - m_Target: {fileID: 5772432216234326831}
             m_MethodName: SetVariableFalse
             m_Mode: 2
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-          - m_Target: {fileID: 9098599839944809167}
-            m_MethodName: PhysicalFollow
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -631,7 +641,7 @@ MonoBehaviour:
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -647,7 +657,7 @@ MonoBehaviour:
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -663,7 +673,7 @@ MonoBehaviour:
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -679,7 +689,7 @@ MonoBehaviour:
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: 1986a77699d4d524e8aab831fdc4162b,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -695,7 +705,7 @@ MonoBehaviour:
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -711,12 +721,9 @@ MonoBehaviour:
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: 0f04299fe23da4a469b5f2ca5335f93d,
                 type: 2}
-              m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+              m_ObjectArgumentAssemblyTypeName: SO, Assembly-CSharp
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-  link: {fileID: 0}
-  ignoreInput: 0
-  ignoreLink: 0

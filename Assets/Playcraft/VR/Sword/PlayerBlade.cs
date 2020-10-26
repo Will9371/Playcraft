@@ -5,8 +5,10 @@ namespace Playcraft.Examples.SwordTrainer
 {
     public class PlayerBlade : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] UnityEvent Strike;
         [SerializeField] UnityEvent Recover;
+        #pragma warning restore 0649
         
         void OnTriggerEnter(Collider other)
         {
