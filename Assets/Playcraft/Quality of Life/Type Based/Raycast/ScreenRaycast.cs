@@ -16,6 +16,13 @@ namespace Playcraft
         [SerializeField] QueryTriggerInteraction triggerInteraction;
         [SerializeField] RaycastHitEvent Output;
         #pragma warning restore 0649
+        
+        new Camera camera;
+        
+        void Start()
+        {
+            camera = Camera.main;
+        }
 
         public void Trigger()
         {          
@@ -34,9 +41,9 @@ namespace Playcraft
         {
             switch (source)
             {
-                case RaycastSource.MousePosition: return Camera.main.ScreenPointToRay(Input.mousePosition);
-                case RaycastSource.ScreenCenter: return Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-                default: return Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+                case RaycastSource.MousePosition: return camera.ScreenPointToRay(Input.mousePosition);
+                case RaycastSource.ScreenCenter: return camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+                default: return camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             }
         }
     }

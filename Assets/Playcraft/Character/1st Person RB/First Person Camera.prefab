@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7102220881869935665}
   - component: {fileID: 4277711214855026986}
   m_Layer: 0
-  m_Name: Mouse Raycast
+  m_Name: Screen Raycast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

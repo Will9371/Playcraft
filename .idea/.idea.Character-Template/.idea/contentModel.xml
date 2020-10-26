@@ -93,7 +93,6 @@
               <e p="PickupInteractor.cs" t="Include" />
               <e p="TwoHandInteractor.cs" t="Include" />
             </e>
-            <e p="RelayMessage.cs" t="Include" />
             <e p="RespondToMessage.cs" t="Include" />
             <e p="SendMessage.cs" t="Include" />
             <e p="SphereInteractor.cs" t="Include" />
@@ -345,6 +344,7 @@
                 <e p="GameObjectBoolRelaySplit.cs" t="Include" />
                 <e p="GameObjectRelay.cs" t="Include" />
                 <e p="Relay.cs" t="Include" />
+                <e p="RelayMessage.cs" t="Include" />
                 <e p="TransformRelay.cs" t="Include" />
                 <e p="Vector3Relay.cs" t="Include" />
               </e>

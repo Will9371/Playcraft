@@ -1,44 +1,47 @@
 ﻿using UnityEngine;
 
-// NOT USED
-public class SphereInteractor : MonoBehaviour
+// FUTURE USE
+namespace Playcraft
 {
-    #pragma warning disable 0649
-    [SerializeField] float range = .5f;
-    [SerializeField] SO pickupMessage;
-    [SerializeField] SO dropMessage;
-    #pragma warning restore 0649
-
-    IMessage itemInHand;
-
-    bool isHolding => itemInHand != null;
-    Vector3 center => transform.position;
-
-    public void Interact()
+    public class SphereInteractor : MonoBehaviour
     {
-        if (isHolding) Drop();
-        else Pickup();
-    }
+        #pragma warning disable 0649
+        [SerializeField] float range = .5f;
+        [SerializeField] SO pickupMessage;
+        [SerializeField] SO dropMessage;
+        #pragma warning restore 0649
 
-    public void Pickup()
-    {
-        var nearby = Physics.OverlapSphere(center, range);
-        Debug.Log(nearby.Length);
+        IMessage itemInHand;
 
-        foreach (var item in nearby)
+        bool isHolding => itemInHand != null;
+        Vector3 center => transform.position;
+
+        public void Interact()
         {
-            var interactable = item.GetComponent<IMessage>();
-            if (interactable == null) continue;
-            itemInHand = interactable;
-            break;
+            if (isHolding) Drop();
+            else Pickup();
         }
 
-        itemInHand?.Message(pickupMessage);
-    }
+        public void Pickup()
+        {
+            var nearby = Physics.OverlapSphere(center, range);
+            Debug.Log(nearby.Length);
 
-    public void Drop()
-    {
-        itemInHand?.Message(dropMessage);
-        itemInHand = null;
+            foreach (var item in nearby)
+            {
+                var interactable = item.GetComponent<IMessage>();
+                if (interactable == null) continue;
+                itemInHand = interactable;
+                break;
+            }
+
+            itemInHand?.Message(pickupMessage);
+        }
+
+        public void Drop()
+        {
+            itemInHand?.Message(dropMessage);
+            itemInHand = null;
+        }
     }
 }
