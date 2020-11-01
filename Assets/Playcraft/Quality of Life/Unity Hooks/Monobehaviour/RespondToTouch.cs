@@ -10,46 +10,46 @@ namespace Playcraft
         [SerializeField] ContactCollisionIO[] collisionEvents;
         #pragma warning restore 0649
         
-        private void OnTriggerEnter(Collider other)
+        void OnTriggerEnter(Collider other)
         {
             InputTrigger(other, TouchType.Begin, CollisionType.Trigger);
         }
         
-        private void OnTriggerExit(Collider other)
+        void OnTriggerExit(Collider other)
         {
             InputTrigger(other, TouchType.End, CollisionType.Trigger);
         }
         
-        private void OnTriggerStay(Collider other)
+        void OnTriggerStay(Collider other)
         {
             InputTrigger(other, TouchType.Continuous, CollisionType.Trigger);
         }
         
-        private void InputTrigger(Collider other, TouchType touchType, CollisionType collisionType)
+        void InputTrigger(Collider other, TouchType touchType, CollisionType collisionType)
         {
             foreach (var item in triggerEvents)
                 item.RequestActivate(other, touchType, collisionType);        
         }
         
-        private void OnCollisionEnter(Collision other) 
+        void OnCollisionEnter(Collision other) 
         {
             InputTrigger(other.collider, TouchType.Begin, CollisionType.Collision); 
             InputCollision(other, TouchType.Begin);
         }
         
-        private void OnCollisionExit(Collision other) 
+        void OnCollisionExit(Collision other) 
         {
             InputTrigger(other.collider, TouchType.End, CollisionType.Collision); 
             InputCollision(other, TouchType.End); 
         }
         
-        private void OnCollisionStay(Collision other) 
+        void OnCollisionStay(Collision other) 
         {
             InputTrigger(other.collider, TouchType.Continuous, CollisionType.Collision);
             InputCollision(other, TouchType.Continuous); 
         }
         
-        private void InputCollision(Collision other, TouchType touchType)
+        void InputCollision(Collision other, TouchType touchType)
         {
             foreach (var item in collisionEvents)
                 item.RequestActivate(other, touchType);
@@ -60,12 +60,15 @@ namespace Playcraft
             #pragma warning disable 0649
             [SerializeField] TouchType touchType;
             [SerializeField] CollisionType collisionType;
+            [SerializeField] CollisionType otherColliderType;
             [SerializeField] ColliderEvent Output;
             #pragma warning restore 0649
 
             public void RequestActivate(Collider other, TouchType touchType, CollisionType collisionType)
             {
-                if (this.collisionType != CollisionType.Any && this.collisionType != collisionType)
+                if (this.collisionType != CollisionType.Any && this.collisionType != collisionType ||
+                    other.isTrigger && otherColliderType == CollisionType.Collision ||
+                    !other.isTrigger && otherColliderType == CollisionType.Trigger)
                     return;
             
                 if (this.touchType == touchType)
@@ -81,7 +84,7 @@ namespace Playcraft
             #pragma warning restore 0649
 
             public void RequestActivate(Collision other, TouchType touchType)
-            {
+            {            
                 if (this.touchType == touchType)
                     Output.Invoke(other);
             }

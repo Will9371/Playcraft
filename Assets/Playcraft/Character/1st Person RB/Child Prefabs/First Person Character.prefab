@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 4586969791825067278}
   - component: {fileID: 1331853993649459476}
   - component: {fileID: 2443468078068000181}
-  - component: {fileID: 3403923576262336050}
+  - component: {fileID: 7417291344909825043}
   - component: {fileID: 3403923576262336054}
   - component: {fileID: 4350584479779114452}
   m_Layer: 0
@@ -339,8 +339,8 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3403923576262336050}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -387,7 +387,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3403923576262336050
+--- !u!114 &7417291344909825043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -396,25 +396,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2095309352899068501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f11bf417e28b18849940ae5a1d9ac426, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c8350139eac88d4291853dccad1b51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xDragSensitivity: 0.15
-  yDragSensitivity: 0.15
-  OutputMouseDelta:
+  sensitivity: {x: 2.5, y: 2}
+  Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3403923576262336054}
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3403923576262336054}
         m_MethodName: Input
         m_Mode: 0
@@ -1040,7 +1028,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4009807950553526777}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.75, y: 0.148, z: -8.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

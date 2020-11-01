@@ -11,9 +11,6 @@ GameObject:
   - component: {fileID: 4399053689265857544}
   - component: {fileID: 4399053689265857549}
   - component: {fileID: 604444084182638546}
-  - component: {fileID: 4399053689265857550}
-  - component: {fileID: 4399053689265857551}
-  - component: {fileID: 2240752668755696832}
   m_Layer: 0
   m_Name: Fly Cam
   m_TagString: MainCamera
@@ -33,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1506797080829156797}
+  - {fileID: 1262605434705485177}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69,13 +67,47 @@ MonoBehaviour:
   xRange: {x: 0, y: 0}
   clampY: 0
   yRange: {x: 0, y: 0}
---- !u!114 &4399053689265857550
+--- !u!1 &5480367824993089547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1262605434705485177}
+  - component: {fileID: 3910905374447469652}
+  - component: {fileID: 7037849107575371580}
+  - component: {fileID: 2757744418088049291}
+  - component: {fileID: 3050036635144314859}
+  m_Layer: 0
+  m_Name: Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1262605434705485177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480367824993089547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4399053689265857544}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3910905374447469652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4399053689265857547}
+  m_GameObject: {fileID: 5480367824993089547}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
@@ -150,13 +182,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &4399053689265857551
+--- !u!114 &7037849107575371580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4399053689265857547}
+  m_GameObject: {fileID: 5480367824993089547}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10c475d5b6f50f54584be9933a14ad5f, type: 3}
@@ -168,8 +200,8 @@ MonoBehaviour:
     Output:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2240752668755696832}
-          m_MethodName: SetActive
+        - m_Target: {fileID: 2757744418088049291}
+          m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -184,8 +216,8 @@ MonoBehaviour:
     Output:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2240752668755696832}
-          m_MethodName: SetActive
+        - m_Target: {fileID: 2757744418088049291}
+          m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -195,12 +227,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  scrollSensitivity: 1
-  OnMouseScroll:
+--- !u!114 &2757744418088049291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480367824993089547}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8350139eac88d4291853dccad1b51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: {x: 5, y: 5}
+  Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4399053689265857549}
-        m_MethodName: Accelerate
+      - m_Target: {fileID: 604444084182638546}
+        m_MethodName: Rotate
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -210,25 +254,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2240752668755696832
+--- !u!114 &3050036635144314859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4399053689265857547}
+  m_GameObject: {fileID: 5480367824993089547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f11bf417e28b18849940ae5a1d9ac426, type: 3}
+  m_Script: {fileID: 11500000, guid: cdcd27db34fa4bb49b1aab5b975a8458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xDragSensitivity: 0.3
-  yDragSensitivity: 0.3
-  OutputMouseDelta:
+  scrollSensitivity: 1
+  OnMouseScroll:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604444084182638546}
-        m_MethodName: Rotate
+      - m_Target: {fileID: 4399053689265857549}
+        m_MethodName: Accelerate
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

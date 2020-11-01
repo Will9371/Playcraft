@@ -26,6 +26,27 @@
         <e p="Playcraft" t="Include">
           <e p="Character" t="Include">
             <e p="1st Person RB" t="Include">
+              <e p="Shooter" t="Include">
+                <e p="Explosion" t="Include">
+                  <e p="CreateExplosion.cs" t="Include" />
+                  <e p="Explosion.cs" t="Include" />
+                  <e p="ExplosionForce.cs" t="Include" />
+                </e>
+                <e p="Laser" t="Include">
+                  <e p="CreateLaser.cs" t="Include" />
+                  <e p="Laser.cs" t="Include" />
+                  <e p="LaserData.cs" t="Include" />
+                </e>
+                <e p="Reticle" t="Include">
+                  <e p="RaycastSource.cs" t="Include" />
+                  <e p="SetColorOnHit.cs" t="Include" />
+                </e>
+                <e p="Targeting" t="Include">
+                  <e p="DetectTarget.cs" t="Include" />
+                  <e p="LookAtTarget.cs" t="Include" />
+                  <e p="Target.cs" t="Include" />
+                </e>
+              </e>
               <e p="Swim" t="Include">
                 <e p="WaterInteract.cs" t="Include" />
                 <e p="WaterTag.cs" t="Include" />
@@ -35,6 +56,9 @@
               <e p="FaceTarget.cs" t="Include" />
               <e p="FollowForward.cs" t="Include" />
               <e p="RangeCheck.cs" t="Include" />
+            </e>
+            <e p="Flying 1st Person" t="Include">
+              <e p="FlyCamSettings.cs" t="Include" />
             </e>
             <e p="Movement Common" t="Include">
               <e p="State Machine" t="Include">
@@ -51,6 +75,20 @@
               <e p="NavAgentControl.cs" t="Include" />
               <e p="NavigationDebugger.cs" t="Include" />
               <e p="OffsetDirection.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Deprecated" t="Include">
+            <e p="Cursor" t="Include">
+              <e p="EventTriggerInterface.cs" t="Include" />
+              <e p="GetMouseDrag.cs" t="Include" />
+              <e p="MouseClickCollider.cs" t="Include" />
+            </e>
+            <e p="Interaction" t="Include">
+              <e p="DragInteractable.cs" t="Include" />
+              <e p="FilterMessageLink.cs" t="Include" />
+              <e p="MessageLink.cs" t="Include" />
+              <e p="PickupInteractor.cs" t="Include" />
+              <e p="TwoHandInteractor.cs" t="Include" />
             </e>
           </e>
           <e p="Dialog" t="Include">
@@ -86,13 +124,6 @@
             </e>
             <e p="IInteractable.cs" t="Include" />
             <e p="InteractableList.cs" t="Include" />
-            <e p="Obsolete" t="Include">
-              <e p="DragInteractable.cs" t="Include" />
-              <e p="FilterMessageLink.cs" t="Include" />
-              <e p="MessageLink.cs" t="Include" />
-              <e p="PickupInteractor.cs" t="Include" />
-              <e p="TwoHandInteractor.cs" t="Include" />
-            </e>
             <e p="RespondToMessage.cs" t="Include" />
             <e p="SendMessage.cs" t="Include" />
             <e p="SphereInteractor.cs" t="Include" />
@@ -355,13 +386,9 @@
               <e p="CursorInterface.cs" t="Include" />
               <e p="DragObject.cs" t="Include" />
               <e p="DragUI.cs" t="Include" />
-              <e p="GetMouseDrag.cs" t="Include" />
               <e p="GetMouseInput.cs" t="Include" />
+              <e p="GetMouseMovement.cs" t="Include" />
               <e p="GetMouseScroll.cs" t="Include" />
-              <e p="Obsolete" t="Include">
-                <e p="EventTriggerInterface.cs" t="Include" />
-                <e p="MouseClickCollider.cs" t="Include" />
-              </e>
               <e p="RespondToMouse.cs" t="Include" />
             </e>
             <e p="DisplayText.cs" t="Include" />

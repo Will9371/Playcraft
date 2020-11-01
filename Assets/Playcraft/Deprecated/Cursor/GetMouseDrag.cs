@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+// OBSOLETE: Replaced by GetMouseMovement
+
 // Input: Game Engine, set active/inactive
 // Process: continuous check for mouse drag
 // Output: drag distance per frame as Vector2 (0 if inactive)

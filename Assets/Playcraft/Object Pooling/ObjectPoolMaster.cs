@@ -38,17 +38,31 @@ namespace Playcraft.Pooling
             objectPoolDict.Add(data.prefab, spawner);
         }
 
-        public GameObject Spawn(GameObject prefabToSpawn, Vector3 spawnLocation)
+        public GameObject Spawn(GameObject obj, Vector3 position)
         {
             ObjectSpawner spawner;
-            if (objectPoolDict.TryGetValue(prefabToSpawn, out spawner))
+            if (objectPoolDict.TryGetValue(obj, out spawner))
             {
                 //Debug.Log("Pool spawn method reached " + spawner.name);
-                return spawner.Spawn(spawnLocation);
+                return spawner.Spawn(position);
             }
 
-            Debug.LogError("Matching prefab not found in object pooling system " + prefabToSpawn.name);
+            Debug.LogError("Matching prefab not found in object pooling system " + obj.name);
             return null;
+        }
+                
+        public GameObject Spawn(GameObject obj, Vector3 position, Quaternion rotation)
+        {
+            var newObj = Spawn(obj, position);
+            newObj.transform.rotation = rotation;
+            return newObj;
+        }
+        
+        public GameObject Spawn(GameObject obj, Vector3 position, Vector3 rotation)
+        {
+            var newObj = Spawn(obj, position);
+            newObj.transform.eulerAngles = rotation;
+            return newObj;      
         }
     }
 }

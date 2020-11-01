@@ -213,6 +213,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &86902593 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7037849107575371580, guid: 3e36eb07a93c07c4db441bc5d6e5d294,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130978240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c475d5b6f50f54584be9933a14ad5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &86902594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2757744418088049291, guid: 3e36eb07a93c07c4db441bc5d6e5d294,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130978240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8350139eac88d4291853dccad1b51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527862882
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,19 +963,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2130978240}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2130978242 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4399053689265857549, guid: 3e36eb07a93c07c4db441bc5d6e5d294,
-    type: 3}
-  m_PrefabInstance: {fileID: 2130978240}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130978241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7612afadb92c6b4abc26db626b29d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2130978243
+--- !u!114 &2130978242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -960,21 +972,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2130978241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdcd27db34fa4bb49b1aab5b975a8458, type: 3}
+  m_Script: {fileID: 11500000, guid: f9bac6b115910c6469bf03f58c996a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSensitivity: 1
-  OnMouseScroll:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2130978242}
-        m_MethodName: Accelerate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  requireLeftMouseToTurn: 1
+  click: {fileID: 86902593}
+  drag: {fileID: 86902594}
