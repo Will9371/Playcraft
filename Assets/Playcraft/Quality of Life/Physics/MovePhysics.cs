@@ -20,19 +20,13 @@ namespace Playcraft
         Vector3 priorDirection;
         public void SetDirection(Vector3 value) { inputDirection = value; }
         Vector3 direction => slide ? priorDirection : inputDirection;
-        
-        bool slide;
-        public void SetSlide(bool value) { slide = value; }
-           
                         
-        private void Awake()
+        void Awake()
         {            
-            if (rb == null)
+            if (!rb)
             {
                 rb = GetComponent<Rigidbody>();
-                
-                if (rb == null)
-                    Debug.LogError("Attach or assign a Rigidbody to " + gameObject.name);
+                if (!rb) Debug.LogError("Attach or assign a Rigidbody to " + gameObject.name);
             }
         }
         
@@ -53,5 +47,17 @@ namespace Playcraft
                 priorDirection = inputDirection;
             }
         }
+        
+        bool slide;
+        public void SetSlide(bool value) { slide = value; }
+        
+        public void SetSlideForTime(float duration)
+        {
+            if (slide) return;
+            slide = true;
+            Invoke(nameof(SetSlideFalse), duration);
+        }
+        
+        void SetSlideFalse() { slide = false; }
     }
 }

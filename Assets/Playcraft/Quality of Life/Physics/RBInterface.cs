@@ -1,29 +1,43 @@
 ﻿using UnityEngine;
 
-public class RBInterface : MonoBehaviour
+namespace Playcraft
 {
-    new Rigidbody rigidbody;
-    
-    void Awake()
-    {
-        rigidbody = GetComponent<Rigidbody>();
-    }
+    public interface IAddForce { void AddForce(Vector3 force, ForceMode mode = ForceMode.Force); }
 
-    public void SetPhysicsActive(bool active)
+    public class RBInterface : MonoBehaviour, IAddForce
     {
-        rigidbody.useGravity = active;
-        rigidbody.isKinematic = !active;
+        [SerializeField] Rigidbody rb;
         
-        if (!active)
+        void Awake()
         {
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
+            if (!rb) 
+            {
+                rb = GetComponent<Rigidbody>();
+                if (!rb) Debug.LogError("Attach or assign a Rigidbody to " + gameObject.name);
+            }
         }
-    }
-    
-    public void SetVelocity(Vector3 velocity, Vector3 angularVelocity)
-    {
-        rigidbody.velocity = velocity;
-        rigidbody.angularVelocity = angularVelocity;
+
+        public void SetPhysicsActive(bool active)
+        {
+            rb.useGravity = active;
+            rb.isKinematic = !active;
+            
+            if (!active)
+            {
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+        }
+        
+        public void SetVelocity(Vector3 velocity, Vector3 angularVelocity)
+        {
+            rb.velocity = velocity;
+            rb.angularVelocity = angularVelocity;
+        }
+        
+        public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force)
+        {
+            rb.AddForce(force, mode);
+        }
     }
 }

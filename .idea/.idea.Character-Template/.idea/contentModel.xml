@@ -31,6 +31,7 @@
                   <e p="CreateExplosion.cs" t="Include" />
                   <e p="Explosion.cs" t="Include" />
                   <e p="ExplosionForce.cs" t="Include" />
+                  <e p="MovePhysicsForceResponse.cs" t="Include" />
                 </e>
                 <e p="Laser" t="Include">
                   <e p="CreateLaser.cs" t="Include" />
