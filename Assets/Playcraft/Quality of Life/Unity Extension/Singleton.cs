@@ -6,6 +6,8 @@ namespace Playcraft
 {
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
+        public static bool exists => _instance != null;
+    
         protected static T _instance;
 
         public static T instance
@@ -24,20 +26,10 @@ namespace Playcraft
             }
         }
 
-        [SerializeField] bool dontDestroyOnLoad = false;
-
-        private void Awake()
+        void Awake()
         {
             if (instance != null && instance != this)
-            {
                 Destroy(gameObject);
-                return;
-            }
-        
-            if (dontDestroyOnLoad)
-            {
-                DontDestroyOnLoad(gameObject);
-            }
         }
     }
 }

@@ -101,6 +101,15 @@
             <e p="TypewriterText.cs" t="Include" />
           </e>
           <e p="Examples" t="Include">
+            <e p="Additive Scenes" t="Include">
+              <e p="AccessSceneController.cs" t="Include" />
+              <e p="FetchScenesIfNotPresent.cs" t="Include" />
+              <e p="SceneConfigSO.cs" t="Include" />
+              <e p="SceneController.cs" t="Include" />
+              <e p="SceneName.cs" t="Include" />
+              <e p="SceneSO.cs" t="Include" />
+              <e p="SceneTransitionSO.cs" t="Include" />
+            </e>
             <e p="Color Catcher" t="Include">
               <e p="Scripts" t="Include">
                 <e p="GetBlockerData.cs" t="Include" />
