@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using Playcraft;
 using UnityEngine;
 
+
 public class SceneController : Singleton<SceneController>
 {
     [SerializeField] SceneConfigSO sceneConfigData = default;
@@ -18,26 +19,26 @@ public class SceneController : Singleton<SceneController>
     
     void LoadIfNotPresent(SceneSO value)
     {
-        LoadIfNotPresent(value.sceneName.ToString());
+        LoadIfNotPresent(value.sceneName);
     }
     
     void LoadIfNotPresent(string value)
     {
         if (activeScenes.Contains(value)) return;
         SceneManager.LoadScene(value, LoadSceneMode.Additive);
-        activeScenes.Add(value);        
+        activeScenes.Add(value);
     }
     
     void UnloadIfPresent(SceneSO value)
     {
-        UnloadIfPresent(value.sceneName.ToString()); 
+        UnloadIfPresent(value.sceneName); 
     }
     
     void UnloadIfPresent(string value)
     {
         if (!activeScenes.Contains(value)) return;
         SceneManager.UnloadSceneAsync(value);
-        activeScenes.Remove(value);        
+        activeScenes.Remove(value);  
     }
     
     public void LoadUnload(SceneTransitionSO transition)
@@ -45,14 +46,14 @@ public class SceneController : Singleton<SceneController>
         LoadUnload(transition.scenesToLoad, transition.scenesToUnload);
     }
     
-    public void LoadUnload(SceneSO[] scenesToLoad, SceneSO[] scenesToUnload)
-    {
+    void LoadUnload(SceneSO[] scenesToLoad, SceneSO[] scenesToUnload)
+    {    
         RefreshActiveScenes();
         
         foreach (var scene in scenesToLoad)
             LoadIfNotPresent(scene);
         foreach (var scene in scenesToUnload)
-            UnloadIfPresent(scene);            
+            UnloadIfPresent(scene);
     }
     
     public void ValidateCurrentScenes()
@@ -65,7 +66,7 @@ public class SceneController : Singleton<SceneController>
         
         foreach (var config in sceneConfigData.sceneConfigurations)
         {
-            if (activeScenes.Contains(config.uniqueScene.sceneName.ToString()))
+            if (activeScenes.Contains(config.uniqueScene.sceneName))
             {
                 uniqueSceneFound = config;
                 break;
@@ -79,18 +80,18 @@ public class SceneController : Singleton<SceneController>
         var sceneNamesToLoad = new List<string>();
         
         foreach (var scene in sceneConfigData.universalScenes)
-            sceneNamesToLoad.Add(scene.sceneName.ToString());
+            sceneNamesToLoad.Add(scene.sceneName);
         
-        sceneNamesToLoad.Add(configToLoad.uniqueScene.sceneName.ToString());
+        sceneNamesToLoad.Add(configToLoad.uniqueScene.sceneName);
         
         foreach (var scene in configToLoad.supportingScenes)
-            sceneNamesToLoad.Add(scene.sceneName.ToString());
+            sceneNamesToLoad.Add(scene.sceneName);
             
         foreach (var scene in sceneNamesToLoad)
             LoadIfNotPresent(scene);
             
         foreach (var scene in activeScenes)
             if (!sceneNamesToLoad.Contains(scene))
-                UnloadIfPresent(scene);
+                UnloadIfPresent(scene);                
     }
 }

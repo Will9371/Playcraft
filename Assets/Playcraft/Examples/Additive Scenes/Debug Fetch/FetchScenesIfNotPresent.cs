@@ -25,7 +25,7 @@ public class FetchScenesIfNotPresent : MonoBehaviour
     
     void LoadIfNotPresent(SceneSO value)
     {
-        LoadIfNotPresent(value.sceneName.ToString());
+        LoadIfNotPresent(value.sceneName);
     }
     
     void LoadIfNotPresent(string value)

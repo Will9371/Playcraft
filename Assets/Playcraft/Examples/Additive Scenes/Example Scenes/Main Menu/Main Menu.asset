@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4e145f714b1c4f4aa337b5b722a3101, type: 3}
-  m_Name: Player Data
+  m_Name: Main Menu
   m_EditorClassIdentifier: 
-  sceneName: 2
+  sceneName: SceneTest_MainMenu

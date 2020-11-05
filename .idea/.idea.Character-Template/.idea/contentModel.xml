@@ -24,6 +24,7 @@
           <e p="RaycastController.cs" t="Include" />
         </e>
         <e p="Playcraft" t="Include">
+          <e p="AnimationProgressEvent.cs" t="Include" />
           <e p="Character" t="Include">
             <e p="1st Person RB" t="Include">
               <e p="Shooter" t="Include">
@@ -102,13 +103,22 @@
           </e>
           <e p="Examples" t="Include">
             <e p="Additive Scenes" t="Include">
-              <e p="AccessSceneController.cs" t="Include" />
-              <e p="FetchScenesIfNotPresent.cs" t="Include" />
-              <e p="SceneConfigSO.cs" t="Include" />
+              <e p="CheckIfInitialized.cs" t="Include" />
+              <e p="Debug Fetch" t="Include">
+                <e p="AccessSceneController.cs" t="Include" />
+                <e p="FetchScenesIfNotPresent.cs" t="Include" />
+              </e>
+              <e p="Scene Data" t="Include">
+                <e p="SceneConfigSO.cs" t="Include" />
+                <e p="SceneSO.cs" t="Include" />
+                <e p="SceneTransitionSO.cs" t="Include" />
+              </e>
               <e p="SceneController.cs" t="Include" />
-              <e p="SceneName.cs" t="Include" />
-              <e p="SceneSO.cs" t="Include" />
-              <e p="SceneTransitionSO.cs" t="Include" />
+              <e p="SceneStateTracker.cs" t="Include" />
+              <e p="Transitions" t="Include">
+                <e p="SceneTransitions.cs" t="Include" />
+                <e p="SetObjectsActive.cs" t="Include" />
+              </e>
             </e>
             <e p="Color Catcher" t="Include">
               <e p="Scripts" t="Include">
