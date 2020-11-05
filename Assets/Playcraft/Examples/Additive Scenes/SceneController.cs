@@ -2,11 +2,13 @@
 using UnityEngine.SceneManagement;
 using Playcraft;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class SceneController : Singleton<SceneController>
 {
     [SerializeField] SceneConfigSO sceneConfigData = default;
+    [SerializeField] UnityEvent TransitionBegin;
     
     List<string> activeScenes = new List<string>();
     
@@ -49,6 +51,7 @@ public class SceneController : Singleton<SceneController>
     void LoadUnload(SceneSO[] scenesToLoad, SceneSO[] scenesToUnload)
     {    
         RefreshActiveScenes();
+        TransitionBegin.Invoke();
         
         foreach (var scene in scenesToLoad)
             LoadIfNotPresent(scene);

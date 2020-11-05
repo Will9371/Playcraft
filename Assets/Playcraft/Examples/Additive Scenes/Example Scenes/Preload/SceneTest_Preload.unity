@@ -209,7 +209,6 @@ GameObject:
   - component: {fileID: 316493719}
   - component: {fileID: 316493722}
   - component: {fileID: 316493721}
-  - component: {fileID: 316493723}
   m_Layer: 5
   m_Name: Transition
   m_TagString: Untagged
@@ -308,18 +307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeIn: {fileID: 935954279}
   fadeOut: {fileID: 1384854237}
---- !u!114 &316493723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316493717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5f287688619ef749982623c75d2bdf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &317448069
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +318,6 @@ GameObject:
   - component: {fileID: 317448071}
   - component: {fileID: 317448070}
   - component: {fileID: 317448072}
-  - component: {fileID: 317448073}
   m_Layer: 0
   m_Name: Scenes
   m_TagString: Untagged
@@ -352,26 +338,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneConfigData: {fileID: 11400000, guid: 328d44a0777ec464397f58cdcacd3cc3, type: 2}
-  OnLoadScene:
+  TransitionBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 317448073}
-        m_MethodName: TrackActiveScene
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnUnloadScene:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 317448073}
-        m_MethodName: TrackInactiveScene
-        m_Mode: 0
+      - m_Target: {fileID: 1384854237}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -431,26 +403,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &317448073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317448069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 771a64c1834e4e54cb53db9978b57be1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenes:
-  - {fileID: 11400000, guid: 3cee7d67b1954064e9216c1bcb10e20f, type: 2}
-  - {fileID: 11400000, guid: 15e240ab4ada8324897940dea32673d0, type: 2}
-  - {fileID: 11400000, guid: c299583589bc2294eb383ca58eddc2ff, type: 2}
-  - {fileID: 11400000, guid: 163d76274d2606a42a13f1bb32f63952, type: 2}
-  - {fileID: 11400000, guid: 19e68cf81bc61c645818f4605abb6525, type: 2}
-  - {fileID: 11400000, guid: 59be10863dd220840a8ee69d72acb27c, type: 2}
-  sceneStates: []
+      - m_Target: {fileID: 317448070}
+        m_MethodName: SetQueuedScenesActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &463746069
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +574,6 @@ GameObject:
   - component: {fileID: 935954278}
   - component: {fileID: 935954280}
   - component: {fileID: 935954279}
-  - component: {fileID: 935954281}
   m_Layer: 5
   m_Name: Fade In
   m_TagString: Untagged
@@ -668,32 +630,8 @@ MonoBehaviour:
   - percent: 0
     OnReached:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 935954281}
-          m_MethodName: Input
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   overrideInputValidation: 0
---- !u!114 &935954281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935954277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04c2d1f29a044a42a42340ffe09ba5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invoker: {fileID: 11400000, guid: d412e41ea2881bb4abd5741e5f6c2ffa, type: 2}
 --- !u!1 &1196874408
 GameObject:
   m_ObjectHideFlags: 0

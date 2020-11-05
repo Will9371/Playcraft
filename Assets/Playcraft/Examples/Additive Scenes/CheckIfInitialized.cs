@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+// NOT USED
 public class CheckIfInitialized : MonoBehaviour
 {
     [SerializeField] SceneSO self;
@@ -20,7 +21,7 @@ public class CheckIfInitialized : MonoBehaviour
         while (!SceneStateTracker.exists)
         {
             // NG: waits endlessly
-            Debug.Log("Waiting for tracker...");
+            //Debug.Log("Waiting for tracker...");
             yield return null;
         }
             

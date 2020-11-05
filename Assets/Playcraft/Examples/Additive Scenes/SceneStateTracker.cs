@@ -3,6 +3,7 @@ using Playcraft;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// NOT USED
 public class SceneStateTracker : Singleton<SceneStateTracker>
 {
     [SerializeField] SceneSO[] scenes;
