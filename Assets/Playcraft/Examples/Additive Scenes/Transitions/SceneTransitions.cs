@@ -1,11 +1,27 @@
-﻿using Playcraft;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SceneTransitions : MonoBehaviour
 {
-    [SerializeField] AnimationProgressEvent fadeIn;
+    [SerializeField] Animator animator;
     [SerializeField] AnimationProgressEvent fadeOut;
     
-    public void FadeIn() { fadeIn.Play(); }
-    public void FadeOut() { fadeOut.Play(); }
+    SceneController scene => SceneController.instance;
+    
+    SceneTransitionSO currentTransition;
+    
+    void OnEnable()
+    {
+        animator.Play("Fade In");        
+    }
+    
+    public void FadeOut(SceneTransitionSO transition) 
+    {
+        currentTransition = transition; 
+        fadeOut.Play("Fade Out"); 
+    }
+    
+    public void FadeOutComplete()
+    {
+        scene.LoadUnload(currentTransition);
+    }
 }
