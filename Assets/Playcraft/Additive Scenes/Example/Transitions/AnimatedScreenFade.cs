@@ -7,7 +7,7 @@ namespace Playcraft
 {
     [Serializable] public class SceneTransitionSOEvent : UnityEvent<SceneTransitionSO> { }
 
-    public class SceneTransitions : MonoBehaviour
+    public class AnimatedScreenFade : MonoBehaviour
     {
         #pragma warning disable 0649
         [SerializeField] Animator animator;

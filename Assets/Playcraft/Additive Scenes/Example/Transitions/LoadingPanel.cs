@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Playcraft.Examples.SceneControl
@@ -10,9 +11,13 @@ namespace Playcraft.Examples.SceneControl
         [SerializeField] Text description;
         #pragma warning restore 0649
         
-        public void Display(SceneTransitionSO transition)
+        SceneTransitionSO transition;
+        public void StoreTransition(SceneTransitionSO value) { transition = value; }
+        
+        public void Display() { Display(transition); }
+        public void Display(SceneTransitionSO value)
         {
-            description.text = transition.displayMessage;
+            description.text = value.displayMessage;
             SetVisible(true);
         }
         

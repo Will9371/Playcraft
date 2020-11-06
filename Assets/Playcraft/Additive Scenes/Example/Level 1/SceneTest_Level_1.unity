@@ -281,6 +281,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1717783255}
     m_Modifications:
+    - target: {fileID: 620694907749234261, guid: 873f3a0d25793c141bb991680a0ee96b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241487660111315245, guid: 873f3a0d25793c141bb991680a0ee96b,
+        type: 3}
+      propertyPath: OnFadeIn.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5214760084575466957, guid: 873f3a0d25793c141bb991680a0ee96b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -391,6 +401,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screen Fade
       objectReference: {fileID: 0}
+    - target: {fileID: 5249356543866174568, guid: 873f3a0d25793c141bb991680a0ee96b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 873f3a0d25793c141bb991680a0ee96b, type: 3}
 --- !u!224 &209906805 stripped
@@ -401,14 +416,14 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &209906806 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5214760084575466945, guid: 873f3a0d25793c141bb991680a0ee96b,
+  m_CorrespondingSourceObject: {fileID: 8939658241447508837, guid: 873f3a0d25793c141bb991680a0ee96b,
     type: 3}
   m_PrefabInstance: {fileID: 209906804}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f46424cfee5eb546adc40d188f49f6b, type: 3}
+  m_Script: {fileID: 11500000, guid: f02d1590162e82348b2848bcf4ca2dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &528245968
@@ -468,7 +483,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 209906806}
-          m_MethodName: ExitScene
+          m_MethodName: Input
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: 62a4343f9ddfe40489d8c9f17c05ec1d,
@@ -651,7 +666,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 209906806}
-          m_MethodName: ExitScene
+          m_MethodName: Input
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: a922637a316b6b24c8ef3b31cae620d7,
