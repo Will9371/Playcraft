@@ -6,7 +6,7 @@ namespace Playcraft
 {
     public class FetchScenesIfNotPresent : MonoBehaviour
     {
-        [SerializeField] SceneSO preload = default;
+        [SerializeField] StringSO preload = default;
             
         List<string> activeScenes = new List<string>();
         
@@ -23,7 +23,7 @@ namespace Playcraft
                 activeScenes.Add(SceneManager.GetSceneAt(i).name);
         }
         
-        void LoadIfNotPresent(SceneSO value) { LoadIfNotPresent(value.sceneName); }
+        void LoadIfNotPresent(StringSO value) { LoadIfNotPresent(value.value); }
         void LoadIfNotPresent(string value)
         {
             if (activeScenes.Contains(value)) return;

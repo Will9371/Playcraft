@@ -40,7 +40,6 @@
             </e>
             <e p="Scene Data" t="Include">
               <e p="SceneConfigSO.cs" t="Include" />
-              <e p="SceneSO.cs" t="Include" />
               <e p="SceneTransitionSO.cs" t="Include" />
             </e>
             <e p="SceneTransitionRelay.cs" t="Include" />
@@ -207,6 +206,7 @@
               <e p="IntArray.cs" t="Include" />
               <e p="ObjectArraySO.cs" t="Include" />
               <e p="SO.cs" t="Include" />
+              <e p="StringSO.cs" t="Include" />
               <e p="TurnDirection.cs" t="Include" />
               <e p="Vector3Array.cs" t="Include" />
               <e p="Vector3SO.cs" t="Include" />

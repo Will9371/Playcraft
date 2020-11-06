@@ -11,7 +11,7 @@ namespace Playcraft
         [Tooltip("Exposed for inspector visibility and read access, do not modify externally")]
         public List<string> activeScenes = new List<string>();
         
-        void LoadIfNotPresent(SceneSO value) { LoadIfNotPresent(value.sceneName); }
+        void LoadIfNotPresent(StringSO value) { LoadIfNotPresent(value.value); }
         void LoadIfNotPresent(string value)
         {
             if (activeScenes.Contains(value)) return;
@@ -19,7 +19,7 @@ namespace Playcraft
             activeScenes.Add(value);
         }
         
-        void UnloadIfPresent(SceneSO value) { UnloadIfPresent(value.sceneName); }
+        void UnloadIfPresent(StringSO value) { UnloadIfPresent(value.value); }
         void UnloadIfPresent(string value)
         {
             if (!activeScenes.Contains(value)) return;
@@ -32,7 +32,7 @@ namespace Playcraft
             LoadUnload(transition.scenesToLoad, transition.scenesToUnload);
         }
         
-        void LoadUnload(SceneSO[] scenesToLoad, SceneSO[] scenesToUnload)
+        void LoadUnload(StringSO[] scenesToLoad, StringSO[] scenesToUnload)
         {    
             RefreshActiveScenes();
             
@@ -74,7 +74,7 @@ namespace Playcraft
             
             foreach (var config in sceneConfigData.sceneConfigurations)
             {
-                if (activeScenes.Contains(config.uniqueScene.sceneName))
+                if (activeScenes.Contains(config.uniqueScene.value))
                 {
                     uniqueSceneFound = config;
                     break;
@@ -91,12 +91,12 @@ namespace Playcraft
             var sceneNames = new List<string>();
             
             foreach (var scene in sceneConfigData.universalScenes)
-                sceneNames.Add(scene.sceneName);
+                sceneNames.Add(scene.value);
             
-            sceneNames.Add(config.uniqueScene.sceneName);
+            sceneNames.Add(config.uniqueScene.value);
             
             foreach (var scene in config.supportingScenes)
-                sceneNames.Add(scene.sceneName);
+                sceneNames.Add(scene.value);
 
             return sceneNames;
         }

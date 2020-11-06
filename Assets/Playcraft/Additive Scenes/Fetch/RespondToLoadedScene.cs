@@ -15,13 +15,13 @@ namespace Playcraft
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             foreach (var binding in bindings)
-                if (binding.scene.sceneName == scene.name)
+                if (binding.scene.value == scene.name)
                     binding.Response.Invoke();
         }
         
         [Serializable] public struct Binding
         {
-            public SceneSO scene;
+            public StringSO scene;
             public UnityEvent Response;
         }
     }

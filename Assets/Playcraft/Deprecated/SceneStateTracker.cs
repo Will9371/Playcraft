@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneStateTracker : Singleton<SceneStateTracker>
 {
     #pragma warning disable 0649
-    [SerializeField] SceneSO[] scenes;
+    [SerializeField] StringSO[] scenes;
     [SerializeField] SceneState[] states;
     #pragma warning restore 0649
 
@@ -16,7 +16,7 @@ public class SceneStateTracker : Singleton<SceneStateTracker>
         states = new SceneState[scenes.Length];
         
         for (int i = 0; i < scenes.Length; i++)
-            states[i] = new SceneState(scenes[i].sceneName);
+            states[i] = new SceneState(scenes[i].value);
     }
     
     void OnEnable()

@@ -5,6 +5,6 @@ public class SceneTransitionSO : ScriptableObject
 {
     public string displayMessage;
     public float minimumLoadScreenTime = 2f;
-    public SceneSO[] scenesToLoad;
-    public SceneSO[] scenesToUnload;
+    public StringSO[] scenesToLoad;
+    public StringSO[] scenesToUnload;
 }
