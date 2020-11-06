@@ -5,8 +5,10 @@ namespace Playcraft.FPS
 {
     public class Laser : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] LaserData data;
         [SerializeField] UnityEvent OnActivate;
+        #pragma warning restore 0649
         
         Vector3 startPosition;
         

@@ -4,7 +4,7 @@ namespace Playcraft.FPS
 {
     public class LookAtTarget : MonoBehaviour
     {
-        [SerializeField] Transform defaultRotationReference;
+        [SerializeField] Transform defaultRotationReference = default;
 
         public void Aim(RaycastHit hit)
         {

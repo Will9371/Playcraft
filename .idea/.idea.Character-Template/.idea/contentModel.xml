@@ -92,6 +92,7 @@
               <e p="PickupInteractor.cs" t="Include" />
               <e p="TwoHandInteractor.cs" t="Include" />
             </e>
+            <e p="SceneStateTracker.cs" t="Include" />
           </e>
           <e p="Dialog" t="Include">
             <e p="DialogController.cs" t="Include" />
@@ -103,22 +104,22 @@
           </e>
           <e p="Examples" t="Include">
             <e p="Additive Scenes" t="Include">
-              <e p="CheckIfInitialized.cs" t="Include" />
-              <e p="Debug Fetch" t="Include">
-                <e p="AccessSceneController.cs" t="Include" />
+              <e p="AdditiveSceneController.cs" t="Include" />
+              <e p="Example" t="Include">
+                <e p="Transitions" t="Include">
+                  <e p="LoadingPanel.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Fetch" t="Include">
                 <e p="FetchScenesIfNotPresent.cs" t="Include" />
+                <e p="RespondToLoadedScene.cs" t="Include" />
               </e>
               <e p="Scene Data" t="Include">
                 <e p="SceneConfigSO.cs" t="Include" />
                 <e p="SceneSO.cs" t="Include" />
                 <e p="SceneTransitionSO.cs" t="Include" />
               </e>
-              <e p="SceneController.cs" t="Include" />
-              <e p="SceneStateTracker.cs" t="Include" />
-              <e p="Transitions" t="Include">
-                <e p="SceneTransitions.cs" t="Include" />
-                <e p="SetObjectsActive.cs" t="Include" />
-              </e>
+              <e p="SceneTransitions.cs" t="Include" />
             </e>
             <e p="Color Catcher" t="Include">
               <e p="Scripts" t="Include">
@@ -340,7 +341,7 @@
               </e>
               <e p="Scene" t="Include">
                 <e p="ApplicationHelper.cs" t="Include" />
-                <e p="SceneController.cs" t="Include" />
+                <e p="SingleSceneController.cs" t="Include" />
               </e>
               <e p="Time" t="Include">
                 <e p="GetDuration.cs" t="Include" />

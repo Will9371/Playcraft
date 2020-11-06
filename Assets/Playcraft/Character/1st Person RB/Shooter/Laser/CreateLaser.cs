@@ -5,8 +5,10 @@ namespace Playcraft.Pooling
 {
     public class CreateLaser : MonoBehaviour
     {
+        #pragma warning disable 0649
         [SerializeField] GameObject prefab;
         [SerializeField] LaserData data;
+        #pragma warning restore 0649
         
         ObjectPoolMaster spawner => ObjectPoolMaster.instance;
         

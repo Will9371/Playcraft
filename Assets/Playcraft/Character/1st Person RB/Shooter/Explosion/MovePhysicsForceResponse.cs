@@ -4,8 +4,8 @@ namespace Playcraft
 {
     public class MovePhysicsForceResponse : MonoBehaviour, IAddForce
     {
-        [SerializeField] MovePhysics physics;
-        [SerializeField] float slideDuration;
+        [SerializeField] MovePhysics physics = default;
+        [SerializeField] float slideDuration = 0.5f;
         
         public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force)
         {

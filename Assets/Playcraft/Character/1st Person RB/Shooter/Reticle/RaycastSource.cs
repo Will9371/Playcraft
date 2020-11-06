@@ -8,7 +8,7 @@ namespace Playcraft
         [SerializeField] Transform source;
         [SerializeField] float range = 20f;
         [SerializeField] RaycastHitEvent Hit;
-        #pragma warning 0649
+        #pragma warning restore 0649
         
         void Update()
         {

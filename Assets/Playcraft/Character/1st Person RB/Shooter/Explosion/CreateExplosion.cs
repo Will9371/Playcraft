@@ -4,7 +4,7 @@ namespace Playcraft.Pooling
 {
     public class CreateExplosion : MonoBehaviour
     {
-        [SerializeField] GameObject prefab;
+        [SerializeField] GameObject prefab = default;
         
         ObjectPoolMaster spawner => ObjectPoolMaster.instance;
 
