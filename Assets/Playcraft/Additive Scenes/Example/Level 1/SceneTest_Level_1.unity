@@ -486,7 +486,7 @@ MonoBehaviour:
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 62a4343f9ddfe40489d8c9f17c05ec1d,
+            m_ObjectArgument: {fileID: 11400000, guid: 4bfa2254a76251840a28997d28f3c82e,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: SceneTransitionSO, Assembly-CSharp
             m_IntArgument: 0
@@ -669,7 +669,7 @@ MonoBehaviour:
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: a922637a316b6b24c8ef3b31cae620d7,
+            m_ObjectArgument: {fileID: 11400000, guid: 4f584bc9b865eff4e9a1a03c32080f55,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: SceneTransitionSO, Assembly-CSharp
             m_IntArgument: 0

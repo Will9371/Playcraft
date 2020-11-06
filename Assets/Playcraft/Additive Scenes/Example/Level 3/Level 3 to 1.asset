@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029ea2c3afafb044b94cf357a4313e75, type: 3}
+  m_Script: {fileID: 11500000, guid: dfaf90c571a360640b7f73bcb85d05c7, type: 3}
   m_Name: Level 3 to 1
   m_EditorClassIdentifier: 
-  displayMessage: Moving from Level 3 to Level 1
   minimumLoadScreenTime: 1
   scenesToLoad:
   - {fileID: 11400000, guid: c299583589bc2294eb383ca58eddc2ff, type: 2}
   scenesToUnload:
   - {fileID: 11400000, guid: 19e68cf81bc61c645818f4605abb6525, type: 2}
+  displayMessage: Moving from Level 3 to 1

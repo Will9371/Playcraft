@@ -256,7 +256,7 @@ MonoBehaviour:
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 6e3934f59a891d8488fe2a49cda113c4,
+            m_ObjectArgument: {fileID: 11400000, guid: 857e1160f98c5864692685641309b4b3,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: SceneTransitionSO, Assembly-CSharp
             m_IntArgument: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
           m_MethodName: ExitScene
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 4ab34ce77bb7b174c8dd484447bee576,
+            m_ObjectArgument: {fileID: 11400000, guid: c4e4642f0a56f9344bc7eb1e30305e90,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: SceneTransitionSO, Assembly-CSharp
             m_IntArgument: 0
@@ -771,7 +771,7 @@ MonoBehaviour:
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: c4392db8204e41243a5e9a54d72d7e93,
+            m_ObjectArgument: {fileID: 11400000, guid: 9588fd4a0fd3c414ea2024b4e3097f70,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: SceneTransitionSO, Assembly-CSharp
             m_IntArgument: 0
