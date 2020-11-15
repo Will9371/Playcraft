@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0001d661452269b48bc7aa4b97fea697, type: 3}
-  m_Name: Basic Laser
+  m_Name: No Explosion
   m_EditorClassIdentifier: 
   laser: {fileID: 6147191338661324914, guid: b133283cccbd7594990e31af5a33ea3c, type: 3}
-  explosion: {fileID: 5713651605877512021, guid: 8cea090e369089a4c8a71ef1a9febce2,
-    type: 3}
-  speed: 50
-  range: 50
+  explosion: {fileID: 0}
+  speed: 75
+  range: 30

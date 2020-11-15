@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Playcraft.Pooling;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Playcraft.FPS
@@ -6,10 +7,11 @@ namespace Playcraft.FPS
     public class Laser : MonoBehaviour
     {
         #pragma warning disable 0649
-        [SerializeField] LaserData data;
+        [SerializeField] CreateExplosion explosive;
         [SerializeField] UnityEvent OnActivate;
         #pragma warning restore 0649
         
+        LaserData data;
         Vector3 startPosition;
         
         void OnEnable()
@@ -17,7 +19,13 @@ namespace Playcraft.FPS
             startPosition = transform.position;
         }
         
-        public void SetData(LaserData value) { data = value; }
+        public void SetData(LaserData value) 
+        { 
+            data = value; 
+            
+            if (explosive != null)
+                explosive.SetExplosionPrefab(value.explosion);
+        }
             
         void Update()
         {

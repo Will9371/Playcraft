@@ -2075,7 +2075,7 @@ PrefabInstance:
     - target: {fileID: 114201948316696468, guid: 5389524c4fb0a0646b0c6604433c227e,
         type: 3}
       propertyPath: pools.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114201948316696468, guid: 5389524c4fb0a0646b0c6604433c227e,
         type: 3}
@@ -2097,6 +2097,28 @@ PrefabInstance:
     - target: {fileID: 114201948316696468, guid: 5389524c4fb0a0646b0c6604433c227e,
         type: 3}
       propertyPath: pools.Array.data[1].startSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201948316696468, guid: 5389524c4fb0a0646b0c6604433c227e,
+        type: 3}
+      propertyPath: pools.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 6147191338661324914, guid: 8cbde2ce80745b34dace87cd5f768bcf,
+        type: 3}
+    - target: {fileID: 114201948316696468, guid: 5389524c4fb0a0646b0c6604433c227e,
+        type: 3}
+      propertyPath: pools.Array.data[2].startSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201948316696468, guid: 5389524c4fb0a0646b0c6604433c227e,
+        type: 3}
+      propertyPath: pools.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 5713651605877512021, guid: b7a60d56a63f7e94eaac57fabdc73f47,
+        type: 3}
+    - target: {fileID: 114201948316696468, guid: 5389524c4fb0a0646b0c6604433c227e,
+        type: 3}
+      propertyPath: pools.Array.data[3].startSize
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2261,6 +2283,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5873872172265334292, guid: ac127553ec8af2742b10cd2762eba979,
+        type: 3}
+      propertyPath: laserData
+      value: 
+      objectReference: {fileID: 11400000, guid: d6f6e89d24520af42b93c0f343e0be79,
+        type: 2}
     - target: {fileID: 6416657296335447842, guid: ac127553ec8af2742b10cd2762eba979,
         type: 3}
       propertyPath: m_FontData.m_Alignment

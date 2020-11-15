@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0001d661452269b48bc7aa4b97fea697, type: 3}
-  m_Name: Basic Laser
+  m_Name: Power Shot
   m_EditorClassIdentifier: 
-  laser: {fileID: 6147191338661324914, guid: b133283cccbd7594990e31af5a33ea3c, type: 3}
-  explosion: {fileID: 5713651605877512021, guid: 8cea090e369089a4c8a71ef1a9febce2,
+  laser: {fileID: 6147191338661324914, guid: 8cbde2ce80745b34dace87cd5f768bcf, type: 3}
+  explosion: {fileID: 5713651605877512021, guid: b7a60d56a63f7e94eaac57fabdc73f47,
     type: 3}
-  speed: 50
-  range: 50
+  speed: 40
+  range: 60

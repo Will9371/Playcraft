@@ -8,21 +8,26 @@ namespace Playcraft.VR
     public class ArcTeleport : MonoBehaviour
     {
         #pragma warning disable 0649
+        [Header("References")]
         [SerializeField] Transform rig;
         [SerializeField] Transform head;
         [SerializeField] XRController controller;
+        [SerializeField] LineRenderer lineRenderer;
+        [SerializeField] RendererInterface endMarker;
+        
+        [Header("Properties")]
         [SerializeField] Vector2 inputThresholds;
         [SerializeField] float range = 5f;
         [SerializeField] float gravity = 9.8f;
         [SerializeField] int resolution = 40;
         [SerializeField] float maxDrop = 5f;
         [SerializeField] float maxSlope = 45f;
-        [SerializeField] LineRenderer lineRenderer;
         [SerializeField] string shaderColorId;
         [SerializeField] Color validColor;
         [SerializeField] Color blockedColor;
         [SerializeField] Color invalidColor;
-        [SerializeField] RendererInterface endMarker;
+        
+        [Header("Output")]
         [SerializeField] Vector3Event OnSuccess;
         #pragma warning restore 0649
         
@@ -48,7 +53,7 @@ namespace Playcraft.VR
         bool hasValidTarget => result.success == Trinary.True;
         bool teleportCondition => !inputActive && priorInputActive && hasValidTarget;
         
-        private void Start()
+        void Start()
         {
             binaryThreshold = new BinaryThreshold(inputThresholds, false);
             parabolicArc = new CalculateParabolicArc(range, gravity, resolution, maxDrop);
@@ -57,7 +62,7 @@ namespace Playcraft.VR
             line = new LineRendererInterface(lineRenderer, shaderColorId);
         }
         
-        private void Update()
+        void Update()
         {
             axisInput = XRStatics.Get2DAxisValue(controller.inputDevice);      
             
@@ -87,7 +92,7 @@ namespace Playcraft.VR
             endMarker.SetColor(color);
         }
         
-        private Color GetColorFromResult(Trinary result)
+        Color GetColorFromResult(Trinary result)
         {
             switch (result)
             {

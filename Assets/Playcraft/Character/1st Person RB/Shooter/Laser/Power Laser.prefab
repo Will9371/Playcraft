@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 5819606941529584715}
   - component: {fileID: 6862146773717162528}
   m_Layer: 0
-  m_Name: Laser
+  m_Name: Power Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b20376473632449ab29a96687e7946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 92f1c50777f2f134c95b1a22186a0813, type: 2}
+  explosive: {fileID: 5819606941529584715}
   OnActivate:
     m_PersistentCalls:
       m_Calls:
@@ -157,7 +157,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  explosive: {fileID: 5819606941529584715}
 --- !u!54 &1053222729809360479
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -267,7 +266,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42e1e9d8408af5349b210890bceed426, type: 2}
+  - {fileID: 2100000, guid: 36a3063f7e139f147bec746ab430e6fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -290,7 +289,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 2}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

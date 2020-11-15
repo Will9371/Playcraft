@@ -41,6 +41,7 @@
             <e p="Scene Data" t="Include">
               <e p="SceneConfigSO.cs" t="Include" />
               <e p="SceneTransitionSO.cs" t="Include" />
+              <e p="SceneTransitionSOWithString.cs" t="Include" />
             </e>
             <e p="SceneTransitionRelay.cs" t="Include" />
           </e>
@@ -56,6 +57,7 @@
                 </e>
                 <e p="Laser" t="Include">
                   <e p="CreateLaser.cs" t="Include" />
+                  <e p="Gun.cs" t="Include" />
                   <e p="Laser.cs" t="Include" />
                   <e p="LaserData.cs" t="Include" />
                 </e>
