@@ -2287,7 +2287,7 @@ PrefabInstance:
         type: 3}
       propertyPath: laserData
       value: 
-      objectReference: {fileID: 11400000, guid: d6f6e89d24520af42b93c0f343e0be79,
+      objectReference: {fileID: 11400000, guid: 92f1c50777f2f134c95b1a22186a0813,
         type: 2}
     - target: {fileID: 6416657296335447842, guid: ac127553ec8af2742b10cd2762eba979,
         type: 3}
