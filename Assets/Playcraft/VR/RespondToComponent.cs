@@ -6,7 +6,7 @@ namespace Playcraft.VR
     public class RespondToComponent : MonoBehaviour
     {
         #pragma warning disable 0649
-        [SerializeField] TagID interaction;
+        [SerializeField] SO interaction;
         [SerializeField] GameObjectBoolEvent OnEnter;
         [SerializeField] GameObjectBoolEvent OnExit;
         #pragma warning restore 0649
@@ -22,8 +22,8 @@ namespace Playcraft.VR
         
         bool IsInteractable(Collider other)
         {
-            var surface = other.GetComponent<ComponentTags>();               
-            return surface != null && surface.IsValid(interaction);
+            var surface = other.GetComponent<CustomTags>();               
+            return surface != null && surface.HasTag(interaction);
         }
     }
 }

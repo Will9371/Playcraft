@@ -48,29 +48,6 @@
           <e p="AnimationProgressEvent.cs" t="Include" />
           <e p="Character" t="Include">
             <e p="1st Person RB" t="Include">
-              <e p="Shooter" t="Include">
-                <e p="Explosion" t="Include">
-                  <e p="CreateExplosion.cs" t="Include" />
-                  <e p="Explosion.cs" t="Include" />
-                  <e p="ExplosionForce.cs" t="Include" />
-                  <e p="MovePhysicsForceResponse.cs" t="Include" />
-                </e>
-                <e p="Laser" t="Include">
-                  <e p="CreateLaser.cs" t="Include" />
-                  <e p="Gun.cs" t="Include" />
-                  <e p="Laser.cs" t="Include" />
-                  <e p="LaserData.cs" t="Include" />
-                </e>
-                <e p="Reticle" t="Include">
-                  <e p="RaycastSource.cs" t="Include" />
-                  <e p="SetColorOnHit.cs" t="Include" />
-                </e>
-                <e p="Targeting" t="Include">
-                  <e p="DetectTarget.cs" t="Include" />
-                  <e p="LookAtTarget.cs" t="Include" />
-                  <e p="Target.cs" t="Include" />
-                </e>
-              </e>
               <e p="Swim" t="Include">
                 <e p="WaterInteract.cs" t="Include" />
                 <e p="WaterTag.cs" t="Include" />
@@ -83,6 +60,29 @@
             </e>
             <e p="Flying 1st Person" t="Include">
               <e p="FlyCamSettings.cs" t="Include" />
+            </e>
+            <e p="FPS" t="Include">
+              <e p="Explosion" t="Include">
+                <e p="CreateExplosion.cs" t="Include" />
+                <e p="Explosion.cs" t="Include" />
+                <e p="ExplosionForce.cs" t="Include" />
+                <e p="MovePhysicsForceResponse.cs" t="Include" />
+              </e>
+              <e p="Laser" t="Include">
+                <e p="CreateLaser.cs" t="Include" />
+                <e p="Gun.cs" t="Include" />
+                <e p="Laser.cs" t="Include" />
+                <e p="LaserData.cs" t="Include" />
+              </e>
+              <e p="Reticle" t="Include">
+                <e p="RaycastSource.cs" t="Include" />
+                <e p="SetColorOnHit.cs" t="Include" />
+              </e>
+              <e p="Targeting" t="Include">
+                <e p="DetectTarget.cs" t="Include" />
+                <e p="LookAtTarget.cs" t="Include" />
+                <e p="Target.cs" t="Include" />
+              </e>
             </e>
             <e p="Movement Common" t="Include">
               <e p="State Machine" t="Include">
@@ -100,21 +100,6 @@
               <e p="NavigationDebugger.cs" t="Include" />
               <e p="OffsetDirection.cs" t="Include" />
             </e>
-          </e>
-          <e p="Deprecated" t="Include">
-            <e p="Cursor" t="Include">
-              <e p="EventTriggerInterface.cs" t="Include" />
-              <e p="GetMouseDrag.cs" t="Include" />
-              <e p="MouseClickCollider.cs" t="Include" />
-            </e>
-            <e p="Interaction" t="Include">
-              <e p="DragInteractable.cs" t="Include" />
-              <e p="FilterMessageLink.cs" t="Include" />
-              <e p="MessageLink.cs" t="Include" />
-              <e p="PickupInteractor.cs" t="Include" />
-              <e p="TwoHandInteractor.cs" t="Include" />
-            </e>
-            <e p="SceneStateTracker.cs" t="Include" />
           </e>
           <e p="Dialog" t="Include">
             <e p="DialogController.cs" t="Include" />
@@ -161,7 +146,6 @@
             <e p="SpawnPrefab.cs" t="Include" />
           </e>
           <e p="Project Specific" t="Include">
-            <e p="Enums.cs" t="Include" />
             <e p="Lookup.cs" t="Include" />
           </e>
           <e p="Quality of Life" t="Include">
@@ -318,7 +302,7 @@
               </e>
             </e>
             <e p="Unity Extension" t="Include">
-              <e p="ComponentTags.cs" t="Include" />
+              <e p="CustomTags.cs" t="Include" />
               <e p="LerpSingleton.cs" t="Include" />
               <e p="MonoSim.cs" t="Include" />
               <e p="SetFramerate.cs" t="Include" />
@@ -430,12 +414,10 @@
               <e p="PlayerOffset.cs" t="Include" />
             </e>
             <e p="Examples" t="Include">
-              <e p="1st Person" t="Include">
-                <e p="Monkey Bars" t="Include">
-                  <e p="GetOtherPosition.cs" t="Include" />
-                  <e p="GetPosition.cs" t="Include" />
-                  <e p="GetRelativePosition.cs" t="Include" />
-                </e>
+              <e p="Monkey Bars" t="Include">
+                <e p="GetOtherPosition.cs" t="Include" />
+                <e p="GetPosition.cs" t="Include" />
+                <e p="GetRelativePosition.cs" t="Include" />
               </e>
             </e>
             <e p="Hands" t="Include">
@@ -461,6 +443,7 @@
                 <e p="RangeIndicator.cs" t="Include" />
                 <e p="TeleportCutoffPath.cs" t="Include" />
                 <e p="TeleportCutoffPathComponent.cs" t="Include" />
+                <e p="TeleportPoint.cs" t="Include" />
                 <e p="TeleportResult.cs" t="Include" />
                 <e p="TeleportRig.cs" t="Include" />
               </e>

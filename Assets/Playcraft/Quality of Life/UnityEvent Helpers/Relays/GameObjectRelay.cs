@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 
-public class GameObjectRelay : MonoBehaviour, ISetObject
+namespace Playcraft
 {
-    [SerializeField] GameObjectEvent Output = default;
-    public void SetObject(GameObject value) { Output.Invoke(value); }
+    public class GameObjectRelay : MonoBehaviour, ISetObject
+    {
+        [SerializeField] GameObjectEvent Output = default;
+        public void SetObject(GameObject value) { Output.Invoke(value); }
+    }
 }

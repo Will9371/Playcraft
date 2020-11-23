@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Playcraft
 {
@@ -11,6 +12,8 @@ namespace Playcraft
         [SerializeField] float minScale = .2f;
         [SerializeField] float maxScale = .75f;
         [SerializeField] float delayResolution = .01f;
+        [SerializeField] UnityEvent Activate;
+        [SerializeField] UnityEvent Deactivate;
         #pragma warning restore 0649
         
         float scale => objectToScale.localScale.x; 
@@ -19,7 +22,7 @@ namespace Playcraft
         float growStep;
         bool active;
         
-        private void Start()
+        void Start()
         {
             startScale = new Vector3(minScale, minScale, minScale);
             growStep = growthSpeed * delayResolution;
@@ -27,27 +30,34 @@ namespace Playcraft
 
         public void Begin()
         {
-            objectToScale.localScale = startScale;
             active = true;
+            objectToScale.localScale = startScale;
             StartCoroutine(Grow());
+            Activate.Invoke();
         }
         
         public void End()
         {
             active = false;
+            objectToScale.localScale = startScale;
+            Deactivate.Invoke();
         }
 
-        private IEnumerator Grow()
-        {    
+        float newScale;
+
+        IEnumerator Grow()
+        {
+            var delay = new WaitForSeconds(delayResolution);
+            
             while (active)
             {
                 if (scale < maxScale)
                 {
-                    var newScale = scale + growStep;
+                    newScale = scale + growStep;
                     objectToScale.localScale = new Vector3(newScale, newScale, newScale);
                 }
 
-                yield return new WaitForSeconds(delayResolution);
+                yield return delay;
             }        
         }
     }

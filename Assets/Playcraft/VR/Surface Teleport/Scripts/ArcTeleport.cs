@@ -14,6 +14,7 @@ namespace Playcraft.VR
         [SerializeField] XRController controller;
         [SerializeField] LineRenderer lineRenderer;
         [SerializeField] RendererInterface endMarker;
+        [SerializeField] SO teleportTag;
         
         [Header("Properties")]
         [SerializeField] Vector2 inputThresholds;
@@ -29,6 +30,7 @@ namespace Playcraft.VR
         
         [Header("Output")]
         [SerializeField] Vector3Event OnSuccess;
+        [SerializeField] SO landMessage;
         #pragma warning restore 0649
         
         BinaryThreshold binaryThreshold;
@@ -58,7 +60,7 @@ namespace Playcraft.VR
             binaryThreshold = new BinaryThreshold(inputThresholds, false);
             parabolicArc = new CalculateParabolicArc(range, gravity, resolution, maxDrop);
             findHitsInPath = new FindHitsInPath(transform);
-            calculateCutoff = new TeleportCutoffPath(transform, maxSlope);
+            calculateCutoff = new TeleportCutoffPath(transform, maxSlope, teleportTag);
             line = new LineRendererInterface(lineRenderer, shaderColorId);
         }
         
@@ -74,6 +76,12 @@ namespace Playcraft.VR
             {
                 rig.transform.position = destination;
                 OnSuccess.Invoke(destination);
+                
+                if (landMessage)
+                {
+                    var response = result.surface.GetComponent<RespondToMessage>();
+                    if (response) response.Message(landMessage);
+                }
             }
 
             priorInputActive = inputActive;

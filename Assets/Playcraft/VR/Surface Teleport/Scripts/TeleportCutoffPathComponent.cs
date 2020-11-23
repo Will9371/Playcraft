@@ -10,13 +10,14 @@ namespace Playcraft.VR
         [SerializeField] Vector3ArrayEvent OutputPath;
         [SerializeField] Vector3Event OutputEndpoint;
         [SerializeField] TrinaryEvent OutputResult;
+        [SerializeField] SO teleportTag;
         #pragma warning restore 0649
         
         TeleportCutoffPath cutoffPath;
         
         void Awake()
         {
-            cutoffPath = new TeleportCutoffPath(transform, maxSlope);
+            cutoffPath = new TeleportCutoffPath(transform, maxSlope, teleportTag);
         }
 
         public void Input(Vector3[] path, List<IndexedRaycastHit> hitData)

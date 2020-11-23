@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1823363592392948730}
-  - component: {fileID: 5669766921942890441}
   m_Layer: 0
   m_Name: Interact
   m_TagString: Untagged
@@ -36,31 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5669766921942890441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325059923833644923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 551278d2c61e61441894807660c21119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messenger: {fileID: 0}
-  otherInteractor: {fileID: 0}
-  enter: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
-  exit: {fileID: 11400000, guid: 84211f740ce3d2b4e9853a607a4c68ba, type: 2}
-  interactions:
-  - activate: {fileID: 11400000, guid: dbe45d3c54f039748926921887b5f008, type: 2}
-    deactivate: {fileID: 11400000, guid: d0434972a2612c3459c141a329b95525, type: 2}
-  - activate: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b, type: 2}
-    deactivate: {fileID: 11400000, guid: a72e396432365f24a80e71a09e750685, type: 2}
-  - activate: {fileID: 11400000, guid: a79709afce2e8744a9f396033d4bd32a, type: 2}
-    deactivate: {fileID: 11400000, guid: 721142e4d817cd447ba4bdb166e2e15b, type: 2}
-  - activate: {fileID: 11400000, guid: 9bb924d50bca0254d8aa37b66339d3ec, type: 2}
-    deactivate: {fileID: 11400000, guid: cd9e69f71b16e1641a2eb076a02509f5, type: 2}
 --- !u!1 &513028841970166365
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +382,7 @@ MonoBehaviour:
   triggerEvents:
   - touchType: 0
     collisionType: 0
+    otherColliderType: 0
     Output:
       m_PersistentCalls:
         m_Calls:
@@ -435,6 +410,7 @@ MonoBehaviour:
           m_CallState: 2
   - touchType: 1
     collisionType: 0
+    otherColliderType: 0
     Output:
       m_PersistentCalls:
         m_Calls:

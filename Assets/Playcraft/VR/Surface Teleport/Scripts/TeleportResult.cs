@@ -6,11 +6,13 @@ namespace Playcraft.VR
     {
         public Vector3 cutoffPoint;
         public Trinary success;
+        public GameObject surface;
         
-        public TeleportResult(Vector3 cutoffPoint, Trinary success)
+        public TeleportResult(Vector3 cutoffPoint, Trinary success, GameObject surface = null)
         {
             this.cutoffPoint = cutoffPoint;
             this.success = success;
+            this.surface = surface;
         }
     }
 }

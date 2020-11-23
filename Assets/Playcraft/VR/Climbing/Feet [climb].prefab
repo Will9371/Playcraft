@@ -62,3 +62,4 @@ MonoBehaviour:
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   footCollider: {fileID: 224092691449596765}
+  standTag: {fileID: 11400000, guid: 2cc26b51b479a2645b5ca63b38c086b8, type: 2}

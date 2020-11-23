@@ -1,21 +1,24 @@
 ﻿using System;
 using UnityEngine;
 
-public class LocalStateHub : MonoBehaviour
+namespace Playcraft
 {
-    SO priorState;
-    public SO state;    // For debug
-    public Action<SO> OnStateEnter;
-    
-    public void SetState(SO value)
+    public class LocalStateHub : MonoBehaviour
     {
-        priorState = state == null ? value : state;
-        state = value;
-        OnStateEnter.Invoke(value);
-    }
-    
-    public void ReturnToPriorState()
-    {
-        SetState(priorState);
+        SO priorState;
+        public SO state;    // For debug
+        public Action<SO> OnStateEnter;
+        
+        public void SetState(SO value)
+        {
+            priorState = state == null ? value : state;
+            state = value;
+            OnStateEnter.Invoke(value);
+        }
+        
+        public void ReturnToPriorState()
+        {
+            SetState(priorState);
+        }
     }
 }

@@ -4,22 +4,25 @@ using UnityEngine.Events;
 // Input: event ID
 // Process: editor-defined lookup table
 // Returns: UnityEvent response if success, null if fail
-[Serializable] public class EventResponder
+namespace Playcraft
 {
-    public EventResponse[] elements;
-
-    public UnityEvent GetResponse(SO value)
-    {                
-        foreach (var item in elements)
-            if (item.id == value)
-                return item.Response;
-                
-        return null; 
-    }
-
-    [Serializable] public struct EventResponse
+    [Serializable] public class EventResponder
     {
-        public SO id;
-        public UnityEvent Response;
+        public EventResponse[] elements;
+
+        public UnityEvent GetResponse(SO value)
+        {                
+            foreach (var item in elements)
+                if (item.id == value)
+                    return item.Response;
+                    
+            return null; 
+        }
+
+        [Serializable] public struct EventResponse
+        {
+            public SO id;
+            public UnityEvent Response;
+        }
     }
 }

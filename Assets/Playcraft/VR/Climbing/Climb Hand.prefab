@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd8cae509dc0234abc1fc7a076a3fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction: 2
+  interaction: {fileID: 11400000, guid: 1e0341a72774be84299c2d7e3f4e92bd, type: 2}
   OnEnter:
     m_PersistentCalls:
       m_Calls:
@@ -179,17 +179,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5711514834184237843}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   OnRelease:
     m_PersistentCalls:
       m_Calls:
@@ -204,19 +193,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5711514834184237843}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   isGrabbing: 0
   isTouchingGrabbable: 0
+  grabbedObject: {fileID: 0}
 --- !u!114 &671002493372908523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +405,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8228822106324446328}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0db246b8cec4eb34596d355ff1040847, type: 3}
   m_Name: 
@@ -436,3 +415,31 @@ MonoBehaviour:
   minScale: 0.25
   maxScale: 0.75
   delayResolution: 0.01
+  Activate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5711514834184237843}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  Deactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5711514834184237843}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

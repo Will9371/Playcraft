@@ -1,7 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Playcraft;
 
+// CONSIDER REMOVE: overly complex
 public class BooleanLogic : MonoBehaviour
 {
     [SerializeField] bool evaluateOnSetVariable = true;

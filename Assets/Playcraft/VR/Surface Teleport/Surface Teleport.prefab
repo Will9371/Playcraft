@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4221961808748114570}
   - component: {fileID: 4221961808748114581}
   - component: {fileID: 4221961808748114575}
-  m_Layer: 13
-  m_Name: SurfaceTeleport (optimized)
+  m_Layer: 0
+  m_Name: Surface Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,18 +49,20 @@ MonoBehaviour:
   rig: {fileID: 0}
   head: {fileID: 0}
   controller: {fileID: 0}
+  lineRenderer: {fileID: 4221961808748114570}
+  endMarker: {fileID: 0}
+  teleportTag: {fileID: 11400000, guid: c4faa8a953d77bc4aa3a3323c63f4499, type: 2}
   inputThresholds: {x: 0.3, y: 0.6}
   range: 10
   gravity: 9.8
   resolution: 40
   maxDrop: 5
   maxSlope: 45
-  lineRenderer: {fileID: 4221961808748114570}
   shaderColorId: _Color
   validColor: {r: 0, g: 1, b: 1, a: 1}
   blockedColor: {r: 1, g: 0, b: 0, a: 1}
   invalidColor: {r: 1, g: 0, b: 0, a: 1}
-  endMarker: {fileID: 0}
+  landMessage: {fileID: 11400000, guid: 2cc26b51b479a2645b5ca63b38c086b8, type: 2}
   OnSuccess:
     m_PersistentCalls:
       m_Calls:

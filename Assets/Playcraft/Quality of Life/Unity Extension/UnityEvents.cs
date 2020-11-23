@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Playcraft;
 
 [Serializable] public class Vector3Event : UnityEvent<Vector3> { }
 [Serializable] public class Vector3x2Event : UnityEvent<Vector3, Vector3> { }

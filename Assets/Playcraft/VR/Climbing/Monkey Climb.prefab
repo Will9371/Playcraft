@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd8cae509dc0234abc1fc7a076a3fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction: 2
+  interaction: {fileID: 11400000, guid: 1e0341a72774be84299c2d7e3f4e92bd, type: 2}
   OnEnter:
     m_PersistentCalls:
       m_Calls:

@@ -10,6 +10,7 @@ namespace Playcraft.VR
         [SerializeField] Transform rig;
         [SerializeField] Climb leftHand, rightHand;
         [SerializeField] Collider footCollider;
+        [SerializeField] SO standTag;
         #pragma warning restore 0649
 
         bool isGrabbing => leftHand.isGrabbing || rightHand.isGrabbing;
@@ -31,8 +32,8 @@ namespace Playcraft.VR
             //Debug.DrawRay(head.position, Vector3.down * height, Color.yellow);
             if (Physics.Raycast(headToFeet, out hit, height))// && hit.transform.GetComponent<StandSurface>())
             {
-                var surfaceTag = hit.transform.GetComponent<ComponentTags>();
-                if (surfaceTag && surfaceTag.IsValid(TagID.Stand))
+                var surface = hit.transform.GetComponent<CustomTags>();
+                if (surface && surface.HasTag(standTag))
                 {
                     var liftDistance = Mathf.Max(0f, hit.point.y - footPosition.y);
                     rig.Translate(Vector3.up * liftDistance); 
