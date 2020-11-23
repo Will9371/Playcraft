@@ -115,10 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebbda66f8845a4428a33f3ad2590172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwStrength: 0.7
   rb: {fileID: 0}
   rig: {fileID: 0}
   otherHand: {fileID: 0}
+  throwStrength: 0.7
+  grabStyle: 2
   OnGrab:
     m_PersistentCalls:
       m_Calls:
@@ -141,6 +142,7 @@ MonoBehaviour:
       m_Calls: []
   isGrabbing: 0
   isTouchingGrabbable: 0
+  grabInput: 0
   grabbedObject: {fileID: 0}
 --- !u!114 &3830873632427303547
 MonoBehaviour:

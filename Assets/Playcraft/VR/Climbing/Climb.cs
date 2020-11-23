@@ -6,25 +6,35 @@ namespace Playcraft.VR
     public class Climb : MonoBehaviour
     {
         #pragma warning disable 0649
-        [SerializeField] float throwStrength;
+        [Header("References")]
         [SerializeField] Rigidbody rb;
         [SerializeField] Transform rig;
         [SerializeField] Climb otherHand;
+        [Header("Settings")]
+        [SerializeField] float throwStrength;
+        [SerializeField] GrabStyle grabStyle;
+        [Header("Output")]
         [SerializeField] UnityEvent OnGrab;
         [SerializeField] UnityEvent OnFail;
         [SerializeField] UnityEvent OnRelease;
         #pragma warning restore 0649
         
+        enum GrabStyle { Standard, Bubble, Monkey }
+        
+        [Header("Serialized for debug")]
         public bool isGrabbing;
         public bool isTouchingGrabbable;
-        
-        bool grabInput;
-        Vector3 position, priorPosition, deltaPosition;
-        
+        public bool grabInput;
         public GameObject grabbedObject;
+        
+        Vector3 position, priorPosition, deltaPosition;
         Vector3 grabbedPosition, priorGrabbedPosition, deltaGrabbedPosition;
         
         #region State Management
+        
+        bool grabOnTouch => grabStyle == GrabStyle.Bubble || grabStyle == GrabStyle.Monkey;
+        bool tryGrabOnInput => grabStyle == GrabStyle.Standard;
+        bool walkOnHands => grabStyle == GrabStyle.Monkey;
         
         IPosition movingGrabbable;
         
@@ -43,14 +53,16 @@ namespace Playcraft.VR
         { 
             isTouchingGrabbable = value; 
             
-            if (isTouchingGrabbable && grabInput)
+            if (grabOnTouch && isTouchingGrabbable && grabInput)
                 BeginPull(false);
         }
         
         public void RequestGrab()
         {
             grabInput = true;
-            BeginPull(true);
+            
+            if (tryGrabOnInput && isTouchingGrabbable || grabOnTouch)
+                BeginPull(true);
         }
 
         public void BeginPull(bool swappedHand)
@@ -76,7 +88,8 @@ namespace Playcraft.VR
 
         public void Release()
         {
-            grabInput = false;
+            if (walkOnHands)
+                grabInput = false;
         
             if (otherHand.isGrabbing && otherHand.isTouchingGrabbable)
                 otherHand.BeginPull(true);
@@ -91,6 +104,9 @@ namespace Playcraft.VR
         
         public void Ungrab()
         {
+            if (!walkOnHands)
+                grabInput = false;
+        
             isGrabbing = false;
             OnRelease.Invoke();
         }
