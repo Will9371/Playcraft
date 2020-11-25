@@ -12,8 +12,11 @@ namespace Playcraft
         [SerializeField] float minScale = .2f;
         [SerializeField] float maxScale = .75f;
         [SerializeField] float delayResolution = .01f;
+        [Tooltip("Relays Begin method")]
         [SerializeField] UnityEvent Activate;
+        [Tooltip("Relays End method")]
         [SerializeField] UnityEvent Deactivate;
+        [SerializeField] UnityEvent ReachMaxScale;
         #pragma warning restore 0649
         
         float scale => objectToScale.localScale.x; 
@@ -44,10 +47,12 @@ namespace Playcraft
         }
 
         float newScale;
+        bool hasReachedMaxScale;
 
         IEnumerator Grow()
         {
             var delay = new WaitForSeconds(delayResolution);
+            hasReachedMaxScale = false;
             
             while (active)
             {
@@ -55,6 +60,11 @@ namespace Playcraft
                 {
                     newScale = scale + growStep;
                     objectToScale.localScale = new Vector3(newScale, newScale, newScale);
+                }
+                else if (!hasReachedMaxScale)
+                {
+                    ReachMaxScale.Invoke();
+                    hasReachedMaxScale = true;
                 }
 
                 yield return delay;

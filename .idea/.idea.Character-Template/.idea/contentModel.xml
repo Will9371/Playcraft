@@ -384,6 +384,7 @@
                 <e p="GameObjectBoolRelay.cs" t="Include" />
                 <e p="GameObjectBoolRelaySplit.cs" t="Include" />
                 <e p="GameObjectRelay.cs" t="Include" />
+                <e p="IntRelay.cs" t="Include" />
                 <e p="Relay.cs" t="Include" />
                 <e p="RelayMessage.cs" t="Include" />
                 <e p="TransformRelay.cs" t="Include" />
@@ -434,6 +435,9 @@
               <e p="InvertedSurface.shader" t="Include" />
             </e>
             <e p="RespondToComponent.cs" t="Include" />
+            <e p="String Nodes" t="Include">
+              <e p="DrawLineBetweenNodes.cs" t="Include" />
+            </e>
             <e p="Surface Teleport" t="Include">
               <e p="Line Color" t="Include">
                 <e p="ScrollTransparent.shader" t="Include" />
