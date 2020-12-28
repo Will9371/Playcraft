@@ -11,23 +11,30 @@ namespace Playcraft.Navigation
         #pragma warning disable 0649
         [SerializeField] float avoidDistance = 3f;
         [SerializeField] RayData[] rays;
-        
         [Serializable] class TurnTypeEvent : UnityEvent<TurnType> { }
         [SerializeField] TurnTypeEvent Output;
+        public TurnType turnType;
         #pragma warning restore 0649
                 
-        private void Start()
+        void Start()
         {
             foreach (var ray in rays)
                 ray.Start(transform, avoidDistance);
         }
         
-        private void Update()
+        void Update() 
         {
-            Output.Invoke(GetTurnType(PollRays()));
+            turnType = GetTurnType(PollRays());
+            Output.Invoke(turnType); 
         }
         
-        private float PollRays()
+        void OnDrawGizmos() 
+        { 
+            foreach (var ray in rays)
+                ray.OnDrawGizmos();
+        }
+        
+        float PollRays()
         {
             float total = 0f;
             
@@ -37,7 +44,7 @@ namespace Playcraft.Navigation
             return total;
         }
         
-        private TurnType GetTurnType(float voteResult)
+        TurnType GetTurnType(float voteResult)
         {
             if (voteResult == 0f) 
                 return TurnType.Straight;
@@ -60,7 +67,6 @@ namespace Playcraft.Navigation
             float searchDistance;
             
             bool isBlocked;
-            Color debugColor;
             Vector3 localDirection;
             RaycastHit hit;
                     
@@ -75,19 +81,17 @@ namespace Playcraft.Navigation
                 SetLocalDirection();
                 isBlocked = Physics.Raycast(self.position, localDirection, out hit, searchDistance, -1, QueryTriggerInteraction.Ignore);
                 if (!hitIsBlock) isBlocked = !isBlocked;
-                debugColor = isBlocked ? Color.red : Color.blue;
-                Debug.DrawRay(self.position, localDirection * searchDistance, debugColor);
                 return isBlocked ? GetVote() : 0f;
             }
             
-            private void SetLocalDirection()
+            void SetLocalDirection()
             {
                 localDirection = (self.forward * direction.z + 
                                  self.right * direction.x + 
                                  self.up * direction.y).normalized;
             }
             
-            private float GetVote()
+            float GetVote()
             {
                 float magnitude = 1f;
             
@@ -98,6 +102,13 @@ namespace Playcraft.Navigation
                 }
                 
                 return clockwise ? magnitude : -magnitude;
+            }
+            
+            public void OnDrawGizmos()
+            {
+                if (!self) return;
+                Gizmos.color = isBlocked ? Color.red : Color.blue;
+                Gizmos.DrawRay(self.position, localDirection * searchDistance);
             }
         }
     }

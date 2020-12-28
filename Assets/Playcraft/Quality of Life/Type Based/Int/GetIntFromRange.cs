@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// REFACTOR: multiple responsibilities
 namespace Playcraft
 {
     public class GetIntFromRange : MonoBehaviour

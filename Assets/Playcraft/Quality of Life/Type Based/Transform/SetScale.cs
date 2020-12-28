@@ -3,13 +3,14 @@
 namespace Playcraft
 {
     // EXTEND: include x and z axis
-    public class ScaleToTarget : MonoBehaviour
+    public class SetScale : MonoBehaviour
     {
         [SerializeField] float scaleSpeed = .5f;
+        [SerializeField] [Range(0, 1)] float yAnchor;
         
         float targetYScale;
         
-        private void Start()
+        void Start()
         {
             targetYScale = transform.localScale.y;
         }
@@ -19,12 +20,9 @@ namespace Playcraft
             InputTargetYScale(value.y);
         }
 
-        public void InputTargetYScale(float value)
-        {
-            targetYScale = value;
-        }
+        public void InputTargetYScale(float value) { targetYScale = value; }
         
-        private void Update()
+        void Update()
         {
             var heightDelta = targetYScale - transform.localScale.y;
             if (Mathf.Abs(heightDelta) < .01f)
@@ -34,8 +32,7 @@ namespace Playcraft
             var scaleStep = scaleSpeed * scaleDirection * Time.deltaTime;
             transform.localScale += Vector3.up * scaleStep;
             
-            // REFACTOR: make optional/configurable or break into separate system
-            transform.position += Vector3.up * scaleStep;
+            transform.position += yAnchor * scaleStep * Vector3.up;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// DEPRECATE: trivial functionality, convert to interface pattern
 namespace Playcraft
 {
     public class MoveTowards : MonoBehaviour

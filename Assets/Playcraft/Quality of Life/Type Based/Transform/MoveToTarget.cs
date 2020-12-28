@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 namespace Playcraft
 {
@@ -11,34 +9,31 @@ namespace Playcraft
         [SerializeField] float speed;
         [SerializeField] float smoothTime = .1f;
         [SerializeField] float stoppingDistance;
-        //[SerializeField] MoveEvent Output;
         #pragma warning restore 0649
-        
-        public Vector3 velocity;
-
-        bool wasAtTarget;
         
         public void SetTarget(Transform value) { target = value; }
         public void SetSpeed(float value) { speed = value; }
+        
+        Vector3 position => transform.position;
+        float targetDistance => Vector3.Distance(target.position, position);
+        bool atTarget => targetDistance <= stoppingDistance;
+        
+        Vector3 velocity;
+        bool wasAtTarget;
 
         void Update()
         {
             if (!target) return;
-            
-            var targetDistance = Vector3.Distance(target.position, transform.position);
-            var atTarget = targetDistance <= stoppingDistance;
-            
-            //Output.Invoke(transform.position, target.position, speed);
-            transform.position = Vector3.SmoothDamp(transform.position, target.position, ref velocity, smoothTime, speed);
-            
-            if (atTarget && !wasAtTarget)
-            {
-                var response = target.GetComponent<GameObjectRelay>();
-                if (response) response.SetObject(gameObject);
-            }
+            transform.position = Vector3.SmoothDamp(position, target.position, ref velocity, smoothTime, speed);
+            CheckForTarget();
             wasAtTarget = atTarget;
         }
-    }
-    
-    [Serializable] public class MoveEvent : UnityEvent<Vector3, Vector3, float> { }
+        
+        void CheckForTarget()
+        {
+            if (!atTarget || wasAtTarget) return;
+            var response = target.GetComponent<GameObjectRelay>();
+            if (response) response.SetObject(gameObject);
+        }
+    }    
 }
