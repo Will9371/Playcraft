@@ -232,11 +232,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807951914563779}
-        m_MethodName: SetSlide
-        m_Mode: 6
+        m_MethodName: ActivateSlide
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 59bdb91478fbb6d4a8800aa74f45655e,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Playcraft.SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -246,11 +247,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807951914563779}
-        m_MethodName: SetSlide
-        m_Mode: 6
+        m_MethodName: DeactivateSlide
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 59bdb91478fbb6d4a8800aa74f45655e,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Playcraft.SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -718,11 +720,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab49db7a7dffd44ba5742a106bd556e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultIndex: 0
+  useLocal: 1
   positions:
   - {x: 0, y: 0.2, z: 0}
   - {x: 0, y: 0.575, z: 0}
-  defaultIndex: 0
-  useLocal: 1
+  index: 0
+  start: {x: 0, y: 0, z: 0}
+  end: {x: 0, y: 0, z: 0}
 --- !u!1 &3403923576435922631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1289,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   baseSpeed: 3
+  slideStack:
+    stack:
+    - id: {fileID: 11400000, guid: 55ca538227133d84b8dd8c6b81a7c2ea, type: 2}
+      active: 0
+    - id: {fileID: 11400000, guid: 59bdb91478fbb6d4a8800aa74f45655e, type: 2}
+      active: 0
 --- !u!54 &4009807951914563901
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1385,10 +1396,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capsule: {fileID: 2300345156078844275}
+  defaultIndex: 0
   heights:
   - 1.5
   - 0.75
-  defaultIndex: 0
   yAnchor: 0
 --- !u!1 &4009807950704468146
 GameObject:
@@ -1515,10 +1526,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9813561197b5644867fafae6cf410d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultIndex: 0
   scales:
   - {x: 0.5, y: 0.75, z: 0.5}
   - {x: 0.5, y: 0.4, z: 0.5}
-  defaultIndex: 0
+  xAnchor: 0.5
+  yAnchor: 0.5
+  zAnchor: 0.5
 --- !u!1 &4851831545168527299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,11 +1883,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab49db7a7dffd44ba5742a106bd556e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultIndex: 0
+  useLocal: 1
   positions:
   - {x: 0, y: 1.14, z: 0.245}
   - {x: 0, y: 0.85, z: 0.245}
-  defaultIndex: 0
-  useLocal: 1
+  index: 0
+  start: {x: 0, y: 0, z: 0}
+  end: {x: 0, y: 0, z: 0}
 --- !u!1 &8272226260970801749
 GameObject:
   m_ObjectHideFlags: 0

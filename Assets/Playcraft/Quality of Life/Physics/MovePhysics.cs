@@ -10,10 +10,11 @@ namespace Playcraft
         [SerializeField] float baseSpeed;
         #pragma warning restore 0649
         
+        // Only one state active at a time so can be set directly
         float priorSpeedMultiplier;
-        float inputSpeedMultiplier = 1f;
-        public void SetSpeedMultiplier(float value) { inputSpeedMultiplier = value; }
-        float speedMultiplier => slide ? priorSpeedMultiplier : inputSpeedMultiplier;
+        float stateSpeedMultiplier = 1f;
+        public void SetSpeedMultiplier(float value) { stateSpeedMultiplier = value; }
+        float speedMultiplier => slide ? priorSpeedMultiplier : stateSpeedMultiplier;
         float speed => baseSpeed * speedMultiplier;
         
         Vector3 inputDirection;
@@ -43,21 +44,25 @@ namespace Playcraft
             
             if (!slide)
             {
-                priorSpeedMultiplier = inputSpeedMultiplier;
+                priorSpeedMultiplier = stateSpeedMultiplier;
                 priorDirection = inputDirection;
             }
         }
         
-        bool slide;
-        public void SetSlide(bool value) { slide = value; }
+        #region Slide
         
-        public void SetSlideForTime(float duration)
-        {
-            if (slide) return;
-            slide = true;
-            Invoke(nameof(SetSlideFalse), duration);
-        }
+        [Tooltip("When any elements in this list are active, character will slide.  " +
+                 "To prevent loss of control, remove condition from array.")]
+        [SerializeField] BoolEffectStack slideStack;
         
-        void SetSlideFalse() { slide = false; }
+        bool slide => slideStack.anyActive;
+        
+        public void ActivateSlide(SO cause) { slideStack.SetEffectActive(cause, true); }
+        public void DeactivateSlide(SO cause) { slideStack.SetEffectActive(cause, false); }
+        
+        public void SetSlideForTime(SO cause, float duration) 
+        { slideStack.SetEffectActiveForTime(cause, duration); }
+        
+        #endregion
     }
 }
