@@ -993,7 +993,7 @@ PrefabInstance:
     - target: {fileID: 6320983057513271366, guid: 193cc6c64344ced4ebe96c91f31367ba,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6320983057513271366, guid: 193cc6c64344ced4ebe96c91f31367ba,
         type: 3}
@@ -1003,7 +1003,7 @@ PrefabInstance:
     - target: {fileID: 6320983057513271366, guid: 193cc6c64344ced4ebe96c91f31367ba,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6320983057513271367, guid: 193cc6c64344ced4ebe96c91f31367ba,
         type: 3}
@@ -1218,7 +1218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1730139543
 Transform:
   m_ObjectHideFlags: 0
@@ -1816,12 +1816,12 @@ PrefabInstance:
     - target: {fileID: 2716846687104412280, guid: fe9012954016e18478308a54eddae2a0,
         type: 3}
       propertyPath: OnTrue.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: SO, Assembly-CSharp
+      value: Playcraft.SO, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2716846687104412280, guid: fe9012954016e18478308a54eddae2a0,
         type: 3}
       propertyPath: OnFalse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: SO, Assembly-CSharp
+      value: Playcraft.SO, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe9012954016e18478308a54eddae2a0, type: 3}
@@ -1996,19 +1996,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.176733
+      value: -8.44
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8731018
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2016,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2028,7 +2028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 9479105347420448, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2037,6 +2037,11 @@ PrefabInstance:
     - target: {fileID: 9479105347420451, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}
       propertyPath: m_Name
       value: Cube Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 2910051527457000708, guid: 5282072d44e21394abba3c0735a0acbf,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5282072d44e21394abba3c0735a0acbf, type: 3}

@@ -105,7 +105,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4537462380300003821}
-          m_MethodName: GetHit
+          m_MethodName: Trigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4537462380515414954}
-          m_MethodName: GetHit
+          m_MethodName: Trigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -131,10 +131,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  scrollSensitivity: 1
-  OnMouseScroll:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &4537462380300003810
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d795df6e438944a8433576fd5a5341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: 1
+  range: 1000
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  triggerInteraction: 0
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -193,10 +195,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  triggerInteraction: 0
 --- !u!114 &4537462380300003820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d795df6e438944a8433576fd5a5341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: 1
+  range: 1000
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  triggerInteraction: 0
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -268,10 +272,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  triggerInteraction: 0
 --- !u!114 &4537462380515414965
 MonoBehaviour:
   m_ObjectHideFlags: 0

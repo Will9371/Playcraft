@@ -9,9 +9,9 @@ namespace Playcraft.Examples.ColorCatcher
 
         public void Input(Collider other)
         {
-            other.enabled = false;
             var wisp = other.GetComponent<WispTag>();
             if (!wisp) return;
+            //other.enabled = false;
             var success = wisp.value == type;
             Output.Invoke(success);
         }

@@ -53,15 +53,15 @@ namespace Playcraft
         
         [Tooltip("When any elements in this list are active, character will slide.  " +
                  "To prevent loss of control, remove condition from array.")]
-        [SerializeField] BoolEffectStack slideStack;
+        [SerializeField] PotentialBoolEffects slideCauses;
         
-        bool slide => slideStack.anyActive;
+        bool slide => slideCauses.anyActive;
         
-        public void ActivateSlide(SO cause) { slideStack.SetEffectActive(cause, true); }
-        public void DeactivateSlide(SO cause) { slideStack.SetEffectActive(cause, false); }
+        public void ActivateSlide(SO cause) { slideCauses.SetEffectActive(cause, true); }
+        public void DeactivateSlide(SO cause) { slideCauses.SetEffectActive(cause, false); }
         
         public void SetSlideForTime(SO cause, float duration) 
-        { slideStack.SetEffectActiveForTime(cause, duration); }
+        { slideCauses.SetEffectActiveForTime(cause, duration); }
         
         #endregion
     }

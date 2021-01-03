@@ -1,8 +1,9 @@
 ﻿using System;
 
+// Tracks whether a constant set of effects are active
 namespace Playcraft
 {
-    [Serializable] public class BoolEffectStack
+    [Serializable] public class PotentialBoolEffects
     {
         public Effect[] stack;
 

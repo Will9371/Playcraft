@@ -19,7 +19,7 @@ namespace Playcraft
                 if (!followers[i])
                     followers.Remove(followers[i]);
                 else
-                    followers[i].transform.Translate(step);
+                    followers[i].MovePosition(followers[i].position + step);
             }
             
             priorPosition = transform.position;

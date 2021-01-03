@@ -63,8 +63,8 @@
               <e p="RangeCheck.cs" t="Include" />
             </e>
             <e p="Effects" t="Include">
-              <e p="BoolEffectStack.cs" t="Include" />
-              <e p="FloatEffectStack.cs" t="Include" />
+              <e p="PotentialBoolEffects.cs" t="Include" />
+              <e p="PotentialFloatEffects.cs" t="Include" />
             </e>
             <e p="Flying 1st Person" t="Include">
               <e p="FlyCamSettings.cs" t="Include" />

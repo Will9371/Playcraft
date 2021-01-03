@@ -1,8 +1,10 @@
 ﻿using System;
 
+// Tracks whether a constant set of effects are active
+// and provides access to total value of effects
 namespace Playcraft
 {
-    [Serializable] public class FloatEffectStack
+    [Serializable] public class PotentialFloatEffects
     {
         public Effect[] stack;
 
