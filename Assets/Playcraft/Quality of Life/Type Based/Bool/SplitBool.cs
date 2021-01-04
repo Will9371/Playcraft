@@ -10,7 +10,7 @@ namespace Playcraft
         [SerializeField] UnityEvent OnFalse;
         #pragma warning restore 0649
         
-        [SerializeField] bool state;
+        public bool state;
         public void SetState(bool value) { state = value; }
         
         public void Input(bool value)

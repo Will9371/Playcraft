@@ -7,38 +7,31 @@ namespace Playcraft
     public class MoveInLine : MonoBehaviour
     {
         #pragma warning disable 0649
-        [SerializeField] float stoppingDistance = 0.25f;
+        [SerializeField] Rigidbody rb;
+        [SerializeField] float defaultSpeed;
         [SerializeField] UnityEvent onMoveStart;
         [SerializeField] UnityEvent onMoveEnd;
         #pragma warning restore 0649
-        
-        Rigidbody rb;
 
-        private void Awake()
-        {
-            rb = GetComponent<Rigidbody>();
-        }
-        
+        public void StartMoving(Vector3 end, float speed) { StartMoving(transform.position, end, speed); }
+        public void StartMoving(Vector3 end) { StartMoving(transform.position, end, defaultSpeed); }
+        public void StartMoving(Vector3 start, Vector3 end) { StartMoving(start, end); }
         public void StartMoving(Vector3 start, Vector3 end, float speed)
-        {
-            StartCoroutine(MoveRoutine(start, end, speed));
-        }
+        { StartCoroutine(MoveRoutine(start, end, speed)); }
         
         IEnumerator MoveRoutine(Vector3 start, Vector3 end, float speed)
         {
             onMoveStart.Invoke();
             
-            var wait = new WaitForEndOfFrame();
-            var direction = (end - start).normalized;
             var offset = transform.position - start;
             var destination = end + offset;
             Vector3 step;
             
-            while (Vector3.Distance(transform.position, destination) > stoppingDistance)
+            while (transform.position != destination)
             {
-                step =  Time.deltaTime * speed * direction;
-                rb.MovePosition(transform.position + step);
-                yield return wait;
+                step = Vector3.MoveTowards(transform.position, destination, Time.deltaTime * speed);
+                rb.MovePosition(step);
+                yield return null;
             }
             
             EndMove();   
@@ -50,7 +43,7 @@ namespace Playcraft
             EndMove();
         }
         
-        private void EndMove()
+        void EndMove()
         {
             onMoveEnd.Invoke();
             rb.velocity = Vector3.zero;

@@ -168,6 +168,7 @@
               <e p="PrintToConsole.cs" t="Include" />
               <e p="RotateToAngleTest.cs" t="Include" />
               <e p="RotateTowardsTest.cs" t="Include" />
+              <e p="ValidateEvent.cs" t="Include" />
             </e>
             <e p="Helpers" t="Include">
               <e p="EdgeDetect.cs" t="Include" />
@@ -274,6 +275,9 @@
                 <e p="GetIntFromRange.cs" t="Include" />
                 <e p="GetRandomInt.cs" t="Include" />
                 <e p="IntCondition.cs" t="Include" />
+              </e>
+              <e p="Material" t="Include">
+                <e p="SetMaterialByIndex.cs" t="Include" />
               </e>
               <e p="Raycast" t="Include">
                 <e p="DetectChangeRaycastHit.cs" t="Include" />
@@ -485,11 +489,14 @@
               <e p="SwingStateMachine.cs" t="Include" />
               <e p="TelegraphIntent.cs" t="Include" />
             </e>
-            <e p="ZipLine" t="Include">
+            <e p="Wire" t="Include">
+              <e p="ComparePoints.cs" t="Include" />
               <e p="DetectObject.cs" t="Include" />
-              <e p="DetectZipLine.cs" t="Include" />
               <e p="MoveInLine.cs" t="Include" />
               <e p="StretchedWire.cs" t="Include" />
+            </e>
+            <e p="Zip Line" t="Include">
+              <e p="DetectZipLine.cs" t="Include" />
               <e p="ZipHook.cs" t="Include" />
               <e p="ZipLine.cs" t="Include" />
             </e>

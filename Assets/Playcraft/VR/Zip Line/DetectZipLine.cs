@@ -4,8 +4,9 @@ namespace Playcraft.VR
 {
     public class DetectZipLine : DetectObject
     {
-        [HideInInspector] public ZipLine targetedZipLine;
-        
+        [HideInInspector] 
+        public ZipLine targetedZipLine;
+                
         protected override void RequestSetComponent(GameObject other)
         {
             var otherZip = other.GetComponent<ZipLine>();

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft.VR
+namespace Playcraft
 {
     public class RespondToComponent : MonoBehaviour
     {

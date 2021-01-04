@@ -6,18 +6,23 @@ namespace Playcraft
     {
         public Transform start, end;
         
-        private void OnValidate()
-        {
-            if (!start || !end) return;
-            Stretch(start, end);
-        }
+        void Update() { Stretch(); }
         
-        private void Update()
+        Vector3 priorStartPosition;
+        Vector3 priorEndPosition;
+        bool startHasMoved => start.position != priorStartPosition;
+        bool endHasMoved => end.position != priorEndPosition;
+
+        public void Stretch() 
         {
             if (!start || !end) return;
+            if (!startHasMoved && !endHasMoved) return;
+            
             Stretch(start, end);
-        }
-
+            priorStartPosition = start.position;
+            priorEndPosition = end.position;           
+        } 
+        
         void Stretch(Transform t1, Transform t2)
         {
             //Debug.Log("StretchWire method reached " + t1.position + ", " + t2.position);
