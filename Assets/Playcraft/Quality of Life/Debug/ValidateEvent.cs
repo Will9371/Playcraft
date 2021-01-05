@@ -13,11 +13,9 @@ namespace Playcraft
         
         void CheckTrigger()
         {
-            if (trigger) 
-            {
-                Response.Invoke();
-                trigger = false;
-            } 
+            if (!trigger) return;
+            Response.Invoke();
+            trigger = false;
         }
     }
 }

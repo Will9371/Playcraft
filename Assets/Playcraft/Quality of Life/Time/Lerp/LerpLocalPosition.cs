@@ -18,7 +18,6 @@ public class LerpLocalPosition : MonoBehaviour
     
     public void SetDestination(int newIndex)
     {
-        //if (index == newIndex) return;
         start = positions[index];
         end = positions[newIndex];
         index = newIndex;

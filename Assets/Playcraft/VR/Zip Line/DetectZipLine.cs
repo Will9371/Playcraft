@@ -4,8 +4,10 @@ namespace Playcraft.VR
 {
     public class DetectZipLine : DetectObject
     {
-        [HideInInspector] 
-        public ZipLine targetedZipLine;
+        [HideInInspector] public ZipLine targetedZipLine;
+        
+        public bool detected => targetedZipLine != null;
+        public bool active => detected && targetedZipLine.active;
                 
         protected override void RequestSetComponent(GameObject other)
         {

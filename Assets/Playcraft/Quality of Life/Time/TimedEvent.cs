@@ -11,11 +11,12 @@ namespace Playcraft
         #pragma warning restore 0649
         
         public void Begin() { Invoke(nameof(End), time); }
+        public void Begin(float duration) { Invoke(nameof(End), duration); }
 
         private void End() { OnEnd.Invoke(); }
         
         public void Cancel() { CancelInvoke(nameof(End)); }
         
-        public void SetTime(float value) { time = value; }
+        public void SetTime(float value) { time = value; }        
     }
 }

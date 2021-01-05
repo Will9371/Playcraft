@@ -9,11 +9,12 @@ namespace Playcraft
         [SerializeField] FloatEvent Output;
         #pragma warning restore 0649
 
-        public float value;
         public float desiredValue;
         public void SetDesiredValue(float value) { desiredValue = value; }
+        
+        public float value;
 
-        private void Update()
+        void Update()
         {
             value = VectorMath.MoveTowards(value, desiredValue, speed);
             Output.Invoke(value);

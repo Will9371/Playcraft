@@ -18,5 +18,11 @@ namespace Playcraft
          
             Output.Invoke(values[index]); 
         }
+        
+        public void GetRandom()
+        {
+            var index = Random.Range(0, values.Length);
+            Output.Invoke(values[index]);
+        }
     }
 }

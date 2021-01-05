@@ -13,8 +13,9 @@ namespace Playcraft.VR
 
         public void RequestGrabZipLine()
         {
-            var line = zipLineDetect.targetedZipLine; 
-            if (!line) return;                 
+            if (!zipLineDetect.active) return;
+            Debug.Log(zipLineDetect.active); 
+            var line = zipLineDetect.targetedZipLine;
             movement.StartMoving(position, line.GetDestination(position), line.speed);
         }
         

@@ -12,10 +12,9 @@ namespace Playcraft.Testing
         [SerializeField] bool tick;
         #pragma warning restore 0649
 
-        private void OnValidate()
+        void OnValidate()
         {
             if (!tick) return;
-            
             angle = VectorMath.RotateToAngle(angle, desiredAngle, turnSpeed * timeStep);
             tick = false;
         }

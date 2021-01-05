@@ -9,7 +9,7 @@ namespace Playcraft.VR
         public float speed = 2f;
         [SerializeField] float stoppingDistance;
         
-        bool active => activeState.state;
+        public bool active => activeState.state;
         
         public Vector3 GetDestination(Vector3 position)
         {

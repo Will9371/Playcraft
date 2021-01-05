@@ -24,6 +24,12 @@
           <e p="RaycastController.cs" t="Include" />
         </e>
         <e p="Playcraft" t="Include">
+          <e p="_Uncategorized" t="Include">
+            <e p="AnimationProgressEvent.cs" t="Include" />
+            <e p="DetectObject.cs" t="Include" />
+            <e p="MoveInLine.cs" t="Include" />
+            <e p="RespondToComponent.cs" t="Include" />
+          </e>
           <e p="Additive Scenes" t="Include">
             <e p="AccessAdditiveSceneController.cs" t="Include" />
             <e p="AdditiveSceneController.cs" t="Include" />
@@ -45,7 +51,6 @@
             </e>
             <e p="SceneTransitionRelay.cs" t="Include" />
           </e>
-          <e p="AnimationProgressEvent.cs" t="Include" />
           <e p="Character" t="Include">
             <e p="1st Person RB" t="Include">
               <e p="Swim" t="Include">
@@ -169,6 +174,7 @@
               <e p="RotateToAngleTest.cs" t="Include" />
               <e p="RotateTowardsTest.cs" t="Include" />
               <e p="ValidateEvent.cs" t="Include" />
+              <e p="ValidatePercent.cs" t="Include" />
             </e>
             <e p="Helpers" t="Include">
               <e p="EdgeDetect.cs" t="Include" />
@@ -264,6 +270,8 @@
                 <e p="GetFloatFromArray.cs" t="Include" />
                 <e p="GetFloatFromVector.cs" t="Include" />
                 <e p="GetRandomFloat.cs" t="Include" />
+                <e p="InvertFloat.cs" t="Include" />
+                <e p="RotateToAngle.cs" t="Include" />
               </e>
               <e p="GameObject" t="Include">
                 <e p="GetGameObjectFromArray.cs" t="Include" />
@@ -321,6 +329,7 @@
                 <e p="CalculateParabolicArc.cs" t="Include" />
                 <e p="CalculateParabolicArcComponent.cs" t="Include" />
                 <e p="ClampVector2.cs" t="Include" />
+                <e p="ComparePoints.cs" t="Include" />
                 <e p="CycleVector3.cs" t="Include" />
                 <e p="DriftDirection.cs" t="Include" />
                 <e p="FlattenVector.cs" t="Include" />
@@ -409,6 +418,7 @@
               <e p="Relays" t="Include">
                 <e p="BoolRelay.cs" t="Include" />
                 <e p="ColliderRelay.cs" t="Include" />
+                <e p="FloatRelay.cs" t="Include" />
                 <e p="GameObjectBoolRelay.cs" t="Include" />
                 <e p="GameObjectBoolRelaySplit.cs" t="Include" />
                 <e p="GameObjectRelay.cs" t="Include" />
@@ -462,7 +472,6 @@
             <e p="Photosphere Viewer" t="Include">
               <e p="InvertedSurface.shader" t="Include" />
             </e>
-            <e p="RespondToComponent.cs" t="Include" />
             <e p="String Nodes" t="Include">
               <e p="DrawLineBetweenNodes.cs" t="Include" />
             </e>
@@ -481,18 +490,20 @@
               </e>
             </e>
             <e p="Sword" t="Include">
-              <e p="AIBlade.cs" t="Include" />
-              <e p="AIBody.cs" t="Include" />
+              <e p="AI" t="Include">
+                <e p="AIBlade.cs" t="Include" />
+                <e p="AIBody.cs" t="Include" />
+                <e p="SwingState.cs" t="Include" />
+                <e p="SwingStateMachine.cs" t="Include" />
+                <e p="TelegraphIntent.cs" t="Include" />
+              </e>
               <e p="PlayerBlade.cs" t="Include" />
               <e p="ROWShield.cs" t="Include" />
-              <e p="SwingState.cs" t="Include" />
-              <e p="SwingStateMachine.cs" t="Include" />
-              <e p="TelegraphIntent.cs" t="Include" />
+              <e p="Target Practice" t="Include">
+                <e p="RotateZ.cs" t="Include" />
+              </e>
             </e>
             <e p="Wire" t="Include">
-              <e p="ComparePoints.cs" t="Include" />
-              <e p="DetectObject.cs" t="Include" />
-              <e p="MoveInLine.cs" t="Include" />
               <e p="StretchedWire.cs" t="Include" />
             </e>
             <e p="Zip Line" t="Include">
