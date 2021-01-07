@@ -4,7 +4,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// MODIFIED
 namespace Playcraft
 {
     public class DragObject : MonoBehaviour, IPointerDownHandler, IDragHandler

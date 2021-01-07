@@ -24,12 +24,6 @@
           <e p="RaycastController.cs" t="Include" />
         </e>
         <e p="Playcraft" t="Include">
-          <e p="_Uncategorized" t="Include">
-            <e p="AnimationProgressEvent.cs" t="Include" />
-            <e p="DetectObject.cs" t="Include" />
-            <e p="MoveInLine.cs" t="Include" />
-            <e p="RespondToComponent.cs" t="Include" />
-          </e>
           <e p="Additive Scenes" t="Include">
             <e p="AccessAdditiveSceneController.cs" t="Include" />
             <e p="AdditiveSceneController.cs" t="Include" />
@@ -140,6 +134,7 @@
             <e p="ReliableTrigger.cs" t="Include" />
           </e>
           <e p="Interaction" t="Include">
+            <e p="DetectObject.cs" t="Include" />
             <e p="Examples" t="Include">
               <e p="Colors" t="Include">
                 <e p="ColorInteractable.cs" t="Include" />
@@ -147,6 +142,7 @@
             </e>
             <e p="IInteractable.cs" t="Include" />
             <e p="InteractableList.cs" t="Include" />
+            <e p="RespondToComponent.cs" t="Include" />
             <e p="RespondToMessage.cs" t="Include" />
             <e p="SendMessage.cs" t="Include" />
             <e p="SphereInteractor.cs" t="Include" />
@@ -164,6 +160,7 @@
           <e p="Quality of Life" t="Include">
             <e p="Animation" t="Include">
               <e p="AnimatedMoveState.cs" t="Include" />
+              <e p="AnimationProgressEvent.cs" t="Include" />
               <e p="HumanoidAnimationInterface.cs" t="Include" />
               <e p="JumpCrossFadeLookup.cs" t="Include" />
               <e p="RespondToAnimatedState.cs" t="Include" />
@@ -337,6 +334,7 @@
                 <e p="GetRandomDirection.cs" t="Include" />
                 <e p="GetRandomPositionInRange.cs" t="Include" />
                 <e p="GetTargetVector.cs" t="Include" />
+                <e p="MoveInLine.cs" t="Include" />
                 <e p="MoveTowards.cs" t="Include" />
                 <e p="MoveTowardsDrift.cs" t="Include" />
                 <e p="RelativeVector2.cs" t="Include" />
@@ -428,6 +426,26 @@
                 <e p="TransformRelay.cs" t="Include" />
                 <e p="Vector3Relay.cs" t="Include" />
               </e>
+            </e>
+          </e>
+          <e p="Serialization" t="Include">
+            <e p="AccessSerialization.cs" t="Include" />
+            <e p="Inventory" t="Include">
+              <e p="Inventory.cs" t="Include" />
+              <e p="InventoryUI.cs" t="Include" />
+            </e>
+            <e p="PlayerProfile.cs" t="Include" />
+            <e p="Save Objects [Incomplete]" t="Include">
+              <e p="GameEvents.cs" t="Include" />
+              <e p="SaveShape.cs" t="Include" />
+              <e p="ShapeData.cs" t="Include" />
+              <e p="SpawnShape.cs" t="Include" />
+            </e>
+            <e p="SaveData.cs" t="Include" />
+            <e p="SerializationManager.cs" t="Include" />
+            <e p="Surrogates" t="Include">
+              <e p="QuaternionSerializationSurrogate.cs" t="Include" />
+              <e p="Vector3SerializationSurrogate.cs" t="Include" />
             </e>
           </e>
           <e p="UI" t="Include">

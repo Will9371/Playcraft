@@ -19,10 +19,11 @@ namespace Playcraft.Pooling
         ObjectPoolMaster pool => ObjectPoolMaster.instance; 
         Vector3 spawnPosition => useTransformToPosition ? location.position : position; 
         
-        public void Spawn()
+        public GameObject Spawn()
         {
             var spawn = pool.Spawn(prefab, spawnPosition);
             OutputSpawn.Invoke(spawn);
+            return spawn;
         }
     }
 }
