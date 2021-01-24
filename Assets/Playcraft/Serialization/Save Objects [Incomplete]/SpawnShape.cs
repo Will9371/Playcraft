@@ -15,8 +15,8 @@ namespace Playcraft.Examples.Saving
         {
             switch (type)
             {
-                case ShapeType.Sphere: return sphereSpawner.Spawn();
-                case ShapeType.Cube: return cubeSpawner.Spawn();
+                case ShapeType.Sphere: return sphereSpawner.GetSpawn();
+                case ShapeType.Cube: return cubeSpawner.GetSpawn();
             }
             
             return null;

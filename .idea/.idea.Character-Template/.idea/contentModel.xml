@@ -294,6 +294,7 @@
               <e p="Rotation" t="Include">
                 <e p="LookRotation.cs" t="Include" />
                 <e p="RotateTowards.cs" t="Include" />
+                <e p="SetRotation.cs" t="Include" />
                 <e p="SimpleRotation.cs" t="Include" />
                 <e p="SingleAxisRotation.cs" t="Include" />
                 <e p="SlerpToLookAt.cs" t="Include" />
@@ -338,7 +339,6 @@
                 <e p="MoveTowards.cs" t="Include" />
                 <e p="MoveTowardsDrift.cs" t="Include" />
                 <e p="RelativeVector2.cs" t="Include" />
-                <e p="SetRotation.cs" t="Include" />
                 <e p="SplitVector.cs" t="Include" />
               </e>
             </e>
@@ -515,10 +515,16 @@
                 <e p="SwingStateMachine.cs" t="Include" />
                 <e p="TelegraphIntent.cs" t="Include" />
               </e>
-              <e p="PlayerBlade.cs" t="Include" />
-              <e p="ROWShield.cs" t="Include" />
+              <e p="ROW" t="Include">
+                <e p="PlayerBlade.cs" t="Include" />
+                <e p="ROWShield.cs" t="Include" />
+              </e>
               <e p="Target Practice" t="Include">
+                <e p="DisplayIndexByColor.cs" t="Include" />
+                <e p="IntSequence.cs" t="Include" />
+                <e p="RespondToInt.cs" t="Include" />
                 <e p="RotateZ.cs" t="Include" />
+                <e p="TriTargetSettings.cs" t="Include" />
               </e>
             </e>
             <e p="Wire" t="Include">

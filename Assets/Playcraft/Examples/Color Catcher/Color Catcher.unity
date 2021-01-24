@@ -2254,6 +2254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42469629d00811b408c3f0c4e33075bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnQuit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1461377219 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7715221456310664099, guid: 94d6c4d6cef98f7438b131c90e041fcf,
@@ -2453,18 +2456,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1501562442}
-        m_MethodName: Input
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 2
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2483,17 +2475,6 @@ MonoBehaviour:
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1279662678}
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1974984245}
         m_MethodName: Input
         m_Mode: 1
@@ -2507,6 +2488,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1279662681}
         m_MethodName: Input
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279662678}
+        m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

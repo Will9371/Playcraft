@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// RENAME for generality
 namespace Playcraft
 {
     public class CycleVector3 : MonoBehaviour

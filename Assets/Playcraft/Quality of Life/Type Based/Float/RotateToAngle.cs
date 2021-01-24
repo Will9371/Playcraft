@@ -1,4 +1,5 @@
-﻿using Playcraft;
+﻿using NUnit.Framework;
+using Playcraft;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,8 +14,10 @@ public class RotateToAngle : MonoBehaviour
     
     float angle;
     
-    bool hasArrived;
+    bool hasArrived = true;
     bool arrived => angle == desiredAngle;
+    
+    public void SetRotationSpeed(float value) { turnSpeed = value; }
     
     public void SetDesiredAngle(float value) 
     {

@@ -2,6 +2,7 @@
 
 public class LerpLocalPosition : MonoBehaviour
 {
+    [SerializeField] Transform self;
     [SerializeField] int defaultIndex;
     [SerializeField] bool useLocal;
     [SerializeField] Vector3[] positions;
@@ -12,6 +13,7 @@ public class LerpLocalPosition : MonoBehaviour
         
     void Start()
     {
+        if (!self) self = transform;
         index = defaultIndex;
         start = positions[defaultIndex];
     }
@@ -29,7 +31,7 @@ public class LerpLocalPosition : MonoBehaviour
     public void Input(float percent)
     {
         position = Vector3.Lerp(start, end, percent);
-        if (useLocal) transform.localPosition = position;
-        else transform.position = position;
+        if (useLocal) self.localPosition = position;
+        else self.position = position;
     }
 }

@@ -9,6 +9,8 @@ public class GetPercentOverTime : MonoBehaviour
     [SerializeField] float duration;
     [SerializeField] FloatEvent Percent;
     
+    public void SetDuration(float value) { duration = value; }
+    
     public void Begin() { StartCoroutine(Process()); }
     
     IEnumerator Process()
