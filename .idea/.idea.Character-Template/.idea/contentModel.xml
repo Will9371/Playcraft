@@ -188,7 +188,7 @@
               <e p="FindClosestTarget.cs" t="Include" />
             </e>
             <e p="Physics" t="Include">
-              <e p="FilterByAngle.cs" t="Include" />
+              <e p="CheckIfValidAngle.cs" t="Include" />
               <e p="GetCollisionVector.cs" t="Include" />
               <e p="GetVelocity.cs" t="Include" />
               <e p="JumpPhysics.cs" t="Include" />
@@ -253,7 +253,9 @@
                 <e p="ToggleState.cs" t="Include" />
               </e>
               <e p="Collider" t="Include">
+                <e p="FilterCollidersByCustomTag.cs" t="Include" />
                 <e p="SetCapsuleHeight.cs" t="Include" />
+                <e p="TrackColliders.cs" t="Include" />
               </e>
               <e p="Color" t="Include">
                 <e p="CycleColor.cs" t="Include" />
@@ -330,6 +332,7 @@
                 <e p="ComparePoints.cs" t="Include" />
                 <e p="CycleVector3.cs" t="Include" />
                 <e p="DriftDirection.cs" t="Include" />
+                <e p="FilterByAngle.cs" t="Include" />
                 <e p="FlattenVector.cs" t="Include" />
                 <e p="GetNearestDirection.cs" t="Include" />
                 <e p="GetRandomDirection.cs" t="Include" />

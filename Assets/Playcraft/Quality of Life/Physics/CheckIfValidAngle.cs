@@ -2,7 +2,7 @@
 
 namespace Playcraft
 {
-    public class FilterByAngle : MonoBehaviour
+    public class CheckIfValidAngle : MonoBehaviour
     {
         #pragma warning disable 0649
         [SerializeField] Vector3 referenceDirection = Vector3.up;
@@ -14,10 +14,10 @@ namespace Playcraft
         [SerializeField] BoolEvent OutputResult;
         #pragma warning restore 0649
         
-        private float priorMaxAngle;
-        private float priorMinDot;
+        float priorMaxAngle;
+        float priorMinDot;
         
-        private void OnValidate()
+        void OnValidate()
         {
             if (priorMaxAngle != maxAngle)
                 minDot = VectorMath.AngleToDot(maxAngle);

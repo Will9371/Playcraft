@@ -16,6 +16,8 @@ using Playcraft;
 [Serializable] public class GameObjectEvent : UnityEvent<GameObject> { }
 [Serializable] public class TransformEvent : UnityEvent<Transform> { }
 [Serializable] public class ColliderEvent : UnityEvent<Collider> { }
+[Serializable] public class ColliderArrayEvent : UnityEvent<Collider[]> { }
+[Serializable] public class ColliderListEvent : UnityEvent<List<Collider>> { }
 [Serializable] public class CollisionEvent : UnityEvent<Collision> { }
 [Serializable] public class RaycastHitEvent : UnityEvent<RaycastHit> { }
 [Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }
