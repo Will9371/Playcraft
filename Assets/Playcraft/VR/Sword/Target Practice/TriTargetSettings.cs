@@ -20,8 +20,8 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] GetPercentOverTime retraction;
         [SerializeField] TimedEvent delayExtend;
         [SerializeField] TimedEvent delayRotate;
-        [SerializeField] LerpLocalPosition enterTarget;
-        [SerializeField] LerpLocalPosition exitTarget;
+        [SerializeField] LerpPosition enterTarget;
+        [SerializeField] LerpPosition exitTarget;
         [SerializeField] Transform[] targets;
         
         void OnValidate()
@@ -34,7 +34,7 @@ namespace Playcraft.Examples.SwordTrainer
             rotor.SetRotationSpeed(rotationSpeed);
             extension.SetDuration(timeToExtend);
             retraction.SetDuration(timeToRetract);
-            delayExtend.SetTime(delayExtendTime);
+            if (delayExtend) delayExtend.SetTime(delayExtendTime);
             delayRotate.SetTime(delayRotationTime);
             
             enterTarget.end = new Vector3(spreadDistance/2f, 0f, targetDepth);

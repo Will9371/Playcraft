@@ -7,11 +7,9 @@ namespace Playcraft
 {
     public class SlerpToLookAt: MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Transform target;
         [SerializeField] float rotationSpeed;
         [SerializeField] FloatEvent Angle;
-        #pragma warning restore 0649
      
         Quaternion lookRotation;
         Vector3 direction;

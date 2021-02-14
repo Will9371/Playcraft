@@ -28,12 +28,12 @@ namespace Playcraft
         }
     
         // DEPRECATE: trivial functionality on own, muddies SRP with above
-        public void Input(Vector3 self, Vector3 target, float _speed)
+        /*public void Input(Vector3 self, Vector3 target, float _speed)
         {
             if (useLocal)
                 transform.localPosition = Vector3.MoveTowards(self, target, _speed * Time.deltaTime);
             else
                 transform.position = Vector3.MoveTowards(self, target, _speed * Time.deltaTime);
-        }
+        }*/
     }
 }

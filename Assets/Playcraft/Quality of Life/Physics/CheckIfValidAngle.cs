@@ -4,28 +4,21 @@ namespace Playcraft
 {
     public class CheckIfValidAngle : MonoBehaviour
     {
-        #pragma warning disable 0649
-        [SerializeField] Vector3 referenceDirection = Vector3.up;
-        [Tooltip("Leave as null to use world space")]
         [SerializeField] Transform referenceTransform;
+        [SerializeField] Vector3 referenceDirection = Vector3.up;
         [SerializeField] [Range(0f, 360f)] float maxAngle = 45f;
         [SerializeField] [Range(-1f, 1f)] float minDot = .5f;
+        [Tooltip("Leave as null to use world space")]
         [SerializeField] CollisionEvent OutputCollisionOnSuccess;
         [SerializeField] BoolEvent OutputResult;
-        #pragma warning restore 0649
         
-        float priorMaxAngle;
-        float priorMinDot;
+        ValidateAngleToDot angleDot;
         
         void OnValidate()
         {
-            if (priorMaxAngle != maxAngle)
-                minDot = VectorMath.AngleToDot(maxAngle);
-            if (priorMinDot != minDot)
-                maxAngle = VectorMath.DotToAngle(minDot);
-            
-            priorMaxAngle = maxAngle;
-            priorMinDot = minDot;
+            if (angleDot == null) angleDot = new ValidateAngleToDot();
+            minDot = angleDot.AngleToDot(maxAngle, minDot);
+            maxAngle = angleDot.DotToAngle(maxAngle, minDot);
         }
         
         public void Input(Collision other)

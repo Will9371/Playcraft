@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Playcraft
+namespace Playcraft.Dialog
 {
     public class DialogController : MonoBehaviour
     {

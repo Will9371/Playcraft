@@ -4,6 +4,7 @@
     <e p="C:\Users\willp\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\willp\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_Character-Template.900128765.00" t="ExcludeRecursive" />
     <e p="D:\Github\Character-Template" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="External" t="Include">
@@ -60,6 +61,7 @@
               </e>
               <e p="FollowForward.cs" t="Include" />
               <e p="RangeCheck.cs" t="Include" />
+              <e p="SetRotationTarget.cs" t="Include" />
             </e>
             <e p="Effects" t="Include">
               <e p="PotentialBoolEffects.cs" t="Include" />
@@ -109,11 +111,30 @@
             </e>
           </e>
           <e p="Dialog" t="Include">
-            <e p="DialogController.cs" t="Include" />
-            <e p="DialogNode.cs" t="Include" />
-            <e p="FilterRepeatEvent.cs" t="Include" />
-            <e p="GetNarrativeFromDialogNode.cs" t="Include" />
-            <e p="SimpleDialogDisplay.cs" t="Include" />
+            <e p="Graph" t="Include">
+              <e p="Editor" t="Include">
+                <e p="DialogGraph.cs" t="Include" />
+                <e p="DialogGraphView.cs" t="Include" />
+                <e p="DialogNode.cs" t="Include" />
+                <e p="GraphSaveUtility.cs" t="Include" />
+                <e p="Resources" t="Include">
+                  <e p="DialogGraph.uss" t="Include" />
+                  <e p="Node.uss" t="Include" />
+                </e>
+              </e>
+              <e p="Runtime" t="Include">
+                <e p="DialogContainer.cs" t="Include" />
+                <e p="DialogNodeData.cs" t="Include" />
+                <e p="NodeLinkData.cs" t="Include" />
+              </e>
+            </e>
+            <e p="SO Based" t="Include">
+              <e p="DialogController.cs" t="Include" />
+              <e p="DialogNode.cs" t="Include" />
+              <e p="FilterRepeatEvent.cs" t="Include" />
+              <e p="GetNarrativeFromDialogNode.cs" t="Include" />
+              <e p="SimpleDialogDisplay.cs" t="Include" />
+            </e>
             <e p="TypewriterText.cs" t="Include" />
           </e>
           <e p="Examples" t="Include">
@@ -170,6 +191,7 @@
               <e p="PrintToConsole.cs" t="Include" />
               <e p="RotateToAngleTest.cs" t="Include" />
               <e p="RotateTowardsTest.cs" t="Include" />
+              <e p="ValidateAngleToDot.cs" t="Include" />
               <e p="ValidateEvent.cs" t="Include" />
               <e p="ValidatePercent.cs" t="Include" />
             </e>
@@ -235,7 +257,8 @@
               <e p="GetPercentOverTime.cs" t="Include" />
               <e p="Lerp" t="Include">
                 <e p="LerpCapsuleHeight.cs" t="Include" />
-                <e p="LerpLocalPosition.cs" t="Include" />
+                <e p="LerpPosition.cs" t="Include" />
+                <e p="LerpRotation.cs" t="Include" />
                 <e p="LerpScale.cs" t="Include" />
               </e>
               <e p="ProgressEvent.cs" t="Include" />
@@ -247,6 +270,7 @@
               <e p="Bool" t="Include">
                 <e p="BinaryThreshold.cs" t="Include" />
                 <e p="BinaryThresholdComponent.cs" t="Include" />
+                <e p="IBool.cs" t="Include" />
                 <e p="MultiCondition.cs" t="Include" />
                 <e p="SplitBool.cs" t="Include" />
                 <e p="StoreState.cs" t="Include" />
@@ -254,6 +278,7 @@
               </e>
               <e p="Collider" t="Include">
                 <e p="FilterCollidersByCustomTag.cs" t="Include" />
+                <e p="FindClosestCollider.cs" t="Include" />
                 <e p="SetCapsuleHeight.cs" t="Include" />
                 <e p="TrackColliders.cs" t="Include" />
               </e>
@@ -282,6 +307,8 @@
                 <e p="GetIntFromRange.cs" t="Include" />
                 <e p="GetRandomInt.cs" t="Include" />
                 <e p="IntCondition.cs" t="Include" />
+                <e p="IntSequence.cs" t="Include" />
+                <e p="RespondToInt.cs" t="Include" />
               </e>
               <e p="Material" t="Include">
                 <e p="SetMaterialByIndex.cs" t="Include" />
@@ -296,6 +323,7 @@
               <e p="Rotation" t="Include">
                 <e p="LookRotation.cs" t="Include" />
                 <e p="RotateTowards.cs" t="Include" />
+                <e p="RotateZ.cs" t="Include" />
                 <e p="SetRotation.cs" t="Include" />
                 <e p="SimpleRotation.cs" t="Include" />
                 <e p="SingleAxisRotation.cs" t="Include" />
@@ -523,10 +551,9 @@
                 <e p="ROWShield.cs" t="Include" />
               </e>
               <e p="Target Practice" t="Include">
-                <e p="DisplayIndexByColor.cs" t="Include" />
-                <e p="IntSequence.cs" t="Include" />
-                <e p="RespondToInt.cs" t="Include" />
-                <e p="RotateZ.cs" t="Include" />
+                <e p="CutAndParry.cs" t="Include" />
+                <e p="DisplaySequenceByColor.cs" t="Include" />
+                <e p="ParryTargetOrbState.cs" t="Include" />
                 <e p="TriTargetSettings.cs" t="Include" />
               </e>
             </e>

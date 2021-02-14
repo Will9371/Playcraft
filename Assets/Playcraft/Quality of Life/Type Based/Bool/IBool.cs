@@ -1,0 +1,1 @@
+﻿public interface IBool { bool State { get; } }

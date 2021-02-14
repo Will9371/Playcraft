@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace Playcraft.Dialog
 {
     [CreateAssetMenu(menuName = "Playcraft/Dialog/Node", fileName = "Dialog Node")]
     public class DialogNode : ScriptableObject

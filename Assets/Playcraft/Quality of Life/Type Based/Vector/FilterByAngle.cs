@@ -5,25 +5,18 @@ namespace Playcraft
 {
     public class FilterByAngle : MonoBehaviour
     {
-        #region REFACTOR: copied from CheckIfValidAngle
         [SerializeField] Transform referenceTransform;
         [SerializeField] [Range(0f, 360f)] float maxAngle = 45f;
         [SerializeField] [Range(-1f, 1f)] float minDot = .5f;
         
-        float priorMaxAngle;
-        float priorMinDot;
-            
+        ValidateAngleToDot angleDot;
+        
         void OnValidate()
         {
-            if (priorMaxAngle != maxAngle)
-                minDot = VectorMath.AngleToDot(maxAngle);
-            if (priorMinDot != minDot)
-                maxAngle = VectorMath.DotToAngle(minDot);
-                
-            priorMaxAngle = maxAngle;
-            priorMinDot = minDot;
+            if (angleDot == null) angleDot = new ValidateAngleToDot();
+            minDot = angleDot.AngleToDot(maxAngle, minDot);
+            maxAngle = angleDot.DotToAngle(maxAngle, minDot);
         }
-        #endregion
         
         [SerializeField] ColliderListEvent Output;
         

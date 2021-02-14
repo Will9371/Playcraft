@@ -872,6 +872,7 @@ GameObject:
   - component: {fileID: 4060575472080774392}
   - component: {fileID: 2423453664672633767}
   - component: {fileID: 1909386143560336490}
+  - component: {fileID: 8800935401363589080}
   m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
@@ -986,4 +987,42 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1854da47796c50b4db4f8e92e5945c60, type: 2}
     Response:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 8800935401363589080}
+          m_MethodName: Input
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &8800935401363589080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282391513317781302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16587f071aac2dc49bc9797d6923a6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 7278859657316826414}
+  Output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

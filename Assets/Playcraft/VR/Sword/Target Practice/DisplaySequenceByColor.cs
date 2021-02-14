@@ -3,17 +3,23 @@ using UnityEngine;
 
 namespace Playcraft.Examples.SwordTrainer
 {
-    public class DisplayIndexByColor : MonoBehaviour
+    public class DisplaySequenceByColor : MonoBehaviour
     {
         [SerializeField] ColorSO activeColor;
         [SerializeField] ColorSO inactiveColor;
+        [SerializeField] ColorSO completeColor;
         [SerializeField] Element[] elements;
     
         public void Input(int value)
         {
             foreach (var element in elements)
             {
-                var status = value == element.index ? activeColor : inactiveColor;
+                ColorSO status;
+                
+                if (value == element.index) status = activeColor;
+                else if (value > element.index) status = completeColor;
+                else status = inactiveColor;
+                
                 element.color.Input(status);
             }
         }

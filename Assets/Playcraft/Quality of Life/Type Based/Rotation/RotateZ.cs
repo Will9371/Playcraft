@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.Examples.SwordTrainer
+namespace Playcraft
 {
     public class RotateZ : MonoBehaviour
     {
@@ -19,7 +19,7 @@ namespace Playcraft.Examples.SwordTrainer
             if (angle < 0) angle = 360;
             else if (angle > 360) angle = 0;
             
-            rotor.eulerAngles = new Vector3(0, 0, angle);            
+            rotor.eulerAngles = new Vector3(rotor.eulerAngles.x, rotor.eulerAngles.y, angle);            
         }
     }
 }

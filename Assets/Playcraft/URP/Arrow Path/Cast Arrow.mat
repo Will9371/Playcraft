@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cast Arrow
-  m_Shader: {fileID: -6465566751694194690, guid: 34202f22964cc034a9fbd39b1814eac2,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: 233ea417a276c7044957a6798990acaf, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -40,6 +39,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 9c8469a1f29832840bdae01dfc480ab5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: deb458483d9527d4184a24bc30a59712, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -68,6 +71,8 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _ScrollX: 0
+    - _ScrollY: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -79,7 +84,7 @@ Material:
     - Color_32FF2E65: {r: 0, g: 1, b: 0.7149543, a: 0}
     - Vector2_BD6FE019: {r: 20, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
 --- !u!114 &5216212788994427727

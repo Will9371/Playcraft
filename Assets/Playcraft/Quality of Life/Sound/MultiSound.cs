@@ -6,15 +6,12 @@ public class MultiSound : MonoBehaviour
     [SerializeField] AudioClipArray clips;
     AudioSource source;
 
-    private void Start()
+    void Awake()
     {
         source = GetComponent<AudioSource>();
     }
 
-    public void SetClips(AudioClipArray clips)
-    {
-        this.clips = clips;
-    }
+    public void SetClips(AudioClipArray clips) { this.clips = clips; }
 
     public void PlayRandomSeries(int count, float delay, float volume, float pitch)
     {
@@ -42,23 +39,18 @@ public class MultiSound : MonoBehaviour
     public void PlayRandom()
     {
         var index = Random.Range(0, clips.values.Length);
-        PlayClip(index);
-    }
-
-    public void PlayClip(int index)
-    {
-        //Debug.Log("Playing clip: " + index);
-        var randomClip = clips.values[index];
-        source.clip = randomClip;
-        source.PlayOneShot(randomClip);
+        PlayClip(index, source.volume);
     }
     
-    // HACK
     public void PlayRandom(float volume)
     {
         var index = Random.Range(0, clips.values.Length);
-        var randomClip = clips.values[index];
-        source.clip = randomClip;
-        source.PlayOneShot(randomClip, volume);
+        PlayClip(index, volume);
+    }
+    
+    void PlayClip(int index, float volume)
+    {
+        //source.clip = clips.values[index];
+        source.PlayOneShot(clips.values[index], volume);
     }
 }

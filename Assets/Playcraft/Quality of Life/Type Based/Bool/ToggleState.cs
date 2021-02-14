@@ -2,10 +2,11 @@
 
 namespace Playcraft
 {
-    public class ToggleState : MonoBehaviour
+    public class ToggleState : MonoBehaviour, IBool
     {
         bool priorState;
         public bool state;
+        public bool State => state;
         [SerializeField] BoolEvent Output = default;
         
         public void Toggle(bool newState)

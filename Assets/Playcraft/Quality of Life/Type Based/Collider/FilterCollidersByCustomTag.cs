@@ -35,9 +35,9 @@ namespace Playcraft
                 foreach (var validTag in validTags)
                     if (_tagged.HasTag(validTag))
                         validColliders.Add(value);
-                        
-                Response.Invoke(validColliders);
-            }            
+            } 
+            
+            Response.Invoke(validColliders);           
         }
     }
 }

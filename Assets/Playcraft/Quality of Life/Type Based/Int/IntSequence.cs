@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+// INPUT: numbers
+// PROCESS: check if input number is current value in sequence
+// OUTPUT: incremented number, cycle event
 namespace Playcraft
 {
     public class IntSequence : MonoBehaviour

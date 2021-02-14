@@ -22,6 +22,12 @@ namespace Playcraft
             InputIndex(index);
         }
         
+        public void Randomize()
+        {
+            var index = Random.Range(0, values.Length);
+            InputIndex(index);
+        }
+        
         public void InputIndex(int index)
         {
             this.index = index;

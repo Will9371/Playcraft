@@ -12,6 +12,16 @@ public class BlendDirection : MonoBehaviour
     [SerializeField] Color gizmoWeightColor = Color.green;
     [SerializeField] Color gizmoSumColor = Color.magenta;
     
+    bool useOverrideDirection;
+    Vector3 overrideDirection;
+    
+    // HACK: use composition-based switching
+    public void SetOverride(bool applyOverride, Vector3 direction)
+    {
+        useOverrideDirection = applyOverride;
+        overrideDirection = direction;
+    }
+    
     public void SetDirection0(Vector3 value) { SetDirection(value, 0); }
     public void SetDirection1(Vector3 value) { SetDirection(value, 1); }
     public void SetDirection2(Vector3 value) { SetDirection(value, 2); }
@@ -32,6 +42,12 @@ public class BlendDirection : MonoBehaviour
         
     void Blend()
     {
+        if (useOverrideDirection)
+        {
+            Output.Invoke(overrideDirection);
+            return;
+        }
+    
         blendedDirection = Vector3.zero;
         
         foreach (var element in weightedDirections)

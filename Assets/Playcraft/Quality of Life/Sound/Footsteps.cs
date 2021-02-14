@@ -24,31 +24,22 @@ namespace Playcraft
         public void SetGrounded(bool value) { grounded = value; }
 
         bool isMoving;
+        public void SetMovement(bool value) { isMoving = value; }
+
         bool isTurning;
+        public void SetTurning(bool value) { isTurning = value; }
+        
         float nextStepDelay = 0.5f;
 
-        private void Start()
+        void Start()
         {
             sound = GetComponent<MultiSound>();
-            //ground = GetComponent<GroundCheck>();
             movement = movementContainer.GetComponent<IMoveAndRotate>();
             
-            Invoke("RequestStep", nextStepDelay);
+            Invoke(nameof(RequestStep), nextStepDelay);
         }
 
-        public void SetMovement(bool isMoving)
-        {
-            //Debug.Log("Moving = " + isMoving);
-            this.isMoving = isMoving;
-        }
-
-        public void SetTurning(bool isTurning)
-        {
-            //Debug.Log("Turning = " + isTurning);
-            this.isTurning = isTurning;
-        }
-
-        private void RequestStep()
+        void RequestStep()
         {
             if (grounded)
             {
@@ -69,7 +60,7 @@ namespace Playcraft
             if (nextStepDelay > maxStepCheckTime)
                 nextStepDelay = maxStepCheckTime;
             
-            Invoke("RequestStep", nextStepDelay);
+            Invoke(nameof(RequestStep), nextStepDelay);
         }
     }
 }

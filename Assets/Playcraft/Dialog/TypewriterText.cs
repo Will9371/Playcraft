@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Playcraft.Dialog
+namespace Playcraft
 {
     public class TypewriterText : MonoBehaviour
     {
