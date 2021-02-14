@@ -557,6 +557,7 @@
                 <e p="TriTargetSettings.cs" t="Include" />
               </e>
             </e>
+            <e p="VRBody.cs" t="Include" />
             <e p="Wire" t="Include">
               <e p="StretchedWire.cs" t="Include" />
             </e>

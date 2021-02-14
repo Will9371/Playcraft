@@ -30,7 +30,7 @@ namespace Playcraft.VR
                 return;
 
             //Debug.DrawRay(head.position, Vector3.down * height, Color.yellow);
-            if (Physics.Raycast(headToFeet, out hit, height))// && hit.transform.GetComponent<StandSurface>())
+            if (Physics.Raycast(headToFeet, out hit, height))
             {
                 var surface = hit.transform.GetComponent<CustomTags>();
                 if (surface && surface.HasTag(standTag))
