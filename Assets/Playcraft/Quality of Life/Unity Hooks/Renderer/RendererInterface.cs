@@ -13,10 +13,7 @@ namespace Playcraft
         public void SetColor(Color color) { rend.material.color = color; }
         
         public void SetMaterialColor(ColorSO color) { SetMaterialColor(color.value); }
-        public void SetMaterialColor(Color color)
-        {
-            rend.material.SetColor(shaderColorId, color);
-        }
+        public void SetMaterialColor(Color color) { rend.material.SetColor(shaderColorId, color); }
         
         public void SetVisible(bool value)
         {

@@ -18,15 +18,35 @@ namespace Playcraft
         void Start()
         {
             if (!self) self = transform;
-            index = defaultIndex;
-            start = positions[defaultIndex];
+            
+            if (positions.Length > 0)
+            {
+                index = defaultIndex;
+                start = positions[defaultIndex];
+                Input(0f);
+            }
         }
         
+        // Move between internally-stored positions
         public void SetDestination(int newIndex)
         {
+            if (newIndex >= positions.Length)
+            {
+                Debug.LogError("Attempting to set destination index " + 
+                                newIndex + " of " + positions.Length);
+                return;
+            }
+        
             start = positions[index];
             end = positions[newIndex];
             index = newIndex;
+        }
+        
+        // Move towards externally defined location
+        public void SetDestination(Vector3 destination)
+        {
+            start = transform.position;
+            end = destination;
         }
         
         Vector3 position;

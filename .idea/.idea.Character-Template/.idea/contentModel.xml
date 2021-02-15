@@ -257,6 +257,7 @@
               <e p="GetPercentOverTime.cs" t="Include" />
               <e p="Lerp" t="Include">
                 <e p="LerpCapsuleHeight.cs" t="Include" />
+                <e p="LerpColor.cs" t="Include" />
                 <e p="LerpPosition.cs" t="Include" />
                 <e p="LerpRotation.cs" t="Include" />
                 <e p="LerpScale.cs" t="Include" />
@@ -279,6 +280,7 @@
               <e p="Collider" t="Include">
                 <e p="FilterCollidersByCustomTag.cs" t="Include" />
                 <e p="FindClosestCollider.cs" t="Include" />
+                <e p="RespondToColliderWithCustomTag.cs" t="Include" />
                 <e p="SetCapsuleHeight.cs" t="Include" />
                 <e p="TrackColliders.cs" t="Include" />
               </e>
@@ -539,22 +541,28 @@
               </e>
             </e>
             <e p="Sword" t="Include">
-              <e p="AI" t="Include">
-                <e p="AIBlade.cs" t="Include" />
-                <e p="AIBody.cs" t="Include" />
-                <e p="SwingState.cs" t="Include" />
-                <e p="SwingStateMachine.cs" t="Include" />
-                <e p="TelegraphIntent.cs" t="Include" />
-              </e>
-              <e p="ROW" t="Include">
-                <e p="PlayerBlade.cs" t="Include" />
-                <e p="ROWShield.cs" t="Include" />
-              </e>
-              <e p="Target Practice" t="Include">
+              <e p="Cut and Parry" t="Include">
                 <e p="CutAndParry.cs" t="Include" />
                 <e p="DisplaySequenceByColor.cs" t="Include" />
                 <e p="ParryTargetOrbState.cs" t="Include" />
                 <e p="TriTargetSettings.cs" t="Include" />
+              </e>
+              <e p="Drafts" t="Include">
+                <e p="AI" t="Include">
+                  <e p="AIBlade.cs" t="Include" />
+                  <e p="AIBody.cs" t="Include" />
+                  <e p="SwingState.cs" t="Include" />
+                  <e p="SwingStateMachine.cs" t="Include" />
+                  <e p="TelegraphIntent.cs" t="Include" />
+                </e>
+                <e p="ROW" t="Include">
+                  <e p="PlayerBlade.cs" t="Include" />
+                  <e p="ROWShield.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Target Spawner" t="Include">
+                <e p="SwordTarget.cs" t="Include" />
+                <e p="TargetController.cs" t="Include" />
               </e>
             </e>
             <e p="VRBody.cs" t="Include" />

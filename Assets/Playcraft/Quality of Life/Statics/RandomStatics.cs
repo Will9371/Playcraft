@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Playcraft
 {
@@ -17,17 +19,40 @@ namespace Playcraft
             return result;
         }
         
-        public static Vector3 RandomInRange(MinMaxVector3 range)
+        public static Vector3 RandomInRectangle(MinMaxVector3 range)
         {
-            return RandomInRange(range.minimum, range.maximum);
+            return RandomInRectangle(range.min, range.max);
         }
         
-        public static Vector3 RandomInRange(Vector3 min, Vector3 max)
+        public static Vector3 RandomInRectangle(Vector3 min, Vector3 max)
         {
             var x = Random.Range(min.x, max.x);
             var y = Random.Range(min.y, max.y);
             var z = Random.Range(min.z, max.z);
             return new Vector3(x, y, z);
         }
+    
+        public static Vector3 RandomInHollowCylinder(Vector2 widthRange, Vector3 heightRange, Axis axis = Axis.Y)
+        {
+            var height = Random.Range(heightRange.x, heightRange.y);
+            var width = Random.Range(widthRange.x, widthRange.y);
+            var direction = Random.insideUnitCircle.normalized;
+            var widthVector = direction * width;
+            
+            switch (axis)
+            {
+                case Axis.X: return new Vector3(height, widthVector.x, widthVector.y);
+                case Axis.Y: return new Vector3(widthVector.x, height, widthVector.y);
+                case Axis.Z: return new Vector3(widthVector.x, widthVector.y, height);
+                default: return new Vector3(widthVector.x, height, widthVector.y);
+            }
+        }
+    }
+    
+    
+    [Serializable] public struct MinMaxVector3
+    {
+        public Vector3 min;
+        public Vector3 max;
     }
 }
