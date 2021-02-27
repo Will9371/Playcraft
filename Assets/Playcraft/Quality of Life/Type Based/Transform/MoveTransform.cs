@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// DEPRECATE: trivial functionality
 namespace Playcraft
 {
     public class MoveTransform : MonoBehaviour

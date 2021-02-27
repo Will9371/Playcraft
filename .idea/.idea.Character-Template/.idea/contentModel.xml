@@ -54,6 +54,7 @@
               </e>
             </e>
             <e p="AI" t="Include">
+              <e p="AIVision.cs" t="Include" />
               <e p="FaceTarget.cs" t="Include" />
               <e p="Flocking" t="Include">
                 <e p="ReturnToStartPoint.cs" t="Include" />
@@ -188,6 +189,7 @@
             </e>
             <e p="Debug" t="Include">
               <e p="AngleDirectionTest.cs" t="Include" />
+              <e p="DrawDebugLinesFromPoint.cs" t="Include" />
               <e p="PrintToConsole.cs" t="Include" />
               <e p="RotateToAngleTest.cs" t="Include" />
               <e p="RotateTowardsTest.cs" t="Include" />
@@ -249,6 +251,7 @@
               <e p="RandomStatics.cs" t="Include" />
               <e p="RangeMath.cs" t="Include" />
               <e p="StaticAxis.cs" t="Include" />
+              <e p="StaticHelpers.cs" t="Include" />
               <e p="TransformLine.cs" t="Include" />
               <e p="VectorMath.cs" t="Include" />
             </e>
@@ -320,6 +323,7 @@
                 <e p="FindHitsInPath.cs" t="Include" />
                 <e p="FindHitsInPathComponent.cs" t="Include" />
                 <e p="IndexedRaycastHit.cs" t="Include" />
+                <e p="LineOfSight.cs" t="Include" />
                 <e p="ScreenRaycast.cs" t="Include" />
               </e>
               <e p="Rotation" t="Include">
@@ -347,6 +351,7 @@
                 <e p="RespondToTargetDistance.cs" t="Include" />
                 <e p="SetScale.cs" t="Include" />
                 <e p="SwapPositions.cs" t="Include" />
+                <e p="TransformChildContainer.cs" t="Include" />
               </e>
               <e p="Trinary" t="Include">
                 <e p="EdgeDetect.cs" t="Include" />
@@ -560,7 +565,12 @@
                   <e p="ROWShield.cs" t="Include" />
                 </e>
               </e>
+              <e p="Sword" t="Include">
+                <e p="CopyTransform.cs" t="Include" />
+                <e p="JointSetTargetRotation.cs" t="Include" />
+              </e>
               <e p="Target Spawner" t="Include">
+                <e p="RespondToCut.cs" t="Include" />
                 <e p="SwordTarget.cs" t="Include" />
                 <e p="TargetController.cs" t="Include" />
               </e>

@@ -30,8 +30,9 @@ namespace Playcraft.Examples.SwordTrainer
             hitbox.enabled = false;
             deactivateRelay.Input();
             deactivateEffects.Begin();
-            controller.TargetHit();
         }
+        
+        public void DeactivationComplete() { controller.TargetHit(); }
         
         public void Move(Vector3 destination, float duration)
         {

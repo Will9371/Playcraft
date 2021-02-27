@@ -251,7 +251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5937453546863966537
 Transform:
   m_ObjectHideFlags: 0
@@ -642,7 +642,9 @@ GameObject:
   m_Component:
   - component: {fileID: 524496317257542616}
   - component: {fileID: 1770855687387695025}
+  - component: {fileID: 512333943358472801}
   - component: {fileID: 42163852264912102}
+  - component: {fileID: 7425164250851779234}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -685,6 +687,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &512333943358472801
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766928375544257117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &42163852264912102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,6 +719,36 @@ MonoBehaviour:
   deactivateRelay: {fileID: 2782836667975697678}
   deactivateEffects: {fileID: 2365277632753737538}
   hitbox: {fileID: 2928607934959849712}
+--- !u!114 &7425164250851779234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766928375544257117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db8ed0246e65b44284be173c4a8118b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validTags:
+  - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
+  - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+  minimumSpeed: 2
+  Success:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 42163852264912102}
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7016989377324082879
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +760,7 @@ GameObject:
   - component: {fileID: 3696778730606987427}
   - component: {fileID: 2365277632753737538}
   - component: {fileID: 2782836667975697678}
+  - component: {fileID: 3894127637608374809}
   m_Layer: 0
   m_Name: Deactivate
   m_TagString: Untagged
@@ -748,7 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4060ae13faf026b47b9a653c561f42d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progress: {fileID: 0}
+  progress: {fileID: 3894127637608374809}
   duration: 1
   Percent:
     m_PersistentCalls:
@@ -812,3 +858,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3894127637608374809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7016989377324082879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849e54a022621f94790d785df321882f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - percent: 1
+    OnReached:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 42163852264912102}
+          m_MethodName: DeactivationComplete
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  overrideInputValidation: 0

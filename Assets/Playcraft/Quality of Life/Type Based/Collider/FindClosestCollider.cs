@@ -1,29 +1,45 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class FindClosestCollider : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] Transform self;
-    [SerializeField] ColliderEvent Output;
-
-    Collider closest;
-    float shortestDistance;
-    float distance;
-
-    public void Input(List<Collider> others)
+    public class FindClosestCollider : MonoBehaviour
     {
-        closest = null;
-        shortestDistance = Mathf.Infinity;
+        [SerializeField] Transform self;
+        [SerializeField] ColliderEvent Output;
         
-        foreach (var other in others)
-        {
-            distance = Vector3.Distance(self.position, other.transform.position);
-            if (distance >= shortestDistance) continue;
+        Find_Closest_Collider process;
+        
+        void Awake() { process = new Find_Closest_Collider(self); }
+
+        public void Input(List<Collider> others) { Output.Invoke(process.Input(others)); }
+    }
+
+    public class Find_Closest_Collider
+    {
+        Transform self;
             
-            closest = other;
-            shortestDistance = distance;
-        }
-        
-        Output.Invoke(closest);
+        public Find_Closest_Collider(Transform self) { this.self = self; }
+
+        Collider closest;
+        float shortestDistance;
+        float distance;
+
+        public Collider Input(List<Collider> others)
+        {
+            closest = null;
+            shortestDistance = Mathf.Infinity;
+            
+            foreach (var other in others)
+            {
+                distance = Vector3.Distance(self.position, other.transform.position);
+                if (distance >= shortestDistance) continue;
+                
+                closest = other;
+                shortestDistance = distance;
+            }
+            
+            return closest;
+        }        
     }
 }

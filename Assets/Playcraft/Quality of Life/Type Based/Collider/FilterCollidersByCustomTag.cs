@@ -6,7 +6,7 @@ namespace Playcraft
 {
     public class FilterCollidersByCustomTag : MonoBehaviour
     {
-        [SerializeField] Binding[] bindings;
+        [SerializeField] CustomTagColliderFilter[] bindings;
                         
         public void Input(List<Collider> values)
         {
@@ -15,15 +15,36 @@ namespace Playcraft
         }
     }
     
-    [Serializable] public class Binding
+    [Serializable] public class CustomTagColliderFilter
     {
         [SerializeField] SO[] validTags;
         [SerializeField] ColliderListEvent Response;
         
+        Custom_Tag_Collider_Filter _process;
+        Custom_Tag_Collider_Filter process
+        {
+            get
+            {
+                if (_process == null)
+                    _process = new Custom_Tag_Collider_Filter(validTags);
+                
+                return _process;
+            }
+        }
+                
+        public void Input(List<Collider> values) { Response.Invoke(process.Input(values)); }
+    }
+    
+    public class Custom_Tag_Collider_Filter
+    {
+        SO[] validTags;
+        
+        public Custom_Tag_Collider_Filter(SO[] validTags) { this.validTags = validTags; }
+        
         CustomTags _tagged; 
         List<Collider> validColliders = new List<Collider>();
         
-        public void Input(List<Collider> values)
+        public List<Collider> Input(List<Collider> values)
         {
             validColliders.Clear();
 
@@ -35,9 +56,9 @@ namespace Playcraft
                 foreach (var validTag in validTags)
                     if (_tagged.HasTag(validTag))
                         validColliders.Add(value);
-            } 
+            }
             
-            Response.Invoke(validColliders);           
+            return validColliders;             
         }
     }
 }
