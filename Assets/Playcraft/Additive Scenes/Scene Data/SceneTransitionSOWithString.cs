@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Playcraft.Scene;
 
 namespace Playcraft.Examples.SceneControl
 {

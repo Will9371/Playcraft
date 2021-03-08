@@ -54,6 +54,8 @@
               </e>
             </e>
             <e p="AI" t="Include">
+              <e p="AIState.cs" t="Include" />
+              <e p="AIStateMachine.cs" t="Include" />
               <e p="AIVision.cs" t="Include" />
               <e p="FaceTarget.cs" t="Include" />
               <e p="Flocking" t="Include">
@@ -227,6 +229,7 @@
               <e p="AudioClipArray.cs" t="Include" />
               <e p="BoolSO.cs" t="Include" />
               <e p="ColorSO.cs" t="Include" />
+              <e p="FloatArray.cs" t="Include" />
               <e p="IntArray.cs" t="Include" />
               <e p="ObjectArraySO.cs" t="Include" />
               <e p="SO.cs" t="Include" />
@@ -545,11 +548,13 @@
                 <e p="TeleportRig.cs" t="Include" />
               </e>
             </e>
-            <e p="Sword" t="Include">
+            <e p="Sword Trainer" t="Include">
               <e p="Cut and Parry" t="Include">
                 <e p="CutAndParry.cs" t="Include" />
                 <e p="DisplaySequenceByColor.cs" t="Include" />
+                <e p="ParrySetup.cs" t="Include" />
                 <e p="ParryTargetOrbState.cs" t="Include" />
+                <e p="SetParry.cs" t="Include" />
                 <e p="TriTargetSettings.cs" t="Include" />
               </e>
               <e p="Drafts" t="Include">
@@ -566,8 +571,11 @@
                 </e>
               </e>
               <e p="Sword" t="Include">
-                <e p="CopyTransform.cs" t="Include" />
-                <e p="JointSetTargetRotation.cs" t="Include" />
+                <e p="AccumulateVelocity.cs" t="Include" />
+                <e p="Joint Based" t="Include">
+                  <e p="CopyTransform.cs" t="Include" />
+                  <e p="JointSetTargetRotation.cs" t="Include" />
+                </e>
               </e>
               <e p="Target Spawner" t="Include">
                 <e p="RespondToCut.cs" t="Include" />

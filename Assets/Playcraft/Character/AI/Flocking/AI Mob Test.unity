@@ -3181,11 +3181,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7339011870899092075, guid: 782cbaabfd535484884d5761e7599743,
-        type: 3}
-      propertyPath: maxAngle
-      value: 120
-      objectReference: {fileID: 0}
     - target: {fileID: 7467440755916005649, guid: 782cbaabfd535484884d5761e7599743,
         type: 3}
       propertyPath: weightedDirections.Array.size

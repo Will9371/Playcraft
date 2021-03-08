@@ -9,7 +9,7 @@ namespace Playcraft
         [SerializeField] int defaultIndex;
         [SerializeField] bool useLocal = true;
         [Tooltip("Enter euler angles, will be automatically converted to Quaternions")]
-        [SerializeField] Vector3[] _rotations;
+        public Vector3[] _rotations;
         
         [Header("Debug")]
         [SerializeField] Vector3 _start;
@@ -27,14 +27,16 @@ namespace Playcraft
             start = rotations[defaultIndex];
         }
         
-        void OnValidate()
+        void OnValidate() { EulerToQuaternion(); }
+        
+        void EulerToQuaternion()
         {
             start = Quaternion.Euler(_start);
             end = Quaternion.Euler(_end);
         
             rotations = new Quaternion[_rotations.Length];
             for (int i = 0; i < rotations.Length; i++)
-                rotations[i] = Quaternion.Euler(_rotations[i]);            
+                rotations[i] = Quaternion.Euler(_rotations[i]);                
         }
         
         public void SetDestination(int newIndex)
@@ -52,6 +54,17 @@ namespace Playcraft
             rotation = Quaternion.Slerp(start, end, percent);
             if (useLocal) self.localRotation = rotation;
             else self.rotation = rotation;
+        }
+        
+        public void SetDestinations(Vector3Array input) { SetDestinations(input.values); }
+        public void SetDestinations(Vector3[] input)
+        {
+            _rotations = new Vector3[input.Length];
+            
+            for (int i = 0; i < input.Length; i++)
+                _rotations[i] = input[i];
+                
+            EulerToQuaternion();          
         }
     }
 }

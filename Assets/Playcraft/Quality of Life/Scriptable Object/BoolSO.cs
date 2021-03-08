@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Playcraft/Data Types/Bool", fileName = "Switch")]
-public class BoolSO : ScriptableObject
+namespace Playcraft
 {
-    public bool value;
+    [CreateAssetMenu(menuName = "Playcraft/Data Types/Bool", fileName = "Switch")]
+    public class BoolSO : ScriptableObject { public bool value; }
 }

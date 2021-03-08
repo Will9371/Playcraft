@@ -13,9 +13,11 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] float spreadDistance;
         [SerializeField] float targetDepth;
         [SerializeField] float targetScale = 1f;
+        [SerializeField] FloatArray angles;
         
         [Header("References")]
         [SerializeField] RotateToAngle rotor;
+        [SerializeField] GetFloatFromArray angler;
         [SerializeField] GetPercentOverTime extension;
         [SerializeField] GetPercentOverTime retraction;
         [SerializeField] TimedEvent delayExtend;
@@ -24,14 +26,13 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] LerpPosition exitTarget;
         [SerializeField] Transform[] targets;
         
-        void OnValidate()
-        {
-            Refresh();
-        }
+        void OnValidate() { Refresh(); }
         
         void Refresh()
         {
             rotor.SetRotationSpeed(rotationSpeed);
+            angler.SetValues(angles);
+            
             extension.SetDuration(timeToExtend);
             retraction.SetDuration(timeToRetract);
             if (delayExtend) delayExtend.SetTime(delayExtendTime);

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Playcraft
+namespace Playcraft.Scene
 {
     public class FetchScenesIfNotPresent : MonoBehaviour
     {

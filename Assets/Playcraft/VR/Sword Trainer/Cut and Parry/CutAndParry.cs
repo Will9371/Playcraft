@@ -5,11 +5,11 @@ namespace Playcraft.Examples.SwordTrainer
     public class CutAndParry : MonoBehaviour
     {
         [SerializeField] GetPercentOverTime cutPrompt;
-        [SerializeField] Relay parryPrompt;
+        [SerializeField] SetParry parryPrompt;
         
         void Start() { cutPrompt.Begin(); }
         
-        public void CutComplete() { parryPrompt.Input(); }
+        public void CutComplete() { parryPrompt.SetRandomParry(); }
         
         public void ParryComplete() { cutPrompt.Begin(); }
     }

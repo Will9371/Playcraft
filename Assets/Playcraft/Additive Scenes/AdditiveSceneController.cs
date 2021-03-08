@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-namespace Playcraft
+namespace Playcraft.Scene
 {
     public class AdditiveSceneController : Singleton<AdditiveSceneController>
     {

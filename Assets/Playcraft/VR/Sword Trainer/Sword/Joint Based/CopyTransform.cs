@@ -15,10 +15,12 @@ public class CopyTransform : MonoBehaviour
     void Awake()
     {
         if (useRigidbody && rb == null)
+        {
             rb = GetComponent<Rigidbody>();
-        if (rb == null)
-            Debug.LogError(gameObject.name + " " +
-            "CopyTransform set to use rigidbody but no rigidbody attached" );
+            if (rb == null)
+                Debug.LogError(gameObject.name + " " +
+                "CopyTransform set to use rigidbody but no rigidbody attached" );
+        }
     }
 
     void Update()

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Playcraft
+namespace Playcraft.Scene
 {
     public class SingleSceneController : MonoBehaviour
     {
@@ -12,7 +12,7 @@ namespace Playcraft
 
         public void ResetScene()
         {
-            Scene scene = SceneManager.GetActiveScene();
+            UnityEngine.SceneManagement.Scene scene = SceneManager.GetActiveScene();
             SetScene(scene.name);
         }
     }

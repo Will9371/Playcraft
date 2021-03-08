@@ -4,11 +4,10 @@ namespace Playcraft
 {
     public class GetFloatFromArray : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] float[] values;
         [SerializeField] FloatEvent Output;
-        #pragma warning restore 0649
         
+        public void SetValues(FloatArray values) { SetValues(values.values); }
         public void SetValues(float[] values) { this.values = values; }
         
         public void Input(int index) 

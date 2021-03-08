@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace Playcraft.Scene
 {
     public class AccessAdditiveSceneController : MonoBehaviour
     {

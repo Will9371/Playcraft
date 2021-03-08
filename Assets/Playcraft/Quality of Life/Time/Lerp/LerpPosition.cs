@@ -8,7 +8,7 @@ namespace Playcraft
         [SerializeField] Transform self;
         [SerializeField] int defaultIndex;
         [SerializeField] bool useLocal = true;
-        [SerializeField] Vector3[] positions;
+        public Vector3[] positions;
 
         [Header("Debug")]
         public Vector3 start;
@@ -57,6 +57,15 @@ namespace Playcraft
             position = Vector3.Lerp(start, end, percent);
             if (useLocal) self.localPosition = position;
             else self.position = position;
+        }
+        
+        public void SetDestinations(Vector3Array input) { SetDestinations(input.values); }
+        public void SetDestinations(Vector3[] input)
+        {
+            positions = new Vector3[input.Length];
+            
+            for (int i = 0; i < input.Length; i++)
+                positions[i] = input[i];            
         }
     }
 }

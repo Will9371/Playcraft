@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-namespace Playcraft
+
+namespace Playcraft.Scene
 {
     public class RespondToLoadedScene : MonoBehaviour
     {
@@ -12,7 +13,7 @@ namespace Playcraft
         void OnEnable() { SceneManager.sceneLoaded += OnSceneLoaded; }
         void OnDisable() { SceneManager.sceneLoaded -= OnSceneLoaded; }
         
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
         {
             foreach (var binding in bindings)
                 if (binding.scene.value == scene.name)

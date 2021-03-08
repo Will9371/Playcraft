@@ -13,7 +13,7 @@ namespace Playcraft
         {
             priorState = state == null ? value : state;
             state = value;
-            OnStateEnter.Invoke(value);
+            OnStateEnter?.Invoke(value);
         }
         
         public void ReturnToPriorState()

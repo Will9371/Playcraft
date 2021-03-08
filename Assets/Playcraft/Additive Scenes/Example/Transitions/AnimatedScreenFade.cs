@@ -3,18 +3,16 @@ using Playcraft.Examples.SceneControl;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft
+namespace Playcraft.Scene
 {
     [Serializable] public class SceneTransitionSOEvent : UnityEvent<SceneTransitionSO> { }
 
     public class AnimatedScreenFade : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Animator animator;
         [SerializeField] AnimationProgressEvent fadeOut;
         [SerializeField] SceneTransitionSOEvent ExitComplete;
         [SerializeField] UnityEvent EnterBegin;
-        #pragma warning restore 0649
         
         AdditiveSceneController scene => AdditiveSceneController.instance;
         

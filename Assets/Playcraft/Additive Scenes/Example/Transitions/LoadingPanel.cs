@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Playcraft.Scene;
 
 namespace Playcraft.Examples.SceneControl
 {
     public class LoadingPanel : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Image background;
         [SerializeField] Text description;
-        #pragma warning restore 0649
         
         SceneTransitionSOWithString transition;
 

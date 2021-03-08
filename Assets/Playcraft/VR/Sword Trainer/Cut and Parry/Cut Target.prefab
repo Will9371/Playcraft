@@ -1238,7 +1238,9 @@ MonoBehaviour:
   spreadDistance: 1.2
   targetDepth: 0.2
   targetScale: 0.4
+  angles: {fileID: 11400000, guid: c6cf83cb62cb6aa408598747384c4549, type: 2}
   rotor: {fileID: 1288923609500416055}
+  angler: {fileID: 2762041347453293931}
   extension: {fileID: 8802578710299557301}
   retraction: {fileID: 5310363890778013997}
   delayExtend: {fileID: 6801626920560648578}
