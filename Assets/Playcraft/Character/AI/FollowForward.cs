@@ -11,13 +11,11 @@ namespace Playcraft
         public void SetTarget(Transform target) { this.target = target; }
         public void ClearTarget() { target = null; }
         
-        #pragma warning disable 0649
         [SerializeField] Vector3 forwardVector = new Vector3(0, 0, 1);
         [SerializeField] RangeCheck followRange;
         [SerializeField] Vector3Event OnMove;
-        #pragma warning restore 0649
         
-        float targetDistance { get { return Vector3.Distance(transform.position, target.position); } }
+        float targetDistance => Vector3.Distance(transform.position, target.position); 
         
         bool inRange;
         

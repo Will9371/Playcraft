@@ -307,6 +307,7 @@
               </e>
               <e p="GameObject" t="Include">
                 <e p="GetGameObjectFromArray.cs" t="Include" />
+                <e p="SetObjectsActive.cs" t="Include" />
               </e>
               <e p="Int" t="Include">
                 <e p="Counter.cs" t="Include" />
@@ -572,10 +573,14 @@
               </e>
               <e p="Sword" t="Include">
                 <e p="AccumulateVelocity.cs" t="Include" />
+                <e p="ISwingTarget.cs" t="Include" />
                 <e p="Joint Based" t="Include">
                   <e p="CopyTransform.cs" t="Include" />
                   <e p="JointSetTargetRotation.cs" t="Include" />
                 </e>
+                <e p="SwingTarget.cs" t="Include" />
+                <e p="TransferAverageVelocityOnTriggerEnter.cs" t="Include" />
+                <e p="TransferVelocityOnTriggerEnter.cs" t="Include" />
               </e>
               <e p="Target Spawner" t="Include">
                 <e p="RespondToCut.cs" t="Include" />
@@ -583,6 +588,7 @@
                 <e p="TargetController.cs" t="Include" />
               </e>
             </e>
+            <e p="ValidateVR.cs" t="Include" />
             <e p="VRBody.cs" t="Include" />
             <e p="Wire" t="Include">
               <e p="StretchedWire.cs" t="Include" />
