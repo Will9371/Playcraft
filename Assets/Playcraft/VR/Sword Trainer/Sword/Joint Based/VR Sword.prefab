@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4292041661054756654}
   - component: {fileID: 8961790346896124162}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Edge Alignment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200270331308167549}
   - component: {fileID: 6106055144578322004}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Velocity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 8951941258053321742}
   - component: {fileID: 8951941258053321741}
   - component: {fileID: 5573547852292408342}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8951941258530509362}
   - component: {fileID: 8951941258530509363}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8951941258944503387}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Strike Measurements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 8951941259013378777}
   - component: {fileID: 8951941259013378779}
   - component: {fileID: 8951941259013378778}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8951941259022203570}
   - component: {fileID: 8951941259022203571}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Hilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8951941259469809379}
-  m_Layer: 8
+  - component: {fileID: 5836355014045268297}
+  m_Layer: 0
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,6 +555,23 @@ Transform:
   m_Father: {fileID: 8951941258053321736}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5836355014045268297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951941259469809378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f0c379ab1ea2b4f8e0d38c77e53ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownColliders:
+  - {fileID: 8951941259022203571}
+  - {fileID: 8951941259013378779}
+  - {fileID: 8951941258530509363}
+  otherColliders: []
 --- !u!1001 &8951941259291039267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -624,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 582762e736e743a4caf0770f6344bbc4,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 582762e736e743a4caf0770f6344bbc4, type: 3}

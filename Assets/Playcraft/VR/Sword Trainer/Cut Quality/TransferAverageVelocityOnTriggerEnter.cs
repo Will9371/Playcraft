@@ -12,10 +12,8 @@ namespace Playcraft
             var target = other.GetComponent<ISwingTarget>();
             if (target == null) return;
             
-            target.SetHitSpeed(velocity.averageMagnitude);
-            target.SetHitDirection(edge.averageDirection);
-            target.SetHitEdge(edge.edgeAlignment);
-            target.Refresh();
+            var swingData = new SwingData(velocity.averageMagnitude, edge.averageDirection, edge.edgeAlignment);
+            target.SendData(swingData);
         }
     }
 }

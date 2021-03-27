@@ -6,9 +6,9 @@ namespace Playcraft.Pooling
     public class ObjectPoolMaster : Singleton<ObjectPoolMaster>
     {
         [SerializeField] ObjectPoolData[] pools = default;
-        private Dictionary<GameObject, ObjectSpawner> objectPoolDict = new Dictionary<GameObject, ObjectSpawner>();
+        Dictionary<GameObject, ObjectSpawner> objectPoolDict = new Dictionary<GameObject, ObjectSpawner>();
 
-        private void Start()
+        void Start()
         {
             foreach (var pool in pools)
             {
@@ -17,7 +17,7 @@ namespace Playcraft.Pooling
             }
         }
 
-        private void GeneratePool(ObjectPoolData data)
+        void GeneratePool(ObjectPoolData data)
         {    
             GameObject pool = new GameObject();
             pool.name = data.prefab.name;
@@ -26,7 +26,7 @@ namespace Playcraft.Pooling
             if (data.prefab == null)
                 Debug.LogError("Prefab not set for " + pool.name + " object pool");
                 
-            if (data.isOnCanvas) 
+            if (data.isOnOverlayCanvas) 
             {
                 var canvas = pool.AddComponent<Canvas>();
                 canvas.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -42,10 +42,7 @@ namespace Playcraft.Pooling
         {
             ObjectSpawner spawner;
             if (objectPoolDict.TryGetValue(obj, out spawner))
-            {
-                //Debug.Log("Pool spawn method reached " + spawner.name);
                 return spawner.Spawn(position);
-            }
 
             Debug.LogError("Matching prefab not found in object pooling system " + obj.name);
             return null;

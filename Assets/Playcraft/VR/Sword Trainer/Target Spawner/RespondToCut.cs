@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// * Consider Removal (or rename for generality)
 namespace Playcraft.VR
 {
     public class RespondToCut : MonoBehaviour

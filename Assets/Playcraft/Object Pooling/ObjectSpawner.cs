@@ -25,7 +25,7 @@ namespace Playcraft.Pooling
         {
             GameObject selected = GetPooledObject();
 
-            if (data.isOnCanvas)
+            if (data.isOnOverlayCanvas)
             {
                 var rect = selected.transform as RectTransform;
                 if (rect != null) rect.anchoredPosition3D = spawnLoc;
@@ -33,7 +33,7 @@ namespace Playcraft.Pooling
             else
                 selected.transform.position = spawnLoc;
             
-            selected.transform.SetParent(gameObject.transform);  
+            selected.transform.SetParent(transform);  
             selected.SetActive(true);
 
             Rigidbody rb = selected.GetComponent<Rigidbody>();

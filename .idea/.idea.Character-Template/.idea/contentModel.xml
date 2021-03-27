@@ -204,6 +204,14 @@
               <e p="MovingAverage.cs" t="Include" />
               <e p="NormalizedPercent.cs" t="Include" />
             </e>
+            <e p="Lerp" t="Include">
+              <e p="LerpCapsuleHeight.cs" t="Include" />
+              <e p="LerpColor.cs" t="Include" />
+              <e p="LerpPosition.cs" t="Include" />
+              <e p="LerpRotation.cs" t="Include" />
+              <e p="LerpScale.cs" t="Include" />
+              <e p="Remap.cs" t="Include" />
+            </e>
             <e p="Logic" t="Include">
               <e p="BinaryConditions.cs" t="Include" />
               <e p="BooleanLogic.cs" t="Include" />
@@ -217,6 +225,7 @@
               <e p="CheckIfValidAngle.cs" t="Include" />
               <e p="GetCollisionVector.cs" t="Include" />
               <e p="GetVelocity.cs" t="Include" />
+              <e p="IgnoreCollision.cs" t="Include" />
               <e p="JumpPhysics.cs" t="Include" />
               <e p="MovePhysics.cs" t="Include" />
               <e p="MovePositionRB.cs" t="Include" />
@@ -261,13 +270,6 @@
             <e p="Time" t="Include">
               <e p="GetDuration.cs" t="Include" />
               <e p="GetPercentOverTime.cs" t="Include" />
-              <e p="Lerp" t="Include">
-                <e p="LerpCapsuleHeight.cs" t="Include" />
-                <e p="LerpColor.cs" t="Include" />
-                <e p="LerpPosition.cs" t="Include" />
-                <e p="LerpRotation.cs" t="Include" />
-                <e p="LerpScale.cs" t="Include" />
-              </e>
               <e p="ProgressEvent.cs" t="Include" />
               <e p="RangedRepeatingTimedEvent.cs" t="Include" />
               <e p="TimedEvent.cs" t="Include" />
@@ -558,6 +560,15 @@
                 <e p="SetParry.cs" t="Include" />
                 <e p="TriTargetSettings.cs" t="Include" />
               </e>
+              <e p="Cut Quality" t="Include">
+                <e p="AccumulateVelocity.cs" t="Include" />
+                <e p="FloatingNumber.cs" t="Include" />
+                <e p="ISwingTarget.cs" t="Include" />
+                <e p="MinMaxFloatTracker.cs" t="Include" />
+                <e p="SwingTargetDummy.cs" t="Include" />
+                <e p="SwingTargetTest.cs" t="Include" />
+                <e p="TransferAverageVelocityOnTriggerEnter.cs" t="Include" />
+              </e>
               <e p="Drafts" t="Include">
                 <e p="AI" t="Include">
                   <e p="AIBlade.cs" t="Include" />
@@ -572,15 +583,10 @@
                 </e>
               </e>
               <e p="Sword" t="Include">
-                <e p="AccumulateVelocity.cs" t="Include" />
-                <e p="ISwingTarget.cs" t="Include" />
                 <e p="Joint Based" t="Include">
                   <e p="CopyTransform.cs" t="Include" />
                   <e p="JointSetTargetRotation.cs" t="Include" />
                 </e>
-                <e p="SwingTarget.cs" t="Include" />
-                <e p="TransferAverageVelocityOnTriggerEnter.cs" t="Include" />
-                <e p="TransferVelocityOnTriggerEnter.cs" t="Include" />
               </e>
               <e p="Target Spawner" t="Include">
                 <e p="RespondToCut.cs" t="Include" />

@@ -7,6 +7,6 @@ namespace Playcraft.Pooling
     {
         public GameObject prefab;
         public int startSize;
-        public bool isOnCanvas;
+        public bool isOnOverlayCanvas;
     }
 }

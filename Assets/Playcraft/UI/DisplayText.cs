@@ -9,5 +9,6 @@ namespace Playcraft
         
         public void Display(string value) { display.text = value; }
         public void Display(int value) { display.text = value.ToString(); }
+        public void DisplayF0(float value) { display.text = value.ToString("F0"); }
     }
 }
