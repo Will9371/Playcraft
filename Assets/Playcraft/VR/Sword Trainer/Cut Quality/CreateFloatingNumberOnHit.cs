@@ -2,8 +2,8 @@
 using Playcraft;
 using Playcraft.Pooling;
 
-// * Rename
-public class SwingTargetDummy : MonoBehaviour, ISwingTarget
+
+public class CreateFloatingNumberOnHit : MonoBehaviour, ISwingTarget
 {
     [SerializeField] GameObject floaterPrefab;
     [SerializeField] Transform canvas;

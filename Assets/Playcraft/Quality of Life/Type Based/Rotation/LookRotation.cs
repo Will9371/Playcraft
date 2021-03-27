@@ -5,7 +5,7 @@ namespace Playcraft
     public class LookRotation : MonoBehaviour
     {
         [SerializeField] Transform self;
-        [SerializeField] Vector3 axis;
+        [SerializeField] Vector3 axis = Vector3.up;
         
         void Start()
         {

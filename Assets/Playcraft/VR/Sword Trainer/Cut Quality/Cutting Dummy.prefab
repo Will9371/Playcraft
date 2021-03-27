@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 4027404119084075537}
   - component: {fileID: 2391537771210998103}
   - component: {fileID: 6829353514128957319}
+  - component: {fileID: 6326769364658484315}
   m_Layer: 5
   m_Name: Health Text
   m_TagString: Untagged
@@ -377,6 +378,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 4027404119084075537}
+--- !u!114 &6326769364658484315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599087421799519583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 0.5, y: 0.5}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &4983504332519921645
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,6 @@ public class MinMaxFloatTracker : MonoBehaviour
     [SerializeField] FloatEvent OnChangeValue;
     [SerializeField] UnityEvent OnReachMinimum;
     
-        
     float _value;
     public float Value
     {
@@ -31,6 +30,12 @@ public class MinMaxFloatTracker : MonoBehaviour
     }
     
     void Start() { if (maxOnStart) SetToMax(); }
+    
+    public void SetMax(float value) 
+    { 
+        range.y = value; 
+        SetToMax();
+    } 
     
     public void SetToMax() 
     {

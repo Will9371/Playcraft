@@ -562,10 +562,10 @@
               </e>
               <e p="Cut Quality" t="Include">
                 <e p="AccumulateVelocity.cs" t="Include" />
+                <e p="CreateFloatingNumberOnHit.cs" t="Include" />
                 <e p="FloatingNumber.cs" t="Include" />
                 <e p="ISwingTarget.cs" t="Include" />
                 <e p="MinMaxFloatTracker.cs" t="Include" />
-                <e p="SwingTargetDummy.cs" t="Include" />
                 <e p="SwingTargetTest.cs" t="Include" />
                 <e p="TransferAverageVelocityOnTriggerEnter.cs" t="Include" />
               </e>
