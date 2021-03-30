@@ -6,7 +6,7 @@ namespace Playcraft.VR
     public class ValidateVR : MonoBehaviour
     {
         [SerializeField] bool vrEnabled;
-        [SerializeField] SetObjectsActive activateObjects;
+        [SerializeField] BoolEvent Relay;
         
         XRGeneralSettings settings => XRGeneralSettings.Instance;
         
@@ -19,7 +19,7 @@ namespace Playcraft.VR
                 return;
 
             settings.InitManagerOnStart = vrEnabled;
-            activateObjects.Input(vrEnabled);
+            Relay.Invoke(vrEnabled);
             
             initialized = true;
             priorEnabled = vrEnabled;

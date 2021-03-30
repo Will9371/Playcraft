@@ -25,20 +25,22 @@ public class FloatingNumber : MonoBehaviour
         if (!score) Debug.Log("FloatingNumber on " + gameObject + " requires a text component");
     }
 
-    public void Begin(Vector3 direction, float value)
+    public void Begin(Transform source, Vector3 direction, float value)
     {        
         startTime = Time.time;
-        moveDirection = new Vector3(direction.x, -direction.y, direction.z);
+        
+        var startingOffset = -direction * startDistance; 
+        transform.Translate(startingOffset);
+        moveDirection = (transform.position - source.position).normalized;
         
         score.text = value.ToString("F1");
         score.fontSize = Mathf.RoundToInt(remapFontSize.Remap(value));
         score.color = remapColor.Remap(value);
-        transform.Translate(moveDirection * startDistance);
     }
     
     void Update()
     {
-        transform.Translate(step);
+        transform.Translate(step, Space.World);
         if (percent > 1f) gameObject.SetActive(false);
     }
 }

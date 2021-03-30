@@ -7,10 +7,14 @@ public class CreateFloatingNumberOnHit : MonoBehaviour, ISwingTarget
 {
     [SerializeField] GameObject floaterPrefab;
     [SerializeField] Transform canvas;
+    [SerializeField] Transform faceTarget;
     [SerializeField] RectTransform template;
     [SerializeField] FloatEvent RelayScore;
     
     ObjectPoolMaster spawner => ObjectPoolMaster.instance;
+    
+    public void SetFloaterCanvas(Transform value) { canvas = value; }
+    public void SetFloaterFaceTarget(Transform value) { faceTarget = value; }
 
     public void SendData(SwingData data)
     {
@@ -24,8 +28,14 @@ public class CreateFloatingNumberOnHit : MonoBehaviour, ISwingTarget
         rect.localRotation = template.localRotation;
         rect.localScale = template.localScale;
         
-        var floater = floaterObj.GetComponent<FloatingNumber>();        
-        floater.Begin(data.direction, score);
+        var floater = floaterObj.GetComponent<FloatingNumber>();      
+        floater.Begin(transform, data.direction, score);
+        
+        if (faceTarget)
+        {
+            var facing = floaterObj.GetComponent<FaceTargetInstant>();
+            facing.SetTarget(faceTarget);
+        }
         
         RelayScore.Invoke(score);
     }

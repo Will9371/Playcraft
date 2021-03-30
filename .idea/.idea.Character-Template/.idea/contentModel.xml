@@ -552,6 +552,7 @@
               </e>
             </e>
             <e p="Sword Trainer" t="Include">
+              <e p="CircleTarget.cs" t="Include" />
               <e p="Cut and Parry" t="Include">
                 <e p="CutAndParry.cs" t="Include" />
                 <e p="DisplaySequenceByColor.cs" t="Include" />
@@ -582,6 +583,7 @@
                   <e p="ROWShield.cs" t="Include" />
                 </e>
               </e>
+              <e p="FaceTargetInstant.cs" t="Include" />
               <e p="Sword" t="Include">
                 <e p="Joint Based" t="Include">
                   <e p="CopyTransform.cs" t="Include" />

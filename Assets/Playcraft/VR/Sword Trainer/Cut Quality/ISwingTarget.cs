@@ -5,10 +5,6 @@ namespace Playcraft
     public interface ISwingTarget
     {
         void SendData(SwingData data);
-        //void SetHitSpeed(float value);
-        //void SetHitDirection(Vector3 value);
-        //void SetHitEdge(float value);
-        //void Refresh();
     }
     
     public struct SwingData

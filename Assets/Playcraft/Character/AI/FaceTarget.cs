@@ -8,11 +8,9 @@ namespace Playcraft
         public void SetTarget(Transform target) { this.target = target; }
         public void ClearTarget() { target = null; }
 
-        #pragma warning disable 0649
         [SerializeField] float minStartTurnAngle = 45f;
         [SerializeField] float minStopTurnAngle = 2f;
         [SerializeField] Vector3Event OnTurn;
-        #pragma warning restore 0649
         
         Vector3 forward => transform.forward;
         Vector3 targetVector => !target ? Vector3.zero : target.position - transform.position; 

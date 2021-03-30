@@ -11,11 +11,14 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] Vector2 heightRange;
         [SerializeField] float moveDuration;
         [SerializeField] Transform player;
+        [SerializeField] Transform worldCanvas;
         
         ObjectPoolMaster spawner => ObjectPoolMaster.instance;
         List<SwordTarget> targets = new List<SwordTarget>();
         
         int hitCount;
+        
+        public void SetPlayer(Transform value) { player = value; }
         
         public void AddTargets(int count)
         {
@@ -28,7 +31,7 @@ namespace Playcraft.Examples.SwordTrainer
             var position = RandomStatics.RandomInHollowCylinder(distanceRange, heightRange);
             var targetObj = spawner.Spawn(targetPrefab, position);
             var target = targetObj.GetComponent<SwordTarget>();
-            target.Initialize(this);
+            target.Initialize(this, player, worldCanvas);
             targets.Add(target);
         }
             
@@ -52,15 +55,16 @@ namespace Playcraft.Examples.SwordTrainer
         public void MoveAllTargets()
         {
             foreach (var target in targets)
-                target.Move(RandomStatics.RandomInHollowCylinder(distanceRange, heightRange), moveDuration);
+            {
+                target.isAlive = true;
+                target.regenerateFlag = true;
+                MoveSingleTarget(target);
+            }
         }
         
-        void Update()
+        public void MoveSingleTarget(SwordTarget target)
         {
-            if (!player) return;
-        
-            foreach (var target in targets)
-                target.transform.rotation = Quaternion.LookRotation(target.transform.position - player.position);
+            target.Move(RandomStatics.RandomInHollowCylinder(distanceRange, heightRange), moveDuration);
         }
     }
 }
