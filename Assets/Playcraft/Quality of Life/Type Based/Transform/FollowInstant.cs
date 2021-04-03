@@ -10,13 +10,11 @@ namespace Playcraft
         public bool active;
         public Transform target;
     
-        #pragma warning disable 0649
         [SerializeField] new RBInterface rigidbody;
         [SerializeField] GetVelocity speedometer;
         [SerializeField] OffsetType offsetType;
         [SerializeField] bool matchTargetRotation = true;
         [SerializeField] bool throwOnRelease;
-        #pragma warning restore 0649
             
         public void SetTarget(GameObject value) 
         {
@@ -29,12 +27,6 @@ namespace Playcraft
             target = value; 
             otherBeginRotation = target.rotation;
         }
-        
-        //public void SetTarget(MessageLink link)
-        //{
-        //    if (link == null) ClearTarget();
-        //    else SetTarget(link.transform);
-        //}
         
         public void ClearTarget() { target = null; }
         

@@ -4,11 +4,9 @@ namespace Playcraft
 {
     public class MovePhysics : MonoBehaviour
     {        
-        #pragma warning disable 0649
         [SerializeField] Rigidbody rb;
         [SerializeField] Vector3Event OnMove;
         [SerializeField] float baseSpeed;
-        #pragma warning restore 0649
         
         // Only one state active at a time so can be set directly
         float priorSpeedMultiplier;

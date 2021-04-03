@@ -4,25 +4,29 @@ namespace Playcraft
 {
     public class SetRotation : MonoBehaviour
     {
-        #pragma warning disable 0649
+        [SerializeField] Transform self;
         [SerializeField] float[] rotations;
         [SerializeField] Axis axis;
-        #pragma warning restore 0649
+        
+        Vector3 euler => self.rotation.eulerAngles;
+        
+        void Awake() { if (!self) self = transform; }
     
         public void Input(int index)
         {
-            var x = transform.rotation.eulerAngles.x;
-            var y = transform.rotation.eulerAngles.y;
-            var z = transform.rotation.eulerAngles.z;
+            var newEuler = new Vector3(euler.x, euler.y, euler.z);
         
             switch (axis)
             {
-                case Axis.X: x = rotations[index]; break;
-                case Axis.Y: y = rotations[index]; break;
-                case Axis.Z: z = rotations[index]; break;
+                case Axis.X: newEuler.x = rotations[index]; break;
+                case Axis.Y: newEuler.y = rotations[index]; break;
+                case Axis.Z: newEuler.z = rotations[index]; break;
             }
         
-            transform.eulerAngles = new Vector3(x, y, z);
+            self.eulerAngles = newEuler;
         }
+        
+        public void Input(Quaternion value) { self.rotation = value; }
+        public void Input(Vector3 value) { self.eulerAngles = value; }
     }   
 }

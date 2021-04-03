@@ -153,6 +153,10 @@
                 <e p="WispTag.cs" t="Include" />
               </e>
             </e>
+            <e p="Roll a Ball" t="Include">
+              <e p="DirectionInputToVector2.cs" t="Include" />
+              <e p="DirectionInputToVector3.cs" t="Include" />
+            </e>
           </e>
           <e p="Experimental" t="Include">
             <e p="ReliableTrigger.cs" t="Include" />
@@ -222,6 +226,7 @@
               <e p="FindClosestTarget.cs" t="Include" />
             </e>
             <e p="Physics" t="Include">
+              <e p="ApplyForce.cs" t="Include" />
               <e p="CheckIfValidAngle.cs" t="Include" />
               <e p="GetCollisionVector.cs" t="Include" />
               <e p="GetVelocity.cs" t="Include" />
@@ -335,6 +340,7 @@
               <e p="Rotation" t="Include">
                 <e p="LookRotation.cs" t="Include" />
                 <e p="RotateTowards.cs" t="Include" />
+                <e p="RotateVector.cs" t="Include" />
                 <e p="RotateZ.cs" t="Include" />
                 <e p="SetRotation.cs" t="Include" />
                 <e p="SimpleRotation.cs" t="Include" />
@@ -346,6 +352,7 @@
                 <e p="EnterExitDistanceEvent.cs" t="Include" />
                 <e p="FollowInstant.cs" t="Include" />
                 <e p="FollowInstantPartial.cs" t="Include" />
+                <e p="FollowOffset.cs" t="Include" />
                 <e p="FreeMovement.cs" t="Include" />
                 <e p="GetTargetDirection.cs" t="Include" />
                 <e p="GetTransformFromArray.cs" t="Include" />

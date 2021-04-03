@@ -22,11 +22,12 @@ using Playcraft;
 [Serializable] public class RaycastHitEvent : UnityEvent<RaycastHit> { }
 [Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }
 [Serializable] public class GameObjectBoolEvent : UnityEvent<GameObject, bool> { }
-[Serializable] public class TagEvent : UnityEvent<SO> { }
-[Serializable] public class GameObjectTagEvent : UnityEvent<SO, GameObject> { }
 [Serializable] public class GameObjectVector3Event : UnityEvent<GameObject, Vector3> { }
 [Serializable] public class ColorEvent : UnityEvent<Color> { }
 [Serializable] public class Collider2DEvent : UnityEvent<Collider2D> { }
+[Serializable] public class QuaternionEvent : UnityEvent<Quaternion> { }
 
 [Serializable] public class IMessageEvent : UnityEvent<IMessage> { }
+[Serializable] public class TagEvent : UnityEvent<SO> { }
+[Serializable] public class GameObjectTagEvent : UnityEvent<SO, GameObject> { }
 

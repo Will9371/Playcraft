@@ -4,12 +4,10 @@ namespace Playcraft
 {
     public class SingleAxisRotation : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Axis rotationAxis;
         [SerializeField] bool invert;
         [SerializeField] bool clamp;
         [SerializeField] Vector2 range;
-        #pragma warning restore 0649
         
         private float value;
 
