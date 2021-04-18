@@ -59,6 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -83,6 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &3507937311874407744
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -116,6 +118,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3507937311874407750}
+          m_TargetAssemblyTypeName: 
           m_MethodName: OnEnter
           m_Mode: 0
           m_Arguments:
@@ -133,6 +136,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3507937311874407750}
+          m_TargetAssemblyTypeName: 
           m_MethodName: OnExit
           m_Mode: 0
           m_Arguments:
@@ -220,6 +224,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3507937311874407749}
+        m_TargetAssemblyTypeName: 
         m_MethodName: RequestGrabZipLine
         m_Mode: 1
         m_Arguments:
@@ -247,6 +252,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3507937311874407749}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ReleaseZipLine
         m_Mode: 1
         m_Arguments:
@@ -271,7 +277,7 @@ GameObject:
   - component: {fileID: 3507937312665117050}
   - component: {fileID: 3507937312665117030}
   m_Layer: 0
-  m_Name: Zip Hook [WIP]
+  m_Name: Zip Hook Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,6 +322,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -340,6 +347,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &3507937312665117050
 Rigidbody:
   m_ObjectHideFlags: 0

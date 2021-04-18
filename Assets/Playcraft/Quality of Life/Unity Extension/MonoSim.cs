@@ -8,6 +8,13 @@ namespace Playcraft
 {
     public class MonoSim : Singleton<MonoSim>
     {
+        public delegate IEnumerator Routine();
+    
+        public void SimRoutine(Routine routine)
+        {
+            StartCoroutine(routine());
+        }
+    
         public void SimInvoke(Action invoked, float time)
         {
             MonoBehaviourExtensions.Invoke(this, invoked, time);

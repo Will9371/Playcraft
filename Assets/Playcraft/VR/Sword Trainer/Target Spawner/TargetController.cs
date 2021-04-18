@@ -64,7 +64,9 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void MoveSingleTarget(SwordTarget target)
         {
-            target.Move(RandomStatics.RandomInHollowCylinder(distanceRange, heightRange), moveDuration);
+            var randomPoint = RandomStatics.RandomInHollowCylinder(distanceRange, heightRange);
+            var playerPosition = new Vector3(player.position.x, 0f, player.position.z);
+            target.LerpMove(playerPosition + randomPoint, moveDuration);
         }
     }
 }

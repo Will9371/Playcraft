@@ -6,12 +6,10 @@ namespace Playcraft
 {
     public class MoveInLine : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Rigidbody rb;
         [SerializeField] float defaultSpeed;
         [SerializeField] UnityEvent onMoveStart;
         [SerializeField] UnityEvent onMoveEnd;
-        #pragma warning restore 0649
 
         public void StartMoving(Vector3 end, float speed) { StartMoving(transform.position, end, speed); }
         public void StartMoving(Vector3 end) { StartMoving(transform.position, end, defaultSpeed); }
@@ -34,7 +32,7 @@ namespace Playcraft
                 yield return null;
             }
             
-            EndMove();   
+            EndMove();
         }
         
         public void InterruptMove()

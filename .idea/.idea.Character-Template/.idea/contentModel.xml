@@ -153,10 +153,6 @@
                 <e p="WispTag.cs" t="Include" />
               </e>
             </e>
-            <e p="Roll a Ball" t="Include">
-              <e p="DirectionInputToVector2.cs" t="Include" />
-              <e p="DirectionInputToVector3.cs" t="Include" />
-            </e>
           </e>
           <e p="Experimental" t="Include">
             <e p="ReliableTrigger.cs" t="Include" />
@@ -209,9 +205,11 @@
               <e p="NormalizedPercent.cs" t="Include" />
             </e>
             <e p="Lerp" t="Include">
+              <e p="Lerp_Position.cs" t="Include" />
               <e p="LerpCapsuleHeight.cs" t="Include" />
               <e p="LerpColor.cs" t="Include" />
               <e p="LerpPosition.cs" t="Include" />
+              <e p="LerpPositionOverTime.cs" t="Include" />
               <e p="LerpRotation.cs" t="Include" />
               <e p="LerpScale.cs" t="Include" />
               <e p="Remap.cs" t="Include" />
@@ -273,6 +271,7 @@
               <e p="VectorMath.cs" t="Include" />
             </e>
             <e p="Time" t="Include">
+              <e p="Get_Percent_Over_Time.cs" t="Include" />
               <e p="GetDuration.cs" t="Include" />
               <e p="GetPercentOverTime.cs" t="Include" />
               <e p="ProgressEvent.cs" t="Include" />
@@ -379,6 +378,8 @@
                 <e p="ClampVector2.cs" t="Include" />
                 <e p="ComparePoints.cs" t="Include" />
                 <e p="CycleVector3.cs" t="Include" />
+                <e p="DirectionInputToVector2.cs" t="Include" />
+                <e p="DirectionInputToVector3.cs" t="Include" />
                 <e p="DriftDirection.cs" t="Include" />
                 <e p="FilterByAngle.cs" t="Include" />
                 <e p="FlattenVector.cs" t="Include" />
@@ -591,6 +592,8 @@
                 </e>
               </e>
               <e p="FaceTargetInstant.cs" t="Include" />
+              <e p="MaintainDistance.cs" t="Include" />
+              <e p="MoveDirectionDrift.cs" t="Include" />
               <e p="Sword" t="Include">
                 <e p="Joint Based" t="Include">
                   <e p="CopyTransform.cs" t="Include" />
@@ -600,8 +603,10 @@
               <e p="Target Spawner" t="Include">
                 <e p="RespondToCut.cs" t="Include" />
                 <e p="SwordTarget.cs" t="Include" />
+                <e p="TargetAdvanceRetreat.cs" t="Include" />
                 <e p="TargetController.cs" t="Include" />
               </e>
+              <e p="TranslateStep.cs" t="Include" />
             </e>
             <e p="ValidateVR.cs" t="Include" />
             <e p="VRBody.cs" t="Include" />

@@ -226,10 +226,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2943022741248307623}
-  - component: {fileID: 2709534672879060719}
-  - component: {fileID: 1069412928017407627}
-  - component: {fileID: 5494530983027982097}
-  - component: {fileID: 7074606819957604061}
+  - component: {fileID: 173805606495134200}
+  - component: {fileID: 313814280275873588}
+  - component: {fileID: 2244686881404405199}
+  - component: {fileID: 7912883317969263208}
+  - component: {fileID: 7830335578741978131}
+  - component: {fileID: 8236769650498947097}
+  - component: {fileID: 2151569201008197125}
   m_Layer: 0
   m_Name: Movement
   m_TagString: Untagged
@@ -251,7 +254,7 @@ Transform:
   m_Father: {fileID: 524496317257542616}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2709534672879060719
+--- !u!114 &173805606495134200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,16 +263,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1838545969260915395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab49db7a7dffd44ba5742a106bd556e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cc728fa6830c1e47b2a7f73ccf597af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 524496317257542616}
-  defaultIndex: 0
   useLocal: 1
-  positions: []
-  start: {x: 0, y: 0, z: 0}
-  end: {x: 0, y: 0, z: 0}
---- !u!114 &1069412928017407627
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 42163852264912102}
+        m_MethodName: MoveComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &313814280275873588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,15 +291,90 @@ MonoBehaviour:
   m_GameObject: {fileID: 1838545969260915395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4060ae13faf026b47b9a653c561f42d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 629579b101b7df340bb76b8a535ae650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progress: {fileID: 5494530983027982097}
-  duration: 1.5
-  Percent:
+  self: {fileID: 524496317257542616}
+  desiredDistance: {x: 1, y: 1.5}
+  tolerance: 0.1
+  target: {fileID: 0}
+  disableVerticalMovement: 1
+  Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2709534672879060719}
+      - m_Target: {fileID: 7830335578741978131}
+        m_MethodName: AddMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2244686881404405199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838545969260915395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb22702ffb4c00e4c829a378c00f7b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 524496317257542616}
+  speedRange: {x: 0.5, y: 1.5}
+  randomizeOnEnable: 1
+  Output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7830335578741978131}
+        m_MethodName: AddMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  target: {fileID: 0}
+--- !u!114 &7912883317969263208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838545969260915395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a7cd1a9c6323547b2a4c85b73c8bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 42163852264912102}
+  initialWaitRange: {x: 5, y: 20}
+  farDistanceWaitRange: {x: 8, y: 15}
+  closeDistanceWaitRange: {x: 3.5, y: 4}
+--- !u!114 &7830335578741978131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838545969260915395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMove:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8236769650498947097}
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -297,7 +385,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5494530983027982097
+--- !u!114 &8236769650498947097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,45 +394,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1838545969260915395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 849e54a022621f94790d785df321882f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a45364cd1df71a449032522351dfeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - percent: 1
-    OnReached:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 42163852264912102}
-          m_MethodName: MoveComplete
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  overrideInputValidation: 0
---- !u!114 &7074606819957604061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838545969260915395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ecd4739386153342a9831f3dee9884d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: {x: 5, y: 10}
+  turnSpeed: 1
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 42163852264912102}
-        m_MethodName: MoveRandom
-        m_Mode: 1
+      - m_Target: {fileID: 2151569201008197125}
+        m_MethodName: Input
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -353,7 +412,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  beginOnStart: 1
+--- !u!114 &2151569201008197125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838545969260915395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7749948c941d4be49a7397e33c95bab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 524496317257542616}
+  speed: 1.5
 --- !u!1 &2291014569612732397
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &524496317257542616
 Transform:
   m_ObjectHideFlags: 0
@@ -895,8 +967,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2635b8792401d443b2fd9e3e6941073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 2709534672879060719}
-  moveTimer: {fileID: 1069412928017407627}
+  closeRange: 1
+  farRange: 3
+  movement: {fileID: 173805606495134200}
   activateRelay: {fileID: 5524967364872607908}
   activateEffects: {fileID: 3933148265738899414}
   deactivateRelay: {fileID: 2782836667975697678}
@@ -942,6 +1015,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  maintainDistance: {fileID: 313814280275873588}
+  circleTarget: {fileID: 2244686881404405199}
   isAlive: 0
   regenerateFlag: 0
 --- !u!1 &7016989377324082879

@@ -19,7 +19,7 @@ public class GetPercentOverTime : MonoBehaviour
     
         float startTime = Time.time;
         float percent = 0f;
-        float elapsedTime = 0f;
+        float elapsedTime;
         
         while (percent < 1f)
         {

@@ -5,10 +5,11 @@ namespace Playcraft
 {
     public class TimedEvent : MonoBehaviour
     {
-        #pragma warning disable 0649
+        [SerializeField] bool activateOnStart;
         [SerializeField] float time;
         [SerializeField] UnityEvent OnEnd;
-        #pragma warning restore 0649
+        
+        void Start() { if (activateOnStart) Begin(); }
         
         public void Begin() { Invoke(nameof(End), time); }
         public void Begin(float duration) { Invoke(nameof(End), duration); }

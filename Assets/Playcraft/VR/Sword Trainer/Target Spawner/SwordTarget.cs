@@ -4,8 +4,10 @@ namespace Playcraft.Examples.SwordTrainer
 {
     public class SwordTarget : MonoBehaviour
     {
-        [SerializeField] LerpPosition movement;
-        [SerializeField] GetPercentOverTime moveTimer;
+        [SerializeField] float closeRange;
+        [SerializeField] float farRange;
+    
+        [SerializeField] LerpPositionOverTime movement;
         [SerializeField] Relay activateRelay;
         [SerializeField] GetPercentOverTime activateEffects;
         [SerializeField] Relay deactivateRelay;
@@ -14,6 +16,8 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] CreateFloatingNumberOnHit floatingNumberCreator;
         [SerializeField] BoolEvent OnSetActive;
         [SerializeField] TransformEvent RelayPlayer;
+        [SerializeField] MaintainDistance maintainDistance;
+        [SerializeField] CircleTarget circleTarget;
 
         TargetController controller;
         public bool isAlive;
@@ -25,6 +29,8 @@ namespace Playcraft.Examples.SwordTrainer
                        
             isAlive = true;
             RelayPlayer.Invoke(player);
+            circleTarget.SetTarget(player);
+            maintainDistance.SetTarget(player);
             floatingNumberCreator.SetFloaterCanvas(canvas);
         }
                 
@@ -54,13 +60,10 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void DeactivationComplete() { controller.TargetHit(); }
         
-        public void Move(Vector3 destination, float duration)
+        public void LerpMove(Vector3 destination, float duration)
         {
             if (!isAlive) return;
-            
-            movement.SetDestination(destination);
-            moveTimer.SetDuration(duration);
-            moveTimer.Begin();
+            movement.Move(destination, duration);
         }
         
         public void MoveComplete()
@@ -70,5 +73,12 @@ namespace Playcraft.Examples.SwordTrainer
         }
         
         public void MoveRandom() { controller.MoveSingleTarget(this); }
+        
+        public void SetRange(bool isClose)
+        {
+            circleTarget.enabled = !isClose;
+            var desiredDistance = isClose ? closeRange : farRange;
+            maintainDistance.SetDesiredDistance(desiredDistance);
+        }
     }
 }

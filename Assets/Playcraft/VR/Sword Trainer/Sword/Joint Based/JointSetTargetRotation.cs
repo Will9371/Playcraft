@@ -19,7 +19,6 @@ public class JointSetTargetRotation : MonoBehaviour
     Quaternion startRotation;
     Quaternion localToJointSpace;
     Rigidbody rb;
-    
 
     void Start()
     {
@@ -36,15 +35,16 @@ public class JointSetTargetRotation : MonoBehaviour
         SetJointSettings();
 		SetTargetRotation(joint, target.rotation, startRotation);
     }
+    
+    SoftJointLimitSpring spring;
+    JointDrive drive;
 
     void SetJointSettings()
     {
-        SoftJointLimitSpring spring = new SoftJointLimitSpring();
         spring.spring = springForce;
         spring.damper = springDamping;
         joint.linearLimitSpring = spring;
 
-        JointDrive drive = new JointDrive();
         drive.positionSpring = torqueForce;
         drive.positionDamper = angularDamping;
         drive.maximumForce = maxForce;
@@ -71,17 +71,23 @@ public class JointSetTargetRotation : MonoBehaviour
 
 		SetTargetRotationInternal(joint, targetWorldRotation, startWorldRotation, Space.World);
 	}
+	
+	Vector3 right;
+	Vector3 forward;
+	Vector3 up;
+    Quaternion worldToJointSpace;
+    Quaternion resultRotation;
 
 	void SetTargetRotationInternal(ConfigurableJoint joint, Quaternion targetRotation, Quaternion startRotation, Space space)
 	{
 		// Calculate the rotation expressed by the joint's axis and secondary axis
-		var right = joint.axis;
-		var forward = Vector3.Cross(joint.axis, joint.secondaryAxis).normalized;
-		var up = Vector3.Cross(forward, right).normalized;
-		Quaternion worldToJointSpace = Quaternion.LookRotation(forward, up);
+		right = joint.axis;
+		forward = Vector3.Cross(joint.axis, joint.secondaryAxis).normalized;
+		up = Vector3.Cross(forward, right).normalized;
+		worldToJointSpace = Quaternion.LookRotation(forward, up);
 
 		// Transform into world space
-		Quaternion resultRotation = Quaternion.Inverse(worldToJointSpace);
+		resultRotation = Quaternion.Inverse(worldToJointSpace);
 
 		// Counter-rotate and apply the new local rotation.
 		// Joint space is the inverse of world space, so we need to invert our value

@@ -4,14 +4,12 @@ namespace Playcraft
 {
     public class MoveTowardsDrift : MonoBehaviour
     {
-        #pragma warning disable 0649
+        [SerializeField] float moveSpeed = 1f;
         [SerializeField] float acceleration = 1f;
         [SerializeField] float turnSpeed = 1f;
         [SerializeField] bool multiplyTurnSpeedByMoveSpeed;
-        #pragma warning restore 0649
         
         Vector3 moveDirection;
-        float moveSpeed;
         
         public void SetSpeed(float value) { moveSpeed = value; }
         
