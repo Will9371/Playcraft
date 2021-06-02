@@ -26,17 +26,17 @@ public class NonRigidbodyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (raycastController.collisions.above || raycastController.collisions.below)
-            velocity.y = 0;
+            velocity.y = 0; //TODO: Rot
 
         //Apply gravity
-        velocity += gravity * Time.deltaTime;
+        velocity += gravity * Time.deltaTime; //TODO: Rot (unless gravity changed elsewhere)
 
         //Apply horizontal velocity with smoothing
         Vector3 verticalVelocity = gravity.normalized * Vector3.Dot(gravity.normalized, velocity);
         Vector3 currentHorizontalVelocity = velocity - verticalVelocity;
         velocity = Vector3.SmoothDamp(currentHorizontalVelocity, inputVelocity, ref velocitySmoothStorage, horizontalVelocitySmoothing, maxSpeed) + verticalVelocity;
         
-        raycastController.ApplyCollisions(ref velocity);
+        raycastController.ApplyCollisions(ref velocity, gravity);
         transform.Translate(velocity);
         velocity = gravity.normalized * Vector3.Dot(gravity.normalized, velocity); //Maintain falling velocity
     }

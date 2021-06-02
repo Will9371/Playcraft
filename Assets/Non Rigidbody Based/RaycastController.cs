@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class RaycastController : MonoBehaviour
 {
-    //NOTE: This controller was made for non-rigidbody movement in a 3D space built from tiles sharing 
-    //a uniform size and orientation. To that end, collision is handled by a boxCollider with an
-    //orientation fixed to match those tiles 
+    //NOTE: This controller was made for non-rigidbody movement in a 3D space 
+    // where the player can alter gravity.
 
     public LayerMask collisionMask;
 
@@ -21,27 +20,40 @@ public class RaycastController : MonoBehaviour
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
+    public Transform refTransform; //Oriented such that +x aligns w/ direction of movement orthogonal to gravity. Used rather than player transform so as to not restrict that transform's rotation.
+
     #pragma warning disable 0649
     [SerializeField] new BoxCollider collider;
-    #pragma warning restore 0649
-    
-    public void ApplyCollisions(ref Vector3 velocity)
+#pragma warning restore 0649
+
+    public void ApplyCollisions(ref Vector3 velocity, Vector3 gravity)
     {
         UpdateBoxcastOrigins();
         collisions.Reset();
 
-        if(velocity.x != 0)
+        Debug.Log(velocity.ToString("F3"));
+
+        //Rotate refTransform to align its Vector.right w/ movement
+        refTransform.localPosition = Vector3.zero;
+        if(velocity.x != 0 || velocity.z != 0)
+            refTransform.rotation = Quaternion.LookRotation(new Vector3(velocity.x, 0, velocity.z), new Vector3(0, velocity.y, 0)) * Quaternion.Euler(gravity.normalized * 135f);
+        Vector3 localVelocity = new Vector3(Vector3.Dot(refTransform.right, velocity), velocity.y);
+        Debug.DrawRay(transform.position, refTransform.right * 3f, Color.green);
+        Debug.DrawRay(transform.position, velocity * 30f, Color.cyan);
+        Debug.DrawRay(transform.position, refTransform.TransformDirection(localVelocity) * 30f, Color.blue);
+
+        if (velocity.x != 0)
         {
-            HorizontalCollisions(ref velocity);
+            HorizontalCollisions(ref localVelocity);
         }
-        if(velocity.z != 0)
+        if(velocity.y != 0 )
         {
-            FrontBackCollisions(ref velocity);
+            VerticalCollisions(ref localVelocity);
         }
-        if (velocity.y != 0)
-        {
-            VerticalCollisions(ref velocity);
-        }
+
+        //Debug.DrawRay(transform.position, refTransform.TransformDirection(localVelocity) * 30f, Color.cyan);
+
+        velocity = refTransform.TransformDirection(localVelocity);
     }
 
     void HorizontalCollisions(ref Vector3 velocity)
@@ -126,58 +138,6 @@ public class RaycastController : MonoBehaviour
 
                     collisions.below = directionY == -1;
                     collisions.above = directionY == 1;
-                }
-            }
-        }
-    }
-
-    void FrontBackCollisions(ref Vector3 velocity)
-    {
-        float directionZ = Mathf.Sign(velocity.z);
-        float rayLength = Mathf.Abs(velocity.z) + skinWidth;
-
-        Bounds bounds = collider.bounds;
-        bounds.Expand(skinWidth * -2);
-
-        float latitudeSpacing = bounds.size.y / (verticalRayCount - 1);
-        float longitudeSpacing = bounds.size.x / (horizontalRayCount - 1);
-        for (int i = 0; i < verticalRayCount; i++)
-        {
-            for (int j = 0; j < horizontalRayCount; j++)
-            {
-                Vector3 rayOrigin = (directionZ == -1) ? raycastOrigins.botBackLeft : raycastOrigins.botFrontLeft;
-                rayOrigin += Vector3.up * (i * latitudeSpacing) + Vector3.right * (j * longitudeSpacing);
-                RaycastHit hit;
-                Debug.DrawRay(rayOrigin, Vector3.forward * directionZ * rayLength, Color.red);
-                if (Physics.Raycast(rayOrigin, Vector3.forward * directionZ, out hit, rayLength, collisionMask))
-                {
-                    float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
-                    if (i == 0 && slopeAngle <= maxClimbAngle)
-                    {
-                        float distanceToSlopeStart = 0;
-                        if(slopeAngle != collisions.slopeAngleOldZ)
-                        {
-                            distanceToSlopeStart = hit.distance - skinWidth;
-                            velocity.z -= distanceToSlopeStart * directionZ;
-                        }
-                        print("Z slope is " + slopeAngle);
-                        ClimbSlope(ref velocity, slopeAngle, false);
-                        velocity.z += distanceToSlopeStart * directionZ;
-                    }
-                    
-                    if (i != 0 && (!collisions.climbingSlopeZ || slopeAngle > maxClimbAngle))
-                    {
-                        velocity.z = (hit.distance - skinWidth) * directionZ;
-                        rayLength = hit.distance;
-
-                        if (collisions.climbingSlopeZ)
-                        {
-                            velocity.y = Mathf.Tan(collisions.slopeAngleZ * Mathf.Deg2Rad) * Mathf.Abs(velocity.z);
-                        }
-
-                        collisions.back = directionZ == -1;
-                        collisions.back = directionZ == 1;
-                    }
                 }
             }
         }
