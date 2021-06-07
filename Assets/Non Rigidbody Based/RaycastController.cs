@@ -20,8 +20,6 @@ public class RaycastController : MonoBehaviour
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
-    public Transform refTransform; //Oriented such that +x aligns w/ direction of movement orthogonal to gravity. Used rather than player transform so as to not restrict that transform's rotation.
-
     #pragma warning disable 0649
     [SerializeField] new BoxCollider collider;
 #pragma warning restore 0649
@@ -31,35 +29,31 @@ public class RaycastController : MonoBehaviour
         UpdateBoxcastOrigins();
         collisions.Reset();
 
-        Debug.Log(velocity.ToString("F3"));
+        Vector3 horizontalMovement = velocity - Vector3.Dot(velocity, gravity) * gravity.normalized;
+        Debug.DrawRay(transform.position, horizontalMovement * 30f, Color.green);
 
-        //Rotate refTransform to align its Vector.right w/ movement
-        refTransform.localPosition = Vector3.zero;
-        if(velocity.x != 0 || velocity.z != 0)
-            refTransform.rotation = Quaternion.LookRotation(new Vector3(velocity.x, 0, velocity.z), new Vector3(0, velocity.y, 0)) * Quaternion.Euler(gravity.normalized * 135f);
-        Vector3 localVelocity = new Vector3(Vector3.Dot(refTransform.right, velocity), velocity.y);
-        Debug.DrawRay(transform.position, refTransform.right * 3f, Color.green);
-        Debug.DrawRay(transform.position, velocity * 30f, Color.cyan);
-        Debug.DrawRay(transform.position, refTransform.TransformDirection(localVelocity) * 30f, Color.blue);
-
-        if (velocity.x != 0)
-        {
-            HorizontalCollisions(ref localVelocity);
-        }
-        if(velocity.y != 0 )
-        {
-            VerticalCollisions(ref localVelocity);
-        }
-
-        //Debug.DrawRay(transform.position, refTransform.TransformDirection(localVelocity) * 30f, Color.cyan);
-
-        velocity = refTransform.TransformDirection(localVelocity);
+      if (horizontalMovement.magnitude != 0)
+      {
+          HorizontalCollisions(ref velocity, horizontalMovement, gravity);
+      }
+      if(velocity.y != 0 )
+      {
+          VerticalCollisions(ref velocity);
+      }
     }
 
-    void HorizontalCollisions(ref Vector3 velocity)
+    void HorizontalCollisions(ref Vector3 velocity, Vector3 horizontalMovement, Vector3 gravity)
     {
-        float directionX = Mathf.Sign(velocity.x);
-        float rayLength = Mathf.Abs(velocity.x) + skinWidth;
+
+        Vector3 forward = horizontalMovement.normalized;
+        Vector3 up = -gravity.normalized;
+        Vector3 right = Vector3.Cross(up, forward).normalized;
+
+        Debug.DrawRay(transform.position, forward * 2f, Color.cyan);
+        Debug.DrawRay(transform.position, right * 2f, Color.green);
+        Debug.DrawRay(transform.position, up * 2f, Color.cyan);
+
+        float rayLength = horizontalMovement.magnitude + skinWidth;
 
         Bounds bounds = collider.bounds;
         bounds.Expand(skinWidth * -2);
@@ -70,11 +64,11 @@ public class RaycastController : MonoBehaviour
         {
             for(int j = 0; j < horizontalRayCount; j++)
             {
-                Vector3 rayOrigin = (directionX == -1) ? raycastOrigins.botBackLeft : raycastOrigins.botBackRight;
-                rayOrigin += Vector3.up * (i * latitudeSpacing) + Vector3.forward * (j * longitudeSpacing);
+                Vector3 rayOrigin = transform.position + forward * raycastOrigins.breadth / 2 - right * raycastOrigins.width / 2 - up * raycastOrigins.height / 2;
+                rayOrigin += up * (i * latitudeSpacing) + right * (j * longitudeSpacing);
                 RaycastHit hit;
-                Debug.DrawRay(rayOrigin, Vector3.right * directionX * rayLength, Color.red);
-                if(Physics.Raycast(rayOrigin, Vector3.right * directionX, out hit, rayLength, collisionMask))
+                Debug.DrawRay(rayOrigin, forward * rayLength, Color.red);
+                if(Physics.Raycast(rayOrigin, forward, out hit, rayLength, collisionMask))
                 {
                     float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
                     if (i == 0 && slopeAngle <= maxClimbAngle)
@@ -83,16 +77,16 @@ public class RaycastController : MonoBehaviour
                         if(slopeAngle != collisions.slopeAngleOldX)
                         {
                             distanceToSlopeStart = hit.distance - skinWidth;
-                            velocity.x -= distanceToSlopeStart * directionX;
+                            velocity -= forward * distanceToSlopeStart;
                         }
                         print("X slope is " + slopeAngle);
                         ClimbSlope(ref velocity, slopeAngle, true);
-                        velocity.x += distanceToSlopeStart * directionX;
+                        velocity += forward * distanceToSlopeStart;
                     }
                     
                     if (i != 0 && (!collisions.climbingSlopeX || slopeAngle > maxClimbAngle))
                     {
-                        velocity.x = (hit.distance - skinWidth) * directionX;
+                        velocity = forward * (hit.distance - skinWidth);
                         rayLength = hit.distance;
 
                         if(collisions.climbingSlopeX)
@@ -100,8 +94,7 @@ public class RaycastController : MonoBehaviour
                             velocity.y = Mathf.Tan(collisions.slopeAngleX * Mathf.Deg2Rad) * Mathf.Abs(velocity.x);
                         }
 
-                        collisions.left = directionX == -1;
-                        collisions.right = directionX == 1;
+                        collisions.front = true;
                     }
                 }
             }
@@ -172,20 +165,29 @@ public class RaycastController : MonoBehaviour
     {
         Bounds bounds = collider.bounds;
         bounds.Expand(skinWidth * -2);
-        raycastOrigins.topFrontRight = new Vector3(bounds.max.x, bounds.max.y, bounds.max.z);
-        raycastOrigins.topFrontLeft = new Vector3(bounds.min.x, bounds.max.y, bounds.max.z);
-        raycastOrigins.topBackRight = new Vector3(bounds.max.x, bounds.max.y, bounds.min.z);
-        raycastOrigins.topBackLeft = new Vector3(bounds.min.x, bounds.max.y, bounds.min.z);
-        raycastOrigins.botFrontRight = new Vector3(bounds.max.x, bounds.min.y, bounds.max.z);
-        raycastOrigins.botFrontLeft = new Vector3(bounds.min.x, bounds.min.y, bounds.max.z);
-        raycastOrigins.botBackRight = new Vector3(bounds.max.x, bounds.min.y, bounds.min.z);
-        raycastOrigins.botBackLeft = new Vector3(bounds.min.x, bounds.min.y, bounds.min.z);
+        float width = bounds.max.x - bounds.min.x;
+        float breadth = bounds.max.z - bounds.min.z;
+        float height = bounds.max.y - bounds.min.y;
+
+        raycastOrigins.topFrontRight = transform.position + transform.forward * breadth / 2 + transform.right * width / 2 + transform.up * height / 2; 
+        raycastOrigins.topFrontLeft = transform.position + transform.forward * breadth / 2 - transform.right * width / 2 + transform.up * height / 2;
+        raycastOrigins.topBackRight = transform.position - transform.forward * breadth / 2 + transform.right * width / 2 + transform.up * height / 2;
+        raycastOrigins.topBackLeft = transform.position - transform.forward * breadth / 2 - transform.right * width / 2 + transform.up * height / 2;
+        raycastOrigins.botFrontRight = transform.position + transform.forward * breadth / 2 + transform.right * width / 2 - transform.up * height / 2;
+        raycastOrigins.botFrontLeft = transform.position + transform.forward * breadth / 2 - transform.right * width / 2 - transform.up * height / 2;
+        raycastOrigins.botBackRight = transform.position - transform.forward * breadth / 2 + transform.right * width / 2 - transform.up * height / 2;
+        raycastOrigins.botBackLeft = transform.position - transform.forward * breadth / 2 - transform.right * width / 2 - transform.up * height / 2;
+
+        raycastOrigins.width = width;
+        raycastOrigins.breadth = breadth;
+        raycastOrigins.height = height;
     }
 
     struct RaycastOrigins
     {
         public Vector3 topFrontRight, topFrontLeft, topBackRight, topBackLeft;
         public Vector3 botFrontRight, botFrontLeft, botBackRight, botBackLeft;
+        public float width, breadth, height;
     }
     
     public struct CollisionInfo
