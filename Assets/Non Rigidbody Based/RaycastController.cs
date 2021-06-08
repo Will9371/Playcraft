@@ -5,7 +5,7 @@ using UnityEngine;
 public class RaycastController : MonoBehaviour
 {
     //NOTE: This controller was made for non-rigidbody movement in a 3D space 
-    // where the player can alter gravity.
+    //where the player can alter gravity.
 
     public LayerMask collisionMask;
 
@@ -15,7 +15,7 @@ public class RaycastController : MonoBehaviour
     public int verticalRayCount = 4;
     public int frontBackRayCount = 3;
 
-    float maxClimbAngle = 50f;
+    public float maxClimbAngle = 50f;
 
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
@@ -70,9 +70,11 @@ public class RaycastController : MonoBehaviour
                 Debug.DrawRay(rayOrigin, forward * rayLength, Color.red);
                 if(Physics.Raycast(rayOrigin, forward, out hit, rayLength, collisionMask))
                 {
+                    Debug.Log("A");
                     float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
                     if (i == 0 && slopeAngle <= maxClimbAngle)
                     {
+                        Debug.Log("B");
                         float distanceToSlopeStart = 0;
                         if(slopeAngle != collisions.slopeAngleOldX)
                         {
@@ -83,9 +85,9 @@ public class RaycastController : MonoBehaviour
                         ClimbSlope(ref velocity, slopeAngle, true);
                         velocity += forward * distanceToSlopeStart;
                     }
-                    
-                    if (i != 0 && (!collisions.climbingSlopeX || slopeAngle > maxClimbAngle))
+                    else if ((!collisions.climbingSlopeX || slopeAngle > maxClimbAngle))
                     {
+                        Debug.Log("C");
                         velocity = forward * (hit.distance - skinWidth);
                         rayLength = hit.distance;
 
