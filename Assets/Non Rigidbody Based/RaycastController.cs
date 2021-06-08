@@ -24,22 +24,29 @@ public class RaycastController : MonoBehaviour
     [SerializeField] new BoxCollider collider;
 #pragma warning restore 0649
 
+    private void Awake()
+    {
+        SetBoxcastDimensions();
+    }
+
     public void ApplyCollisions(ref Vector3 velocity, Vector3 gravity)
     {
         UpdateBoxcastOrigins();
         collisions.Reset();
 
         Vector3 horizontalMovement = velocity - Vector3.Dot(velocity, gravity) * gravity.normalized;
-        Debug.DrawRay(transform.position, horizontalMovement * 30f, Color.green);
 
-      if (horizontalMovement.magnitude != 0)
-      {
-          HorizontalCollisions(ref velocity, horizontalMovement, gravity);
-      }
-      if(velocity.y != 0 )
-      {
-          VerticalCollisions(ref velocity);
-      }
+        if (horizontalMovement.magnitude != 0)
+        {
+            HorizontalCollisions(ref velocity, horizontalMovement, gravity);
+        }
+        if(velocity.y != 0 )
+        {
+            VerticalCollisions(ref velocity, gravity);
+        }
+
+        Debug.DrawRay(transform.position, velocity * 30f, Color.green);
+
     }
 
     void HorizontalCollisions(ref Vector3 velocity, Vector3 horizontalMovement, Vector3 gravity)
@@ -49,17 +56,10 @@ public class RaycastController : MonoBehaviour
         Vector3 up = -gravity.normalized;
         Vector3 right = Vector3.Cross(up, forward).normalized;
 
-        Debug.DrawRay(transform.position, forward * 2f, Color.cyan);
-        Debug.DrawRay(transform.position, right * 2f, Color.green);
-        Debug.DrawRay(transform.position, up * 2f, Color.cyan);
-
         float rayLength = horizontalMovement.magnitude + skinWidth;
 
-        Bounds bounds = collider.bounds;
-        bounds.Expand(skinWidth * -2);
-
-        float latitudeSpacing = bounds.size.y / (verticalRayCount - 1);
-        float longitudeSpacing = bounds.size.z / (horizontalRayCount - 1);
+        float latitudeSpacing = raycastOrigins.height / (verticalRayCount - 1);
+        float longitudeSpacing = raycastOrigins.breadth / (horizontalRayCount - 1);
         for(int i = 0; i < verticalRayCount; i++)
         {
             for(int j = 0; j < horizontalRayCount; j++)
@@ -70,11 +70,9 @@ public class RaycastController : MonoBehaviour
                 Debug.DrawRay(rayOrigin, forward * rayLength, Color.red);
                 if(Physics.Raycast(rayOrigin, forward, out hit, rayLength, collisionMask))
                 {
-                    Debug.Log("A");
                     float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
                     if (i == 0 && slopeAngle <= maxClimbAngle)
                     {
-                        Debug.Log("B");
                         float distanceToSlopeStart = 0;
                         if(slopeAngle != collisions.slopeAngleOldX)
                         {
@@ -87,7 +85,6 @@ public class RaycastController : MonoBehaviour
                     }
                     else if ((!collisions.climbingSlopeX || slopeAngle > maxClimbAngle))
                     {
-                        Debug.Log("C");
                         velocity = forward * (hit.distance - skinWidth);
                         rayLength = hit.distance;
 
@@ -103,27 +100,29 @@ public class RaycastController : MonoBehaviour
         }
     }
 
-    void VerticalCollisions(ref Vector3 velocity)
+    void VerticalCollisions(ref Vector3 velocity, Vector3 gravity)
     {
-        float directionY = Mathf.Sign(velocity.y);
-        float rayLength = Mathf.Abs(velocity.y) + skinWidth;
+        //...how we replacing velocity.x + velocity.z?
+        //...how we handle slope climbing math?
 
-        Bounds bounds = collider.bounds;
-        bounds.Expand(skinWidth * -2);
+        Vector3 horizontalMovement = velocity - Vector3.Dot(gravity, velocity) * gravity.normalized;
 
-        float latitudeSpacing = bounds.size.x / (horizontalRayCount - 1);
-        float longitudeSpacing = bounds.size.z / (frontBackRayCount - 1);
+        float directionUp = -Mathf.Sign(Vector3.Dot(velocity, gravity));
+        float rayLength = Vector3.Dot(velocity, gravity.normalized) + skinWidth;
+
+        float latitudeSpacing = raycastOrigins.width / (horizontalRayCount - 1);
+        float longitudeSpacing = raycastOrigins.breadth / (frontBackRayCount - 1);
         for (int i = 0; i < horizontalRayCount; i++)
         {
             for (int j = 0; j < frontBackRayCount; j++)
             {
-                Vector3 rayOrigin = (directionY == -1) ? raycastOrigins.botBackLeft : raycastOrigins.topBackLeft;
-                rayOrigin += Vector3.right * (i * latitudeSpacing + velocity.x + velocity.z) + Vector3.forward * (j * longitudeSpacing + velocity.x + velocity.z);
+                Vector3 rayOrigin = (directionUp == -1) ? raycastOrigins.botBackLeft : raycastOrigins.topBackLeft;
+                rayOrigin += transform.right * (i * latitudeSpacing + horizontalMovement.x + horizontalMovement.y + horizontalMovement.z) + transform.forward * (j * longitudeSpacing + horizontalMovement.x + horizontalMovement.y + horizontalMovement.z);
                 RaycastHit hit;
-                Debug.DrawRay(rayOrigin, Vector3.up * directionY * rayLength, Color.red);
-                if (Physics.Raycast(rayOrigin, Vector3.up * directionY, out hit, rayLength, collisionMask))
+                Debug.DrawRay(rayOrigin, transform.up * directionUp * rayLength, Color.red);
+                if (Physics.Raycast(rayOrigin, transform.up * directionUp, out hit, rayLength, collisionMask))
                 {
-                    velocity.y = (hit.distance - skinWidth) * directionY;
+                    velocity = transform.up * (hit.distance - skinWidth) * directionUp + horizontalMovement;
                     rayLength = hit.distance;
 
                     if(collisions.climbingSlopeX)
@@ -131,8 +130,8 @@ public class RaycastController : MonoBehaviour
                         velocity.x = velocity.y / Mathf.Tan(collisions.slopeAngleX * Mathf.Deg2Rad) * Mathf.Sign(velocity.x);
                     }
 
-                    collisions.below = directionY == -1;
-                    collisions.above = directionY == 1;
+                    collisions.below = directionUp == -1;
+                    collisions.above = directionUp == 1;
                 }
             }
         }
@@ -163,13 +162,20 @@ public class RaycastController : MonoBehaviour
         }
     }
 
-    void UpdateBoxcastOrigins()
+    void SetBoxcastDimensions()
     {
         Bounds bounds = collider.bounds;
         bounds.Expand(skinWidth * -2);
-        float width = bounds.max.x - bounds.min.x;
-        float breadth = bounds.max.z - bounds.min.z;
-        float height = bounds.max.y - bounds.min.y;
+        raycastOrigins.width = bounds.max.x - bounds.min.x;
+        raycastOrigins.breadth = bounds.max.z - bounds.min.z;
+        raycastOrigins.height = bounds.max.y - bounds.min.y;
+    }
+
+    void UpdateBoxcastOrigins()
+    {
+        float width = raycastOrigins.width;
+        float breadth = raycastOrigins.breadth;
+        float height = raycastOrigins.height;
 
         raycastOrigins.topFrontRight = transform.position + transform.forward * breadth / 2 + transform.right * width / 2 + transform.up * height / 2; 
         raycastOrigins.topFrontLeft = transform.position + transform.forward * breadth / 2 - transform.right * width / 2 + transform.up * height / 2;
@@ -179,10 +185,6 @@ public class RaycastController : MonoBehaviour
         raycastOrigins.botFrontLeft = transform.position + transform.forward * breadth / 2 - transform.right * width / 2 - transform.up * height / 2;
         raycastOrigins.botBackRight = transform.position - transform.forward * breadth / 2 + transform.right * width / 2 - transform.up * height / 2;
         raycastOrigins.botBackLeft = transform.position - transform.forward * breadth / 2 - transform.right * width / 2 - transform.up * height / 2;
-
-        raycastOrigins.width = width;
-        raycastOrigins.breadth = breadth;
-        raycastOrigins.height = height;
     }
 
     struct RaycastOrigins
