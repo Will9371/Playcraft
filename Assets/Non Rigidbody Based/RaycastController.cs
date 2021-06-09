@@ -40,13 +40,10 @@ public class RaycastController : MonoBehaviour
         {
             HorizontalCollisions(ref velocity, horizontalMovement, gravity);
         }
-        if(velocity.y != 0 )
+        if(Vector3.Dot(velocity, -gravity) != 0 )
         {
             VerticalCollisions(ref velocity, gravity);
         }
-
-        Debug.DrawRay(transform.position, velocity * 30f, Color.green);
-
     }
 
     void HorizontalCollisions(ref Vector3 velocity, Vector3 horizontalMovement, Vector3 gravity)
@@ -120,7 +117,7 @@ public class RaycastController : MonoBehaviour
                 Debug.DrawRay(rayOrigin, transform.up * directionUp * rayLength, Color.red);
                 if (Physics.Raycast(rayOrigin, transform.up * directionUp, out hit, rayLength, collisionMask))
                 {
-                    velocity = -gravity.normalized * (hit.distance - skinWidth) * directionUp; //Adds horizontal movement later*
+                    velocity = -gravity.normalized * (hit.distance - skinWidth) * directionUp; //Adds back horizontal movement later*
                     float newUp = -Mathf.Sign(Vector3.Dot(velocity, gravity.normalized)); //Recalculating directionUp in case it has just changed
                     rayLength = hit.distance;
 
@@ -128,7 +125,7 @@ public class RaycastController : MonoBehaviour
                     {
                         velocity += ((velocity.magnitude * newUp) / Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(horizontalMovement.magnitude)) * horizontalMovement.normalized;
                     }
-                    else
+                    else//*or here
                     {
                         velocity += horizontalMovement;
                     }
