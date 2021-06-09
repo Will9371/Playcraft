@@ -62,10 +62,10 @@ public class GravityRotation : MonoBehaviour
     Quaternion GetNewRotation(Vector3 oldGrav, bool ccw)
     {
         if (Vector3.Dot(Vector3.down, oldGrav) > 0.1f) //-y gravity
-            return ccw ? Quaternion.Euler(-90, 0, 0) : Quaternion.Euler(0, 0, 90);
+            return ccw ? Quaternion.Euler(0, 90, -90) : Quaternion.Euler(90, 0, 90);
         else if (Vector3.Dot(Vector3.right, oldGrav) > 0.1f) //+x gravity
-            return ccw ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(-90, 0, 0);
+            return ccw ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(-0, 90, -90);
         else //+z gravity
-            return ccw ? Quaternion.Euler(0, 0, 90) : Quaternion.Euler(0, 0, 0);
+            return ccw ? Quaternion.Euler(90, 0, 90) : Quaternion.Euler(0, 0, 0);
     }
 }

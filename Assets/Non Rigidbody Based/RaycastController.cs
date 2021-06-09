@@ -102,7 +102,6 @@ public class RaycastController : MonoBehaviour
 
     void VerticalCollisions(ref Vector3 velocity, Vector3 gravity)
     {
-        //...how we replacing velocity.x + velocity.z?
         //...how we handle slope climbing math?
 
         Vector3 horizontalMovement = velocity - Vector3.Dot(gravity, velocity) * gravity.normalized;

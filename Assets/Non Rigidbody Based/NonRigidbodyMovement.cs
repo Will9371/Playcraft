@@ -20,7 +20,7 @@ public class NonRigidbodyMovement : MonoBehaviour
     
     public void SetInputVelocity(Vector3 inputVelocity)
     {
-        this.inputVelocity = inputVelocity;
+        this.inputVelocity = transform.TransformDirection(inputVelocity);
     }
     
     private void FixedUpdate()
@@ -37,7 +37,6 @@ public class NonRigidbodyMovement : MonoBehaviour
         velocity = Vector3.SmoothDamp(currentHorizontalVelocity, inputVelocity, ref velocitySmoothStorage, horizontalVelocitySmoothing, maxSpeed) + verticalVelocity;
 
         raycastController.ApplyCollisions(ref velocity, gravity);
-        Debug.Log("velocity " + velocity);
         transform.Translate(velocity, Space.World);
         velocity = gravity.normalized * Vector3.Dot(gravity.normalized, velocity); //Maintain falling velocity
     }
