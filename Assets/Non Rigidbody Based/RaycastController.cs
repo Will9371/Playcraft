@@ -81,8 +81,8 @@ public class RaycastController : MonoBehaviour
                     }
                     else if ((!collisions.climbingSlope || slopeAngle > maxClimbAngle))
                     {
-                        velocity = forward * (hit.distance - skinWidth);
-                        horizontalMovement = velocity;
+                        horizontalMovement = forward * (hit.distance - skinWidth);
+                        velocity = horizontalMovement + Vector3.Dot(velocity, up) * up.normalized;
                         rayLength = hit.distance;
 
                         if(collisions.climbingSlope)
@@ -137,7 +137,6 @@ public class RaycastController : MonoBehaviour
         }
     }
 
-    //Climbs in X or Z direction, toggled by xDir
     void ClimbSlope(ref Vector3 velocity, float slopeAngle, ref Vector3 horizontalMovement, Vector3 gravity)
     {
         float moveDistance = horizontalMovement.magnitude;
