@@ -70,7 +70,7 @@ public class RaycastController : MonoBehaviour
                 Debug.DrawRay(rayOrigin, forward * rayLength, Color.red);
                 if(Physics.Raycast(rayOrigin, forward, out hit, rayLength, collisionMask))
                 {
-                    float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
+                    float slopeAngle = Vector3.Angle(hit.normal, transform.up);
                     if (i == 0 && slopeAngle <= maxClimbAngle)
                     {
                         float distanceToSlopeStart = 0;
