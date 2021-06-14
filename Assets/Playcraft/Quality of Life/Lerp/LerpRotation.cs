@@ -39,6 +39,12 @@ namespace Playcraft
                 rotations[i] = Quaternion.Euler(_rotations[i]);                
         }
         
+        public void CycleDestination(bool forward)
+        {
+            var newIndex = RangeMath.CycleInt(index, rotations.Length-1, forward);
+            SetDestination(newIndex);
+        }
+        
         public void SetDestination(int newIndex)
         {
             start = rotations[index];

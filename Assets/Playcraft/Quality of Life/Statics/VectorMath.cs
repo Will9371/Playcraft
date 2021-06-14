@@ -5,6 +5,11 @@ namespace Playcraft
 {
     public static class VectorMath
     {
+        public static Vector3 Copy(Vector3 original)
+        {
+            return new Vector3(original.x, original.y, original.z);
+        }
+    
         public static Vector3 EqualVector3(float size)
         {
             return new Vector3(size, size, size);
@@ -213,6 +218,13 @@ namespace Playcraft
         public static bool IsBetween<T>(this T value, T min, T max, bool minInclusive = true, bool maxInclusive = true) where T : System.IComparable<T>
         {
             return (minInclusive ? min.CompareTo(value) <= 0 : min.CompareTo(value) < 0) && (maxInclusive ? value.CompareTo(max) <= 0 : value.CompareTo(max) < 0);
+        }
+        
+        public static void SetZRotation(Transform transform, float z)
+        {
+            var angle = Copy(transform.localEulerAngles);
+            angle.z = z;
+            transform.localEulerAngles = angle;
         }
     }
 }

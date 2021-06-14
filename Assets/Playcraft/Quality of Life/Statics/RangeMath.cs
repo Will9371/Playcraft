@@ -16,9 +16,9 @@ namespace Playcraft
             value = clockwise ? value + 1 : value - 1;
             
             if (value > max)
-                value = 0;
-            else if (value < 0)
-                value = max;
+                return 0;
+            if (value < 0)
+                return max;
             
             return value;
         }
