@@ -8196,12 +8196,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0a19a5b3e39d14ea953ba2819a5548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 2092300091}
-  defaultIndex: 0
-  useLocal: 1
-  _rotations:
-  - {x: 0, y: 0, z: 0}
-  - {x: 180, y: -90, z: 90}
-  - {x: 90, y: 0, z: 90}
-  _start: {x: 0, y: 0, z: 0}
-  _end: {x: 0, y: 0, z: 0}
+  process:
+    rotations:
+    - {x: 0, y: 0, z: 0}
+    - {x: 180, y: -90, z: 90}
+    - {x: 90, y: 0, z: 90}
+    process:
+      self: {fileID: 2092300091}
+      useLocal: 1
+    startIndex: 0
+    endIndex: 0

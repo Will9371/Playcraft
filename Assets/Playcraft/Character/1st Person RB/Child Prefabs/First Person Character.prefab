@@ -56,6 +56,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3403923576435922629}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -67,6 +68,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 3112339199772037736}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -82,6 +84,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3403923576435922629}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -93,6 +96,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
         - m_Target: {fileID: 3112339199772037736}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -104,6 +108,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
         - m_Target: {fileID: 2126008177256883604}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -119,6 +124,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3403923576435922629}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -130,6 +136,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 3112339199772037736}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -141,6 +148,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 2126008177256883604}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -203,6 +211,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1910564745544634893}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Jump
           m_Mode: 1
           m_Arguments:
@@ -232,6 +241,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807951914563779}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ActivateSlide
         m_Mode: 2
         m_Arguments:
@@ -247,6 +257,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807951914563779}
+        m_TargetAssemblyTypeName: 
         m_MethodName: DeactivateSlide
         m_Mode: 2
         m_Arguments:
@@ -270,14 +281,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20368a606726b714190cf9e666fae0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceDirection: {x: 0, y: 1, z: 0}
   referenceTransform: {fileID: 4009807950553526773}
+  referenceDirection: {x: 0, y: 1, z: 0}
   maxAngle: 45.000008
   minDot: 0.9238795
   OutputCollisionOnSuccess:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1910564745544634893}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Land
         m_Mode: 1
         m_Arguments:
@@ -341,6 +353,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4350584479779114452}
+        m_TargetAssemblyTypeName: 
         m_MethodName: HideCursor
         m_Mode: 1
         m_Arguments:
@@ -368,6 +381,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3403923576262336054}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -396,6 +410,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7747386104504520090}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Rotate
           m_Mode: 0
           m_Arguments:
@@ -411,6 +426,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Rotate
           m_Mode: 0
           m_Arguments:
@@ -485,6 +501,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3774126326436153883}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Toggle
           m_Mode: 1
           m_Arguments:
@@ -512,6 +529,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5003606232971474980}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -538,6 +556,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807950553526778}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -553,6 +572,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807950553526778}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -578,7 +598,7 @@ GameObject:
   - component: {fileID: 3403923575461834680}
   - component: {fileID: 3403923575461834683}
   - component: {fileID: 3403923575461834682}
-  - component: {fileID: 6088095508560868340}
+  - component: {fileID: 5956237078932320398}
   m_Layer: 0
   m_Name: Feet Trigger
   m_TagString: Untagged
@@ -623,6 +643,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -647,6 +668,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &3403923575461834683
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -680,6 +702,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7379903991212265101}
+          m_TargetAssemblyTypeName: 
           m_MethodName: RequestEnter
           m_Mode: 0
           m_Arguments:
@@ -697,6 +720,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7379903991212265101}
+          m_TargetAssemblyTypeName: 
           m_MethodName: RequestExit
           m_Mode: 0
           m_Arguments:
@@ -708,7 +732,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   collisionEvents: []
---- !u!114 &6088095508560868340
+--- !u!114 &5956237078932320398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -717,17 +741,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3403923575461834660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab49db7a7dffd44ba5742a106bd556e, type: 3}
+  m_Script: {fileID: 11500000, guid: 988df3dc144c679439c2c819d1a6e3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultIndex: 0
-  useLocal: 1
-  positions:
-  - {x: 0, y: 0.2, z: 0}
-  - {x: 0, y: 0.575, z: 0}
-  index: 0
-  start: {x: 0, y: 0, z: 0}
-  end: {x: 0, y: 0, z: 0}
+  process:
+    self: {fileID: 3403923575461834661}
+    useLocal: 1
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0.375, z: 0}
+    reverse: 0
 --- !u!1 &3403923576435922631
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +800,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4009807950553526778}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetState
           m_Mode: 2
           m_Arguments:
@@ -795,6 +818,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4009807950553526778}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetState
           m_Mode: 2
           m_Arguments:
@@ -853,6 +877,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807950553526778}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -868,6 +893,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807950553526778}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -889,7 +915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3403923577247798496}
   - component: {fileID: 2893186325053698058}
-  - component: {fileID: 7577265665412195715}
+  - component: {fileID: 5511425228464581940}
   - component: {fileID: 8926540907162459287}
   m_Layer: 0
   m_Name: Crouch
@@ -931,18 +957,8 @@ MonoBehaviour:
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7577265665412195715}
-          m_MethodName: Input
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 8926540907162459287}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Begin
           m_Mode: 1
           m_Arguments:
@@ -952,23 +968,25 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5511425228464581940}
+          m_TargetAssemblyTypeName: BoolRelay, Assembly-CSharp
+          m_MethodName: Input
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
   - state: {fileID: 11400000, guid: da247fddc1bb2d04aa210edcb2f55fb9, type: 2}
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7577265665412195715}
-          m_MethodName: Input
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 8926540907162459287}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Begin
           m_Mode: 1
           m_Arguments:
@@ -978,23 +996,25 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 5511425228464581940}
+          m_TargetAssemblyTypeName: BoolRelay, Assembly-CSharp
+          m_MethodName: Input
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
           m_CallState: 2
   - state: {fileID: 11400000, guid: 7cfcc37d09f2eda42acaea22e8af43a1, type: 2}
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7577265665412195715}
-          m_MethodName: Input
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 8926540907162459287}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Begin
           m_Mode: 1
           m_Arguments:
@@ -1005,7 +1025,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
---- !u!114 &7577265665412195715
+        - m_Target: {fileID: 5511425228464581940}
+          m_TargetAssemblyTypeName: BoolRelay, Assembly-CSharp
+          m_MethodName: Input
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &5511425228464581940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1014,14 +1046,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3403923577247798499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad16454432230134ebcce5775b9fe71b, type: 3}
+  m_Script: {fileID: 11500000, guid: 03bf231375209a04a92c3fe7223df851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 662605564111466678}
-        m_MethodName: SetDestination
+      - m_Target: {fileID: 4281531845209811793}
+        m_TargetAssemblyTypeName: LerpScaleMono, Assembly-CSharp
+        m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1031,8 +1064,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2318674495688561069}
-        m_MethodName: SetScaleIndex
+      - m_Target: {fileID: 4068854489698359674}
+        m_TargetAssemblyTypeName: Playcraft.LerpPositionMono, Assembly-CSharp
+        m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1042,8 +1076,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8251287707077686892}
-        m_MethodName: SetScaleIndex
+      - m_Target: {fileID: 5956237078932320398}
+        m_TargetAssemblyTypeName: Playcraft.LerpPositionMono, Assembly-CSharp
+        m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1053,8 +1088,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6088095508560868340}
-        m_MethodName: SetDestination
+      - m_Target: {fileID: 9141665485560413526}
+        m_TargetAssemblyTypeName: LerpCapsuleHeightMono, Assembly-CSharp
+        m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1081,7 +1117,8 @@ MonoBehaviour:
   Percent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 662605564111466678}
+      - m_Target: {fileID: 4068854489698359674}
+        m_TargetAssemblyTypeName: Playcraft.LerpPositionMono, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -1092,7 +1129,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2318674495688561069}
+      - m_Target: {fileID: 4281531845209811793}
+        m_TargetAssemblyTypeName: LerpScaleMono, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -1103,7 +1141,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8251287707077686892}
+      - m_Target: {fileID: 9141665485560413526}
+        m_TargetAssemblyTypeName: LerpCapsuleHeightMono, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -1114,7 +1153,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6088095508560868340}
+      - m_Target: {fileID: 5956237078932320398}
+        m_TargetAssemblyTypeName: Playcraft.LerpPositionMono, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -1125,6 +1165,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  allowInterrupt: 1
 --- !u!1 &3403923577405371574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1219,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 204815397532241959}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Interact
           m_Mode: 1
           m_Arguments:
@@ -1247,7 +1289,7 @@ GameObject:
   - component: {fileID: 7747386104504520090}
   - component: {fileID: 4009807950553526778}
   - component: {fileID: 2300345156078844275}
-  - component: {fileID: 8251287707077686892}
+  - component: {fileID: 9141665485560413526}
   m_Layer: 0
   m_Name: First Person Character
   m_TagString: Untagged
@@ -1326,6 +1368,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6631183737883123683}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 0
           m_Arguments:
@@ -1379,7 +1422,7 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
---- !u!114 &8251287707077686892
+--- !u!114 &9141665485560413526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1388,15 +1431,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4009807950553526777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5b8b1c2d7be79498c49efd90ea791b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3c17f8003759448a8534c92b316da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capsule: {fileID: 2300345156078844275}
-  defaultIndex: 0
-  heights:
-  - 1.5
-  - 0.75
-  yAnchor: 0
+  process:
+    capsule: {fileID: 2300345156078844275}
+    yAnchor: 0
+    start: 1.5
+    end: 0.75
+    reverse: 0
 --- !u!1 &4009807950704468146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,8 +1484,8 @@ GameObject:
   - component: {fileID: 4009807951184272438}
   - component: {fileID: 7747386103682226177}
   - component: {fileID: 7747386103682226176}
-  - component: {fileID: 2318674495688561069}
   - component: {fileID: 3362115151487655137}
+  - component: {fileID: 4281531845209811793}
   m_Layer: 8
   m_Name: Torso
   m_TagString: Player
@@ -1479,6 +1522,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1503,6 +1547,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &7747386103682226176
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1511,25 +1556,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4009807951184272439}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2318674495688561069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009807951184272439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec9813561197b5644867fafae6cf410d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultIndex: 0
-  scales:
-  - {x: 0.5, y: 0.75, z: 0.5}
-  - {x: 0.5, y: 0.4, z: 0.5}
-  xAnchor: 0.5
-  yAnchor: 0.5
-  zAnchor: 0.5
 --- !u!114 &3362115151487655137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,6 +1571,26 @@ MonoBehaviour:
   physics: {fileID: 4009807951914563779}
   slideEffectId: {fileID: 11400000, guid: 55ca538227133d84b8dd8c6b81a7c2ea, type: 2}
   slideDuration: 0.5
+--- !u!114 &4281531845209811793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009807951184272439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1706487d086b2e346b62853ce21d0a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  process:
+    self: {fileID: 4009807951184272438}
+    start: {x: 0.5, y: 0.75, z: 0.5}
+    end: {x: 0.5, y: 0.4, z: 0.5}
+    reverse: 0
+    xAnchor: 0.5
+    yAnchor: 0.5
+    zAnchor: 0.5
 --- !u!1 &4851831545168527299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,6 +1687,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6644855774238877337}
+          m_TargetAssemblyTypeName: 
           m_MethodName: AddMovement
           m_Mode: 2
           m_Arguments:
@@ -1658,6 +1705,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6644855774238877337}
+          m_TargetAssemblyTypeName: 
           m_MethodName: AddMovement
           m_Mode: 2
           m_Arguments:
@@ -1675,6 +1723,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6644855774238877337}
+          m_TargetAssemblyTypeName: 
           m_MethodName: AddMovement
           m_Mode: 2
           m_Arguments:
@@ -1692,6 +1741,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6644855774238877337}
+          m_TargetAssemblyTypeName: 
           m_MethodName: AddMovement
           m_Mode: 2
           m_Arguments:
@@ -1719,6 +1769,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4009807951914563779}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
@@ -1748,6 +1799,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4009807951914563779}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetSpeedMultiplier
           m_Mode: 4
           m_Arguments:
@@ -1763,6 +1815,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4009807951914563779}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetSpeedMultiplier
           m_Mode: 4
           m_Arguments:
@@ -1778,6 +1831,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4009807951914563779}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetSpeedMultiplier
           m_Mode: 4
           m_Arguments:
@@ -1793,6 +1847,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4009807951914563779}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetSpeedMultiplier
           m_Mode: 4
           m_Arguments:
@@ -1814,7 +1869,7 @@ GameObject:
   - component: {fileID: 7747386104451351950}
   - component: {fileID: 7747386104451351939}
   - component: {fileID: 7747386104451351948}
-  - component: {fileID: 662605564111466678}
+  - component: {fileID: 4068854489698359674}
   m_Layer: 8
   m_Name: Eyes Model
   m_TagString: Untagged
@@ -1830,7 +1885,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7747386104451351951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.137, z: 0.24499989}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0.245}
   m_LocalScale: {x: 0.4, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4009807950704468145}
@@ -1859,6 +1914,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1883,7 +1939,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &662605564111466678
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4068854489698359674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1892,17 +1949,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7747386104451351951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab49db7a7dffd44ba5742a106bd556e, type: 3}
+  m_Script: {fileID: 11500000, guid: 988df3dc144c679439c2c819d1a6e3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultIndex: 0
-  useLocal: 1
-  positions:
-  - {x: 0, y: 1.14, z: 0.245}
-  - {x: 0, y: 0.85, z: 0.245}
-  index: 0
-  start: {x: 0, y: 0, z: 0}
-  end: {x: 0, y: 0, z: 0}
+  process:
+    self: {fileID: 7747386104451351950}
+    useLocal: 1
+    start: {x: 0, y: 1.15, z: 0.245}
+    end: {x: 0, y: 0.8, z: 0.245}
+    reverse: 0
 --- !u!1 &8272226260970801749
 GameObject:
   m_ObjectHideFlags: 0

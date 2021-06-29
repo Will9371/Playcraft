@@ -272,8 +272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc728fa6830c1e47b2a7f73ccf597af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 524496317257542616}
-  useLocal: 1
   OnComplete:
     m_PersistentCalls:
       m_Calls:
@@ -289,6 +287,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  movement:
+    self: {fileID: 0}
+    useLocal: 1
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+    reverse: 0
 --- !u!114 &313814280275873588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,7 +490,7 @@ MonoBehaviour:
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5770561207559968892}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
@@ -498,7 +502,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 7103779632987958356}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
@@ -519,7 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064008350263105945}
-  - component: {fileID: 5770561207559968892}
+  - component: {fileID: 8109872947916639411}
   m_Layer: 0
   m_Name: Resize
   m_TagString: Untagged
@@ -541,7 +545,7 @@ Transform:
   m_Father: {fileID: 524496317257542616}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5770561207559968892
+--- !u!114 &8109872947916639411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -550,19 +554,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2895360899591696486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec9813561197b5644867fafae6cf410d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1706487d086b2e346b62853ce21d0a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 8336125083060295101}
-  defaultIndex: 0
-  scales:
-  - {x: 0.3, y: 0.3, z: 0.3}
-  - {x: 0.1, y: 0.1, z: 0.1}
-  xAnchor: 0.5
-  yAnchor: 0.5
-  zAnchor: 0.5
-  start: {x: 0.3, y: 0.3, z: 0.3}
-  end: {x: 0.1, y: 0.1, z: 0.1}
+  process:
+    self: {fileID: 8336125083060295101}
+    start: {x: 0.3, y: 0.3, z: 0.3}
+    end: {x: 0.1, y: 0.1, z: 0.1}
+    reverse: 0
+    xAnchor: 0.5
+    yAnchor: 0.5
+    zAnchor: 0.5
 --- !u!1 &3454126414839192871
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +653,7 @@ GameObject:
   - component: {fileID: 284928010207635720}
   - component: {fileID: 6489274983226537120}
   - component: {fileID: 1223367635298523423}
-  - component: {fileID: 7103779632987958356}
+  - component: {fileID: 8014246511784277871}
   - component: {fileID: 9098914201763963616}
   m_Layer: 0
   m_Name: Model
@@ -723,7 +725,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7103779632987958356
+--- !u!114 &8014246511784277871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -732,30 +734,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 3962563947997722718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a00837f9d280ea49bf1f38458ce6ae1, type: 3}
+  m_Script: {fileID: 11500000, guid: b2f62b09b2ea6bb40b8bba41826a28ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultIndex: 0
-  colors:
-  - {r: 0, g: 0, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9098914201763963616}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-  start: {r: 0, g: 0, b: 1, a: 1}
-  end: {r: 1, g: 0, b: 0, a: 1}
+  startPercent: 0
+  process:
+    start: {r: 0, g: 0, b: 1, a: 1}
+    end: {r: 1, g: 0, b: 0, a: 1}
+    reverse: 0
+    Output:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9098914201763963616}
+          m_TargetAssemblyTypeName: Playcraft.SetColor, Assembly-CSharp
+          m_MethodName: Input
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &9098914201763963616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,8 +821,8 @@ MonoBehaviour:
   Percent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7103779632987958356}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 8014246511784277871}
+        m_TargetAssemblyTypeName: LerpColorMono, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -832,8 +833,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5770561207559968892}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 8109872947916639411}
+        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -860,29 +861,29 @@ MonoBehaviour:
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7103779632987958356}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetDestination
-        m_Mode: 3
+      - m_Target: {fileID: 8014246511784277871}
+        m_TargetAssemblyTypeName: LerpColorMono, Assembly-CSharp
+        m_MethodName: SetDirection
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 5770561207559968892}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetScaleIndex
-        m_Mode: 3
+      - m_Target: {fileID: 8109872947916639411}
+        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
+        m_MethodName: SetDirection
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2840696211095094964
 MonoBehaviour:
@@ -896,6 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849e54a022621f94790d785df321882f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 1
   actions:
   - percent: 1
     OnReached:
@@ -1134,7 +1136,7 @@ MonoBehaviour:
   - {fileID: 2626525154793004847}
   - {fileID: 42163852264912102}
   - {fileID: 2156569106745129015}
-  - {fileID: 7103779632987958356}
+  - {fileID: 8014246511784277871}
   - {fileID: 9098914201763963616}
 --- !u!114 &3532403164019635036
 MonoBehaviour:
@@ -1214,8 +1216,8 @@ MonoBehaviour:
   Percent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7103779632987958356}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 8014246511784277871}
+        m_TargetAssemblyTypeName: LerpColorMono, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -1226,8 +1228,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5770561207559968892}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 8109872947916639411}
+        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -1254,10 +1256,10 @@ MonoBehaviour:
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7103779632987958356}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetDestination
-        m_Mode: 3
+      - m_Target: {fileID: 8014246511784277871}
+        m_TargetAssemblyTypeName: LerpColorMono, Assembly-CSharp
+        m_MethodName: SetDirection
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1266,10 +1268,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5770561207559968892}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetScaleIndex
-        m_Mode: 3
+      - m_Target: {fileID: 8109872947916639411}
+        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
+        m_MethodName: SetDirection
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1290,6 +1292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849e54a022621f94790d785df321882f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 1
   actions:
   - percent: 1
     OnReached:

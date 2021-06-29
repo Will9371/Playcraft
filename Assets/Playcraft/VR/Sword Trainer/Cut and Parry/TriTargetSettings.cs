@@ -18,12 +18,12 @@ namespace Playcraft.Examples.SwordTrainer
         [Header("References")]
         [SerializeField] RotateToAngle rotor;
         [SerializeField] GetFloatFromArray angler;
-        [SerializeField] GetPercentOverTime extension;
-        [SerializeField] GetPercentOverTime retraction;
+        [SerializeField] GetPercentOverTimeMono extension;
+        [SerializeField] GetPercentOverTimeMono retraction;
         [SerializeField] TimedEvent delayExtend;
         [SerializeField] TimedEvent delayRotate;
-        [SerializeField] LerpPosition enterTarget;
-        [SerializeField] LerpPosition exitTarget;
+        [SerializeField] LerpPositionMono enterTarget;
+        [SerializeField] LerpPositionMono exitTarget;
         [SerializeField] Transform[] targets;
         
         void OnValidate() { Refresh(); }

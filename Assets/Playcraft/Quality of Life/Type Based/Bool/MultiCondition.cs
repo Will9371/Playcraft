@@ -5,12 +5,10 @@ namespace Playcraft
 {
     public class MultiCondition : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] GameObject[] observations;
         [SerializeField] bool requireAll;
         [SerializeField] bool requiredState;
         [SerializeField] BoolEvent Output;
-        #pragma warning restore 0649
         
         List<IBool> Observations = new List<IBool>();
         

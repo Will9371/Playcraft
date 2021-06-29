@@ -11,9 +11,9 @@ namespace Playcraft.Examples.SwordTrainer
         
         [Header("References")]
         [SerializeField] SetParry controller;
-        [SerializeField] LerpPosition movement;
-        [SerializeField] LerpRotation rotation;
-        [SerializeField] GetPercentOverTime timer;
+        [SerializeField] LerpPositionIndexMono movement;
+        [SerializeField] LerpRotationIndex rotation;
+        [SerializeField] GetPercentOverTimeMono timer;
         
         void Awake()
         {

@@ -87,6 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -111,6 +112,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5368790759862210797
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2856791749298568180}
-  - component: {fileID: 4286309036944731455}
+  - component: {fileID: 5633604574400219884}
   m_Layer: 8
   m_Name: FPS Right Shoulder
   m_TagString: Untagged
@@ -190,7 +192,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4286309036944731455
+--- !u!114 &5633604574400219884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,17 +201,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7501129855537201225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab49db7a7dffd44ba5742a106bd556e, type: 3}
+  m_Script: {fileID: 11500000, guid: 988df3dc144c679439c2c819d1a6e3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultIndex: 0
-  useLocal: 1
-  positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: -0.3, z: 0}
-  index: 0
-  start: {x: 0, y: 0, z: 0}
-  end: {x: 0, y: 0, z: 0}
+  process:
+    self: {fileID: 2856791749298568180}
+    useLocal: 1
+    start: {x: 0.3, y: 1, z: 0}
+    end: {x: 0.3, y: 0.7, z: 0}
+    reverse: 0
 --- !u!1 &7574721256009555587
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +304,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6963549414704334546}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Shoot
           m_Mode: 1
           m_Arguments:
@@ -370,6 +371,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -394,6 +396,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &516546313062148017
 CapsuleCollider:
   m_ObjectHideFlags: 0

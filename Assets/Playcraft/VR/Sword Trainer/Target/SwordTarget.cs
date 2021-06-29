@@ -9,9 +9,9 @@ namespace Playcraft.Examples.SwordTrainer
     
         [SerializeField] LerpPositionOverTime movement;
         [SerializeField] Relay activateRelay;
-        [SerializeField] GetPercentOverTime activateEffects;
+        [SerializeField] GetPercentOverTimeMono activateEffects;
         [SerializeField] Relay deactivateRelay;
-        [SerializeField] GetPercentOverTime deactivateEffects;
+        [SerializeField] GetPercentOverTimeMono deactivateEffects;
         [SerializeField] Collider hitbox;
         [SerializeField] CreateFloatingNumberOnHit floatingNumberCreator;
         [SerializeField] BoolEvent OnSetActive;

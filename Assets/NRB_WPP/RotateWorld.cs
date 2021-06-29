@@ -9,14 +9,14 @@ public class RotateWorld : MonoBehaviour
     [HideInInspector] public float rotationTime;
 
     LerpPivotZ lerpZ;
-    LerpRotation lerpRotation;
+    LerpRotationIndex lerpRotation;
     CycleGravity cycleGravity;
     KeyboardInput keyboardInput;
     
     void Awake()
     {
         lerpZ = view.GetComponent<LerpPivotZ>();
-        lerpRotation = player.GetComponent<LerpRotation>();
+        lerpRotation = player.GetComponent<LerpRotationIndex>();
         cycleGravity = player.GetComponent<CycleGravity>();
         keyboardInput = view.GetComponent<KeyboardInput>();
     }

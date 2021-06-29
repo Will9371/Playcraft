@@ -12,12 +12,12 @@ namespace Playcraft.Examples.SwordTrainer
         
         int uniqueParryCount;
         float transitionTime;
-        LerpPosition movement;
-        LerpRotation rotation;
-        GetPercentOverTime timer;
+        LerpPositionIndexMono movement;
+        LerpRotationIndex rotation;
+        GetPercentOverTimeMono timer;
         
-        public void Inject(float transitionTime, LerpPosition movement, 
-        LerpRotation rotation, GetPercentOverTime timer)
+        public void Inject(float transitionTime, LerpPositionIndexMono movement, 
+        LerpRotationIndex rotation, GetPercentOverTimeMono timer)
         {
             this.transitionTime = transitionTime;
             this.movement = movement;
@@ -26,14 +26,14 @@ namespace Playcraft.Examples.SwordTrainer
             
             uniqueParryCount = movement.positions.Length;
             
-            if (rotation._rotations.Length != movement.positions.Length)
+            if (rotation.rotations.Length != movement.positions.Length)
                 Debug.LogError("Non-matching number of parry positions and rotations");
         }
         
         #endregion
 
         public void SetRandomParry()
-        {        
+        {
             ActivateOrbs(false);
             var nextParryIndex = Random.Range(0, uniqueParryCount);
             

@@ -1,43 +1,25 @@
-﻿using System.Collections;
+﻿using System;
 using UnityEngine;
-using Playcraft;
 
-
-public class GetPercentOverTime : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] ProgressEvent progress;
-    [SerializeField] float duration;
-    [SerializeField] FloatEvent Percent;
-    [SerializeField] bool allowInterrupt = true;
-    
-    bool inProcess;
-    
-    public void SetDuration(float value) { duration = value; }
-    
-    public void Begin() 
+    [Serializable] public class GetPercentOverTime
     {
-        if (!inProcess || allowInterrupt) 
-            StartCoroutine(Process()); 
-    }
-    
-    IEnumerator Process()
-    {
-        inProcess = true;
+        public float duration;
+        float startTime;
         
-        if (progress) progress.Begin(duration);
-    
-        float startTime = Time.time;
-        float percent = 0f;
-        float elapsedTime;
+        public float elapsedTime => Time.time - startTime;
+        public float percent => elapsedTime/duration;
+        public bool inProgress => percent < 1f;
         
-        while (percent < 1f)
+        public void SetDurationAndBegin(float newDuration)
         {
-            yield return null;
-            elapsedTime = Time.time - startTime;
-            percent = elapsedTime/duration;
-            Percent.Invoke(percent);
+            duration = newDuration;
+            Begin();
         }
         
-        inProcess = false;        
+        public void Begin() { startTime = Time.time; }
+
+        public (float, bool) GetProgress() { return (percent, !inProgress); }
     }
 }

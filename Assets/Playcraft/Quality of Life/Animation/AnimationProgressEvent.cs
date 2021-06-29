@@ -6,10 +6,8 @@ namespace Playcraft
 {
     public class AnimationProgressEvent : MonoBehaviour 
     {
-        #pragma warning disable 0649
         [SerializeField] ProgressEvent sequence;
         [SerializeField] Animator animator;
-        #pragma warning restore 0649
         
         float percent => stateInfo.normalizedTime; 
         AnimatorStateInfo stateInfo => animator.GetCurrentAnimatorStateInfo(0); 
@@ -33,7 +31,7 @@ namespace Playcraft
         {
             animator.Play(animation);
             yield return null;
-            sequence.Begin(stateInfo.length);
+            sequence.SetDurationAndBegin(stateInfo.length);
         }
     }
 }
