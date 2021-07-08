@@ -720,7 +720,7 @@ MonoBehaviour:
   distanceRange: {x: 2.9, y: 3.1}
   heightRange: {x: 0.5, y: 2}
   moveDuration: 1
-  player: {fileID: 1454854330}
+  player: {fileID: 7016883134170958856}
   worldCanvas: {fileID: 1829178727}
   mirrorCenter: {fileID: 216714414}
 --- !u!4 &216714414
@@ -763,7 +763,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 12
           m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1166,6 +1166,12 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1771831683}
+    - target: {fileID: 8951941259013378778, guid: 3c4bcc7b2432f7e41a33528540ec6781,
+        type: 3}
+      propertyPath: tags.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4bcc7b2432f7e41a33528540ec6781, type: 3}
 --- !u!1 &825140205
@@ -1718,7 +1724,7 @@ PrefabInstance:
     - target: {fileID: 116495096327639440, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
       propertyPath: percent
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
@@ -1754,6 +1760,26 @@ PrefabInstance:
         type: 3}
       propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949281539109669062, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949281539109669062, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949281539977600645, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949281539977600645, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949281540534564828, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
@@ -1851,7 +1877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1454854328
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2370,7 +2396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fee66a36b5e9948aa4b9bf90746003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrEnabled: 0
+  vrEnabled: 1
   Relay:
     m_PersistentCalls:
       m_Calls:
@@ -2472,7 +2498,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-  state: 0
+  state: 1
 --- !u!1 &1746065436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8121498150417604436, guid: 5a33811a7b3799e4e83842af025d7487,
@@ -3416,6 +3442,11 @@ PrefabInstance:
     - target: {fileID: 5346060717038480892, guid: b2ea90cfd0c721a45b99ff223f6f7e06,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028872319106903144, guid: b2ea90cfd0c721a45b99ff223f6f7e06,
+        type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

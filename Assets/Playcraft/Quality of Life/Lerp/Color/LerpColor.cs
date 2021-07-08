@@ -1,23 +1,26 @@
 using System;
 using UnityEngine;
 
-[Serializable] public class LerpColor
+namespace Playcraft
 {
-    public Color start;
-    public Color end;
-    public bool reverse;
-    
-    public ColorEvent Output;
-
-    public void Input(float percent) 
-    { 
-        if (reverse) percent = 1f - percent;
-        Output.Invoke(Color.Lerp(start, end, percent));
-    }
-    
-    public void SetTargetColor(Color targetColor)
+    [Serializable] public class LerpColor
     {
-        start = end;
-        end = targetColor;
+        public Color start;
+        public Color end;
+        public bool reverse;
+        
+        public ColorEvent Output;
+
+        public void Input(float percent) 
+        { 
+            if (reverse) percent = 1f - percent;
+            Output.Invoke(Color.Lerp(start, end, percent));
+        }
+        
+        public void SetTargetColor(Color targetColor)
+        {
+            start = end;
+            end = targetColor;
+        }
     }
 }

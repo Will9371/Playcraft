@@ -20,6 +20,7 @@ namespace Playcraft.Examples.SwordTrainer
         {
             if (!activateOnStart) return;
             Hit(0);
+            extend.Begin();
         }
 
         public void SetRandomCut()

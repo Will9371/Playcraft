@@ -1,52 +1,55 @@
 using System;
 using UnityEngine;
 
-[Serializable] public class LerpColorIndex
+namespace Playcraft
 {
-    [SerializeField] int defaultIndex;
-    [SerializeField] Color[] colors;
-    [SerializeField] LerpColor process;
-    
-    int index;
-
-    public Color start
+    [Serializable] public class LerpColorIndex
     {
-        get => process.start;
-        set => process.start = value;
-    }
-    public Color end
-    {
-        get => process.end;
-        set => process.end = value;
-    }
-    
-    public void Initialize()
-    {            
-        if (colors.Length <= 0) return;
-
-        index = defaultIndex;
-        start = colors[defaultIndex];
-        end = start;
-        Input(0f);
-    }
+        [SerializeField] int defaultIndex;
+        [SerializeField] Color[] colors;
+        [SerializeField] LerpColor process;
         
-    // Move between internally-stored positions
-    public void SetDestination(int newIndex)
-    {
-        if (newIndex >= colors.Length)
+        int index;
+
+        public Color start
         {
-            Debug.LogError("Attempting to set color index " + newIndex + " of " + colors.Length);
-            return;
+            get => process.start;
+            set => process.start = value;
+        }
+        public Color end
+        {
+            get => process.end;
+            set => process.end = value;
         }
         
-        start = colors[index];
-        end = colors[newIndex];
-        index = newIndex;
+        public void Initialize()
+        {            
+            if (colors.Length <= 0) return;
+
+            index = defaultIndex;
+            start = colors[defaultIndex];
+            end = start;
+            Input(0f);
+        }
+            
+        // Move between internally-stored positions
+        public void SetDestination(int newIndex)
+        {
+            if (newIndex >= colors.Length)
+            {
+                Debug.LogError("Attempting to set color index " + newIndex + " of " + colors.Length);
+                return;
+            }
+            
+            start = colors[index];
+            end = colors[newIndex];
+            index = newIndex;
+        }
+            
+        // Move towards externally defined location
+        public void SetTargetColor(Color value) { process.SetTargetColor(value); }
+            
+        // Call continuously to move over time
+        public void Input(float percent) { process.Input(percent); }
     }
-        
-    // Move towards externally defined location
-    public void SetTargetColor(Color value) { process.SetTargetColor(value); }
-        
-    // Call continuously to move over time
-    public void Input(float percent) { process.Input(percent); }
 }

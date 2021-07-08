@@ -7,12 +7,10 @@ namespace Playcraft
 {
     public class HumanoidAnimationInterface : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Animator animator;    
         [SerializeField] [Range(0f, 1f)] float defaultCrossFade = .3f;
         [SerializeField] AnimatedMoveState jumpAnimations;
         [SerializeField] JumpCrossFadeLookup jumpFadeLookup;
-        #pragma warning restore 0649
         
         AnimatedMoveState priorAnimations;
         AnimatedMoveState animations;

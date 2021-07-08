@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+// MERGE with RespondToColliderWithCustomTags
 namespace Playcraft
 {
     public class RespondToComponent : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] SO interaction;
         [SerializeField] GameObjectBoolEvent OnEnter;
         [SerializeField] GameObjectBoolEvent OnExit;
-        #pragma warning restore 0649
 
         void OnTriggerEnter(Collider other) { RespondToTouch(OnEnter, other, true); }
         void OnTriggerExit(Collider other) { RespondToTouch(OnExit, other, false); }

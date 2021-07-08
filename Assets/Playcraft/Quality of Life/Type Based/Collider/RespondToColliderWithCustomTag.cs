@@ -3,6 +3,8 @@ using Playcraft;
 using UnityEngine;
 using UnityEngine.Events;
 
+// MERGE with RespondToComponent & RespondToTouch, rename (simplify)
+// Delegate logic out of MonoBehaviour
 public class RespondToColliderWithCustomTag : MonoBehaviour
 {
     [SerializeField] Binding[] bindings;

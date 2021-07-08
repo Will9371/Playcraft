@@ -5,10 +5,8 @@ namespace Playcraft
 {
     public class RespondToTouch : MonoBehaviour
     { 
-        #pragma warning disable 0649   
         [SerializeField] ContactTriggerIO[] triggerEvents;
         [SerializeField] ContactCollisionIO[] collisionEvents;
-        #pragma warning restore 0649
         
         void OnTriggerEnter(Collider other)
         {
@@ -57,12 +55,10 @@ namespace Playcraft
         
         [Serializable] class ContactTriggerIO
         {
-            #pragma warning disable 0649
             [SerializeField] TouchType touchType;
             [SerializeField] CollisionType collisionType;
             [SerializeField] CollisionType otherColliderType;
             [SerializeField] ColliderEvent Output;
-            #pragma warning restore 0649
 
             public void RequestActivate(Collider other, TouchType touchType, CollisionType collisionType)
             {
@@ -78,10 +74,8 @@ namespace Playcraft
         
         [Serializable] class ContactCollisionIO
         {
-            #pragma warning disable 0649
             [SerializeField] TouchType touchType;
             [SerializeField] CollisionEvent Output;
-            #pragma warning restore 0649
 
             public void RequestActivate(Collision other, TouchType touchType)
             {            

@@ -8,6 +8,8 @@ namespace Playcraft
     {
         [SerializeField] UnityEvent OnComplete;
         [SerializeField] LerpPosition movement;
+        
+        void Start() { movement.SetSelfIfNull(transform); }
 
         public void Move(Vector3 destination, float duration)
         {            

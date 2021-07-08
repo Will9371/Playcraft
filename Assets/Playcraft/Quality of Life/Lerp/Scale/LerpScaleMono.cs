@@ -9,7 +9,7 @@ namespace Playcraft
         void Start()
         {
             process.SetSelfIfNull(transform);
-            process.start = transform.localScale;
+            //process.start = transform.localScale;
         }
         
         public void SetScale(Vector3 value) { process.SetNewScale(value); }
