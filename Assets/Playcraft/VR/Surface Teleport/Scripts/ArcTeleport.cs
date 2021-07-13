@@ -7,7 +7,6 @@ namespace Playcraft.VR
 {
     public class ArcTeleport : MonoBehaviour
     {
-        #pragma warning disable 0649
         [Header("References")]
         [SerializeField] Transform rig;
         [SerializeField] Transform head;
@@ -31,7 +30,6 @@ namespace Playcraft.VR
         [Header("Output")]
         [SerializeField] Vector3Event OnSuccess;
         [SerializeField] SO landMessage;
-        #pragma warning restore 0649
         
         BinaryThreshold binaryThreshold;
         CalculateParabolicArc parabolicArc;

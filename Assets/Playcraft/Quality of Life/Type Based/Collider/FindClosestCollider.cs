@@ -1,27 +1,13 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Playcraft
 {
-    // RENAME: FindClosestColliderMono
-    public class FindClosestCollider : MonoBehaviour
-    {
-        [SerializeField] Transform self;
-        [SerializeField] ColliderEvent Output;
-        
-        Find_Closest_Collider process;
-        
-        void Awake() { process = new Find_Closest_Collider(self); }
-
-        public void Input(List<Collider> others) { Output.Invoke(process.Input(others)); }
-    }
-
-    // RENAME: FindClosestCollider, move to new script
-    public class Find_Closest_Collider
+    public class FindClosestCollider
     {
         Transform self;
-            
-        public Find_Closest_Collider(Transform self) { this.self = self; }
+                
+        public FindClosestCollider(Transform self) { this.self = self; }
 
         Collider closest;
         float shortestDistance;
@@ -31,16 +17,16 @@ namespace Playcraft
         {
             closest = null;
             shortestDistance = Mathf.Infinity;
-            
+                
             foreach (var other in others)
             {
                 distance = Vector3.Distance(self.position, other.transform.position);
                 if (distance >= shortestDistance) continue;
-                
+                    
                 closest = other;
                 shortestDistance = distance;
             }
-            
+                
             return closest;
         }        
     }

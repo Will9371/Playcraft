@@ -17,27 +17,27 @@ namespace Playcraft.AI
     
         #region Internal Dependencies
         
-        Track_Colliders trackColliders = new Track_Colliders();
-        Filter_By_Angle _filterByAngle;
-        Filter_By_Angle filterByAngle
+        TrackColliders trackColliders = new TrackColliders();
+        FilterByAngle _filterByAngle;
+        FilterByAngle filterByAngle
         {
             get
             {
                 if (_filterByAngle == null)
-                    _filterByAngle = new Filter_By_Angle(source, maxAngle);
+                    _filterByAngle = new FilterByAngle(source, maxAngle);
                     
                 return _filterByAngle;
             }
         }
-        Line_Of_Sight lineOfSight;
+        LineOfSight lineOfSight;
         FilterCollidersByCustomTag targetFilter;
-        Find_Closest_Collider findClosest;                  
+        FindClosestCollider findClosest;                  
         
         void Awake()
         {
-            lineOfSight = new Line_Of_Sight(source, requireMultiplePoints, debug);
+            lineOfSight = new LineOfSight(source, requireMultiplePoints, debug);
             targetFilter = new FilterCollidersByCustomTag(targetIds);
-            findClosest = new Find_Closest_Collider(source);
+            findClosest = new FindClosestCollider(source);
         }
         
         #endregion

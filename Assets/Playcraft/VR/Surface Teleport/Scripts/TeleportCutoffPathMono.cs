@@ -3,15 +3,13 @@ using UnityEngine;
 
 namespace Playcraft.VR
 {
-    public class TeleportCutoffPathComponent : MonoBehaviour
+    public class TeleportCutoffPathMono : MonoBehaviour
     { 
-        #pragma warning disable 0649
         [SerializeField] float maxSlope = 45f;
         [SerializeField] Vector3ArrayEvent OutputPath;
         [SerializeField] Vector3Event OutputEndpoint;
         [SerializeField] TrinaryEvent OutputResult;
         [SerializeField] SO teleportTag;
-        #pragma warning restore 0649
         
         TeleportCutoffPath cutoffPath;
         

@@ -2,12 +2,10 @@
 
 namespace Playcraft
 {
-    public class LineRendererInterfaceComponent : MonoBehaviour
+    public class LineRendererInterfaceMono : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] new LineRenderer renderer;
         [SerializeField] string shaderColorId;
-        #pragma warning restore 0649
         
         LineRendererInterface line;
         void Awake() { line = new LineRendererInterface(renderer, shaderColorId); }

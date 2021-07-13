@@ -2,9 +2,8 @@
 
 namespace Playcraft
 {
-    public class CalculateParabolicArcComponent : MonoBehaviour
+    public class CalculateParabolicArcMono : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Transform source;
         [SerializeField] float range = 5f;
         [SerializeField] float gravity = 9.8f;
@@ -12,7 +11,6 @@ namespace Playcraft
         [SerializeField] float maxDrop = 5f;
         [SerializeField] Vector3ArrayEvent Output;
         [SerializeField] BoolEvent OnActivate;
-        #pragma warning restore 0649
         
         CalculateParabolicArc arc;
         

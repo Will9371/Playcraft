@@ -5,10 +5,10 @@ using UnityEngine.Events;
 
 namespace Playcraft
 {
-    public class FindHitsInPathComponent : MonoBehaviour
+    public class FindHitsInPathMono : MonoBehaviour
     {
         [Serializable] public class PathWithHitsEvent : UnityEvent<Vector3[], List<IndexedRaycastHit>> { }
-        [SerializeField] PathWithHitsEvent Output = default;
+        [SerializeField] PathWithHitsEvent Output;
         
         FindHitsInPath hitsInPath;
         

@@ -1,34 +1,15 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
+using System.Collections.Generic;
+using UnityEngine; 
+    
 namespace Playcraft
 {
-    // RENAME: LineOfSightMono
-    public class LineOfSight : MonoBehaviour
-    {
-        [SerializeField] Transform source;
-        [SerializeField] ColliderListEvent Output;
-        [Tooltip("True: only detect colliders with TransformChildContainer component attached.  " +
-                 "False: raycast to center of colliders without TransformChildContainer.")]
-        [SerializeField] bool requireMultiplePoints;
-        [Tooltip("True: draw debug lines for all raycasts.")]
-        [SerializeField] bool debug;
-        
-        Line_Of_Sight process;
-                
-        void Awake() { process = new Line_Of_Sight(source, requireMultiplePoints, debug); }
-        
-        public void Input(List<Collider> values) { Output.Invoke(process.Input(values)); }
-    }
-    
-    // RENAME: LineOfSight, move to new script
-    public class Line_Of_Sight
+    public class LineOfSight
     {
         readonly Transform source;
         readonly bool requireMultiplePoints;
         readonly bool debug;
         
-        public Line_Of_Sight(Transform source, bool requireMultiplePoints = false, bool debug = false)
+        public LineOfSight(Transform source, bool requireMultiplePoints = false, bool debug = false)
         {
             this.source = source;
             this.requireMultiplePoints = requireMultiplePoints;
@@ -87,5 +68,5 @@ namespace Playcraft
             
             return hit.collider == other;  
         }
-    }
+    } 
 }
