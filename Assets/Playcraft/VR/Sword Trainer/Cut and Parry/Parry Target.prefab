@@ -277,10 +277,9 @@ GameObject:
   - component: {fileID: 1642345346}
   - component: {fileID: 1642345345}
   - component: {fileID: 1642345344}
-  - component: {fileID: 1642345343}
   - component: {fileID: 4070539284103444036}
   - component: {fileID: 1769529377495797733}
-  - component: {fileID: 3576416540315835724}
+  - component: {fileID: 478558844945306554}
   m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
@@ -382,49 +381,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1642345343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642345339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd8cae509dc0234abc1fc7a076a3fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4070539284103444036}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetSwordTouching
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 0
-  OnExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4070539284103444036}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetSwordTouching
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
 --- !u!114 &4070539284103444036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,7 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 1642345346}
   enabled: 1
---- !u!114 &3576416540315835724
+--- !u!114 &478558844945306554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -514,20 +470,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 1642345339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 0
-    Output:
+  triggerBindings:
+  - touchFilter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+    response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 9114963430345607594}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
+        - m_Target: {fileID: 4070539284103444036}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
+            Assembly-CSharp
+          m_MethodName: SetSwordTouching
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - touchFilter:
+      touchType: 1
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4070539284103444036}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
+            Assembly-CSharp
+          m_MethodName: SetSwordTouching
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -536,25 +520,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - touchType: 1
-    collisionType: 1
-    otherColliderType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3639317364554233637}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
+  collisionBindings: []
 --- !u!1 &728361977802309895
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,26 +651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4878214112049537511}
-          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
-            Assembly-CSharp
-          m_MethodName: SetSwordTouching
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  triggerBindings: []
+  collisionBindings: []
 --- !u!1 &1448003309582091737
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,26 +781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3883042381378460408}
-          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
-            Assembly-CSharp
-          m_MethodName: SetSwordTouching
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  triggerBindings: []
+  collisionBindings: []
 --- !u!1 &1481061490945328757
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,11 +796,10 @@ GameObject:
   - component: {fileID: 4177354185291690832}
   - component: {fileID: 2203628381495204249}
   - component: {fileID: 1292794848796461197}
-  - component: {fileID: 8771264441087669622}
   - component: {fileID: 3883042381378460408}
   - component: {fileID: 8353115735526215184}
   - component: {fileID: 5843164667095090962}
-  - component: {fileID: 3863154256023954549}
+  - component: {fileID: 1246181271526543580}
   m_Layer: 0
   m_Name: End
   m_TagString: Untagged
@@ -972,49 +901,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8771264441087669622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481061490945328757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd8cae509dc0234abc1fc7a076a3fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3883042381378460408}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetSwordTouching
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 0
-  OnExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3883042381378460408}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetSwordTouching
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
 --- !u!114 &3883042381378460408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,7 +999,7 @@ MonoBehaviour:
     start: {x: 0, y: 0, z: 0}
     end: {x: -0.3, y: 0, z: 0}
     reverse: 0
---- !u!114 &3863154256023954549
+--- !u!114 &1246181271526543580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1122,20 +1008,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 1481061490945328757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 0
-    Output:
+  triggerBindings:
+  - touchFilter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+    response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3660336020737110857}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
+        - m_Target: {fileID: 3883042381378460408}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
+            Assembly-CSharp
+          m_MethodName: SetSwordTouching
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - touchFilter:
+      touchType: 1
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3883042381378460408}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
+            Assembly-CSharp
+          m_MethodName: SetSwordTouching
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1144,25 +1058,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - touchType: 1
-    collisionType: 1
-    otherColliderType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2472469995458667820}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
+  collisionBindings: []
 --- !u!1 &1925283355355459648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,11 +1105,10 @@ GameObject:
   - component: {fileID: 3029600572855857344}
   - component: {fileID: 213236473090063881}
   - component: {fileID: 3974080608300532181}
-  - component: {fileID: 6365266797990987160}
   - component: {fileID: 4878214112049537511}
   - component: {fileID: 5020215160747169322}
   - component: {fileID: 4616667521085344567}
-  - component: {fileID: 4318310261287338007}
+  - component: {fileID: 5288228426804508516}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -1315,49 +1210,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6365266797990987160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2597213137514829412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd8cae509dc0234abc1fc7a076a3fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4878214112049537511}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetSwordTouching
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 0
-  OnExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4878214112049537511}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetSwordTouching
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
 --- !u!114 &4878214112049537511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,7 +1308,7 @@ MonoBehaviour:
     start: {x: 0, y: 0, z: 0}
     end: {x: 0.3, y: 0, z: 0}
     reverse: 0
---- !u!114 &4318310261287338007
+--- !u!114 &5288228426804508516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1465,20 +1317,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 2597213137514829412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 0
-    Output:
+  triggerBindings:
+  - touchFilter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+    response:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1692064857224050652}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
+        - m_Target: {fileID: 4878214112049537511}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
+            Assembly-CSharp
+          m_MethodName: SetSwordTouching
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - touchFilter:
+      touchType: 1
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4878214112049537511}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
+            Assembly-CSharp
+          m_MethodName: SetSwordTouching
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1487,25 +1367,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - touchType: 1
-    collisionType: 1
-    otherColliderType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6337995579904915653}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
+  collisionBindings: []
 --- !u!1 &5020928243405746385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,26 +1411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4070539284103444036}
-          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
-            Assembly-CSharp
-          m_MethodName: SetSwordTouching
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  triggerBindings: []
+  collisionBindings: []
 --- !u!1 &5728076117933159284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,26 +1456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3883042381378460408}
-          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
-            Assembly-CSharp
-          m_MethodName: SetSwordTouching
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  triggerBindings: []
+  collisionBindings: []
 --- !u!1 &7676701935971829966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,26 +1501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4878214112049537511}
-          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
-            Assembly-CSharp
-          m_MethodName: SetSwordTouching
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  triggerBindings: []
+  collisionBindings: []
 --- !u!1 &8195553492815876922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,26 +1610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4070539284103444036}
-          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.ParryTargetOrbState,
-            Assembly-CSharp
-          m_MethodName: SetSwordTouching
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  triggerBindings: []
+  collisionBindings: []
 --- !u!1 &9032779834014278459
 GameObject:
   m_ObjectHideFlags: 0

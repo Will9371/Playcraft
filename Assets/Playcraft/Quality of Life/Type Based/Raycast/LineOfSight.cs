@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Playcraft
 {
+    // RENAME: LineOfSightMono
     public class LineOfSight : MonoBehaviour
     {
         [SerializeField] Transform source;
@@ -20,6 +21,7 @@ namespace Playcraft
         public void Input(List<Collider> values) { Output.Invoke(process.Input(values)); }
     }
     
+    // RENAME: LineOfSight, move to new script
     public class Line_Of_Sight
     {
         readonly Transform source;

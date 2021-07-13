@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3830873632427303543}
   - component: {fileID: 5093912891410594439}
-  - component: {fileID: 4756838593835643453}
   - component: {fileID: 3830873632427303540}
   - component: {fileID: 3830873632427303547}
   - component: {fileID: 3830873632427303542}
   - component: {fileID: 3830873632427303541}
+  - component: {fileID: 5394367002249337344}
   m_Layer: 0
   m_Name: Monkey Climb
   m_TagString: Player
@@ -52,49 +52,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3830873632427303540}
+        m_TargetAssemblyTypeName: 
         m_MethodName: RequestGrab
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4756838593835643453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830873632427303536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd8cae509dc0234abc1fc7a076a3fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: {fileID: 11400000, guid: 1e0341a72774be84299c2d7e3f4e92bd, type: 2}
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3830873632427303540}
-        m_MethodName: SetTouchingGrabbable
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3830873632427303540}
-        m_MethodName: SetTouchingGrabbable
-        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -124,6 +84,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3830873632427303547}
+        m_TargetAssemblyTypeName: 
         m_MethodName: PlayRandom
         m_Mode: 4
         m_Arguments:
@@ -266,3 +227,61 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5394367002249337344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830873632427303536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerBindings:
+  - touchFilter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 2
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 1e0341a72774be84299c2d7e3f4e92bd, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3830873632427303540}
+          m_TargetAssemblyTypeName: Playcraft.VR.Climb, Assembly-CSharp
+          m_MethodName: SetTouchingGrabbableTrue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - touchFilter:
+      touchType: 1
+      collisionType: 1
+      otherColliderType: 2
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 1e0341a72774be84299c2d7e3f4e92bd, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3830873632427303540}
+          m_TargetAssemblyTypeName: Playcraft.VR.Climb, Assembly-CSharp
+          m_MethodName: SetTouchingGrabbableFalse
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  collisionBindings: []

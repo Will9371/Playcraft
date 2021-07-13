@@ -56,6 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,6 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &7830719895882751359
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -106,7 +108,7 @@ GameObject:
   - component: {fileID: 5464846784703488947}
   - component: {fileID: 1053222729809360479}
   - component: {fileID: 5819606941529584715}
-  - component: {fileID: 6862146773717162528}
+  - component: {fileID: 1969295491735003175}
   m_Layer: 0
   m_Name: Power Laser
   m_TagString: Untagged
@@ -147,6 +149,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5819606941529584715}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Create
         m_Mode: 1
         m_Arguments:
@@ -186,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5713651605877512021, guid: 8cea090e369089a4c8a71ef1a9febce2, type: 3}
---- !u!114 &6862146773717162528
+--- !u!114 &1969295491735003175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,17 +198,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 6147191338661324914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 0
-    otherColliderType: 2
-    Output:
+  triggerEvents: []
+  collisionEvents: []
+  triggerBindings:
+  - filter:
+      touchType: 0
+      collisionType: 0
+      otherColliderType: 2
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5464846784703488947}
+          m_TargetAssemblyTypeName: Playcraft.FPS.Laser, Assembly-CSharp
           m_MethodName: Activate
           m_Mode: 1
           m_Arguments:
@@ -216,7 +226,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  collisionEvents: []
+  collisionBindings: []
 --- !u!1 &6147191339007102261
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +273,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

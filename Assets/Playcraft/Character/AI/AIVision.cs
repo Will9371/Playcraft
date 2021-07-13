@@ -30,13 +30,13 @@ namespace Playcraft.AI
             }
         }
         Line_Of_Sight lineOfSight;
-        Custom_Tag_Collider_Filter targetFilter;
+        FilterCollidersByCustomTag targetFilter;
         Find_Closest_Collider findClosest;                  
         
         void Awake()
         {
             lineOfSight = new Line_Of_Sight(source, requireMultiplePoints, debug);
-            targetFilter = new Custom_Tag_Collider_Filter(targetIds);
+            targetFilter = new FilterCollidersByCustomTag(targetIds);
             findClosest = new Find_Closest_Collider(source);
         }
         

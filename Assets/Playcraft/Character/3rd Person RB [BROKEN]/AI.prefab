@@ -52,6 +52,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7133061456880897674}
+        m_TargetAssemblyTypeName: 
         m_MethodName: AddMovement
         m_Mode: 0
         m_Arguments:
@@ -79,6 +80,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7317364382067616397}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -94,6 +96,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7317364382067616397}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -155,6 +158,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1165751803429940116}
+        m_TargetAssemblyTypeName: 
         m_MethodName: AddRotation
         m_Mode: 0
         m_Arguments:
@@ -182,6 +186,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7674500760509923264}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetRotation
         m_Mode: 0
         m_Arguments:
@@ -193,6 +198,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7133061455993418533}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Rotate
         m_Mode: 0
         m_Arguments:
@@ -301,6 +307,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1165751804006323660}
+        m_TargetAssemblyTypeName: 
         m_MethodName: AddItem
         m_Mode: 0
         m_Arguments:
@@ -318,6 +325,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1165751804006323660}
+        m_TargetAssemblyTypeName: 
         m_MethodName: RemoveItem
         m_Mode: 0
         m_Arguments:
@@ -344,6 +352,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1165751804006323663}
+        m_TargetAssemblyTypeName: 
         m_MethodName: FindClosest
         m_Mode: 0
         m_Arguments:
@@ -370,6 +379,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1165751802917972427}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetTarget
         m_Mode: 0
         m_Arguments:
@@ -381,6 +391,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1165751803429940117}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetTarget
         m_Mode: 0
         m_Arguments:
@@ -392,6 +403,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1165751802917972424}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ReceiveTarget
         m_Mode: 0
         m_Arguments:
@@ -403,6 +415,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1165751804006323658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_radius
         m_Mode: 4
         m_Arguments:
@@ -417,6 +430,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1165751802917972427}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ClearTarget
         m_Mode: 1
         m_Arguments:
@@ -428,6 +442,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1165751803429940117}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ClearTarget
         m_Mode: 1
         m_Arguments:
@@ -439,6 +454,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1165751802917972424}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ClearTarget
         m_Mode: 1
         m_Arguments:
@@ -450,6 +466,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1165751804006323658}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_radius
         m_Mode: 4
         m_Arguments:
@@ -513,6 +530,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7133061456468049402}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckState
         m_Mode: 0
         m_Arguments:
@@ -542,6 +560,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7674500760509923264}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetAnimations
           m_Mode: 2
           m_Arguments:
@@ -558,6 +577,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7674500760509923264}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetAnimations
           m_Mode: 2
           m_Arguments:
@@ -574,6 +594,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7674500760509923264}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetAnimations
           m_Mode: 2
           m_Arguments:
@@ -590,6 +611,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7674500760509923264}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetAnimations
           m_Mode: 2
           m_Arguments:
@@ -649,6 +671,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7317364382067616397}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -664,6 +687,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7317364382067616397}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -693,6 +717,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7470420329147731597}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -753,6 +778,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
@@ -764,6 +790,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
@@ -775,6 +802,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
@@ -834,6 +862,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6548491635215293457}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -860,6 +889,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7317364382067616397}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -875,6 +905,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7317364382067616397}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -930,9 +961,9 @@ GameObject:
   - component: {fileID: 5754397522688415543}
   - component: {fileID: 5754397522688415433}
   - component: {fileID: 7133061455993418533}
-  - component: {fileID: 7470420330509991117}
   - component: {fileID: 7317364382067616397}
   - component: {fileID: 7470420329507163844}
+  - component: {fileID: 646054920161482101}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -975,6 +1006,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   baseSpeed: 1.5
+  slideCauses:
+    stack: []
 --- !u!54 &5754397522688415433
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1004,35 +1037,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 120
---- !u!114 &7470420330509991117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5754397524045323789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents: []
-  collisionEvents:
-  - touchType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7470420329384550204}
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &7317364382067616397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,6 +1066,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7317364382067616397}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
@@ -1073,6 +1078,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &646054920161482101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754397524045323789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvents: []
+  collisionEvents: []
+  triggerBindings: []
+  collisionBindings:
+  - filter:
+      touchType: 0
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7470420329384550204}
+          m_TargetAssemblyTypeName: Playcraft.CheckIfValidAngle, Assembly-CSharp
+          m_MethodName: Input
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5754397524106179523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1211,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7133061456468049403}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Begin
         m_Mode: 0
         m_Arguments:
@@ -1192,12 +1234,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849e54a022621f94790d785df321882f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 1
   actions:
   - percent: 0
     OnReached:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7133061456468049401}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Jump
           m_Mode: 1
           m_Arguments:
@@ -1228,6 +1272,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5754397522688415543}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetSlide
         m_Mode: 6
         m_Arguments:
@@ -1242,6 +1287,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5754397522688415543}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetSlide
         m_Mode: 6
         m_Arguments:
@@ -1253,6 +1299,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7317364382067616397}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ReturnToPriorState
         m_Mode: 1
         m_Arguments:
@@ -1275,14 +1322,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20368a606726b714190cf9e666fae0c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceDirection: {x: 0, y: 1, z: 0}
   referenceTransform: {fileID: 5754397524045323777}
+  referenceDirection: {x: 0, y: 1, z: 0}
   maxAngle: 45.000008
   minDot: 0.9238795
   OutputCollisionOnSuccess:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7133061456468049401}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Land
         m_Mode: 1
         m_Arguments:
@@ -1344,6 +1392,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5754397522688415543}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
@@ -1355,6 +1404,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7674500760509923264}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetMoveDirection
         m_Mode: 0
         m_Arguments:
@@ -1384,6 +1434,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5754397522688415543}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetSpeedMultiplier
           m_Mode: 4
           m_Arguments:
@@ -1399,6 +1450,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5754397522688415543}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetSpeedMultiplier
           m_Mode: 4
           m_Arguments:
@@ -1414,6 +1466,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5754397522688415543}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetSpeedMultiplier
           m_Mode: 4
           m_Arguments:
@@ -1429,6 +1482,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5754397522688415543}
+          m_TargetAssemblyTypeName: 
           m_MethodName: SetSpeedMultiplier
           m_Mode: 4
           m_Arguments:
@@ -1486,6 +1540,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7674500760509923264}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetRotation
         m_Mode: 0
         m_Arguments:
@@ -1497,6 +1552,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7133061455993418533}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Rotate
         m_Mode: 0
         m_Arguments:
@@ -1591,6 +1647,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -1602,6 +1659,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -1617,6 +1675,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2907349656922028755}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 6
           m_Arguments:
@@ -1632,6 +1691,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2907349656922028755}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 6
           m_Arguments:
@@ -1647,6 +1707,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2907349656922028755}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 6
           m_Arguments:
@@ -1662,6 +1723,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2907349656922028755}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 6
           m_Arguments:

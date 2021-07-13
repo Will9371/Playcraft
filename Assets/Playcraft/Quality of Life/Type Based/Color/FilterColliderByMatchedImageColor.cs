@@ -5,11 +5,9 @@ namespace Playcraft
 {
     public class FilterColliderByMatchedImageColor : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Image image;
         [SerializeField] ColliderEvent Success;
         [SerializeField] ColliderEvent Fail;
-        #pragma warning restore 0649
         
         void OnEnable()
         {

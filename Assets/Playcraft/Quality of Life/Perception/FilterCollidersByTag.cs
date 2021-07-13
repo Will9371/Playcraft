@@ -4,12 +4,10 @@ namespace Playcraft
 {
     public class FilterCollidersByTag : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] string[] respondToTags;
         [SerializeField] ColliderEvent OnEnter;
         [SerializeField] ColliderEvent OnStay;
         [SerializeField] ColliderEvent OnExit;
-        #pragma warning restore 0649
         
         void OnCollisionEnter(Collision other) { OnTriggerEnter(other.collider); }
         void OnCollisionStay(Collision other) { OnTriggerStay(other.collider); }

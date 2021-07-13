@@ -104,8 +104,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1682981844461705421}
   - component: {fileID: 2522230134741391968}
-  - component: {fileID: 8729691472514409469}
   - component: {fileID: 6073157394789640266}
+  - component: {fileID: 5569894623967676485}
   m_Layer: 0
   m_Name: Detect Line
   m_TagString: Untagged
@@ -140,7 +140,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8729691472514409469
+--- !u!114 &6073157394789640266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,14 +149,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 6034070180928160738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: b83cdc5bb3c71ad4fbc238047368e272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 0
-    Output:
+  targetedZipLine: {fileID: 0}
+--- !u!114 &5569894623967676485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6034070180928160738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvents: []
+  collisionEvents: []
+  triggerBindings:
+  - filter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 0
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6073157394789640266}
@@ -171,10 +190,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - touchType: 1
-    collisionType: 1
-    otherColliderType: 0
-    Output:
+  - filter:
+      touchType: 1
+      collisionType: 1
+      otherColliderType: 0
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6073157394789640266}
@@ -189,20 +212,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  collisionEvents: []
---- !u!114 &6073157394789640266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6034070180928160738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b83cdc5bb3c71ad4fbc238047368e272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetedZipLine: {fileID: 0}
+  collisionBindings: []
 --- !u!1 &6869028887018246016
 GameObject:
   m_ObjectHideFlags: 0

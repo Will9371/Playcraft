@@ -5,7 +5,6 @@ namespace Playcraft.VR
 {
     public class Climb : MonoBehaviour
     {
-        #pragma warning disable 0649
         [Header("References")]
         [SerializeField] Rigidbody rb;
         [SerializeField] Transform rig;
@@ -17,8 +16,7 @@ namespace Playcraft.VR
         [SerializeField] UnityEvent OnGrab;
         [SerializeField] UnityEvent OnFail;
         [SerializeField] UnityEvent OnRelease;
-        #pragma warning restore 0649
-        
+       
         enum GrabStyle { Standard, Bubble, Monkey }
         
         [Header("Serialized for debug")]
@@ -38,6 +36,9 @@ namespace Playcraft.VR
         
         IPosition movingGrabbable;
         
+        public void SetTouchingGrabbableTrue(Collider other) { SetTouchingGrabbable(other.gameObject, true); }
+        public void SetTouchingGrabbableFalse(Collider other) { SetTouchingGrabbable(other.gameObject, false); }
+
         public void SetTouchingGrabbable(GameObject grabbedObject, bool isGrabbing)
         {
             this.grabbedObject = grabbedObject;
@@ -48,7 +49,6 @@ namespace Playcraft.VR
                 movingGrabbable.position = transform.position;
         }
         
-        // * Consider merge into above overload
         public void SetTouchingGrabbable(bool value) 
         { 
             isTouchingGrabbable = value; 

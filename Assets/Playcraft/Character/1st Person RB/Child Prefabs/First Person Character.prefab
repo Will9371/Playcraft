@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 3403923575461834681}
   - component: {fileID: 3403923575461834680}
   - component: {fileID: 3403923575461834683}
-  - component: {fileID: 3403923575461834682}
+  - component: {fileID: 6037803936062987645}
   - component: {fileID: 5956237078932320398}
   m_Layer: 0
   m_Name: Feet Trigger
@@ -682,7 +682,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3403923575461834682
+--- !u!114 &6037803936062987645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -691,18 +691,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3403923575461834660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 0
-    otherColliderType: 0
-    Output:
+  triggerEvents: []
+  collisionEvents: []
+  triggerBindings:
+  - filter:
+      touchType: 0
+      collisionType: 0
+      otherColliderType: 0
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7379903991212265101}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.WaterInteract, Assembly-CSharp
           m_MethodName: RequestEnter
           m_Mode: 0
           m_Arguments:
@@ -710,17 +716,21 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: contact
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - touchType: 1
-    collisionType: 0
-    otherColliderType: 0
-    Output:
+  - filter:
+      touchType: 1
+      collisionType: 0
+      otherColliderType: 0
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7379903991212265101}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.WaterInteract, Assembly-CSharp
           m_MethodName: RequestExit
           m_Mode: 0
           m_Arguments:
@@ -728,10 +738,10 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: contact
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  collisionEvents: []
+  collisionBindings: []
 --- !u!114 &5956237078932320398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,11 +1295,11 @@ GameObject:
   - component: {fileID: 4009807950553526773}
   - component: {fileID: 4009807951914563779}
   - component: {fileID: 4009807951914563901}
-  - component: {fileID: 4009807950553526779}
   - component: {fileID: 7747386104504520090}
   - component: {fileID: 4009807950553526778}
   - component: {fileID: 2300345156078844275}
   - component: {fileID: 9141665485560413526}
+  - component: {fileID: 7589282758185597529}
   m_Layer: 0
   m_Name: First Person Character
   m_TagString: Untagged
@@ -1349,36 +1359,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
---- !u!114 &4009807950553526779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009807950553526777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents: []
-  collisionEvents:
-  - touchType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6631183737883123683}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &7747386104504520090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,6 +1420,42 @@ MonoBehaviour:
     start: 1.5
     end: 0.75
     reverse: 0
+--- !u!114 &7589282758185597529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009807950553526777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvents: []
+  collisionEvents: []
+  triggerBindings: []
+  collisionBindings:
+  - filter:
+      touchType: 0
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6631183737883123683}
+          m_TargetAssemblyTypeName: Playcraft.CheckIfValidAngle, Assembly-CSharp
+          m_MethodName: Input
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4009807950704468146
 GameObject:
   m_ObjectHideFlags: 0

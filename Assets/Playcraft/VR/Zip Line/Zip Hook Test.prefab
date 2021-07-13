@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3507937311874407746}
   - component: {fileID: 3507937311874407745}
   - component: {fileID: 3507937311874407744}
-  - component: {fileID: 3507937311874407751}
   - component: {fileID: 3507937311874407750}
   - component: {fileID: 3507937311874407749}
+  - component: {fileID: 7577126867595063633}
   m_Layer: 0
   m_Name: Hook
   m_TagString: Untagged
@@ -98,56 +98,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3507937311874407751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507937311874407771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3507937311874407750}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: OnEnter
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - touchType: 1
-    collisionType: 1
-    otherColliderType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3507937311874407750}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: OnExit
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
 --- !u!114 &3507937311874407750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +125,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zipLineDetect: {fileID: 3507937311874407750}
   movement: {fileID: 3507937312665117030}
+--- !u!114 &7577126867595063633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507937311874407771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvents: []
+  collisionEvents: []
+  triggerBindings:
+  - filter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 0
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3507937311874407750}
+          m_TargetAssemblyTypeName: DetectObject, Assembly-CSharp
+          m_MethodName: OnEnter
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - filter:
+      touchType: 1
+      collisionType: 1
+      otherColliderType: 0
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3507937311874407750}
+          m_TargetAssemblyTypeName: DetectObject, Assembly-CSharp
+          m_MethodName: OnExit
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  collisionBindings: []
 --- !u!1 &3507937312102342650
 GameObject:
   m_ObjectHideFlags: 0

@@ -1721,66 +1721,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 116495096327639440, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: percent
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1328502374}
-    - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetRandomCut
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CutTarget, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949281539109669062, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949281539109669062, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949281539977600645, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949281539977600645, guid: 204c981afd8231046a8dc255777a1781,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5949281540534564828, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
       propertyPath: m_Name
@@ -1789,7 +1729,7 @@ PrefabInstance:
     - target: {fileID: 5949281540534564828, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949281540534564831, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
@@ -1848,18 +1788,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204c981afd8231046a8dc255777a1781, type: 3}
---- !u!114 &1328502374 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8704812526061635811, guid: 204c981afd8231046a8dc255777a1781,
-    type: 3}
-  m_PrefabInstance: {fileID: 1328502373}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594844013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf98cba52872d24aabbaf6caa6fa81b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1454854327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,7 +2944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f373d3f2adcdca64086088554a6bfb99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setupId: 3
+  setupId: 2
   setups:
   - id: 0
     activeObjects:
@@ -3368,7 +3296,7 @@ PrefabInstance:
     - target: {fileID: 8121498150417604436, guid: 5a33811a7b3799e4e83842af025d7487,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a33811a7b3799e4e83842af025d7487, type: 3}

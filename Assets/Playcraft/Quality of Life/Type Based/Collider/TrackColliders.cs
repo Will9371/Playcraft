@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Playcraft
 {
+    // RENAME: TrackCollidersMono
     public class TrackColliders : MonoBehaviour
     {
         [SerializeField] float refreshRate = 0.5f;
@@ -19,6 +20,7 @@ namespace Playcraft
         void Refresh() { Output.Invoke(process.Refresh()); }
     }
     
+    // RENAME: TrackColliders
     public class Track_Colliders
     {    
         readonly List<Collider> touching = new List<Collider>();

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Playcraft
 {
+    // RENAME: FindClosestColliderMono
     public class FindClosestCollider : MonoBehaviour
     {
         [SerializeField] Transform self;
@@ -15,6 +16,7 @@ namespace Playcraft
         public void Input(List<Collider> others) { Output.Invoke(process.Input(others)); }
     }
 
+    // RENAME: FindClosestCollider, move to new script
     public class Find_Closest_Collider
     {
         Transform self;

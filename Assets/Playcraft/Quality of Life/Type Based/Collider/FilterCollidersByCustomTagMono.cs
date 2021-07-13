@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    public class FilterCollidersByCustomTag : MonoBehaviour
+    public class FilterCollidersByCustomTagMono : MonoBehaviour
     {
         [SerializeField] CustomTagColliderFilter[] bindings;
                         
@@ -13,33 +13,33 @@ namespace Playcraft
             foreach (var binding in bindings)
                 binding.Input(values);
         }
-    }
-    
-    [Serializable] public class CustomTagColliderFilter
-    {
-        [SerializeField] SO[] validTags;
-        [SerializeField] ColliderListEvent Response;
         
-        Custom_Tag_Collider_Filter _process;
-        Custom_Tag_Collider_Filter process
+        [Serializable] public class CustomTagColliderFilter
         {
-            get
+            [SerializeField] SO[] validTags;
+            [SerializeField] ColliderListEvent Response;
+        
+            FilterCollidersByCustomTag _process;
+            FilterCollidersByCustomTag process
             {
-                if (_process == null)
-                    _process = new Custom_Tag_Collider_Filter(validTags);
+                get
+                {
+                    if (_process == null)
+                        _process = new FilterCollidersByCustomTag(validTags);
                 
-                return _process;
+                    return _process;
+                }
             }
-        }
                 
-        public void Input(List<Collider> values) { Response.Invoke(process.Input(values)); }
+            public void Input(List<Collider> values) { Response.Invoke(process.Input(values)); }
+        }
     }
-    
-    public class Custom_Tag_Collider_Filter
+
+    public class FilterCollidersByCustomTag
     {
         SO[] validTags;
         
-        public Custom_Tag_Collider_Filter(SO[] validTags) { this.validTags = validTags; }
+        public FilterCollidersByCustomTag(SO[] validTags) { this.validTags = validTags; }
         
         CustomTags _tagged; 
         List<Collider> validColliders = new List<Collider>();

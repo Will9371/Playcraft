@@ -4,11 +4,9 @@ namespace Playcraft
 {
     public class FilterColliderByMatchedColor : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] new Renderer renderer;
         [SerializeField] ColliderEvent Success;
         [SerializeField] ColliderEvent Fail;
-        #pragma warning restore 0649
         
         void OnEnable()
         {

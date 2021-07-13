@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e970db52e2c95f4d9bf0aeb86b84431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percent: 1
+  percent: 0
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -632,8 +632,7 @@ GameObject:
   - component: {fileID: 5949281539109669065}
   - component: {fileID: 1335006773961824248}
   - component: {fileID: 9033557226892733196}
-  - component: {fileID: 5637996224005008213}
-  - component: {fileID: 5969412340325495220}
+  - component: {fileID: 8189524735048285003}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -649,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5949281539109669063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 5949281539999966279}
@@ -752,39 +751,7 @@ MonoBehaviour:
     start: {x: 0, y: 0, z: 0}
     end: {x: -0.6, y: 0, z: 0.2}
     reverse: 0
---- !u!114 &5637996224005008213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949281539109669063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5969412340325495220}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
---- !u!114 &5969412340325495220
+--- !u!114 &8189524735048285003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -796,11 +763,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    Response:
+  triggerBindings:
+  - touchFilter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+      - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8704812526061635811}
@@ -815,6 +787,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  collisionBindings: []
 --- !u!1 &5949281539863704718
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,8 +801,7 @@ GameObject:
   - component: {fileID: 5949281539863704723}
   - component: {fileID: 5949281539863704720}
   - component: {fileID: 1445798151501524624}
-  - component: {fileID: 6273246646771156904}
-  - component: {fileID: 1856563143229157960}
+  - component: {fileID: 7632056718765455797}
   m_Layer: 0
   m_Name: Center
   m_TagString: Untagged
@@ -930,39 +902,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6273246646771156904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949281539863704718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1856563143229157960}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
---- !u!114 &1856563143229157960
+--- !u!114 &7632056718765455797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -974,11 +914,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    Response:
+  triggerBindings:
+  - touchFilter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+      - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8704812526061635811}
@@ -993,6 +938,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  collisionBindings: []
 --- !u!1 &5949281539977600642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +953,6 @@ GameObject:
   - component: {fileID: 5949281539977600644}
   - component: {fileID: 8993924262490827412}
   - component: {fileID: 1520209123061855624}
-  - component: {fileID: 5353734328796370910}
   - component: {fileID: 2209717260046164904}
   m_Layer: 0
   m_Name: Enter
@@ -1024,7 +969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5949281539977600642}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 5949281539009796453}
@@ -1127,38 +1072,6 @@ MonoBehaviour:
     start: {x: 0, y: 0, z: 0}
     end: {x: 0.6, y: 0, z: 0.2}
     reverse: 0
---- !u!114 &5353734328796370910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949281539977600642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 0
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2209717260046164904}
-          m_TargetAssemblyTypeName: RespondToColliderWithCustomTag, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
 --- !u!114 &2209717260046164904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,11 +1084,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - validTags:
-    - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
-    Response:
+  triggerBindings:
+  - touchFilter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 0
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+      - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8704812526061635811}
@@ -1190,6 +1108,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  collisionBindings: []
 --- !u!1 &5949281539999966276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1555,19 @@ MonoBehaviour:
         m_CallState: 2
   Arrive:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704812526061635811}
+        m_TargetAssemblyTypeName: CutTarget, Assembly-CSharp
+        m_MethodName: SetRandomCut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1928690098906620499
 MonoBehaviour:
   m_ObjectHideFlags: 0

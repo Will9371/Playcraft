@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7839091756788150971}
   - component: {fileID: 7472915368799945335}
   - component: {fileID: 7839091756788150968}
-  - component: {fileID: 7839091756788150964}
   - component: {fileID: 7839091756788150965}
   - component: {fileID: 7839091756788150967}
   - component: {fileID: 3150126130465031515}
+  - component: {fileID: 3985281462330878581}
   m_Layer: 0
   m_Name: Guard Base
   m_TagString: Untagged
@@ -61,6 +61,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,6 +86,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &7472915368799945335
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,37 +116,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7839091756788150964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7839091756788150974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 1
-    Output:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7839091756788150965}
-          m_MethodName: Input
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  collisionEvents: []
 --- !u!114 &7839091756788150965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +133,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -203,3 +175,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   self: {fileID: 7839091756788150967}
   controller: {fileID: 0}
+--- !u!114 &3985281462330878581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839091756788150974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvents: []
+  collisionEvents: []
+  triggerBindings:
+  - filter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 1
+      Output:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7839091756788150965}
+          m_TargetAssemblyTypeName: Playcraft.Examples.ColorCatcher.WispDetect, Assembly-CSharp
+          m_MethodName: Input
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  collisionBindings: []

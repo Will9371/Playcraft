@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 671002493372908519}
   - component: {fileID: 7360030203177000442}
-  - component: {fileID: 9107880488599065517}
   - component: {fileID: 671002493372908516}
   - component: {fileID: 671002493372908523}
   - component: {fileID: 671002493372908518}
   - component: {fileID: 671002493372908517}
+  - component: {fileID: 7770725245884093693}
   m_Layer: 0
   m_Name: Climb Hand
   m_TagString: Player
@@ -57,6 +57,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 671002493372908516}
+          m_TargetAssemblyTypeName: 
           m_MethodName: RequestGrab
           m_Mode: 1
           m_Arguments:
@@ -73,6 +74,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 671002493372908516}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Release
           m_Mode: 1
           m_Arguments:
@@ -83,47 +85,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &9107880488599065517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671002493372908512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd8cae509dc0234abc1fc7a076a3fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interaction: {fileID: 11400000, guid: 1e0341a72774be84299c2d7e3f4e92bd, type: 2}
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 671002493372908516}
-        m_MethodName: SetTouchingGrabbable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 671002493372908516}
-        m_MethodName: SetTouchingGrabbable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &671002493372908516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,14 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebbda66f8845a4428a33f3ad2590172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwStrength: 0.7
   rb: {fileID: 0}
   rig: {fileID: 0}
   otherHand: {fileID: 0}
+  throwStrength: 0.7
+  grabStyle: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 671002493372908523}
+        m_TargetAssemblyTypeName: 
         m_MethodName: PlayRandom
         m_Mode: 4
         m_Arguments:
@@ -155,6 +118,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8054446961150240242}
+        m_TargetAssemblyTypeName: 
         m_MethodName: End
         m_Mode: 1
         m_Arguments:
@@ -169,6 +133,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8054446961150240242}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Begin
         m_Mode: 1
         m_Arguments:
@@ -183,6 +148,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8054446961150240242}
+        m_TargetAssemblyTypeName: 
         m_MethodName: End
         m_Mode: 1
         m_Arguments:
@@ -195,6 +161,7 @@ MonoBehaviour:
         m_CallState: 2
   isGrabbing: 0
   isTouchingGrabbable: 0
+  grabInput: 0
   grabbedObject: {fileID: 0}
 --- !u!114 &671002493372908523
 MonoBehaviour:
@@ -318,6 +285,64 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7770725245884093693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671002493372908512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93141bcdfd52bb844a9be6cd71650748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerBindings:
+  - touchFilter:
+      touchType: 0
+      collisionType: 1
+      otherColliderType: 2
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 1e0341a72774be84299c2d7e3f4e92bd, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 671002493372908516}
+          m_TargetAssemblyTypeName: Playcraft.VR.Climb, Assembly-CSharp
+          m_MethodName: SetTouchingGrabbableTrue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - touchFilter:
+      touchType: 1
+      collisionType: 1
+      otherColliderType: 2
+    tagFilter:
+      validTags:
+      - {fileID: 11400000, guid: 1e0341a72774be84299c2d7e3f4e92bd, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 671002493372908516}
+          m_TargetAssemblyTypeName: Playcraft.VR.Climb, Assembly-CSharp
+          m_MethodName: SetTouchingGrabbableFalse
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  collisionBindings: []
 --- !u!1 &8228822106324446328
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +399,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -398,6 +424,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8054446961150240242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +446,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5711514834184237843}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -433,6 +461,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5711514834184237843}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -443,3 +472,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ReachMaxScale:
+    m_PersistentCalls:
+      m_Calls: []

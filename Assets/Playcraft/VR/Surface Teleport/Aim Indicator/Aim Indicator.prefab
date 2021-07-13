@@ -52,6 +52,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2195917564479203115}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -67,6 +68,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2195917564479203115}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -82,6 +84,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2195917564479203115}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -161,6 +164,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -185,6 +189,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2568531175243948367
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6701947433492572829}
   - component: {fileID: 2381764170603785409}
-  - component: {fileID: 4867915635895959693}
+  - component: {fileID: 5639714143062186885}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -351,7 +356,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.375
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4867915635895959693
+--- !u!114 &5639714143062186885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,17 +365,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 9137359991388056865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e3f574732dad34ba0a1f7e73f60c4f, type: 3}
+  m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents:
-  - touchType: 0
-    collisionType: 1
-    otherColliderType: 1
-    Output:
+  triggerBindings:
+  - filter:
+      touchType: 0
+      collisionType: 0
+      otherColliderType: 0
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6394300959906720125}
+          m_TargetAssemblyTypeName: Playcraft.SendMessage, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 0
           m_Arguments:
@@ -381,13 +388,15 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - touchType: 1
-    collisionType: 1
-    otherColliderType: 1
-    Output:
+  - filter:
+      touchType: 1
+      collisionType: 0
+      otherColliderType: 0
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2741952202101388887}
+          m_TargetAssemblyTypeName: Playcraft.SendMessage, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 0
           m_Arguments:
@@ -398,4 +407,4 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  collisionEvents: []
+  collisionBindings: []

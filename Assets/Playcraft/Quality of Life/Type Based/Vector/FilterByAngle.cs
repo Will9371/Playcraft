@@ -4,6 +4,7 @@ using UnityEngine;
 // Use DrawDebugLinesFromPoint for visualization
 namespace Playcraft
 {
+    // RENAME: FilterByAngleMono
     public class FilterByAngle : MonoBehaviour
     {
         [SerializeField] Transform source;
@@ -35,6 +36,7 @@ namespace Playcraft
         public void Input(List<Collider> values) { Output.Invoke(process.Input(values)); }
     }
     
+    // RENAME: FilterByAngle
     public class Filter_By_Angle
     {
         readonly Transform source;
