@@ -16,8 +16,7 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] CreateFloatingNumberOnHit floatingNumberCreator;
         [SerializeField] BoolEvent OnSetActive;
         [SerializeField] TransformEvent RelayPlayer;
-        [SerializeField] MaintainDistance maintainDistance;
-        [SerializeField] CircleTarget circleTarget;
+        [SerializeField] CircleTargetAtDistance movementAI;
 
         TargetController controller;
         public bool isAlive;
@@ -29,8 +28,8 @@ namespace Playcraft.Examples.SwordTrainer
                        
             isAlive = true;
             RelayPlayer.Invoke(player);
-            circleTarget.SetTarget(player);
-            maintainDistance.SetTarget(player);
+            movementAI.RandomizeWeights();
+            movementAI.SetTarget(player);
             floatingNumberCreator.SetFloaterCanvas(canvas);
         }
                 
@@ -76,9 +75,9 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void SetRange(bool isClose)
         {
-            circleTarget.enabled = !isClose;
+            movementAI.circlingEnabled = !isClose;
             var desiredDistance = isClose ? closeRange : farRange;
-            maintainDistance.SetDesiredDistance(desiredDistance);
+            movementAI.SetDesiredDistance(desiredDistance);
         }
     }
 }

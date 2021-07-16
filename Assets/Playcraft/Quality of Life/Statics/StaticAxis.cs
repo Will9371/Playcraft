@@ -2,6 +2,8 @@
 
 namespace Playcraft
 {
+    public enum Axis { X, Y, Z }
+
     public static class StaticAxis
     {
         public static Vector3 GetAxisVector(Axis axis, bool clockwise)
@@ -34,6 +36,16 @@ namespace Playcraft
         {
             return transform.position + transform.TransformVector(distance);
         }
+        
+        // * Consider move to different class
+        public static float RotationDirection(Trinary clockwise)
+        {
+            switch(clockwise) 
+            {
+                case Trinary.True: return 1f;
+                case Trinary.False: return -1f;
+                default: return 0f;
+            }
+        }
     }
-    public enum Axis { X, Y, Z }
 }

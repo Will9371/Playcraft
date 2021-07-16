@@ -7,8 +7,5 @@ public class TranslateStep : MonoBehaviour
     
     void Awake() { if (!self) self = transform; }
     
-    public void Input(Vector3 direction)
-    {
-        self.Translate(speed * Time.deltaTime * direction);
-    }
+    public void Input(Vector3 direction) { self.Translate(speed * Time.deltaTime * direction); }
 }

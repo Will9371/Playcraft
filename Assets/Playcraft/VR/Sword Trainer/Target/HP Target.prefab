@@ -233,12 +233,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2943022741248307623}
   - component: {fileID: 173805606495134200}
-  - component: {fileID: 313814280275873588}
-  - component: {fileID: 2244686881404405199}
   - component: {fileID: 7912883317969263208}
-  - component: {fileID: 7830335578741978131}
-  - component: {fileID: 8236769650498947097}
-  - component: {fileID: 2151569201008197125}
+  - component: {fileID: 4604347331441666856}
   m_Layer: 0
   m_Name: Movement
   m_TagString: Untagged
@@ -293,69 +289,6 @@ MonoBehaviour:
     start: {x: 0, y: 0, z: 0}
     end: {x: 0, y: 0, z: 0}
     reverse: 0
---- !u!114 &313814280275873588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838545969260915395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 629579b101b7df340bb76b8a535ae650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 524496317257542616}
-  desiredDistance: {x: 1, y: 1.5}
-  tolerance: 0.1
-  target: {fileID: 0}
-  disableVerticalMovement: 1
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7830335578741978131}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: AddMovement
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2244686881404405199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838545969260915395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb22702ffb4c00e4c829a378c00f7b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 524496317257542616}
-  speedRange: {x: 0.5, y: 1.5}
-  randomizeOnEnable: 1
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7830335578741978131}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: AddMovement
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  target: {fileID: 0}
 --- !u!114 &7912883317969263208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,11 +301,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a7cd1a9c6323547b2a4c85b73c8bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 42163852264912102}
-  initialWaitRange: {x: 5, y: 20}
-  farDistanceWaitRange: {x: 8, y: 15}
-  closeDistanceWaitRange: {x: 3.5, y: 4}
---- !u!114 &7830335578741978131
+  startWait:
+    range: {x: 5, y: 15}
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 42163852264912102}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.SwordTarget,
+            Assembly-CSharp
+          m_MethodName: SetRange
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    actionTime: 0
+  waits:
+  - range: {x: 3.5, y: 4}
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 42163852264912102}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.SwordTarget,
+            Assembly-CSharp
+          m_MethodName: SetRange
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    actionTime: 0
+  - range: {x: 8, y: 15}
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 42163852264912102}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.SwordTarget,
+            Assembly-CSharp
+          m_MethodName: SetRange
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    actionTime: 0
+--- !u!114 &4604347331441666856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -381,66 +366,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1838545969260915395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0016911578ac2ab42847613a93a68c02, type: 3}
+  m_Script: {fileID: 11500000, guid: 016db3debf29d6c49b5a02e9a02b2fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnMove:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8236769650498947097}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8236769650498947097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838545969260915395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a45364cd1df71a449032522351dfeec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceleration: 2
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2151569201008197125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2151569201008197125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838545969260915395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7749948c941d4be49a7397e33c95bab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  circleMinWeight: 0.6
+  circleMaxWeight: 1
+  distanceMinWeight: 0.6
+  distanceMaxWeight: 1
   self: {fileID: 524496317257542616}
-  speed: 1.75
+  circleTarget:
+    self: {fileID: 524496317257542616}
+    target: {fileID: 0}
+    clockwise: 0
+  maintainDistance:
+    self: {fileID: 524496317257542616}
+    target: {fileID: 0}
+    desiredDistance: {x: 1, y: 1.5}
+    tolerance: 0.1
+    disableVerticalMovement: 1
+  movement:
+    self: {fileID: 524496317257542616}
+    speed: 1.75
+    acceleration: 1.5
+  circlingEnabled: 1
+  distancingEnabled: 1
 --- !u!1 &2291014569612732397
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +682,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1002,7 +951,7 @@ GameObject:
   - component: {fileID: 3532403164019635036}
   - component: {fileID: 3305369121223371752}
   m_Layer: 0
-  m_Name: Target
+  m_Name: HP Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1118,8 +1067,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maintainDistance: {fileID: 313814280275873588}
-  circleTarget: {fileID: 2244686881404405199}
+  maintainDistance: {fileID: 0}
+  circleTarget: {fileID: 0}
+  movementAI: {fileID: 4604347331441666856}
   isAlive: 0
   regenerateFlag: 0
 --- !u!114 &2626525154793004847
