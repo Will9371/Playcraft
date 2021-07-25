@@ -7,12 +7,10 @@ namespace Playcraft
 {
     public class TypewriterText : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Text text;
         [SerializeField] UnityEvent OnComplete;
         [Tooltip("In characters per second")]
         [SerializeField] float speed = 10;
-        #pragma warning restore 0649
 
         public void Input(string value)
         {

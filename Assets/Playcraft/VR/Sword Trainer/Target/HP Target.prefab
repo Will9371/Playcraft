@@ -788,7 +788,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6524393224772116490}
   - component: {fileID: 3933148265738899414}
-  - component: {fileID: 5524967364872607908}
   - component: {fileID: 2840696211095094964}
   m_Layer: 0
   m_Name: Activate
@@ -853,45 +852,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allowInterrupt: 1
---- !u!114 &5524967364872607908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4751813578017984614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72026cebb40f28e48b788d46397bb90b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8014246511784277871}
-        m_TargetAssemblyTypeName: LerpColorMono, Assembly-CSharp
-        m_MethodName: SetDirection
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8109872947916639411}
-        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
-        m_MethodName: SetDirection
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2840696211095094964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,9 +967,9 @@ MonoBehaviour:
   closeRange: 1.25
   farRange: 3
   movement: {fileID: 173805606495134200}
-  activateRelay: {fileID: 5524967364872607908}
   activateEffects: {fileID: 3933148265738899414}
-  deactivateRelay: {fileID: 2782836667975697678}
+  colorChange: {fileID: 8014246511784277871}
+  scaleChange: {fileID: 8109872947916639411}
   deactivateEffects: {fileID: 2365277632753737538}
   hitbox: {fileID: 2928607934959849712}
   floatingNumberCreator: {fileID: 5939584054959855735}
@@ -1067,8 +1027,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maintainDistance: {fileID: 0}
-  circleTarget: {fileID: 0}
   movementAI: {fileID: 4604347331441666856}
   isAlive: 0
   regenerateFlag: 0
@@ -1093,6 +1051,8 @@ MonoBehaviour:
   mirroredObject: {fileID: 0}
   mirroredTransformChilds: []
   originTransformChilds: []
+  miroredObjectsHolderReference: {fileID: 11400000, guid: de61eb74ba317de40a7d36b7be00d306,
+    type: 2}
   mirroredObjectsHolder: {fileID: 0}
   OnClone:
     m_PersistentCalls:
@@ -1184,7 +1144,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3696778730606987427}
   - component: {fileID: 2365277632753737538}
-  - component: {fileID: 2782836667975697678}
   - component: {fileID: 3894127637608374809}
   - component: {fileID: 3466805791538810792}
   m_Layer: 0
@@ -1250,45 +1209,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allowInterrupt: 1
---- !u!114 &2782836667975697678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7016989377324082879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72026cebb40f28e48b788d46397bb90b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8014246511784277871}
-        m_TargetAssemblyTypeName: LerpColorMono, Assembly-CSharp
-        m_MethodName: SetDirection
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8109872947916639411}
-        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
-        m_MethodName: SetDirection
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &3894127637608374809
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,9 +8,9 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] float farRange;
     
         [SerializeField] LerpPositionOverTime movement;
-        [SerializeField] Relay activateRelay;
         [SerializeField] GetPercentOverTimeMono activateEffects;
-        [SerializeField] Relay deactivateRelay;
+        [SerializeField] LerpColorMono colorChange;
+        [SerializeField] LerpScaleMono scaleChange;
         [SerializeField] GetPercentOverTimeMono deactivateEffects;
         [SerializeField] Collider hitbox;
         [SerializeField] CreateFloatingNumberOnHit floatingNumberCreator;
@@ -37,7 +37,9 @@ namespace Playcraft.Examples.SwordTrainer
         {
             if (!regenerateFlag) return;
             
-            activateRelay.Input();
+            colorChange.SetDirection(false);
+            scaleChange.SetDirection(false);
+            
             activateEffects.Begin();
             regenerateFlag = false;
         }
@@ -46,7 +48,10 @@ namespace Playcraft.Examples.SwordTrainer
         {
             isAlive = false;
             hitbox.enabled = false;
-            deactivateRelay.Input();
+            
+            colorChange.SetDirection(true);
+            scaleChange.SetDirection(true);
+            
             deactivateEffects.Begin();
             OnSetActive.Invoke(false);
         }

@@ -445,6 +445,11 @@ PrefabInstance:
       propertyPath: percent
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1288923609500416055, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
+      propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5949281539109669062, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
       propertyPath: m_LocalPosition.x

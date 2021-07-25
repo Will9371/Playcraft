@@ -1,9 +1,11 @@
 // Credit: TheVirtualMunk
 // Source: https://forum.unity.com/threads/mirror-reflections-in-vr.416728/
+// Edited by Will Petillo
 
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Playcraft;
  
 [ExecuteInEditMode]
 public class MirroredObject : MonoBehaviour
@@ -20,7 +22,8 @@ public class MirroredObject : MonoBehaviour
     public GameObject mirroredObject;
  
     [SerializeField] List<Transform> mirroredTransformChilds, originTransformChilds;
-    [SerializeField] GameObject mirroredObjectsHolder;
+    [SerializeField] GameObjectSO miroredObjectsHolderReference;
+    GameObject mirroredObjectsHolder;
     
     [SerializeField] UnityEvent OnClone;
     
@@ -48,16 +51,9 @@ public class MirroredObject : MonoBehaviour
     {
         // Clear previous instances
         DeleteMirrorInstance();
- 
-        // Create or find MirrorWorldHolder
-        if (!mirroredObjectsHolder)
-        {
-            if (!GameObject.Find("MirrorWorld"))
-                mirroredObjectsHolder = new GameObject("MirrorWorld");
- 
-            mirroredObjectsHolder = GameObject.Find("MirrorWorld");
-        }
-     
+        
+        mirroredObjectsHolder = miroredObjectsHolderReference.value;
+
         // Create Instance
         mirroredObject = Instantiate(gameObject, mirroredObjectsHolder.transform);
      

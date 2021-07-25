@@ -9,12 +9,10 @@ namespace Playcraft.Dialog
     {
         [Serializable] class DialogNodeEvent : UnityEvent<DialogNode> { }
     
-        #pragma warning disable 0649
         [SerializeField] DialogNode node;
         [SerializeField] ResponseOption[] responses;
         [SerializeField] TagEvent RelayEvent;
         [SerializeField] DialogNodeEvent RelayNode;
-        #pragma warning restore 0649
         
         private void Start()
         {
@@ -50,9 +48,7 @@ namespace Playcraft.Dialog
     // REFACTOR: move to buttons
     [Serializable] struct ResponseOption
     {
-        #pragma warning disable 0649
         public GameObject button;
         public Text text;
-        #pragma warning restore 0649
     }
 }
