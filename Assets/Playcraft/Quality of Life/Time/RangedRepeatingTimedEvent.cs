@@ -7,9 +7,11 @@ namespace Playcraft
     {
         [SerializeField] Vector2 range;
         [SerializeField] UnityEvent Output;
-        [SerializeField] bool beginOnStart;
+        [SerializeField] bool beginOnEnable;
+        [SerializeField] bool endOnDisable;
         
-        void Start() { if (beginOnStart) Begin(); }
+        void OnEnable() { if (beginOnEnable) Begin(); }
+        void OnDisable() { if (endOnDisable) End(); }
         
         public void Begin() { Invoke(nameof(Act), RandomTime()); }
         public void End() { CancelInvoke(nameof(Act)); }

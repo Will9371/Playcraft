@@ -226,5 +226,18 @@ namespace Playcraft
             angle.z = z;
             transform.localEulerAngles = angle;
         }
+        
+        public static Vector3 RandomCubeDirection()
+        {
+            var normal = Random.insideUnitSphere.normalized;
+            return RoundedVector(normal);
+        }
+        
+        public static Vector3 RoundedVector(Vector3 value, float multiplier = 1f)
+        {
+            return new Vector3(Mathf.Round(value.x * multiplier) / multiplier, 
+                               Mathf.Round(value.y * multiplier) / multiplier, 
+                               Mathf.Round(value.z * multiplier) / multiplier);
+        }
     }
 }

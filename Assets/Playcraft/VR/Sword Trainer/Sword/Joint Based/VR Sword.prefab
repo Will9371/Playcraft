@@ -155,6 +155,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8951941258053321843}
   m_ConnectedBody: {fileID: 8951941258622502336}
+  m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
@@ -477,6 +478,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
+  - {fileID: 11400000, guid: 814373651e3599047af4f151f110b092, type: 2}
+  - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
 --- !u!1 &8951941259022203569
 GameObject:
   m_ObjectHideFlags: 0
