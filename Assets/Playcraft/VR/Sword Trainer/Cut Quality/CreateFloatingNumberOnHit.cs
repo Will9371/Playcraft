@@ -5,6 +5,7 @@ namespace Playcraft.Examples.SwordTrainer
 {
     public class CreateFloatingNumberOnHit : MonoBehaviour, ISwingTarget
     {
+        [SerializeField] CutQualityCalculator cutQualityCalculator;
         [SerializeField] GameObject floaterPrefab;
         [SerializeField] Transform canvas;
         [SerializeField] Transform faceTarget;
@@ -18,7 +19,7 @@ namespace Playcraft.Examples.SwordTrainer
 
         public void SendData(SwingData data)
         {
-            var score = Mathf.Pow(data.speed * data.edgeAlignment * 10f, 2f);
+            var score = cutQualityCalculator.GetCutQuality(data);
             
             var floaterObj = spawner.Spawn(floaterPrefab, transform.position);
             floaterObj.transform.SetParent(canvas);

@@ -43,10 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningAverageLength: 1
-  attenuationFactor: 1
-  averageVelocity: {x: 0, y: 0, z: 0}
-  averageMagnitude: 0
+  runningAverage:
+    runningAverageLength: 1
+    attenuationFactor: 1
+    averageDelta: {x: 0, y: 0, z: 0}
 --- !u!1 &6738982089997660949
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,10 +90,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningAverageLength: 12
-  attenuationFactor: 0.8
-  averageVelocity: {x: 0, y: 0, z: 0}
-  averageMagnitude: 0
+  runningAverage:
+    runningAverageLength: 12
+    attenuationFactor: 0.8
+    averageDelta: {x: 0, y: 0, z: 0}
+--- !u!114 &1680828929526006296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8141038030891363186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905d6c6ece4c8764c807de1cddbb94c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remap:
+    input: {x: 0, y: 30}
+    output:
+      start: {r: 1, g: 1, b: 1, a: 1}
+      end: {r: 1, g: 0, b: 0, a: 1}
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8158879286416630702}
+        m_TargetAssemblyTypeName: Playcraft.SetColor, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8158879286416630702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8141038030891363186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925bde6da8a21d443b714c2932150e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 7780595647137581735}
+  enabled: 1
 --- !u!1 &8951941258053321843
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,8 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703024221ffa7034c97678a2e1d1718f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {fileID: 6106055144578322004}
-  edge: {fileID: 8961790346896124162}
+  tracker:
+    velocity: {fileID: 6106055144578322004}
+    edge: {fileID: 8961790346896124162}
 --- !u!1 &8951941258530509361
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +477,7 @@ GameObject:
   - component: {fileID: 8951941259013378777}
   - component: {fileID: 8951941259013378779}
   - component: {fileID: 8951941259013378778}
+  - component: {fileID: 62381753347671332}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -480,6 +528,37 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
   - {fileID: 11400000, guid: 814373651e3599047af4f151f110b092, type: 2}
   - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+--- !u!114 &62381753347671332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951941259013378776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7696bcb6ac41f14d808b71d82ccdbc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingDataTracker:
+    velocity: {fileID: 6106055144578322004}
+    edge: {fileID: 8961790346896124162}
+  calculator: {fileID: 11400000, guid: 8b0507efe9f36434293548984afaea12, type: 2}
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1680828929526006296}
+        m_TargetAssemblyTypeName: Playcraft.RemapToColorMono, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8951941259022203569
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,9 +728,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 582762e736e743a4caf0770f6344bbc4, type: 3}
+--- !u!23 &7780595647137581735 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 582762e736e743a4caf0770f6344bbc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8951941259291039267}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8912929705368875464 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 582762e736e743a4caf0770f6344bbc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8951941259291039267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8141038030891363186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 582762e736e743a4caf0770f6344bbc4,
     type: 3}
   m_PrefabInstance: {fileID: 8951941259291039267}
   m_PrefabAsset: {fileID: 0}

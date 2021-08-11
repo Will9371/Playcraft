@@ -1001,7 +1001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &357186776
 Transform:
   m_ObjectHideFlags: 0
@@ -3453,7 +3453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1848913629
 Transform:
   m_ObjectHideFlags: 0
@@ -3764,7 +3764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f373d3f2adcdca64086088554a6bfb99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setupId: 5
+  setupId: 1
   setups:
   - id: 0
     activeObjects:
@@ -4190,7 +4190,7 @@ PrefabInstance:
     - target: {fileID: 5346060717038480892, guid: b2ea90cfd0c721a45b99ff223f6f7e06,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7028872319106903144, guid: b2ea90cfd0c721a45b99ff223f6f7e06,
         type: 3}
@@ -4659,6 +4659,11 @@ PrefabInstance:
       propertyPath: otherColliders.Array.data[0]
       value: 
       objectReference: {fileID: 7016883134170958858}
+    - target: {fileID: 6106055144578322004, guid: 3c4bcc7b2432f7e41a33528540ec6781,
+        type: 3}
+      propertyPath: runningAverage.points.Array.size
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8951941258053321741, guid: 3c4bcc7b2432f7e41a33528540ec6781,
         type: 3}
       propertyPath: target
@@ -4724,10 +4729,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR Sword Right
       objectReference: {fileID: 0}
+    - target: {fileID: 8951941258622502342, guid: 3c4bcc7b2432f7e41a33528540ec6781,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8951941258622502343, guid: 3c4bcc7b2432f7e41a33528540ec6781,
         type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1202669594}
+    - target: {fileID: 8961790346896124162, guid: 3c4bcc7b2432f7e41a33528540ec6781,
+        type: 3}
+      propertyPath: runningAverage.points.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4bcc7b2432f7e41a33528540ec6781, type: 3}

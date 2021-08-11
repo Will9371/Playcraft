@@ -289,6 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba16a9ef82dd4b489082b24263842c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutQualityCalculator: {fileID: 11400000, guid: 8b0507efe9f36434293548984afaea12,
+    type: 2}
   floaterPrefab: {fileID: 1088168158452095639, guid: 428fd222be1db4e40a52dafd89a51e1c,
     type: 3}
   canvas: {fileID: 5346060717873943353}

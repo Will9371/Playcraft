@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Playcraft.Examples.SwordTrainer
 {
-    [CreateAssetMenu(menuName = "Playcraft/VR/Swing State")]
+    [CreateAssetMenu(menuName = "Playcraft/VR/Sword Trainer/Swing State")]
     public class SwingState : ScriptableObject
     {
         public Vector3SO direction;
