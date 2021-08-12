@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -49,9 +51,22 @@ namespace Playcraft
                 default: return new Vector3(widthVector.x, height, widthVector.y);
             }
         }
+        
+        /// Example use: shuffledArray = RandomStatics.ShuffleArray(startingArray);
+        /// Where startingArray and shuffledArray are arrays of the same type
+        public static T[] ShuffleArray<T>(T[] values)
+        {
+            return values.OrderBy(a => Random.Range(0f, 1f)).ToArray();
+        }
+        
+        /// Example use: shuffledList = RandomStatics.ShuffleList(startingList);
+        /// Where startingList and shuffledList are lists of the same type
+        public static List<T> ShuffleList<T>(List<T> values)
+        {
+            return values.OrderBy(a => Random.Range(0f, 1f)).ToList();
+        }
     }
-    
-    
+
     [Serializable] public struct MinMaxVector3
     {
         public Vector3 min;
