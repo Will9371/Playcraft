@@ -10,12 +10,19 @@ namespace Playcraft.Voxels
         ObjectPoolMaster spawner => ObjectPoolMaster.instance;
     
         [SerializeField] float spawnDelay;
-        [SerializeField] float batchCount;
-        [SerializeField] Material material;
+        [SerializeField] int batchCount;
         
+        [SerializeField] Material material;
         [SerializeField] GameObject voxelPrefab;
 
         List<SpreadingVoxel> voxels = new List<SpreadingVoxel>();
+        
+        public void Begin(float spawnDelay, int batchCount)
+        {
+            this.spawnDelay = spawnDelay;
+            this.batchCount = batchCount;
+            Begin();
+        }
         
         public void Begin()
         {

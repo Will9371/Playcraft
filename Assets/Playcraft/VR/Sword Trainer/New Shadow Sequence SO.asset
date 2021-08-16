@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e91aff63c0f4aa4199e656bd1663890, type: 3}
+  m_Name: New Shadow Sequence SO
+  m_EditorClassIdentifier: 
+  values:
+  - startWaitTime: 3
+    values:
+    - seedIndex: 0
+      perSpawnDelay: 0.25
+      batchCount: 10
+  - startWaitTime: 2
+    values:
+    - seedIndex: 1
+      perSpawnDelay: 0.25
+      batchCount: 10
+    - seedIndex: 2
+      perSpawnDelay: 0.25
+      batchCount: 10
+  - startWaitTime: 1
+    values:
+    - seedIndex: 3
+      perSpawnDelay: 0.1
+      batchCount: 20

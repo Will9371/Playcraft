@@ -16,7 +16,8 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void SetFloaterCanvas(Transform value) { canvas = value; }
         public void SetFloaterFaceTarget(Transform value) { faceTarget = value; }
-
+        
+        // * Copy score calculation to simpler script (functionality too trivial to delegate)
         public void SendData(SwingData data)
         {
             var score = cutQualityCalculator.GetCutQuality(data);

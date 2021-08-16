@@ -1,47 +1,39 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+using System;
+using UnityEngine;
 
-public class MinMaxFloatTracker : MonoBehaviour
+[Serializable]
+public class MinMaxFloatTracker
 {
-    [SerializeField] Vector2 range;
-    [SerializeField] bool maxOnStart;
-    [SerializeField] FloatEvent OnChangeValue;
-    [SerializeField] UnityEvent OnReachMinimum;
+    public Vector2 range;
+    
+    public float max => range.y;
+    public float min => range.x;
     
     float _value;
-    public float Value
+    public float value
     {
         get => _value;
-        set
-        {
-            if (_value <= 0)
-                return;
-            
-            _value = value;
-            
-            if (value <= 0)
-            {
-                _value = 0;
-                OnReachMinimum.Invoke();
-            }
-            
-            OnChangeValue.Invoke(_value);
-        }
+        set => _value = Mathf.Clamp(value, min, max);
     }
     
-    void Start() { if (maxOnStart) SetToMax(); }
-    
-    public void SetMax(float value) 
+    public void ResetMax(float value) 
     { 
         range.y = value; 
         SetToMax();
     } 
     
-    public void SetToMax() 
-    {
-        _value = range.y; 
-        Value = range.y; 
+    public void SetToMax() { value = max; }
+    public void SetToMin() { value = min; }
+    
+    public (float, bool) Subtract(float value) 
+    { 
+        this.value -= value; 
+        return (this.value, this.value <= min);
     }
     
-    public void Subtract(float value) { Value -= value; }
+    public (float, bool) Add(float value) 
+    { 
+        this.value += value; 
+        return (this.value, this.value >= max);
+    }
 }

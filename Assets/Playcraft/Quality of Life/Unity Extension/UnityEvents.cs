@@ -26,6 +26,7 @@ using Playcraft;
 [Serializable] public class ColorEvent : UnityEvent<Color> { }
 [Serializable] public class Collider2DEvent : UnityEvent<Collider2D> { }
 [Serializable] public class QuaternionEvent : UnityEvent<Quaternion> { }
+[Serializable] public class SOEvent : UnityEvent<ScriptableObject> { }
 
 [Serializable] public class IMessageEvent : UnityEvent<IMessage> { }
 [Serializable] public class TagEvent : UnityEvent<SO> { }
