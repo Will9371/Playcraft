@@ -12,10 +12,11 @@ namespace Playcraft.Voxels
         GameObject voxelPrefab => prefab.value;
         
         [SerializeField] GameObjectSO prefab;
-        [SerializeField] SO voxelTag;
+        [SerializeField] SO[] blockerTags;
+        [SerializeField] SO[] consumeTags;
         [SerializeField] Vector3Array neighborDirections;
-        [SerializeField] Renderer rend;
-        
+        [SerializeField] float overlapCheckDistance = 0.2f;
+
         // For UnityEvent calls
         public void Spread() { SpreadAndReturn(); }
         
@@ -25,7 +26,7 @@ namespace Playcraft.Voxels
         
             var position = GetRandomOpenPosition();
             
-            if (OverlapAtPosition(position))
+            if (OverlapAtPosition(position, blockerTags))
                 return null;
             
             return spawner.Spawn(voxelPrefab, position).GetComponent<SpreadingVoxel>();
@@ -54,7 +55,7 @@ namespace Playcraft.Voxels
             foreach (var direction in neighborDirections.values)
             {
                 var position = GetAdjacentPosition(direction);
-                if (!OverlapAtPosition(position))
+                if (!OverlapAtPosition(position, blockerTags))
                     openPositions.Add(position);
             }
         }
@@ -62,30 +63,32 @@ namespace Playcraft.Voxels
         public bool HasOpenPosition()
         {
             foreach (var direction in neighborDirections.values)
-                if (!OverlapAtPosition(GetAdjacentPosition(direction)))
-                    return true;
-                    
-            return false;
-        }
-
-        bool OverlapAtPosition(Vector3 position)
-        {
-            var overlap = Physics.OverlapSphere(position, .2f);
-            
-            foreach (var found in overlap)
             {
-                var tags = found.GetComponent<CustomTags>();
-                if (!tags) continue;
-                
-                if (tags.HasTag(voxelTag))
-                    return true;
+                // Make extra search optional
+                var position = GetAdjacentPosition(direction);
+                if (!OverlapAtPosition(position, blockerTags)) return true;
+
+                if (consumeTags.Length == 0) 
+                    continue;
+                    
+                var overlap = Physics.OverlapSphere(position, overlapCheckDistance);
+                foreach (var found in overlap)
+                {
+                    var tags = found.GetComponent<CustomTags>();
+                    if (tags == null || !tags.HasAnyTag(consumeTags)) 
+                        continue;
+                    
+                    // * Error-prone, use damage system
+                    var root = found.transform.parent.gameObject;
+                    root.SetActive(false);
+                }
             }
                     
             return false;
         }
-        
-        public void SetMaterial(Material material) { rend.material = material; }
-        
+
+        bool OverlapAtPosition(Vector3 position, SO[] tags) { return StaticHelpers.CustomTagNearPosition(position, overlapCheckDistance, tags); }
+
         public Action<SpreadingVoxel> onDisable;
         
         void OnDisable()

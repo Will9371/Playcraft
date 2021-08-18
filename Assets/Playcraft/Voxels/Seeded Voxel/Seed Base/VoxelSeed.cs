@@ -9,10 +9,10 @@ namespace Playcraft.Voxels
     {
         ObjectPoolMaster spawner => ObjectPoolMaster.instance;
     
+        // * Move to VoxelSpreadData
         [SerializeField] float spawnDelay;
         [SerializeField] int batchCount;
         
-        [SerializeField] VoxelGroupData group;
         [SerializeField] GameObject voxelPrefab;
 
         List<SpreadingVoxel> voxels = new List<SpreadingVoxel>();
@@ -57,8 +57,6 @@ namespace Playcraft.Voxels
             
             foreach (var voxel in voxels)
             {
-                // * Allow spread into areas of different group (disable existing voxel).  
-                    // With percent chance of success?
                 if (!voxel.HasOpenPosition()) continue;
                 AddVoxel(voxel.SpreadAndReturn());
                 break;
@@ -69,7 +67,6 @@ namespace Playcraft.Voxels
         {
             voxels.Add(voxel);
             voxel.onDisable += VoxelDisabled;
-            voxel.SetMaterial(group.material);          
         }
 
         void VoxelDisabled(SpreadingVoxel voxel)

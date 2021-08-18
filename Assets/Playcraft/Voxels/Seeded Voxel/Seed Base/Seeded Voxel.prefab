@@ -97,9 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 11400000, guid: d2be2125d9e1731498a0612fc006718c, type: 2}
-  voxelTag: {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+  blockerTags:
+  - {fileID: 11400000, guid: 4e0c8ab9c535bb24483ea8a438c888dd, type: 2}
+  - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+  consumeTags: []
   neighborDirections: {fileID: 11400000, guid: 7905b3b87021d4441a2fa0795b606219, type: 2}
-  rend: {fileID: 1843785861559966335}
+  overlapCheckDistance: 0.1
 --- !u!1 &8017863753067653498
 GameObject:
   m_ObjectHideFlags: 0

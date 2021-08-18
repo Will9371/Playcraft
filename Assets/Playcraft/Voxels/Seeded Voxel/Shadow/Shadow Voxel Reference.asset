@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93705961e4a17994192445ea7e4b4ea3, type: 3}
-  m_Name: Blood Voxels
+  m_Script: {fileID: 11500000, guid: 31192a7a77fa40c46bc0138c379477e7, type: 3}
+  m_Name: Shadow Voxel Reference
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 409785ac5e5d0d244b8499224789bc1d, type: 2}
+  value: {fileID: 1012891371073262898, guid: 9833fe1899c4b034b97eb04187fa20dc, type: 3}

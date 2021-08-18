@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93705961e4a17994192445ea7e4b4ea3, type: 3}
-  m_Name: Freeze Voxels
+  m_Script: {fileID: 11500000, guid: 5faecb86d7c231e46b8492117f7e0ed3, type: 3}
+  m_Name: Block Voxel
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 9e5f99508ee912f40a6935d7ee962418, type: 2}

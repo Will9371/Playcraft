@@ -498,9 +498,21 @@ MonoBehaviour:
       type: 3}
     startSize: 64
     isOnOverlayCanvas: 0
-  - prefab: {fileID: 1843785861559966321, guid: 9668969adca70fd4cb7488df72cee435,
+  - prefab: {fileID: 1012891371073262898, guid: 9833fe1899c4b034b97eb04187fa20dc,
       type: 3}
-    startSize: 64
+    startSize: 32
+    isOnOverlayCanvas: 0
+  - prefab: {fileID: 1782090380095450056, guid: 6b227436916060640bbddf862dede16d,
+      type: 3}
+    startSize: 32
+    isOnOverlayCanvas: 0
+  - prefab: {fileID: 5210865092481113711, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+      type: 3}
+    startSize: 32
+    isOnOverlayCanvas: 0
+  - prefab: {fileID: 4287774571654552159, guid: e79b85fc8cf180048aa1eafbc700c7ea,
+      type: 3}
+    startSize: 32
     isOnOverlayCanvas: 0
 --- !u!1 &53583346 stripped
 GameObject:
@@ -612,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+  - {fileID: 11400000, guid: 4e0c8ab9c535bb24483ea8a438c888dd, type: 2}
 --- !u!65 &145619598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -764,7 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+  - {fileID: 11400000, guid: 4e0c8ab9c535bb24483ea8a438c888dd, type: 2}
 --- !u!65 &186387166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -912,6 +924,12 @@ PrefabInstance:
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 1ec90260e3269bb498bb6fb5cd653e8b, type: 2}
+    - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
+        type: 3}
+      propertyPath: voxelPrefab
+      value: 
+      objectReference: {fileID: 5210865092481113711, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_RootOrder
@@ -970,7 +988,7 @@ PrefabInstance:
     - target: {fileID: 6448588993099032710, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_Name
-      value: Blood Seed
+      value: Fire Seed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f18795f7c798b438e4aa272cfba4bd, type: 3}
@@ -1094,6 +1112,12 @@ PrefabInstance:
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 409785ac5e5d0d244b8499224789bc1d, type: 2}
+    - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
+        type: 3}
+      propertyPath: voxelPrefab
+      value: 
+      objectReference: {fileID: 4287774571654552159, guid: e79b85fc8cf180048aa1eafbc700c7ea,
+        type: 3}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_RootOrder
@@ -1789,7 +1813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+  - {fileID: 11400000, guid: 4e0c8ab9c535bb24483ea8a438c888dd, type: 2}
 --- !u!65 &1159550825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2550,7 +2574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1540735395
 Transform:
   m_ObjectHideFlags: 0
@@ -2716,7 +2740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+  - {fileID: 11400000, guid: 4e0c8ab9c535bb24483ea8a438c888dd, type: 2}
 --- !u!65 &1596390720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2855,6 +2879,12 @@ PrefabInstance:
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 9e5f99508ee912f40a6935d7ee962418, type: 2}
+    - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
+        type: 3}
+      propertyPath: voxelPrefab
+      value: 
+      objectReference: {fileID: 1782090380095450056, guid: 6b227436916060640bbddf862dede16d,
+        type: 3}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_RootOrder
@@ -3191,6 +3221,107 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84126fa6cd2755841a4e71fadc95ddd2, type: 3}
+--- !u!1 &1716111750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716111751}
+  - component: {fileID: 1716111752}
+  m_Layer: 0
+  m_Name: Interval
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1716111751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716111750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2079438161}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1716111752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716111750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ecd4739386153342a9831f3dee9884d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: {x: 1, y: 1}
+  Output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1746013254}
+        m_TargetAssemblyTypeName: Playcraft.Voxels.VoxelSeed, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 82df624d08a42a643a75cd46a9eda248,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Playcraft.Voxels.VoxelSpreadData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1632356815}
+        m_TargetAssemblyTypeName: Playcraft.Voxels.VoxelSeed, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 82df624d08a42a643a75cd46a9eda248,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Playcraft.Voxels.VoxelSpreadData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 275460510}
+        m_TargetAssemblyTypeName: Playcraft.Voxels.VoxelSeed, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 82df624d08a42a643a75cd46a9eda248,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Playcraft.Voxels.VoxelSpreadData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 311266316}
+        m_TargetAssemblyTypeName: Playcraft.Voxels.VoxelSeed, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 82df624d08a42a643a75cd46a9eda248,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Playcraft.Voxels.VoxelSpreadData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  beginOnEnable: 1
+  endOnDisable: 0
 --- !u!4 &1719784288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
@@ -3344,6 +3475,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 932083643199fc44fbf54af4acee5208,
         type: 2}
+    - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
+        type: 3}
+      propertyPath: voxelPrefab
+      value: 
+      objectReference: {fileID: 1012891371073262898, guid: 9833fe1899c4b034b97eb04187fa20dc,
+        type: 3}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_RootOrder
@@ -3564,7 +3701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+  - {fileID: 11400000, guid: 4e0c8ab9c535bb24483ea8a438c888dd, type: 2}
 --- !u!65 &1787598089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3623,7 +3760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
+  - {fileID: 11400000, guid: 4e0c8ab9c535bb24483ea8a438c888dd, type: 2}
 --- !u!65 &1795264359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4213,6 +4350,7 @@ Transform:
   m_Children:
   - {fileID: 1492044920}
   - {fileID: 1540735395}
+  - {fileID: 1716111751}
   m_Father: {fileID: 357186776}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4250,6 +4388,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 935972659}
+  - {fileID: 2384501967055392298}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4403,6 +4542,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40082f3d5bd90fa45af696cb7c7b7b15, type: 3}
+--- !u!1001 &2384501967055392297
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2104913722}
+    m_Modifications:
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210865092481113711, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+        type: 3}
+      propertyPath: m_Name
+      value: Seeded Voxel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ae4eac39c843f84a9fa73aca30fea34, type: 3}
+--- !u!4 &2384501967055392298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5210865092481113699, guid: 6ae4eac39c843f84a9fa73aca30fea34,
+    type: 3}
+  m_PrefabInstance: {fileID: 2384501967055392297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5149955308240458511
 PrefabInstance:
   m_ObjectHideFlags: 0
