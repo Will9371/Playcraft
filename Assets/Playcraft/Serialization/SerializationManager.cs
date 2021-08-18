@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Playcraft.Examples.Saving;
 using UnityEngine;
 
-namespace Playcraft
+namespace Playcraft.Saving
 {
     public class SerializationManager
     {

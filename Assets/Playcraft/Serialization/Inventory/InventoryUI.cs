@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Playcraft.Examples.Saving
+namespace Playcraft.Saving
 {
     public class InventoryUI : MonoBehaviour
     {
@@ -11,7 +11,7 @@ namespace Playcraft.Examples.Saving
         [SerializeField] Text cubes;
         
         SaveData saveData => SaveData.current;
-        PlayerProfile profile => saveData.profile;
+        Profile profile => saveData.profile;
         
         public void Refresh()
         {
@@ -22,3 +22,4 @@ namespace Playcraft.Examples.Saving
         }
     }
 }
+

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New Shadow Sequence SO
   m_EditorClassIdentifier: 
   values:
-  - startWaitTime: 3
+  - startWaitTime: 5
     values:
     - seedIndex: 0
       perSpawnDelay: 0.25
@@ -31,3 +31,11 @@ MonoBehaviour:
     - seedIndex: 3
       perSpawnDelay: 0.1
       batchCount: 20
+  - startWaitTime: 2
+    values:
+    - seedIndex: 0
+      perSpawnDelay: 0.1
+      batchCount: 15
+    - seedIndex: 1
+      perSpawnDelay: 0.1
+      batchCount: 15

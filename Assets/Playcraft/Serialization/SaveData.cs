@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Customize for your project and remove from namespace
-namespace Playcraft.Examples.Saving
+namespace Playcraft.Saving
 {
     [Serializable]
     public class SaveData
@@ -32,13 +32,13 @@ namespace Playcraft.Examples.Saving
         
         SaveData()
         {
-            profile = new PlayerProfile();
+            profile = new Profile();
             //shapes = new List<ShapeData>();
         }
         
         //public Action onLoadEvent;
         
-        public PlayerProfile profile;
+        public Profile profile;
         
         public int sphereCount;
         public int cubeCount;

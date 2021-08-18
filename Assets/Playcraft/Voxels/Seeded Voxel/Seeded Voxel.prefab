@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   process:
-    range: {x: 0, y: 5}
+    range: {x: 0, y: 10}
   OnChangeValue:
     m_PersistentCalls:
       m_Calls: []

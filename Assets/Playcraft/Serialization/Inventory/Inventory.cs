@@ -1,19 +1,16 @@
-﻿using Playcraft.Pooling;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft.Examples.Saving
+namespace Playcraft.Saving
 {
     public class Inventory : MonoBehaviour
     {
-        //[SerializeField] SpawnPrefab sphereSpawner;
-        //[SerializeField] SpawnPrefab cubeSpawner;
         [SerializeField] int sphereCost = 200;
         [SerializeField] int cubeCost = 300;
         [SerializeField] UnityEvent OnUpdate;
 
         SaveData saveData => SaveData.current;
-        PlayerProfile profile => SaveData.current.profile;
+        Profile profile => SaveData.current.profile;
 
         public void AddCoins(int value)
         {
@@ -26,7 +23,6 @@ namespace Playcraft.Examples.Saving
         {
             if (profile.currency < sphereCost) return;
             profile.currency -= sphereCost;
-            //sphereSpawner.Spawn();
             saveData.sphereCount += 1;
             OnUpdate.Invoke();
         }
@@ -35,7 +31,6 @@ namespace Playcraft.Examples.Saving
         {
             if (profile.currency < cubeCost) return;
             profile.currency -= cubeCost;
-            //cubeSpawner.Spawn();
             saveData.cubeCount += 1;
             OnUpdate.Invoke();
         }

@@ -4,7 +4,7 @@ using Playcraft.Examples.Saving;
 
 // For your project create a custom SaveData class
 // and remove the Playcraft.Examples.Saving using statement above
-namespace Playcraft
+namespace Playcraft.Saving
 {
     public class AccessSerialization : MonoBehaviour
     {

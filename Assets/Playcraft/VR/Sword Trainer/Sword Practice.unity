@@ -903,13 +903,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
+      propertyPath: group
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ef4716c1d38cc743892ddadb5acfaa0,
+        type: 2}
+    - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
+        type: 3}
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 1ec90260e3269bb498bb6fb5cd653e8b, type: 2}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
@@ -964,7 +970,7 @@ PrefabInstance:
     - target: {fileID: 6448588993099032710, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_Name
-      value: Voxel Seed (2)
+      value: Blood Seed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f18795f7c798b438e4aa272cfba4bd, type: 3}
@@ -1079,13 +1085,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
+      propertyPath: group
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a63ab730286ad049a0ae23669484b14,
+        type: 2}
+    - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
+        type: 3}
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 409785ac5e5d0d244b8499224789bc1d, type: 2}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
@@ -1140,7 +1152,7 @@ PrefabInstance:
     - target: {fileID: 6448588993099032710, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_Name
-      value: Voxel Seed (3)
+      value: Poison Seed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f18795f7c798b438e4aa272cfba4bd, type: 3}
@@ -1165,8 +1177,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357186776}
-  - component: {fileID: 357186778}
-  - component: {fileID: 357186777}
   m_Layer: 0
   m_Name: Starting Voxels
   m_TagString: Untagged
@@ -1185,6 +1195,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2079438161}
   - {fileID: 1719784288}
   - {fileID: 2084143176}
   - {fileID: 1045773047}
@@ -1192,51 +1203,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &357186777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357186775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52cb2a75e55924b4daa955b8ae5f7747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 357186778}
-        m_TargetAssemblyTypeName: ShadowSequence, Assembly-CSharp
-        m_MethodName: Begin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &357186778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357186775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415d11678803f88408393bf8f0cc20fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 20dad54b6e251d343987749464bbc45f, type: 2}
-  seeds:
-  - {fileID: 1746013254}
-  - {fileID: 1632356815}
-  - {fileID: 275460510}
-  - {fileID: 311266316}
 --- !u!1 &373137587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,6 +1539,18 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4bcc7b2432f7e41a33528540ec6781, type: 3}
+--- !u!114 &685228778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6463761125193795772, guid: a86ae6b69b6a78a44afe514445d23412,
+    type: 3}
+  m_PrefabInstance: {fileID: 7016883134170958853}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae26e19cd956134bbdf3c6f65bf393a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &825140205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,6 +2399,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1492044919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492044920}
+  - component: {fileID: 1492044922}
+  - component: {fileID: 1492044921}
+  m_Layer: 0
+  m_Name: Sequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1492044920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492044919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2079438161}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1492044921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492044919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415d11678803f88408393bf8f0cc20fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 20dad54b6e251d343987749464bbc45f, type: 2}
+  seeds:
+  - {fileID: 1746013254}
+  - {fileID: 1632356815}
+  - {fileID: 275460510}
+  - {fileID: 311266316}
+--- !u!114 &1492044922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492044919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cb2a75e55924b4daa955b8ae5f7747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1492044921}
+        m_TargetAssemblyTypeName: Playcraft.Voxels.ShadowSequence, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1510304744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,6 +2521,150 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fa7cf8fc5599d42b70408250d4548c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1537675219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6463761124898161938, guid: a86ae6b69b6a78a44afe514445d23412,
+    type: 3}
+  m_PrefabInstance: {fileID: 7016883134170958853}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae26e19cd956134bbdf3c6f65bf393a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1540735394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540735395}
+  - component: {fileID: 1540735397}
+  - component: {fileID: 1540735396}
+  m_Layer: 0
+  m_Name: XR Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1540735395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540735394}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2079438161}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1540735396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540735394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b33db04afd4ec468ffc0b0e4f00e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1537675219}
+  bindings:
+  - button: 2
+    pressType: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 275460510}
+          m_TargetAssemblyTypeName: Playcraft.Voxels.VoxelSeed, Assembly-CSharp
+          m_MethodName: Begin
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 82df624d08a42a643a75cd46a9eda248,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: VoxelSpreadData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 4
+    pressType: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 311266316}
+          m_TargetAssemblyTypeName: Playcraft.Voxels.VoxelSeed, Assembly-CSharp
+          m_MethodName: Begin
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 82df624d08a42a643a75cd46a9eda248,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: VoxelSpreadData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1540735397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540735394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b33db04afd4ec468ffc0b0e4f00e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 685228778}
+  bindings:
+  - button: 2
+    pressType: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1746013254}
+          m_TargetAssemblyTypeName: Playcraft.Voxels.VoxelSeed, Assembly-CSharp
+          m_MethodName: Begin
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 82df624d08a42a643a75cd46a9eda248,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: VoxelSpreadData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - button: 4
+    pressType: 0
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1632356815}
+          m_TargetAssemblyTypeName: Playcraft.Voxels.VoxelSeed, Assembly-CSharp
+          m_MethodName: Begin
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 82df624d08a42a643a75cd46a9eda248,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: VoxelSpreadData, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1594844013 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5949281540534564828, guid: 204c981afd8231046a8dc255777a1781,
@@ -2647,13 +2846,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
+      propertyPath: group
+      value: 
+      objectReference: {fileID: 11400000, guid: ede122b487959e74ea69478d6cff55d5,
+        type: 2}
+    - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
+        type: 3}
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 9e5f99508ee912f40a6935d7ee962418, type: 2}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
@@ -2708,7 +2913,7 @@ PrefabInstance:
     - target: {fileID: 6448588993099032710, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_Name
-      value: Voxel Seed (1)
+      value: Freeze Seed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f18795f7c798b438e4aa272cfba4bd, type: 3}
@@ -3133,10 +3338,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 357186776}
     m_Modifications:
+    - target: {fileID: 6448588993099032708, guid: 72f18795f7c798b438e4aa272cfba4bd,
+        type: 3}
+      propertyPath: group
+      value: 
+      objectReference: {fileID: 11400000, guid: 932083643199fc44fbf54af4acee5208,
+        type: 2}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
@@ -3191,7 +3402,7 @@ PrefabInstance:
     - target: {fileID: 6448588993099032710, guid: 72f18795f7c798b438e4aa272cfba4bd,
         type: 3}
       propertyPath: m_Name
-      value: Voxel Seed
+      value: Shadow Seed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72f18795f7c798b438e4aa272cfba4bd, type: 3}
@@ -3973,6 +4184,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2079438160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2079438161}
+  m_Layer: 0
+  m_Name: Spawn Logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2079438161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079438160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1492044920}
+  - {fileID: 1540735395}
+  m_Father: {fileID: 357186776}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2084143176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6448588993099032709, guid: 72f18795f7c798b438e4aa272cfba4bd,

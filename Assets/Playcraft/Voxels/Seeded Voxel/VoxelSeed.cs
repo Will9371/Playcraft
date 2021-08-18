@@ -12,11 +12,13 @@ namespace Playcraft.Voxels
         [SerializeField] float spawnDelay;
         [SerializeField] int batchCount;
         
-        [SerializeField] Material material;
+        [SerializeField] VoxelGroupData group;
         [SerializeField] GameObject voxelPrefab;
 
         List<SpreadingVoxel> voxels = new List<SpreadingVoxel>();
         
+        public void Begin(VoxelSpreadData data) { Begin(data.spawnDelay, data.batchCount); }
+
         public void Begin(float spawnDelay, int batchCount)
         {
             this.spawnDelay = spawnDelay;
@@ -55,9 +57,11 @@ namespace Playcraft.Voxels
             
             foreach (var voxel in voxels)
             {
-               if (!voxel.HasOpenPosition()) continue;
-               AddVoxel(voxel.SpreadAndReturn());
-               break;
+                // * Allow spread into areas of different group (disable existing voxel).  
+                    // With percent chance of success?
+                if (!voxel.HasOpenPosition()) continue;
+                AddVoxel(voxel.SpreadAndReturn());
+                break;
             }
         }
         
@@ -65,7 +69,7 @@ namespace Playcraft.Voxels
         {
             voxels.Add(voxel);
             voxel.onDisable += VoxelDisabled;
-            voxel.SetMaterial(material);          
+            voxel.SetMaterial(group.material);          
         }
 
         void VoxelDisabled(SpreadingVoxel voxel)
