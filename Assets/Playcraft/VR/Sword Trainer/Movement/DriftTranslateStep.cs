@@ -28,7 +28,13 @@ namespace Playcraft
             if (moveDirection == Vector3.zero) moveDirection = desiredDirection;
             moveDirection = VectorMath.MoveTowards(moveDirection, desiredDirection, acceleration);
         }
+        
+        Vector3 moveStep;
             
-        void Step(Vector3 direction) { self.Translate(speed * Time.deltaTime * direction); }
+        void Step(Vector3 direction) 
+        {
+            moveStep = speed * Time.deltaTime * direction;
+            self.Translate(moveStep); 
+        }
     }
 }

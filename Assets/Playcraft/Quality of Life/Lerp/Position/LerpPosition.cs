@@ -37,5 +37,7 @@ namespace Playcraft
             if (useLocal) self.localPosition = _position;
             else self.position = _position;
         }
+        
+        public void SwitchDirection() { reverse = !reverse; }
     }
 }

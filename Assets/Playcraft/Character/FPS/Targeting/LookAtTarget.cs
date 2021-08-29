@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// RENAME: indicate raycast-based
 namespace Playcraft.FPS
 {
     public class LookAtTarget : MonoBehaviour

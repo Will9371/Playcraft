@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05502830ef51c794595a4caf9b8e7448, type: 3}
   m_Name: Standard Spread
   m_EditorClassIdentifier: 
-  spawnDelay: 0.2
-  batchCount: 10
+  spawnDelay: 0.02
+  batchCount: 50

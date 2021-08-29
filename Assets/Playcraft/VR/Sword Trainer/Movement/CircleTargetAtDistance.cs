@@ -15,8 +15,8 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] MaintainDistance maintainDistance;
         [SerializeField] DriftTranslateStep movement;
         
-        [HideInInspector] public bool circlingEnabled = true;
-        [HideInInspector] public bool distancingEnabled = true;
+        public bool circlingEnabled = true;
+        public bool distancingEnabled = true;
         
         float circleWeight = 1f;
         float distanceWeight = 1f;
@@ -49,14 +49,22 @@ namespace Playcraft.Examples.SwordTrainer
             circleWeight = Random.Range(circleMinWeight, circleMaxWeight);
             distanceWeight = Random.Range(distanceMinWeight, distanceMaxWeight);
         }
+        
+        Vector3 moveStep;
 
         void Update() 
-        { 
+        {
              if (circlingEnabled)
-                movement.AddMovement(circleTarget.Update() * circleWeight);
+             {
+                moveStep = circleTarget.Update() * circleWeight;
+                movement.AddMovement(moveStep);
+             }
              
              if (distancingEnabled)
-                movement.AddMovement(maintainDistance.Update() * distanceWeight);
+             {
+                moveStep = maintainDistance.Update() * distanceWeight;
+                movement.AddMovement(moveStep);
+             }
              
              movement.Update();
         }
