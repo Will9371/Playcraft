@@ -5,11 +5,11 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Playcraft.Examples.Saving
+namespace Playcraft.Saving
 {
     public class SaveShape : MonoBehaviour
     {
-        /*public ShapeType shapeType;
+        public ShapeType shapeType;
         public ShapeData shapeData;
         
         SaveData saveData => SaveData.current;
@@ -40,7 +40,7 @@ namespace Playcraft.Examples.Saving
         {
             GameEvents.current.onLoadEvent -= DestroyMe;
             Destroy(gameObject);
-        }*/
+        }
     }
 }
 

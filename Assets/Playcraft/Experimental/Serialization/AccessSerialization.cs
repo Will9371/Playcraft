@@ -1,27 +1,28 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Playcraft.Examples.Saving; 
+using Playcraft.Saving;
+using Playcraft.Pooling;
 
 // For your project create a custom SaveData class
 // and remove the Playcraft.Examples.Saving using statement above
-namespace Playcraft.Saving
+namespace Playcraft.Examples.Saving
 {
     public class AccessSerialization : MonoBehaviour
     {
-        //[SerializeField] SpawnShape spawner;
+        [SerializeField] SpawnShape spawner;
         
         SaveData saveData;
         
-        //void Awake() { saveData = SaveData.current; }
+        void Awake() { saveData = SaveData.current; }
 
         public void Load()
         {
-            //GameEvents.dispatchOnLoadEvent?.Invoke();
+            GameEvents.dispatchOnLoadEvent?.Invoke();
         
             SaveData.current = (SaveData)SerializationManager.Load();
             
             // INCOMPLETE
-            /*for (int i = 0; i < saveData.shapes.Count; i++)
+            for (int i = 0; i < saveData.shapes.Count; i++)
             {
                 var currentShape = saveData.shapes[i];
                 var obj = spawner.Spawn(currentShape.shapeType);
@@ -29,7 +30,7 @@ namespace Playcraft.Saving
                 saveShape.shapeData = currentShape;
                 saveShape.transform.position = currentShape.position;
                 saveShape.transform.rotation = currentShape.rotation;
-            }*/
+            }
         }
         
         public void Save()

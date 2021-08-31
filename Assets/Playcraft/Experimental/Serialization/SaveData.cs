@@ -33,16 +33,16 @@ namespace Playcraft.Saving
         SaveData()
         {
             profile = new Profile();
-            //shapes = new List<ShapeData>();
+            shapes = new List<ShapeData>();
         }
         
-        //public Action onLoadEvent;
+        public Action onLoadEvent;
         
         public Profile profile;
         
         public int sphereCount;
         public int cubeCount;
         
-        //public List<ShapeData> shapes;
+        public List<ShapeData> shapes;
     }
 }

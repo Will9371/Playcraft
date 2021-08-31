@@ -4,7 +4,6 @@
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using Playcraft.Examples.Saving;
 using UnityEngine;
 
 namespace Playcraft.Saving

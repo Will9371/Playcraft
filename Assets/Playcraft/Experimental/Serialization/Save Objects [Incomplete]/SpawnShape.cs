@@ -4,11 +4,11 @@ using Playcraft.Pooling;
 using UnityEngine;
 
 // Application-specific interface to SpawnPrefab
-namespace Playcraft.Examples.Saving
+namespace Playcraft.Saving
 {
     public class SpawnShape : MonoBehaviour
     {
-        /*[SerializeField] SpawnPrefab sphereSpawner;
+        [SerializeField] SpawnPrefab sphereSpawner;
         [SerializeField] SpawnPrefab cubeSpawner;
         
         public GameObject Spawn(ShapeType type)
@@ -20,7 +20,7 @@ namespace Playcraft.Examples.Saving
             }
             
             return null;
-        }*/
+        }
     }
 }
 

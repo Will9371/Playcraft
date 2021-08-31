@@ -6,22 +6,22 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft.Examples.Saving
+namespace Playcraft.Saving
 {
     [Serializable]
     public enum ShapeType
     {
-        //Cube,
-        //Sphere,
+        Cube,
+        Sphere,
     }
 
     [Serializable]
     public class ShapeData
     {
-        //public string id;
-        //public ShapeType shapeType;
-        //public Vector3 position;
-        //public Quaternion rotation;
+        public string id;
+        public ShapeType shapeType;
+        public Vector3 position;
+        public Quaternion rotation;
     }
 }
 
