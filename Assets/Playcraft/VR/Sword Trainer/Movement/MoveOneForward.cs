@@ -47,11 +47,13 @@ namespace Playcraft.Examples.SwordTrainer
     {
         [SerializeField] LerpPositionOverTime actor;
         [SerializeField] LerpPositionOverTime mirror;
+        [SerializeField] SplitBool mirrorColor;
         
         public void SetDestination(bool forward)
         {
             actor.MoveIfNewDirection(forward);
             mirror.MoveIfNewDirection(forward);
+            mirrorColor.Input(forward);
         }
     }
 }

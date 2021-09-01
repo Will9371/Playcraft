@@ -12,6 +12,7 @@ namespace Playcraft.Examples.SwordTrainer
     
         public void Input(int value)
         {
+            //Debug.Log($"Display.Input({value})");
             foreach (var element in elements)
             {
                 ColorSO status;

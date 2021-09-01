@@ -30,6 +30,7 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void Hit(int index) 
         {
+            //Debug.Log($"Hit: index = {index}, active index = {activeIndex}");
             if (index != activeIndex) return;
             
             activeIndex++;
@@ -53,10 +54,23 @@ namespace Playcraft.Examples.SwordTrainer
             hitStatus.Input(activeIndex);           
         }
         
+        bool collidersEnabled;
+        
         public void SetCollidersEnabled(bool value)
         {
+            collidersEnabled = value;
+        
             foreach (var col in colliders)
                 col.enabled = value;
+        }
+        
+        public void ActiveReset(bool forward)
+        {
+            if (!forward || !collidersEnabled)
+                return;
+                
+            activeIndex = 1;
+            hitStatus.Input(activeIndex);
         }
     }
 }

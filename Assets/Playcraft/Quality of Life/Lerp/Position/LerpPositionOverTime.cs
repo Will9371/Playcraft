@@ -6,7 +6,7 @@ namespace Playcraft
 {
     public class LerpPositionOverTime : MonoBehaviour
     {
-        [SerializeField] UnityEvent OnComplete;
+        [SerializeField] BoolEvent OnComplete;
         [SerializeField] LerpPosition movement;
         [SerializeField] float duration;
         
@@ -44,7 +44,7 @@ namespace Playcraft
         public void SetDuration(float value) { duration = value; }
         public void SetDestination(Vector3 value) { movement.SetEnd(value); }
         public void SetDirection(bool forward) { movement.reverse = !forward; }
-
+        
         public void BeginMove() { StartCoroutine(MoveRoutine()); }
         
         IEnumerator MoveRoutine()
@@ -59,7 +59,7 @@ namespace Playcraft
                 progress = timer.GetProgress();
             }
             
-            OnComplete.Invoke();   
+            OnComplete.Invoke(!movement.reverse);   
         }    
     }
 }

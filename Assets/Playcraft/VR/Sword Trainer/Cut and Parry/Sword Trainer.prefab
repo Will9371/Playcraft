@@ -60,8 +60,10 @@ GameObject:
   - component: {fileID: 564655978800194651}
   - component: {fileID: 3113927929996678465}
   - component: {fileID: 1293919819734796407}
+  - component: {fileID: 391829748216672231}
+  - component: {fileID: 6776529946770030329}
   m_Layer: 0
-  m_Name: Mirrored Sphere
+  m_Name: Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,13 +76,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8148385684597152022}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 3}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0.01, z: 3}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 51200814445864289}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
 --- !u!33 &564655978800194651
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88,7 +90,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8148385684597152022}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3113927929996678465
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -108,7 +110,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 409785ac5e5d0d244b8499224789bc1d, type: 2}
+  - {fileID: 2100000, guid: bd7a2769a24b07b4a81dcd60569ac893, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,10 +150,69 @@ MonoBehaviour:
   movement:
     self: {fileID: 7856328527511565343}
     useLocal: 1
-    start: {x: 0, y: 1.5, z: 1}
-    end: {x: 0, y: 1.5, z: 3}
+    start: {x: 0, y: 0.01, z: 1.5}
+    end: {x: 0, y: 0.01, z: 3}
     reverse: 0
   duration: 1.5
+--- !u!114 &391829748216672231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148385684597152022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d170525ca1b1c4ebe7f3d15ddcf9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6776529946770030329}
+        m_TargetAssemblyTypeName: Playcraft.SetColor, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 01f1235067798884b8c7517d42e46a30,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6776529946770030329}
+        m_TargetAssemblyTypeName: Playcraft.SetColor, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0ed9bbc258b154847833a7afac0cb7be,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  state: 0
+--- !u!114 &6776529946770030329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148385684597152022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925bde6da8a21d443b714c2932150e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 3113927929996678465}
+  enabled: 1
 --- !u!1 &8257052745405375525
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,11 +260,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4590828070193416422}
+        m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.CutTarget, Assembly-CSharp
+        m_MethodName: ActiveReset
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   movement:
     self: {fileID: 7841188719449049792}
     useLocal: 1
-    start: {x: 0, y: 0, z: -1}
+    start: {x: 0, y: 0, z: -1.25}
     end: {x: 0, y: 0, z: -3}
     reverse: 0
   duration: 1.5
@@ -703,7 +776,7 @@ PrefabInstance:
     - target: {fileID: 3031948313252575019, guid: 84126fa6cd2755841a4e71fadc95ddd2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3031948313252575019, guid: 84126fa6cd2755841a4e71fadc95ddd2,
         type: 3}
