@@ -7,6 +7,7 @@ namespace Playcraft.Examples.SwordTrainer
     {
         [SerializeField] ParryTargetOrbState[] orbs;
         [SerializeField] UnityEvent OnParryComplete;
+        [SerializeField] UnityEvent OnParryReady;
         
         #region Reference injection
         
@@ -32,7 +33,7 @@ namespace Playcraft.Examples.SwordTrainer
         
         #endregion
 
-        public void SetRandomParry()
+        public void SetRandomParry(bool readyOnSet)
         {
             ActivateOrbs(false);
             var nextParryIndex = Random.Range(0, uniqueParryCount);
@@ -41,6 +42,13 @@ namespace Playcraft.Examples.SwordTrainer
             movement.SetDestination(nextParryIndex);
             timer.Begin();
             
+            if (readyOnSet)
+                SetParryReady();
+        }
+        
+        public void SetParryReady()
+        {
+            OnParryReady.Invoke();
             Invoke(nameof(ActivateOrbsDelayTrue), transitionTime);
         }
         

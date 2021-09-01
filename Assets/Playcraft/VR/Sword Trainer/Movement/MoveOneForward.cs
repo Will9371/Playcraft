@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,14 +7,38 @@ namespace Playcraft.Examples.SwordTrainer
 {
     public class MoveOneForward : MonoBehaviour
     {
+        [SerializeField] float advanceRetreatDelta;
         [SerializeField] LerpMirror[] actors;
         
-        public void AdvanceRandom()
+        public void AdvanceRandom() { StartCoroutine(AdvanceRoutine()); }
+        
+        IEnumerator AdvanceRoutine()
         {
             var index = Random.Range(0, actors.Length);
             
+            if (advanceRetreatDelta > 0f)
+            {
+                AdvanceOne(index);
+                yield return new WaitForSeconds(advanceRetreatDelta);
+                RetreatAllExceptOne(index);
+            }
+            else
+            {
+                RetreatAllExceptOne(index); 
+                yield return new WaitForSeconds(-advanceRetreatDelta);
+                AdvanceOne(index);               
+            }
+        }
+        
+        void AdvanceOne(int index) { actors[index].SetDestination(false); }
+        
+        void RetreatAllExceptOne(int index)
+        {
             for (int i = 0; i < actors.Length; i++)
-                actors[i].SetDestination(i != index);
+            {
+                if (index == i) continue;
+                actors[i].SetDestination(true);
+            }
         }
     }
     

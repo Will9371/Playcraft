@@ -9,7 +9,9 @@ namespace Playcraft.Examples.SwordTrainer
         
         void Start() { cutPrompt.SetRandomCut(); }
         
-        public void CutComplete() { parryPrompt.SetRandomParry(); }
+        public void CutInProgress() { parryPrompt.SetRandomParry(false); }
+        
+        public void CutComplete() { parryPrompt.SetParryReady(); }
         
         public void ParryComplete() { cutPrompt.SetRandomCut(); }
     }
