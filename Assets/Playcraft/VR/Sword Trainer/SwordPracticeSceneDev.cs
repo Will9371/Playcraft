@@ -4,7 +4,7 @@ using UnityEngine;
 // GENERALIZE: consider replacing enum with SOs
 public class SwordPracticeSceneDev : MonoBehaviour
 {
-    public enum SetupId { CirclingTargets, HPTarget, CutAndParry, CutOnly, ParryOnly, Shadow }
+    public enum SetupId { CirclingTargets, HPTarget, CutAndParry, CutOnly, ParryOnly, Shadow, CutParryShadow }
     public SetupId setupId;
     
     [SerializeField] Setup[] setups;
@@ -17,7 +17,9 @@ public class SwordPracticeSceneDev : MonoBehaviour
     void Refresh()
     {
         foreach (var setup in setups)
-            setup.SetActive(setupId);
+            setup.SetActive(false);
+            
+        GetSetup().SetActive(true);
     }
     
     Setup GetSetup()
@@ -34,12 +36,12 @@ public class SwordPracticeSceneDev : MonoBehaviour
         public SetupId id;
         public GameObject[] activeObjects;
         
-        public void SetActive(SetupId id)
+        public void SetActive(SetupId id) { SetActive(this.id == id); }
+        
+        public void SetActive(bool value)
         {
-            var isActive = this.id == id;
-            
             foreach (var obj in activeObjects)
-                obj.SetActive(isActive);
+                obj.SetActive(value);
         }
     }
 }

@@ -95,5 +95,11 @@ namespace Playcraft.Voxels
         {
             onDisable?.Invoke(this);
         }
+        
+        public void Convert(GameObject prefab)
+        {
+            gameObject.SetActive(false);
+            spawner.Spawn(prefab, transform.position);
+        }
     }
 }

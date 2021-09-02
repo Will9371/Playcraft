@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6435412011127320097}
   - component: {fileID: 6435412011127320159}
   - component: {fileID: 6435412011127320158}
-  - component: {fileID: 6435412011127320156}
   m_Layer: 0
   m_Name: Cut & Parry
   m_TagString: Untagged
@@ -26,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6435412011127320096}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -79,7 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecd4739386153342a9831f3dee9884d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: {x: 3, y: 5}
+  useRange: 1
+  range: {x: 4, y: 5}
+  interval: 5
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -98,34 +99,6 @@ MonoBehaviour:
         m_CallState: 2
   beginOnEnable: 1
   endOnDisable: 1
---- !u!114 &6435412011127320156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6435412011127320096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52cb2a75e55924b4daa955b8ae5f7747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6435412011127320159}
-        m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.MoveOneForward,
-          Assembly-CSharp
-        m_MethodName: AdvanceRandom
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2177345497167221137
 PrefabInstance:
   m_ObjectHideFlags: 0

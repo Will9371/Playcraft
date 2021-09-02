@@ -64,6 +64,7 @@ namespace Playcraft.Examples.SwordTrainer
                 col.enabled = value;
         }
         
+        public void ActiveReset() { ActiveReset(true); }
         public void ActiveReset(bool forward)
         {
             if (!forward || !collidersEnabled)

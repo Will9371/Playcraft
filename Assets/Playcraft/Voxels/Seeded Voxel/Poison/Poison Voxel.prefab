@@ -145,5 +145,15 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1ec90260e3269bb498bb6fb5cd653e8b, type: 2}
+    - target: {fileID: 8302813157614169899, guid: 9668969adca70fd4cb7488df72cee435,
+        type: 3}
+      propertyPath: state
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302813157614169899, guid: 9668969adca70fd4cb7488df72cee435,
+        type: 3}
+      propertyPath: OnTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ec90260e3269bb498bb6fb5cd653e8b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9668969adca70fd4cb7488df72cee435, type: 3}
