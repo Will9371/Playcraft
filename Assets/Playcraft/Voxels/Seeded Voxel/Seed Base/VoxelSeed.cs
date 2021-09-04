@@ -12,11 +12,19 @@ namespace Playcraft.Voxels
         // * Move to VoxelSpreadData
         [SerializeField] float spawnDelay;
         [SerializeField] int batchCount;
-        
         [SerializeField] GameObject voxelPrefab;
+        
+        [SerializeField] bool beginOnStart;
+        [SerializeField] float interval;
 
         List<SpreadingVoxel> voxels = new List<SpreadingVoxel>();
         
+        void Start()
+        {
+            if (beginOnStart)
+                InvokeRepeating(nameof(Begin), interval, interval);
+        }
+
         public void Begin(VoxelSpreadData data) { Begin(data.spawnDelay, data.batchCount); }
 
         public void Begin(float spawnDelay, int batchCount)

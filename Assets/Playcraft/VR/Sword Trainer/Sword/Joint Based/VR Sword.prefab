@@ -334,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8951941258530509362}
   - component: {fileID: 8951941258530509363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 8951941259013378779}
   - component: {fileID: 8951941259013378778}
   - component: {fileID: 62381753347671332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8951941259022203570}
   - component: {fileID: 8951941259022203571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

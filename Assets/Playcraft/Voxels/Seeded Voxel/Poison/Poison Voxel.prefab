@@ -23,6 +23,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Poison Voxel
       objectReference: {fileID: 0}
+    - target: {fileID: 1843785861559966321, guid: 9668969adca70fd4cb7488df72cee435,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1843785861559966331, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}
       propertyPath: prefab
@@ -138,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 1843785861559966335, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1843785861559966335, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}
@@ -148,7 +153,7 @@ PrefabInstance:
     - target: {fileID: 8302813157614169899, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}
       propertyPath: state
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8302813157614169899, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}

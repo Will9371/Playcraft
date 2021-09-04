@@ -15,5 +15,6 @@ namespace Playcraft
         public virtual void OnEventRaised(Vector2 value) { }
         public virtual void OnEventRaised(Vector3 value) { }
         public virtual void OnEventRaised(SO value) { }
+        public virtual void OnEventRaised(Transform value) { }
     }
 }

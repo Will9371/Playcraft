@@ -4,13 +4,14 @@ namespace Playcraft
 {
     public class RaycastSource : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Transform source;
         [SerializeField] float range = 20f;
         [SerializeField] RaycastHitEvent Hit;
-        #pragma warning restore 0649
+        [SerializeField] bool triggerOnUpdate = true;
         
-        void Update()
+        void Update() { if (triggerOnUpdate) Trigger(); }
+        
+        public void Trigger()
         {
             Ray ray = new Ray(source.position, source.forward);
             Physics.Raycast(ray, out RaycastHit hit, range);

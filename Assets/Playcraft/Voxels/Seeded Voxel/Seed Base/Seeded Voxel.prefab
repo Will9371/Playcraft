@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1843785861559966321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.333, y: 0.333, z: 0.333}
+  m_LocalScale: {x: 0.5, y: 3, z: 0.5}
   m_Children:
   - {fileID: 6434529986838503419}
   - {fileID: 1947734239474669630}
@@ -102,7 +102,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4e0c8ab9c535bb24483ea8a438c888dd, type: 2}
   - {fileID: 11400000, guid: f89f3c874820c524da12095d56796529, type: 2}
   consumeTags: []
-  neighborDirections: {fileID: 11400000, guid: 7905b3b87021d4441a2fa0795b606219, type: 2}
+  neighborDirections: {fileID: 11400000, guid: c0d449e234bbc744eb55e8bc6da560ef, type: 2}
   overlapCheckDistance: 0.1
 --- !u!1 &8017863753067653498
 GameObject:

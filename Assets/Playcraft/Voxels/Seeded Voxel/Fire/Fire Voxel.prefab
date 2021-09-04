@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 1843785861559966335, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1843785861559966335, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}
@@ -143,12 +143,17 @@ PrefabInstance:
     - target: {fileID: 8302813157614169899, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}
       propertyPath: state
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8302813157614169899, guid: 9668969adca70fd4cb7488df72cee435,
         type: 3}
       propertyPath: OnTrue.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 2100000, guid: 409785ac5e5d0d244b8499224789bc1d, type: 2}
+    - target: {fileID: 8673192463242886853, guid: 9668969adca70fd4cb7488df72cee435,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9668969adca70fd4cb7488df72cee435, type: 3}
