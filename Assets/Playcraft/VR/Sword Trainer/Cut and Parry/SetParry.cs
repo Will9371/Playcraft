@@ -14,11 +14,11 @@ namespace Playcraft.Examples.SwordTrainer
         int uniqueParryCount;
         float transitionTime;
         LerpPositionIndexMono movement;
-        LerpRotationIndex rotation;
+        LerpRotationIndexMono rotation;
         GetPercentOverTimeMono timer;
         
         public void Inject(float transitionTime, LerpPositionIndexMono movement, 
-        LerpRotationIndex rotation, GetPercentOverTimeMono timer)
+        LerpRotationIndexMono rotation, GetPercentOverTimeMono timer)
         {
             this.transitionTime = transitionTime;
             this.movement = movement;

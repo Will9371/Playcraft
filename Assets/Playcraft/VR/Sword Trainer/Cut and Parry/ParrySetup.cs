@@ -12,7 +12,7 @@ namespace Playcraft.Examples.SwordTrainer
         [Header("References")]
         [SerializeField] SetParry controller;
         [SerializeField] LerpPositionIndexMono movement;
-        [SerializeField] LerpRotationIndex rotation;
+        [SerializeField] LerpRotationIndexMono rotation;
         [SerializeField] GetPercentOverTimeMono timer;
         
         void Awake()

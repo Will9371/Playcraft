@@ -52,6 +52,26 @@ namespace Playcraft
             return closestPoint;
         }
         
+        public static int GetClosestAngleIndex(Vector3[] angles, Vector3 desiredDirection)
+        {
+            var desiredAngle = Quaternion.LookRotation(desiredDirection);
+            var smallestDelta = 180f;
+            int result = -1;
+            
+            for (int i = 0; i < angles.Length; i++)
+            {
+                var angle = Quaternion.Euler(angles[i]);
+                var delta = Quaternion.Angle(angle, desiredAngle);
+                
+                if (delta > smallestDelta) continue;
+                
+                smallestDelta = delta;
+                result = i;
+            }
+            
+            return result;
+        }
+        
         public static Vector3 Vector2to3(Vector2 value)
         {
             return new Vector3(value.x, 0f, value.y);

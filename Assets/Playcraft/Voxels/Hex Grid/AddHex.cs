@@ -19,7 +19,14 @@ namespace Playcraft.Voxels
             map.AddHex(gameObject); 
         }
         
-        public void RefreshAdders() { StartCoroutine(RefreshAdderRoutine()); }
+        public void RefreshAdders() 
+        {
+            if (Application.isPlaying) 
+                StartCoroutine(RefreshAdderRoutine()); 
+            else
+                foreach (var direction in directions.values)
+                    RequestPlace(transform.position + direction * transform.localScale.x);
+        }
         
         IEnumerator RefreshAdderRoutine()
         {

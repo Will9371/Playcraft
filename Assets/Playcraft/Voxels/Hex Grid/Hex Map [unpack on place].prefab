@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 523751631996400832}
   - component: {fileID: 7150874996246747597}
+  - component: {fileID: 2578586559748500724}
   m_Layer: 0
   m_Name: Hex Map [unpack on place]
   m_TagString: Untagged
@@ -46,9 +47,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hex: {fileID: 5625225154365554995, guid: c880f3061b095fe42b2525e6886ed459, type: 3}
   addHex: {fileID: 4146271461178781643, guid: 7d1bb49fa8fb79d489cbca3de6c57913, type: 3}
+  createAddersOnStart: 1
+  scale: 1.15125
   hexes:
   - {fileID: 1529570189160377401}
   addableHexes: []
+--- !u!114 &2578586559748500724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376582485334801188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ff97c90a14fa943ab68769d27248c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7150874996246747597}
+        m_TargetAssemblyTypeName: Playcraft.Voxels.HexMap, Assembly-CSharp
+        m_MethodName: RefreshAllAdders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1001 &6569291167020838154
 PrefabInstance:
   m_ObjectHideFlags: 0

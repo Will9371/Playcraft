@@ -154,6 +154,7 @@ MonoBehaviour:
     end: {x: 0, y: 0.01, z: 3}
     reverse: 0
   duration: 1.5
+  startAtSelf: 0
 --- !u!114 &391829748216672231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +281,7 @@ MonoBehaviour:
     end: {x: 0, y: 0, z: -3}
     reverse: 0
   duration: 1.5
+  startAtSelf: 0
 --- !u!1 &8703220859210722740
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +477,16 @@ PrefabInstance:
         type: 3}
       propertyPath: Arrive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000016727627
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000040384055
       objectReference: {fileID: 0}
     - target: {fileID: 5949281539109669062, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
@@ -836,12 +848,12 @@ PrefabInstance:
     - target: {fileID: 6984188692584160069, guid: 84126fa6cd2755841a4e71fadc95ddd2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.000000029530986
       objectReference: {fileID: 0}
     - target: {fileID: 6984188692584160069, guid: 84126fa6cd2755841a4e71fadc95ddd2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.000000032227415
       objectReference: {fileID: 0}
     - target: {fileID: 6984188692584160069, guid: 84126fa6cd2755841a4e71fadc95ddd2,
         type: 3}

@@ -1,16 +1,36 @@
+using System;
 using UnityEngine;
 
 namespace Playcraft
 {
-    public class LerpRotation : MonoBehaviour
+    [Serializable] public class LerpRotation
     {
-        [SerializeField] Lerp_Rotation process;
-                
-        void Start() { process.SetSelfIfNull(transform); }
+        public Transform self;
+        public bool useLocal = true;
         
-        /// Call continuously to rotate over time
-        public void Input(float percent) { process.Input(percent); }
+        Quaternion start;
+        Quaternion end;
         
-        public void SetPath(Vector3 start, Vector3 end) { process.SetPath(start, end); }
+        public void SetSelfIfNull(Transform value) { if (!self) self = value; }
+        
+        Quaternion _rotation;
+
+        public void Input(float percent)
+        {
+            _rotation = Quaternion.Slerp(start, end, percent);
+            if (useLocal) self.localRotation = _rotation;
+            else self.rotation = _rotation;
+        }
+        
+        public void SetPath(Vector3 startVector, Vector3 endVector)
+        {
+            SetPath(Quaternion.Euler(startVector), Quaternion.Euler(endVector));
+        }
+        
+        public void SetPath(Quaternion newStart, Quaternion newEnd)
+        {
+            start = newStart;
+            end = newEnd;
+        }
     }
 }

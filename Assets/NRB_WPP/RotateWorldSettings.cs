@@ -11,7 +11,7 @@ public class RotateWorldSettings : MonoBehaviour
     [Header("References")]
     [SerializeField] RotateWorld rotateWorld;
     [SerializeField] LerpPivotZ lerpPivotZ;
-    [SerializeField] LerpRotationIndex lerpRotation;
+    [SerializeField] LerpRotationIndexMono lerpRotation;
     [SerializeField] CycleGravity cycleGravity;
     
     void OnValidate()

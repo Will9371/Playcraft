@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Playcraft
 {
@@ -9,10 +8,16 @@ namespace Playcraft
         [SerializeField] BoolEvent OnComplete;
         [SerializeField] LerpPosition movement;
         [SerializeField] float duration;
+        [Tooltip("Sets start location to transform location on application start")]
+        [SerializeField] bool startAtSelf;
         
         GetPercentOverTime timer = new GetPercentOverTime();
         
-        void Start() { movement.SetSelfIfNull(transform); }
+        void Start() 
+        { 
+            movement.SetSelfIfNull(transform); 
+            if (startAtSelf) movement.SetStartAtSelf();
+        }
 
         public void Move(Vector3 _destination, float _duration)
         {
