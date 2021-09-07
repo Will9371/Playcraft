@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class RaycastFromMouse : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] Camera cam;
-    [SerializeField] RaycastHitEvent output;
-
-    public void Trigger()
+    public class RaycastFromMouse : MonoBehaviour
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
-            output.Invoke(hit);
-    }    
+        [SerializeField] Camera cam;
+        [SerializeField] RaycastHitEvent output;
+
+        public void Trigger()
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+                output.Invoke(hit);
+        }    
+    }
 }

@@ -1,34 +1,49 @@
+using System.Collections;
 using UnityEngine;
-using Playcraft;
 
-public class AddHex : MonoBehaviour
+namespace Playcraft.Voxels
 {
-    public HexMap map;
-    [SerializeField] Vector3Array directions;
-    [SerializeField] SO hexTag;
-    public bool isReal;
-
-    public void Add() { map.AddHex(gameObject); }
-    
-    public void RefreshAdders()
+    public class AddHex : MonoBehaviour
     {
-        foreach (var direction in directions.values)
-            RequestPlace(transform.position + direction * transform.localScale.x);
-    }
-    
-    void RequestPlace(Vector3 position)
-    {
-        var overlap = Physics.OverlapSphere(position, 0.1f);
-        var freeSpace = true;
+        public HexMap map;
+        [SerializeField] Vector3Array directions;
+        [SerializeField] SO hexTag;
+        public bool isReal;
         
-        foreach (var item in overlap)
+        bool addFlag;
+        
+        public void Add() 
         {
-            var tags = item.GetComponent<CustomTags>();
-            if (!tags || !tags.HasTag(hexTag)) continue;
-            freeSpace = false;
+            if (addFlag) return;
+            addFlag = true; 
+            map.AddHex(gameObject); 
         }
         
-        if (freeSpace)
-            map.AddHexOption(position);
+        public void RefreshAdders() { StartCoroutine(RefreshAdderRoutine()); }
+        
+        IEnumerator RefreshAdderRoutine()
+        {
+            foreach (var direction in directions.values)
+            {
+                RequestPlace(transform.position + direction * transform.localScale.x); 
+                yield return null;   
+            }    
+        }
+
+        void RequestPlace(Vector3 position)
+        {
+            var overlap = Physics.OverlapSphere(position, 0.1f);
+            var freeSpace = true;
+            
+            foreach (var item in overlap)
+            {
+                var tags = item.GetComponent<CustomTags>();
+                if (!tags || !tags.HasTag(hexTag)) continue;
+                freeSpace = false;
+            }
+            
+            if (freeSpace)
+                map.AddHexOption(position);
+        }
     }
 }

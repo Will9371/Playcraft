@@ -33,6 +33,25 @@ namespace Playcraft
             return closest;
         }
         
+        public static Vector3 GetClosestPoint(List<Vector3> points, Vector3 desired, Vector3 fallback)
+        {
+            Vector3 closestPoint = fallback;
+            float shortestDistance = Mathf.Infinity;
+        
+            foreach (var point in points)
+            {
+                var distance = Vector3.Distance(point, desired);
+            
+                if (distance < shortestDistance)
+                {
+                    closestPoint = point;
+                    shortestDistance = distance;
+                }
+            }
+        
+            return closestPoint;
+        }
+        
         public static Vector3 Vector2to3(Vector2 value)
         {
             return new Vector3(value.x, 0f, value.y);

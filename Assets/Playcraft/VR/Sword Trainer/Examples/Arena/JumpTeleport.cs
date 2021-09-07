@@ -1,34 +1,37 @@
 using UnityEngine;
 
-public class JumpTeleport : MonoBehaviour
+namespace Playcraft.VR
 {
-    [SerializeField] Transform[] moveOnJump;
-    [SerializeField] GenerateRadialPlacement jumpPoints;
-    [SerializeField] GameObject centerPoint;
-    
-    void Start()
+    public class JumpTeleport : MonoBehaviour
     {
-        SetActive(true);
-    }
-    
-    public void TouchDirection(Transform value)
-    {
-        Teleport(value);
-        SetActive(false);
-    }
-    
-    public void TouchCenter() { SetActive(true); }
-    
-    void Teleport(Transform location) 
-    {
-        var step = location.localPosition;
-        foreach (var item in moveOnJump)
-            item.Translate(step);
-    }
-    
-    void SetActive(bool value)
-    {
-        jumpPoints.SetActive(value);
-        centerPoint.SetActive(!value);
+        [SerializeField] Transform[] moveOnJump;
+        [SerializeField] GenerateRadialPlacement jumpPoints;
+        [SerializeField] GameObject centerPoint;
+        
+        void Start()
+        {
+            SetActive(true);
+        }
+        
+        public void TouchDirection(Transform value)
+        {
+            Teleport(value);
+            SetActive(false);
+        }
+        
+        public void TouchCenter() { SetActive(true); }
+        
+        void Teleport(Transform location) 
+        {
+            var step = location.localPosition;
+            foreach (var item in moveOnJump)
+                item.Translate(step);
+        }
+        
+        void SetActive(bool value)
+        {
+            jumpPoints.SetActive(value);
+            centerPoint.SetActive(!value);
+        }
     }
 }

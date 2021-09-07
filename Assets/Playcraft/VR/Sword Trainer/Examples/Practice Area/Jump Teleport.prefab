@@ -301,6 +301,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9198058568219878469}
+  - component: {fileID: 6044553592672212036}
+  - component: {fileID: 4212756083943136107}
   m_Layer: 0
   m_Name: Center Pad
   m_TagString: Untagged
@@ -316,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7307287745403081559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.101, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children:
   - {fileID: 6805540161033468173}
@@ -324,3 +326,49 @@ Transform:
   m_Father: {fileID: 5351115037410946527}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6044553592672212036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307287745403081559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08a11ebfa958c774c9e1c9a360de3194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4212756083943136107}
+        m_TargetAssemblyTypeName: PlaceAtTag, Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  locked: 0
+--- !u!114 &4212756083943136107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307287745403081559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95fd791208a2ad84381cba35f43c429c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastSourceOffset: {x: 0, y: 1, z: 0}
+  raycastVector: {x: 0, y: -2, z: 0}
+  placementOffset: {x: 0, y: 0.01, z: 0}
+  validTags:
+  - {fileID: 11400000, guid: 3ee26e46937120b43acf51a22c1ede89, type: 2}
+  - {fileID: 11400000, guid: 237f207d37483444ea92a9c4b1ad16b6, type: 2}

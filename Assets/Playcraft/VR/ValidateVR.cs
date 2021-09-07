@@ -15,7 +15,7 @@ namespace Playcraft.VR
         
         void OnValidate()
         {
-            if (initialized && priorEnabled == vrEnabled)
+            if (initialized && priorEnabled == vrEnabled || !settings)
                 return;
 
             settings.InitManagerOnStart = vrEnabled;
