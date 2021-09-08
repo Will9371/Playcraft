@@ -1,27 +1,17 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 namespace Playcraft
-{
-    public class GetTargetDirection : MonoBehaviour
+{    
+    [Serializable]
+    public class GetTargetDirection
     {
-        [SerializeField] Transform target;
-        [SerializeField] bool outputOnUpdate = true;
+        public Transform self;
+        public Transform target;
         [SerializeField] DirectionalConstraints constraints;
-        
-        public void SetTarget(Transform target) { this.target = target; }
-        
-        [SerializeField] Vector3Event Output = default;
-        
-        Vector3 targetVector => target.position - transform.position; 
-        Vector3 targetDirection => constraints.GetConstrainedDirection(targetVector);
-
-        void Update()
-        {
-            if (!target || !outputOnUpdate) return;
-            Output.Invoke(targetDirection);
-        }
-        
-        public void GetDirection() { Output.Invoke(targetDirection); }
+            
+        public Vector3 targetVector => target.position - self.position; 
+        public Vector3 targetDirection => constraints.GetConstrainedDirection(targetVector);
+        public float targetDistance => Vector3.Distance(target.position, self.position);
     }
 }

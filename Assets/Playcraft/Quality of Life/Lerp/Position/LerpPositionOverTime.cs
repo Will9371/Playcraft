@@ -7,7 +7,7 @@ namespace Playcraft
     {
         [SerializeField] BoolEvent OnComplete;
         [SerializeField] LerpPosition movement;
-        [SerializeField] float duration;
+        public float duration;
         [Tooltip("Sets start location to transform location on application start")]
         [SerializeField] bool startAtSelf;
         
@@ -18,6 +18,8 @@ namespace Playcraft
             movement.SetSelfIfNull(transform); 
             if (startAtSelf) movement.SetStartAtSelf();
         }
+        
+        //public void SetStartAtSelf() { movement.SetStartAtSelf(); }
 
         public void Move(Vector3 _destination, float _duration)
         {
@@ -65,6 +67,17 @@ namespace Playcraft
             }
             
             OnComplete.Invoke(!movement.reverse);   
-        }    
+        }
+        
+        Transform self => movement.self;
+        Vector3 forward => self.forward;
+        Vector3 position => movement.useLocal ? self.localPosition : self.position;
+        
+        public void MoveForwardByDistance(float distance)
+        {
+            var destination = position + forward * distance;
+            SetDestination(destination);
+            BeginMove();
+        }
     }
 }

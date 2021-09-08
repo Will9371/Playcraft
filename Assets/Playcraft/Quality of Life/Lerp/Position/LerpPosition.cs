@@ -14,7 +14,12 @@ namespace Playcraft
         
         public void SetSelfIfNull(Transform value) { if (self == null) self = value; }
         
-        public void SetStartAtSelf() { start = self.position; }
+        // RENAME (Initialize?), verify works for assets set to true
+        public void SetStartAtSelf() 
+        { 
+            start = self.position; 
+            end = self.position; 
+        }
         
         public void SetPath(Vector3 newStart, Vector3 newEnd)
         {

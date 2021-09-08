@@ -7,7 +7,7 @@ namespace Playcraft
     public class LerpRotationIndexOverTime : MonoBehaviour
     {
         [SerializeField] LerpRotationIndex process;
-        [SerializeField] float duration;
+        public float duration;
         [SerializeField] UnityEvent OnComplete;
         
         GetPercentOverTime timer = new GetPercentOverTime();
