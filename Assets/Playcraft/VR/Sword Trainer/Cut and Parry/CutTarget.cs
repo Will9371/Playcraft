@@ -37,17 +37,17 @@ namespace Playcraft.Examples.SwordTrainer
             hitStatus.Input(activeIndex);
 
             if (activeIndex > colliders.Length)
-                CutComplete();
+                CutComplete(retractDelay);
         }
         
-        void CutComplete()
+        public void CutComplete(float delayToRetract)
         {
             SetCollidersEnabled(false);
-            Invoke(nameof(DelayRetract), retractDelay);
+            Invoke(nameof(Retract), delayToRetract);
             OnCutComplete.Invoke();
         }
         
-        void DelayRetract()
+        void Retract()
         {
             activeIndex = 0;
             retract.Begin();

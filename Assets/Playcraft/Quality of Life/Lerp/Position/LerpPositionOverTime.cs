@@ -19,7 +19,7 @@ namespace Playcraft
             if (startAtSelf) SetStartAtSelf();
         }
         
-        public void SetStartAtSelf() { movement.SetStartAtSelf(); }
+        public void SetStartAtSelf() { movement.Initialize(); }
         
         public void Move(Vector3 _destination, float _duration)
         {

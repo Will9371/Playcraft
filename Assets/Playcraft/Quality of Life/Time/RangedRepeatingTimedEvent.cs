@@ -8,6 +8,7 @@ namespace Playcraft
     {
         [SerializeField] bool useRange = true;
         [SerializeField] Vector2 range = new Vector2(1f, 2f);
+        [Tooltip("Not used if useRange set to true")]
         [SerializeField] float interval = 1f;
         [SerializeField] UnityEvent Output;
         [SerializeField] bool beginOnEnable;

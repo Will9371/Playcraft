@@ -7,7 +7,7 @@ namespace Playcraft.Examples.GridFollow
     {
         [SerializeField] LerpRotationIndexOverTime rotation;
         [SerializeField] float stoppingDistance = 1f;
-        [SerializeField] float gridSize = 1f;
+        [SerializeField] float gridSize = 1f;   // * Replace with actually moving to center point
         [SerializeField] GetTargetDirection navigation;
         [SerializeField] FollowRoutine follow;
         [SerializeField] AttackRoutine attack;

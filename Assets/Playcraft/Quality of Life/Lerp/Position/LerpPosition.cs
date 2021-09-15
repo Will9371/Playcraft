@@ -12,13 +12,27 @@ namespace Playcraft
         public Vector3 end;
         public bool reverse;
         
+        public Vector3 position
+        {
+            get => useLocal ? self.localPosition : self.position;
+            set
+            {
+                if (useLocal) self.localPosition = value;
+                else self.position = value;
+            }
+        }
+        
+        public float currentPercent => reverse ? 
+            VectorMath.InverseLerp(end, start, position) : 
+            VectorMath.InverseLerp(start, end, position);
+        
         public void SetSelfIfNull(Transform value) { if (self == null) self = value; }
         
-        // RENAME (Initialize?), verify works for assets set to true
-        public void SetStartAtSelf() 
+        // * Verify works for all assets set to true
+        public void Initialize() 
         { 
-            start = self.position; 
-            end = self.position; 
+            start = position;
+            end = position;
         }
         
         public void SetPath(Vector3 newStart, Vector3 newEnd)
@@ -33,18 +47,35 @@ namespace Playcraft
             end = newEnd;
         }
         
-        Vector3 _position;
-
         /// Call continuously to move over time
         public void Input(float percent)
         {
             if (reverse) percent = 1f - percent;
-            
-            _position = Vector3.Lerp(start, end, percent);
-            if (useLocal) self.localPosition = _position;
-            else self.position = _position;
+            position = Vector3.Lerp(start, end, percent);
         }
         
         public void SwitchDirection() { reverse = !reverse; }
+        
+        
+        Vector3 cachedStart;
+        Vector3 cachedEnd;
+        
+        public void CachePath()
+        {
+            cachedStart = start;
+            cachedEnd = end;
+        }
+        
+        public void SetPathToStartFromSelf()
+        {
+            start = position;
+            end = cachedStart;
+        }
+        
+        public void ResetPathFromCache()
+        {
+            start = cachedStart;
+            end = cachedEnd;
+        }
     }
 }

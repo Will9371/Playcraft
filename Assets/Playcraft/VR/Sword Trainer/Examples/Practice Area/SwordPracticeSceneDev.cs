@@ -4,7 +4,7 @@ using UnityEngine;
 // GENERALIZE: consider replacing enum with SOs
 public class SwordPracticeSceneDev : MonoBehaviour
 {
-    public enum SetupId { CirclingTargets, HPTarget, CutAndParry, CutOnly, ParryOnly, Shadow, CutParryShadow }
+    public enum SetupId { CirclingTargets, HPTarget, MultipleOpponents, CutOnly, ParryOnly, Shadow, CutParryShadow, CutAndParry }
     public SetupId setupId;
     
     [SerializeField] Setup[] setups;

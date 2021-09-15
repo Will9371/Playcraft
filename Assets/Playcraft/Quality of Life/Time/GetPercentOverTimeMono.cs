@@ -13,6 +13,12 @@ namespace Playcraft
         
         GetPercentOverTime timer = new GetPercentOverTime();
         
+        public void SetDurationAndBegin(float value)
+        {
+            SetDuration(value);
+            Begin();
+        }
+        
         public void SetDuration(float value) { duration = value; }
         
         public void Begin() 

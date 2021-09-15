@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849e54a022621f94790d785df321882f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.3
+  duration: 0.2
   actions:
   - percent: 0
     OnReached:
@@ -231,6 +231,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 9056021935898050889}
+          m_TargetAssemblyTypeName: Playcraft.LerpPositionAndBack, Assembly-CSharp
+          m_MethodName: Begin
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   overrideInputValidation: 1
 --- !u!1 &1794281417171787717
 GameObject:
@@ -260,7 +272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794281417171787717}
   m_LocalRotation: {x: 0, y: 0, z: -0.043619405, w: 0.9990483}
-  m_LocalPosition: {x: 0, y: -0.31, z: 0.125}
+  m_LocalPosition: {x: -0.024, y: -0.587, z: 0.125}
   m_LocalScale: {x: 1.5, y: 0.1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4925832489984744593}
@@ -466,6 +478,83 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+--- !u!1 &3157650597334447239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5355760437790484136}
+  - component: {fileID: 9056021935898050889}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5355760437790484136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157650597334447239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7218352680380559473}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9056021935898050889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157650597334447239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb34e3afa9d41b64a977e2ffe73634b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movers:
+  - self: {fileID: 2933274097191756881}
+    useLocal: 1
+    start: {x: -0.024, y: 0.587, z: 0.125}
+    end: {x: 0, y: 0.31, z: 0.125}
+    reverse: 0
+  - self: {fileID: 1378300942794318840}
+    useLocal: 1
+    start: {x: -0.024, y: -0.587, z: 0.125}
+    end: {x: 0, y: -0.31, z: 0.125}
+    reverse: 0
+  stages:
+  - reverse: 0
+    duration: 2
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8704812526061635811}
+          m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.CutTarget, Assembly-CSharp
+          m_MethodName: CutComplete
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - reverse: 1
+    duration: 0.5
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &3658730430712188362
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +645,7 @@ Transform:
   - {fileID: 4114868696604004396}
   - {fileID: 306258355992913243}
   - {fileID: 1754479647458850387}
+  - {fileID: 5355760437790484136}
   m_Father: {fileID: 5949281540534564831}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1778,7 +1868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9117989472832286918}
   m_LocalRotation: {x: 0, y: 0, z: 0.043619405, w: 0.9990483}
-  m_LocalPosition: {x: 0, y: 0.31, z: 0.125}
+  m_LocalPosition: {x: -0.024, y: 0.587, z: 0.125}
   m_LocalScale: {x: 1.5, y: 0.1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4925832489984744593}

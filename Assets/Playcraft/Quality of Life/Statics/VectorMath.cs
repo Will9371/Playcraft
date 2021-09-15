@@ -278,5 +278,13 @@ namespace Playcraft
                                Mathf.Round(value.y * multiplier) / multiplier, 
                                Mathf.Round(value.z * multiplier) / multiplier);
         }
+        
+        public static float InverseLerp(Vector3 start, Vector3 end, Vector3 value)
+        {
+            var startToEnd = end - start;
+            var startToValue = value - start;
+            var result = Vector3.Dot(startToValue, startToEnd) / Mathf.Pow(startToEnd.magnitude, 2f);
+            return Mathf.Clamp01(result);
+        }
     }
 }
