@@ -244,6 +244,51 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   overrideInputValidation: 1
+--- !u!1 &1464408937153846657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4051017955733838595}
+  - component: {fileID: 1687779038173364014}
+  m_Layer: 0
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4051017955733838595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464408937153846657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7218352680380559473}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1687779038173364014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464408937153846657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40b537d586bda048bb48e36d9ec9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wins: 0
+  losses: 0
 --- !u!1 &1794281417171787717
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,15 +577,14 @@ MonoBehaviour:
     start: {x: -0.024, y: -0.587, z: 0.125}
     end: {x: 0, y: -0.31, z: 0.125}
     reverse: 0
-  stages:
-  - reverse: 0
+  activeStage:
     duration: 2
     onComplete:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8704812526061635811}
           m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.CutTarget, Assembly-CSharp
-          m_MethodName: CutComplete
+          m_MethodName: Fail
           m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -550,7 +594,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - reverse: 1
+  returnStage:
     duration: 0.5
     onComplete:
       m_PersistentCalls:
@@ -646,6 +690,7 @@ Transform:
   - {fileID: 306258355992913243}
   - {fileID: 1754479647458850387}
   - {fileID: 5355760437790484136}
+  - {fileID: 4051017955733838595}
   m_Father: {fileID: 5949281540534564831}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -7,7 +7,7 @@ namespace Playcraft.Examples.SwordTrainer
     {
         [SerializeField] float retractDelay;
         [SerializeField] bool activateOnStart;
-        [SerializeField] UnityEvent OnCutComplete;
+        [SerializeField] BoolEvent OnCutComplete;
         
         [SerializeField] Collider[] colliders;
         [SerializeField] GetPercentOverTimeMono extend;
@@ -23,10 +23,7 @@ namespace Playcraft.Examples.SwordTrainer
             extend.Begin();
         }
 
-        public void SetRandomCut()
-        {
-            extend.Begin();
-        }
+        public void SetRandomCut() { extend.Begin(); }
         
         public void Hit(int index) 
         {
@@ -37,14 +34,17 @@ namespace Playcraft.Examples.SwordTrainer
             hitStatus.Input(activeIndex);
 
             if (activeIndex > colliders.Length)
-                CutComplete(retractDelay);
+                Success(retractDelay);
         }
         
-        public void CutComplete(float delayToRetract)
+        public void Success(float delayToRetract) { CutComplete(delayToRetract, true); }
+        public void Fail(float delayToRetract) { CutComplete(delayToRetract, false); }
+        
+        public void CutComplete(float delayToRetract, bool success)
         {
             SetCollidersEnabled(false);
             Invoke(nameof(Retract), delayToRetract);
-            OnCutComplete.Invoke();
+            OnCutComplete.Invoke(success);
         }
         
         void Retract()

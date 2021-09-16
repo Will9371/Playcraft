@@ -40,5 +40,11 @@ namespace Playcraft
                 Percent.Invoke(timer.percent);
             }
         }
+        
+        public void Cancel() 
+        { 
+            StopAllCoroutines(); 
+            progress.Cancel();
+        }
     }
 }

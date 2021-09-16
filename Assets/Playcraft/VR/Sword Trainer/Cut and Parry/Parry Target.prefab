@@ -91,6 +91,7 @@ Transform:
   - {fileID: 150205252}
   - {fileID: 885581383101347019}
   - {fileID: 3080375145674160858}
+  - {fileID: 6678971726870904883}
   m_Father: {fileID: 3031948313252575019}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -602,6 +603,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Playcraft.LerpPositionOverTime, Assembly-CSharp
         m_MethodName: MoveIfNewDirection
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4409164503880591596}
+        m_TargetAssemblyTypeName: Playcraft.GetPercentOverTimeMono, Assembly-CSharp
+        m_MethodName: Cancel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1295,6 +1308,51 @@ MonoBehaviour:
     reverse: 1
   duration: 0.25
   startAtSelf: 0
+--- !u!1 &2845307981412083475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6678971726870904883}
+  - component: {fileID: 6827364452235477296}
+  m_Layer: 0
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6678971726870904883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845307981412083475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1025976419}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6827364452235477296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845307981412083475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40b537d586bda048bb48e36d9ec9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wins: 0
+  losses: 0
 --- !u!1 &2975620010210319750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,6 +1364,7 @@ GameObject:
   - component: {fileID: 3080375145674160858}
   - component: {fileID: 4409164503880591596}
   - component: {fileID: 724126502928228024}
+  - component: {fileID: 6881465262320203605}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -1344,32 +1403,8 @@ MonoBehaviour:
   Percent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7973390878186854433}
-        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8134000301670126098}
-        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8881908779613662985}
-        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
+      - m_Target: {fileID: 6881465262320203605}
+        m_TargetAssemblyTypeName: Playcraft.FloatRelay, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -1423,8 +1458,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 7973390878186854433}
-          m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
+        - m_Target: {fileID: 6881465262320203605}
+          m_TargetAssemblyTypeName: Playcraft.FloatRelay, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 4
           m_Arguments:
@@ -1435,22 +1470,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 8134000301670126098}
-          m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 8881908779613662985}
-          m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
-          m_MethodName: Input
-          m_Mode: 4
+        - m_Target: {fileID: 6827364452235477296}
+          m_TargetAssemblyTypeName: WinLossCounter, Assembly-CSharp
+          m_MethodName: Lose
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1460,6 +1483,57 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   overrideInputValidation: 0
+--- !u!114 &6881465262320203605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975620010210319750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03bd7906c93b77946bb090fefdf71549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7973390878186854433}
+        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8134000301670126098}
+        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8881908779613662985}
+        m_TargetAssemblyTypeName: Playcraft.LerpScaleMono, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3473590662838036591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,6 +1883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 885581383101347019}
   - component: {fileID: 9041472113104459565}
+  - component: {fileID: 2442461566877622206}
   m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
@@ -1863,6 +1938,73 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2442461566877622206}
+        m_TargetAssemblyTypeName: Playcraft.SplitBool, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2442461566877622206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8195553492815876922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d170525ca1b1c4ebe7f3d15ddcf9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4409164503880591596}
+        m_TargetAssemblyTypeName: Playcraft.GetPercentOverTimeMono, Assembly-CSharp
+        m_MethodName: Cancel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6881465262320203605}
+        m_TargetAssemblyTypeName: Playcraft.FloatRelay, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6827364452235477296}
+        m_TargetAssemblyTypeName: WinLossCounter, Assembly-CSharp
+        m_MethodName: Win
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFalse:
+    m_PersistentCalls:
+      m_Calls: []
+  state: 0
 --- !u!1 &8546804251410375074
 GameObject:
   m_ObjectHideFlags: 0
