@@ -32,7 +32,7 @@ namespace Playcraft
         
         public void Begin()
         {
-            //Debug.Log($"ProgressEvent.Begin from {gameObject.name}", gameObject);
+            //Debug.Log($"ProgressEvent.Begin from {gameObject.name} {Time.time}", gameObject);
             StopAllCoroutines();
             StartCoroutine(EventTimer(duration));             
         }

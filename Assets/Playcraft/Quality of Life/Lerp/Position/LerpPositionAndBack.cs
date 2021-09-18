@@ -18,6 +18,7 @@ namespace Playcraft
             if (!gameObject.activeSelf)
                 return;
          
+            //Debug.Log($"Walls move in/out begining at {Time.time}");
             StartCoroutine(Process(activeStage)); 
         }
 
@@ -37,6 +38,7 @@ namespace Playcraft
         
         public void BeginInterrupt() 
         {
+            //Debug.Log($"Interrupting cut at time {Time.time}");
             StopAllCoroutines();
             StartCoroutine(Interrupt()); 
         }

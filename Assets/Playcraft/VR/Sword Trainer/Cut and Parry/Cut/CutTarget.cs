@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Playcraft.Examples.SwordTrainer
 {
@@ -8,6 +7,7 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] float retractDelay;
         [SerializeField] bool activateOnStart;
         [SerializeField] BoolEvent OnCutComplete;
+        [SerializeField] BoolEvent OnRetractComplete;
         
         [SerializeField] Collider[] colliders;
         [SerializeField] GetPercentOverTimeMono extend;
@@ -15,6 +15,7 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] DisplaySequenceByColor hitStatus;
 
         int activeIndex;
+        bool success;
         
         void Start()
         {
@@ -23,7 +24,11 @@ namespace Playcraft.Examples.SwordTrainer
             extend.Begin();
         }
 
-        public void SetRandomCut() { extend.Begin(); }
+        public void BeginExtension() 
+        { 
+            //Debug.Log("CutTarget.SetRandomCut()");   // OK
+            extend.Begin();
+        }
         
         public void Hit(int index) 
         {
@@ -44,6 +49,7 @@ namespace Playcraft.Examples.SwordTrainer
         {
             SetCollidersEnabled(false);
             Invoke(nameof(Retract), delayToRetract);
+            this.success = success;
             OnCutComplete.Invoke(success);
         }
         
@@ -51,7 +57,13 @@ namespace Playcraft.Examples.SwordTrainer
         {
             activeIndex = 0;
             retract.Begin();
-            hitStatus.Input(activeIndex);           
+            hitStatus.Input(activeIndex);
+            Invoke(nameof(RetractComplete), retract.GetDuration());         
+        }
+        
+        void RetractComplete()
+        {
+            OnRetractComplete.Invoke(success);
         }
         
         bool collidersEnabled;

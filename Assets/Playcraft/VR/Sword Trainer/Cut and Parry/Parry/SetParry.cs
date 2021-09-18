@@ -37,13 +37,14 @@ namespace Playcraft.Examples.SwordTrainer
         {
             ActivateOrbs(false);
             var nextParryIndex = Random.Range(0, uniqueParryCount);
+            //Debug.Log($"SetRandomParry: {nextParryIndex}");
             
             rotation.SetDestination(nextParryIndex);
             movement.SetDestination(nextParryIndex);
             timer.Begin();
             
             if (readyOnSet)
-                SetParryReady();
+                Invoke(nameof(SetParryReady), timer.GetDuration() + 0f);
         }
         
         public void SetParryReady()

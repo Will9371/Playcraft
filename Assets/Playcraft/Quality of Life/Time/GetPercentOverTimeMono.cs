@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-// REFACTOR: separate (1) timer interface, (2) progress event wrapper, (3) interrupt logic
 namespace Playcraft
 {
     public class GetPercentOverTimeMono : MonoBehaviour
@@ -20,9 +19,11 @@ namespace Playcraft
         }
         
         public void SetDuration(float value) { duration = value; }
+        public float GetDuration() { return timer.duration; }
         
         public void Begin() 
         {
+            //Debug.Log($"GetPercentOverTimeMono.Begin() {gameObject.name} {Time.time}", gameObject);
             if (!timer.inProgress || allowInterrupt)
                 StartCoroutine(Process()); 
         }

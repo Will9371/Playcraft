@@ -70,6 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6463761124898161950}
   - component: {fileID: 6463761124898161938}
+  - component: {fileID: 1047294323}
   m_Layer: 8
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -85,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463761124898161951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8115295663039014436}
@@ -117,6 +118,22 @@ MonoBehaviour:
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
+--- !u!114 &1047294323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463761124898161951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runningAverage:
+    runningAverageLength: 3
+    attenuationFactor: 0.5
+    averageDelta: {x: 0, y: 0, z: 0}
 --- !u!1 &6463761124907185761
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6463761125193795768}
   - component: {fileID: 6463761125193795772}
+  - component: {fileID: 2073035614}
   m_Layer: 8
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -175,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463761125193795769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7988594757271233583}
@@ -207,6 +225,22 @@ MonoBehaviour:
   m_AnimateModel: 0
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
+--- !u!114 &2073035614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463761125193795769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runningAverage:
+    runningAverageLength: 3
+    attenuationFactor: 0.5
+    averageDelta: {x: 0, y: 0, z: 0}
 --- !u!1 &6463761125663489208
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +253,7 @@ GameObject:
   - component: {fileID: 6463761125663489214}
   - component: {fileID: 6463761125663489215}
   - component: {fileID: 6463761125663489212}
+  - component: {fileID: 982872686}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -309,6 +344,22 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
+--- !u!114 &982872686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463761125663489208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runningAverage:
+    runningAverageLength: 3
+    attenuationFactor: 0.5
+    averageDelta: {x: 0, y: 0, z: 0}
 --- !u!1 &6463761126058821486
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +482,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6314651785750400953}
-  - component: {fileID: 7454914551663239946}
   m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
@@ -454,22 +504,6 @@ Transform:
   m_Father: {fileID: 6463761124907185760}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7454914551663239946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7885033341619040743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runningAverage:
-    runningAverageLength: 3
-    attenuationFactor: 0
-    averageDelta: {x: 0, y: 0, z: 0}
 --- !u!1 &8707498697734720888
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4395218242431285382}
   - component: {fileID: 2524148201647183423}
+  - component: {fileID: 1002915809}
   m_Layer: 8
   m_Name: Movement Tracker
   m_TagString: Untagged
@@ -513,22 +548,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c5efbaf381299459c768108ab250d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  calculation: 1
   trackedPoints:
-  - average: {fileID: 7454914551663239946}
+  - average: {fileID: 982872686}
     weight: 1
   - average: {fileID: 0}
-    weight: 0.5
+    weight: 0.1
   - average: {fileID: 0}
-    weight: 0.5
+    weight: 0.1
+  - average: {fileID: 2073035614}
+    weight: 0.25
+  - average: {fileID: 1047294323}
+    weight: 0.25
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Playcraft.DisplayText, Assembly-CSharp
+        m_MethodName: DisplayF2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1002915809}
+        m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.SlowTime, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1002915809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8707498697734720888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97fe24240061484dbf1cbf033e40189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   conversion:
     curve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    xRange: {x: 0, y: 0}
-    yRange: {x: 0, y: 0}
+    xRange: {x: 0, y: 0.1}
+    yRange: {x: 0.125, y: 1}
 --- !u!1001 &919667088893811246
 PrefabInstance:
   m_ObjectHideFlags: 0

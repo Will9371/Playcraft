@@ -11,10 +11,14 @@ namespace Playcraft
         
         void Start() { if (activateOnStart) Begin(); }
         
-        public void Begin() { Invoke(nameof(End), time); }
-        public void Begin(float duration) { Invoke(nameof(End), duration); }
+        public void Begin() { Begin(time); }
+        public void Begin(float duration) 
+        {
+            if (!enabled) return; 
+            Invoke(nameof(End), duration); 
+        }
 
-        private void End() { OnEnd.Invoke(); }
+        void End() { OnEnd.Invoke(); }
         
         public void Cancel() { CancelInvoke(nameof(End)); }
         

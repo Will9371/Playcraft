@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6435412011127320159}
   - component: {fileID: 6435412011127320158}
   m_Layer: 0
-  m_Name: Cut & Parry
+  m_Name: Multiple Sword Trainers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -52,7 +52,11 @@ namespace Playcraft
         public void SetDestination(Vector3 value) { movement.SetEnd(value); }
         public void SetDirection(bool forward) { movement.reverse = !forward; }
         
-        public void BeginMove() { StartCoroutine(MoveRoutine()); }
+        public void BeginMove() 
+        {
+            if (!gameObject.activeInHierarchy) return; 
+            StartCoroutine(MoveRoutine()); 
+        }
         
         IEnumerator MoveRoutine()
         {                
