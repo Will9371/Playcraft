@@ -1,40 +1,42 @@
+using System;
 using UnityEngine;
 
 namespace Playcraft.Examples.SwordTrainer
 {
+    public enum FightMode 
+    { 
+        Inactive, 
+        Cut, 
+        Parry, 
+        CutAndParryAlternating, 
+        CutAndParrySimultaneous,
+        DoubleCutAlternating, 
+        DoubleParryAlternating,
+        DoubleCutSimultaneous, 
+        DoubleParrySimultaneous
+    }
+
     [CreateAssetMenu(menuName = "Playcraft/VR/Sword Trainer/Opponent Mode")]
     public class SwordTrainerMode : ScriptableObject
     {
-        enum FightMode 
-        { 
-            Inactive, 
-            Cut, 
-            Parry, 
-            CutAndParryAlternating, 
-            CutAndParrySimultaneous,
-            DoubleCutAlternating, 
-            DoubleParryAlternating,
-            DoubleCutSimultaneous, 
-            DoubleParrySimultaneous
-        }
-    
-        [Tooltip("If true, bool settings will be set automatically by the mode enum.  " +
-                 "If false, mode enum will be set automatically by the bool settings.")]
-        [SerializeField] bool setByMode;
+        public bool cutsActive => data.cutsActive;
+        public bool parriesActive => data.parriesActive;
+        public bool simultaneous => data.simultaneous;
+        public bool twoWeapon => data.twoWeapon;
         
-        [SerializeField] FightMode mode;
+        ModeData data;
+
+        [Serializable] public class FightModeDataDictionary : SerializableDictionary<FightMode, ModeData> { }
+        [SerializeField] FightModeDataDictionary modeLookup;
         
-        public bool cutsActive;
-        public bool parriesActive;
-        public bool simultaneous;
-        public bool twoWeapon;
+        public void SetData(FightMode id) { modeLookup.TryGetValue(id, out data); }
 
         public bool NextActionIncludes(FightAction requestedAction, FightAction priorAction)
         {
             switch (requestedAction)
             {
-                case FightAction.Cut: return NextActionIncludes(requestedAction, cutsActive, priorAction);
-                case FightAction.Parry: return NextActionIncludes(requestedAction, parriesActive, priorAction);
+                case FightAction.Cut: return NextActionIncludes(requestedAction, data.cutsActive, priorAction);
+                case FightAction.Parry: return NextActionIncludes(requestedAction, data.parriesActive, priorAction);
                 default: return true;
             }
         }
@@ -53,100 +55,14 @@ namespace Playcraft.Examples.SwordTrainer
             return oneTypeAllowed || !repeatAction;       
         }
         
-        #region Settings Validation
-
-        void OnValidate()
+        [Serializable] 
+        public struct ModeData
         {
-            if (setByMode)
-                SetSettingsByMode();
-            else
-                mode = SetModeBySettings();
+            public bool cutsActive;
+            public bool parriesActive;
+            public bool simultaneous;
+            public bool twoWeapon;
         }
-        
-        void SetSettingsByMode()
-        {
-            switch (mode)
-            {
-                case FightMode.Inactive:
-                    cutsActive = false;
-                    parriesActive = false;
-                    simultaneous = false;
-                    twoWeapon = false;
-                    break;
-                case FightMode.Cut:
-                    cutsActive = true;
-                    parriesActive = false;
-                    simultaneous = false;
-                    twoWeapon = false;
-                    break;
-                case FightMode.Parry:
-                    cutsActive = false;
-                    parriesActive = true;
-                    simultaneous = false;
-                    twoWeapon = false;
-                    break;
-                case FightMode.CutAndParryAlternating:
-                    cutsActive = true;
-                    parriesActive = true;
-                    simultaneous = false;
-                    twoWeapon = false;
-                    break;
-                case FightMode.CutAndParrySimultaneous:
-                    cutsActive = true;
-                    parriesActive = true;
-                    simultaneous = true;
-                    twoWeapon = false;
-                    break;
-                case FightMode.DoubleCutAlternating:
-                    cutsActive = true;
-                    parriesActive = false;
-                    simultaneous = false;
-                    twoWeapon = true;
-                    break;   
-                case FightMode.DoubleCutSimultaneous:
-                    cutsActive = true;
-                    parriesActive = false;
-                    simultaneous = true;
-                    twoWeapon = true;
-                    break;
-                case FightMode.DoubleParryAlternating:
-                    cutsActive = false;
-                    parriesActive = true;
-                    simultaneous = false;
-                    twoWeapon = true;
-                    break; 
-                case FightMode.DoubleParrySimultaneous:
-                    cutsActive = false;
-                    parriesActive = true;
-                    simultaneous = true;
-                    twoWeapon = true;
-                    break;                           
-            }
-        }
-        
-        FightMode SetModeBySettings()
-        {
-            if (!cutsActive && !parriesActive)
-                return FightMode.Inactive;
-            if (cutsActive && !parriesActive)
-                return twoWeapon ? 
-                    simultaneous ? 
-                        FightMode.DoubleCutSimultaneous : 
-                        FightMode.DoubleCutAlternating :
-                    FightMode.Cut;
-            if (!cutsActive && parriesActive)
-                return twoWeapon ?
-                    simultaneous ? 
-                        FightMode.DoubleParrySimultaneous :
-                        FightMode.DoubleParryAlternating : 
-                    FightMode.Parry;
-            if (cutsActive && parriesActive)
-                return simultaneous ? FightMode.CutAndParrySimultaneous : FightMode.CutAndParryAlternating;
-                
-            return FightMode.Inactive;
-        }
-        
-        #endregion
     }
 }
 

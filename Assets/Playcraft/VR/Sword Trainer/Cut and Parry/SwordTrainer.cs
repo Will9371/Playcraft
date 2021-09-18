@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Playcraft.Examples.SwordTrainer
 {
@@ -6,19 +7,44 @@ namespace Playcraft.Examples.SwordTrainer
 
     public class SwordTrainer : MonoBehaviour
     {
-        FightAction state;
-        
-        public SwordTrainerMode mode;
-
-        [SerializeField] CutTarget cutPrompt;
-        [SerializeField] SetParry parryPrompt;
+        [SerializeField] SwordActions actions;
+        [SerializeField] FightMode currentMode;
 
         void Start() 
         {
-            SelectAction();
+            actions.SetMode(currentMode);
+            actions.SelectAction();
         }
         
-        void SelectAction()
+        public void CutInProgress() { actions.CutInProgress(); }
+        public void CutComplete() { actions.CutComplete(); }
+        public void ParryComplete() { actions.ParryComplete(); }
+        
+        public void SetMode(FightMode id) 
+        {
+            var wasInactive = currentMode == FightMode.Inactive;
+            
+            actions.SetMode(id);
+            currentMode = id;
+            
+            if (wasInactive)
+                actions.SelectAction();
+        }
+    }
+    
+    [Serializable]
+    public class SwordActions
+    {
+        [SerializeField] CutTarget cutPrompt;
+        [SerializeField] SetParry parryPrompt;
+        [SerializeField] SwordTrainerMode mode;
+        
+        FightAction state;
+        
+        
+        public void SetMode(FightMode id) { mode.SetData(id); }
+        
+        public void SelectAction()
         {
             cutPrompt.gameObject.SetActive(mode.cutsActive);
             parryPrompt.gameObject.SetActive(mode.parriesActive);
@@ -45,7 +71,7 @@ namespace Playcraft.Examples.SwordTrainer
             //if (mode.cutsActive)
             //    parryPrompt.SetParryReady();
             //else
-                parryPrompt.SetRandomParry(true);
+            parryPrompt.SetRandomParry(true);
         }
         
         public void CutInProgress() 

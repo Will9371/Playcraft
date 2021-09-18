@@ -1804,6 +1804,32 @@ PrefabInstance:
       propertyPath: activeStage.duration
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4275371736646886972, guid: 5a33811a7b3799e4e83842af025d7487,
+        type: 3}
+      propertyPath: mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275371736646886972, guid: 5a33811a7b3799e4e83842af025d7487,
+        type: 3}
+      propertyPath: actions.mode
+      value: 
+      objectReference: {fileID: 11400000, guid: da344310a957256418d4344f521c41c4,
+        type: 2}
+    - target: {fileID: 4275371736646886972, guid: 5a33811a7b3799e4e83842af025d7487,
+        type: 3}
+      propertyPath: actions.modeId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275371736646886972, guid: 5a33811a7b3799e4e83842af025d7487,
+        type: 3}
+      propertyPath: actions.cutPrompt
+      value: 
+      objectReference: {fileID: 311538396}
+    - target: {fileID: 4275371736646886972, guid: 5a33811a7b3799e4e83842af025d7487,
+        type: 3}
+      propertyPath: actions.parryPrompt
+      value: 
+      objectReference: {fileID: 1241278915}
     - target: {fileID: 4485207789006439973, guid: 5a33811a7b3799e4e83842af025d7487,
         type: 3}
       propertyPath: m_Enabled
@@ -1854,6 +1880,60 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 907650610}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &907650613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4275371736646886972, guid: 5a33811a7b3799e4e83842af025d7487,
+    type: 3}
+  m_PrefabInstance: {fileID: 907650610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907650611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c94f30cb9042734fae792781361779c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &907650614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907650611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ff97c90a14fa943ab68769d27248c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 907650615}
+        m_TargetAssemblyTypeName: FightModeSequence, Assembly-CSharp
+        m_MethodName: Cycle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &907650615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907650611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9f97a674323404ab9724d6e6fcf321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequence: 0000000001000000020000000300000004000000
+  fighter: {fileID: 907650613}
 --- !u!1 &1007805823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2333,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - {fileID: 11400000, guid: c4faa8a953d77bc4aa3a3323c63f4499, type: 2}
+--- !u!114 &1241278915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7237015480583637433, guid: 5a33811a7b3799e4e83842af025d7487,
+    type: 3}
+  m_PrefabInstance: {fileID: 907650610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27caae8e2dd714b4ba4ce03f9937d7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1247600582
 GameObject:
   m_ObjectHideFlags: 0
