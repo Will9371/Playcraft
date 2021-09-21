@@ -9,8 +9,12 @@ namespace Playcraft
         [SerializeField] float duration;
         [SerializeField] FloatEvent Percent;
         [SerializeField] bool allowInterrupt = true;
+        [SerializeField] bool invertOutputPercent;
         
         GetPercentOverTime timer = new GetPercentOverTime();
+        float percent => timer.percent;
+        float invertedPercent => 1 - timer.percent;
+        float outputPercent => invertOutputPercent ? invertedPercent : percent;
         
         public void SetDurationAndBegin(float value)
         {
@@ -38,7 +42,7 @@ namespace Playcraft
             while (timer.inProgress)
             {
                 yield return null;
-                Percent.Invoke(timer.percent);
+                Percent.Invoke(outputPercent);
             }
         }
         

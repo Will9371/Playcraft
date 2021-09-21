@@ -172,8 +172,8 @@ MonoBehaviour:
   Percent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4742438440883401376}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 5652990991155603638}
+        m_TargetAssemblyTypeName: Playcraft.LerpPositionArray, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -185,6 +185,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allowInterrupt: 1
+  invertOutputPercent: 0
 --- !u!114 &4358723771931248061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1754479647458850387}
   - component: {fileID: 116495096327639440}
-  - component: {fileID: 4742438440883401376}
+  - component: {fileID: 5652990991155603638}
   m_Layer: 0
   m_Name: Spread
   m_TagString: Untagged
@@ -472,8 +473,8 @@ MonoBehaviour:
   Output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4742438440883401376}
-        m_TargetAssemblyTypeName: Playcraft.FloatRelay, Assembly-CSharp
+      - m_Target: {fileID: 5652990991155603638}
+        m_TargetAssemblyTypeName: Playcraft.LerpPositionArray, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -484,7 +485,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &4742438440883401376
+--- !u!114 &5652990991155603638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -493,36 +494,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3109253557754019760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03bd7906c93b77946bb090fefdf71549, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e26dfe8c7c08f84e82b0721533cbbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1520209123061855624}
-        m_TargetAssemblyTypeName: LerpPosition, Assembly-CSharp
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 9033557226892733196}
-        m_TargetAssemblyTypeName: LerpPosition, Assembly-CSharp
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+  elements:
+  - self: {fileID: 5949281539977600645}
+    useLocal: 1
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0.6, y: 0, z: 0.2}
+    reverse: 0
+  - self: {fileID: 5949281539109669062}
+    useLocal: 1
+    start: {x: 0, y: 0, z: 0}
+    end: {x: -0.6, y: 0, z: 0.2}
+    reverse: 0
 --- !u!1 &3157650597334447239
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,12 +556,12 @@ MonoBehaviour:
     useLocal: 1
     start: {x: -0.024, y: 0.587, z: 0.125}
     end: {x: 0, y: 0.31, z: 0.125}
-    reverse: 0
+    reverse: 1
   - self: {fileID: 1378300942794318840}
     useLocal: 1
     start: {x: -0.024, y: -0.587, z: 0.125}
     end: {x: 0, y: -0.31, z: 0.125}
-    reverse: 0
+    reverse: 1
   activeStage:
     duration: 2
     onComplete:
@@ -899,7 +884,6 @@ GameObject:
   - component: {fileID: 5949281539109669064}
   - component: {fileID: 5949281539109669065}
   - component: {fileID: 1335006773961824248}
-  - component: {fileID: 9033557226892733196}
   - component: {fileID: 8189524735048285003}
   m_Layer: 0
   m_Name: Exit
@@ -1001,24 +985,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9033557226892733196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949281539109669063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988df3dc144c679439c2c819d1a6e3d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  process:
-    self: {fileID: 5949281539109669062}
-    useLocal: 1
-    start: {x: 0, y: 0, z: 0}
-    end: {x: -0.6, y: 0, z: 0.2}
-    reverse: 0
 --- !u!114 &8189524735048285003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,7 +1186,6 @@ GameObject:
   - component: {fileID: 5949281539977600647}
   - component: {fileID: 5949281539977600644}
   - component: {fileID: 8993924262490827412}
-  - component: {fileID: 1520209123061855624}
   - component: {fileID: 2209717260046164904}
   m_Layer: 0
   m_Name: Enter
@@ -1322,24 +1287,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1520209123061855624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949281539977600642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988df3dc144c679439c2c819d1a6e3d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  process:
-    self: {fileID: 5949281539977600645}
-    useLocal: 1
-    start: {x: 0, y: 0, z: 0}
-    end: {x: 0.6, y: 0, z: 0.2}
-    reverse: 0
 --- !u!114 &2209717260046164904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,8 +1473,6 @@ MonoBehaviour:
   timeToRetract: 0.3
   delayExtendTime: 0.15
   delayRotationTime: 0.15
-  spreadDistance: 1.2
-  targetDepth: 0.2
   targetScale: 0.4
   angles: {fileID: 11400000, guid: c6cf83cb62cb6aa408598747384c4549, type: 2}
   rotor: {fileID: 1288923609500416055}
@@ -1536,8 +1481,6 @@ MonoBehaviour:
   retraction: {fileID: 5310363890778013997}
   delayExtend: {fileID: 0}
   delayRotate: {fileID: 1622996607153887843}
-  enterTarget: {fileID: 1520209123061855624}
-  exitTarget: {fileID: 9033557226892733196}
   targets:
   - {fileID: 5949281539977600645}
   - {fileID: 5949281539863704721}
@@ -1625,7 +1568,6 @@ GameObject:
   m_Component:
   - component: {fileID: 790857171391547937}
   - component: {fileID: 5310363890778013997}
-  - component: {fileID: 8800997778579046661}
   - component: {fileID: 9106028349900954977}
   m_Layer: 0
   m_Name: Retract
@@ -1665,8 +1607,8 @@ MonoBehaviour:
   Percent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8800997778579046661}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 5652990991155603638}
+        m_TargetAssemblyTypeName: Playcraft.LerpPositionArray, Assembly-CSharp
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -1678,33 +1620,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allowInterrupt: 1
---- !u!114 &8800997778579046661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6060630958514539474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b3ec9af6ec0e3428599a5e04f96015, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4742438440883401376}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  invertOutputPercent: 1
 --- !u!114 &9106028349900954977
 MonoBehaviour:
   m_ObjectHideFlags: 0

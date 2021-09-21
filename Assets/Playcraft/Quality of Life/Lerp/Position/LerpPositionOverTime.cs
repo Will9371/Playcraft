@@ -70,7 +70,8 @@ namespace Playcraft
                 progress = timer.GetProgress();
             }
             
-            OnComplete.Invoke(!movement.reverse);   
+            movement.Input(1f);
+            OnComplete.Invoke(!movement.reverse);
         }
         
         Transform self => movement.self;

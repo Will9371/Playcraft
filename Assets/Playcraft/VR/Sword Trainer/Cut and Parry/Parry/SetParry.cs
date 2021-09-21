@@ -1,66 +1,92 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using System.Collections;
+using UnityEngine;
 
+// RENAME
 namespace Playcraft.Examples.SwordTrainer
 {
     public class SetParry : MonoBehaviour
     {
         [SerializeField] ParryTargetOrbState[] orbs;
-        [SerializeField] UnityEvent OnParryComplete;
-        [SerializeField] UnityEvent OnParryReady;
         
-        #region Reference injection
-        
-        int uniqueParryCount;
-        float transitionTime;
-        LerpPositionIndexMono movement;
-        LerpRotationIndexMono rotation;
-        GetPercentOverTimeMono timer;
-        
-        public void Inject(float transitionTime, LerpPositionIndexMono movement, 
-        LerpRotationIndexMono rotation, GetPercentOverTimeMono timer)
-        {
-            this.transitionTime = transitionTime;
-            this.movement = movement;
-            this.rotation = rotation;
-            this.timer = timer;
-            
-            uniqueParryCount = movement.positions.Length;
-            
-            if (rotation.rotations.Length != movement.positions.Length)
-                Debug.LogError("Non-matching number of parry positions and rotations");
-        }
-        
-        #endregion
+        [SerializeField] LerpPositionIndex movement;
+        [SerializeField] LerpRotationIndex rotation;
+        [SerializeField] GetPercentOverTime transitionTimer;
+        [SerializeField] GetPercentOverTime holdTimer;
 
-        public void SetRandomParry(bool readyOnSet)
+        [SerializeField] Vector3Array positionData;
+        [SerializeField] Vector3Array rotationData;
+        
+        [SerializeField] FloatEvent outputHoldPercent;
+        [SerializeField] BoolEvent outputSuccess;
+
+        int uniqueParryCount => movement.positions.Length;
+        public float holdTime => holdTimer.duration;
+        float transitionTime => transitionTimer.duration;
+        
+        void Start()
         {
-            ActivateOrbs(false);
+            movement.SetDestinations(positionData);
+            rotation.SetDestinations(rotationData);
+        }
+
+        public void SetRandomParry(bool readyOnArrive) { StartCoroutine(Transition(readyOnArrive)); }
+        
+        IEnumerator Transition(bool readyOnArrive)
+        {
             var nextParryIndex = Random.Range(0, uniqueParryCount);
-            //Debug.Log($"SetRandomParry: {nextParryIndex}");
-            
+            //Debug.Log($"SetRandomParry: {nextParryIndex} at time {Time.time}");
             rotation.SetDestination(nextParryIndex);
             movement.SetDestination(nextParryIndex);
-            timer.Begin();
             
-            if (readyOnSet)
-                Invoke(nameof(SetParryReady), timer.GetDuration() + 0f);
+            transitionTimer.Begin();
+            
+            while (transitionTimer.inProgress)
+            {
+                movement.Input(transitionTimer.percent);
+                rotation.Input(transitionTimer.percent);
+                yield return null;
+            }
+            
+            movement.Input(1f);
+            rotation.Input(1f);
+            
+            if (readyOnArrive)
+                SetParryReady();          
         }
         
-        public void SetParryReady()
+        public void SetParryReady() { StartCoroutine(Hold()); }
+        
+        IEnumerator Hold()
         {
-            OnParryReady.Invoke();
-            Invoke(nameof(ActivateOrbsDelayTrue), transitionTime);
+            yield return StartCoroutine(Extend(true));
+            ActivateOrbs(true);
+            
+            holdTimer.Begin();
+            while (holdTimer.inProgress)
+            {
+                yield return null;
+                outputHoldPercent.Invoke(holdTimer.percent);
+            }
+            
+            Deactivate(false);
         }
         
-        public void ParryComplete(bool value = true)
+        IEnumerator Extend(bool value)
         {
-            if(!value) return;
+            foreach (var orb in orbs)
+                orb.SetExtended(value);
+                
+            yield return new WaitForSeconds(orbs[0].extendTime);
+        }
+        
+        public void Deactivate(bool success)
+        {
+            StopAllCoroutines();
+            outputHoldPercent.Invoke(0f);
             ActivateOrbs(false);
-            OnParryComplete.Invoke();
+            StartCoroutine(Extend(false));
+            outputSuccess.Invoke(success);
         }
-        
-        void ActivateOrbsDelayTrue() { ActivateOrbs(true); }
         
         public void ActivateOrbs(bool value)
         {

@@ -5,10 +5,11 @@ namespace Playcraft.Examples.SwordTrainer
 {
     public enum FightMode 
     { 
-        Inactive, 
+        Inactive,
         Cut, 
         Parry, 
-        CutAndParryAlternating, 
+        CutAndParry,
+        CutAndParryAlternating,
         CutAndParrySimultaneous,
         DoubleCutAlternating, 
         DoubleParryAlternating,
@@ -21,9 +22,10 @@ namespace Playcraft.Examples.SwordTrainer
     {
         public bool cutsActive => data.cutsActive;
         public bool parriesActive => data.parriesActive;
-        public bool simultaneous => data.simultaneous;
         public bool twoWeapon => data.twoWeapon;
-        
+        public bool simultaneous => data.simultaneous;
+        public bool alternating => data.alternating;
+
         ModeData data;
 
         [Serializable] public class FightModeDataDictionary : SerializableDictionary<FightMode, ModeData> { }
@@ -45,7 +47,7 @@ namespace Playcraft.Examples.SwordTrainer
         {
             if (!isActive)
                 return false;
-            if (simultaneous || twoWeapon)
+            if (twoWeapon)
                 return true;
                 
             var repeatAction = priorAction == requestedAction;
@@ -58,10 +60,16 @@ namespace Playcraft.Examples.SwordTrainer
         [Serializable] 
         public struct ModeData
         {
+            [Tooltip("Prompt cuts while in this mode")]
             public bool cutsActive;
+            [Tooltip("Prompt parries while in this mode")]
             public bool parriesActive;
-            public bool simultaneous;
+            [Tooltip("Two prompts can be active at the same time")]
             public bool twoWeapon;
+            [Tooltip("Begin both prompts at the same time (assumes twoWeapon = true)")]
+            public bool simultaneous;
+
+            public bool alternating => twoWeapon && !simultaneous;
         }
     }
 }

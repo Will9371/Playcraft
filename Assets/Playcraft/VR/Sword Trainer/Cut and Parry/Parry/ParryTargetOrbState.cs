@@ -8,7 +8,9 @@ namespace Playcraft.Examples.SwordTrainer
     {
         [SerializeField] MultiCondition fullParryCondition;
         [SerializeField] Binding[] bindings;
-        
+        [SerializeField] LerpPositionOverTime extension;
+
+        public float extendTime => extension.duration;
         public bool State => isSuccess;
         
         public enum ParryTargetOrbStateId { Transition, Ready, Success }
@@ -27,6 +29,12 @@ namespace Playcraft.Examples.SwordTrainer
             binding.Response.Invoke();
             state = binding.id;
             fullParryCondition.Refresh();
+        }
+        
+        public void SetExtended(bool value) 
+        {
+            if (!extension) return; 
+            extension.MoveIfNewDirection(value); 
         }
         
         Binding GetBinding()

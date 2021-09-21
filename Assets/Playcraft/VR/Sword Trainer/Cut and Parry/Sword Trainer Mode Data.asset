@@ -18,53 +18,59 @@ MonoBehaviour:
       value:
         cutsActive: 0
         parriesActive: 0
-        simultaneous: 0
         twoWeapon: 0
+        simultaneous: 0
     - key: 1
       value:
         cutsActive: 1
         parriesActive: 0
-        simultaneous: 0
         twoWeapon: 0
+        simultaneous: 0
     - key: 2
       value:
         cutsActive: 0
         parriesActive: 1
-        simultaneous: 0
         twoWeapon: 0
+        simultaneous: 0
     - key: 3
       value:
         cutsActive: 1
         parriesActive: 1
-        simultaneous: 0
         twoWeapon: 0
+        simultaneous: 0
     - key: 4
       value:
         cutsActive: 1
         parriesActive: 1
-        simultaneous: 1
-        twoWeapon: 0
+        twoWeapon: 1
+        simultaneous: 0
     - key: 5
       value:
         cutsActive: 1
-        parriesActive: 0
-        simultaneous: 0
+        parriesActive: 1
         twoWeapon: 1
-    - key: 7
+        simultaneous: 1
+    - key: 6
       value:
         cutsActive: 1
         parriesActive: 0
-        simultaneous: 1
         twoWeapon: 1
-    - key: 6
-      value:
-        cutsActive: 0
-        parriesActive: 1
         simultaneous: 0
-        twoWeapon: 1
     - key: 8
       value:
+        cutsActive: 1
+        parriesActive: 0
+        twoWeapon: 1
+        simultaneous: 1
+    - key: 7
+      value:
         cutsActive: 0
         parriesActive: 1
-        simultaneous: 1
         twoWeapon: 1
+        simultaneous: 0
+    - key: 9
+      value:
+        cutsActive: 0
+        parriesActive: 1
+        twoWeapon: 1
+        simultaneous: 1

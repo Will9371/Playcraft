@@ -6,11 +6,7 @@ namespace Playcraft
     {
         [SerializeField] LerpScale process;
         
-        void Start()
-        {
-            process.SetSelfIfNull(transform);
-            //process.start = transform.localScale;
-        }
+        void Start() { process.SetSelfIfNull(transform); }
         
         public void SetScale(Vector3 value) { process.SetNewScale(value); }
         
