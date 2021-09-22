@@ -47,10 +47,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions:
-    cutPrompt: {fileID: 0}
-    parryPrompt: {fileID: 0}
-    mode: {fileID: 0}
-  currentMode: 0
+    cutPrompt: {fileID: 4590828070193416422}
+    parryPrompt: {fileID: 7237015480583637433}
+    mode: {fileID: 11400000, guid: da344310a957256418d4344f521c41c4, type: 2}
+  cutPrompt: {fileID: 4590828070193416422}
+  parryPrompt: {fileID: 7237015480583637433}
+  currentModeId: 0
 --- !u!1 &8148385684597152022
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 7632056718765455797, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
       propertyPath: triggerBindings.Array.data[0].response.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7632056718765455797, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
@@ -1053,6 +1055,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7119806040837260461}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7237015480583637433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 477850928888270100, guid: 84126fa6cd2755841a4e71fadc95ddd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7119806040837260461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27caae8e2dd714b4ba4ce03f9937d7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4355273399726572957 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6827364452235477296, guid: 84126fa6cd2755841a4e71fadc95ddd2,

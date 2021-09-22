@@ -36,3 +36,13 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
     }
 }
 
+/*
+// EXAMPLE USAGE
+
+DataStruct data;
+
+[Serializable] public class LookupDictionary : SerializableDictionary<EnumId, DataStruct> { }
+[SerializeField] LookupDictionary lookup;
+        
+public void SetData(EnumId id) { lookup.TryGetValue(id, out data); }
+*/

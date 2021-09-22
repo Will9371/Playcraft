@@ -3,17 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Allows non-monobehaviour classes to use monobehaviour methods
+// Allows non-MonoBehaviour classes to use MonoBehaviour methods
 namespace Playcraft
 {
     public class MonoSim : Singleton<MonoSim>
     {
         public delegate IEnumerator Routine();
+        public delegate IEnumerator RoutineFloat(float value);
     
-        public void SimRoutine(Routine routine)
-        {
-            StartCoroutine(routine());
-        }
+        public void SimRoutine(Routine routine) { StartCoroutine(routine()); }
+        public void SimRoutine(RoutineFloat routine, float arg) { StartCoroutine(routine(arg)); } 
     
         public void SimInvoke(Action invoked, float time)
         {

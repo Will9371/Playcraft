@@ -61,10 +61,7 @@ namespace Playcraft.Examples.SwordTrainer
             Invoke(nameof(RetractComplete), retract.GetDuration());         
         }
         
-        void RetractComplete()
-        {
-            OnRetractComplete.Invoke(success);
-        }
+        void RetractComplete() { OnRetractComplete.Invoke(success); }
         
         bool collidersEnabled;
         
@@ -85,5 +82,7 @@ namespace Playcraft.Examples.SwordTrainer
             activeIndex = 1;
             hitStatus.Input(activeIndex);
         }
+        
+        public void SetActive(bool value) { gameObject.SetActive(value); }
     }
 }

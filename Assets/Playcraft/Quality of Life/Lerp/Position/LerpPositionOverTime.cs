@@ -51,6 +51,7 @@ namespace Playcraft
         public void SetDuration(float value) { duration = value; }
         public void SetDestination(Vector3 value) { movement.SetEnd(value); }
         public void SetDirection(bool forward) { movement.reverse = !forward; }
+        public void SetPercent(float value) { movement.Input(value); }
         
         public void BeginMove() 
         {
@@ -65,12 +66,12 @@ namespace Playcraft
             
             while (!progress.complete)
             {
-                movement.Input(progress.percent);
+                SetPercent(progress.percent);
                 yield return null;
                 progress = timer.GetProgress();
             }
             
-            movement.Input(1f);
+            SetPercent(1f);
             OnComplete.Invoke(!movement.reverse);
         }
         

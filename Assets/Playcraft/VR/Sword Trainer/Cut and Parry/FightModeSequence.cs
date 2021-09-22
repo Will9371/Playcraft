@@ -3,7 +3,7 @@ using Playcraft.Examples.SwordTrainer;
 
 public class FightModeSequence : MonoBehaviour
 {
-    [SerializeField] FightMode[] sequence;
+    [SerializeField] SwordModeId[] sequence;
     [SerializeField] SwordTrainer fighter;
     
     int index;

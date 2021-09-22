@@ -28,7 +28,7 @@ namespace Playcraft
         public void Begin() 
         {
             //Debug.Log($"GetPercentOverTimeMono.Begin() {gameObject.name} {Time.time}", gameObject);
-            if (!timer.inProgress || allowInterrupt)
+            if (gameObject.activeSelf && (!timer.inProgress || allowInterrupt))
                 StartCoroutine(Process()); 
         }
         
