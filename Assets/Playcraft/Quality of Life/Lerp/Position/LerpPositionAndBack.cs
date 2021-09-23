@@ -57,6 +57,12 @@ namespace Playcraft
                 mover.ResetPathFromCache();
         }
         
+        void OnDisable()
+        {
+            foreach (var mover in movers)
+                mover.ResetPathFromCache();
+        }
+        
         [Serializable]
         public class Stage
         {

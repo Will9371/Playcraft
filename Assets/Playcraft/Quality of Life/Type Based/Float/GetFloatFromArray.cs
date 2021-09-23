@@ -6,6 +6,9 @@ namespace Playcraft
     {
         [SerializeField] float[] values;
         [SerializeField] FloatEvent Output;
+        [SerializeField] bool preventRandomRepeat;
+        
+        int index;
         
         public void SetValues(FloatArray values) { SetValues(values.values); }
         public void SetValues(float[] values) { this.values = values; }
@@ -20,7 +23,8 @@ namespace Playcraft
         
         public void GetRandom()
         {
-            var index = Random.Range(0, values.Length);
+            index = RandomStatics.RandomIndexNotIncluding(values.Length, index);
+            //Random.Range(0, values.Length);
             Output.Invoke(values[index]);
         }
     }

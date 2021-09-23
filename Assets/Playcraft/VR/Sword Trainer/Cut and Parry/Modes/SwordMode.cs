@@ -29,5 +29,7 @@ namespace Playcraft.Examples.SwordTrainer
     {
         public bool cutsActive;
         public bool parriesActive;
+        public bool doubleCutsActive;
+        public bool doubleParriesActive;
     }
 }

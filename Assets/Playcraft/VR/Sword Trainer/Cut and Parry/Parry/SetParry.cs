@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 // RENAME
@@ -42,11 +43,14 @@ namespace Playcraft.Examples.SwordTrainer
             inTransition = false;
         }
         
+        [HideInInspector] public int parryIndex;
+
         void SetRandomParry()
         {
-            var nextParryIndex = Random.Range(0, uniqueParryCount);
-            rotation.SetDestination(nextParryIndex);
-            movement.SetDestination(nextParryIndex);
+            parryIndex = RandomStatics.RandomIndexNotIncluding(uniqueParryCount, parryIndex);
+            
+            rotation.SetDestination(parryIndex);
+            movement.SetDestination(parryIndex);
         }
         
         IEnumerator MoveToNextLocation()
@@ -62,7 +66,15 @@ namespace Playcraft.Examples.SwordTrainer
             rotation.Input(1f);           
         }
         
-        public void BeginActivation() { StartCoroutine(Activate()); }
+        public void BeginActivation() 
+        {
+            // NG: next parry position already set before this executes
+            // May be necessary to store a list of anticipated future parries
+            //if (excludeParryIndex != -1 && !excludedParries.Contains(excludeParryIndex))
+            //    excludedParries.Add(excludeParryIndex);
+
+            StartCoroutine(Activate()); 
+        }
         
         public IEnumerator Activate()
         {
@@ -116,6 +128,10 @@ namespace Playcraft.Examples.SwordTrainer
                 orb.SetReadyToParry(value);
         }
         
-        public void SetActive(bool value) { gameObject.SetActive(value); }
+        public void SetActive(bool value, float localX = 0f)
+        {
+            transform.localPosition = new Vector3(localX, transform.localPosition.y, transform.localPosition.z);
+            gameObject.SetActive(value);
+        }
     }
 }

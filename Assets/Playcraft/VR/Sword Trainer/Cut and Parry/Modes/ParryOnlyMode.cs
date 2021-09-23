@@ -7,7 +7,7 @@ namespace Playcraft.Examples.SwordTrainer
 
         public void Enter() { controller.Parry(); }
         public void Exit() { }
-        public void CutComplete() { controller.Parry(); }
-        public void ParryComplete() { }
+        public void CutComplete() { }
+        public void ParryComplete() { controller.Parry(); }
     }
 }

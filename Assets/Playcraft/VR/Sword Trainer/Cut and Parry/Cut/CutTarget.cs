@@ -24,11 +24,7 @@ namespace Playcraft.Examples.SwordTrainer
             extend.Begin();
         }
 
-        public void BeginExtension() 
-        { 
-            //Debug.Log("CutTarget.SetRandomCut()");   // OK
-            extend.Begin();
-        }
+        public void BeginExtension() { extend.Begin(); }
         
         public void Hit(int index) 
         {
@@ -83,6 +79,10 @@ namespace Playcraft.Examples.SwordTrainer
             hitStatus.Input(activeIndex);
         }
         
-        public void SetActive(bool value) { gameObject.SetActive(value); }
+        public void SetActive(bool value, float localX = 0f) 
+        {
+            transform.localPosition = new Vector3(localX, transform.localPosition.y, transform.localPosition.z);
+            gameObject.SetActive(value); 
+        }
     }
 }

@@ -57,25 +57,33 @@ namespace Playcraft
         public void SwitchDirection() { reverse = !reverse; }
         
         
+        #region Cached Path
+        
+        bool cacheInitialized;
         Vector3 cachedStart;
         Vector3 cachedEnd;
         
         public void CachePath()
         {
+            cacheInitialized = true;
             cachedStart = start;
             cachedEnd = end;
         }
         
         public void SetPathToStartFromSelf()
         {
+            if (!cacheInitialized) return;
             start = position;
             end = cachedStart;
         }
         
         public void ResetPathFromCache()
         {
+            if (!cacheInitialized) return;
             start = cachedStart;
             end = cachedEnd;
         }
+        
+        #endregion
     }
 }

@@ -23,6 +23,26 @@ namespace Playcraft
             return result;
         }
         
+        public static int RandomIndexNotIncluding(int max, int exclude)
+        {
+            return RandomIndexNotIncluding(max, new List<int>{exclude});
+        }
+        
+        /// Returns a random number less than max (including 0) and excluding any numbers in the excluded list.
+        public static int RandomIndexNotIncluding(int max, List<int> excluded)
+        {
+            var valid = new List<int>();
+            
+            for (int i = 0; i < max; i++)
+                valid.Add(i);
+                
+            foreach (var exclusion in excluded)
+                valid.Remove(exclusion);
+                
+            var index = Random.Range(0, valid.Count);
+            return valid[index];
+        }
+        
         public static Vector3 RandomInRectangle(MinMaxVector3 range)
         {
             return RandomInRectangle(range.min, range.max);
