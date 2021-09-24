@@ -10,8 +10,7 @@ namespace Playcraft
         void OnTriggerStay(Collider other) { InputTrigger(other, TouchType.Continuous, CollisionType.Trigger); }
         
         protected virtual void InputTrigger(Collider other, TouchType touchType, CollisionType collisionType) { }
-
-
+        
         void OnCollisionEnter(Collision other) 
         {
             InputTrigger(other.collider, TouchType.Begin, CollisionType.Collision); 

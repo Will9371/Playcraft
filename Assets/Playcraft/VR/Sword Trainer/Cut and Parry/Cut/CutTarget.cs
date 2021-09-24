@@ -13,6 +13,8 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] GetPercentOverTimeMono extend;
         [SerializeField] GetPercentOverTimeMono retract;
         [SerializeField] DisplaySequenceByColor hitStatus;
+        
+        [SerializeField] SetRespondToCustomTagsArray cutTags;
 
         int activeIndex;
         bool success;
@@ -84,5 +86,7 @@ namespace Playcraft.Examples.SwordTrainer
             transform.localPosition = new Vector3(localX, transform.localPosition.y, transform.localPosition.z);
             gameObject.SetActive(value); 
         }
+        
+        public void SetTriggerTags(int groupIndex) { cutTags.SetTriggerTags(groupIndex); }
     }
 }

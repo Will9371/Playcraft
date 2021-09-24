@@ -1550,7 +1550,19 @@ MonoBehaviour:
         m_CallState: 2
   OnRetractComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.SwordTrainer, Assembly-CSharp
+        m_MethodName: CutComplete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   colliders:
   - {fileID: 5949281539977600644}
   - {fileID: 5949281539863704720}
@@ -1558,6 +1570,19 @@ MonoBehaviour:
   extend: {fileID: 8802578710299557301}
   retract: {fileID: 5310363890778013997}
   hitStatus: {fileID: 8192054544352184124}
+  cutTags:
+    components:
+    - {fileID: 2209717260046164904}
+    - {fileID: 7632056718765455797}
+    - {fileID: 8189524735048285003}
+    - {fileID: 8986330087692144883}
+    - {fileID: 6076269647819852512}
+    tagGroups:
+    - values:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
+      - {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
+    - values:
+      - {fileID: 11400000, guid: 541b931c1cc4e6c46b3c2d3a874f64d9, type: 2}
 --- !u!1 &6060630958514539474
 GameObject:
   m_ObjectHideFlags: 0

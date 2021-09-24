@@ -20,6 +20,8 @@ namespace Playcraft
                 item.Input(other, touchType);
         }
         
+        public void SetTriggerTags(SO[] tags, int index = 0) { triggerBindings[index].SetTags(tags); }
+        
         [Serializable] class TriggerBinding
         {
             [SerializeField] FilterTrigger touchFilter;
@@ -31,6 +33,8 @@ namespace Playcraft
                 if (touchFilter.RequestActivate(other, touchType, collisionType) && tagFilter.Input(other))
                     response.Invoke(other);
             }
+            
+            public void SetTags(SO[] values) { tagFilter.validTags = values; }
         }
         
         [Serializable] class CollisionBinding
