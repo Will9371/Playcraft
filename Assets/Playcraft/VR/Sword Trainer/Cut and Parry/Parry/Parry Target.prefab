@@ -486,6 +486,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  inTransition: 0
+  parryIndex: 0
 --- !u!114 &6577852791800019692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,7 +1665,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 477850928888270100}
         m_TargetAssemblyTypeName: Playcraft.Examples.SwordTrainer.SetParry, Assembly-CSharp
-        m_MethodName: Deactivate
+        m_MethodName: DeactivateAndBeginNext
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

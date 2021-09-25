@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // RENAME
@@ -32,6 +31,8 @@ namespace Playcraft.Examples.SwordTrainer
 
         [HideInInspector]
         public bool inTransition;
+        
+        public bool hittable;
 
         IEnumerator Transition() 
         {
@@ -48,7 +49,6 @@ namespace Playcraft.Examples.SwordTrainer
         void SetRandomParry()
         {
             parryIndex = RandomStatics.RandomIndexNotIncluding(uniqueParryCount, parryIndex);
-            
             rotation.SetDestination(parryIndex);
             movement.SetDestination(parryIndex);
         }
@@ -66,15 +66,7 @@ namespace Playcraft.Examples.SwordTrainer
             rotation.Input(1f);           
         }
         
-        public void BeginActivation() 
-        {
-            // NG: next parry position already set before this executes
-            // May be necessary to store a list of anticipated future parries
-            //if (excludeParryIndex != -1 && !excludedParries.Contains(excludeParryIndex))
-            //    excludedParries.Add(excludeParryIndex);
-
-            StartCoroutine(Activate()); 
-        }
+        public void BeginActivation() { StartCoroutine(Activate()); }
         
         public IEnumerator Activate()
         {
@@ -83,7 +75,7 @@ namespace Playcraft.Examples.SwordTrainer
             ActivateOrbs(true);
             yield return StartCoroutine(Hold());
             
-            Deactivate(false);
+            DeactivateAndBeginNext(false);
         }
         
         IEnumerator WaitForTransition()
@@ -111,27 +103,32 @@ namespace Playcraft.Examples.SwordTrainer
             yield return new WaitForSeconds(orbs[0].extendTime);
         }
 
-        void Deactivate(bool success)
+        public void DeactivateAndBeginNext(bool success)
         {
-            StopAllCoroutines();
-            
-            outputHoldPercent.Invoke(0f);
-            ActivateOrbs(false);
-            
+            Deactivate();
             StartCoroutine(Transition());
             outputSuccess.Invoke(success);
         }
         
+        void Deactivate()
+        {
+            StopAllCoroutines();
+            inTransition = false;
+            outputHoldPercent.Invoke(0f);
+            ActivateOrbs(false);
+        }
+
         void ActivateOrbs(bool value)
         {
+            hittable = value;
+            
             foreach (var orb in orbs)
                 orb.SetReadyToParry(value);
         }
         
-        public void SetActive(bool value, float localX = 0f)
-        {
-            transform.localPosition = new Vector3(localX, transform.localPosition.y, transform.localPosition.z);
-            gameObject.SetActive(value);
-        }
+        public void SetActive(bool value) { gameObject.SetActive(value); }
+        public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
+        
+        void OnDisable() { Deactivate(); }
     }
 }

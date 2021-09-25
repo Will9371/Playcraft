@@ -5,15 +5,9 @@ namespace Playcraft.Examples.SwordTrainer
         SwordTrainer controller;
         public DoubleParrySimultaneousMode(SwordTrainer controller) { this.controller = controller; }
 
-        public void Enter() { Parry(); }
+        public void Enter() { controller.ParryAll(); }
         public void Exit() { }
-        public void CutComplete() { }
-        public void ParryComplete() { Parry(); }
-        
-        void Parry()
-        {
-            controller.Parry();
-            controller.Parry2();
-        }
+        public void CutComplete(int index) { }
+        public void ParryComplete(int index) { controller.Parry(index); }
     }
 }

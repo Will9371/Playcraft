@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 
+// Separate into mono and delegate variations
 namespace Playcraft
 {
     public class CycleInt : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] int value;
         [SerializeField] int min;
         [SerializeField] int max;
         [SerializeField] bool reverse;
         [SerializeField] IntEvent Output;
-        #pragma warning restore 0649
         
         public void Cycle()
         {

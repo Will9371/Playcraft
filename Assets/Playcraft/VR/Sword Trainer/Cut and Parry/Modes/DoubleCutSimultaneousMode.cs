@@ -5,15 +5,16 @@ namespace Playcraft.Examples.SwordTrainer
         SwordTrainer controller;
         public DoubleCutSimultaneousMode(SwordTrainer controller) { this.controller = controller; }
 
-        public void Enter() { Cut(); }
-        public void Exit() { }
-        public void CutComplete() { Cut(); }
-        public void ParryComplete() { }
+        public void Enter() { controller.CutAll(); }
         
-        void Cut()
+        public void Exit() { }
+        public void CutComplete(int index) { controller.Cut(index); }
+        public void ParryComplete(int index) { }
+        
+        /*void Cut()
         {
             controller.Cut();
             controller.Cut2();
-        }
+        }*/
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+// OBSOLETE: merged with CutAndParryMode (consider renaming for consistency)
 namespace Playcraft.Examples.SwordTrainer
 {
     public class CutAndParryAlternatingMode : ISwordMode
@@ -10,8 +11,8 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void Enter() { controller.RemoteRoutine(Process); }
         public void Exit() { controller.StopAllCoroutines(); }
-        public void CutComplete() { }
-        public void ParryComplete() { }
+        public void CutComplete(int index) { }
+        public void ParryComplete(int index) { }
         
         IEnumerator Process()
         {
@@ -20,9 +21,9 @@ namespace Playcraft.Examples.SwordTrainer
             while (true)
             {
                 yield return delay;
-                controller.Parry();
+                controller.Parry(0);
                 yield return delay;
-                controller.Cut();
+                controller.Cut(0);
             }
         }
     }

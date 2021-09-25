@@ -5,9 +5,9 @@ namespace Playcraft.Examples.SwordTrainer
         SwordTrainer controller;
         public ParryOnlyMode(SwordTrainer controller) { this.controller = controller; }
 
-        public void Enter() { controller.Parry(); }
+        public void Enter() { controller.Parry(0); }
         public void Exit() { }
-        public void CutComplete() { }
-        public void ParryComplete() { controller.Parry(); }
+        public void CutComplete(int index) { }
+        public void ParryComplete(int index) { controller.Parry(0); }
     }
 }

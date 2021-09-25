@@ -5,9 +5,8 @@ namespace Playcraft.Examples.SwordTrainer
         Inactive,
         Cut, 
         Parry, 
-        CutAndParry,
-        CutAndParryAlternating,
-        CutAndParrySimultaneous,
+        CutParryAlternating,
+        CutParrySimultaneous,
         DoubleCutAlternating, 
         DoubleParryAlternating,
         DoubleCutSimultaneous, 
@@ -18,7 +17,7 @@ namespace Playcraft.Examples.SwordTrainer
     {
         void Enter();
         void Exit();
-        void CutComplete();
-        void ParryComplete();
+        void CutComplete(int index);
+        void ParryComplete(int index);
     }
 }

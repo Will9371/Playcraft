@@ -14,10 +14,13 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] GetPercentOverTimeMono retract;
         [SerializeField] DisplaySequenceByColor hitStatus;
         
-        [SerializeField] SetRespondToCustomTagsArray cutTags;
+        //[SerializeField] SetRespondToCustomTagsArray cutTags;
+        [SerializeField] GameObject[] barriers;
 
         int activeIndex;
         bool success;
+        
+        public bool hittable => collidersEnabled;
         
         void Start()
         {
@@ -81,12 +84,16 @@ namespace Playcraft.Examples.SwordTrainer
             hitStatus.Input(activeIndex);
         }
         
-        public void SetActive(bool value, float localX = 0f) 
-        {
-            transform.localPosition = new Vector3(localX, transform.localPosition.y, transform.localPosition.z);
-            gameObject.SetActive(value); 
-        }
+        public void SetActive(bool value) { gameObject.SetActive(value); }
         
-        public void SetTriggerTags(int groupIndex) { cutTags.SetTriggerTags(groupIndex); }
+        public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
+
+        //public void SetTriggerTags(int groupIndex) { cutTags.SetTriggerTags(groupIndex); }
+        
+        public void SetBarriersActive(bool value)
+        {
+            foreach (var barrier in barriers)
+                barrier.SetActive(value);
+        }
     }
 }

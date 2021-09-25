@@ -5,40 +5,14 @@ namespace Playcraft.Examples.SwordTrainer
         SwordTrainer controller;
         public CutAndParrySimultaneousMode(SwordTrainer controller) { this.controller = controller; }
         
-        bool isCutComplete;
-        bool isParryComplete;
-        
         public void Enter() 
         { 
-            isCutComplete = true;
-            isParryComplete = true;
-            RequestAction();
+            controller.Cut(0); 
+            controller.Parry(0); 
         }
-        
+
         public void Exit() { }
-
-        public void CutComplete() 
-        { 
-            isCutComplete = true;
-            RequestAction();
-        }
-        
-        public void ParryComplete() 
-        { 
-            isParryComplete = true; 
-            RequestAction();
-        }
-        
-        void RequestAction()
-        {
-            if (!isCutComplete || !isParryComplete)
-                return;
-
-            controller.Cut();
-            controller.Parry();
-            
-            isCutComplete = false;
-            isParryComplete = false;          
-        }
+        public void CutComplete(int index) { controller.Cut(index); }
+        public void ParryComplete(int index) { controller.Parry(index); }
     }
 }
