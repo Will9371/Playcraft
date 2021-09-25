@@ -10,14 +10,13 @@ namespace Playcraft.Examples.SwordTrainer
         DoubleCutAlternating, 
         DoubleParryAlternating,
         DoubleCutSimultaneous, 
-        DoubleParrySimultaneous
+        DoubleParrySimultaneous,
+        DoubleParryCut,
     }
 
-    public interface ISwordMode
-    {
-        void Enter();
-        void Exit();
-        void CutComplete(int index);
-        void ParryComplete(int index);
+    public interface ISwordAction 
+    { 
+        void Trigger(); 
+        bool hittable { get; }
     }
 }

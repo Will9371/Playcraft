@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Playcraft.Examples.SwordTrainer
 {
-    public class CutTarget : MonoBehaviour
+    public class CutTarget : MonoBehaviour, ISwordAction
     {
         [SerializeField] float retractDelay;
         [SerializeField] bool activateOnStart;
@@ -29,7 +29,8 @@ namespace Playcraft.Examples.SwordTrainer
             extend.Begin();
         }
 
-        public void BeginExtension() { extend.Begin(); }
+        public void Trigger() { BeginExtension(); }
+        public void BeginExtension() { if(gameObject.activeSelf) extend.Begin(); }
         
         public void Hit(int index) 
         {

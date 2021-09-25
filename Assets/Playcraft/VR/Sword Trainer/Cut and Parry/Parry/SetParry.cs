@@ -4,7 +4,7 @@ using UnityEngine;
 // RENAME
 namespace Playcraft.Examples.SwordTrainer
 {
-    public class SetParry : MonoBehaviour
+    public class SetParry : MonoBehaviour, ISwordAction
     {
         [SerializeField] ParryTargetOrbState[] orbs;
         
@@ -32,7 +32,7 @@ namespace Playcraft.Examples.SwordTrainer
         [HideInInspector]
         public bool inTransition;
         
-        public bool hittable;
+        public bool hittable { get; private set; }
 
         IEnumerator Transition() 
         {
@@ -66,7 +66,12 @@ namespace Playcraft.Examples.SwordTrainer
             rotation.Input(1f);           
         }
         
-        public void BeginActivation() { StartCoroutine(Activate()); }
+        public void Trigger() { BeginActivation(); }
+        public void BeginActivation() 
+        {
+            if (!gameObject.activeSelf) return; 
+            StartCoroutine(Activate()); 
+        }
         
         public IEnumerator Activate()
         {

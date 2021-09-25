@@ -2,7 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// * Delegate Cuts & Parries logic to non-mono classes
+// * Eliminate Cut/Parry specific logic, apply uniform SwordAction interface instead
+// * Simultaneous: apply all actions on enter, repeat indexed action on complete
+// * Alternating: cycle action on enter and when any action completes
+// -> Redirect methods from Cut/ParryInstance to currentMode
 namespace Playcraft.Examples.SwordTrainer
 {
     public class SwordTrainer : MonoBehaviour
@@ -23,7 +26,7 @@ namespace Playcraft.Examples.SwordTrainer
         void Awake()
         {
             foreach (var element in lookup)
-                element.Value.Initialize(element.Key, this);
+                element.Value.Initialize();
         }
 
         public void RequestSetMode(SwordModeId value)
@@ -48,7 +51,7 @@ namespace Playcraft.Examples.SwordTrainer
         {
             changingMode = true;
         
-            while (AnyActive())
+            while (currentMode != null && currentMode.AnyActive())
                 yield return null;
                 
             changingMode = false;
@@ -57,17 +60,30 @@ namespace Playcraft.Examples.SwordTrainer
         
         void SetMode()
         {
-            currentMode?.process?.Exit();
             lookup.TryGetValue(currentModeId, out currentMode);
             
             ActivateTargets();
             SetCutBarriersActive();
-            currentMode?.process?.Enter();
+            
+            if (currentMode.simultaneous)
+                currentMode.TriggerAll();
+            else
+                CycleAction();
+            
             sendModeId.Invoke(currentModeId.ToString());
         }
         
         void ActivateTargets() { ActivateCuts(); ActivateParries(); }
-        bool AnyActive() { return AnyCutActive() || AnyParryActive(); }        
+        
+        void CycleAction() { StartCoroutine(WaitToCycleAction()); }
+        
+        IEnumerator WaitToCycleAction()
+        {
+            while (currentMode.AnyActive())
+                yield return null;
+                
+            currentMode.CycleAction();
+        }      
         
         #endregion
 
@@ -86,7 +102,11 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void CutComplete(int index) 
         { 
-            currentMode?.process?.CutComplete(index);
+            if (currentMode.simultaneous)
+                Cut(index);
+            else
+                CycleAction();
+
             RequestSetMode();
         }
         
@@ -99,44 +119,17 @@ namespace Playcraft.Examples.SwordTrainer
                 instance.SetBarriersActive(barriersActive);
         }
         
-        public void Cut(int index) 
+        void Cut(int index) 
         { 
             if (changingMode) return;
             cutInstances[index].Cut(); 
         }
-        
-        public void CutAll() 
-        { 
-            for (int i = 0; i < cutInstances.Length; i++)
-                Cut(i);
-        }
-        
-        public void CycleCut(int priorIndex)
-        {
-            var index = priorIndex + 1;
-            
-            if (index >= cutInstances.Length)
-                index = 0;
-                
-            Cut(index);
-        }
-        
-        bool AnyCutActive()
-        {
-            foreach (var instance in cutInstances)
-                if (instance.active)
-                    return true;
-            
-            return false;
-        }
-        
+
         [Serializable]
         public class CutInstance
         {
             [SerializeField] CutTarget target;
             [SerializeField] Vector3[] localPositionByInstanceCount;
-            
-            public bool active => target.hittable;
             
             public void SetBarriersActive(bool value) { target.SetBarriersActive(value); }
             public void SetActive(bool value) { target.SetActive(value); }
@@ -161,66 +154,30 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void ParryComplete(int index) 
         {  
-            currentMode?.process?.ParryComplete(index);
+            if (currentMode.simultaneous)
+                Parry(index);
+            else
+                CycleAction();
+            
             RequestSetMode();
         }
 
-        public void Parry(int index) 
+        void Parry(int index) 
         {
             if (changingMode) return; 
             parryInstances[index].Parry(); 
         }
-        
-        public void ParryAll()
-        {
-            for (int i = 0; i < parryInstances.Length; i++)
-                Parry(i);
-        }
-        
-        public void CycleParry(int priorIndex)
-        {
-            var index = priorIndex + 1;
-            
-            if (index >= parryInstances.Length)
-                index = 0;
-                
-            Parry(index);
-        }
-        
-        bool AnyParryActive()
-        {
-            foreach (var instance in parryInstances)
-                if (instance.active)
-                    return true;
-                    
-            return false;
-        }
-        
+
         [Serializable]
         public class ParryInstance
         {
             [SerializeField] SetParry target;
             [SerializeField] Vector3[] localPositionByInstanceCount;
             
-            public float holdTime => target.holdTime;
-            public float transitionTime => target.transitionTime;
-            public bool active => target.hittable;
-
             public void SetActive(bool value) { target.SetActive(value); }
             public void Parry() { target.BeginActivation(); }
             public void SetLocalPosition(int index) { target.SetLocalPosition(localPositionByInstanceCount[index]); }
         }        
-        
-        #endregion
-
-        #region Obsolete
-        
-        // For calling coroutines from non-MonoBehaviours
-        public delegate IEnumerator Routine();
-        public void RemoteRoutine(Routine routine) { StartCoroutine(routine()); }
-        
-        // Used by obsolete CutAndParryAlternatingMode.cs
-        public float halfActionTime => parryInstances[0].holdTime / 2f + parryInstances[0].transitionTime;            
         
         #endregion
     }
