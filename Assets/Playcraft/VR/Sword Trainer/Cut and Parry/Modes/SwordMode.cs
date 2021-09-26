@@ -18,5 +18,12 @@ namespace Playcraft.Examples.SwordTrainer
     { 
         void Trigger(); 
         bool hittable { get; }
+        SwordActionId actionId { get; }
+    }
+    
+    public enum SwordActionId
+    {
+        Cut,
+        Parry,
     }
 }

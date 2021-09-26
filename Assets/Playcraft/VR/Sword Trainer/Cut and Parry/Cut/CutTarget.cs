@@ -2,8 +2,11 @@ using UnityEngine;
 
 namespace Playcraft.Examples.SwordTrainer
 {
-    public class CutTarget : MonoBehaviour, ISwordAction
+    public class CutTarget : MonoBehaviour, ISwordAction, ISwordTrainerTarget
     {
+        [SerializeField] SwordActionId _actionId;
+        public SwordActionId actionId => _actionId;
+        
         [SerializeField] float retractDelay;
         [SerializeField] bool activateOnStart;
         [SerializeField] BoolEvent OnCutComplete;
@@ -21,7 +24,7 @@ namespace Playcraft.Examples.SwordTrainer
         bool success;
         
         public bool hittable => collidersEnabled;
-        
+
         void Start()
         {
             if (!activateOnStart) return;
@@ -85,13 +88,19 @@ namespace Playcraft.Examples.SwordTrainer
             hitStatus.Input(activeIndex);
         }
         
-        public void SetActive(bool value) { gameObject.SetActive(value); }
+        public void SetActive(int index, int activeCount)
+        {
+            gameObject.SetActive(index < activeCount);
+            SetBarriersActive(activeCount == 1);
+        }
+        
+        //public void SetActive(bool value) { gameObject.SetActive(value); }
         
         public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
 
         //public void SetTriggerTags(int groupIndex) { cutTags.SetTriggerTags(groupIndex); }
         
-        public void SetBarriersActive(bool value)
+        void SetBarriersActive(bool value)
         {
             foreach (var barrier in barriers)
                 barrier.SetActive(value);

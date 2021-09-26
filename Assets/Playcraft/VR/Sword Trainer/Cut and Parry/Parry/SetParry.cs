@@ -4,10 +4,12 @@ using UnityEngine;
 // RENAME
 namespace Playcraft.Examples.SwordTrainer
 {
-    public class SetParry : MonoBehaviour, ISwordAction
+    public class SetParry : MonoBehaviour, ISwordAction, ISwordTrainerTarget
     {
+        [SerializeField] SwordActionId _actionId;
+        public SwordActionId actionId => _actionId;
+    
         [SerializeField] ParryTargetOrbState[] orbs;
-        
         [SerializeField] LerpPositionIndex movement;
         [SerializeField] LerpRotationIndex rotation;
         [SerializeField] GetPercentOverTime transitionTimer;
@@ -131,7 +133,11 @@ namespace Playcraft.Examples.SwordTrainer
                 orb.SetReadyToParry(value);
         }
         
-        public void SetActive(bool value) { gameObject.SetActive(value); }
+        public void SetActive(int index, int activeCount) 
+        { 
+            gameObject.SetActive(index < activeCount); 
+        }
+        
         public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
         
         void OnDisable() { Deactivate(); }
