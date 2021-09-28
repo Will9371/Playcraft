@@ -14,6 +14,8 @@ namespace Playcraft.Examples.SwordTrainer
         public Vector3[] targetSpread;
         public FloatArray angles;
         public bool barriersActive;
+        public Vector3 barrierScale;
+        public Vector3[] barrierPositions;
         
         public Vector3 scale => new Vector3(targetScale, targetScale, targetScale);
     }

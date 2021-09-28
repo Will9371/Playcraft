@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19dd47af43c80246be844d1b1bd2e81, type: 3}
-  m_Name: Small Cut Target Settings
+  m_Name: Head Cut Settings
   m_EditorClassIdentifier: 
   rotationSpeed: 360
   timeToExtend: 0.3
   timeToRetract: 0.3
   retractDelay: 0.3
   delayRotationTime: 0.15
-  targetScale: 0.3
+  targetScale: 0.35
   targetSpread:
   - {x: 0.4, y: 0, z: 0.15}
   - {x: -0.4, y: 0, z: 0.15}
-  angles: {fileID: 11400000, guid: c6cf83cb62cb6aa408598747384c4549, type: 2}
+  angles: {fileID: 11400000, guid: e56770bd0fd523040a80c2d054a98fd5, type: 2}
+  barriersActive: 1
+  barrierScale: {x: 1.25, y: 0.075, z: 0.4}
+  barrierPositions:
+  - {x: 0, y: 0.275, z: 0.125}
+  - {x: 0, y: -0.275, z: 0.125}

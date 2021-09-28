@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cf4afbe1dc5b5449912a8b5ad463738, type: 3}
-  m_Name: Cut Angles
+  m_Name: Cut Angles Head
   m_EditorClassIdentifier: 
   values:
   - 0
-  - 60
-  - 120
+  - 45
+  - 90
+  - 135
   - 180
-  - 225
-  - 315

@@ -49,10 +49,18 @@ namespace Playcraft.Examples.SwordTrainer
             delayRotate.SetTime(settings.delayRotationTime);
             spread.SetEndValues(settings.targetSpread);
             retractDelay = settings.retractDelay;
+            
             SetBarriersActive(settings.barriersActive);
             
             foreach (var col in colliders)
                 col.transform.localScale = settings.scale;
+            foreach (var barrier in barriers)
+                barrier.transform.localScale = settings.barrierScale;
+            for (int i = 0; i < barriers.Length; i++)
+            {
+                if (i >= settings.barrierPositions.Length) break;
+                barriers[i].transform.localPosition = settings.barrierPositions[i];
+            }
         }
 
         public void Trigger() { BeginExtension(); }
@@ -111,11 +119,7 @@ namespace Playcraft.Examples.SwordTrainer
             hitStatus.Input(activeIndex);
         }
         
-        public void SetActive(int index, int activeCount)
-        {
-            gameObject.SetActive(index < activeCount);
-            //SetBarriersActive(activeCount == 1);
-        }
+        public void SetActive(int index, int activeCount) { gameObject.SetActive(index < activeCount); }
         
         public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
 
