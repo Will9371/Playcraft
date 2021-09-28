@@ -11,5 +11,14 @@ namespace Playcraft
             foreach (var element in elements)
                 element.Input(value);
         }
+        
+        public void SetEndValues(Vector3[] values)
+        {
+            for (int i = 0; i < elements.Length; i++)
+            {
+                if (i >= values.Length) break;
+                elements[i].end = values[i];
+            }
+        }
     }
 }

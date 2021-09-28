@@ -22,13 +22,25 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] BoolEvent outputSuccess;
 
         int uniqueParryCount => movement.positions.Length;
-        public float holdTime => holdTimer.duration;
-        public float transitionTime => transitionTimer.duration;
         
         void Start()
         {
             movement.SetDestinations(positionData);
             rotation.SetDestinations(rotationData);
+        }
+        
+        public void RefreshSettings(ScriptableObject value)
+        {
+            if (value is ParryTargetSettings settings)
+                RefreshSettings(settings);
+        }
+        
+        public void RefreshSettings(ParryTargetSettings settings)
+        {
+            movement.SetDestinations(settings.positionData);
+            rotation.SetDestinations(settings.rotationData);
+            holdTimer.duration = settings.holdTime;
+            transitionTimer.duration = settings.transitionTime;
         }
 
         [HideInInspector]

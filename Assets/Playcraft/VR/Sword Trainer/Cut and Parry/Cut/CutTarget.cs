@@ -7,22 +7,24 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] SwordActionId _actionId;
         public SwordActionId actionId => _actionId;
         
-        [SerializeField] float retractDelay;
         [SerializeField] bool activateOnStart;
         [SerializeField] BoolEvent OnCutComplete;
         [SerializeField] BoolEvent OnRetractComplete;
         
         [SerializeField] Collider[] colliders;
+        [SerializeField] LerpPositionArray spread;
         [SerializeField] GetPercentOverTimeMono extend;
         [SerializeField] GetPercentOverTimeMono retract;
         [SerializeField] DisplaySequenceByColor hitStatus;
-        
-        //[SerializeField] SetRespondToCustomTagsArray cutTags;
+        [SerializeField] RotateToAngle rotor;
+        [SerializeField] GetFloatFromArray angler;
+        [SerializeField] TimedEvent delayRotate;
         [SerializeField] GameObject[] barriers;
 
         int activeIndex;
         bool success;
-        
+        float retractDelay;
+
         public bool hittable => collidersEnabled;
 
         void Start()
@@ -30,6 +32,27 @@ namespace Playcraft.Examples.SwordTrainer
             if (!activateOnStart) return;
             Hit(0);
             extend.Begin();
+        }
+        
+        public void RefreshSettings(ScriptableObject value)
+        {
+            if (value is CutTargetSettings settings)
+                RefreshSettings(settings);
+        }
+        
+        public void RefreshSettings(CutTargetSettings settings)
+        {
+            rotor.SetRotationSpeed(settings.rotationSpeed);
+            angler.SetValues(settings.angles);
+            extend.SetDuration(settings.timeToExtend);
+            retract.SetDuration(settings.timeToRetract);
+            delayRotate.SetTime(settings.delayRotationTime);
+            spread.SetEndValues(settings.targetSpread);
+            retractDelay = settings.retractDelay;
+            SetBarriersActive(settings.barriersActive);
+            
+            foreach (var col in colliders)
+                col.transform.localScale = settings.scale;
         }
 
         public void Trigger() { BeginExtension(); }
@@ -91,19 +114,18 @@ namespace Playcraft.Examples.SwordTrainer
         public void SetActive(int index, int activeCount)
         {
             gameObject.SetActive(index < activeCount);
-            SetBarriersActive(activeCount == 1);
+            //SetBarriersActive(activeCount == 1);
         }
-        
-        //public void SetActive(bool value) { gameObject.SetActive(value); }
         
         public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
 
-        //public void SetTriggerTags(int groupIndex) { cutTags.SetTriggerTags(groupIndex); }
-        
         void SetBarriersActive(bool value)
         {
             foreach (var barrier in barriers)
                 barrier.SetActive(value);
         }
+        
+        //[SerializeField] SetRespondToCustomTagsArray cutTags;        
+        //public void SetTriggerTags(int groupIndex) { cutTags.SetTriggerTags(groupIndex); }
     }
 }

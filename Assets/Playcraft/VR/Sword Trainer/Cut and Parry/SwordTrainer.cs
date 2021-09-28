@@ -18,6 +18,7 @@ namespace Playcraft.Examples.SwordTrainer
         SwordModeData currentMode;
         bool initialized;
         bool changingMode;
+        Stage currentStage;
 
         void Awake()
         {
@@ -25,10 +26,11 @@ namespace Playcraft.Examples.SwordTrainer
                 element.Value.Initialize();
         }
 
-        public void RequestSetMode(SwordModeId value)
+        public void SetStage(Stage stage)
         {
-            currentModeId = value;
-            RequestSetMode();
+            currentStage = stage;
+            currentModeId = stage.mode;
+            BeginSetMode();
         }
         
         void RequestSetMode() 
@@ -36,11 +38,16 @@ namespace Playcraft.Examples.SwordTrainer
             if (priorModeId == currentModeId && initialized)
                 return;
 
+            BeginSetMode();
+        }
+        
+        void BeginSetMode()
+        {
             initialized = true;
             priorModeId = currentModeId;
             
             StopAllCoroutines();
-            StartCoroutine(WaitToSetMode());
+            StartCoroutine(WaitToSetMode());            
         }
         
         IEnumerator WaitToSetMode()
@@ -59,7 +66,9 @@ namespace Playcraft.Examples.SwordTrainer
             lookup.TryGetValue(currentModeId, out currentMode);
             
             ActivateTargets();
-            
+            cuts.RefreshSettings(currentStage.cutSettings);
+            parries.RefreshSettings(currentStage.parrySettings);
+
             if (currentMode.simultaneous)
                 currentMode.TriggerAll();
             else

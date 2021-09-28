@@ -1699,7 +1699,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5949281540534564831}
-  - component: {fileID: 6152674631842117634}
   - component: {fileID: 8192054544352184124}
   - component: {fileID: 8704812526061635811}
   m_Layer: 0
@@ -1726,35 +1725,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6152674631842117634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5949281540534564828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 020cd45b959c08143997d60e675e2534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 360
-  timeToExtend: 0.3
-  timeToRetract: 0.3
-  delayExtendTime: 0.15
-  delayRotationTime: 0.15
-  targetScale: 0.4
-  angles: {fileID: 11400000, guid: c6cf83cb62cb6aa408598747384c4549, type: 2}
-  rotor: {fileID: 1288923609500416055}
-  angler: {fileID: 2762041347453293931}
-  extension: {fileID: 8802578710299557301}
-  retraction: {fileID: 5310363890778013997}
-  delayExtend: {fileID: 0}
-  delayRotate: {fileID: 1622996607153887843}
-  targets:
-  - {fileID: 5949281539977600645}
-  - {fileID: 5949281539863704721}
-  - {fileID: 5949281539109669062}
 --- !u!114 &8192054544352184124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,7 +1759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf98cba52872d24aabbaf6caa6fa81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  retractDelay: 0.3
+  _actionId: 0
+  defaultSettings: {fileID: 11400000, guid: c29c1919f5cdd9948a27150b474e2ab2, type: 2}
   activateOnStart: 0
   OnCutComplete:
     m_PersistentCalls:
@@ -1861,9 +1832,13 @@ MonoBehaviour:
   - {fileID: 5949281539977600644}
   - {fileID: 5949281539863704720}
   - {fileID: 5949281539109669065}
+  spread: {fileID: 5652990991155603638}
   extend: {fileID: 8802578710299557301}
   retract: {fileID: 5310363890778013997}
   hitStatus: {fileID: 8192054544352184124}
+  rotor: {fileID: 1288923609500416055}
+  angler: {fileID: 2762041347453293931}
+  delayRotate: {fileID: 1622996607153887843}
   barriers:
   - {fileID: 9117989472832286918}
   - {fileID: 1794281417171787717}

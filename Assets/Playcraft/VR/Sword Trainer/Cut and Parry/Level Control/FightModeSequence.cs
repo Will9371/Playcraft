@@ -17,7 +17,7 @@ namespace Playcraft.Examples.SwordTrainer
         void Start()
         {
             index = startIndex;
-            SetMode();
+            RefreshStage();
         }
         
         public void Cycle()
@@ -27,12 +27,12 @@ namespace Playcraft.Examples.SwordTrainer
             if (index >= stages.Length)
                 index = 0;
                 
-            SetMode();
+            RefreshStage();
         }
         
-        void SetMode()
+        void RefreshStage()
         {
-            fighter.RequestSetMode(stages[index].mode);
+            fighter.SetStage(stages[index]);
             SetSlowTimeActive(stages[index].slowTime);
         }
         
@@ -45,11 +45,20 @@ namespace Playcraft.Examples.SwordTrainer
         
         public void ToggleSlowTimeActive() { SetSlowTimeActive(!slowTimeActive); }
         
-        [Serializable]
-        public struct Stage
+        public void ChangeTargetSettings(CutTargetSettings[] cutSettings, ParryTargetSettings[] parrySettings)
         {
-            public SwordModeId mode;
-            public bool slowTime;
+            stages[index].cutSettings = cutSettings;
+            stages[index].parrySettings = parrySettings;
+            RefreshStage();
         }
+    }
+    
+    [Serializable]
+    public struct Stage
+    {
+        public SwordModeId mode;
+        public CutTargetSettings[] cutSettings;
+        public ParryTargetSettings[] parrySettings;
+        public bool slowTime;
     }
 }

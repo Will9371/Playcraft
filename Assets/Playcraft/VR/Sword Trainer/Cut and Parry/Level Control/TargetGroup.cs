@@ -7,6 +7,7 @@ namespace Playcraft.Examples.SwordTrainer
     {
         void SetActive(int index, int activeCount);
         void SetLocalPosition(Vector3 value);
+        void RefreshSettings(ScriptableObject value);
     }
 
     [Serializable]
@@ -20,6 +21,15 @@ namespace Playcraft.Examples.SwordTrainer
             {
                 targets[i].SetActive(i, activeCount);
                 targets[i].SetLocalPosition(activeCount);
+            }            
+        }
+
+        public void RefreshSettings(ScriptableObject[] settings)
+        {
+            for (int i = 0; i < targets.Length; i++)
+            {
+                if (i >= settings.Length) break;
+                targets[i].RefreshSettings(settings[i]);
             }            
         }
 
@@ -40,6 +50,8 @@ namespace Playcraft.Examples.SwordTrainer
                 if (activeCount <= 0) return; 
                 target.SetLocalPosition(localPositionByInstanceCount[activeCount-1]); 
             }
+            
+            public void RefreshSettings(ScriptableObject value) { target.RefreshSettings(value); }
         }         
     }
 }
