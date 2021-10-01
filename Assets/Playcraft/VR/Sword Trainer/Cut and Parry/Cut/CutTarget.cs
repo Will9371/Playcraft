@@ -16,8 +16,7 @@ namespace Playcraft.Examples.SwordTrainer
         [SerializeField] GetPercentOverTimeMono extend;
         [SerializeField] GetPercentOverTimeMono retract;
         [SerializeField] DisplaySequenceByColor hitStatus;
-        [SerializeField] RotateToAngle rotor;
-        [SerializeField] GetFloatFromArray angler;
+        [SerializeField] RotateAxisToAngleFromArray rotor;
         [SerializeField] TimedEvent delayRotate;
         [SerializeField] GameObject[] barriers;
 
@@ -43,7 +42,7 @@ namespace Playcraft.Examples.SwordTrainer
         public void RefreshSettings(CutTargetSettings settings)
         {
             rotor.SetRotationSpeed(settings.rotationSpeed);
-            angler.SetValues(settings.angles);
+            rotor.SetAngles(settings.angles);
             extend.SetDuration(settings.timeToExtend);
             retract.SetDuration(settings.timeToRetract);
             delayRotate.SetTime(settings.delayRotationTime);

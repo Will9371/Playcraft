@@ -1,37 +1,32 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+using System;
+using UnityEngine;
 
 namespace Playcraft
 {
-    public class RotateToAngle : MonoBehaviour
+    [Serializable]
+    public class RotateToAngle
     {
-        #pragma warning disable 0649
         [SerializeField] float desiredAngle; 
-        [SerializeField] float turnSpeed = 30f;
-        [SerializeField] FloatEvent Angle;
-        [SerializeField] UnityEvent Arrive;
-        #pragma warning restore 0649
-        
+        [SerializeField] float turnSpeed = 360f;
+
         float angle;
-        
+            
         bool hasArrived = true;
         bool arrived => angle == desiredAngle;
-        
+            
         public void SetRotationSpeed(float value) { turnSpeed = value; }
-        
+            
         public void SetDesiredAngle(float value) 
         {
             hasArrived = false; 
             desiredAngle = value; 
         }
 
-        void Update()
+        public (float angle, bool hasArrived) Tick(float timeStep)
         {    
-            angle = VectorMath.RotateToAngle(angle, desiredAngle, Time.deltaTime * turnSpeed);
-            Angle.Invoke(angle);
-            
-            if (!hasArrived && arrived) Arrive.Invoke();
+            angle = VectorMath.RotateToAngle(angle, desiredAngle, timeStep * turnSpeed);
             hasArrived = arrived;
-        }
+            return (angle, !hasArrived && arrived);
+        }       
     }
 }

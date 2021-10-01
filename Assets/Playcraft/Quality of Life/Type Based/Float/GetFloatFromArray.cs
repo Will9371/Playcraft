@@ -1,31 +1,38 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Playcraft
 {
-    public class GetFloatFromArray : MonoBehaviour
+    [Serializable]
+    public class GetFloatFromArray
     {
-        [SerializeField] float[] values;
-        [SerializeField] FloatEvent Output;
+        public float[] values;
         [SerializeField] bool preventRandomRepeat;
-        
+            
         int index;
-        
+            
         public void SetValues(FloatArray values) { SetValues(values.values); }
         public void SetValues(float[] values) { this.values = values; }
-        
-        public void Input(int index) 
+            
+        public float GetByIndex(int index) 
         {
             if (index < 0 || index >= values.Length)
-                return;
-         
-            Output.Invoke(values[index]); 
+            {
+                Debug.LogError($"Cannot retrieve index {index} from array of length {values.Length}");
+                return Mathf.Infinity;
+            }
+             
+            return values[index]; 
         }
-        
-        public void GetRandom()
+            
+        public float GetRandom()
         {
-            index = RandomStatics.RandomIndexNotIncluding(values.Length, index);
-            //Random.Range(0, values.Length);
-            Output.Invoke(values[index]);
-        }
+            index = preventRandomRepeat ? 
+                RandomStatics.RandomIndexNotIncluding(values.Length, index) :
+                Random.Range(0, values.Length);
+                    
+            return values[index];
+        }       
     }
 }

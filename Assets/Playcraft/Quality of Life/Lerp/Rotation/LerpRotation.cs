@@ -8,8 +8,8 @@ namespace Playcraft
         public Transform self;
         public bool useLocal = true;
         
-        Quaternion start;
-        Quaternion end;
+        [SerializeField] Quaternion start;
+        [SerializeField] Quaternion end;
         
         public void SetSelfIfNull(Transform value) { if (!self) self = value; }
         
@@ -18,6 +18,7 @@ namespace Playcraft
         public void Input(float percent)
         {
             _rotation = Quaternion.Slerp(start, end, percent);
+            Debug.Log($"Start: {start.eulerAngles.y}, end: {end.eulerAngles.y}, percent: {percent}, result: {_rotation.eulerAngles.y}");
             if (useLocal) self.localRotation = _rotation;
             else self.rotation = _rotation;
         }

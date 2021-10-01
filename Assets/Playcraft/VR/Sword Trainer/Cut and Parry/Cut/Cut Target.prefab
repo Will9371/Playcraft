@@ -367,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7218352680380559473}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1687779038173364014
 MonoBehaviour:
@@ -607,7 +607,7 @@ Transform:
   - {fileID: 7941967461108555783}
   - {fileID: 790857171391547937}
   m_Father: {fileID: 7218352680380559473}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &116495096327639440
 MonoBehaviour:
@@ -689,7 +689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7218352680380559473}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9056021935898050889
 MonoBehaviour:
@@ -736,66 +736,6 @@ MonoBehaviour:
     onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!1 &3658730430712188362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4114868696604004396}
-  - component: {fileID: 1622996607153887843}
-  m_Layer: 0
-  m_Name: Begin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4114868696604004396
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3658730430712188362}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7218352680380559473}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1622996607153887843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3658730430712188362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539bcc68aacdea24f8dae16b3a717811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateOnStart: 0
-  time: 0.15
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2762041347453293931}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: GetRandom
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4938405004947585700
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,9 +795,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4114868696604004396}
   - {fileID: 306258355992913243}
-  - {fileID: 2763521895052100114}
   - {fileID: 1754479647458850387}
   - {fileID: 5355760437790484136}
   - {fileID: 1695684041187366059}
@@ -1760,7 +1698,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionId: 0
-  defaultSettings: {fileID: 11400000, guid: c29c1919f5cdd9948a27150b474e2ab2, type: 2}
   activateOnStart: 0
   OnCutComplete:
     m_PersistentCalls:
@@ -1836,9 +1773,8 @@ MonoBehaviour:
   extend: {fileID: 8802578710299557301}
   retract: {fileID: 5310363890778013997}
   hitStatus: {fileID: 8192054544352184124}
-  rotor: {fileID: 1288923609500416055}
-  angler: {fileID: 2762041347453293931}
-  delayRotate: {fileID: 1622996607153887843}
+  rotor: {fileID: 5119619401656001594}
+  delayRotate: {fileID: 3566107790853756519}
   barriers:
   - {fileID: 9117989472832286918}
   - {fileID: 1794281417171787717}
@@ -1939,8 +1875,8 @@ MonoBehaviour:
     OnReached:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1622996607153887843}
-          m_TargetAssemblyTypeName: 
+        - m_Target: {fileID: 3566107790853756519}
+          m_TargetAssemblyTypeName: Playcraft.TimedEvent, Assembly-CSharp
           m_MethodName: Begin
           m_Mode: 1
           m_Arguments:
@@ -1983,7 +1919,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7218352680380559473}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2921878247068582444
 MonoBehaviour:
@@ -2090,9 +2026,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 306258355992913243}
-  - component: {fileID: 2762041347453293931}
-  - component: {fileID: 1288923609500416055}
-  - component: {fileID: 1928690098906620499}
+  - component: {fileID: 3566107790853756519}
+  - component: {fileID: 5119619401656001594}
   m_Layer: 0
   m_Name: Rotate
   m_TagString: Untagged
@@ -2112,9 +2047,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7218352680380559473}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2762041347453293931
+--- !u!114 &3566107790853756519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2123,67 +2058,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6610601795653816819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c80a6d41384eee041881343f7ea0f432, type: 3}
+  m_Script: {fileID: 11500000, guid: 539bcc68aacdea24f8dae16b3a717811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  values:
-  - 0
-  - 60
-  - 120
-  - 180
-  - 225
-  - 315
-  Output:
+  activateOnStart: 0
+  time: 0.15
+  OnEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1288923609500416055}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetDesiredAngle
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  preventRandomRepeat: 1
---- !u!114 &1288923609500416055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6610601795653816819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e409d47caa078ea43a49c75733e9e7eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  desiredAngle: 0
-  turnSpeed: 360
-  Angle:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1928690098906620499}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetAngle
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  Arrive:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4218010438478630974}
-        m_TargetAssemblyTypeName: Playcraft.TimedEvent, Assembly-CSharp
-        m_MethodName: Begin
+      - m_Target: {fileID: 5119619401656001594}
+        m_TargetAssemblyTypeName: Playcraft.RotateAxisToAngleFromArray, Assembly-CSharp
+        m_MethodName: SetRandomDestination
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2193,7 +2078,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1928690098906620499
+--- !u!114 &5119619401656001594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2202,11 +2087,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 6610601795653816819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abdcf1cedbb4bce4382a9394dac7e8d9, type: 3}
+  m_Script: {fileID: 11500000, guid: f319cd786ada62443b1ffd95858f331a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotor: {fileID: 4925832489984744593}
-  angle: 315
+  angles:
+    values:
+    - 0
+    - 60
+    - 180
+    - 225
+    - 315
+    preventRandomRepeat: 0
+  rotation:
+    desiredAngle: 0
+    turnSpeed: 360
+  axis:
+    rotor: {fileID: 4925832489984744593}
+    axis: 2
+    editorAngle: 0
+  OnArrive:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7749354132551714173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,66 +2189,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8857026093565799072
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2763521895052100114}
-  - component: {fileID: 4218010438478630974}
-  m_Layer: 0
-  m_Name: Wait
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2763521895052100114
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8857026093565799072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7218352680380559473}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4218010438478630974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8857026093565799072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539bcc68aacdea24f8dae16b3a717811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateOnStart: 0
-  time: 1
-  OnEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8802578710299557301}
-        m_TargetAssemblyTypeName: Playcraft.GetPercentOverTimeMono, Assembly-CSharp
-        m_MethodName: Begin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8921856298707134008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,7 +2212,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8921856298707134008}
-  m_LocalRotation: {x: -0, y: -0, z: 0.3826835, w: -0.9238795}
+  m_LocalRotation: {x: 9.228557e-14, y: -0.00000008742281, z: 8.067864e-21, w: 1}
   m_LocalPosition: {x: 0, y: 1.2, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
