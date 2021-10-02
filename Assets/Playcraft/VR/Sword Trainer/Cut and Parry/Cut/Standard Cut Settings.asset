@@ -17,13 +17,13 @@ MonoBehaviour:
   timeToRetract: 0.3
   retractDelay: 0.3
   delayRotationTime: 0.15
-  targetScale: 0.4
+  targetScale: 0.35
   targetSpread:
-  - {x: 0.6, y: 0, z: 0.2}
-  - {x: -0.6, y: 0, z: 0.2}
+  - {x: 0.9, y: 0, z: 0.5}
+  - {x: 0.5, y: 0, z: 0.15}
   angles: {fileID: 11400000, guid: c6cf83cb62cb6aa408598747384c4549, type: 2}
   barriersActive: 1
   barrierScale: {x: 1.5, y: 0.1, z: 0.5}
   barrierPositions:
-  - {x: 0, y: 0.31, z: 0.125}
-  - {x: 0, y: -0.31, z: 0.125}
+  - {x: 0.375, y: 0.3, z: 0}
+  - {x: 0.375, y: -0.3, z: 0}
