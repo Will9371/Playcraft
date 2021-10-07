@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft.Examples.SwordTrainer
+namespace Playcraft
 {    
     [Serializable] public class MaintainDistance
     {

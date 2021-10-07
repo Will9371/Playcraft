@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Playcraft.Examples.SwordTrainer
+namespace Playcraft
 {
     public class MoveOneForward : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft.Examples.SwordTrainer
+namespace Playcraft
 {
     public class CircleTargetAtDistance : MonoBehaviour
     {
