@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   values:
   - 0
-  - 60
-  - 120
+  - 45
+  - 135
   - 180
   - 225
   - 315

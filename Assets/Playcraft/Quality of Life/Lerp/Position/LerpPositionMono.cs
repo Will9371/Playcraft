@@ -9,7 +9,7 @@ namespace Playcraft
         void Start() { process.SetSelfIfNull(transform); }
         
         /// Call continuously to move over time
-        public void Input(float percent) { process.Input(percent); }
+        public void Input(float percent) { process.percent = percent; }
         
         /// Move towards externally defined location
         public void SetDestination(Vector3 destination) { process.SetEnd(destination); }

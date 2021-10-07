@@ -27,11 +27,11 @@ namespace Playcraft.Examples.SwordTrainer
             if (!score) Debug.Log("FloatingNumber on " + gameObject + " requires a text component");
         }
 
-        public void Begin(Transform source, Vector3 direction, float value)
+        public void Begin(Transform source, Vector3 incomingDirection, float value)
         {        
             startTime = Time.time;
             
-            var startingOffset = -direction * startDistance; 
+            var startingOffset = -incomingDirection * startDistance; 
             transform.Translate(startingOffset);
             moveDirection = (transform.position - source.position).normalized;
             

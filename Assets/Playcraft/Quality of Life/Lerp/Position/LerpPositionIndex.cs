@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Playcraft
 {
-    [Serializable] public class LerpPositionIndex
+    [Serializable] public class LerpPositionIndex : IPercent
     {
         public Vector3[] positions;
         [SerializeField] LerpPosition process;
@@ -12,6 +13,12 @@ namespace Playcraft
         public int endIndex;
         
         public void SetDestination(int newIndex) { SetEndpoints(endIndex, newIndex); }
+        
+        public void SetRandomDestination() 
+        {
+            var index = Random.Range(0, positions.Length);
+            SetDestination(index); 
+        }
         
         void SetEndpoints(int startIndex, int endIndex)
         {
@@ -28,33 +35,12 @@ namespace Playcraft
             for (int i = 0; i < input.Length; i++)
                 positions[i] = input[i];
         }
-        
-        #region Pass to Lerp_Position
-        
-        public Transform self
-        {
-            get => process.self;
-            set => process.self = value;
-        }
 
-        public Vector3 start
-        {
-            get => process.start;
-            set => process.start = value;
-        }
-        
-        public Vector3 end
-        {
-            get => process.end;
-            set => process.end = value;
-        }
-        
-        public void Input(float percent) { process.Input(percent); }
-        
+        public Transform self { get => process.self; set => process.self = value; }
+        public Vector3 start { get => process.start; set => process.start = value; }
+        public Vector3 end { get => process.end; set => process.end = value; }
+        public float percent { get => process.percent ; set => process.percent = value; }
         public void SetDestination(Vector3 value) { process.SetEnd(value); }
-        
         public void SetSelfIfNull(Transform value) { process.SetSelfIfNull(value); }
-        
-        #endregion
     }
 }

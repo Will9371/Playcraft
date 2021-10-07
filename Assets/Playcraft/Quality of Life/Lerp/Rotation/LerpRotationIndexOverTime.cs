@@ -50,16 +50,7 @@ namespace Playcraft
         
         IEnumerator Turn()
         {
-            timer.SetDurationAndBegin(duration);
-            (float percent, bool complete) progress = timer.GetProgress();
-            
-            while (!progress.complete)
-            {
-                process.Input(progress.percent);
-                yield return null;
-                progress = timer.GetProgress();
-            }
-            
+            yield return timer.Run(process, duration);
             OnComplete.Invoke();
         }
 

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using Playcraft;
 
 [Serializable] public class Vector3Event : UnityEvent<Vector3> { }
-[Serializable] public class Vector3x2Event : UnityEvent<Vector3, Vector3> { }
+
 [Serializable] public class Vector3ArrayEvent : UnityEvent<Vector3[]> { }
 [Serializable] public class Vector2Event : UnityEvent<Vector2> { }
 [Serializable] public class BoolEvent : UnityEvent<bool> { }
@@ -21,12 +21,15 @@ using Playcraft;
 [Serializable] public class CollisionEvent : UnityEvent<Collision> { }
 [Serializable] public class RaycastHitEvent : UnityEvent<RaycastHit> { }
 [Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }
-[Serializable] public class GameObjectBoolEvent : UnityEvent<GameObject, bool> { }
-[Serializable] public class GameObjectVector3Event : UnityEvent<GameObject, Vector3> { }
 [Serializable] public class ColorEvent : UnityEvent<Color> { }
 [Serializable] public class Collider2DEvent : UnityEvent<Collider2D> { }
 [Serializable] public class QuaternionEvent : UnityEvent<Quaternion> { }
 [Serializable] public class SOEvent : UnityEvent<ScriptableObject> { }
+
+[Serializable] public class GameObjectBoolEvent : UnityEvent<GameObject, bool> { }
+[Serializable] public class GameObjectVector3Event : UnityEvent<GameObject, Vector3> { }
+[Serializable] public class Vector3x2Event : UnityEvent<Vector3, Vector3> { }
+[Serializable] public class Vector3FloatEvent: UnityEvent<Vector3, float> { }
 
 [Serializable] public class IMessageEvent : UnityEvent<IMessage> { }
 [Serializable] public class TagEvent : UnityEvent<SO> { }

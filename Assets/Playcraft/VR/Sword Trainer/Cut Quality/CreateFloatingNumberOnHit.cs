@@ -1,45 +1,26 @@
 ﻿using UnityEngine;
-using Playcraft.Pooling;
 
 namespace Playcraft.Examples.SwordTrainer
 {
     public class CreateFloatingNumberOnHit : MonoBehaviour, ISwingTarget
     {
         [SerializeField] CutQualityCalculator cutQualityCalculator;
-        [SerializeField] GameObject floaterPrefab;
-        [SerializeField] Transform canvas;
-        [SerializeField] Transform faceTarget;
-        [SerializeField] RectTransform template;
+        [SerializeField] CreateFloatingNumber createNumber;
         [SerializeField] FloatEvent RelayScore;
+
+        public void SetFloaterCanvas(Transform value) { createNumber.SetFloaterCanvas(value); }
+        public void SetFloaterFaceTarget(Transform value) { createNumber.SetFloaterCanvas(value); }
         
-        ObjectPoolMaster spawner => ObjectPoolMaster.instance;
-        
-        public void SetFloaterCanvas(Transform value) { canvas = value; }
-        public void SetFloaterFaceTarget(Transform value) { faceTarget = value; }
-        
-        // * Copy score calculation to simpler script (functionality too trivial to delegate)
         public void SendData(SwingData data)
         {
             var score = cutQualityCalculator.GetCutQuality(data);
-            
-            var floaterObj = spawner.Spawn(floaterPrefab, transform.position);
-            floaterObj.transform.SetParent(canvas);
-            floaterObj.SetActive(true);
-            
-            var rect = floaterObj.transform as RectTransform;
-            rect.localRotation = template.localRotation;
-            rect.localScale = template.localScale;
-            
-            var floater = floaterObj.GetComponent<FloatingNumber>();      
-            floater.Begin(transform, data.direction, score);
-            
-            if (faceTarget)
-            {
-                var facing = floaterObj.GetComponent<FaceTargetInstant>();
-                facing.SetTarget(faceTarget);
-            }
-            
-            RelayScore.Invoke(score);
+            Input(data.direction, score);
+        }
+        
+        public void Input(Vector3 direction, float score)
+        {
+            createNumber.Generate(direction, score);
+            RelayScore.Invoke(score);            
         }
     }
 }

@@ -26,13 +26,13 @@ namespace Playcraft
             return values[index]; 
         }
             
-        public float GetRandom()
+        public float GetRandom() { return values[GetRandomIndex()]; }
+        
+        public int GetRandomIndex() 
         {
-            index = preventRandomRepeat ? 
+            return index = preventRandomRepeat ? 
                 RandomStatics.RandomIndexNotIncluding(values.Length, index) :
                 Random.Range(0, values.Length);
-                    
-            return values[index];
-        }       
+        }
     }
 }

@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 5346060717038480880}
   - component: {fileID: 5346060717038480881}
   - component: {fileID: 5346060717038480883}
+  - component: {fileID: 3153862818817022780}
   - component: {fileID: 5346060717038480882}
   m_Layer: 0
   m_Name: Cutting Dummy
@@ -277,6 +278,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3153862818817022780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346060717038480892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdd6fc812f38c24dab37e2080196b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutQualityCalculator: {fileID: 11400000, guid: 8b0507efe9f36434293548984afaea12,
+    type: 2}
+  relayScore:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5346060717038480882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,11 +309,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutQualityCalculator: {fileID: 11400000, guid: 8b0507efe9f36434293548984afaea12,
     type: 2}
-  floaterPrefab: {fileID: 1088168158452095639, guid: 428fd222be1db4e40a52dafd89a51e1c,
-    type: 3}
-  canvas: {fileID: 5346060717873943353}
-  faceTarget: {fileID: 0}
-  template: {fileID: 5346060717396446591}
+  createNumber:
+    center: {fileID: 5346060717038480886}
+    floaterPrefab: {fileID: 1088168158452095639, guid: 428fd222be1db4e40a52dafd89a51e1c,
+      type: 3}
+    canvas: {fileID: 5346060717873943353}
+    faceTarget: {fileID: 0}
+    template: {fileID: 5346060717396446591}
   RelayScore:
     m_PersistentCalls:
       m_Calls:
@@ -311,6 +331,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  desiredDirectionPivot: {fileID: 0}
 --- !u!1 &5346060717873943354
 GameObject:
   m_ObjectHideFlags: 0

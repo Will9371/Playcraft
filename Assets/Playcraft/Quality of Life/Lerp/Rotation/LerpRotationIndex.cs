@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    [Serializable] public class LerpRotationIndex
+    [Serializable] public class LerpRotationIndex : IPercent
     {
         public Vector3[] rotations;
         [SerializeField] LerpRotation process;
@@ -12,10 +12,9 @@ namespace Playcraft
         public int endIndex;
         
         public Transform self => process.self;
+        public float percent { get => process.percent; set => process.percent = value; }
         
         public void SetSelfIfNull(Transform value) { process.SetSelfIfNull(value); }
-        
-        public void Input(float percent) { process.Input(percent); }
         
         /// Set start point index to prior end point index and end point index to input index
         public void SetDestination(int newIndex) { SetEndpoints(endIndex, newIndex); }

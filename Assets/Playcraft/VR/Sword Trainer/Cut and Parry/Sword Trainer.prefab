@@ -463,6 +463,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    actionId: {fileID: 0}
   - keys: 73000000
     pressType: 0
     OnActive:
@@ -481,6 +482,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    actionId: {fileID: 0}
 --- !u!114 &1112201046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,7 +568,7 @@ MonoBehaviour:
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5261067281891221872}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Playcraft.IntRelay, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 3
@@ -578,12 +580,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    actionId: {fileID: 0}
   - keys: 31000000
     pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5261067281891221872}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Playcraft.IntRelay, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 3
@@ -595,12 +598,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    actionId: {fileID: 0}
   - keys: 32000000
     pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5261067281891221872}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Playcraft.IntRelay, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 3
@@ -612,12 +616,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    actionId: {fileID: 0}
   - keys: 33000000
     pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5261067281891221872}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Playcraft.IntRelay, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 3
@@ -629,12 +634,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    actionId: {fileID: 0}
   - keys: 34000000
     pressType: 0
     OnActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5261067281891221872}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Playcraft.IntRelay, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 3
@@ -646,6 +652,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    actionId: {fileID: 0}
 --- !u!1 &8121498150417604436
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +985,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8257052745405375525}
-  m_LocalRotation: {x: -6.572568e-14, y: 3.006278e-33, z: 4.573978e-20, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1037,20 +1044,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48a0a94eeff18149b0169fa83345d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angles:
-    values:
-    - 0
-    - 30
-    - -30
-    - 20
-    - -20
-    preventRandomRepeat: 0
-  axis:
-    rotor: {fileID: 7841188719449049792}
-    axis: 1
-    editorAngle: 0
-  startIndex: 0
-  endIndex: 0
+  process:
+    angles:
+      values:
+      - 0
+      - 30
+      - -30
+      - 20
+      - -20
+      preventRandomRepeat: 0
+    axis:
+      rotor: {fileID: 7841188719449049792}
+      axis: 1
+      useLocal: 0
+      angle: 0
+    startIndex: 0
+    endIndex: 0
 --- !u!114 &2053338093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1715,17 +1724,17 @@ PrefabInstance:
     - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000010541102
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000020852966
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.1981807e-15
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
@@ -2196,18 +2205,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcbb505e0061cf4aadd824cf02f9738, type: 3}
---- !u!114 &5261067281891221872 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6950045714077321220, guid: 2bcbb505e0061cf4aadd824cf02f9738,
-    type: 3}
-  m_PrefabInstance: {fileID: 2986050451125856628}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad16454432230134ebcce5775b9fe71b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1925040526968126481 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3731103890828563813, guid: 2bcbb505e0061cf4aadd824cf02f9738,
@@ -2332,8 +2329,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925832489984744593, guid: 204c981afd8231046a8dc255777a1781,
+        type: 3}
       propertyPath: m_LocalRotation.z
-      value: -4.916376e-20
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5949281540534564828, guid: 204c981afd8231046a8dc255777a1781,
         type: 3}

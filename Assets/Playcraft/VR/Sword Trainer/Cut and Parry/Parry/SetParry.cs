@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-// RENAME
+// RENAME: TriParry
 namespace Playcraft.Examples.SwordTrainer
 {
     public class SetParry : MonoBehaviour, ISwordAction, ISwordTrainerTarget
     {
-        [SerializeField] SwordActionId _actionId;
+        [SerializeField] SwordActionId _actionId = SwordActionId.Parry;
         public SwordActionId actionId => _actionId;
     
         [SerializeField] ParryTargetOrbState[] orbs;
@@ -20,11 +20,16 @@ namespace Playcraft.Examples.SwordTrainer
         
         [SerializeField] FloatEvent outputHoldPercent;
         [SerializeField] BoolEvent outputSuccess;
+        
+        IPercent[] moveTransitions = new IPercent[2];
 
         int uniqueParryCount => movement.positions.Length;
         
         void Start()
         {
+            moveTransitions[0] = movement;
+            moveTransitions[1] = rotation;
+        
             movement.SetDestinations(positionData);
             rotation.SetDestinations(rotationData);
         }
@@ -53,7 +58,7 @@ namespace Playcraft.Examples.SwordTrainer
             inTransition = true;
             yield return StartCoroutine(Extend(false));
             SetRandomParry();
-            yield return StartCoroutine(MoveToNextLocation());
+            yield return transitionTimer.Run(moveTransitions);
             yield return StartCoroutine(Extend(true));
             inTransition = false;
         }
@@ -66,20 +71,7 @@ namespace Playcraft.Examples.SwordTrainer
             rotation.SetDestination(parryIndex);
             movement.SetDestination(parryIndex);
         }
-        
-        IEnumerator MoveToNextLocation()
-        {
-            transitionTimer.Begin();
-            while (transitionTimer.inProgress)
-            {
-                movement.Input(transitionTimer.percent);
-                rotation.Input(transitionTimer.percent);
-                yield return null;
-            }
-            movement.Input(1f);
-            rotation.Input(1f);           
-        }
-        
+
         public void Trigger() { BeginActivation(); }
         public void BeginActivation() 
         {
@@ -129,6 +121,8 @@ namespace Playcraft.Examples.SwordTrainer
             outputSuccess.Invoke(success);
         }
         
+        void OnDisable() { Deactivate(); }
+        
         void Deactivate()
         {
             StopAllCoroutines();
@@ -145,13 +139,9 @@ namespace Playcraft.Examples.SwordTrainer
                 orb.SetReadyToParry(value);
         }
         
-        public void SetActive(int index, int activeCount) 
-        { 
-            gameObject.SetActive(index < activeCount); 
-        }
-        
+        public void SetActive(bool value) { gameObject.SetActive(value); }
         public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
         
-        void OnDisable() { Deactivate(); }
+        
     }
 }

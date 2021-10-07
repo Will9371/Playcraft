@@ -5,7 +5,7 @@ namespace Playcraft.Examples.SwordTrainer
 {
     public interface ISwordTrainerTarget
     {
-        void SetActive(int index, int activeCount);
+        void SetActive(bool value);
         void SetLocalPosition(Vector3 value);
         void RefreshSettings(ScriptableObject value);
     }
@@ -19,7 +19,7 @@ namespace Playcraft.Examples.SwordTrainer
         {
             for (int i = 0; i < targets.Length; i++)
             {
-                targets[i].SetActive(i, activeCount);
+                targets[i].SetActive(i < activeCount);
                 targets[i].SetLocalPosition(activeCount);
             }            
         }
@@ -43,7 +43,7 @@ namespace Playcraft.Examples.SwordTrainer
             ISwordTrainerTarget _Target() { return _target = container.GetComponent<ISwordTrainerTarget>(); }
             ISwordTrainerTarget _target;
 
-            public void SetActive(int index, int activeCount) { target.SetActive(index, activeCount); }
+            public void SetActive(bool value) { target.SetActive(value); }
             
             public void SetLocalPosition(int activeCount) 
             {

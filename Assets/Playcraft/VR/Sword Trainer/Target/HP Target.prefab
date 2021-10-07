@@ -175,6 +175,8 @@ MonoBehaviour:
     start: {x: 0, y: 0, z: 0}
     end: {x: 0, y: 0, z: 0}
     reverse: 0
+  duration: 0
+  startAtSelf: 0
 --- !u!114 &7912883317969263208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,11 +490,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutQualityCalculator: {fileID: 11400000, guid: 8b0507efe9f36434293548984afaea12,
     type: 2}
-  floaterPrefab: {fileID: 1088168158452095639, guid: 428fd222be1db4e40a52dafd89a51e1c,
-    type: 3}
-  canvas: {fileID: 3157346840708925310}
-  faceTarget: {fileID: 0}
-  template: {fileID: 4885498108482356640}
+  createNumber:
+    self: {fileID: 524496317257542616}
+    floaterPrefab: {fileID: 1088168158452095639, guid: 428fd222be1db4e40a52dafd89a51e1c,
+      type: 3}
+    canvas: {fileID: 3157346840708925310}
+    faceTarget: {fileID: 0}
+    template: {fileID: 4885498108482356640}
   RelayScore:
     m_PersistentCalls:
       m_Calls:
@@ -508,6 +512,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  floaterPrefab: {fileID: 1088168158452095639, guid: 428fd222be1db4e40a52dafd89a51e1c,
+    type: 3}
+  canvas: {fileID: 3157346840708925310}
+  faceTarget: {fileID: 0}
+  template: {fileID: 4885498108482356640}
 --- !u!1 &3962563947997722718
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +749,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allowInterrupt: 1
+  invertOutputPercent: 0
 --- !u!114 &2840696211095094964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,6 +1107,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allowInterrupt: 1
+  invertOutputPercent: 0
 --- !u!114 &3894127637608374809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,7 +1254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   process:
     range: {x: 0, y: 30}
-    maxOnStart: 0
   OnChangeValue:
     m_PersistentCalls:
       m_Calls:
@@ -1286,6 +1296,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  autoInitialization: 0
 --- !u!1 &8472095432679642918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1446,9 @@ MonoBehaviour:
   self: {fileID: 3157346840708925310}
   lookAway: 0
   target: {fileID: 0}
+  x: 0
+  y: 0
+  z: 0
 --- !u!1001 &5536390181973827378
 PrefabInstance:
   m_ObjectHideFlags: 0

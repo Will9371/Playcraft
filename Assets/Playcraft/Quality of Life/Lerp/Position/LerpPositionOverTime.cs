@@ -51,7 +51,7 @@ namespace Playcraft
         public void SetDuration(float value) { duration = value; }
         public void SetDestination(Vector3 value) { movement.SetEnd(value); }
         public void SetDirection(bool forward) { movement.reverse = !forward; }
-        public void SetPercent(float value) { movement.Input(value); }
+        public void SetPercent(float value) { movement.percent = value; }
         
         public void BeginMove() 
         {
@@ -60,8 +60,12 @@ namespace Playcraft
         }
         
         IEnumerator MoveRoutine()
-        {                
-            timer.SetDurationAndBegin(duration);
+        {
+            yield return timer.Run(movement, duration);
+                        
+            // * Verify before delete
+            /*timer.SetDurationAndBegin(duration);
+            
             (float percent, bool complete) progress = timer.GetProgress();
             
             while (!progress.complete)
@@ -71,7 +75,8 @@ namespace Playcraft
                 progress = timer.GetProgress();
             }
             
-            SetPercent(1f);
+            SetPercent(1f);*/
+            
             OnComplete.Invoke(!movement.reverse);
         }
         

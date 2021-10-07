@@ -9,7 +9,7 @@ namespace Playcraft
         public void Input(float value)
         {
             foreach (var element in elements)
-                element.Input(value);
+                element.percent = value;
         }
         
         public void SetEndValues(Vector3[] values)

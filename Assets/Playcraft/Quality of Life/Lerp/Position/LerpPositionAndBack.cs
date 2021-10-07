@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+// * Not fully tested/reliable
 namespace Playcraft
 {
     public class LerpPositionAndBack : MonoBehaviour
@@ -12,33 +13,32 @@ namespace Playcraft
         [SerializeField] Stage returnStage;
         
         GetPercentOverTime timer = new GetPercentOverTime();
+        IPercent[] processes;
+        
+        void Awake()
+        {
+            processes = new IPercent[movers.Length];
+            for (int i = 0; i < movers.Length; i++)
+                processes[i] = movers[i];
+        }
         
         public void Begin() 
         {
             if (!gameObject.activeSelf)
                 return;
          
-            //Debug.Log($"Walls move in/out begining at {Time.time}");
             StartCoroutine(Process(activeStage)); 
         }
 
         IEnumerator Process(Stage stage)
         {
-            timer.SetDurationAndBegin(stage.duration);
-                
-            while (timer.inProgress)
-            {
-                yield return null;
-                foreach (var mover in movers)
-                    mover.Input(timer.percent);
-            }
-            
+            yield return timer.Run(processes, stage.duration);
             stage.onComplete.Invoke();
         }
         
         public void BeginInterrupt() 
         {
-            //Debug.Log($"Interrupting cut at time {Time.time}");
+            //Debug.Log($"LerpPositionAndBack.BeginInterrupt() at time {Time.time}");
             StopAllCoroutines();
             StartCoroutine(Interrupt()); 
         }

@@ -11,6 +11,9 @@ public class SwordPracticeSceneDev : MonoBehaviour
 
     void OnValidate()
     {
+        if (!gameObject.activeInHierarchy)
+            return;
+            
         Refresh();
     }
     

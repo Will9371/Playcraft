@@ -19,8 +19,8 @@ MonoBehaviour:
   delayRotationTime: 0.15
   targetScale: 0.35
   targetSpread:
-  - {x: 0.9, y: 0, z: 0.5}
-  - {x: 0.5, y: 0, z: 0.15}
+  - {x: 0.85, y: 0, z: 0.35}
+  - {x: 0.45, y: 0, z: 0.15}
   angles: {fileID: 11400000, guid: e56770bd0fd523040a80c2d054a98fd5, type: 2}
   barriersActive: 1
   barrierScale: {x: 1.25, y: 0.075, z: 0.4}

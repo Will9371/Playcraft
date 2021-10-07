@@ -135,11 +135,6 @@ MonoBehaviour:
     - 7
     - 8
     preventRandomRepeat: 0
-  values:
-  - 5
-  - 6
-  - 7
-  - 8
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -376,11 +371,6 @@ MonoBehaviour:
     - 7
     - 8
     preventRandomRepeat: 0
-  values:
-  - 5
-  - 6
-  - 7
-  - 8
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -696,11 +686,6 @@ MonoBehaviour:
     - 7
     - 8
     preventRandomRepeat: 0
-  values:
-  - 5
-  - 6
-  - 7
-  - 8
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -879,11 +864,6 @@ MonoBehaviour:
     - 7
     - 8
     preventRandomRepeat: 0
-  values:
-  - 5
-  - 6
-  - 7
-  - 8
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -971,8 +951,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e21e58f6576d494bbc11ee8e358491f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimum: 0
-  maximum: 1
+  process:
+    minimum: 0
+    maximum: 1
+    disableRepeat: 0
+    disableSpecific: 0
+    specificDisable: 0
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -988,9 +972,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  disableRepeat: 0
-  disableSpecific: 0
-  specificDisable: 0
 --- !u!114 &8581432308331269798
 MonoBehaviour:
   m_ObjectHideFlags: 0

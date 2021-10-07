@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    [Serializable] public class LerpPosition
+    [Serializable] public class LerpPosition : IPercent
     {
         public Transform self;
         public bool useLocal = true;
@@ -47,13 +47,17 @@ namespace Playcraft
             end = newEnd;
         }
         
-        /// Call continuously to move over time
-        public void Input(float percent)
+        float _percent;
+        public float percent
         {
-            if (reverse) percent = 1f - percent;
-            position = Vector3.Lerp(start, end, percent);
+            get => _percent;
+            set
+            {
+                _percent = reverse ? 1f - value : value;
+                position = Vector3.Lerp(start, end, _percent);
+            }
         }
-        
+
         public void SwitchDirection() { reverse = !reverse; }
         
         

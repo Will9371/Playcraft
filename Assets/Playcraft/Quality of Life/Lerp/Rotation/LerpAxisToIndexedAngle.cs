@@ -1,11 +1,13 @@
+using System;
 using UnityEngine;
 
 namespace Playcraft
 {
-    public class LerpAxisToIndexedAngle : MonoBehaviour
+    [Serializable]
+    public class LerpAxisToIndexedAngle
     {
         [SerializeField] GetFloatFromArray angles;
-        [SerializeField] RotateAxis axis;
+        public RotateAxis axis;
         
         [SerializeField] int startIndex = 0;
         [SerializeField] int endIndex = 1;
@@ -15,13 +17,15 @@ namespace Playcraft
             var angle = Mathf.Lerp(angles.values[startIndex], angles.values[endIndex], percent);
             axis.SetAngle(angle);
         }
-
-        void OnValidate() { axis.ValidateAngle(); }
         
         public void SetNewDestination(int newIndex)
         {
             startIndex = endIndex;
             endIndex = newIndex;
         }
+        
+        public void SetRandomDestination() { SetNewDestination(angles.GetRandomIndex()); }
+        
+        public void SetValues(FloatArray values) { angles.SetValues(values.values); }
     }
 }

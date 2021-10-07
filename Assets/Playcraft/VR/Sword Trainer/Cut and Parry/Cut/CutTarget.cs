@@ -1,10 +1,11 @@
 using UnityEngine;
 
+// RENAME: TriCutTarget
 namespace Playcraft.Examples.SwordTrainer
 {
     public class CutTarget : MonoBehaviour, ISwordAction, ISwordTrainerTarget
     {
-        [SerializeField] SwordActionId _actionId;
+        [SerializeField] SwordActionId _actionId = SwordActionId.Cut;
         public SwordActionId actionId => _actionId;
         
         [SerializeField] bool activateOnStart;
@@ -118,8 +119,7 @@ namespace Playcraft.Examples.SwordTrainer
             hitStatus.Input(activeIndex);
         }
         
-        public void SetActive(int index, int activeCount) { gameObject.SetActive(index < activeCount); }
-        
+        public void SetActive(bool value) { gameObject.SetActive(value); }
         public void SetLocalPosition(Vector3 value) { transform.localPosition = value; }
 
         void SetBarriersActive(bool value)

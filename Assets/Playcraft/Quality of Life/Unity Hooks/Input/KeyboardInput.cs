@@ -6,25 +6,36 @@ namespace Playcraft
 {
     public class KeyboardInput : MonoBehaviour
     {    
-        #pragma warning disable 0649
         [SerializeField] Keybinding[] bindings;
-        #pragma warning restore 0649
         
         void Update()
         {
             foreach (var binding in bindings)
                 binding.Update();
         }
+        
+        public void RequestRemap(SO actionId, KeyCode[] keys)
+        {
+            foreach (var binding in bindings)
+                binding.RequestRemap(actionId, keys);
+        }
     }
 
     [Serializable]
     public class Keybinding
     {
-        #pragma warning disable 0649
         [SerializeField] KeyCode[] keys;
         [SerializeField] PressType pressType;
         [SerializeField] UnityEvent OnActive;
-        #pragma warning restore 0649
+        
+        [Header("Experimental")]
+        [SerializeField] SO actionId;
+        
+        public void RequestRemap(SO actionId, KeyCode[] keys)
+        {
+            if (this.actionId == actionId)
+                this.keys = keys;
+        }
         
         public void Update()
         {

@@ -12,6 +12,12 @@ namespace Playcraft.Examples.SwordTrainer
         {
             return Mathf.Pow(data.speed * data.edgeAlignment * multiplier, power);
         }
+        
+        public float GetDirectionalCutQuality(SwingData data, Vector3 desiredDirection)
+        {
+            var alignment = Mathf.Max(Vector3.Dot(data.direction, desiredDirection), 0f);
+            return GetCutQuality(data) * alignment;
+        }
     }
 }
 

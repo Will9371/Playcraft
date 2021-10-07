@@ -40,7 +40,7 @@ namespace Playcraft
                 
             foreach (var exclusion in excluded)
                 valid.Remove(exclusion);
-                
+
             var index = Random.Range(0, valid.Count);
             return valid[index];
         }

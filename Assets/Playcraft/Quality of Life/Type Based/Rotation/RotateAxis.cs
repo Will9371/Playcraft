@@ -6,25 +6,40 @@ namespace Playcraft
     [Serializable]
     public class RotateAxis
     {
-        [SerializeField] Transform rotor;
+        public Transform rotor;
         [SerializeField] Axis axis = Axis.Z;
-        [SerializeField] [Range(-1, 361)] float editorAngle;
+        [SerializeField] bool useLocal;
+        [Range(-1, 361)] public float angle;
         
         public void ValidateAngle()
         {
-            if (editorAngle < 0) editorAngle = 360;
-            else if (editorAngle > 360) editorAngle = 0;
-            SetAngle(editorAngle);      
+            if (angle < 0) angle = 360;
+            else if (angle > 360) angle = 0;
+            SetAngle(angle);      
         }
             
         public void SetAngle(float value)
         {
-            switch (axis)
+            angle = value;
+        
+            if (useLocal)
             {
-                case Axis.X: rotor.eulerAngles = new Vector3(value, rotor.eulerAngles.y, rotor.eulerAngles.z); break;
-                case Axis.Y: rotor.eulerAngles = new Vector3(rotor.eulerAngles.x, value, rotor.eulerAngles.z); break;
-                case Axis.Z: rotor.eulerAngles = new Vector3(rotor.eulerAngles.x, rotor.eulerAngles.y, value); break;
-            }           
+                switch (axis)
+                {
+                    case Axis.X: rotor.localRotation = Quaternion.Euler(angle, rotor.rotation.y, rotor.localRotation.z); break;
+                    case Axis.Y: rotor.localRotation = Quaternion.Euler(rotor.rotation.x, angle, rotor.localRotation.z); break;
+                    case Axis.Z: rotor.localRotation = Quaternion.Euler(rotor.rotation.x, rotor.localRotation.y, angle); break;
+                }
+            }
+            else
+            {
+                switch (axis)
+                {
+                    case Axis.X: rotor.rotation = Quaternion.Euler(angle, rotor.rotation.y, rotor.rotation.z); break;
+                    case Axis.Y: rotor.rotation = Quaternion.Euler(rotor.rotation.x, angle, rotor.rotation.z); break;
+                    case Axis.Z: rotor.rotation = Quaternion.Euler(rotor.rotation.x, rotor.rotation.y, angle); break;
+                }
+            }
         }
     }
 }
