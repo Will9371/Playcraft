@@ -13,12 +13,6 @@ namespace Playcraft
             foreach (var binding in bindings)
                 binding.Update();
         }
-        
-        public void RequestRemap(SO actionId, KeyCode[] keys)
-        {
-            foreach (var binding in bindings)
-                binding.RequestRemap(actionId, keys);
-        }
     }
 
     [Serializable]
@@ -27,16 +21,7 @@ namespace Playcraft
         [SerializeField] KeyCode[] keys;
         [SerializeField] PressType pressType;
         [SerializeField] UnityEvent OnActive;
-        
-        [Header("Experimental")]
-        [SerializeField] SO actionId;
-        
-        public void RequestRemap(SO actionId, KeyCode[] keys)
-        {
-            if (this.actionId == actionId)
-                this.keys = keys;
-        }
-        
+
         public void Update()
         {
             bool active = false;

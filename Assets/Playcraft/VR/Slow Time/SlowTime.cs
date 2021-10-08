@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft.Examples.SwordTrainer
+namespace Playcraft.VR
 {
     public class SlowTime : MonoBehaviour
     {

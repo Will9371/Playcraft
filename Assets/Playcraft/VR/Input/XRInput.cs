@@ -8,10 +8,8 @@ namespace Playcraft.VR
 {
     public class XRInput : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] XRController controller;
         [SerializeField] XRBinding[] bindings;
-        #pragma warning restore 0649
         
         private void Update()
         {
@@ -23,11 +21,9 @@ namespace Playcraft.VR
     [Serializable]
     public class XRBinding
     {
-        #pragma warning disable 0649
         [SerializeField] XRButton button;
         [SerializeField] PressType pressType;
         [SerializeField] UnityEvent OnActive;
-        #pragma warning restore 0649
         
         bool isPressed;
         bool wasPressed;
