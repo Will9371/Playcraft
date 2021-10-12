@@ -204,14 +204,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 20000000
-    pressType: 0
-    OnActive:
+  keyBindings:
+  - input:
+      keys: 20000000
+      pressType: 0
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1910564745544634893}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.JumpPhysics, Assembly-CSharp
           m_MethodName: Jump
           m_Mode: 1
           m_Arguments:
@@ -222,6 +226,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  bindings: []
 --- !u!114 &1910564745544634893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,14 +499,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 63000000
-    pressType: 0
-    OnActive:
+  keyBindings:
+  - input:
+      keys: 63000000
+      pressType: 0
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3774126326436153883}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.ToggleState, Assembly-CSharp
           m_MethodName: Toggle
           m_Mode: 1
           m_Arguments:
@@ -512,6 +521,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  bindings: []
 --- !u!114 &3774126326436153883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,16 +704,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents: []
-  collisionEvents: []
   triggerBindings:
   - filter:
       touchType: 0
       collisionType: 0
       otherColliderType: 0
-      Output:
-        m_PersistentCalls:
-          m_Calls: []
     response:
       m_PersistentCalls:
         m_Calls:
@@ -723,9 +728,6 @@ MonoBehaviour:
       touchType: 1
       collisionType: 0
       otherColliderType: 0
-      Output:
-        m_PersistentCalls:
-          m_Calls: []
     response:
       m_PersistentCalls:
         m_Calls:
@@ -757,9 +759,17 @@ MonoBehaviour:
   process:
     self: {fileID: 3403923575461834661}
     useLocal: 1
+    useCurve: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     start: {x: 0, y: 0, z: 0}
     end: {x: 0, y: 0.375, z: 0}
     reverse: 0
+    curvedPercent: 0
 --- !u!1 &3403923576435922631
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,14 +813,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 300100002f010000
-    pressType: 0
-    OnActive:
+  keyBindings:
+  - input:
+      keys: 300100002f010000
+      pressType: 0
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4009807950553526778}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.LocalStateHub, Assembly-CSharp
           m_MethodName: SetState
           m_Mode: 2
           m_Arguments:
@@ -822,13 +836,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keys: 300100002f010000
-    pressType: 1
-    OnActive:
+  - input:
+      keys: 300100002f010000
+      pressType: 1
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4009807950553526778}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.LocalStateHub, Assembly-CSharp
           m_MethodName: SetState
           m_Mode: 2
           m_Arguments:
@@ -840,6 +858,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  bindings: []
 --- !u!1 &3403923577191210621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1195,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   allowInterrupt: 1
+  invertOutputPercent: 0
 --- !u!1 &3403923577405371574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,14 +1242,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 65000000
-    pressType: 0
-    OnActive:
+  keyBindings:
+  - input:
+      keys: 65000000
+      pressType: 0
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 204815397532241959}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.ToggleInteraction, Assembly-CSharp
           m_MethodName: Interact
           m_Mode: 1
           m_Arguments:
@@ -1240,6 +1264,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  bindings: []
 --- !u!1 &3771585120874364783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,6 +1442,13 @@ MonoBehaviour:
   process:
     capsule: {fileID: 2300345156078844275}
     yAnchor: 0
+    useCurve: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     start: 1.5
     end: 0.75
     reverse: 0
@@ -1432,15 +1464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd0f0a75255a80449eb67f527ae1a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents: []
-  collisionEvents: []
   triggerBindings: []
   collisionBindings:
   - filter:
       touchType: 0
-      Output:
-        m_PersistentCalls:
-          m_Calls: []
     response:
       m_PersistentCalls:
         m_Calls:
@@ -1604,6 +1631,13 @@ MonoBehaviour:
     start: {x: 0.5, y: 0.75, z: 0.5}
     end: {x: 0.5, y: 0.4, z: 0.5}
     reverse: 0
+    useCurve: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     xAnchor: 0.5
     yAnchor: 0.5
     zAnchor: 0.5
@@ -1660,9 +1694,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8074159657856309671}
-  - component: {fileID: 685679122211705327}
   - component: {fileID: 6644855774238877337}
   - component: {fileID: 1613746918130606608}
+  - component: {fileID: 7660130314548448556}
   m_Layer: 0
   m_Name: Move
   m_TagString: Untagged
@@ -1684,91 +1718,6 @@ Transform:
   m_Father: {fileID: 7223900333873689557}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &685679122211705327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7575576706125702552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bindings:
-  - keys: 050100007700000011010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6644855774238877337}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 087a11123cfca154abb2b4e493191519,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 010100006100000014010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6644855774238877337}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 87ddabc8b7414874db895b6c135621be,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 020100007300000012010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6644855774238877337}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: f7a6b7309162cda41b8d94f8d004816b,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 030100006400000013010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6644855774238877337}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 69179b0d12d5729459d7210275fa963d,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &6644855774238877337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,6 +1823,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &7660130314548448556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7575576706125702552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23ff0599d757fc4c8ebe8638b11b006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindings: {fileID: 11400000, guid: fe80c3f3c66195742aa6fa7b92d8fab0, type: 2}
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6644855774238877337}
+        m_TargetAssemblyTypeName: Playcraft.CombineAsyncVectors, Assembly-CSharp
+        m_MethodName: AddMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7747386104451351951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,9 +1948,17 @@ MonoBehaviour:
   process:
     self: {fileID: 7747386104451351950}
     useLocal: 1
+    useCurve: 0
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     start: {x: 0, y: 1.15, z: 0.245}
     end: {x: 0, y: 0.8, z: 0.245}
     reverse: 0
+    curvedPercent: 0
 --- !u!1 &8272226260970801749
 GameObject:
   m_ObjectHideFlags: 0

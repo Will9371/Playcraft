@@ -26,6 +26,7 @@ namespace Playcraft.Examples.ColorCatcher
             cooldown = false;
         }
 
+        public void Swap(ScriptableObject data) { if (data is IntArray value) Swap(value); }
         public void Swap(IntArray data) { Swap(data.values[0], data.values[1]); }
         private void Swap(int a, int b)
         {

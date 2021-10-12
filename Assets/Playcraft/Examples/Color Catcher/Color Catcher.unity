@@ -580,8 +580,9 @@ GameObject:
   m_Component:
   - component: {fileID: 546968064}
   - component: {fileID: 546968067}
-  - component: {fileID: 546968066}
   - component: {fileID: 546968065}
+  - component: {fileID: 546968068}
+  - component: {fileID: 546968066}
   m_Layer: 0
   m_Name: Keyboard Input
   m_TagString: Untagged
@@ -615,88 +616,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 07010000
-    pressType: 0
-    OnActive:
+  keyBindings:
+  - input:
+      keys: 07010000090100000301000001010000
+      pressType: 1
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1657472248}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Set
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 09010000
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657472248}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Set
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 03010000
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657472248}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Set
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 01010000
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657472248}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Set
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 07010000090100000301000001010000
-    pressType: 1
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657472248}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.Examples.ColorCatcher.MatchAllColors,
+            Assembly-CSharp
           m_MethodName: Clear
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -710,82 +645,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 546968063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f54022d664863e4f991ad8bf77571b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 08010000
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657472246}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Swap
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 05780615d3c94d148ade28a18ab31f13,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.IntArray, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 06010000
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657472246}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Swap
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: f9a40c7b8ed05cd45be63feebac176df,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.IntArray, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 04010000
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657472246}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Swap
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 61e36fae501df2047908e13c6a43226f,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.IntArray, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 02010000
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657472246}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Swap
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 22abb97a9c6e92e41b53b0a41873a143,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.IntArray, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  bindings: {fileID: 11400000, guid: 15aa385e7fe623e47be7e38a0fac2af0, type: 2}
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1657472248}
+        m_TargetAssemblyTypeName: Playcraft.Examples.ColorCatcher.MatchAllColors,
+          Assembly-CSharp
+        m_MethodName: Set
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &546968067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,14 +677,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 1401000071000000
-    pressType: 0
-    OnActive:
+  keyBindings:
+  - input:
+      keys: 1401000071000000
+      pressType: 0
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1657472246}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.Examples.ColorCatcher.SwapWispBlockerData,
+            Assembly-CSharp
           m_MethodName: Cycle
           m_Mode: 6
           m_Arguments:
@@ -816,13 +697,15 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keys: 1301000065000000
-    pressType: 0
-    OnActive:
+  - input:
+      keys: 1301000065000000
+      pressType: 0
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1657472246}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Playcraft.Examples.ColorCatcher.SwapWispBlockerData,
+            Assembly-CSharp
           m_MethodName: Cycle
           m_Mode: 6
           m_Arguments:
@@ -833,6 +716,35 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &546968068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546968063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a289b0b47f03b47ad171b6c57958bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindings: {fileID: 11400000, guid: b5372b5853e593f4b844ddac2caa6925, type: 2}
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1657472246}
+        m_TargetAssemblyTypeName: Playcraft.Examples.ColorCatcher.SwapWispBlockerData,
+          Assembly-CSharp
+        m_MethodName: Swap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &628807063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2265,24 +2177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 080000001b000000
-    pressType: 0
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1390509913}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Quit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  keyBindings: []
 --- !u!114 &1390509913
 MonoBehaviour:
   m_ObjectHideFlags: 0

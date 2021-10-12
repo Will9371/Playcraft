@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -197,6 +199,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &116465258
@@ -261,6 +264,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -285,6 +289,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &602710281
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -383,6 +388,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &992328292
@@ -457,11 +463,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c2d0ec7b322f3478ca45a3f2aeca2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 1
+  vector: {x: 0, y: 0, z: 1}
   Output:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1044886848}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
@@ -472,7 +479,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  vector: {x: 0, y: 0, z: 1}
 --- !u!1 &1206912242
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +543,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -561,6 +568,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1206912246
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -633,6 +641,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1044886849}
+        m_TargetAssemblyTypeName: 
         m_MethodName: RotateYAxis
         m_Mode: 0
         m_Arguments:
@@ -644,6 +653,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1572942773}
+        m_TargetAssemblyTypeName: 
         m_MethodName: RotateYAxis
         m_Mode: 0
         m_Arguments:
@@ -666,13 +676,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 11010000
-    pressType: 2
-    OnActive:
+  keyBindings:
+  - input:
+      keys: 7700000011010000
+      pressType: 2
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1044886848}
+          m_TargetAssemblyTypeName: Playcraft.ApplyForce, Assembly-CSharp
           m_MethodName: Forward
           m_Mode: 1
           m_Arguments:
@@ -683,12 +698,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keys: 12010000
-    pressType: 2
-    OnActive:
+  - input:
+      keys: 7300000012010000
+      pressType: 2
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1044886848}
+          m_TargetAssemblyTypeName: Playcraft.ApplyForce, Assembly-CSharp
           m_MethodName: Backward
           m_Mode: 1
           m_Arguments:
@@ -699,12 +719,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keys: 14010000
-    pressType: 2
-    OnActive:
+  - input:
+      keys: 6100000014010000
+      pressType: 2
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1397932170}
+          m_TargetAssemblyTypeName: Playcraft.FloatRelay, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 4
           m_Arguments:
@@ -715,12 +740,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - keys: 13010000
-    pressType: 2
-    OnActive:
+  - input:
+      keys: 6400000013010000
+      pressType: 2
+      OnActive:
+        m_PersistentCalls:
+          m_Calls: []
+    response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1397932170}
+          m_TargetAssemblyTypeName: Playcraft.FloatRelay, Assembly-CSharp
           m_MethodName: Input
           m_Mode: 4
           m_Arguments:
@@ -731,6 +761,75 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  bindings:
+  - keys: 11010000
+    pressType: 2
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1044886848}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: Forward
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 0
+  - keys: 12010000
+    pressType: 2
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1044886848}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: Backward
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 0
+  - keys: 14010000
+    pressType: 2
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1397932170}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: Input
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: -180
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 0
+  - keys: 13010000
+    pressType: 2
+    OnActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1397932170}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: Input
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 180
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 0
 --- !u!1 &1572942768
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,11 +942,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c2d0ec7b322f3478ca45a3f2aeca2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 1
+  vector: {x: 0, y: 3, z: -5}
   Output:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1572942772}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetOffset
         m_Mode: 0
         m_Arguments:
@@ -858,4 +958,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  vector: {x: 0, y: 3, z: -5}

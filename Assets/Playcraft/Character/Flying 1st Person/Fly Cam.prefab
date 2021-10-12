@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4399053689265857544}
   - component: {fileID: 4399053689265857549}
   - component: {fileID: 604444084182638546}
+  - component: {fileID: 2130978242}
   m_Layer: 0
   m_Name: Fly Cam
   m_TagString: MainCamera
@@ -67,6 +68,21 @@ MonoBehaviour:
   xRange: {x: 0, y: 0}
   clampY: 0
   yRange: {x: 0, y: 0}
+--- !u!114 &2130978242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399053689265857547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9bac6b115910c6469bf03f58c996a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requireLeftMouseToTurn: 0
+  click: {fileID: 7037849107575371580}
+  drag: {fileID: 2757744418088049291}
 --- !u!1 &5480367824993089547
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,10 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1262605434705485177}
-  - component: {fileID: 3910905374447469652}
   - component: {fileID: 7037849107575371580}
   - component: {fileID: 2757744418088049291}
   - component: {fileID: 3050036635144314859}
+  - component: {fileID: 765279841934896686}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -101,87 +117,6 @@ Transform:
   m_Father: {fileID: 4399053689265857544}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3910905374447469652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480367824993089547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bindings:
-  - keys: 7700000011010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4399053689265857549}
-          m_MethodName: Move
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 087a11123cfca154abb2b4e493191519,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 6100000014010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4399053689265857549}
-          m_MethodName: Move
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 87ddabc8b7414874db895b6c135621be,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 7300000012010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4399053689265857549}
-          m_MethodName: Move
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: f7a6b7309162cda41b8d94f8d004816b,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 6400000013010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4399053689265857549}
-          m_MethodName: Move
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 69179b0d12d5729459d7210275fa963d,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &7037849107575371580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +136,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2757744418088049291}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -217,6 +153,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2757744418088049291}
+          m_TargetAssemblyTypeName: 
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -244,6 +181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 604444084182638546}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Rotate
         m_Mode: 0
         m_Arguments:
@@ -271,7 +209,36 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4399053689265857549}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Accelerate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &765279841934896686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480367824993089547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23ff0599d757fc4c8ebe8638b11b006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindings: {fileID: 11400000, guid: fe80c3f3c66195742aa6fa7b92d8fab0, type: 2}
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4399053689265857549}
+        m_TargetAssemblyTypeName: Playcraft.FreeMovement, Assembly-CSharp
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
