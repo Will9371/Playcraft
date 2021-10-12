@@ -10,6 +10,8 @@ namespace Playcraft
         public Vector3 start;
         public Vector3 end; 
         public bool reverse;
+        [SerializeField] bool useCurve;
+        [SerializeField] AnimationCurve curve;
 
         [Range(0, 1)] public float xAnchor = 0.5f;
         [Range(0, 1)] public float yAnchor = 0.5f;
@@ -20,10 +22,11 @@ namespace Playcraft
 
         public void SetSelfIfNull(Transform value) { if (!self) self = value; }
         
-        // Call continuously to move over time
+        /// Call continuously to move over time
         public void Input(float percent)
         {
             if (reverse) percent = 1f - percent;
+            if (useCurve) percent = curve.Evaluate(percent);
             
             priorScale = self.localScale;
             self.localScale = Vector3.Lerp(start, end, percent);

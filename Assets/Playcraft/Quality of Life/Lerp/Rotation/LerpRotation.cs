@@ -7,6 +7,8 @@ namespace Playcraft
     {
         public Transform self;
         public bool useLocal = true;
+        [SerializeField] bool useCurve;
+        [SerializeField] AnimationCurve curve;
         
         [SerializeField] Quaternion start;
         [SerializeField] Quaternion end;
@@ -16,13 +18,15 @@ namespace Playcraft
         Quaternion _rotation;
         
         float _percent;
+        float curvedPercent;
         public float percent
         {
             get => _percent;
             set
             {
                 _percent = value;
-                _rotation = Quaternion.Slerp(start, end, _percent);
+                curvedPercent = useCurve ? curve.Evaluate(_percent) : _percent;
+                _rotation = Quaternion.Slerp(start, end, curvedPercent);
                 if (useLocal) self.localRotation = _rotation;
                 else self.rotation = _rotation;                
             }

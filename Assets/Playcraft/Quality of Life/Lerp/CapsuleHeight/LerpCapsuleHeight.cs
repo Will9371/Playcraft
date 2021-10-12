@@ -7,6 +7,8 @@ namespace Playcraft
     {
         public CapsuleCollider capsule;
         [Range(0, 1)] public float yAnchor = 0.5f;
+        [SerializeField] bool useCurve;
+        [SerializeField] AnimationCurve curve;
 
         public float start;
         public float end;
@@ -21,6 +23,7 @@ namespace Playcraft
         public void Input(float percent)
         {
             if (reverse) percent = 1f - percent;
+            if (useCurve) percent = curve.Evaluate(percent);
             priorHeight = capsule.height;
             capsule.height = Mathf.Lerp(start, end, percent);
             capsule.transform.position += (.5f - yAnchor) * heightStep * Vector3.up;

@@ -7,6 +7,8 @@ namespace Playcraft
     {
         public Transform self;
         public bool useLocal = true;
+        public bool useCurve;
+        public AnimationCurve curve;
 
         public Vector3 start;
         public Vector3 end;
@@ -48,13 +50,15 @@ namespace Playcraft
         }
         
         float _percent;
+        public float curvedPercent;
         public float percent
         {
             get => _percent;
             set
             {
                 _percent = reverse ? 1f - value : value;
-                position = Vector3.Lerp(start, end, _percent);
+                curvedPercent = useCurve ? curve.Evaluate(_percent) : _percent;
+                position = Vector3.Lerp(start, end, curvedPercent);
             }
         }
 

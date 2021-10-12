@@ -7,19 +7,23 @@ namespace Playcraft
     public class LerpAxisAngle : IPercent
     {
         [SerializeField] RotateAxis axis;
+        [SerializeField] bool useCurve;
+        [SerializeField] AnimationCurve curve;
         
         float startAngle;
         float endAngle;
         float angle;
         
         float _percent;
+        public float curvedPercent { get; private set; }
         public float percent 
         { 
             get => _percent; 
             set
             {
                 _percent = value;
-                angle = Mathf.Lerp(startAngle, endAngle, _percent);
+                curvedPercent = useCurve ? curve.Evaluate(_percent) : _percent;
+                angle = Mathf.Lerp(startAngle, endAngle, curvedPercent);
                 axis.SetAngle(angle);
             }
         }
