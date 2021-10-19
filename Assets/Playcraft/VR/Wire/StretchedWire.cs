@@ -7,6 +7,7 @@ namespace Playcraft
         public Transform start, end;
         
         void Update() { Stretch(); }
+        void OnValidate() { Stretch(); }
         
         Vector3 priorStartPosition;
         Vector3 priorEndPosition;

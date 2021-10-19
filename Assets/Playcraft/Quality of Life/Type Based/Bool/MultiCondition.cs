@@ -1,18 +1,20 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+
 
 namespace Playcraft
 {
-    public class MultiCondition : MonoBehaviour
+    [Serializable]
+    public class MultiCondition
     {
         [SerializeField] GameObject[] observations;
         [SerializeField] bool requireAll;
         [SerializeField] bool requiredState;
-        [SerializeField] BoolEvent Output;
-        
+
         List<IBool> Observations = new List<IBool>();
-        
-        void Awake()
+
+        public void Initialize()
         {
             foreach (var obj in observations)
             {
@@ -21,28 +23,20 @@ namespace Playcraft
                 Observations.Add(_observation);
             }
         }
-        
-        public void Refresh()
+
+        public bool IsConditionMet()
         {
             var result = requireAll;
-        
+
             foreach (var item in Observations)
             {        
-                if (requireAll)
-                {
-                    if (item.State == requiredState)
-                        continue;
-                }
-                else
-                {
-                    if (item.State != requiredState)
-                        continue;
-                }
-                
+                if (requireAll == (item.State == requiredState))
+                    continue;
+
                 result = !requireAll;           
             }
-            
-            Output.Invoke(result);
+
+            return result; 
         }
     }
 }

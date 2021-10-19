@@ -7,11 +7,11 @@ namespace Playcraft
     {
         public Transform self;
         public bool useLocal = true;
-        [SerializeField] bool useCurve;
-        [SerializeField] AnimationCurve curve;
+        public bool useCurve;
+        public AnimationCurve curve;
         
-        [SerializeField] Quaternion start;
-        [SerializeField] Quaternion end;
+        public Quaternion start;
+        public Quaternion end;
 
         public void SetSelfIfNull(Transform value) { if (!self) self = value; }
         

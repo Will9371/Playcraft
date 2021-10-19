@@ -25,11 +25,13 @@ using Playcraft;
 [Serializable] public class Collider2DEvent : UnityEvent<Collider2D> { }
 [Serializable] public class QuaternionEvent : UnityEvent<Quaternion> { }
 [Serializable] public class SOEvent : UnityEvent<ScriptableObject> { }
+[Serializable] public class SOListEvent : UnityEvent<List<ScriptableObject>> { }
 
 [Serializable] public class GameObjectBoolEvent : UnityEvent<GameObject, bool> { }
 [Serializable] public class GameObjectVector3Event : UnityEvent<GameObject, Vector3> { }
 [Serializable] public class Vector3x2Event : UnityEvent<Vector3, Vector3> { }
 [Serializable] public class Vector3FloatEvent: UnityEvent<Vector3, float> { }
+[Serializable] public class SOFloatEvent : UnityEvent<SO, float> { }
 
 [Serializable] public class IMessageEvent : UnityEvent<IMessage> { }
 [Serializable] public class TagEvent : UnityEvent<SO> { }

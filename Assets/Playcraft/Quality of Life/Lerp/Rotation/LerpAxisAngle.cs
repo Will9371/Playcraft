@@ -8,7 +8,7 @@ namespace Playcraft
     {
         [SerializeField] RotateAxis axis;
         [SerializeField] bool useCurve;
-        [SerializeField] AnimationCurve curve;
+        public AnimationCurve curve;
         
         float startAngle;
         float endAngle;
