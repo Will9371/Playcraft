@@ -6,7 +6,19 @@ namespace Playcraft
     {
         [SerializeField] int minimum;
         [SerializeField] int maximum;
+        [SerializeField] bool preventRepeat;
         [SerializeField] IntEvent Output;
-        public void Input() { Output.Invoke(Random.Range(minimum, maximum + 1)); }
+        
+        int prior;
+        
+        public void Input() 
+        {
+            var output = preventRepeat ? 
+                RandomStatics.RandomNoRepeat(minimum, maximum, prior) : 
+                Random.Range(minimum, maximum + 1);
+                
+            Output.Invoke(output);
+            prior = output; 
+        }
     }
 }
