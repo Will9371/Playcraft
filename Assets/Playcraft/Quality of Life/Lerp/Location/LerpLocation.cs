@@ -1,16 +1,18 @@
 using System;
 using UnityEngine;
 
+// * WPP: nice to be able to hide position and rotation details, 
+// but a problem if breaking up curves by components...
 namespace Playcraft
 {
     [Serializable]
-    public class LerpLocation
+    public class LerpLocation : IPercent
     {
         public Transform self;
         [SerializeField] bool useLocal;
         [SerializeField] bool useCurve;
         [SerializeField] AnimationCurve curve;
-        
+
         public Transform start;
         public Transform end;
         
@@ -35,6 +37,7 @@ namespace Playcraft
         public void SetStart(Transform value) 
         {
             start = value;
+            if (!value) return;
             position.start = useLocal ? value.localPosition : value.position;
             rotation.start = useLocal ? value.localRotation : value.rotation; 
         }
@@ -42,6 +45,7 @@ namespace Playcraft
         public void SetEnd(Transform value)
         {
             end = value;
+            if (!value) return;
             position.end = useLocal ? value.localPosition : value.position;
             rotation.end = useLocal ? value.localRotation : value.rotation;
         }
@@ -58,6 +62,12 @@ namespace Playcraft
             SetEnd(value);
         }
         
+        public void SetSelfToEnd(Transform end)
+        {
+            SetStart(self);
+            SetEnd(end);
+        }
+
         public void Validate()
         {
             position.self = self;

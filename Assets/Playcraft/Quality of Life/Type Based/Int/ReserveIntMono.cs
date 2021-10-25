@@ -6,6 +6,8 @@ namespace Playcraft
     public class ReserveIntMono : MonoBehaviour
     {
         [SerializeField] ReserveInt process;
-        public int GetAvailableValue(int sourceId) { return process.GetAvailableValue(sourceId); }
+        public int GetRandomAvailable(int sourceId) { return process.GetRandomAvailable(sourceId); }
+        public bool SetIfAvailable(int value, int sourceId) { return process.SetIfAvailable(value, sourceId); }
+        public int SetIfAvailableOrGetRandom(int value, int sourceId) { return process.SetIfAvailableOrGetRandom(value, sourceId); }
     }
 }

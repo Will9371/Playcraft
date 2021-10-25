@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Playcraft
@@ -14,11 +15,38 @@ namespace Playcraft
         {
             return new Vector3(size, size, size);
         }
+        
+        #region Get closest element
+        
+        public static Transform GetClosest(Transform[] array, Transform reference)
+        {
+            return GetClosest(array.ToList(), reference.position);
+        }
+        
+        public static Transform GetClosest(Transform[] array, Vector3 position)
+        {
+            return GetClosest(array.ToList(), position);
+        }
     
         public static Transform GetClosest(List<Transform> list, Vector3 position)
         {
+            return list[GetClosestIndex(list, position)];
+        }
+        
+        public static int GetClosestIndex(Transform[] array, Transform reference)
+        {
+            return GetClosestIndex(array.ToList(), reference.position);
+        }
+        
+        public static int GetClosestIndex(Transform[] array, Vector3 position)
+        {
+            return GetClosestIndex(array.ToList(), position);
+        }
+        
+        public static int GetClosestIndex(List<Transform> list, Vector3 position)
+        {
             var shortestDistance = Mathf.Infinity;
-            var closest = list[0];
+            var closest = 0;
             
             for (int i = 0; i < list.Count; i++)
             {
@@ -26,13 +54,16 @@ namespace Playcraft
                 if (distance < shortestDistance)
                 {
                     shortestDistance = distance;
-                    closest = list[i];
+                    closest = i;
                 }
             }
             
-            return closest;
+            return closest;            
         }
         
+        #endregion
+        
+        // * Merge with GetClosest
         public static Vector3 GetClosestPoint(List<Vector3> points, Vector3 desired, Vector3 fallback)
         {
             Vector3 closestPoint = fallback;

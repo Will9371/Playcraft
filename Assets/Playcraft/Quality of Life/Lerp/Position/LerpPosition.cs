@@ -30,7 +30,6 @@ namespace Playcraft
         
         public void SetSelfIfNull(Transform value) { if (self == null) self = value; }
         
-        // * Verify works for all assets set to true
         public void Initialize() 
         { 
             start = position;
@@ -63,8 +62,7 @@ namespace Playcraft
         }
 
         public void SwitchDirection() { reverse = !reverse; }
-        
-        
+
         #region Cached Path
         
         bool cacheInitialized;

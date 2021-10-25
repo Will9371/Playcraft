@@ -15,16 +15,28 @@ namespace Playcraft
         
         public void BeginMove(int destinationIndex) 
         {
-            if (!gameObject.activeInHierarchy) return; 
-            
-            index = destinationIndex;
-            movement.SetDestination(destinationIndex);
-            StartCoroutine(Move());
+            if (!gameObject.activeInHierarchy) return;
+            StartCoroutine(Move(destinationIndex, false));
         }
         
-        IEnumerator Move() 
-        { 
-            yield return timer.Run(movement); 
+        public void BeginMoveFromSelf(int destinationIndex)
+        {
+            if (!gameObject.activeInHierarchy) return;
+            StartCoroutine(Move(destinationIndex, true));    
+        }
+        
+        IEnumerator Move(int destinationIndex, bool moveFromSelf) 
+        {
+            index = destinationIndex;
+            
+            // * Refactor if this gets more complex
+            if (moveFromSelf)
+                movement.SetSelfToEnd(destinationIndex);
+            else
+                movement.SetDestination(destinationIndex);
+         
+            yield return timer.Run(movement);
+
             reachDestinationIndex.Invoke(index);
         }
         

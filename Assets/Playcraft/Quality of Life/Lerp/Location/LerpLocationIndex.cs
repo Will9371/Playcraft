@@ -28,6 +28,18 @@ namespace Playcraft
             process.SetStartAndEnd(locations[startIndex], locations[endIndex]);
         }
         
+        public void SetSelfToEnd(int endIndex)
+        {
+            if (endIndex >= locations.Length)
+            {
+                Debug.LogError($"{self.name}: index {endIndex} out of range, max is {locations.Length - 1}", self.gameObject);
+                return;
+            }
+        
+            this.endIndex = endIndex;
+            process.SetSelfToEnd(locations[endIndex]);
+        }
+        
         public void SetDestinations(Transform[] input)
         {
             locations = new Transform[input.Length];

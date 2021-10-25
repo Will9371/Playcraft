@@ -20,6 +20,9 @@ namespace Playcraft
         
         void Initialize()
         {
+            if (initialized) return;
+            initialized = true;
+        
             var min = Mathf.RoundToInt(range.x);
             var max = Mathf.RoundToInt(range.y);
             var length = max - min;
@@ -28,21 +31,64 @@ namespace Playcraft
             for (int i = 0; i < length; i++)
                 values[i] = new ReservedValue(i + min);
         }
-
-        public int GetAvailableValue(int sourceId)
-        {
-            if (!initialized) 
-            {
-                Initialize();
-                initialized = true;
-            }
         
+        /// Set a value if it is available, otherwise get a random available value
+        public int SetIfAvailableOrGetRandom(int value, int sourceId)
+        {
+            if (SetIfAvailable(value, sourceId))
+                return value;
+            
+            return GetRandomAvailable(sourceId);
+        }
+        
+        public bool SetIfAvailable(int value, int sourceId)
+        {
+            var isAvailable = IsAvailable(value, sourceId);
+            if (isAvailable) SetAvailable(value, sourceId);
+            return isAvailable;
+        }
+
+        public bool IsAvailable(int value, int sourceId)
+        {
+            var reservation = GetReservedValue(value);
+            return !(reservation == null || (reservation.reserved && reservation.ownerId != sourceId));
+        }
+        
+        public void SetAvailable(int value, int sourceId)
+        {
+            var reservation = GetReservedValue(value);
+            if (reservation == null) return;
+
+            // Each source can only reserve one value
+            foreach (var element in values)
+                if (element.ownerId == sourceId)
+                    element.ClearOwner();
+            
+            reservation.SetOwner(sourceId);
+        }
+        
+        ReservedValue GetReservedValue(int value)
+        {
+            Initialize();
+        
+            foreach (var element in values)
+                if (element.value == value)
+                    return element;
+                    
+            return null;
+        }
+
+        public int GetRandomAvailable(int sourceId)
+        {
+            Initialize();
+            
             // Generate a list of valid values
             var validValues = new List<ReservedValue>();
             
             foreach (var value in values)
             {
                 // Clear existing reservations from incoming source
+                // (assumes each source can only reserve one value)
                 if (value.ownerId == sourceId)
                 {
                     value.ClearOwner();
