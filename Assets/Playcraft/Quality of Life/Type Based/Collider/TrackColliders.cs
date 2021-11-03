@@ -5,7 +5,7 @@ namespace Playcraft
 {
     public class TrackColliders
     {    
-        readonly List<Collider> touching = new List<Collider>();
+        public List<Collider> touching = new List<Collider>();
 
         public void OnTriggerEnter(Collider other)
         {

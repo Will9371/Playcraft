@@ -50,6 +50,8 @@ namespace Playcraft
             
             for (int i = 0; i < list.Count; i++)
             {
+                Debug.DrawLine(position, list[i].position, Color.red, .25f);
+            
                 var distance = Vector3.Distance(list[i].position, position);
                 if (distance < shortestDistance)
                 {
@@ -59,6 +61,18 @@ namespace Playcraft
             }
             
             return closest;            
+        }
+        
+        public static int GetClosestIndexWithThreshold(Transform[] array, Vector3 reference, int priorIndex, float threshold)
+        {
+            var closestIndex = GetClosestIndex(array.ToList(), reference);
+            if (closestIndex == priorIndex || priorIndex == -1) return closestIndex;
+            
+            var closestDistance = Vector3.Distance(array[closestIndex].position, reference);
+            var priorDistance = Vector3.Distance(array[priorIndex].position, reference);
+            
+            var withinThreshold = priorDistance - closestDistance < threshold;
+            return withinThreshold ? priorIndex : closestIndex;
         }
         
         #endregion

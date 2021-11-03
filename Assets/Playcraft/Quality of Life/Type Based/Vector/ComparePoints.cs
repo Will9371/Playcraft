@@ -4,10 +4,8 @@ namespace Playcraft
 {
     public class ComparePoints : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Transform locationA;
         [SerializeField] Transform locationB;
-        #pragma warning restore 0649
         
         Vector3 pointA => locationA.position;
         Vector3 pointB => locationB.position;

@@ -30,12 +30,12 @@ namespace Playcraft
         
         public void SetSelfToEnd(int endIndex)
         {
-            if (endIndex >= locations.Length)
+            if (endIndex >= locations.Length || endIndex < 0)
             {
                 Debug.LogError($"{self.name}: index {endIndex} out of range, max is {locations.Length - 1}", self.gameObject);
                 return;
             }
-        
+
             this.endIndex = endIndex;
             process.SetSelfToEnd(locations[endIndex]);
         }

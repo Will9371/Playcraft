@@ -68,7 +68,9 @@ namespace Playcraft.VR
             
             inputActive = binaryThreshold.Input(axisInput);
             lineRenderer.enabled = inputActive;
-            endMarker.SetVisible(inputActive);
+            
+            if (inputActive != priorInputActive)
+                endMarker.SetVisible(inputActive);
             
             if (teleportCondition)
             {

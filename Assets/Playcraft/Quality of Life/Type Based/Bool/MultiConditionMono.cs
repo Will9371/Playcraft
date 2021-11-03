@@ -6,7 +6,7 @@ namespace Playcraft
     {
         [SerializeField] MultiCondition condition;
         [SerializeField] BoolEvent Output;
-        void Awake() { condition.Initialize(); }
+        void Awake() { condition.SetObservations(); }
         public void Refresh() { Output.Invoke(condition.IsConditionMet()); }
     }
 }

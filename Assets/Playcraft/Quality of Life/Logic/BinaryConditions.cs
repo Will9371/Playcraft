@@ -5,7 +5,7 @@ using UnityEngine.Events;
 // RENAME
 public class BinaryConditions : MonoBehaviour
 {
-    public enum Condition { A_Only, B_Only, OR, AND, NOR, XOR, XNOR }
+    public enum Condition { A_Only, B_Only, OR, AND, NOR, XOR, XNOR, NAND }
     
     [SerializeField] bool triggerResponseOnConditionChange = true;
     [SerializeField] ConditionalResponse[] conditions = default;
@@ -41,8 +41,10 @@ public class BinaryConditions : MonoBehaviour
                 case Condition.OR: result = a || b; break;
                 case Condition.AND: result = a && b; break;
                 case Condition.NOR: result = !a && !b; break;
+                case Condition.NAND: result = !(a && b); break;
                 case Condition.XOR: result = (a && !b) || (!a && b); break;
                 case Condition.XNOR: result = (a && b) || (a && b); break;
+                
                 default: result = false; break;
             }
             

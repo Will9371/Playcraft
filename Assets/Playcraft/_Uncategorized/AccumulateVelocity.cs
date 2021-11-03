@@ -9,6 +9,7 @@ namespace Playcraft
         public Vector3 averageVelocity => runningAverage.averageDelta;
         public float averageMagnitude => averageVelocity.magnitude;
         public Vector3 averageDirection => averageVelocity.normalized;
+        public Vector3 projectedPosition => runningAverage.projectedPosition;
         public float edgeAlignment => Mathf.Abs(Vector3.Dot(transform.forward, averageDirection));
         
         void Start() { runningAverage.Validate(); }

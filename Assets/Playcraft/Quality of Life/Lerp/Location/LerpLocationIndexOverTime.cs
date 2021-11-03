@@ -9,36 +9,30 @@ namespace Playcraft
         [SerializeField] GetPercentOverTime timer = new GetPercentOverTime();
         [SerializeField] IntEvent reachDestinationIndex;
         
+        public float duration => timer.duration;
+        
         int index;
         
         public void SetDuration(float value) { timer.duration = value; }
-        
-        public void BeginMove(int destinationIndex) 
+
+        /// Move from current location to indexed location
+        public void BeginMove(int destinationIndex)
         {
             if (!gameObject.activeInHierarchy) return;
-            StartCoroutine(Move(destinationIndex, false));
+            StartCoroutine(Move(destinationIndex));    
         }
         
-        public void BeginMoveFromSelf(int destinationIndex)
-        {
-            if (!gameObject.activeInHierarchy) return;
-            StartCoroutine(Move(destinationIndex, true));    
-        }
-        
-        IEnumerator Move(int destinationIndex, bool moveFromSelf) 
+        IEnumerator Move(int destinationIndex) 
         {
             index = destinationIndex;
+            movement.SetSelfToEnd(destinationIndex);
             
-            // * Refactor if this gets more complex
-            if (moveFromSelf)
-                movement.SetSelfToEnd(destinationIndex);
-            else
-                movement.SetDestination(destinationIndex);
-         
             yield return timer.Run(movement);
 
             reachDestinationIndex.Invoke(index);
         }
+        
+        public void SetDestinations(Transform[] values) { movement.SetDestinations(values); }
         
         void OnValidate() { movement.Validate(); }
     }

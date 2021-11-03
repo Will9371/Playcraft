@@ -3,13 +3,25 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    [Serializable] class AverageVelocity
+    [Serializable] 
+    class AverageVelocity
     {
-        [SerializeField] int runningAverageLength;
+        [SerializeField] 
+        int runningAverageLength;
         [Tooltip("1f = no effect, 0.5f = 50% cutoff per tick, 0f = full attenuation in one frame")]
-        [SerializeField] [Range(0, 1)] float attenuationFactor = 1f;
+        [SerializeField] [Range(0, 1)] 
+        float attenuationFactor = 1f;
+        [SerializeField]
+        float projectionTime = .2f;
     
-        [HideInInspector] public Vector3 averageDelta;
+        [HideInInspector] 
+        public Vector3 averageDelta;
+        
+        [HideInInspector]
+        public Vector3 projectedPosition;
+        
+        public int pointCount => points.Length;
+
         VelocityPoint[] points;
         
         VelocityPoint currentPoint => points[overwriteIndex];
@@ -37,6 +49,8 @@ namespace Playcraft
         
             RefreshCurrentPoint(newPosition);    
             SetAverageVector();
+            
+            projectedPosition = newPosition + (averageDelta * projectionTime) / Time.fixedDeltaTime;
         }
         
         void RefreshCurrentPoint(Vector3 newPosition)
@@ -47,6 +61,9 @@ namespace Playcraft
             if (overwriteIndex >= points.Length)
                 overwriteIndex = 0;
         }
+        
+        float inverseAttenuation;
+        float attenuationMultiplier;
                 
         void SetAverageVector()
         {
@@ -56,6 +73,10 @@ namespace Playcraft
                 averageDelta += point.delta;
             
             averageDelta /= points.Length;
+            
+            inverseAttenuation = 1 / (1 - attenuationFactor + .01f);
+            attenuationMultiplier = 1 + (points.Length - 1) / (inverseAttenuation + .01f);
+            averageDelta *= attenuationMultiplier;
         }
         
         class VelocityPoint

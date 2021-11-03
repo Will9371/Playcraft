@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4075674150527926232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5476211454243765830}
+  - component: {fileID: 7526966343583596907}
+  m_Layer: 0
+  m_Name: Hilt Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5476211454243765830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075674150527926232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8951941258944503387}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7526966343583596907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075674150527926232}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runningAverage:
+    runningAverageLength: 8
+    attenuationFactor: 0.5
+    projectionTime: 0.002
+    averageDelta: {x: 0, y: 0, z: 0}
+    projectedPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &4753180638777390689
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +95,9 @@ MonoBehaviour:
   runningAverage:
     runningAverageLength: 1
     attenuationFactor: 1
+    projectionTime: 0.2
     averageDelta: {x: 0, y: 0, z: 0}
+    projectedPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &6738982089997660949
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,8 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningAverage:
     runningAverageLength: 12
-    attenuationFactor: 0.8
+    attenuationFactor: 0.75
+    projectionTime: 0.01
     averageDelta: {x: 0, y: 0, z: 0}
+    projectedPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1680828929526006296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracker:
+    sourceID: {fileID: 0}
     velocity: {fileID: 6106055144578322004}
     edge: {fileID: 8961790346896124162}
 --- !u!1 &8951941258530509361
@@ -463,6 +517,7 @@ Transform:
   m_Children:
   - {fileID: 200270331308167549}
   - {fileID: 4292041661054756654}
+  - {fileID: 5476211454243765830}
   m_Father: {fileID: 8951941258053321736}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -541,6 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingDataTracker:
+    sourceID: {fileID: 0}
     velocity: {fileID: 6106055144578322004}
     edge: {fileID: 8961790346896124162}
   calculator: {fileID: 11400000, guid: 8b0507efe9f36434293548984afaea12, type: 2}
