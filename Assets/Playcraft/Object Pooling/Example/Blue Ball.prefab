@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2767727141399854217}
   - component: {fileID: 7229740384182470409}
   - component: {fileID: 8718490197794999046}
-  - component: {fileID: 5576038771588697199}
   - component: {fileID: 8425423924911169704}
+  - component: {fileID: 554751819146704939}
   m_Layer: 0
   m_Name: Blue Ball
   m_TagString: Untagged
@@ -97,20 +97,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5576038771588697199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532003714416084282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de86badbf9b35a408345627b6227166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tags:
-  - {fileID: 11400000, guid: fcbac4d69f9657b4cb3f61a5f7d03c93, type: 2}
 --- !u!54 &8425423924911169704
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,3 +113,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &554751819146704939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532003714416084282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8956f420267c37148801719e23d6f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableHeight: -10

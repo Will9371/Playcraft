@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4899519578457748170}
   - component: {fileID: 7427500419770247584}
   - component: {fileID: 6726128174875360386}
-  - component: {fileID: 2739253614671867518}
+  - component: {fileID: 2253452700307146195}
   m_Layer: 0
   m_Name: Red Ball
   m_TagString: Untagged
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2739253614671867518
+--- !u!114 &2253452700307146195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,8 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4064483876451177260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de86badbf9b35a408345627b6227166, type: 3}
+  m_Script: {fileID: 11500000, guid: 8956f420267c37148801719e23d6f4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags:
-  - {fileID: 11400000, guid: fcbac4d69f9657b4cb3f61a5f7d03c93, type: 2}
+  disableHeight: -10

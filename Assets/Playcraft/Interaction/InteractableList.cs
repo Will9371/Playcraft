@@ -6,10 +6,8 @@ namespace Playcraft
 {
     public class InteractableList : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] IMessageEvent OnAdd;
         [SerializeField] IMessageEvent OnRemove;
-        #pragma warning restore 0649
 
         List<IMessage> values = new List<IMessage>();
 
