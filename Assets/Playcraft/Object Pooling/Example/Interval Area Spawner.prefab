@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5010742871373736055}
   - component: {fileID: 5010742871373736054}
   m_Layer: 0
-  m_Name: IntervalAreaSpawner
+  m_Name: Interval Area Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539bcc68aacdea24f8dae16b3a717811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateOnStart: 0
   time: 1
   OnEnd:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5010742871373736053}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Begin
         m_Mode: 1
         m_Arguments:
@@ -61,6 +63,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5010742871373736054}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
@@ -72,6 +75,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5010742871373736055}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 1
         m_Arguments:
@@ -95,12 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range:
-    minimum: {x: -8, y: -4, z: 0}
-    maximum: {x: 8, y: 4, z: 0}
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
   Output:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5010742871373736054}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetPosition
         m_Mode: 0
         m_Arguments:

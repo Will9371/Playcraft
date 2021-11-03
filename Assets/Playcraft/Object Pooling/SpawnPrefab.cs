@@ -4,13 +4,11 @@ namespace Playcraft.Pooling
 {
     public class SpawnPrefab : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] GameObject prefab;
         [SerializeField] bool useTransformToPosition = true;
         [SerializeField] Transform location;
         [SerializeField] Vector3 position;
         [SerializeField] GameObjectEvent OutputSpawn;
-        #pragma warning restore 0649
         
         public void SetPrefab(GameObject value) { prefab = value; }
         public void SetLocation(Transform value) { location = value; }
