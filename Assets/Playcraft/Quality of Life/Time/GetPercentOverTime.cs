@@ -24,7 +24,6 @@ namespace Playcraft
 
         public (float, bool) GetProgress() { return (percent, !inProgress); }
         
-        
         public IEnumerator Run(IPercent process, float newDuration = -1f)
         {
             if (newDuration > 0f)

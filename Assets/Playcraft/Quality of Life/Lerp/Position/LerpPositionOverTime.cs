@@ -62,21 +62,6 @@ namespace Playcraft
         IEnumerator MoveRoutine()
         {
             yield return timer.Run(movement, duration);
-                        
-            // * Verify before delete
-            /*timer.SetDurationAndBegin(duration);
-            
-            (float percent, bool complete) progress = timer.GetProgress();
-            
-            while (!progress.complete)
-            {
-                SetPercent(progress.percent);
-                yield return null;
-                progress = timer.GetProgress();
-            }
-            
-            SetPercent(1f);*/
-            
             OnComplete.Invoke(!movement.reverse);
         }
         
