@@ -4,6 +4,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace Playcraft
 {
+    /// Simplifies access of post processing vignette settings
     [Serializable]
     public class AccessVignette
     {

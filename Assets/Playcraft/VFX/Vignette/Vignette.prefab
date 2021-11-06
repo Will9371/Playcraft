@@ -64,8 +64,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vignette:
     volume: {fileID: 5385822781094273577}
-  fullDuration: 1
-  maxIntensity: 0.666
+  inOut:
+    duration: 1
+    max: 0.5
 --- !u!114 &5385822781094273579
 MonoBehaviour:
   m_ObjectHideFlags: 0
