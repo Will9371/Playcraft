@@ -8,8 +8,10 @@ namespace Playcraft.AI
         [SerializeField] AIState startingState;
         [SerializeField] LocalStateHub stateBroadcast;
 
-        AIState state;
-        Collider target;
+        [Header("Visible for debug")]
+        public AIState state;
+        public Collider target;
+        public float targetDistance => target ? Vector3.Distance(target.transform.position, transform.position) : 0;
         
         [NonSerialized] public float enterStateTime;
         [NonSerialized] public bool canSeeTarget;

@@ -51,6 +51,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7506527793381090350}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Stretch
         m_Mode: 1
         m_Arguments:
@@ -119,6 +120,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -143,6 +145,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &7506527793381090337
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -171,6 +174,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {fileID: 1463920183206751805}
   end: {fileID: 2704507363769323197}
+  process:
+    self: {fileID: 7506527793381090338}
+    start: {fileID: 1463920183206751805}
+    end: {fileID: 2704507363769323197}
+    startPosition: {x: 9.06, y: 0, z: -2.5070565}
+    endPosition: {x: 8.6640005, y: 0, z: -0.7150565}
 --- !u!114 &3812704117862673657
 MonoBehaviour:
   m_ObjectHideFlags: 0

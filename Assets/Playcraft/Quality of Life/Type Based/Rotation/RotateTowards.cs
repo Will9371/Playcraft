@@ -1,42 +1,46 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 namespace Playcraft
 {
-    public class RotateTowards : MonoBehaviour
+    [Serializable]
+    public class RotateTowards
     {
-        [SerializeField] Transform self;
-        [SerializeField] float speed = 5000;
-        
-        [NonSerialized] public float angle;
-        
-        Quaternion lookRotation;
-        Vector3 direction;
-        float step;
+        [Header("Settings")]
+        public Transform self;
+        public float speed = 120;
+        public bool forceHorizontal;
             
-        public void SetDirection(Vector3SO value) { SetDirection(value.value); }
-        public void SetDirection(Vector3 value) { direction = value; }
+        [Header("Debug")]
+        public Transform target;
+        public Vector3 direction;
+
+        /// Angle in degrees between forward vector from self and desired direction
+        public float angle => Vector3.Angle(self.forward, facingDirection);
+        Quaternion lookRotation => Quaternion.LookRotation(facingDirection);
+        Vector3 horizontalDirection => new Vector3(direction.x, 0, direction.z);
+        Vector3 facingDirection => forceHorizontal ? horizontalDirection : direction;
+        float step => speed * Time.deltaTime;
         
-        void Start()
+        public void SetTarget(Collider value) { target = value ? value.transform : null; }
+        public void SetTarget(Transform value) { target = value; }
+        
+        public void Update()
         {
-            if (!self) self = transform;
+            // Face target if applicable
+            if (target) direction = (target.position - self.position).normalized;
+            
+            // Default direction is forward
+            if (direction == Vector3.zero) direction = self.forward;
+                
+            // Turn incrementally towards desired direction
+            self.rotation = Quaternion.RotateTowards(self.rotation, lookRotation, step); 
         }
 
-        void Update()
+        public void SetDirectionInstant(Vector3 value) 
         {
-            if (direction == Vector3.zero) 
-                direction = self.forward;
-            
-            step = speed * Time.deltaTime;
-            lookRotation = Quaternion.LookRotation(direction);
-            self.rotation = Quaternion.RotateTowards(self.rotation, lookRotation, step);
-            
-            angle = Vector3.Angle(self.forward, direction);            
-        }
-        
-        public void SetDirectionInstant(Vector3 direction)
-        {
-            self.rotation = Quaternion.LookRotation(direction);   
+            direction = value; 
+            self.rotation = Quaternion.LookRotation(value); 
         }
     }
 }

@@ -6,26 +6,73 @@ namespace Playcraft
 {
     public static class VectorMath
     {
-        public static Vector3 Copy(Vector3 original)
-        {
-            return new Vector3(original.x, original.y, original.z);
-        }
+        #region Conversions
     
-        public static Vector3 EqualVector3(float size)
+        public static Vector3 Copy(Vector3 original) { return new Vector3(original.x, original.y, original.z); }
+    
+        public static Vector3 EqualVector3(float size) { return new Vector3(size, size, size); }
+        
+        public static Vector3 Vector2to3(Vector2 value) { return new Vector3(value.x, 0f, value.y); }
+        
+        public static Vector2 Vector3to2(Vector3 value) { return new Vector2(value.x, value.z); }
+        
+        public static Vector2 DegreeToVector2(float degree, Vector2 zeroVector)
         {
-            return new Vector3(size, size, size);
+            var offset = Vector2ToDegree(zeroVector);
+            return DegreeToVector2(degree + offset);
         }
         
+        public static Vector2 DegreeToVector2(float degree) { return RadianToVector2(degree * Mathf.Deg2Rad); }
+        
+        // Not tested
+        public static Vector2 RadianToVector2(float radian, Vector2 zero)
+        {
+            var offset = Vector2ToDegree(zero) * Mathf.Deg2Rad;
+            return RadianToVector2(radian + offset);
+        }
+        
+        // Assumes 0 = up
+        public static Vector2 RadianToVector2(float radian) { return new Vector2(Mathf.Sin(radian), Mathf.Cos(radian)); }
+        
+        public static Vector2 Rotate(Vector2 vector, float radians)
+        {
+            float cos = Mathf.Cos(radians);
+            float sin = Mathf.Sin(radians);
+            return new Vector2(vector.x * cos - vector.y * sin, vector.x * sin + vector.y * cos);
+        }
+        
+        public static Vector2 PerspectiveVector(Vector2 input, Vector2 source, Vector2 target)
+        {    
+            var angle = Vector2ToDegree(input) + Vector2ToDegree(source) - Vector2ToDegree(target);
+            return DegreeToVector2(angle);
+        }
+        
+        public static float Vector2ToDegree(Vector2 vector) { return Vector2ToDegree(vector, Vector2.up); }
+        
+        public static float Vector2ToDegree(Vector2 value, Vector2 zero)
+        {
+            float angle = Vector2.Angle(zero, value);
+            Vector3 cross = Vector3.Cross(zero, value);
+            if (cross.z > 0) angle = 360 - angle;
+            return angle;
+        }
+        
+        public static float AngleToDot(float angle) { return Mathf.Cos(Mathf.Deg2Rad * angle/2); }
+        
+        public static float DotToAngle(float dot) { return Mathf.Acos(dot) * Mathf.Rad2Deg * 2f; }
+
+        #endregion
+    
         #region Get closest element
         
         public static Transform GetClosest(Transform[] array, Transform reference)
         {
-            return GetClosest(array.ToList(), reference.position);
+            return GetClosest(array, reference.position);
         }
         
         public static Transform GetClosest(Transform[] array, Vector3 position)
         {
-            return GetClosest(array.ToList(), position);
+            return array[GetClosestIndex(array, position)];
         }
     
         public static Transform GetClosest(List<Transform> list, Vector3 position)
@@ -35,24 +82,37 @@ namespace Playcraft
         
         public static int GetClosestIndex(Transform[] array, Transform reference)
         {
-            return GetClosestIndex(array.ToList(), reference.position);
+            return GetClosestIndex(array, reference.position);
         }
         
         public static int GetClosestIndex(Transform[] array, Vector3 position)
         {
-            return GetClosestIndex(array.ToList(), position);
+            var pointList = new Vector3[array.Length];
+            for (int i = 0; i < array.Length; i++)
+                pointList[i] = array[i].position;
+                
+            return GetClosestIndex(pointList, position);
         }
         
         public static int GetClosestIndex(List<Transform> list, Vector3 position)
         {
+            var pointList = new Vector3[list.Count];
+            for (int i = 0; i < list.Count; i++)
+                pointList[i] = list[i].position;
+                
+            return GetClosestIndex(pointList, position);
+        }
+        
+        public static int GetClosestIndex(Vector3[] array, Vector3 position)
+        {
             var shortestDistance = Mathf.Infinity;
             var closest = 0;
             
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                Debug.DrawLine(position, list[i].position, Color.red, .25f);
+                Debug.DrawLine(position, array[i], Color.red, .25f);
             
-                var distance = Vector3.Distance(list[i].position, position);
+                var distance = Vector3.Distance(array[i], position);
                 if (distance < shortestDistance)
                 {
                     shortestDistance = distance;
@@ -60,7 +120,7 @@ namespace Playcraft
                 }
             }
             
-            return closest;            
+            return closest;             
         }
         
         public static int GetClosestIndexWithThreshold(Transform[] array, Vector3 reference, int priorIndex, float threshold)
@@ -74,10 +134,8 @@ namespace Playcraft
             var withinThreshold = priorDistance - closestDistance < threshold;
             return withinThreshold ? priorIndex : closestIndex;
         }
-        
-        #endregion
-        
-        // * Merge with GetClosest
+
+        // DEPRECATE: Merge with GetClosest
         public static Vector3 GetClosestPoint(List<Vector3> points, Vector3 desired, Vector3 fallback)
         {
             Vector3 closestPoint = fallback;
@@ -117,75 +175,9 @@ namespace Playcraft
             return result;
         }
         
-        public static Vector3 Vector2to3(Vector2 value)
-        {
-            return new Vector3(value.x, 0f, value.y);
-        }
-        
-        public static Vector2 Vector3to2(Vector3 value)
-        {
-            return new Vector2(value.x, value.z);
-        }
-        
-        public static Vector2 DegreeToVector2(float degree, Vector2 zeroVector)
-        {
-            var offset = Vector2ToDegree(zeroVector);
-            return DegreeToVector2(degree + offset);
-        }
-        
-        public static Vector2 DegreeToVector2(float degree)
-        {
-            return RadianToVector2(degree * Mathf.Deg2Rad);
-        }
-        
-        // Not tested
-        public static Vector2 RadianToVector2(float radian, Vector2 zero)
-        {
-            var offset = Vector2ToDegree(zero) * Mathf.Deg2Rad;
-            return RadianToVector2(radian + offset);
-        }
-        
-        // Assumes 0 = up
-        public static Vector2 RadianToVector2(float radian)
-        {
-            return new Vector2(Mathf.Sin(radian), Mathf.Cos(radian));
-        }
-        
-        public static Vector2 Rotate(Vector2 vector, float radians)
-        {
-            float cos = Mathf.Cos(radians);
-            float sin = Mathf.Sin(radians);
-            return new Vector2(vector.x * cos - vector.y * sin, vector.x * sin + vector.y * cos);
-        }
-        
-        public static Vector2 PerspectiveVector(Vector2 input, Vector2 source, Vector2 target)
-        {    
-            var angle = Vector2ToDegree(input) + Vector2ToDegree(source) - Vector2ToDegree(target);
-            return DegreeToVector2(angle);
-        }
-        
-        public static float Vector2ToDegree(Vector2 vector)
-        {
-            return Vector2ToDegree(vector, Vector2.up);
-        }
-        
-        public static float Vector2ToDegree(Vector2 value, Vector2 zero)
-        {
-            float angle = Vector2.Angle(zero, value);
-            Vector3 cross = Vector3.Cross(zero, value);
-            if (cross.z > 0) angle = 360 - angle;
-            return angle;
-        }
-        
-        public static float AngleToDot(float angle)
-        {
-            return Mathf.Cos(Mathf.Deg2Rad * angle/2);
-        }
-        
-        public static float DotToAngle(float dot)
-        {
-            return Mathf.Acos(dot) * Mathf.Rad2Deg * 2f;
-        }
+        #endregion
+
+        #region Move Towards
         
         public static float MoveTowards(float current, float target, float speed)
         {
@@ -277,6 +269,10 @@ namespace Playcraft
 
             return angle;
         }
+        
+        #endregion
+        
+        #region Validation
 
         public static float MakeValidAngle(float value)
         {
@@ -304,21 +300,26 @@ namespace Playcraft
             return (minInclusive ? min.CompareTo(value) <= 0 : min.CompareTo(value) < 0) && (maxInclusive ? value.CompareTo(max) <= 0 : value.CompareTo(max) < 0);
         }
         
+        #endregion
+        
         public static void SetZRotation(Transform transform, float z)
         {
             var angle = Copy(transform.localEulerAngles);
             angle.z = z;
             transform.localEulerAngles = angle;
         }
-        
-        public static Vector3 RandomCubeDirection()
-        {
-            var normal = Random.insideUnitSphere.normalized;
-            return RoundedVector(normal);
-        }
-        
+
         public static Vector3 RoundedVector(Vector3 value, float multiplier = 1f)
         {
+            // Prevent divide-by-zero errors
+            if (multiplier == 0f)
+                return value;
+                
+            // Simple form for efficiency
+            if (multiplier == 1f)
+                return new Vector3(Mathf.Round(value.x), Mathf.Round(value.y), Mathf.Round(value.z));
+        
+            // General form
             return new Vector3(Mathf.Round(value.x * multiplier) / multiplier, 
                                Mathf.Round(value.y * multiplier) / multiplier, 
                                Mathf.Round(value.z * multiplier) / multiplier);

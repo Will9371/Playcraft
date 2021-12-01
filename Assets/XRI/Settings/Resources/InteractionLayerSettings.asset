@@ -9,10 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d2a3b75ffe6ab48a5e1dd19b7eb302, type: 3}
-  m_Name: Chase
+  m_Script: {fileID: 11500000, guid: 191492db6e452eb468b95433ec162164, type: 3}
+  m_Name: InteractionLayerSettings
   m_EditorClassIdentifier: 
-  exitConditions:
-  - id: 1
-    nextState: {fileID: 11400000, guid: dad8f320766c2e140b7f199fea9ee022, type: 2}
-    timeLimit: 0
+  m_LayerNames:
+  - Default
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 

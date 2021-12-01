@@ -16,21 +16,8 @@ namespace Playcraft
         
         [Serializable] public class CustomTagColliderFilter
         {
-            [SerializeField] SO[] validTags;
             [SerializeField] ColliderListEvent Response;
-        
-            FilterCollidersByCustomTag _process;
-            FilterCollidersByCustomTag process
-            {
-                get
-                {
-                    if (_process == null)
-                        _process = new FilterCollidersByCustomTag(validTags);
-                
-                    return _process;
-                }
-            }
-                
+            FilterCollidersByCustomTag process;
             public void Input(List<Collider> values) { Response.Invoke(process.Input(values)); }
         }
     }

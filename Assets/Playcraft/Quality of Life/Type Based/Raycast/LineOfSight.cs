@@ -1,21 +1,19 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine; 
     
 namespace Playcraft
 {
+    [Serializable]
     public class LineOfSight
     {
-        readonly Transform source;
-        readonly bool requireMultiplePoints;
-        readonly bool debug;
-        
-        public LineOfSight(Transform source, bool requireMultiplePoints = false, bool debug = false)
-        {
-            this.source = source;
-            this.requireMultiplePoints = requireMultiplePoints;
-            this.debug = debug;
-        }
-        
+        [SerializeField] Transform source;
+        [Tooltip("True: only detect colliders with TransformChildContainer component attached.  " +
+                 "False: raycast to center of colliders without TransformChildContainer.")]
+        [SerializeField] bool requireMultiplePoints;
+        [Tooltip("True: draw debug lines for all raycasts.")]
+        [SerializeField] bool debug;
+
         List<Collider> inSight = new List<Collider>();
         
         Vector3 targetVector;

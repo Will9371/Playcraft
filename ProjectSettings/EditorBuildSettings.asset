@@ -14,24 +14,30 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Playcraft/Additive Scenes/Example/Preload/SceneTest_Preload.unity
     guid: 7197c72587cb9504d9a18bb3e7e7860b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Playcraft/Additive Scenes/Example/Level 2/SceneTest_Level_2.unity
     guid: 070aadc981a732f488d5c5a618a2a76c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Playcraft/Additive Scenes/Example/Level 1/SceneTest_Level_1.unity
     guid: 7ab4b2d89fc5825429f5f2a5c2e464fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Playcraft/Additive Scenes/Example/Level 3/SceneTest_Level_3.unity
     guid: 216b217c0e7ba9b49905d0bcf2a1f6be
-  - enabled: 1
+  - enabled: 0
     path: Assets/Playcraft/Additive Scenes/Example/Main Menu/SceneTest_MainMenu.unity
     guid: 5e54eeedbcc07f848b722934a6a84a65
-  - enabled: 1
+  - enabled: 0
     path: Assets/Playcraft/Additive Scenes/Example/Player Data/SceneTest_PlayerData.unity
     guid: 94518768d5c8d7d46affcc762617a150
+  - enabled: 1
+    path: Assets/Proprietary/Sword Trainer/_Examples/Practice Area/Sword Practice.unity
+    guid: 47b4074fb50805c42af0f9c587009e77
+  - enabled: 1
+    path: Assets/Playcraft/VR/Examples/1st Person/Exploration Sample.unity
+    guid: d0a766dc4b811c847a806aaa3fd76541
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e57a9bbe37cf0ca4c9ae75d4d01c9ad1,
       type: 2}

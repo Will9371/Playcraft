@@ -1,38 +1,48 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
 
 namespace Playcraft
 {
-    public class StretchedWire : MonoBehaviour
+    [Serializable]
+    public class StretchedWire
     {
-        public Transform start, end;
-        
-        void Update() { Stretch(); }
-        void OnValidate() { Stretch(); }
-        
+        public Transform self;
+        [Tooltip("If set, will override start position")]
+        public Transform start;
+        [Tooltip("If set, will override end position")]
+        public Transform end;
+        public Vector3 startPosition, endPosition;
+
         Vector3 priorStartPosition;
         Vector3 priorEndPosition;
-        bool startHasMoved => start.position != priorStartPosition;
-        bool endHasMoved => end.position != priorEndPosition;
+        bool startHasMoved => startPosition != priorStartPosition;
+        bool endHasMoved => endPosition != priorEndPosition;
+        
+        public void Stretch(Vector3 startPosition, Vector3 endPosition)
+        {
+            this.startPosition = startPosition;
+            this.endPosition = endPosition;
+            Stretch();
+        }
 
         public void Stretch() 
         {
-            if (!start || !end) return;
+            if (!self) return;
+            if (start) startPosition = start.position;
+            if (end) endPosition = end.position;
             if (!startHasMoved && !endHasMoved) return;
             
-            Stretch(start, end);
-            priorStartPosition = start.position;
-            priorEndPosition = end.position;           
+            self.eulerAngles = TransformLine.Span2Nodes(self, startPosition, endPosition);
+            self.Rotate(90f, 0f, -90f);
+
+            float newYscale = Vector3.Distance(startPosition, endPosition) / 2f;
+            self.localScale = new Vector3(self.localScale.x, newYscale, self.localScale.z);
+            self.position = TransformLine.Midpoint(startPosition, endPosition);   
+
+            priorStartPosition = startPosition;
+            priorEndPosition = endPosition;
         } 
         
-        void Stretch(Transform t1, Transform t2)
-        {
-            //Debug.Log("StretchWire method reached " + t1.position + ", " + t2.position);
-            transform.eulerAngles = TransformLine.Span2Nodes(transform, t1, t2);
-            transform.Rotate(90f, 0f, -90f);
-
-            float newYscale = Vector3.Distance(t1.position, t2.position) / 2f;
-            transform.localScale = new Vector3(transform.localScale.x, newYscale, transform.localScale.z);
-            transform.position = TransformLine.Midpoint(t1.position, t2.position);
-        }
+        public void SetActive(bool value) { self.gameObject.SetActive(value); } 
     }
 }

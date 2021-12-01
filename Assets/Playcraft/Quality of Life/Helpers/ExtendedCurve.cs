@@ -7,7 +7,9 @@ namespace Playcraft
     public class ExtendedCurve
     {
         [SerializeField] AnimationCurve curve;
+        [Tooltip("Remaps input. Broaden this range to increase resolution.")]
         [SerializeField] Vector2 xRange;
+        [Tooltip("Remaps output to Min(X)/Max(Y)")]
         [SerializeField] Vector2 yRange;
         
         public float Evaluate(float x)

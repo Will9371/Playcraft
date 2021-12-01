@@ -25,10 +25,7 @@ namespace Playcraft
             return result;
         }
         
-        public static int RandomIndexNotIncluding(int max, int exclude)
-        {
-            return RandomIndexNotIncluding(max, new List<int>{exclude});
-        }
+        public static int RandomIndexNotIncluding(int max, int exclude) { return RandomIndexNotIncluding(max, new List<int>{exclude}); }
         
         /// Returns a random number less than max (including 0) and excluding any numbers in the excluded list.
         public static int RandomIndexNotIncluding(int max, List<int> excluded)
@@ -45,10 +42,9 @@ namespace Playcraft
             return valid[index];
         }
         
-        public static Vector3 RandomInRectangle(MinMaxVector3 range)
-        {
-            return RandomInRectangle(range.min, range.max);
-        }
+        #region Vector3
+        
+        public static Vector3 RandomInRectangle(MinMaxVector3 range) { return RandomInRectangle(range.min, range.max); }
         
         public static Vector3 RandomInRectangle(Vector3 min, Vector3 max)
         {
@@ -74,19 +70,23 @@ namespace Playcraft
             }
         }
         
+        public static Vector3 RandomCubeDirection()
+        {
+            var normal = Random.insideUnitSphere.normalized;
+            return VectorMath.RoundedVector(normal);
+        }
+        
+        public static Vector3 RandomRotation() { return new Vector3(Random.Range(-180, 180), Random.Range(-180, 180), Random.Range(-180, 180)); }
+        
+        #endregion
+
         /// Example use: shuffledArray = RandomStatics.ShuffleArray(startingArray);
         /// Where startingArray and shuffledArray are arrays of the same type
-        public static T[] ShuffleArray<T>(T[] values)
-        {
-            return values.OrderBy(a => Random.Range(0f, 1f)).ToArray();
-        }
+        public static T[] ShuffleArray<T>(T[] values) { return values.OrderBy(a => Random.Range(0f, 1f)).ToArray(); }
         
         /// Example use: shuffledList = RandomStatics.ShuffleList(startingList);
         /// Where startingList and shuffledList are lists of the same type
-        public static List<T> ShuffleList<T>(List<T> values)
-        {
-            return values.OrderBy(a => Random.Range(0f, 1f)).ToList();
-        }
+        public static List<T> ShuffleList<T>(List<T> values) { return values.OrderBy(a => Random.Range(0f, 1f)).ToList(); }
     }
 
     [Serializable] public struct MinMaxVector3

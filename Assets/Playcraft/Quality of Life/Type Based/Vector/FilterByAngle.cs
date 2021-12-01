@@ -1,21 +1,23 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Playcraft
 {
+    [Serializable]
     public class FilterByAngle
     {
-        readonly Transform source;
-        float minDot = .5f;
+        [SerializeField] Transform source;
+        [SerializeField] [Range(0f, 360f)] float _maxAngle;
         
         ValidateAngleToDot angleDot;
-            
-        public FilterByAngle(Transform source, float maxAngle)
+        float minDot = .5f;
+        
+        public void Validate()
         {
-            this.source = source;
-            SetMaxAngle(maxAngle);
+            SetMaxAngle(_maxAngle);
         }
-            
+
         public void SetMaxAngle(float maxAngle)
         {
             if (angleDot == null) angleDot = new ValidateAngleToDot();

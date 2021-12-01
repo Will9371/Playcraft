@@ -9,8 +9,8 @@ namespace Playcraft
             
         public bool Input(Collider other)
         {
-            var customTags = other.GetComponent<CustomTags>();
-            if (!customTags) return false;
+            if (!other.TryGetComponent<CustomTags>(out var customTags))
+                return false;
             
             foreach (var validTag in validTags)
                 if (customTags.HasTag(validTag))

@@ -1,14 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Playcraft
 {
+    [Serializable]
     public class FilterCollidersByCustomTag
     {
-        SO[] validTags;
-            
-        public FilterCollidersByCustomTag(SO[] validTags) { this.validTags = validTags; }
-            
+        [SerializeField] SO[] validTags;
+        
         CustomTags _tagged; 
         List<Collider> validColliders = new List<Collider>();
             

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7727067337336178952}
   m_Layer: 0
-  m_Name: Point (3)
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,6 +78,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4754054079903541620}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 1
         m_Arguments:
@@ -104,6 +105,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 755313075576334985}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetDirectionInstant
         m_Mode: 0
         m_Arguments:
@@ -351,6 +353,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4897728695457412994}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Begin
         m_Mode: 1
         m_Arguments:
@@ -373,11 +376,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecd4739386153342a9831f3dee9884d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useRange: 1
   range: {x: 0.5, y: 1}
+  interval: 1
   Output:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7984322133111879347}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 1
         m_Arguments:
@@ -388,7 +394,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  beginOnStart: 0
+  beginOnEnable: 0
+  endOnDisable: 0
 --- !u!1 &4192461959536790733
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +492,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2652493290723031484}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -521,6 +529,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7467440755916005649}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetDirection2
         m_Mode: 0
         m_Arguments:
@@ -583,6 +592,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1803986391}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -597,6 +607,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1803986391}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -624,6 +635,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7467440755916005649}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetDirection1
         m_Mode: 0
         m_Arguments:
@@ -684,6 +696,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7467440755916005649}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetDirection0
         m_Mode: 0
         m_Arguments:
@@ -732,6 +745,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 755313075576334985}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
@@ -755,7 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6709361830959682865}
   m_Layer: 0
-  m_Name: Point (1)
+  m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -924,6 +938,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -948,6 +963,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7278859658540048843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1051,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1059,6 +1076,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7282391513317781302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1147,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2679377818386253312}
+        m_TargetAssemblyTypeName: Playcraft.AI.AIVision, Assembly-CSharp
         m_MethodName: SetMaxAngle
         m_Mode: 0
         m_Arguments:
@@ -1161,6 +1180,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7283241636803761958}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetTarget
         m_Mode: 0
         m_Arguments:
@@ -1182,7 +1202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706860004300495480}
   m_Layer: 0
-  m_Name: Point (2)
+  m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+
+using UnityEngine;
 using UnityEngine.XR.Management;
 
 namespace Playcraft.VR
@@ -6,8 +8,10 @@ namespace Playcraft.VR
     public class ValidateVR : MonoBehaviour
     {
         [SerializeField] bool vrEnabled;
+        [SerializeField] GameObject[] activeInFlatscreen;
+        [SerializeField] GameObject[] activeInVr;
         [SerializeField] BoolEvent Relay;
-        
+
         XRGeneralSettings settings => XRGeneralSettings.Instance;
         
         bool initialized;
@@ -23,6 +27,13 @@ namespace Playcraft.VR
             
             initialized = true;
             priorEnabled = vrEnabled;
+            
+            foreach (var item in activeInFlatscreen)
+                item.SetActive(!vrEnabled);
+            foreach (var item in activeInVr)
+                item.SetActive(vrEnabled);
         }
     }
 }
+
+#endif

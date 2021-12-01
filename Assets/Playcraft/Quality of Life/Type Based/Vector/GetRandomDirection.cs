@@ -4,10 +4,8 @@ namespace Playcraft
 {
     public class GetRandomDirection : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Vector3Event Output;
         [SerializeField] bool flatten;
-        #pragma warning restore 0649
 
         public void Input()
         {

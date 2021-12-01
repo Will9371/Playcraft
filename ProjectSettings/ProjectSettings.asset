@@ -135,7 +135,10 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.2
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: e57a9bbe37cf0ca4c9ae75d4d01c9ad1, type: 2}
+  - {fileID: 0}
+  - {fileID: -8861557825007583241, guid: 8ff53a5953c1e164ba9ec27bc042c8f9, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -695,7 +698,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 1
   cloudProjectId: 2392bbfa-ce34-4337-bd6c-bf9b55e50ddd
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

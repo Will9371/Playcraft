@@ -5,13 +5,11 @@ namespace Playcraft.VR
 {
     public class ClimbFeet : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Transform head;
         [SerializeField] Transform rig;
         [SerializeField] Climb leftHand, rightHand;
         [SerializeField] Collider footCollider;
         [SerializeField] SO standTag;
-        #pragma warning restore 0649
 
         bool isGrabbing => leftHand.isGrabbing || rightHand.isGrabbing;
         Vector3 footPosition => footCollider.transform.position; 

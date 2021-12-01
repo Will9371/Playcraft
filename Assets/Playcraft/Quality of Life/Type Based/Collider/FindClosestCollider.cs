@@ -1,14 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Playcraft
 {
+    [Serializable]
     public class FindClosestCollider
     {
-        Transform self;
-                
-        public FindClosestCollider(Transform self) { this.self = self; }
-
+        [SerializeField] Transform self;
+        
         Collider closest;
         float shortestDistance;
         float distance;

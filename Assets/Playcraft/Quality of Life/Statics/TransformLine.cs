@@ -1,15 +1,14 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Playcraft
 {
     public class TransformLine
     {
-        public static Vector3 Span2Nodes(Transform spanner, Transform t1, Transform t2)
+        public static Vector3 Span2Nodes(Transform spanner, Vector3 p1, Vector3 p2)
         {
-            spanner.position = Midpoint(t1.position, t2.position);
+            spanner.position = Midpoint(p1, p2);
 
-            spanner.LookAt(t2, Vector3.up);
+            spanner.LookAt(p2, Vector3.up);
             spanner.Rotate(0f, -90f, 0f);
             
             return spanner.rotation.eulerAngles;

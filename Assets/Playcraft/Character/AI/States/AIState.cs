@@ -21,13 +21,16 @@ namespace Playcraft.AI
         }
     }
 
-    [Serializable] public class AIExitCondition
+    // * Refactor: use ScriptableObjects instead of enum + switch
+    [Serializable] 
+    public class AIExitCondition
     {
         public AIExitConditionID id;
         public AIState nextState;
         
         [Header("Conditional")]
         public float timeLimit;
+        public float distance;
         
         public bool IsSatisfied(AIStateMachine self)
         {
@@ -36,6 +39,8 @@ namespace Playcraft.AI
                 case AIExitConditionID.SeeTarget: return self.canSeeTarget;
                 case AIExitConditionID.CantSeeTarget: return !self.canSeeTarget;
                 case AIExitConditionID.TimeLimit: return Time.time - self.enterStateTime >= timeLimit;
+                case AIExitConditionID.CloseToTarget: return self.targetDistance <= distance;
+                case AIExitConditionID.NotCloseToTarget: return self.targetDistance > distance;
             }
             
             return false;
@@ -47,5 +52,7 @@ namespace Playcraft.AI
         SeeTarget,
         CantSeeTarget,
         TimeLimit,
+        CloseToTarget,
+        NotCloseToTarget,
     }
 }
