@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-// * WPP: nice to be able to hide position and rotation details, 
-// but a problem if breaking up curves by components...
+// Moves position and rotation to match a Transform reference
 namespace Playcraft
 {
     [Serializable]
@@ -17,6 +16,7 @@ namespace Playcraft
         public Transform end;
         
         LerpPosition position = new LerpPosition();
+        [SerializeField]
         LerpRotation rotation = new LerpRotation();
         
         float _percent;

@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    [Serializable] public class LerpRotation : IPercent
+    [Serializable] 
+    public class LerpRotation : IPercent
     {
         public Transform self;
         public bool useLocal = true;

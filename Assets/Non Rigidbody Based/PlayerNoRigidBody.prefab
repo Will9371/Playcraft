@@ -343,10 +343,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5053040950538688241}
+  - component: {fileID: 28916492}
   - component: {fileID: 5053040950538688247}
-  - component: {fileID: 5053040950538688240}
-  - component: {fileID: 130641844}
   - component: {fileID: 130641845}
+  - component: {fileID: 130641844}
   m_Layer: 8
   m_Name: PlayerNoRigidBody
   m_TagString: Player
@@ -370,6 +370,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28916492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5053040950538688253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23ff0599d757fc4c8ebe8638b11b006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindings: {fileID: 11400000, guid: fe80c3f3c66195742aa6fa7b92d8fab0, type: 2}
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5053040950538688247}
+        m_TargetAssemblyTypeName: Playcraft.CombineAsyncVectors, Assembly-CSharp
+        m_MethodName: AddMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5053040950538688247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +425,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5053040950538688240
+--- !u!114 &130641845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,82 +434,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5053040950538688253}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0265720c128672b4fa942a0e8c24d68b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e03cbce6dcb8794899e451013e1577f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - keys: 050100007700000011010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5053040950538688247}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 087a11123cfca154abb2b4e493191519,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 010100006100000014010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5053040950538688247}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 87ddabc8b7414874db895b6c135621be,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 020100007300000012010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5053040950538688247}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: f7a6b7309162cda41b8d94f8d004816b,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - keys: 030100006400000013010000
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5053040950538688247}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: AddMovement
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 69179b0d12d5729459d7210275fa963d,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.Vector3SO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  gravity: {x: 0, y: -1, z: 0}
+  horizontalVelocitySmoothing: 0.25
+  maxSpeed: 7
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &130641844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,22 +461,6 @@ MonoBehaviour:
   frontBackRayCount: 3
   maxClimbAngle: 50
   collider: {fileID: 1602012774}
---- !u!114 &130641845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053040950538688253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e03cbce6dcb8794899e451013e1577f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: {x: 0, y: -1, z: 0}
-  horizontalVelocitySmoothing: 0.25
-  maxSpeed: 7
-  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &5053040950689728438
 GameObject:
   m_ObjectHideFlags: 0

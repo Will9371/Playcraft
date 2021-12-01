@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b62a0f033937a84c98c9b6733d46593, type: 3}
   m_Name: Set Start Focused Scene
   m_EditorClassIdentifier: 
-  startInScene: 1
+  startInScene: 0
