@@ -39,11 +39,6 @@ VR-SPECIFIC FEATURES:
 - Photosphere shader
 
 FEEDBACK AND PLANNED UPDATES:
-This is a side project for me and I don't plan on turning it into a commercial product.  
-I mostly add features based on systems developed from other projects.  As such, I am unlikely 
-to add miscellaneous polish or fixes to subsystems I am not actively working on.  
-If you find any errors with core systems or compilation/build errors, however, 
-please let me know and I will fix them as soon as possible.  
-
-I welcome external contributions.  If there is anything you want to add to this project, 
+This is a side project for me and I don't plan on turning it into a commercial product.  I mostly add features based on systems developed from other projects.  As such, I am unlikely to add miscellaneous polish or fixes to subsystems I am not actively working on.  If you find any errors with core systems or compilation/build errors, however, 
+please let me know and I will fix them as soon as possible.  I welcome external contributions.  If there is anything you want to add to this project, 
 please let me know and I can add you as a contributor so you can make pull requests.
