@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// TBD: convert to Mono/Delegate pattern to allow for multiple & togglable accumulators
 namespace Playcraft
 {
     public class AccumulateVelocity : MonoBehaviour

@@ -28,6 +28,9 @@ namespace Playcraft.VR
             initialized = true;
             priorEnabled = vrEnabled;
             
+            if (activeInFlatscreen == null || activeInVr == null)
+                return;
+            
             foreach (var item in activeInFlatscreen)
                 item.SetActive(!vrEnabled);
             foreach (var item in activeInVr)

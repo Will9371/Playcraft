@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6039165870121918080}
   - component: {fileID: 6039165870121918081}
-  - component: {fileID: 4340268180620367415}
   m_Layer: 0
   m_Name: VR Settings
   m_TagString: Untagged
@@ -45,37 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrEnabled: 0
+  activeInFlatscreen:
+  - {fileID: 0}
+  - {fileID: 0}
+  activeInVr:
+  - {fileID: 0}
   Relay:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4340268180620367415}
-        m_TargetAssemblyTypeName: Playcraft.SplitBool, Assembly-CSharp
-        m_MethodName: Input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
---- !u!114 &4340268180620367415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6039165870121918082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3d170525ca1b1c4ebe7f3d15ddcf9b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnTrue:
-    m_PersistentCalls:
       m_Calls: []
-  OnFalse:
-    m_PersistentCalls:
-      m_Calls: []
-  state: 0

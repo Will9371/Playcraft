@@ -13,6 +13,7 @@ namespace Playcraft.VR
 
         void OnCollisionStay(Collision other)
         {
+            if (!controller) return;
             var scaledImpulse = other.impulse.magnitude/maxImpulse;
             var amplitude = impulseAmplitudeCurve.Evaluate(scaledImpulse);
             controller.SendHapticImpulse(amplitude, .02f);
