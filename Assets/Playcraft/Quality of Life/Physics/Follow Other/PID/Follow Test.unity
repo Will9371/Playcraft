@@ -205,6 +205,85 @@ Transform:
   m_Father: {fileID: 2243506}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &245407905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7503910807319409632, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 938479792}
+    - target: {fileID: 7503910807319409632, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: torqueLookToward.target
+      value: 
+      objectReference: {fileID: 938479792}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409645, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Physics Sword (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09e099b9b7327fb4bb72a16af77b13c7, type: 3}
 --- !u!1 &280252714
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &407679166
 Transform:
   m_ObjectHideFlags: 0
@@ -471,6 +550,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &496199421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 496199422}
+  m_Layer: 0
+  m_Name: Target (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &496199422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496199421}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &524148759
 GameObject:
@@ -627,7 +736,7 @@ PrefabInstance:
     - target: {fileID: 2754090150027069010, guid: 18673434521744a4a9f562b742557c21,
         type: 3}
       propertyPath: m_Name
-      value: Physics Sword (3)
+      value: PID Sword
       objectReference: {fileID: 0}
     - target: {fileID: 2754090150027069010, guid: 18673434521744a4a9f562b742557c21,
         type: 3}
@@ -692,6 +801,36 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 18673434521744a4a9f562b742557c21, type: 3}
+--- !u!1 &938479791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938479792}
+  m_Layer: 0
+  m_Name: Target (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &938479792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938479791}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.5, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &981960758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2754090150027069010, guid: 18673434521744a4a9f562b742557c21,
@@ -725,8 +864,11 @@ MonoBehaviour:
       maxAcceleration: 2000
       maxAngularSpeed: 500
       pGain: 1000
+      iGain: 0
       dGain: 100
   target: {fileID: 1746851184}
+  applyPosition: 0
+  applyRotation: 0
 --- !u!54 &981960763 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 2754090150027069021, guid: 18673434521744a4a9f562b742557c21,
@@ -1078,7 +1220,7 @@ GameObject:
   - component: {fileID: 1344224173}
   - component: {fileID: 1344224172}
   m_Layer: 0
-  m_Name: Physics Sword (1)
+  m_Name: Joint Sword (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11402,24 +11544,29 @@ PrefabInstance:
       objectReference: {fileID: 407679166}
     - target: {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
       propertyPath: process.rotation.dGain
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
       propertyPath: process.rotation.pGain
-      value: 20
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
       propertyPath: process.rotation.maxAcceleration
-      value: 180
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
       propertyPath: process.rotation.maxAngularSpeed
-      value: 90
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2754090150027069010, guid: 18673434521744a4a9f562b742557c21,
         type: 3}
       propertyPath: m_Name
-      value: Physics Sword (2)
+      value: PID Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754090150027069010, guid: 18673434521744a4a9f562b742557c21,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2754090150027069020, guid: 18673434521744a4a9f562b742557c21,
         type: 3}
@@ -11664,6 +11811,90 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &6799080112489612762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7503910807319409632, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 496199422}
+    - target: {fileID: 7503910807319409632, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: torqueLookToward.target
+      value: 
+      objectReference: {fileID: 496199422}
+    - target: {fileID: 7503910807319409632, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: torqueLookToward.followStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409635, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503910807319409645, guid: 09e099b9b7327fb4bb72a16af77b13c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Physics Sword (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09e099b9b7327fb4bb72a16af77b13c7, type: 3}
 --- !u!114 &7526966344663400819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12044,7 +12275,7 @@ GameObject:
   - component: {fileID: 2566073785464914346}
   - component: {fileID: 3655751154440036687}
   m_Layer: 0
-  m_Name: Physics Sword
+  m_Name: Joint Sword (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

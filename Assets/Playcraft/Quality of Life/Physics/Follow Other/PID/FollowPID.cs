@@ -7,11 +7,13 @@ namespace Playcraft
     {
         [SerializeField] LocationPID process;
         [SerializeField] Transform target;
+        [SerializeField] bool applyPosition = true;
+        [SerializeField] bool applyRotation = true;
         
         void FixedUpdate() 
         {
-            process.position.targetPosition = target.position;
-            process.rotation.targetAngle = target.eulerAngles; 
+            if (applyPosition) process.position.targetPosition = target.position;
+            if (applyRotation) process.rotation.targetAngle = target.eulerAngles; 
             process.FixedUpdate(); 
         }
         
