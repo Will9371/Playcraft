@@ -11400,6 +11400,22 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 407679166}
+    - target: {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
+      propertyPath: process.rotation.dGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
+      propertyPath: process.rotation.pGain
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
+      propertyPath: process.rotation.maxAcceleration
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275159814, guid: 18673434521744a4a9f562b742557c21, type: 3}
+      propertyPath: process.rotation.maxAngularSpeed
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 2754090150027069010, guid: 18673434521744a4a9f562b742557c21,
         type: 3}
       propertyPath: m_Name

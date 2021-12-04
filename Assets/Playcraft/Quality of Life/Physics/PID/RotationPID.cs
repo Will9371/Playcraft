@@ -23,35 +23,42 @@ namespace Playcraft
         public float maxAngularSpeed = 500;
         [Tooltip("Proportional gain")]                        
         public float pGain = 1000; 
+        public float iGain = 0f;
         [Tooltip("Differential gain")]
         public float dGain = 100;  
         
-        const float degreesInCircle = 360;
+        //const float degreesInCircle = 360;
         
         public Vector3 angle { get; private set; }
-        public Vector3 acceleration { get; private set; }
+        public Vector3 torque { get; private set; }
         public Vector3 angularSpeed { get; private set; }
         
-        Vector3 error;
-        Vector3 lastError;
-        Vector3 errorDelta;
+        Vector3 pError;
+        Vector3 iError;
+        Vector3 dError;
+        Vector3 lastPError;
 
         public void FixedUpdate()
         {
-            error = targetAngle - angle;
-            errorDelta = (error - lastError) / Time.deltaTime; 
-            lastError = error;
+            pError = targetAngle - angle;
+            lastPError = pError;
             
-            acceleration = error * pGain + errorDelta * dGain;
-            acceleration = ClampVector(acceleration, maxAcceleration);
+            iError += pError * Time.deltaTime;
+            dError = (pError - lastPError) / Time.deltaTime;
+            
+            torque = pGain * pError + iGain * iError + dGain * dError;
+            torque = ClampVector(torque, maxAcceleration);
 
-            angularSpeed += acceleration * Time.deltaTime;
+            angularSpeed += torque * Time.deltaTime;
             angularSpeed = ClampVector(angularSpeed, maxAngularSpeed);
 
             angle += angularSpeed * Time.deltaTime;
             
             // OK in isolation, but still has problem of moving through colliders
-            rb.rotation = Quaternion.Euler(angle.x % degreesInCircle, angle.y % degreesInCircle, angle.z % degreesInCircle);
+            // rb.rotation = Quaternion.Euler(angle.x % degreesInCircle, angle.y % degreesInCircle, angle.z % degreesInCircle);
+            
+            // Fails: reaches desired rotation, falls into erratic movement afterwards
+            rb.AddTorque(torque);   
         }
 
         Vector3 ClampVector(Vector3 vector, float max)
