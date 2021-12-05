@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    /// Combines a rotation and position PID into a single system
+    /// Combines a rotation and position PID into a single system.
+    /// ERROR: erratic results in RotationPID, use PhysicsFollow instead.
     [Serializable]
     public class LocationPID
     {

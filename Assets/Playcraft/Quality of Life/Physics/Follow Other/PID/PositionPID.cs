@@ -17,6 +17,7 @@ namespace Playcraft
         [Header("Settings")]
         [Tooltip("Rigidbody will rotate towards this angle")]
         public Vector3 targetPosition;
+        [Tooltip("More massive objects will require greater force to move at the same velocity.")]
         public float maxForce = 1000; 
         [Tooltip("Proportional gain")]
         public float pGain = 200; 

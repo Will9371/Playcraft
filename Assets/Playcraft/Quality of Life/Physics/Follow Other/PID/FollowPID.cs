@@ -2,7 +2,8 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    // PID-based system for following a target's position and rotation
+    /// PID-based system for following a target's position and rotation
+    /// ERROR: erratic results in RotationPID, use PhysicsFollow instead
     public class FollowPID : MonoBehaviour
     {
         [SerializeField] LocationPID process;

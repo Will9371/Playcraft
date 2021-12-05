@@ -8,6 +8,7 @@ using UnityEngine;
 namespace Playcraft
 {
     /// PID-based system for rotating a physics object towards a target rotation
+    /// ERROR: erratic results, use TorqueRotation instead
     [Serializable]
     public class RotationPID
     {
