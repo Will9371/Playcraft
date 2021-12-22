@@ -6,8 +6,8 @@ namespace Playcraft
     [Serializable]
     public class LerpAxisAngle : IPercent
     {
-        [SerializeField] RotateAxis axis;
-        [SerializeField] bool useCurve;
+        public RotateAxis axis;
+        public bool useCurve;
         public AnimationCurve curve;
         
         float startAngle;
@@ -40,7 +40,13 @@ namespace Playcraft
             endAngle = end;
         }
         
-        public void SetAngle(float value) { axis.SetAngle(value); }
+        public void SetCurve(bool useCurve, AnimationCurve curve) 
+        { 
+            this.useCurve = useCurve;
+            if (curve != null) this.curve = new AnimationCurve(curve.keys); 
+        }
+        
+        public void SetAngle(float value) { axis.SetAngle(value); endAngle = value; }
         public void Validate() { axis.ValidateAngle(); }
     }
 }

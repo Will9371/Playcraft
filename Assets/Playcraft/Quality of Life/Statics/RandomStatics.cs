@@ -8,7 +8,8 @@ namespace Playcraft
 {
     public static class RandomStatics
     {
-        public static bool CoinToss(float center = 0.5f) { return Random.Range(0f, 1f) > center; }
+        /// 0.5 (default) = 50% chance of True; 0 = guaranteed False; 1 = guaranteed True 
+        public static bool CoinToss(float center = 0.5f) { return center > Random.Range(0f, 1f); }
         
         public static WaitForSeconds RandomWait(Vector2 range) { return new WaitForSeconds(Random.Range(range.x, range.y)); }
     

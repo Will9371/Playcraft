@@ -10,9 +10,9 @@ namespace Playcraft
     public class ReserveInt
     {
         [Tooltip("Include all integers in range (inclusive, rounded)")]
-        [SerializeField] Vector2 range;
+        public Vector2 range;
         [Tooltip("Allows same source to get same value twice (or more) in a row")]
-        [SerializeField] bool allowRepeat;
+        public bool allowRepeat;
         
         ReservedValue[] values;
         

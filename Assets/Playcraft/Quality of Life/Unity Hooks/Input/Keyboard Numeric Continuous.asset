@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f70d7739811393409851f750ff28133, type: 3}
+  m_Name: Keyboard Numeric Continuous
+  m_EditorClassIdentifier: 
+  values:
+  - keys: 0001000030000000
+    pressType: 2
+  - keys: 0101000031000000
+    pressType: 2
+  - keys: 0201000032000000
+    pressType: 2
+  - keys: 0301000033000000
+    pressType: 2
+  - keys: 0401000034000000
+    pressType: 2
+  - keys: 0501000035000000
+    pressType: 2
+  - keys: 0601000036000000
+    pressType: 2
+  - keys: 0701000037000000
+    pressType: 2
+  - keys: 0801000038000000
+    pressType: 2
+  - keys: 0901000039000000
+    pressType: 2

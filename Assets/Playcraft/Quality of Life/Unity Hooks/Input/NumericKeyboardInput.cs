@@ -1,17 +1,26 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Playcraft
 {
-    public class NumericKeyboardInput : MonoBehaviour
+    [Serializable]
+    public class NumericKeyboardInput
     {
-        [SerializeField] Keybindings bindings;
-        [SerializeField] IntEvent output;
-    
-        void Update()
+        public Keybindings bindings;
+        
+        [HideInInspector]
+        public List<int> activeValues = new List<int>();
+        
+        public List<int> Update()
         {
+            activeValues.Clear();
+        
             for (int i = 0; i < bindings.values.Length; i++)
                 if (bindings.values[i].IsActive())
-                    output.Invoke(i);
+                    activeValues.Add(i);
+
+            return activeValues;
         }
     }
 }

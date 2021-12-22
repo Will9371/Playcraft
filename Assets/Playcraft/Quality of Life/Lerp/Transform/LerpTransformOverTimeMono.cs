@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace Playcraft
 {
-    public class LerpLocationOverTime : MonoBehaviour
+    // Refactor to use LerpTransformOverTime (if it works)
+    public class LerpTransformOverTimeMono : MonoBehaviour
     {
-        [SerializeField] LerpLocation movement;
+        [SerializeField] LerpTransform movement;
         [SerializeField] GetPercentOverTime timer = new GetPercentOverTime();
         [SerializeField] TransformEvent reachDestination;
         
@@ -22,12 +23,18 @@ namespace Playcraft
             StartCoroutine(Move());    
         }
         
+        public void BeginMoveFromSelf(Vector3 newPosition, Quaternion newRotation)
+        {
+            movement.SetSelfToEnd(newPosition, newRotation);
+            StartCoroutine(Move());
+        }
+        
         IEnumerator Move() 
         { 
             yield return timer.Run(movement); 
             reachDestination.Invoke(destination);
         }
         
-        void OnValidate() { movement.Validate(); }
+        void OnValidate() { movement.OnValidate(); }
     }
 }

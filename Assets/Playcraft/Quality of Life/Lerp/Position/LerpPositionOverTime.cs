@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+// REFACTOR: split into Mono/Non-Mono
 namespace Playcraft
 {
     public class LerpPositionOverTime : MonoBehaviour
@@ -59,7 +60,7 @@ namespace Playcraft
             StartCoroutine(MoveRoutine()); 
         }
         
-        IEnumerator MoveRoutine()
+        public IEnumerator MoveRoutine()
         {
             yield return timer.Run(movement, duration);
             OnComplete.Invoke(!movement.reverse);

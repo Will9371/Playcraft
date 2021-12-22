@@ -60,6 +60,16 @@ namespace Playcraft
         public static float AngleToDot(float angle) { return Mathf.Cos(Mathf.Deg2Rad * angle/2); }
         
         public static float DotToAngle(float dot) { return Mathf.Acos(dot) * Mathf.Rad2Deg * 2f; }
+        
+        public static Vector3[] TransformsToPositions(Transform[] transforms)
+        {
+            var positions = new Vector3[transforms.Length];
+            
+            for (int i = 0; i < transforms.Length; i++)
+                positions[i] = transforms[i].position;
+                
+            return positions;
+        }
 
         #endregion
     
@@ -124,16 +134,19 @@ namespace Playcraft
         }
         
         public static int GetClosestIndexWithThreshold(Transform[] array, Vector3 reference, int priorIndex, float threshold)
+        { return GetClosestIndexWithThreshold(TransformsToPositions(array), reference, priorIndex, threshold); }
+        
+        public static int GetClosestIndexWithThreshold(Vector3[] array, Vector3 reference, int priorIndex, float threshold)
         {
-            var closestIndex = GetClosestIndex(array.ToList(), reference);
+            var closestIndex = GetClosestIndex(array, reference);
             if (closestIndex == priorIndex || priorIndex == -1) return closestIndex;
             
-            var closestDistance = Vector3.Distance(array[closestIndex].position, reference);
-            var priorDistance = Vector3.Distance(array[priorIndex].position, reference);
+            var closestDistance = Vector3.Distance(array[closestIndex], reference);
+            var priorDistance = Vector3.Distance(array[priorIndex], reference);
             
             var withinThreshold = priorDistance - closestDistance < threshold;
             return withinThreshold ? priorIndex : closestIndex;
-        }
+        }        
 
         // DEPRECATE: Merge with GetClosest
         public static Vector3 GetClosestPoint(List<Vector3> points, Vector3 desired, Vector3 fallback)

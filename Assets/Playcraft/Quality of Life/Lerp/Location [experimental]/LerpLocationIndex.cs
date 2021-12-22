@@ -7,25 +7,23 @@ namespace Playcraft
     [Serializable]
     public class LerpLocationIndex : IPercent
     {
-        public Transform[] locations;
         [SerializeField] LerpLocation process;
-        
+        public Location[] locations;
+
         public int startIndex; 
         public int endIndex;
         
         public void SetDestination(int newIndex) { SetEndpoints(endIndex, newIndex); }
         
-        public void SetRandomDestination() 
-        {
-            var index = Random.Range(0, locations.Length);
-            SetDestination(index); 
-        }
+        public void SetRandomDestination() { SetDestination(GetRandomDestination()); }
+        public int GetRandomDestination() { return Random.Range(0, locations.Length); }
         
-        void SetEndpoints(int startIndex, int endIndex)
+        public void SetEndpoints(int startIndex, int endIndex)
         {
             this.startIndex = startIndex;
             this.endIndex = endIndex;
-            process.SetStartAndEnd(locations[startIndex], locations[endIndex]);
+            process.SetStart(locations[startIndex]);
+            process.SetEnd(locations[endIndex]);
         }
         
         public void SetSelfToEnd(int endIndex)
@@ -40,20 +38,24 @@ namespace Playcraft
             process.SetSelfToEnd(locations[endIndex]);
         }
         
-        public void SetDestinations(Transform[] input)
+        public void SetDestinations(Location[] input)
         {
-            locations = new Transform[input.Length];
+            locations = new Location[input.Length];
             
             for (int i = 0; i < input.Length; i++)
                 locations[i] = input[i];
         }
 
         public Transform self { get => process.self; set => process.self = value; }
-        public Transform start { get => process.start; set => process.start = value; }
-        public Transform end { get => process.end; set => process.end = value; }
         public float percent { get => process.percent ; set => process.percent = value; }
-        public void SetDestination(Transform value) { process.SetEnd(value); }
+        public void SetDestination(Location value) { process.SetEnd(value); }
         
-        public void Validate() { process.Validate(); }
+        public void OnValidate() 
+        {
+            SetEndpoints(startIndex, endIndex); 
+            process.OnValidate(); 
+        }
+        
+        public void SetUseLocal(bool value) { process.useLocal = value; }
     }
 }

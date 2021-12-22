@@ -1,6 +1,9 @@
-﻿// CREDIT: Fraser Hill
+﻿// CREDIT: mstevenson
+// SOURCE: https://answers.unity.com/questions/278147/how-to-use-target-rotation-on-a-configurable-joint.html
 // Edited by Will Petillo
-// OBSOLETE
+
+// OBSOLETE: application works with a ConfigurableJoint alone
+// ERROR: Swords built with this system pass through each other when pressed
 
 using UnityEngine;
 

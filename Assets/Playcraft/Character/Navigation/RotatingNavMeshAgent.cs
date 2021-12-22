@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Playcraft.Navigation
 {
+    /// Extends NavMeshAgent to rotate towards target when within stopping distance
     [Serializable]
     public class RotatingNavMeshAgent
     {
@@ -18,10 +20,10 @@ namespace Playcraft.Navigation
 
         bool atTarget;
         
-        public void OnValidate()
-        {
-            agent.target = target;
-            rotation.SetTarget(target);
+        public void OnValidate() 
+        { 
+            if (target) SetTarget(target); 
+            rotation.forceHorizontal = true;
         }
         
         public void Start() { agent.onSetAtTarget += SetAtTarget; }
@@ -34,5 +36,18 @@ namespace Playcraft.Navigation
         }
         
         public void SetAtTarget(bool atTarget) { this.atTarget = atTarget; }
+        
+        public void SetTarget(Transform value)
+        {
+            target = value;
+            agent.target = target;
+            rotation.SetTarget(target);
+        }
+        
+        public void SetSelf(Transform self)
+        {
+            agent.agent = self.GetComponent<NavMeshAgent>();
+            rotation.self = self;
+        }
     }
 }

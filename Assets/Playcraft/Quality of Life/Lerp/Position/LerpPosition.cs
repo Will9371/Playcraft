@@ -14,11 +14,14 @@ namespace Playcraft
         public Vector3 end;
         public bool reverse;
         
+        public float distance => Vector3.Distance(start, end);
+        
         public Vector3 position
         {
             get => useLocal ? self.localPosition : self.position;
             set
             {
+                if (!self) return;
                 if (useLocal) self.localPosition = value;
                 else self.position = value;
             }
@@ -60,9 +63,17 @@ namespace Playcraft
                 position = Vector3.Lerp(start, end, curvedPercent);
             }
         }
+        
+        public void SetCurve(bool useCurve, AnimationCurve curve) 
+        { 
+            this.useCurve = useCurve;
+            if (curve != null) this.curve = new AnimationCurve(curve.keys); 
+        }
 
+        // * Consider removal
         public void SwitchDirection() { reverse = !reverse; }
 
+        // * Consider removal
         #region Cached Path
         
         bool cacheInitialized;

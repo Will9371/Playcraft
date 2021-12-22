@@ -73,5 +73,29 @@ namespace Playcraft
         }
         
         #endregion
+
+        public static Transform[] GetChildren(Transform parent)
+        {
+            if (!parent) return null;
+            
+            var result = new Transform[parent.childCount];
+            
+            for (int i = 0; i < parent.childCount; i++)
+                result[i] = parent.GetChild(i);
+                
+            return result;
+        }
+        
+        public static Vector3[] GetPositions(Transform[] locations, bool useLocal)
+        {
+            if (locations == null) return null;
+        
+            var result = new Vector3[locations.Length];
+            
+            for (int i = 0; i < locations.Length; i++)
+                result[i] = useLocal ? locations[i].localPosition : locations[i].position;
+                
+            return result;
+        }
     }
 }

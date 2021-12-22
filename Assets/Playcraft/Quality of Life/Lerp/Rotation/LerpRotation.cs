@@ -16,7 +16,8 @@ namespace Playcraft
 
         public void SetSelfIfNull(Transform value) { if (!self) self = value; }
         
-        Quaternion _rotation;
+        [NonSerialized]
+        public Quaternion rotation;
         
         float _percent;
         float curvedPercent;
@@ -27,9 +28,9 @@ namespace Playcraft
             {
                 _percent = value;
                 curvedPercent = useCurve ? curve.Evaluate(_percent) : _percent;
-                _rotation = Quaternion.Slerp(start, end, curvedPercent);
-                if (useLocal) self.localRotation = _rotation;
-                else self.rotation = _rotation;                
+                rotation = Quaternion.Slerp(start, end, curvedPercent);
+                if (useLocal) self.localRotation = rotation;
+                else self.rotation = rotation;                
             }
         }
 
@@ -42,6 +43,12 @@ namespace Playcraft
         {
             start = newStart;
             end = newEnd;
+        }
+        
+        public void SetCurve(bool useCurve, AnimationCurve curve) 
+        { 
+            this.useCurve = useCurve;
+            if (curve != null) this.curve = new AnimationCurve(curve.keys); 
         }
     }
 }

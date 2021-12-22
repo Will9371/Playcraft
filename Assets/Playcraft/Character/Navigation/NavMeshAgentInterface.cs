@@ -29,7 +29,7 @@ namespace Playcraft.Navigation
             
             if (!wasAtTarget && atTarget) 
                 onSetAtTarget?.Invoke(true);
-            else if (wasAtTarget && !atTarget) //Vector3.Distance(agent.transform.position, target.position) > agent.stoppingDistance)
+            else if (wasAtTarget && !atTarget)
                 onSetAtTarget?.Invoke(false);
                 
             wasAtTarget = atTarget;

@@ -12,6 +12,8 @@ namespace Playcraft
         public int startIndex; 
         public int endIndex;
         
+        public float distance => process.distance;
+        
         public void SetDestination(int newIndex) { SetEndpoints(endIndex, newIndex); }
         
         public void SetRandomDestination() 

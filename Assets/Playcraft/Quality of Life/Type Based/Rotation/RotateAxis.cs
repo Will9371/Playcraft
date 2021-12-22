@@ -7,8 +7,8 @@ namespace Playcraft
     public class RotateAxis
     {
         public Transform rotor;
-        [SerializeField] Axis axis = Axis.Z;
-        [SerializeField] bool useLocal;
+        public Axis axis = Axis.Z;
+        public bool useLocal;
         [Range(-1, 361)] public float angle;
         
         public void ValidateAngle()

@@ -8,9 +8,7 @@ namespace Playcraft
 
     public class InputRotation : MonoBehaviour
     {    
-        #pragma warning disable 0649
         [SerializeField] Vector3Event OnRotate;
-        #pragma warning restore 0649
         
         Vector3 rotationAxis;
 

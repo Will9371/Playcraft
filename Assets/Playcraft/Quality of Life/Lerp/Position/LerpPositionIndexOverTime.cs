@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+// REFACTOR: repeat logic from LerpPositionOverTime
 namespace Playcraft
 {
     public class LerpPositionIndexOverTime : MonoBehaviour
@@ -18,5 +19,17 @@ namespace Playcraft
         }
         
         IEnumerator Move() { yield return timer.Run(movement); }
+        
+        IEnumerator MoveAtSpeed(float speed)
+        {
+            if (speed <= 0f) 
+            {
+                Debug.LogError($"Invalid move speed {speed}");
+                yield break;
+            }
+            
+            timer.duration = movement.distance/speed;
+            yield return timer.Run(movement);
+        }
     }
 }

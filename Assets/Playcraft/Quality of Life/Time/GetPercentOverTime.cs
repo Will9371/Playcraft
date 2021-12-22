@@ -7,7 +7,7 @@ namespace Playcraft
     [Serializable] 
     public class GetPercentOverTime
     {
-        public float duration;
+        public float duration = 1f;
         float startTime;
         
         public float elapsedTime => Time.time - startTime;

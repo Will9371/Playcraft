@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Playcraft
 {
+    // Continuously rotate towards a target transform
     [Serializable]
     public class RotateTowards
     {

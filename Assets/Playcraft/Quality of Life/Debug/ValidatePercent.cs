@@ -18,5 +18,12 @@ namespace Playcraft
             Output.Invoke(percent);
             priorPercent = percent;
         }
+        
+        public void ZeroPercent() { SetPercent(0); }
+        public void SetPercent(float value)
+        {
+            percent = value;
+            CheckPercent();
+        }
     }
 }

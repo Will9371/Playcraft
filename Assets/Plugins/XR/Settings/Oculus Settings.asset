@@ -17,3 +17,12 @@ MonoBehaviour:
   SharedDepthBuffer: 1
   DashSupport: 1
   V2Signing: 1
+  LowOverheadMode: 0
+  ProtectedContext: 0
+  FocusAware: 1
+  OptimizeBufferDiscards: 1
+  PhaseSync: 0
+  SubsampledLayout: 0
+  TargetQuest: 1
+  TargetQuest2: 1
+  SystemSplashScreen: {fileID: 0}
