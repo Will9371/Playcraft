@@ -15,10 +15,11 @@ namespace Playcraft
         
         public void SetDuration(float value) { timer.duration = value; }
 
-        public IEnumerator BeginMoveFromSelf(Transform destination) { yield return BeginMoveFromSelf(destination.position, destination.rotation); }
+        /// Begin movement from current location to destination
+        public IEnumerator Move(Transform destination) { yield return Move(destination.position, destination.rotation); }
 
-        // RENAME: Move (mention self in comment)
-        public IEnumerator BeginMoveFromSelf(Vector3 newPosition, Quaternion newRotation)
+        /// Begin movement from current location to destination
+        public IEnumerator Move(Vector3 newPosition, Quaternion newRotation)
         {
             movement.SetSelfToEnd(newPosition, newRotation);
             yield return timer.Run(movement); 

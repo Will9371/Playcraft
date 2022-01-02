@@ -1,20 +1,28 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class SmoothFollowRotation
+namespace Playcraft
 {
-    public Transform self;
-    public Transform target;
-    public float speed = 90f;
-
-    Quaternion rotation => self.rotation;
-    Quaternion nextRotation => Quaternion.RotateTowards(rotation, target.rotation, stepDistance);
-    float stepDistance => speed * Time.deltaTime;
-
-    public void Update()
+    /// Continuously follow a target transform at a given rotational speed
+    [Serializable]
+    public class SmoothFollowRotation
     {
-        if (!self || !target) return;
-        self.rotation = nextRotation;
+        public Transform self;
+        public Transform target;
+        
+        [Tooltip("Angles per second")]
+        public float speed = 90f;
+
+        Quaternion rotation => self.rotation;
+        Quaternion targetRotation => target.rotation;
+        Quaternion nextRotation => Quaternion.RotateTowards(rotation, targetRotation, stepDistance);
+        float stepDistance => speed * Time.deltaTime;
+        public float angleToTarget => Quaternion.Angle(rotation, targetRotation);
+
+        public void Update()
+        {
+            if (!self || !target) return;
+            self.rotation = nextRotation;
+        }
     }
 }

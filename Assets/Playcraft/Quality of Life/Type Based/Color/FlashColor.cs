@@ -1,21 +1,22 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Playcraft
 {
-    public class FlashColor : MonoBehaviour
+    [Serializable]
+    public class FlashColor
     {
-        [SerializeField] Renderer rend;
-        [SerializeField] Color defaultColor;
-        [SerializeField] Color flashColor;
-        [SerializeField] float cycleTime;
-        [SerializeField] int defaultFlashCount;
+        public Renderer rend;
+        public Color flashColor;
+        public float cycleTime;
+        public int defaultFlashCount;
         
-        public void BeginFlash() { BeginFlash(defaultFlashCount); }
-        public void BeginFlash(int flashCount) { StartCoroutine(Flash(flashCount)); }
+        Color startColor;
+        public void Start() { startColor = rend.material.color; }
 
-        IEnumerator Flash(int flashCount)
+        public IEnumerator Flash() { yield return Flash(defaultFlashCount); }
+        public IEnumerator Flash(int flashCount)
         {
             var delay = new WaitForSeconds(cycleTime/2f);
                 
@@ -23,7 +24,7 @@ namespace Playcraft
             {
                 rend.material.color = flashColor;
                 yield return delay;
-                rend.material.color = defaultColor;
+                rend.material.color = startColor;
                 yield return delay;
             }
         }

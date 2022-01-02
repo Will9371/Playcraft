@@ -130,6 +130,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1747891070599714194, guid: ad6e674dada48c04a9136d86c4df5219,
+        type: 3}
+      propertyPath: process.rotation.self
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1747891071512897192, guid: ad6e674dada48c04a9136d86c4df5219,
         type: 3}
       propertyPath: m_RootOrder
@@ -433,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 4096250343746799642, guid: a774029c3e6b08e4293aa96445092cde,
         type: 3}
       propertyPath: startInScene
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4096250343746799643, guid: a774029c3e6b08e4293aa96445092cde,
         type: 3}

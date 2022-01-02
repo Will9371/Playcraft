@@ -84,12 +84,17 @@ namespace Playcraft
         {
             return array[GetClosestIndex(array, position)];
         }
-    
+
         public static Transform GetClosest(List<Transform> list, Vector3 position)
         {
             return list[GetClosestIndex(list, position)];
         }
         
+        public static Collider GetClosest(List<Collider> list, Vector3 position)
+        {
+            return list[GetClosestIndex(list, position)];
+        }
+
         public static int GetClosestIndex(Transform[] array, Transform reference)
         {
             return GetClosestIndex(array, reference.position);
@@ -113,6 +118,20 @@ namespace Playcraft
             return GetClosestIndex(pointList, position);
         }
         
+        public static int GetClosestIndex(List<Collider> list, Vector3 position)
+        {
+            var pointList = new Vector3[list.Count];
+            for (int i = 0; i < list.Count; i++)
+                pointList[i] = list[i].transform.position;
+                
+            return GetClosestIndex(pointList, position);            
+        }
+
+        public static Vector3 GetClosest(Vector3[] array, Vector3 position)
+        {
+            return array[GetClosestIndex(array, position)];
+        }
+        
         public static int GetClosestIndex(Vector3[] array, Vector3 position)
         {
             var shortestDistance = Mathf.Infinity;
@@ -133,10 +152,12 @@ namespace Playcraft
             return closest;             
         }
         
-        public static int GetClosestIndexWithThreshold(Transform[] array, Vector3 reference, int priorIndex, float threshold)
-        { return GetClosestIndexWithThreshold(TransformsToPositions(array), reference, priorIndex, threshold); }
+        public static int GetClosestIndex(Transform[] array, Vector3 reference, int priorIndex, float threshold)
+        { 
+            return GetClosestIndex(TransformsToPositions(array), reference, priorIndex, threshold); 
+        }
         
-        public static int GetClosestIndexWithThreshold(Vector3[] array, Vector3 reference, int priorIndex, float threshold)
+        public static int GetClosestIndex(Vector3[] array, Vector3 reference, int priorIndex, float threshold)
         {
             var closestIndex = GetClosestIndex(array, reference);
             if (closestIndex == priorIndex || priorIndex == -1) return closestIndex;

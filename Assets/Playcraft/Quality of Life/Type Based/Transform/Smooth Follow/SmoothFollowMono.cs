@@ -1,9 +1,20 @@
 using UnityEngine;
 
-public class SmoothFollowMono : MonoBehaviour
+namespace Playcraft
 {
-    [SerializeField] SmoothFollow process;
-    void OnValidate() { process.OnValidate(); }
-    void Update() { process.Update(); }
-    public void SetTarget(Transform value) { process.SetTarget(value); }
+    /// Access SmoothFollow as a standalone component
+    /// Coordinates continuous movement and rotation to follow a target transform
+    public class SmoothFollowMono : MonoBehaviour
+    {
+        [SerializeField] SmoothFollow process;
+        
+        void Update() { process.Update(); }
+        public void SetTarget(Transform value) { process.SetTarget(value); }
+        
+        void OnValidate() 
+        {
+            process.SetSelf(transform); 
+            process.OnValidate(); 
+        }
+    }
 }

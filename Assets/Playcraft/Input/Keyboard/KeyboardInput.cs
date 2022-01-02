@@ -2,9 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// * BROKEN BY UNITY UPDATE!!!
 namespace Playcraft
 {
+    /// Simplistic approach to getting keyboard input, useful for prototyping
+    /// Use KeyboardInputActions(Mono) for remappble, action-based input
     public class KeyboardInput : MonoBehaviour
     {    
         [SerializeField] Binding[] keyBindings;

@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningAverage:
-    runningAverageLength: 1
+  process:
+    runningAverageLength: 0
     attenuationFactor: 1
     projectionTime: 0.2
     averageDelta: {x: 0, y: 0, z: 0}
@@ -92,10 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53e87c4458834e499dff5137abda5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningAverage:
-    runningAverageLength: 12
-    attenuationFactor: 0.75
-    projectionTime: 0.01
+  process:
+    runningAverageLength: 0
+    attenuationFactor: 1
+    projectionTime: 0.2
     averageDelta: {x: 0, y: 0, z: 0}
     projectedPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &8062840719359782534
@@ -339,9 +339,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracker:
+    self: {fileID: 0}
     sourceID: {fileID: 11400000, guid: 9d56ef012f3c487499e15145fe347f1c, type: 2}
-    velocity: {fileID: 6106055144578322004}
-    edge: {fileID: 8961790346896124162}
+    velocity:
+      runningAverageLength: 0
+      attenuationFactor: 1
+      projectionTime: 0.2
+      averageDelta: {x: 0, y: 0, z: 0}
+      projectedPosition: {x: 0, y: 0, z: 0}
+    edge:
+      runningAverageLength: 0
+      attenuationFactor: 1
+      projectionTime: 0.2
+      averageDelta: {x: 0, y: 0, z: 0}
+      projectedPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2566073786544718258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,11 +537,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dc3a272f3b16343bcd0f7f03db64d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  useRigidbody: 1
-  position: 1
-  rotation: 1
-  scale: 0
+  process:
+    self: {fileID: 8951941258622502337}
+    rb: {fileID: 8951941258622502336}
+    target: {fileID: 0}
+    useRigidbody: 0
+    position: 0
+    rotation: 0
+    scale: 0
 --- !u!1 &8951941258944503385
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,10 +651,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7696bcb6ac41f14d808b71d82ccdbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingDataTracker:
+  tracker:
+    self: {fileID: 8951941259013378777}
     sourceID: {fileID: 11400000, guid: b207a01966c5fac4a90555623e3d622e, type: 2}
-    velocity: {fileID: 6106055144578322004}
-    edge: {fileID: 8961790346896124162}
+    velocity:
+      runningAverageLength: 0
+      attenuationFactor: 1
+      projectionTime: 0.2
+      averageDelta: {x: 0, y: 0, z: 0}
+      projectedPosition: {x: 0, y: 0, z: 0}
+    edge:
+      runningAverageLength: 0
+      attenuationFactor: 1
+      projectionTime: 0.2
+      averageDelta: {x: 0, y: 0, z: 0}
+      projectedPosition: {x: 0, y: 0, z: 0}
   calculator: {fileID: 11400000, guid: 8b0507efe9f36434293548984afaea12, type: 2}
   output:
     m_PersistentCalls:

@@ -1,4 +1,5 @@
-﻿// CREDIT: Fraser Hill
+// CREDIT: Fraser Hill
+// Modified by Will Petillo
 
 // DEPRECATE: causes swords to move through each other 
 // (more noticeable when rotation set in this script as well as position)
@@ -6,40 +7,32 @@
 // Consider 3-tier abstraction: intention (instant) -> hand (fast physics follow) -> sword (configurable joint)
 // Delete this script if swords are the only place it is used
 
+using System;
 using UnityEngine;
 
-public class CopyTransform : MonoBehaviour
+[Serializable]
+public class CopyTransform
 {
-    [SerializeField] Transform target;
-    [SerializeField] bool useRigidbody;
-    [SerializeField] bool position;
-    [SerializeField] bool rotation;
-    [SerializeField] bool scale;
+    public Transform self;
+    public Rigidbody rb;
+    public Transform target;
     
-    Rigidbody rb;
+    public bool useRigidbody;
+    public bool position;
+    public bool rotation;
+    public bool scale;
     
-    void Awake()
+    public void Update()
     {
-        if (useRigidbody && rb == null)
-        {
-            rb = GetComponent<Rigidbody>();
-            if (rb == null)
-                Debug.LogError(gameObject.name + " " +
-                "CopyTransform set to use rigidbody but no rigidbody attached" );
-        }
-    }
-
-    void Update()
-    {
-        if (scale) transform.localScale = target.localScale;
+        if (scale) self.localScale = target.localScale;
         
         if (useRigidbody) return;
         
-        if (position) transform.position = target.position;
-        if (rotation) transform.rotation = target.rotation;
+        if (position) self.position = target.position;
+        if (rotation) self.rotation = target.rotation;
     }
 
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if (!useRigidbody || !rb) return;
 

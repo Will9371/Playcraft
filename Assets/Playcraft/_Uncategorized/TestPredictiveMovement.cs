@@ -4,7 +4,7 @@ namespace Playcraft
 {
     public class TestPredictiveMovement : MonoBehaviour
     {
-        [SerializeField] AccumulateVelocity measurement;
+        [SerializeField] AverageVelocityMono measurement;
         void Update() { transform.position = measurement.projectedPosition; }
     }
 }

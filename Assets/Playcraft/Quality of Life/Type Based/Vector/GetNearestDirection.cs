@@ -4,10 +4,8 @@ namespace Playcraft
 {
     public class GetNearestDirection : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] Vector3Array directions;
         [SerializeField] Vector3Event Output;
-        #pragma warning restore 0649
 
         public void Input(Vector3 value)
         {

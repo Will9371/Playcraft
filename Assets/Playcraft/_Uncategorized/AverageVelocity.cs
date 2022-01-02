@@ -17,6 +17,9 @@ namespace Playcraft
         [HideInInspector] 
         public Vector3 averageDelta;
         
+        public float averageMagnitude => averageDelta.magnitude;
+        public Vector3 averageDirection => averageDelta.normalized;
+        
         [HideInInspector]
         public Vector3 projectedPosition;
         
@@ -26,14 +29,10 @@ namespace Playcraft
         
         VelocityPoint currentPoint => points[overwriteIndex];
         
+        public float EdgeAlignment(Vector3 forward) { return Mathf.Abs(Vector3.Dot(forward, averageDirection)); }
+        
         int overwriteIndex;
 
-        public void Validate()
-        {
-            if (points == null || runningAverageLength != points.Length)
-                Initialize();
-        }
-        
         void Initialize()
         {
             points = new VelocityPoint[runningAverageLength];
@@ -42,8 +41,11 @@ namespace Playcraft
                 points[i] = new VelocityPoint(attenuationFactor);
         }
         
-        public void Update(Vector3 newPosition)
-        {            
+        public void FixedUpdate(Vector3 newPosition)
+        {
+            if (points == null || runningAverageLength != points.Length)
+                Initialize();
+                    
             foreach (var point in points)
                 point.Attenuate();
         

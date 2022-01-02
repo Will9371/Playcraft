@@ -17,6 +17,7 @@ using UnityEngine.Events;
 [Serializable] public class ColorEvent : UnityEvent<Color> { }
 [Serializable] public class Collider2DEvent : UnityEvent<Collider2D> { }
 [Serializable] public class QuaternionEvent : UnityEvent<Quaternion> { }
+[Serializable] public class KeyCodeEvent : UnityEvent<KeyCode> { }
 
 [Serializable] public class TransformListEvent : UnityEvent<List<Transform>> { }
 [Serializable] public class ColliderListEvent : UnityEvent<List<Collider>> { }

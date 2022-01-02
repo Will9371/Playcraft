@@ -55,6 +55,7 @@ namespace Playcraft
             SetEnd(position, rotation);
         }
 
+        public void SetSelfToEnd(Transform newEnd) { SetSelfToEnd(new Location(newEnd)); }
         public void SetSelfToEnd(Location location) { SetSelfToEnd(location.position, location.rotation); }
         public void SetSelfToEnd(Vector3 endPosition, Quaternion endRotation)
         {

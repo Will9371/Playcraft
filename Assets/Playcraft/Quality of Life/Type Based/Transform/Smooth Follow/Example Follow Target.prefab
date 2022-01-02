@@ -1,59 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1747891070599714196
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1747891070599714195}
-  - component: {fileID: 1747891070599714194}
-  m_Layer: 0
-  m_Name: Follower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1747891070599714195
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747891070599714196}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1747891071777562977}
-  m_Father: {fileID: 1747891071512897192}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1747891070599714194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747891070599714196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf8fcda185c4f6e40833b5e111ad0fe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  process:
-    target: {fileID: 1747891070821471892}
-    position:
-      self: {fileID: 1747891070599714195}
-      target: {fileID: 1747891070821471892}
-      speed: 2
-    rotation:
-      self: {fileID: 1747891071777562977}
-      target: {fileID: 1747891070821471892}
-      speed: 180
 --- !u!1 &1747891070821471893
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,8 +41,9 @@ GameObject:
   - component: {fileID: 1747891071054299808}
   - component: {fileID: 1747891071054299821}
   - component: {fileID: 1747891071054299822}
+  - component: {fileID: 4732602655836873951}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Follower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,10 +58,10 @@ Transform:
   m_GameObject: {fileID: 1747891071054299809}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.10000001, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.10000002, z: 0.5}
   m_Children:
   - {fileID: 1747891072241493197}
-  m_Father: {fileID: 1747891071777562977}
+  m_Father: {fileID: 1747891071512897192}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &1747891071054299821
@@ -166,6 +113,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4732602655836873951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747891071054299809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8fcda185c4f6e40833b5e111ad0fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  process:
+    target: {fileID: 1747891070821471892}
+    moveSpeed: 1.5
+    turnSpeed: 180
+    position:
+      self: {fileID: 1747891071054299808}
+      target: {fileID: 1747891070821471892}
+      speed: 1.5
+    rotation:
+      self: {fileID: 1747891071054299808}
+      target: {fileID: 1747891070821471892}
+      speed: 180
 --- !u!1 &1747891071147922236
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,8 +191,8 @@ MonoBehaviour:
   output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747891070599714194}
-        m_TargetAssemblyTypeName: SmoothFollowMono, Assembly-CSharp
+      - m_Target: {fileID: 4732602655836873951}
+        m_TargetAssemblyTypeName: Playcraft.SmoothFollowMono, Assembly-CSharp
         m_MethodName: SetTarget
         m_Mode: 0
         m_Arguments:
@@ -260,40 +231,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1747891070599714195}
+  - {fileID: 1747891071054299808}
   - {fileID: 1747891071147922235}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1747891071777562978
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1747891071777562977}
-  m_Layer: 0
-  m_Name: Rotor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1747891071777562977
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747891071777562978}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1747891071054299808}
-  m_Father: {fileID: 1747891070599714195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747891072223210356

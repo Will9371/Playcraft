@@ -618,6 +618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyBindings:
   - input:
+      id: {fileID: 0}
       keys: 07010000090100000301000001010000
       pressType: 1
     response:
@@ -648,7 +649,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f54022d664863e4f991ad8bf77571b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings: {fileID: 11400000, guid: 15aa385e7fe623e47be7e38a0fac2af0, type: 2}
+  process:
+    bindings: {fileID: 11400000, guid: e0bc02e2474ecb64ab379ed1ac3ca5ea, type: 2}
+    activeValues: 
   output:
     m_PersistentCalls:
       m_Calls:
@@ -679,6 +682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyBindings:
   - input:
+      id: {fileID: 0}
       keys: 1401000071000000
       pressType: 0
     response:
@@ -698,6 +702,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - input:
+      id: {fileID: 0}
       keys: 1301000065000000
       pressType: 0
     response:
@@ -1865,6 +1870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimum: 0
   maximum: 3
+  preventRepeat: 0
   Output:
     m_PersistentCalls:
       m_Calls:
@@ -3606,6 +3612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimum: 0
   maximum: 1
+  preventRepeat: 0
   Output:
     m_PersistentCalls:
       m_Calls:

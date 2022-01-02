@@ -15,5 +15,6 @@ namespace Playcraft
         public void Print(RaycastHit value) { Print(value.point); }
         public void Print(Collider value) { Print(value ? value.name : "null"); }
         public void Print(Quaternion value) { Print(value.ToString("F3")); }
+        public void Print(KeyCode value) { Print(value.ToString()); }
     }
 }

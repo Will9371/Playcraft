@@ -14,7 +14,7 @@ namespace Playcraft.AI
         [SerializeField] FilterByAngle filterByAngle;
         [SerializeField] LineOfSight lineOfSight;
         [SerializeField] FilterCollidersByCustomTag targetFilter;
-        [SerializeField] FindClosestCollider findClosest;
+        
         
         void OnEnable() { InvokeRepeating(nameof(Refresh), refreshRate, refreshRate); }
         void OnDisable() { CancelInvoke(nameof(Refresh)); }
@@ -29,7 +29,7 @@ namespace Playcraft.AI
             if (applyAngleFilter) targets = filterByAngle.Input(targets);
             if (applyLineOfSightFilter) targets = lineOfSight.Input(targets);
             targets = targetFilter.Input(targets);
-            var target = findClosest.Input(targets);
+            var target = VectorMath.GetClosest(targets, transform.position);
             ClosestTarget.Invoke(target);
             //Debug.Log($"Nearby: {nearby.Count}, in view: {inView.Count}, in sight: {inSight.Count}, " +
             //          $"targets: {visibleTargets.Count}, closest: {closestTarget}");
@@ -39,3 +39,6 @@ namespace Playcraft.AI
         public void SetMaxAngle(float value) { filterByAngle.SetMaxAngle(value); }
     }
 }
+
+//[SerializeField] FindClosestCollider findClosest;
+//var target = findClosest.Input(targets);

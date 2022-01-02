@@ -38,7 +38,7 @@ namespace Playcraft
         [Serializable]
         public class TrackedPoint
         {
-            [SerializeField] AccumulateVelocity average;
+            [SerializeField] AverageVelocityMono average;
             [SerializeField] [Range(0, 1)] float weight = 1f;
             
             public float weightedSpeed => average.averageMagnitude * weight;
