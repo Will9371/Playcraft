@@ -206,11 +206,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyBindings:
   - input:
+      id: {fileID: 0}
       keys: 20000000
       pressType: 0
-      OnActive:
-        m_PersistentCalls:
-          m_Calls: []
     response:
       m_PersistentCalls:
         m_Calls:
@@ -226,7 +224,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  bindings: []
 --- !u!114 &1910564745544634893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,11 +498,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyBindings:
   - input:
+      id: {fileID: 0}
       keys: 63000000
       pressType: 0
-      OnActive:
-        m_PersistentCalls:
-          m_Calls: []
     response:
       m_PersistentCalls:
         m_Calls:
@@ -521,7 +516,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  bindings: []
 --- !u!114 &3774126326436153883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,11 +809,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyBindings:
   - input:
+      id: {fileID: 0}
       keys: 300100002f010000
       pressType: 0
-      OnActive:
-        m_PersistentCalls:
-          m_Calls: []
     response:
       m_PersistentCalls:
         m_Calls:
@@ -837,11 +829,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - input:
+      id: {fileID: 0}
       keys: 300100002f010000
       pressType: 1
-      OnActive:
-        m_PersistentCalls:
-          m_Calls: []
     response:
       m_PersistentCalls:
         m_Calls:
@@ -858,7 +848,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  bindings: []
 --- !u!1 &3403923577191210621
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,21 +975,9 @@ MonoBehaviour:
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8926540907162459287}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Begin
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 5511425228464581940}
           m_TargetAssemblyTypeName: BoolRelay, Assembly-CSharp
-          m_MethodName: Input
+          m_MethodName: RelayIfChanged
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1014,21 +991,9 @@ MonoBehaviour:
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8926540907162459287}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Begin
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 5511425228464581940}
           m_TargetAssemblyTypeName: BoolRelay, Assembly-CSharp
-          m_MethodName: Input
+          m_MethodName: RelayIfChanged
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1042,21 +1007,9 @@ MonoBehaviour:
     OnEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8926540907162459287}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: Begin
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 5511425228464581940}
           m_TargetAssemblyTypeName: BoolRelay, Assembly-CSharp
-          m_MethodName: Input
+          m_MethodName: RelayIfChanged
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1121,6 +1074,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LerpCapsuleHeightMono, Assembly-CSharp
         m_MethodName: SetDirection
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8926540907162459287}
+        m_TargetAssemblyTypeName: Playcraft.GetPercentOverTimeMono, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1244,11 +1209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyBindings:
   - input:
+      id: {fileID: 0}
       keys: 65000000
       pressType: 0
-      OnActive:
-        m_PersistentCalls:
-          m_Calls: []
     response:
       m_PersistentCalls:
         m_Calls:
@@ -1264,7 +1227,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  bindings: []
 --- !u!1 &3771585120874364783
 GameObject:
   m_ObjectHideFlags: 0

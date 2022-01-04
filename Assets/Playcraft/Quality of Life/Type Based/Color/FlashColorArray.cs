@@ -17,6 +17,12 @@ namespace Playcraft
                 value.Start();
         }
         
+        public void SetColor(Color color)
+        {
+            foreach (var value in values)
+                value.SetColor(color);
+        }
+        
         public void Flash(MonoBehaviour mono) { Flash(mono, defaultFlashCount); }
         
         public void Flash(MonoBehaviour mono, int flashCount) 

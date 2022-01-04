@@ -14,6 +14,12 @@ namespace Playcraft
         
         Color startColor;
         public void Start() { startColor = rend.material.color; }
+        
+        public void SetColor(Color value)
+        {
+            startColor = value;
+            rend.material.color = value;
+        }
 
         public IEnumerator Flash() { yield return Flash(defaultFlashCount); }
         public IEnumerator Flash(int flashCount)

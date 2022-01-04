@@ -6,20 +6,11 @@ namespace Playcraft
 {
     public class LocalStateListener : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] LocalStateHub stateHub;
         [SerializeField] StateCondition[] conditions;
-        #pragma warning restore 0649
         
-        private void OnEnable()
-        {
-            stateHub.OnStateEnter += RespondToState;
-        }
-        
-        private void OnDisable()
-        {
-            stateHub.OnStateEnter -= RespondToState;
-        }
+        void OnEnable() { stateHub.OnStateEnter += RespondToState; }
+        void OnDisable() { stateHub.OnStateEnter -= RespondToState; }
             
         public void RespondToState(SO value) 
         {
@@ -29,12 +20,11 @@ namespace Playcraft
                     item.OnEnter.Invoke();
         }
 
-        [Serializable] struct StateCondition
+        [Serializable] 
+        struct StateCondition
         {
-            #pragma warning disable 0649
             public SO state;
             public UnityEvent OnEnter;
-            #pragma warning restore 0649
         }
     }
 }
