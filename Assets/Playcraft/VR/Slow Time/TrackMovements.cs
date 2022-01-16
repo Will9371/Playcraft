@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
+// REFACTOR: use non-mono AverageVelocity
 namespace Playcraft
 {
     public class TrackMovements : MonoBehaviour

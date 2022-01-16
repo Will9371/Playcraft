@@ -1078,6 +1078,11 @@ PrefabInstance:
       propertyPath: vrEnabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6039165870121918081, guid: 6c020e34659816247a3954dd96e4d947,
+        type: 3}
+      propertyPath: enableObjectActivation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6039165870121918082, guid: 6c020e34659816247a3954dd96e4d947,
         type: 3}
       propertyPath: m_Name

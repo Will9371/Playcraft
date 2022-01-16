@@ -8,6 +8,7 @@ namespace Playcraft.VR
     public class ValidateVR : MonoBehaviour
     {
         [SerializeField] bool vrEnabled;
+        [SerializeField] bool enableObjectActivation = true;
         [SerializeField] GameObject[] activeInFlatscreen;
         [SerializeField] GameObject[] activeInVr;
         [SerializeField] BoolEvent Relay;
@@ -28,6 +29,8 @@ namespace Playcraft.VR
             initialized = true;
             priorEnabled = vrEnabled;
             
+            if (!enableObjectActivation)
+                return;
             if (activeInFlatscreen == null || activeInVr == null)
                 return;
             
