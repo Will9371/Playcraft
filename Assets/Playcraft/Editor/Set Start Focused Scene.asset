@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Set Start Focused Scene
   m_EditorClassIdentifier: 
   startInScene: 0
+  disabled: 1

@@ -12,6 +12,7 @@ namespace Playcraft
     public class SetStartFocusedSceneSO : FocusedSceneSOInterface
     {
         public bool startInScene;
+        public bool disabled;
         
         void OnValidate() { Relay(startInScene); }
         
@@ -19,6 +20,8 @@ namespace Playcraft
         {
             startInScene = newValue;
             KeepSceneFocused.forceFocusSceneOnPlay = newValue; 
+            
+            KeepSceneFocused.disabled = disabled;
         }
     }
 }

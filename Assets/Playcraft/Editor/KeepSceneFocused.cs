@@ -11,6 +11,7 @@ namespace twicebetter
     internal static class KeepSceneFocused 
     {
         public static bool   forceFocusSceneOnPlay = true;
+        public static bool   disabled = false;
         static SceneView     sceneWindow;
         static EditorWindow  gameWindow;
         static bool          sceneNeedFocus;
@@ -48,6 +49,8 @@ namespace twicebetter
         
         private static void OnPlayModeStateChanged(PlayModeStateChange stateChange) 
         {
+            if (disabled) return;
+        
             switch (stateChange) 
             {
                 case PlayModeStateChange.ExitingEditMode:
@@ -89,6 +92,8 @@ namespace twicebetter
         
         static void OnPauseStateChanged(PauseState pauseState) 
         {
+            if (disabled) return;
+        
             switch (pauseState) 
             {
                 case PauseState.Paused:
