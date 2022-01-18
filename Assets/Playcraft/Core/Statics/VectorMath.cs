@@ -12,7 +12,18 @@ namespace Playcraft
     
         public static Vector3 EqualVector3(float size) { return new Vector3(size, size, size); }
         
-        public static Vector3 Vector2to3(Vector2 value) { return new Vector3(value.x, 0f, value.y); }
+        public static Vector3 MousePosition() { return Vector2to3(Input.mousePosition, Axis.Z); }
+        
+        public static Vector3 Vector2to3(Vector2 value, Axis axis = Axis.Y) 
+        {
+            switch (axis)
+            { 
+                case Axis.X: return new Vector3(0f, value.x, value.y);
+                case Axis.Y: return new Vector3(value.x, 0f, value.y);
+                case Axis.Z: return new Vector3(value.x, value.y, 0f);
+                default: return new Vector3(value.x, 0f, value.y);
+            }
+        }
         
         public static Vector2 Vector3to2(Vector3 value) { return new Vector2(value.x, value.z); }
         

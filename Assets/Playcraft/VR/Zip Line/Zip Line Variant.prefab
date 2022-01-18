@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1665384331202733065}
   - component: {fileID: 7103048618529838951}
   - component: {fileID: 6510665250236723035}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Activation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,11 +255,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6869818678099979237, guid: 8904213b1be91644baebc23605931ce2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23f4e1520b7d1a74c8c5f206728402d7, type: 2}
     - target: {fileID: 7506527793381090336, guid: 8904213b1be91644baebc23605931ce2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 91d2f992bc709214a8fdd824cd958e48, type: 2}
+      objectReference: {fileID: 2100000, guid: 47041aedd81d67449a16b52c1fe5c7af, type: 2}
     - target: {fileID: 7506527793381090338, guid: 8904213b1be91644baebc23605931ce2,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -269,6 +274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.19800001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506527793381090338, guid: 8904213b1be91644baebc23605931ce2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.10399997
       objectReference: {fileID: 0}
     - target: {fileID: 7506527793381090338, guid: 8904213b1be91644baebc23605931ce2,
         type: 3}
@@ -310,6 +320,16 @@ PrefabInstance:
       propertyPath: process.startPosition.z
       value: -1.5899999
       objectReference: {fileID: 0}
+    - target: {fileID: 7506527793381090351, guid: 8904213b1be91644baebc23605931ce2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966528027645971301, guid: 8904213b1be91644baebc23605931ce2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23f4e1520b7d1a74c8c5f206728402d7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8904213b1be91644baebc23605931ce2, type: 3}
 --- !u!1 &2980732713208712380 stripped

@@ -56,10 +56,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ee8da16fd771474f9ad8ff1c6de4d75, type: 2}
+  - {fileID: 2100000, guid: fcb7af67d1590384fb3e84024e10f8a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,6 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &6123792233101122792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +192,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 6123792233101122792}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Input
             m_Mode: 2
             m_Arguments:
@@ -206,6 +209,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 6123792233101122792}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Input
             m_Mode: 2
             m_Arguments:
@@ -222,6 +226,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 6123792233101122792}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Input
             m_Mode: 2
             m_Arguments:

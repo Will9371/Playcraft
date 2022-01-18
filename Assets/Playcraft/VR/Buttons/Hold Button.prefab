@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -121,11 +122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539bcc68aacdea24f8dae16b3a717811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateOnStart: 0
   time: 3
   OnEnd:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4451248764150502117}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Display
         m_Mode: 5
         m_Arguments:
@@ -137,6 +140,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 524888513793219514}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Enable
         m_Mode: 6
         m_Arguments:
@@ -206,10 +210,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a4855a96b54302409de4898d42499ad, type: 2}
+  - {fileID: 2100000, guid: 23f4e1520b7d1a74c8c5f206728402d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -230,6 +235,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &5461108280424843119
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -263,6 +269,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 8908928955167251274}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Begin
             m_Mode: 1
             m_Arguments:
@@ -278,6 +285,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 8908928955167251274}
+            m_TargetAssemblyTypeName: 
             m_MethodName: End
             m_Mode: 1
             m_Arguments:
@@ -293,6 +301,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 8908928955167251274}
+            m_TargetAssemblyTypeName: 
             m_MethodName: End
             m_Mode: 1
             m_Arguments:
@@ -385,6 +394,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1778306065217368983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,10 +468,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a1e0bdce2704764795285ad0db33259, type: 2}
+  - {fileID: 2100000, guid: 7c3b31f0501c27f4393d0c549d115185, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -482,6 +493,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8908928955167251274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +515,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8908928955167251276}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -517,6 +530,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8908928955167251276}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -531,6 +545,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4451248764150502117}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Display
         m_Mode: 5
         m_Arguments:
@@ -542,6 +557,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4451248764150502114}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Begin
         m_Mode: 1
         m_Arguments:
@@ -553,6 +569,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 524888513793219514}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Enable
         m_Mode: 6
         m_Arguments:
@@ -564,6 +581,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8908928955167251274}
+        m_TargetAssemblyTypeName: 
         m_MethodName: End
         m_Mode: 1
         m_Arguments:

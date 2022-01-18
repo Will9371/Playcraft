@@ -441,11 +441,21 @@ PrefabInstance:
       propertyPath: defaultRotationReference
       value: 
       objectReference: {fileID: 1378560965203046717}
+    - target: {fileID: 6606234237332420266, guid: ea2b15fbca1f0f5449ff14b2c8bf2397,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a404b9dc49c039144a59c0a6a691be6c, type: 2}
     - target: {fileID: 7164558316626376566, guid: ea2b15fbca1f0f5449ff14b2c8bf2397,
         type: 3}
       propertyPath: positions.Array.data[1].y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 8993594967115324665, guid: ea2b15fbca1f0f5449ff14b2c8bf2397,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a404b9dc49c039144a59c0a6a691be6c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2b15fbca1f0f5449ff14b2c8bf2397, type: 3}
 --- !u!4 &6421937657110007472 stripped

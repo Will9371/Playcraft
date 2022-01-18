@@ -56,10 +56,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -8848810374240701247, guid: 1e3aceac1e75a2147b64fecdd74cfef7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,6 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2398151249558443928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -166,6 +168,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 731306492}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Play
             m_Mode: 5
             m_Arguments:
@@ -181,6 +184,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 731306492}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Play
             m_Mode: 5
             m_Arguments:
@@ -204,11 +208,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539bcc68aacdea24f8dae16b3a717811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateOnStart: 0
   time: 1
   OnEnd:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8818990159127302995}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -275,10 +281,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fcb7af67d1590384fb3e84024e10f8a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,6 +306,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &2398151250271882878
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -405,10 +413,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a1a6835373bfb64fab21a1ef87201f8, type: 2}
+  - {fileID: 2100000, guid: 05dede08cf44adb41a9bd492bf36f944, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -429,6 +438,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &7476540960968865084
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -459,6 +469,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 731306492}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -470,6 +481,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Begin
         m_Mode: 2
         m_Arguments:
@@ -485,6 +497,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 731306492}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -496,6 +509,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Begin
         m_Mode: 2
         m_Arguments:
@@ -520,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13f1fff139163a4c9bebba35d1cc533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabled: 1
   responses:
     elements:
     - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
@@ -527,6 +542,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 8818990159127302995}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetHighlight
             m_Mode: 6
             m_Arguments:
@@ -542,6 +558,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 8818990159127302995}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetHighlight
             m_Mode: 6
             m_Arguments:
@@ -557,6 +574,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 2716846687104412280}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Toggle
             m_Mode: 6
             m_Arguments:
@@ -568,6 +586,7 @@ MonoBehaviour:
               m_BoolArgument: 1
             m_CallState: 2
           - m_Target: {fileID: 8818990159127302995}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetActive
             m_Mode: 6
             m_Arguments:
@@ -579,6 +598,7 @@ MonoBehaviour:
               m_BoolArgument: 1
             m_CallState: 2
           - m_Target: {fileID: 4992147824169390919}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Begin
             m_Mode: 1
             m_Arguments:
@@ -605,6 +625,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2398151251336279840}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:

@@ -87,10 +87,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 48b3439c7c452ac47b1dde813b914391, type: 2}
+  - {fileID: 2100000, guid: fcb7af67d1590384fb3e84024e10f8a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,6 +112,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2973581133698984023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -195,6 +197,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2973581133966992567}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -224,6 +227,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 2973581133966992565}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Play
             m_Mode: 5
             m_Arguments:
@@ -239,6 +243,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 2973581133966992565}
+            m_TargetAssemblyTypeName: 
             m_MethodName: Play
             m_Mode: 5
             m_Arguments:
@@ -249,7 +254,6 @@ MonoBehaviour:
               m_StringArgument: Backward
               m_BoolArgument: 0
             m_CallState: 2
-  elements: []
   locked: 0
 --- !u!1 &2973581134037348712
 GameObject:
@@ -338,10 +342,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 48b3439c7c452ac47b1dde813b914391, type: 2}
+  - {fileID: 2100000, guid: fcb7af67d1590384fb3e84024e10f8a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -362,6 +367,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2973581134430433074
 BoxCollider:
   m_ObjectHideFlags: 0

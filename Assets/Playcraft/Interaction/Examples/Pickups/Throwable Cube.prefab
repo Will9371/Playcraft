@@ -57,10 +57,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 220d86aee1de6074a8f001177d479f9a, type: 2}
+  - {fileID: 2100000, guid: a404b9dc49c039144a59c0a6a691be6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8747485772756009088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +126,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -150,6 +153,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -176,6 +180,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -202,6 +207,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -228,6 +234,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -254,6 +261,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -280,6 +288,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -309,6 +318,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -332,6 +342,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -352,6 +363,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8747485772756009088}
+          m_TargetAssemblyTypeName: 
           m_MethodName: Input
           m_Mode: 2
           m_Arguments:
@@ -446,6 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53673261cfd305242895443abc8f2bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!114 &3179658531535395079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +534,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9098599839944809167}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetTarget
         m_Mode: 0
         m_Arguments:
@@ -543,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13f1fff139163a4c9bebba35d1cc533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabled: 1
   responses:
     elements:
     - id: {fileID: 11400000, guid: 8b0282314e5874b4699b601fb9a2dcba, type: 2}
@@ -550,6 +565,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableTrue
             m_Mode: 2
             m_Arguments:
@@ -566,6 +582,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableFalse
             m_Mode: 2
             m_Arguments:
@@ -582,6 +599,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 9098599839944809167}
+            m_TargetAssemblyTypeName: 
             m_MethodName: PhysicalFollow
             m_Mode: 6
             m_Arguments:
@@ -593,6 +611,7 @@ MonoBehaviour:
               m_BoolArgument: 1
             m_CallState: 2
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableTrue
             m_Mode: 2
             m_Arguments:
@@ -609,6 +628,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 9098599839944809167}
+            m_TargetAssemblyTypeName: 
             m_MethodName: PhysicalFollow
             m_Mode: 6
             m_Arguments:
@@ -620,6 +640,7 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableFalse
             m_Mode: 2
             m_Arguments:
@@ -636,6 +657,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableTrue
             m_Mode: 2
             m_Arguments:
@@ -652,6 +674,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableFalse
             m_Mode: 2
             m_Arguments:
@@ -668,6 +691,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableTrue
             m_Mode: 2
             m_Arguments:
@@ -684,6 +708,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableFalse
             m_Mode: 2
             m_Arguments:
@@ -700,6 +725,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableTrue
             m_Mode: 2
             m_Arguments:
@@ -716,6 +742,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5772432216234326831}
+            m_TargetAssemblyTypeName: 
             m_MethodName: SetVariableFalse
             m_Mode: 2
             m_Arguments:
