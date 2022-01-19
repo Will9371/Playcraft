@@ -7,7 +7,10 @@ namespace Playcraft
     {
         public SO[] validTags;
             
-        public bool Input(Collider other)
+        public bool Input(Collider other) { return Input(other.transform); }
+        public bool Input(Collider2D other) { return Input(other.transform); }
+        
+        public bool Input(Transform other)
         {
             if (!other.TryGetComponent<CustomTags>(out var customTags))
                 return false;
@@ -16,7 +19,7 @@ namespace Playcraft
                 if (customTags.HasTag(validTag))
                     return true;
                         
-            return false;
+            return false;                 
         }
     }
 }

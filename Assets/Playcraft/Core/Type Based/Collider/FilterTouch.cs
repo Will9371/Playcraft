@@ -9,15 +9,21 @@ namespace Playcraft
         [SerializeField] CollisionType collisionType;
         [SerializeField] CollisionType otherColliderType;
 
-        public bool RequestActivate(Collider other, TouchType touchType, CollisionType collisionType)
+        public bool RequestActivate(Collider other, TouchType touchType, CollisionType collisionType) 
+        { return RequestActivate(other.isTrigger, touchType, collisionType); }
+        
+        public bool RequestActivate(Collider2D other, TouchType touchType, CollisionType collisionType)
+        { return RequestActivate(other.isTrigger, touchType, collisionType); }
+        
+        public bool RequestActivate(bool isTrigger, TouchType touchType, CollisionType collisionType)
         {
             if (this.collisionType != CollisionType.Any && this.collisionType != collisionType ||
-                other.isTrigger && otherColliderType == CollisionType.Collision ||
-                !other.isTrigger && otherColliderType == CollisionType.Trigger)
+                isTrigger && otherColliderType == CollisionType.Collision ||
+                !isTrigger && otherColliderType == CollisionType.Trigger)
                 return false;
             
             return this.touchType == touchType;
-        }
+        }        
     }
         
     // Handles collision events only, outputs full collision data

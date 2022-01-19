@@ -49,6 +49,7 @@ namespace Playcraft
                 points[i] = new VelocityPoint(attenuationFactor);
         }
         
+        /// Frame rate must be constant for a consistently weighted running average
         public void FixedUpdate(Vector3 newPosition)
         {
             if (points == null || runningAverageLength != pointCount)

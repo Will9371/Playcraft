@@ -1,16 +1,25 @@
 ﻿using System;
 using UnityEngine;
 
+// REFACTOR: unclear SRP, reliance on inheritance antipattern
+// Consider extracting collision path into separate scripts
 namespace Playcraft
 {
     public class RespondToCustomTagMono : RespondToTouchBase
     {
         [SerializeField] TriggerBinding[] triggerBindings;
         [SerializeField] CollisionBinding[] collisionBindings;
+        [SerializeField] Trigger2DBinding[] trigger2DBindings;
     
         protected override void InputTrigger(Collider other, TouchType touchType, CollisionType collisionType)
         {
             foreach (var item in triggerBindings)
+                item.Input(other, touchType, collisionType);        
+        }
+        
+        protected override void InputTrigger(Collider2D other, TouchType touchType, CollisionType collisionType)
+        {
+            foreach (var item in trigger2DBindings)
                 item.Input(other, touchType, collisionType);        
         }
         
@@ -29,6 +38,21 @@ namespace Playcraft
             [SerializeField] ColliderEvent response;
             
             public void Input(Collider other, TouchType touchType, CollisionType collisionType)
+            {
+                if (touchFilter.RequestActivate(other, touchType, collisionType) && tagFilter.Input(other))
+                    response.Invoke(other);
+            }
+            
+            public void SetTags(SO[] values) { tagFilter.validTags = values; }
+        }
+        
+        [Serializable] class Trigger2DBinding
+        {
+            [SerializeField] FilterTrigger touchFilter;
+            [SerializeField] RespondToCustomTag tagFilter;
+            [SerializeField] Collider2DEvent response;
+            
+            public void Input(Collider2D other, TouchType touchType, CollisionType collisionType)
             {
                 if (touchFilter.RequestActivate(other, touchType, collisionType) && tagFilter.Input(other))
                     response.Invoke(other);

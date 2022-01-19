@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Smooth Movement
   m_EditorClassIdentifier: 
   runningAverageLength: 30
-  attenuationFactor: 0.85
-  projectionTime: 1
+  attenuationFactor: 0.95
+  projectionTime: 0.5
