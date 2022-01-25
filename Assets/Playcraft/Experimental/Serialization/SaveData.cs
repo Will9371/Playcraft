@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Customize for your project and remove from namespace
-namespace Playcraft.Saving
+namespace ZMD.Saving
 {
     [Serializable]
     public class SaveData

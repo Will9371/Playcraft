@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Playcraft.Pooling
+namespace ZMD.Pooling
 {
     public class ObjectSpawner : MonoBehaviour 
     {

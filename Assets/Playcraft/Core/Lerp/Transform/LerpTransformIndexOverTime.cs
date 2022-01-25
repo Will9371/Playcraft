@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 
-namespace Playcraft
+namespace ZMD
 {
     /// Lerp-based movement & rotation from current location to indexed location
     [Serializable]

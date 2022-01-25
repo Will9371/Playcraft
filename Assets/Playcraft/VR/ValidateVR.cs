@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.XR.Management;
 
-namespace Playcraft.VR
+namespace ZMD.VR
 {
     public class ValidateVR : MonoBehaviour
     {

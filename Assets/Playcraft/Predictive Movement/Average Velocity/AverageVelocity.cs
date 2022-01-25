@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [Serializable] 
     public class AverageVelocity
@@ -50,7 +50,7 @@ namespace Playcraft
         }
         
         /// Frame rate must be constant for a consistently weighted running average
-        public void FixedUpdate(Vector3 newPosition)
+        public Vector3 FixedUpdate(Vector3 newPosition)
         {
             if (points == null || runningAverageLength != pointCount)
                 Initialize();
@@ -63,6 +63,7 @@ namespace Playcraft
             SetAverageVector();
             
             projectedPosition = newPosition + (averageDelta * projectionTime) / Time.fixedDeltaTime;
+            return projectedPosition;
         }
         
         void RefreshCurrentPoint(Vector3 newPosition)

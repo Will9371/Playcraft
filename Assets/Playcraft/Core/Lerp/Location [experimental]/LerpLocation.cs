@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-namespace Playcraft
+namespace ZMD
 {
     /// Move position and rotation (TBD: include scale).
     /// Uses static locations (will not update as a reference transform moves).

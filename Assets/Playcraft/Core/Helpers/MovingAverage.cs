@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // CONSIDER REFACTOR: use generics (if possible) to eliminate duplication
-namespace Playcraft
+namespace ZMD
 {
     public class MovingAverageFloat
     {

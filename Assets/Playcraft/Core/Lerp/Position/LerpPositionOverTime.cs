@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // REFACTOR: split into Mono/Non-Mono
-namespace Playcraft
+namespace ZMD
 {
     public class LerpPositionOverTime : MonoBehaviour
     {

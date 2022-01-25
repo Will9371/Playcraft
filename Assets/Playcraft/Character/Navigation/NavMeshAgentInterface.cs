@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Playcraft.Navigation
+namespace ZMD.Navigation
 {
     [Serializable]
     public class NavMeshAgentInterface

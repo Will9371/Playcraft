@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft.VR
+namespace ZMD.VR
 {
     public class TeleportRig : MonoBehaviour
     {

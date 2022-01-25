@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Events;
 
-namespace Playcraft
+namespace ZMD
 {
     public class SimpleEventListener : GameEventListener
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Playcraft.Dialog
+namespace ZMD.Dialog
 {
     public class SimpleDialogDisplay : MonoBehaviour
     {

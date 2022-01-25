@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using Playcraft.FPS;
-using Playcraft.Pooling;
+using ZMD.FPS;
+using ZMD.Pooling;
 
 public class Gun : MonoBehaviour
 {

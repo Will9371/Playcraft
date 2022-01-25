@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // FUTURE USE
-namespace Playcraft
+namespace ZMD
 {
     public class InteractableList : MonoBehaviour
     {

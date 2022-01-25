@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.Scene
+namespace ZMD.Scene
 {
     public class SceneTransitionRelay : MonoBehaviour
     {

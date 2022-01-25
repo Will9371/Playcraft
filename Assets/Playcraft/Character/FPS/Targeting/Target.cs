@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.FPS
+namespace ZMD.FPS
 {
     public class Target : MonoBehaviour
     {

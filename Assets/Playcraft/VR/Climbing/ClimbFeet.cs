@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // Allows player to stand on ground without body interfering with climbing
-namespace Playcraft.VR
+namespace ZMD.VR
 {
     public class ClimbFeet : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Like KeyboardInput, but maps bindings to SO-based IDs (necessary for remappable input)
     [Serializable]

@@ -5,7 +5,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// PID-based system for rotating a physics object towards a target rotation
     /// ERROR: erratic results, use TorqueRotation instead

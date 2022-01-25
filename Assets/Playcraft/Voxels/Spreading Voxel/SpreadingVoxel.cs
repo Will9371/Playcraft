@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Playcraft.Pooling;
+using ZMD.Pooling;
 using Random = UnityEngine.Random;
 
-namespace Playcraft.Voxels
+namespace ZMD.Voxels
 {
     public class SpreadingVoxel : MonoBehaviour
     {

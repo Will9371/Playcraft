@@ -5,7 +5,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Use torque to rotate an object to match a target rotation.
     /// Use two instances on different axes for full alignment

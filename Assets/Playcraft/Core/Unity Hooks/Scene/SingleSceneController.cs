@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Playcraft.Scene
+namespace ZMD.Scene
 {
     public class SingleSceneController : MonoBehaviour
     {

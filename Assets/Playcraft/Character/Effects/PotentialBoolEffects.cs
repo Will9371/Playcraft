@@ -1,7 +1,7 @@
 ﻿using System;
 
 // Tracks whether a constant set of effects are active
-namespace Playcraft
+namespace ZMD
 {
     [Serializable] public class PotentialBoolEffects
     {

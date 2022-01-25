@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft.Voxels
+namespace ZMD.Voxels
 {
     public class AddHexOnRaycast : MonoBehaviour
     {

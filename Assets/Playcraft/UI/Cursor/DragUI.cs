@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 
 // For UI elements only, use DragObject for world space objects
-namespace Playcraft
+namespace ZMD
 {
     public class DragUI : MonoBehaviour, IDragHandler
     {

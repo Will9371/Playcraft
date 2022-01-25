@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(menuName = "Playcraft/Input/SO Keybindings")]
     public class SOKeybindings : ScriptableObject

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Playcraft
+namespace ZMD
 {
     public class MoveOneForward : MonoBehaviour
     {

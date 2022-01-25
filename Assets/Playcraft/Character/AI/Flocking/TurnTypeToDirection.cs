@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Playcraft.Navigation;
+using ZMD.Navigation;
 
 
 public class TurnTypeToDirection : MonoBehaviour

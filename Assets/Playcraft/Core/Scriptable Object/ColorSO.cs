@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(menuName = "Playcraft/Data Types/Color")]
     public class ColorSO : ScriptableObject { public Color value; }

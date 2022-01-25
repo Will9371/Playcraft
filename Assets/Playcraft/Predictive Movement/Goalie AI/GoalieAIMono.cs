@@ -1,15 +1,12 @@
 using UnityEngine;
 
-public class GoalieAIMono : MonoBehaviour
+namespace ZMD.PredictiveMovement
 {
-    [SerializeField] GoalieAI process;
-    
-    void OnValidate() 
+    public class GoalieAIMono : MonoBehaviour
     {
-        process.self = transform; 
-        process.OnValidate(); 
+        [SerializeField] GoalieAI process;
+        void OnValidate() { process.self = transform; }
+        void Start() { process.Initialize(); }
+        void FixedUpdate() { process.FixedUpdate(); }
     }
-    
-    void Update() { process.Update(); }
-    void FixedUpdate() { process.FixedUpdate(); }
 }

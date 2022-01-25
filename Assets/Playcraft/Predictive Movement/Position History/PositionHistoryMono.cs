@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class PositionHistoryMono : MonoBehaviour
+namespace ZMD
 {
-    public Transform indicator;
-    public int recordCount = 10;
-    
-    PositionHistory process = new PositionHistory();
-    
-    void Start() { process.Initialize(transform.position, recordCount); }
-    void FixedUpdate() { indicator.position = process.FixedUpdate(transform.position); }
+    public class PositionHistoryMono : MonoBehaviour
+    {
+        public Transform indicator;
+        public PositionHistory process;
+        void FixedUpdate() { indicator.position = process.Tick(transform.position); }
+    }
 }

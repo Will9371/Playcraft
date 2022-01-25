@@ -1,4 +1,4 @@
-namespace Playcraft.Saving
+namespace ZMD.Saving
 {
     public class ProfileManager : Singleton<ProfileManager>
     {

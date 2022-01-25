@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     public class RespondToTouchSimple : RespondToTouchBase
     {

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Playcraft.Examples.GridFollow
+namespace ZMD.Examples.GridFollow
 {
     public class LerpFollowOnGrid : MonoBehaviour
     {

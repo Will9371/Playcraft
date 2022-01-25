@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Playcraft
+namespace ZMD
 {
     public static class RandomStatics
     {

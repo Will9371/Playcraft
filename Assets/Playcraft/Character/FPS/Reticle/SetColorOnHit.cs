@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Playcraft.FPS
+namespace ZMD.FPS
 {
     public class SetColorOnHit : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.Pooling
+namespace ZMD.Pooling
 {
     public class SpawnPrefab : MonoBehaviour
     {

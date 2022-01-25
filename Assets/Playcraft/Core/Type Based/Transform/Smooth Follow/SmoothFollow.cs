@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Coordinates continuous movement and rotation to follow a target transform
     [Serializable]

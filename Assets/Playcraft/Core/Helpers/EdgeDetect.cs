@@ -1,5 +1,5 @@
 ﻿// Required ticks functionality not verified
-namespace Playcraft.Optimized
+namespace ZMD.Optimized
 {
     public class Edge_Detect
     {

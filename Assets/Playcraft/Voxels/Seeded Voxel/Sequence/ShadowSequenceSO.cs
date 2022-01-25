@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft.Voxels
+namespace ZMD.Voxels
 {
     [CreateAssetMenu(menuName = "Playcraft/Voxel/Shadow Sequence")]
     public class ShadowSequenceSO : ScriptableObject

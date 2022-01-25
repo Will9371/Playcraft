@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Playcraft.Pooling;
+using ZMD.Pooling;
 
-namespace Playcraft.Voxels
+namespace ZMD.Voxels
 {
     public class VoxelSeed : MonoBehaviour
     {

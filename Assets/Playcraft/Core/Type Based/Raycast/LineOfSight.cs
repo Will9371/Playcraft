@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine; 
     
-namespace Playcraft
+namespace ZMD
 {
     [Serializable]
     public class LineOfSight

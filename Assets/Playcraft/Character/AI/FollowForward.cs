@@ -3,7 +3,7 @@
 // Move forward when target is within range
 // Can follow a target when used in combination with a rotation component
 // Dynamic direction is beyond the scope of this component
-namespace Playcraft
+namespace ZMD
 {
     public class FollowForward : MonoBehaviour
     {

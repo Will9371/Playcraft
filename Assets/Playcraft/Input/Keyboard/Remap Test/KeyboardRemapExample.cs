@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft.Examples.KeyboardRemapping
+namespace ZMD.Examples.KeyboardRemapping
 {
     public class KeyboardRemapExample : MonoBehaviour
     {

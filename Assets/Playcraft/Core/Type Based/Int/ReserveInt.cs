@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Allows multiple sources to get non-overlapping integers from a range
     [Serializable]

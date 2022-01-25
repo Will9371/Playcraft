@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 // Moves position and rotation to blend between Transform references
-namespace Playcraft
+namespace ZMD
 {
     [Serializable]
     public class LerpTransform : IPercent

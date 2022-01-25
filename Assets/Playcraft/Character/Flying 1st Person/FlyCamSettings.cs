@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.FlyCam
+namespace ZMD.FlyCam
 {
     public class FlyCamSettings : MonoBehaviour
     {

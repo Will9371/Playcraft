@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// PID-based system for following a target's position and rotation
     /// ERROR: erratic results in RotationPID (PositionPID is OK), use PhysicsFollow instead

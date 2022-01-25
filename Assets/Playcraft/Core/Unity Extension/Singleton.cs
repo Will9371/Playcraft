@@ -2,7 +2,7 @@
 
 // Make any class into a singleton by inheriting from this class
 // Format: public class ExampleClass : Singleton<ExampleClass>
-namespace Playcraft
+namespace ZMD
 {
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {

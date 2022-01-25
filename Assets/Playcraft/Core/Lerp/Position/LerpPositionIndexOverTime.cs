@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 // REFACTOR: repeat logic from LerpPositionOverTime
-namespace Playcraft
+namespace ZMD
 {
     public class LerpPositionIndexOverTime : MonoBehaviour
     {

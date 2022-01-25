@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Playcraft.Voxels
+namespace ZMD.Voxels
 {
     public class HexMap : MonoBehaviour
     {

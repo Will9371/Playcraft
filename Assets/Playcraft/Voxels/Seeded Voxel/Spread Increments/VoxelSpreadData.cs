@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft.Voxels
+namespace ZMD.Voxels
 {
     [CreateAssetMenu(menuName = "Playcraft/Voxel/Seed Spread")]
     public class VoxelSpreadData : ScriptableObject

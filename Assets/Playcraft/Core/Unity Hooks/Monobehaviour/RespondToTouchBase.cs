@@ -2,7 +2,7 @@
 
 // REFACTOR: unclear SRP, reliance on inheritance antipattern
 // Consider extracting collision path into separate scripts
-namespace Playcraft
+namespace ZMD
 {
     public class RespondToTouchBase : MonoBehaviour
     {

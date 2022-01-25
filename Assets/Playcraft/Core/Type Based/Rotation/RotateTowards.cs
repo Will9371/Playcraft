@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     // Continuously rotate towards a target transform
     [Serializable]

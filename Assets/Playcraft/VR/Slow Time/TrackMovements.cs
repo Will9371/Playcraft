@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 // REFACTOR: use non-mono AverageVelocity
-namespace Playcraft
+namespace ZMD
 {
     public class TrackMovements : MonoBehaviour
     {

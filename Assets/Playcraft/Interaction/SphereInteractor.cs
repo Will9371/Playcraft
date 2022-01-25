@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // FUTURE USE
-namespace Playcraft
+namespace ZMD
 {
     public class SphereInteractor : MonoBehaviour
     {

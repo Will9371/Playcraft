@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.AI
+namespace ZMD.AI
 {
     public class AIVision : MonoBehaviour
     {

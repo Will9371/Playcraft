@@ -2,7 +2,7 @@ using UnityEngine;
 
 // Allows global point of access to scene object from prefab, cross-scene, etc. 
 // without reliance on singleton pattern (so possible to have multiple in scene)
-namespace Playcraft
+namespace ZMD
 {
     public class InjectGameObject : MonoBehaviour
     {

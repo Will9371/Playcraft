@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.FPS
+namespace ZMD.FPS
 {
     [CreateAssetMenu(menuName = "Playcraft/FPS/Laser")]
     public class LaserData : ScriptableObject

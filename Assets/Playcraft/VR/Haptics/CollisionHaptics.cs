@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 
-namespace Playcraft.VR
+namespace ZMD.VR
 {
     public class CollisionHaptics : MonoBehaviour
     {

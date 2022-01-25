@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft
+namespace ZMD
 {
     [Serializable] public class TrinaryEvent : UnityEvent<Trinary> { }
     public enum Trinary { True, False, Unknown }

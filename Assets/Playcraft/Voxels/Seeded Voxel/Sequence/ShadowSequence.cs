@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Playcraft.Voxels
+namespace ZMD.Voxels
 {
     public class ShadowSequence : MonoBehaviour
     {

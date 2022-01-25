@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-namespace Playcraft.Saving
+namespace ZMD.Saving
 {
     public class SerializationManager
     {

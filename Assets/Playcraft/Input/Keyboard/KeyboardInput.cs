@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Simplistic approach to getting keyboard input, useful for prototyping
     /// Use KeyboardInputActions(Mono) for remappble, action-based input

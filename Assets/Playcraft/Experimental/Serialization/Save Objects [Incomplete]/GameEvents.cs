@@ -1,7 +1,7 @@
 ﻿// INCOMPLETE
 using System;
 
-namespace Playcraft.Saving
+namespace ZMD.Saving
 {
     public class GameEvents : Singleton<GameEvents>
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Follow a target by applying physical forces.  
     /// Allows for more reliable rotational collision detection than Configurable Joints

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(menuName = "Playcraft/Character/Jump CrossFade Lookup", fileName = "Jump CrossFade Lookup")]
     public class JumpCrossFadeLookup : ScriptableObject

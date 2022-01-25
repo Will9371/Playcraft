@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(menuName = "Playcraft/Data Types/SO Array")]
     public class SOArray : ScriptableObject

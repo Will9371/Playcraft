@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.VR
+namespace ZMD.VR
 {
     public class ZipHook : MonoBehaviour
     {

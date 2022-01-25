@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
-    [CreateAssetMenu(menuName = "Playcraft/Experimental/Average Velocity", fileName = "Average Velocity Settings")]
+    [CreateAssetMenu(menuName = "Playcraft/Predictive Movement/Average Velocity", fileName = "Average Velocity Settings")]
     public class AverageVelocitySO : ScriptableObject
     {
         public int runningAverageLength = 10;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.Testing
+namespace ZMD.Testing
 {
     public class RotateToAngleTest : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Playcraft.AI
+namespace ZMD.AI
 {
     public class AIStateMachine : MonoBehaviour
     {

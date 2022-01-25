@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Applies PositionPID as a standalone component
     public class PositionPIDMono : MonoBehaviour

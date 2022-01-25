@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.Dialog
+namespace ZMD.Dialog
 {
     public class GetNarrativeFromDialogNode : MonoBehaviour
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Allows non-MonoBehaviour classes to use MonoBehaviour methods
-namespace Playcraft
+namespace ZMD
 {
     public class MonoSim : Singleton<MonoSim>
     {

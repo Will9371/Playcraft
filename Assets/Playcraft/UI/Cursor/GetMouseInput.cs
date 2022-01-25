@@ -6,7 +6,7 @@ using UnityEngine.Events;
 // Process: continuous check for mouse button clicks
 // Output: event triggers per type
 // For interactions with specific objects (UI or collider), use RespondToMouse
-namespace Playcraft
+namespace ZMD
 {
     public class GetMouseInput : MonoBehaviour
     {

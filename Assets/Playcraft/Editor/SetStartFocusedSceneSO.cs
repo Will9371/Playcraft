@@ -1,7 +1,7 @@
 using UnityEngine;
 using twicebetter;
 
-namespace Playcraft
+namespace ZMD
 {
     public class FocusedSceneSOInterface : ScriptableObject, IRelayBool
     {

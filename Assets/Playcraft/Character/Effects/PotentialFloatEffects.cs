@@ -2,7 +2,7 @@
 
 // Tracks whether a constant set of effects are active
 // and provides access to total value of effects
-namespace Playcraft
+namespace ZMD
 {
     [Serializable] public class PotentialFloatEffects
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Applies RotationPID as a standalone component
     public class RotationPIDMono : MonoBehaviour

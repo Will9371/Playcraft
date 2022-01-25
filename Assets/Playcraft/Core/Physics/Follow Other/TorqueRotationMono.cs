@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Apply TorqueRotation as a standalone component
     public class TorqueRotationMono : MonoBehaviour

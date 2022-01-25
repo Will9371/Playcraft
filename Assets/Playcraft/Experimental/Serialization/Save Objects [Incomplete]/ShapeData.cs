@@ -6,7 +6,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft.Saving
+namespace ZMD.Saving
 {
     [Serializable]
     public enum ShapeType

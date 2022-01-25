@@ -4,7 +4,7 @@ using UnityEngine.Events;
 // Input: event ID
 // Process: editor-defined lookup table
 // Returns: UnityEvent response if success, null if fail
-namespace Playcraft
+namespace ZMD
 {
     [Serializable] public class EventResponder
     {

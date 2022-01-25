@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     public interface IAddForce { void AddForce(Vector3 force, ForceMode mode = ForceMode.Force); }
 

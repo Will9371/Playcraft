@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.Scene
+namespace ZMD.Scene
 {
     [CreateAssetMenu(menuName = "Playcraft/Scene Management/Transition")]
     public class SceneTransitionSO : ScriptableObject

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(fileName = "Game Event", menuName = "Playcraft/Events/Vector 2")]
     public class Vector2GameEvent : GameEvent

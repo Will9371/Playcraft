@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     // REFACTOR OR RENAME: Assumes flattened direction
     public class DriftDirection : MonoBehaviour

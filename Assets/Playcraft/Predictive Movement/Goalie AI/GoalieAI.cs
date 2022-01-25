@@ -1,42 +1,38 @@
 using System;
 using UnityEngine;
-using Playcraft;
 
-[Serializable]
-public class GoalieAI
+namespace ZMD.PredictiveMovement
 {
-    [Header("References")]
-    public Transform self;
-    public Transform target;
-    public Transform center;
-    
-    [Header("Settings")]
-    public float radius = 40f;
-    public float speed = 10f;
-    
-    [SerializeField] bool stayInCircle = true;
-    FollowOnCircle bounds = new FollowOnCircle();
+    [Serializable]
+    public class GoalieAI
+    {
+        [Header("References")]
+        public Transform self;
+        public Transform target;
+        public Transform center;
+        
+        [Header("Settings")]
+        public float speed = 5f;
+        
+        public bool stayInCircle;
+        public float radius = 2f;
+        FollowOnCircle bounds = new FollowOnCircle();
 
-    // * Consider delegating to SO or applying an abstraction layer  
-    [SerializeField] bool usePrediction;
-    [SerializeField] AverageVelocity prediction;
-    Vector3 targetPosition => usePrediction ? prediction.projectedPosition : target.position;
-    
-    public void OnValidate()
-    {
-        bounds.radius = radius;
-    }
-    
-    public void Update()
-    {
-        if (stayInCircle)
+        [SerializeField] DestinationModifiers destinationModifiers;
+
+        public void Initialize() 
         {
+            bounds.radius = radius; 
             bounds.center = center.position;
-            self.position = Vector3.MoveTowards(self.position, bounds.Update(targetPosition), speed * Time.deltaTime);
         }
-        else
+        
+        Vector3 targetPosition;
+
+        public void FixedUpdate() 
+        {
+            targetPosition = destinationModifiers.Tick(target.position);
+            if (stayInCircle) targetPosition = bounds.Update(targetPosition);
             self.position = Vector3.MoveTowards(self.position, targetPosition, speed * Time.deltaTime);
+        }
     }
-    
-    public void FixedUpdate() { if (usePrediction) prediction.FixedUpdate(target.position); }
 }

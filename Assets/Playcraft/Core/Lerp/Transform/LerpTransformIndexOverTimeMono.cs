@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     public class LerpLocationIndexOverTime : MonoBehaviour
     {

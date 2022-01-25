@@ -2,7 +2,7 @@ using UnityEngine;
 
 using System.Collections.Generic;
 
-namespace Playcraft.VR
+namespace ZMD.VR
 {
     public class PullMovementMono : MonoBehaviour
     {

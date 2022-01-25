@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Playcraft.Examples
+namespace ZMD.Examples
 {
     // Tests RandomStatics.RandomIndexNotIncluding
     public class RandomExcludeTest : MonoBehaviour

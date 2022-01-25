@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Playcraft
+namespace ZMD
 {
     public class FilterColliderByMatchedImageColor : MonoBehaviour
     {

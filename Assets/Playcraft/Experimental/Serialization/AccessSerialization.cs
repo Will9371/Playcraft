@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Playcraft.Saving;
-using Playcraft.Pooling;
+using ZMD.Pooling;
+using ZMD.Saving;
 
 // For your project create a custom SaveData class
 // and remove the Playcraft.Examples.Saving using statement above
-namespace Playcraft.Examples.Saving
+namespace ZMD.Examples.Saving
 {
     public class AccessSerialization : MonoBehaviour
     {

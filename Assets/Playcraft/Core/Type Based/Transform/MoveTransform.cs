@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // DEPRECATE: trivial functionality
-namespace Playcraft
+namespace ZMD
 {
     public class MoveTransform : MonoBehaviour
     {

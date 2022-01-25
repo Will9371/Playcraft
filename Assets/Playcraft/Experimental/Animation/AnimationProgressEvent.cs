@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // Extension to ProgressEvent: sends animation as source of time interval
-namespace Playcraft
+namespace ZMD
 {
     public class AnimationProgressEvent : MonoBehaviour 
     {

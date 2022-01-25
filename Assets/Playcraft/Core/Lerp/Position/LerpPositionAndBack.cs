@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 // * Not fully tested/reliable
-namespace Playcraft
+namespace ZMD
 {
     public class LerpPositionAndBack : MonoBehaviour
     {

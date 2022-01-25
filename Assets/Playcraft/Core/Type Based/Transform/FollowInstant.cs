@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // REFACTOR: variation too broad, split into separate components -> physical, non-physical
-namespace Playcraft
+namespace ZMD
 {
     public class FollowInstant : MonoBehaviour
     {

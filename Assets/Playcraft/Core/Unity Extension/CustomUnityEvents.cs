@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft
+namespace ZMD
 {
     [Serializable] public class IMessageEvent : UnityEvent<IMessage> { }
     [Serializable] public class SOEvent : UnityEvent<ScriptableObject> { }

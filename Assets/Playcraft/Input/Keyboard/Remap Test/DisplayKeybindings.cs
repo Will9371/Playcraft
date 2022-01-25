@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Playcraft.Examples.KeyboardRemapping
+namespace ZMD.Examples.KeyboardRemapping
 {
     public class DisplayKeybindings : MonoBehaviour
     {

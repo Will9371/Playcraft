@@ -4,7 +4,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft.Experimental.DialogGraph
+namespace ZMD.Experimental.DialogGraph
 {
     [Serializable]
     public class DialogNodeData

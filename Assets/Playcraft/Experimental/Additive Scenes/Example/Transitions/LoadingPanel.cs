@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Playcraft.Scene;
+using ZMD.Scene;
 
-namespace Playcraft.Examples.SceneControl
+namespace ZMD.Examples.SceneControl
 {
     public class LoadingPanel : MonoBehaviour
     {

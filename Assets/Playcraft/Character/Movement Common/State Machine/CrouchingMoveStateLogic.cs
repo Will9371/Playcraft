@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(menuName = "Playcraft/Character/Move State Machine/Crouching")]
     public class CrouchingMoveStateLogic : MoveStateLogic

@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 // Rename, apply ShowIf attribute when OdinInspector imported
-namespace Playcraft
+namespace ZMD
 {
     public class RangedRepeatingTimedEvent : MonoBehaviour
     {

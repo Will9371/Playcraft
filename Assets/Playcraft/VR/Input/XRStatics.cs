@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
 
-namespace Playcraft.VR
+namespace ZMD.VR
 {
     public static class XRStatics
     {

@@ -8,7 +8,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Playcraft.Experimental.DialogGraph
+namespace ZMD.Experimental.DialogGraph
 {
     public class GraphSaveUtility
     {

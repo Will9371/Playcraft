@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Simplifies access of post processing vignette settings
     [Serializable]

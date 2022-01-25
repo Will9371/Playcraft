@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Combines a rotation and position PID into a single system.
     /// ERROR: erratic results in RotationPID, use PhysicsFollow instead.

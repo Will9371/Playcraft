@@ -7,7 +7,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Playcraft.Experimental.DialogGraph
+namespace ZMD.Experimental.DialogGraph
 {
     public class DialogGraph : EditorWindow
     {

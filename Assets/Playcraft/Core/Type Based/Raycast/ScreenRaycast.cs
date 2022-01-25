@@ -3,7 +3,7 @@
 // Input: external trigger
 // Process: check if point on screen is over a valid collider
 // Output: RaycastHit (if any)
-namespace Playcraft
+namespace ZMD
 {
     public class ScreenRaycast : MonoBehaviour
     {

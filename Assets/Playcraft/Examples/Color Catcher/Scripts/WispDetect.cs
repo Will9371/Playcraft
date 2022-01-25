@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft.Examples.ColorCatcher
+namespace ZMD.Examples.ColorCatcher
 {
     public class WispDetect : MonoBehaviour
     {

@@ -1,7 +1,7 @@
-﻿using Playcraft.FPS;
+﻿using ZMD.FPS;
 using UnityEngine;
 
-namespace Playcraft.Pooling
+namespace ZMD.Pooling
 {
     public class CreateExplosion : MonoBehaviour
     {

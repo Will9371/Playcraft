@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Playcraft.Pooling
+namespace ZMD.Pooling
 {
     [Serializable] public class ObjectPoolData 
     {

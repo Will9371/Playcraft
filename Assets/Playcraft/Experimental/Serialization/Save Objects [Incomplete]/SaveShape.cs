@@ -5,7 +5,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Playcraft.Saving
+namespace ZMD.Saving
 {
     public class SaveShape : MonoBehaviour
     {

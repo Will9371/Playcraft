@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [Serializable] 
     public class GetPercentOverTime

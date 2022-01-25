@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(menuName = "Playcraft/Character/Move State Machine/Standing")]
     public class StandingMoveStateLogic : MoveStateLogic

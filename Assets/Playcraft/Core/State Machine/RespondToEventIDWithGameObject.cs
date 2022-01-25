@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // DEPRECATE
-namespace Playcraft
+namespace ZMD
 {
     public class RespondToEventIDWithGameObject : MonoBehaviour
     {

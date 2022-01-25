@@ -3,7 +3,7 @@ using UnityEngine;
 
 // Combination of CombineAsyncVectors -> MoveDirectionDrift -> TranslateStep.
 // Functionality of each was too trivial to delegate
-namespace Playcraft
+namespace ZMD
 {
     [Serializable] public class DriftTranslateStep
     {

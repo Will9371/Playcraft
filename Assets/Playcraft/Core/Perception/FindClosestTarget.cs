@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft
+namespace ZMD
 {
     public class FindClosestTarget : MonoBehaviour
     {    

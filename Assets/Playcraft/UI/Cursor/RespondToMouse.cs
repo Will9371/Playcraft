@@ -1,12 +1,12 @@
 ﻿using System;
-using Playcraft;
+using ZMD;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 // Attach to UI elements or colliders that respond to mouse events
 // For colliders, also requires attaching a graphics raycaster component to the camera
-namespace Playcraft
+namespace ZMD
 {
     public class RespondToMouse : MonoBehaviour, 
     IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler

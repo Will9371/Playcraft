@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Access SmoothFollow as a standalone component
     /// Coordinates continuous movement and rotation to follow a target transform

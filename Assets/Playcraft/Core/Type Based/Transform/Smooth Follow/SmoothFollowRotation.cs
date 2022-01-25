@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Continuously follow a target transform at a given rotational speed
     [Serializable]

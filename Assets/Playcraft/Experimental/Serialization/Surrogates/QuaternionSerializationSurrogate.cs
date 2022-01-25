@@ -4,7 +4,7 @@
 using System.Runtime.Serialization;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     public class QuaternionSerializationSurrogate : ISerializationSurrogate
     {

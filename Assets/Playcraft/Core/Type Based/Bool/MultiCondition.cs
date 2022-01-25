@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Playcraft
+namespace ZMD
 {
     [Serializable]
     public class MultiCondition

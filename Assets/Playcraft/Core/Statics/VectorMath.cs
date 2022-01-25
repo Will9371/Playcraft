@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     public static class VectorMath
     {

@@ -1,31 +1,40 @@
+using System;
 using UnityEngine;
 
-// RENAME: CycleVector3? (there is a similar class that works with another data type somewhere...)
-public class PositionHistory
+namespace ZMD
 {
-    Vector3[] history;
-    
-    int index;
-    Vector3 current;
-    
-    public void Initialize(Vector3 startPosition, int recordCount)
+    [Serializable]
+    public class PositionHistory
     {
-        index = 0;
-        history = new Vector3[recordCount];
+        public int recordCount;
         
-        for (int i = 0; i < recordCount; i++)
-            history[i] = startPosition;
-    }
-
-    public Vector3 FixedUpdate(Vector3 newPosition)
-    {
-        current = history[index];
-        history[index] = newPosition;
+        Vector3[] history;
         
-        index++;
-        if (index >= history.Length)
+        int index;
+        Vector3 current;
+        
+        public void Initialize(Vector3 start)
+        {
             index = 0;
+            history = new Vector3[recordCount];
+            
+            for (int i = 0; i < recordCount; i++)
+                history[i] = start;
+        }
+
+        public Vector3 Tick(Vector3 value)
+        {
+            if (history == null || history.Length != recordCount)
+                Initialize(value);
         
-        return current;
+            current = history[index];
+            history[index] = value;
+            
+            index++;
+            if (index >= history.Length)
+                index = 0;
+            
+            return current;
+        }
     }
 }

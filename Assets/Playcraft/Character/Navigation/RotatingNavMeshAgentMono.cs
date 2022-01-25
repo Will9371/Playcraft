@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft.Navigation
+namespace ZMD.Navigation
 {
     public class RotatingNavMeshAgentMono : MonoBehaviour
     {

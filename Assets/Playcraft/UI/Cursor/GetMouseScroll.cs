@@ -3,7 +3,7 @@
 // Input: Game Engine
 // Process: continuous check for mouse scroll
 // Output: scroll value this frame
-namespace Playcraft
+namespace ZMD
 {
     public class GetMouseScroll : MonoBehaviour
     {

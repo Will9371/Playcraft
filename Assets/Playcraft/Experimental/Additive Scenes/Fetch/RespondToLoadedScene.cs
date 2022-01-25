@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 
-namespace Playcraft.Scene
+namespace ZMD.Scene
 {
     public class RespondToLoadedScene : MonoBehaviour
     {

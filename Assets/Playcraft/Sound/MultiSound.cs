@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Playcraft
+namespace ZMD
 {
     public class MultiSound : MonoBehaviour
     {

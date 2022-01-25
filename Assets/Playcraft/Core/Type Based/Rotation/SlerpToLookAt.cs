@@ -3,7 +3,7 @@
 
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     public class SlerpToLookAt: MonoBehaviour
     {

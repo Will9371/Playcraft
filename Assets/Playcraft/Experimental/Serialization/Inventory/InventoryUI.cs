@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Playcraft.Saving
+namespace ZMD.Saving
 {
     public class InventoryUI : MonoBehaviour
     {

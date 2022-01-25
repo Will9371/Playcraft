@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace Playcraft.Navigation
+namespace ZMD.Navigation
 {
     public class GetSteeringDirection : MonoBehaviour
     {

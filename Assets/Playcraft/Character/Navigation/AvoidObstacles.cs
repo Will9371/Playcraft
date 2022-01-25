@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft.Navigation
+namespace ZMD.Navigation
 {
     public enum TurnType { Straight, Right, Left }
 

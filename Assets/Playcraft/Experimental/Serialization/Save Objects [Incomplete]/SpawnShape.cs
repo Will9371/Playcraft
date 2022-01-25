@@ -1,10 +1,10 @@
 ﻿// INCOMPLETE
 
-using Playcraft.Pooling;
 using UnityEngine;
+using ZMD.Pooling;
 
 // Application-specific interface to SpawnPrefab
-namespace Playcraft.Saving
+namespace ZMD.Saving
 {
     public class SpawnShape : MonoBehaviour
     {

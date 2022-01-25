@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft.VR
+namespace ZMD.VR
 {
     [Serializable]
     public class VRBody

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Applies LocationPID component to an in-game object
     public class LocationPIDMono : MonoBehaviour

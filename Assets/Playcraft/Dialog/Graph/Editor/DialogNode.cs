@@ -3,7 +3,7 @@
 
 using UnityEditor.Experimental.GraphView;
 
-namespace Playcraft.Experimental.DialogGraph
+namespace ZMD.Experimental.DialogGraph
 {
     public class DialogNode : Node
     {

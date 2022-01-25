@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     // EXTEND: include x and z axis
     public class SetScale : MonoBehaviour

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Playcraft.Examples.GridFollow
+namespace ZMD.Examples.GridFollow
 {
     [Serializable]
     public class AttackRoutine

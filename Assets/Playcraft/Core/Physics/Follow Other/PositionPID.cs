@@ -5,7 +5,7 @@
 using System;
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// PID-based system for moving a physics object towards a target position
     [Serializable]

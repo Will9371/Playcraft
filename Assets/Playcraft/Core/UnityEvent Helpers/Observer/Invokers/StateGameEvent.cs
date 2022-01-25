@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(fileName = "Game Event", menuName = "Playcraft/Events/Tag")]
     public class StateGameEvent : GameEvent

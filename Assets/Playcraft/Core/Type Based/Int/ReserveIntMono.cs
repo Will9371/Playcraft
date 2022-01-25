@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     /// Allows multiple sources to get non-overlapping integers from a range
     public class ReserveIntMono : MonoBehaviour

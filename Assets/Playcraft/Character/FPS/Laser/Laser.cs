@@ -1,8 +1,8 @@
-﻿using Playcraft.Pooling;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
+using ZMD.Pooling;
 
-namespace Playcraft.FPS
+namespace ZMD.FPS
 {
     public class Laser : MonoBehaviour
     {

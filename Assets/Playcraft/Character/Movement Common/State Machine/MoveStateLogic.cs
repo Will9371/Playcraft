@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     public abstract class MoveStateLogic : ScriptableObject
     {

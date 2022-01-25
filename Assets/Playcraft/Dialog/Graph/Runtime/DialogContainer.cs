@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Playcraft.Experimental.DialogGraph
+namespace ZMD.Experimental.DialogGraph
 {
     [Serializable]
     public class DialogContainer : ScriptableObject

@@ -4,7 +4,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Playcraft
+namespace ZMD
 {
     public class DragObject : MonoBehaviour, IPointerDownHandler, IDragHandler
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     public class LerpRotationIndexMono : MonoBehaviour
     {

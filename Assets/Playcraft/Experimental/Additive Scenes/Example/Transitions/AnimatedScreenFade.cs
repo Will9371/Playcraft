@@ -1,9 +1,9 @@
 ﻿using System;
-using Playcraft.Examples.SceneControl;
+using ZMD.Examples.SceneControl;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft.Scene
+namespace ZMD.Scene
 {
     [Serializable] public class SceneTransitionSOEvent : UnityEvent<SceneTransitionSO> { }
 

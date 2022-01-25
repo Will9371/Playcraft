@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Playcraft.Navigation
+namespace ZMD.Navigation
 {
     /// Extends NavMeshAgent to rotate towards target when within stopping distance
     [Serializable]

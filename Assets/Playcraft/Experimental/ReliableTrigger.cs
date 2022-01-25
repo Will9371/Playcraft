@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using Playcraft.Optimized;
+using ZMD.Optimized;
 
 // NOT VERIFIED
-namespace Playcraft
+namespace ZMD
 {
     public class ReliableTrigger : MonoBehaviour
     {

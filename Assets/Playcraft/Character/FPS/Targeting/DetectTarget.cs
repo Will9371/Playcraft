@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft.FPS
+namespace ZMD.FPS
 {
     public class DetectTarget : MonoBehaviour
     {

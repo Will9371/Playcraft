@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace Playcraft.Navigation
+namespace ZMD.Navigation
 {
 	// Prevents NavMeshAgent from controlling transform position while pathfinding 
 	public class NavAgentControl : MonoBehaviour 

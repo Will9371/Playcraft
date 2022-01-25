@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Playcraft
+namespace ZMD
 {
     [CreateAssetMenu(menuName = "Playcraft/Data Types/Float Array", fileName = "Float Array")]
     public class FloatArray : ScriptableObject 

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Playcraft
+namespace ZMD
 {
     public class HumanoidAnimationInterface : MonoBehaviour
     {

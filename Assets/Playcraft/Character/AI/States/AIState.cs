@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Playcraft.AI
+namespace ZMD.AI
 {
     [CreateAssetMenu(menuName = "Playcraft/Character/AI/State")]
     public class AIState : SO

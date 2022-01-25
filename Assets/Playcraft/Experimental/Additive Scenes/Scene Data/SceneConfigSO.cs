@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Playcraft.Scene
+namespace ZMD.Scene
 {
     [CreateAssetMenu(menuName = "Playcraft/Scene Management/Scene Config List")]
     public class SceneConfigSO : ScriptableObject

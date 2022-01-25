@@ -3,7 +3,7 @@ using UnityEngine;
 
 // REFACTOR: unclear SRP, reliance on inheritance antipattern
 // Consider extracting collision path into separate scripts
-namespace Playcraft
+namespace ZMD
 {
     public class RespondToCustomTagMono : RespondToTouchBase
     {

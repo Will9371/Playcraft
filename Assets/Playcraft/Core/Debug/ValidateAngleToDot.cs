@@ -15,7 +15,7 @@ void OnValidate()
 }
 */
 
-namespace Playcraft
+namespace ZMD
 {
     public class ValidateAngleToDot
     {   

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Playcraft
+namespace ZMD
 {
     [Serializable]
     public class LerpTransformIndex : IPercent

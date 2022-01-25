@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 // Invoke UnityEvents at points on a timer based on percent complete
 // Cannot delegate to POCO because uses Coroutine, which relies on MonoBehaviour
-namespace Playcraft
+namespace ZMD
 {
     public class ProgressEvent : MonoBehaviour 
     {
