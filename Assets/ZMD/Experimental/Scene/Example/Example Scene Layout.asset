@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824001987f951644abc548d53e9d40c7, type: 3}
+  m_Name: Example Scene Layout
+  m_EditorClassIdentifier: 
+  start: {fileID: 102900000, guid: 98f43a810239dc14eb223f684234c205, type: 3}
+  bindings:
+  - value: {fileID: 102900000, guid: 98f43a810239dc14eb223f684234c205, type: 3}
+    adjacent:
+    - {fileID: 102900000, guid: 1a0b29102626b00479899033f596b4f2, type: 3}
+    - {fileID: 102900000, guid: b813f99dbecab444a9fdd9ac16c9ecb4, type: 3}
+  - value: {fileID: 102900000, guid: 1a0b29102626b00479899033f596b4f2, type: 3}
+    adjacent:
+    - {fileID: 102900000, guid: d6da05a441c7081459d80842268fa16a, type: 3}
+    - {fileID: 102900000, guid: 98f43a810239dc14eb223f684234c205, type: 3}
+  - value: {fileID: 102900000, guid: b813f99dbecab444a9fdd9ac16c9ecb4, type: 3}
+    adjacent:
+    - {fileID: 102900000, guid: 7d643fad76050ce4084dd77b08edf03e, type: 3}
+    - {fileID: 102900000, guid: 98f43a810239dc14eb223f684234c205, type: 3}
+  - value: {fileID: 102900000, guid: d6da05a441c7081459d80842268fa16a, type: 3}
+    adjacent:
+    - {fileID: 102900000, guid: 1a0b29102626b00479899033f596b4f2, type: 3}
+  - value: {fileID: 102900000, guid: 7d643fad76050ce4084dd77b08edf03e, type: 3}
+    adjacent:
+    - {fileID: 102900000, guid: b813f99dbecab444a9fdd9ac16c9ecb4, type: 3}

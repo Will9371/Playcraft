@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZMD
 {
-    [CreateAssetMenu(menuName = "Playcraft/Input/Directional Keybindings")]
+    [CreateAssetMenu(menuName = "ZMD/Input/Directional Keybindings")]
     public class DirectionalKeybindings : ScriptableObject
     {
         public Binding[] values;

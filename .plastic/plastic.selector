@@ -1,4 +1,0 @@
-repository "OpenTemplate@local"
-  path "/"
-    br "/main"
-    co "/main"

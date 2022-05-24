@@ -9,22 +9,22 @@ namespace ZMD
         [SerializeField] IMessageEvent OnAdd;
         [SerializeField] IMessageEvent OnRemove;
 
-        List<IMessage> values = new List<IMessage>();
+        List<ISetSO> values = new List<ISetSO>();
 
         public int count => values.Count;
         public bool hasAny => count > 0;
         public bool isEmpty => count == 0;
 
-        public void Add(Collider value) { Add(value.GetComponent<IMessage>()); }
-        public void Add(IMessage value)
+        public void Add(Collider value) { Add(value.GetComponent<ISetSO>()); }
+        public void Add(ISetSO value)
         {
             if (value == null) return;
             values.Add(value);
             OnAdd.Invoke(value);
         }
 
-        public void Remove(Collider value) { Remove(value.GetComponent<IMessage>()); }
-        public void Remove(IMessage value)
+        public void Remove(Collider value) { Remove(value.GetComponent<ISetSO>()); }
+        public void Remove(ISetSO value)
         {
             if (value == null) return;
             values.Remove(value);

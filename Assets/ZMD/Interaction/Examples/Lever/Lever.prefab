@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 1615054188610559276}
   - component: {fileID: 8818990159127302995}
   - component: {fileID: 2398151251336279840}
+  - component: {fileID: 1992216288}
   m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
@@ -481,13 +482,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ZMD.TimedIDRelay, Assembly-CSharp
         m_MethodName: Begin
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: a3a1bdd4761431b47917e47c31a7d66b,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: ZMD.SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -509,13 +510,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ZMD.TimedIDRelay, Assembly-CSharp
         m_MethodName: Begin
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: a72e396432365f24a80e71a09e750685,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: TagSO, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: ZMD.SO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -655,3 +656,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 2398151251336279841}
   enabled: 1
+--- !u!114 &1992216288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2398151251336279846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f17ee48b9e5844388de91a7e386366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Lever
+  reticleColor: {fileID: 11400000, guid: e6c3de9843dbdaf4391222ec19e366e3, type: 2}

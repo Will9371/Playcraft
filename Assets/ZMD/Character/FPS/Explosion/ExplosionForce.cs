@@ -24,8 +24,8 @@ namespace ZMD
                 else
                 {
                     // If further extension needed, implement a C# interface
-                    IAddForce[] rbis = other.GetComponents<IAddForce>();
-                    foreach (var rbi in rbis) rbi.AddForce(GetForce(other));
+                    IAddForce[] pushables = other.GetComponents<IAddForce>();
+                    foreach (var pushable in pushables) pushable.AddForce(GetForce(other), ForceMode.Impulse);
                 }
             }
         }

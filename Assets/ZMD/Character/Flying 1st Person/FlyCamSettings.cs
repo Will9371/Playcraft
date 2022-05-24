@@ -4,11 +4,9 @@ namespace ZMD.FlyCam
 {
     public class FlyCamSettings : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] bool requireLeftMouseToTurn = true;
         [SerializeField] GetMouseInput click;
-        [SerializeField] GetMouseMovement drag;
-        #pragma warning restore 0649
+        [SerializeField] GetMouseMovementMono drag;
             
         void Start()
         {

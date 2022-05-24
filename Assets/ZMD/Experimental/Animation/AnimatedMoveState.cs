@@ -2,7 +2,7 @@
 
 namespace ZMD
 {
-    [CreateAssetMenu(menuName = "Playcraft/Character/Animation State")]
+    [CreateAssetMenu(menuName = "ZMD/Legacy/Character/Animation State")]
     public class AnimatedMoveState : ScriptableObject
     {
         public AnimationClip idle, idleLeft, idleRight, forward, 

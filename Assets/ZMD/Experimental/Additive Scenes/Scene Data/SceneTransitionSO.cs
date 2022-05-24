@@ -2,7 +2,7 @@
 
 namespace ZMD.Scene
 {
-    [CreateAssetMenu(menuName = "Playcraft/Scene Management/Transition")]
+    [CreateAssetMenu(menuName = "ZMD/Scene Management/Transition")]
     public class SceneTransitionSO : ScriptableObject
     {
         public float minimumLoadScreenTime = 2f;

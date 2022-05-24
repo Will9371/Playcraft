@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZMD.AI
 {
-    [CreateAssetMenu(menuName = "Playcraft/Character/AI/State")]
+    [CreateAssetMenu(menuName = "ZMD/Legacy/Character/AI/State")]
     public class AIState : SO
     {
         public AIExitCondition[] exitConditions;

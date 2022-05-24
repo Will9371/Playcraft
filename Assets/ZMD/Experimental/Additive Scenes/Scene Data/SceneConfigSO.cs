@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZMD.Scene
 {
-    [CreateAssetMenu(menuName = "Playcraft/Scene Management/Scene Config List")]
+    [CreateAssetMenu(menuName = "ZMD/Scene Management/Scene Config List")]
     public class SceneConfigSO : ScriptableObject
     {
         public StringSO[] universalScenes;

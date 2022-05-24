@@ -44,11 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrEnabled: 0
-  activeInFlatscreen:
-  - {fileID: 0}
-  - {fileID: 0}
-  activeInVr:
-  - {fileID: 0}
+  enableObjectActivation: 1
+  activeInFlatscreen: []
+  activeInVr: []
   Relay:
     m_PersistentCalls:
       m_Calls: []

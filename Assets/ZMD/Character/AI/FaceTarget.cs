@@ -19,14 +19,10 @@ namespace ZMD
         
         bool isTurning;
         
-        public float debugTargetAngle;
-
         void Update()
         {
             if (!target) return;
             
-            debugTargetAngle = angleToTarget;
-                
             isTurning = !isTurning && targetAngleAbs >= minStartTurnAngle || 
                          isTurning && targetAngleAbs >= minStopTurnAngle;  
                          

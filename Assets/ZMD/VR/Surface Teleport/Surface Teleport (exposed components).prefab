@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 6370076312973222049}
   - component: {fileID: 6370076312973222075}
   m_Layer: 0
-  m_Name: SurfaceTeleport
+  m_Name: Surface Teleport (exposed components)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,6 +58,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2118783717224207354}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -69,6 +70,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 6370076312973222079}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Calculate
         m_Mode: 1
         m_Arguments:
@@ -97,6 +99,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222079}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -111,6 +114,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222079}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -122,6 +126,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 6370076312973222054}
+        m_TargetAssemblyTypeName: 
         m_MethodName: RequestTeleport
         m_Mode: 1
         m_Arguments:
@@ -154,6 +159,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222052}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -168,6 +174,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222078}
+        m_TargetAssemblyTypeName: 
         m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
@@ -194,6 +201,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222053}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -221,6 +229,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222074}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SetPositionsAndCount
         m_Mode: 0
         m_Arguments:
@@ -235,6 +244,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222054}
+        m_TargetAssemblyTypeName: 
         m_MethodName: InputDestination
         m_Mode: 0
         m_Arguments:
@@ -249,6 +259,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222055}
+        m_TargetAssemblyTypeName: 
         m_MethodName: Input
         m_Mode: 0
         m_Arguments:
@@ -260,6 +271,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 6370076312973222054}
+        m_TargetAssemblyTypeName: 
         m_MethodName: InputResult
         m_Mode: 0
         m_Arguments:
@@ -270,6 +282,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  teleportTag: {fileID: 0}
 --- !u!114 &6370076312973222055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,12 +301,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6370076312973222074}
+          m_TargetAssemblyTypeName: ZMD.LineRendererInterfaceMono, Assembly-CSharp
           m_MethodName: SetMaterialColor
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: e4769b7358153f94eb2acb82473e1140,
               type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_ObjectArgumentAssemblyTypeName: ZMD.ColorSO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -304,12 +318,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6370076312973222074}
+          m_TargetAssemblyTypeName: ZMD.LineRendererInterfaceMono, Assembly-CSharp
           m_MethodName: SetMaterialColor
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: 51a6ac853d6fb87428b7aa6a432fb0ae,
               type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_ObjectArgumentAssemblyTypeName: ZMD.ColorSO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -320,12 +335,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6370076312973222074}
+          m_TargetAssemblyTypeName: ZMD.LineRendererInterfaceMono, Assembly-CSharp
           m_MethodName: SetMaterialColor
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: 51a6ac853d6fb87428b7aa6a432fb0ae,
               type: 2}
-            m_ObjectArgumentAssemblyTypeName: Playcraft.ColorSO, Assembly-CSharp
+            m_ObjectArgumentAssemblyTypeName: ZMD.ColorSO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -349,6 +365,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6370076312973222049}
+        m_TargetAssemblyTypeName: 
         m_MethodName: PlayRandom
         m_Mode: 1
         m_Arguments:
@@ -388,6 +405,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

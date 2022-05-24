@@ -2,7 +2,7 @@
 
 namespace ZMD
 {
-    public class RespondToMessage : MonoBehaviour, IMessage
+    public class RespondToMessage : MonoBehaviour, ISetSO
     {
         [SerializeField] new bool enabled = true;
         [SerializeField] EventResponder responses = default;

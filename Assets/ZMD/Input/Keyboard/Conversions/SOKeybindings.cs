@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ZMD
 {
-    [CreateAssetMenu(menuName = "Playcraft/Input/SO Keybindings")]
+    [CreateAssetMenu(menuName = "ZMD/Input/SO Keybindings")]
     public class SOKeybindings : ScriptableObject
     {
         public Binding[] values;

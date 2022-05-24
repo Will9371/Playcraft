@@ -12,6 +12,8 @@ namespace ZMD
         [Tooltip("If set, will override end position")]
         public Transform end;
         public Vector3 startPosition, endPosition;
+        
+        public StretchedWire(Transform self) { this.self = self; }
 
         Vector3 priorStartPosition;
         Vector3 priorEndPosition;
