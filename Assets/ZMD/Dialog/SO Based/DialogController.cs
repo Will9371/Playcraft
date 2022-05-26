@@ -14,7 +14,7 @@ namespace ZMD.Dialog
         [SerializeField] TagEvent RelayEvent;
         [SerializeField] DialogNodeEvent RelayNode;
         
-        private void Start()
+        void Start()
         {
             RelayNode.Invoke(node);
         }

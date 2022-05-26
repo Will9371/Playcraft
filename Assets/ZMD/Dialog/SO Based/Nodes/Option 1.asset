@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df6a31ec318a254eae9af3311b7aaaf, type: 3}
   m_Name: Option 1
   m_EditorClassIdentifier: 
-  narrative: This node triggers an event, but only once
+  narrative: This node triggers an event, but only once.  You just got a coin!
   responses:
   - node: {fileID: 11400000, guid: 2287b797e9a6af54aab51d9e664b593c, type: 2}
     response: Return to beginning
   - node: {fileID: 11400000}
-    response: Repat this node
+    response: Repeat this node
   - node: {fileID: 11400000, guid: a97f7ee76e1014d4da59537839c5f1aa, type: 2}
-    response: Go to opton 2
+    response: Go to option 2
   events:
   - {fileID: 11400000, guid: 9424889002ee6c64d9fc4c5b2b8663f0, type: 2}
