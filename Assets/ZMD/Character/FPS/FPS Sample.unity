@@ -2421,6 +2421,16 @@ PrefabInstance:
       propertyPath: process.process.capsule
       value: 
       objectReference: {fileID: 597966285}
+    - target: {fileID: 2196862017711649146, guid: ac127553ec8af2742b10cd2762eba979,
+        type: 3}
+      propertyPath: keyBindings.Array.data[0].input.keys.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196862017711649146, guid: ac127553ec8af2742b10cd2762eba979,
+        type: 3}
+      propertyPath: keyBindings.Array.data[0].input.keys.Array.data[1]
+      value: 101
+      objectReference: {fileID: 0}
     - target: {fileID: 4127547706101787599, guid: ac127553ec8af2742b10cd2762eba979,
         type: 3}
       propertyPath: m_RootOrder
