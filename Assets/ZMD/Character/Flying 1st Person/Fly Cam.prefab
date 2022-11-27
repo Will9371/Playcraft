@@ -126,19 +126,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5480367824993089547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10c475d5b6f50f54584be9933a14ad5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickInput:
-  - button: 1
-    pressType: 0
-    Output:
+  bindings:
+  - input:
+      button: 1
+      pressType: 0
+    output:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2757744418088049291}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -149,13 +150,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - button: 1
-    pressType: 1
-    Output:
+  - input:
+      button: 1
+      pressType: 1
+    output:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2757744418088049291}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
           m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
@@ -173,7 +175,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5480367824993089547}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c8350139eac88d4291853dccad1b51d, type: 3}
   m_Name: 

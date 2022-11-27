@@ -4,10 +4,8 @@ namespace ZMD
 {
     public class TimedIDRelay : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] float time;
         [SerializeField] TagEvent OnEnd;
-        #pragma warning restore 0649
         
         SO id;
         

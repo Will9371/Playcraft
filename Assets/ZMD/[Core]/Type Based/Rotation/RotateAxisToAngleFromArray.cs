@@ -21,7 +21,7 @@ namespace ZMD
 
         void Update()
         {
-            var (angle, arrivedThisFrame) = rotation.Tick(Time.deltaTime);
+            var (angle, arrivedThisFrame) = rotation.Tick();
             axis.SetAngle(angle);
             if (arrivedThisFrame) OnArrive.Invoke();
         }

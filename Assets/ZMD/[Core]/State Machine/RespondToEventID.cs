@@ -4,10 +4,8 @@ namespace ZMD
 {
     public class RespondToEventID : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] EventResponder responder;
         [SerializeField] bool locked;
-        #pragma warning restore 0649
         
         public void SetLock(bool value) { locked = value; }
 
