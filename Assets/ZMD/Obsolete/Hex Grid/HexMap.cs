@@ -11,10 +11,10 @@ namespace ZMD.Voxels
         [SerializeField] bool createAddersOnStart;
         [SerializeField] float scale = 1f;
         
-        [SerializeField] List<GameObject> hexes = new List<GameObject>();
-        [SerializeField] List<GameObject> addableHexes = new List<GameObject>();
+        [SerializeField] List<GameObject> hexes = new();
+        [SerializeField] List<GameObject> addableHexes = new();
         
-        Vector3 uniformScale => new Vector3(scale, scale, scale);
+        Vector3 uniformScale => new(scale, scale, scale);
         
         void Start()
         {
@@ -64,23 +64,3 @@ namespace ZMD.Voxels
          }
     }
 }
-
-/*
-     bool IsHexAtPosition(GameObject newHexObj)
-     {
-         var position = newHexObj.transform.position;
-         var newHex = newHexObj.GetComponent<AddHex>();
-
-         foreach (var item in hexes)
-             if (item.transform.position == position)
-                 return true;
-         foreach (var item in addableHexes)
-             if (item.transform.position == position && !newHex.isReal)
-             {
-                 Debug.Log(newHexObj.name);
-                 return true;
-             }
-
-         return false;
-     }
-*/

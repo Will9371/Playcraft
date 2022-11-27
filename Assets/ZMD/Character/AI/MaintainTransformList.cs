@@ -6,11 +6,9 @@ namespace ZMD
     // RENAME: Describe what is being done with the list
     public class MaintainTransformList : MonoBehaviour
     {    
-        List<Transform> items = new List<Transform>();
+        List<Transform> items = new();
         
-        #pragma warning disable 0649
         [SerializeField] TransformListEvent OnUpdateList;
-        #pragma warning restore 0649
             
         public void AddItem(Collider item) { AddItem(item.transform); }
         public void RemoveItem(Collider item) { RemoveItem(item.transform); }

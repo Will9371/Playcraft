@@ -10,16 +10,38 @@ namespace ZMD
         [Serializable] public class PathWithHitsEvent : UnityEvent<Vector3[], List<IndexedRaycastHit>> { }
         [SerializeField] PathWithHitsEvent Output;
         
-        FindHitsInPath hitsInPath;
+        FindHitsInPath process;
+        void Awake() { process = new FindHitsInPath(transform); }
+        public void Input(Vector3[] path) { Output.Invoke(path, process.Input(path)); }
+    }
+    
+    public class FindHitsInPath
+    {    
+        Transform source;
         
-        void Awake()
+        public FindHitsInPath(Transform source)
         {
-            hitsInPath = new FindHitsInPath(transform);
+            this.source = source;
         }
 
-        public void Input(Vector3[] path)
+        public List<IndexedRaycastHit> Input(Vector3[] path)
         {
-            Output.Invoke(path, hitsInPath.Input(path));
+            var hits = new List<IndexedRaycastHit>();
+                
+            for (int i = 1; i < path.Length; i++)
+            {
+                var last = source.TransformPoint(path[i - 1]);
+                var current = source.TransformPoint(path[i]);
+
+                RaycastHit hit;
+                var distance = Vector3.Distance(last, current);
+                var direction = (current - last).normalized;
+
+                if (Physics.Raycast(last, direction, out hit, distance))
+                    hits.Add(new IndexedRaycastHit(hit, i));
+            }
+                
+            return hits;
         }
     }
 }

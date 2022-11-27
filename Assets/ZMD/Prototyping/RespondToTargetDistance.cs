@@ -35,10 +35,8 @@ namespace ZMD
         
         [Serializable] struct DistanceResponse
         {
-            #pragma warning disable 0649
             public float respondWhenWithin;
             public UnityEvent response;
-            #pragma warning restore 0649
         }
     }
 }

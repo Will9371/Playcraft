@@ -10,10 +10,7 @@ public class MoveFixed : MonoBehaviour
     [SerializeField] float speed;
     public void SetSpeed(float value) { speed = value; }
     
-    void Start()
-    {
-        if (!self) self = transform;
-    }
+    void Start() { if (!self) self = transform; }
 
     void Update()
     {

@@ -1,17 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ZMD
 {
     // EXTEND: include x and z axis
-    public class SetScale : MonoBehaviour
+    [Serializable]
+    public class SetScale
     {
-        [SerializeField] float scaleSpeed = .5f;
-        [SerializeField] [Range(0, 1)] float yAnchor;
+        MonoBehaviour mono;
+        Transform transform => mono.transform;
+        
+        public float scaleSpeed = .5f;
+        [Range(0, 1)] public float yAnchor;
         
         float targetYScale;
         
-        void Start()
+        public void Start(MonoBehaviour mono)
         {
+            this.mono = mono;
             targetYScale = transform.localScale.y;
         }
         

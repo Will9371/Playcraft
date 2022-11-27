@@ -10,7 +10,6 @@ namespace ZMD
 		
 		enum FollowStyle { All, Partial, None }
 
-		#pragma warning disable 0649
 		[SerializeField] FollowStyle followPosition = FollowStyle.All;
 		
 	    [SerializeField] bool followXPosition;
@@ -25,9 +24,7 @@ namespace ZMD
 	    [SerializeField] bool followZRotation;
 
 		[SerializeField] Vector3 rotationOffset = Vector3.zero;
-		#pragma warning restore 0649
-		
-		
+
 		void Update() 
 		{
 			if (!target)

@@ -6,7 +6,6 @@ namespace ZMD
     public class TransformChildContainer : MonoBehaviour
     {
         [SerializeField] Transform container;
-         
         [NonSerialized] public Transform[] points;
         
         void Awake()

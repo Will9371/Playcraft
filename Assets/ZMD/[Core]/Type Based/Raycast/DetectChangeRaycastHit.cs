@@ -4,11 +4,9 @@ namespace ZMD
 {
     public class DetectChangeRaycastHit : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] ScreenRaycast raycast;
         [SerializeField] ColliderEvent Enter;
         [SerializeField] ColliderEvent Exit;
-        #pragma warning restore 0649
 
         Collider hit;
         Collider priorHit;

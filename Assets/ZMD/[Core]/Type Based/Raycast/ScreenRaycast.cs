@@ -9,13 +9,11 @@ namespace ZMD
     {
         enum RaycastSource { ScreenCenter, MousePosition }
     
-        #pragma warning disable 0649
         [SerializeField] RaycastSource source;
         [SerializeField] float range = 1000;
         [SerializeField] LayerMask layerMask;
         [SerializeField] QueryTriggerInteraction triggerInteraction;
         [SerializeField] RaycastHitEvent Output;
-        #pragma warning restore 0649
         
         new Camera camera;
         

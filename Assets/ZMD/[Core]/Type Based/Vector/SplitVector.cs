@@ -17,11 +17,9 @@ namespace ZMD
     [Serializable]
     public class SplitVectorInstance
     {
-        #pragma warning disable 0649
         [SerializeField] Axis inputAxis;
         [SerializeField] Axis outputAxis;
         [SerializeField] Vector3Event OnOutput;
-        #pragma warning disable 0649
         
         public void Input(float value) { Input(new Vector3(value, 0f, 0f)); }
         public void Input(Vector2 value) { Input(new Vector3(value.x, value.y, 0f)); }
