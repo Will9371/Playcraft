@@ -2,6 +2,38 @@
 
 namespace ZMD
 {
+    public class CalculateParabolicArcMono : MonoBehaviour
+    {
+        [SerializeField] Transform source;
+        [SerializeField] float range = 5f;
+        [SerializeField] float gravity = 9.8f;
+        [SerializeField] int resolution = 40;
+        [SerializeField] float maxDrop = 5f;
+        [SerializeField] Vector3ArrayEvent Output;
+        [SerializeField] BoolEvent OnActivate;
+        
+        CalculateParabolicArc arc;
+        
+        void Awake()
+        {
+            arc = new CalculateParabolicArc(range, gravity, resolution, maxDrop);
+        }
+                    
+        bool active;
+        public void SetActive(bool value) 
+        {
+            active = value;
+            OnActivate.Invoke(value); 
+        }
+
+        public void Calculate()
+        {
+            if (!active) return;            
+            transform.eulerAngles = new Vector3(0f, source.eulerAngles.y, 0f); 
+            Output.Invoke(arc.Calculate(-source.localEulerAngles.x));
+        }
+    }
+    
     public class CalculateParabolicArc
     {
         float range = 5f;
@@ -27,7 +59,7 @@ namespace ZMD
 
             float maxDistance = ((range * Mathf.Cos(radianAngle)) / gravity) * 
                                 ((range * Mathf.Sin(radianAngle) + Mathf.Sqrt(Mathf.Pow(range * 
-                                  Mathf.Sin(radianAngle), 2) + (2 * gravity * maxDrop))));
+                                    Mathf.Sin(radianAngle), 2) + (2 * gravity * maxDrop))));
 
             float percent;
             for (int j = 0; j <= resolution; j++)
@@ -39,11 +71,11 @@ namespace ZMD
             return arcArray;
         }
 
-        private Vector3 CalculateArcPoint(float t, float maxDistance)
+        Vector3 CalculateArcPoint(float t, float maxDistance)
         {
             float z = t * maxDistance;
             float y = z * Mathf.Tan(radianAngle) - ((gravity * z * z) / 
-                      (2 * range * range * Mathf.Cos(radianAngle) * Mathf.Cos(radianAngle)));
+                     (2 * range * range * Mathf.Cos(radianAngle) * Mathf.Cos(radianAngle)));
 
             return new Vector3(0f, y, z);
         }

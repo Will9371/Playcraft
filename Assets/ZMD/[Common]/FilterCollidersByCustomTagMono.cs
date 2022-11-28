@@ -1,16 +1,34 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace ZMD
 {
+    public class FilterCollidersByCustomTagMono : MonoBehaviour
+    {
+        [SerializeField] CustomTagColliderFilter[] bindings;
+                        
+        public void Input(List<Collider> values)
+        {
+            foreach (var binding in bindings)
+                binding.Input(values);
+        }
+        
+        [Serializable] public class CustomTagColliderFilter
+        {
+            [SerializeField] ColliderListEvent Response;
+            FilterCollidersByCustomTag process;
+            public void Input(List<Collider> values) { Response.Invoke(process.Input(values)); }
+        }
+    }
+    
     [Serializable]
     public class FilterCollidersByCustomTag
     {
         [SerializeField] SO[] validTags;
         
         CustomTags _tagged; 
-        List<Collider> validColliders = new List<Collider>();
+        List<Collider> validColliders = new();
             
         public List<Collider> Input(List<Collider> values)
         {

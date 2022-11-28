@@ -1,9 +1,22 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Use DrawDebugLinesFromPoint for visualization
 namespace ZMD
 {
+    public class FilterByAngleMono : MonoBehaviour
+    {
+        [SerializeField] ColliderListEvent Output;
+        
+        ValidateAngleToDot angleDot;
+        FilterByAngle process;
+
+        void OnValidate() { process.Validate(); }
+        public void SetMaxAngle(float value) { process.SetMaxAngle(value); }
+        public void Input(List<Collider> values) { Output.Invoke(process.Input(values)); }
+    }
+    
     [Serializable]
     public class FilterByAngle
     {
@@ -25,7 +38,7 @@ namespace ZMD
             angleDot.DotToAngle(maxAngle, minDot);
         }
             
-        List<Collider> withinRange = new List<Collider>();
+        List<Collider> withinRange = new();
             
         Vector3 _targetDirection;
         float _dot;

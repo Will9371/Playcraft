@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.jimmycushnie.noisynodes": "https://github.com/JimmyCushnie/Noisy-Nodes.git",
     "com.unity.ide.rider": "3.0.16",
     "com.unity.ide.visualstudio": "2.0.16",
     "com.unity.ide.vscode": "1.2.5",

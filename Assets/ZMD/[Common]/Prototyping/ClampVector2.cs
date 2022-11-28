@@ -4,8 +4,7 @@ namespace ZMD
 {
     public class ClampVector2 : MonoBehaviour
     {
-        [SerializeField] Vector2Event OnOutput = default;
-        //public Vector2 debugOutput;
+        [SerializeField] Vector2Event OnOutput;
 
         public void ClampNegativeYtoX(Vector2 input)
         {
@@ -15,7 +14,6 @@ namespace ZMD
                 input.y = 0;
             }
             
-            //debugOutput = input;
             OnOutput.Invoke(input);
         }
     }

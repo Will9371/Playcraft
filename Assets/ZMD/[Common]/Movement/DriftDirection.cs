@@ -5,18 +5,15 @@ namespace ZMD
     // REFACTOR OR RENAME: Assumes flattened direction
     public class DriftDirection : MonoBehaviour
     {
-        #pragma warning disable 0649
         [SerializeField] bool debug;
         [SerializeField] float turnSpeed = 1f;
         [SerializeField] Vector3Event Output;
-        #pragma warning restore 0649
 
         Vector3 direction;
         Vector3 desiredDirection;
         public void SetDesiredDirection(Vector3 value) { desiredDirection = value; }
         
-        
-        private void Update()
+        void Update()
         {
             if (direction == Vector3.zero) direction = desiredDirection;
                     
@@ -28,14 +25,14 @@ namespace ZMD
             Output.Invoke(direction);
         }
         
-        private void OnDrawGizmos()
+        void OnDrawGizmos()
         {
             if (!debug) return;
             DrawRayFromSelf(direction, 3f, Color.red);
             DrawRayFromSelf(desiredDirection, 3f, Color.green);
         }
         
-        private void DrawRayFromSelf(Vector3 direction, float distance, Color color)
+        void DrawRayFromSelf(Vector3 direction, float distance, Color color)
         {
             Gizmos.color = color;
             Gizmos.DrawRay(transform.position, direction * distance);

@@ -1,12 +1,19 @@
 /****************************************************************************************************
 
-Folder Descriptiopns:
+Folder Descriptions:
 [Core]: includes files and systems widely depended on by other systems, include in every installation
-Prototyping: miscellaneous utility scripts for rapid prototyping, genre agnostic
+[Common]: general purpose scripts used in many ZMD subsystems
+Prototyping: subset of [Common], trivial logic for rapid UnityEvent-based prototyping
 VR: Install for VR projects only, requires modified project settings
 
-Dependency Chain
-[Core] = required for all
-Prototyping = used by Character
+Dependency Chain:
+Required for all: [Core]
+Used in many ZMD systems: [Common]
+Used in legacy ZMD systems: Prototyping
+
+Namespaces:
+ZMD: DEFAULT, [Core]
+* ZMD.Common: [Common]
+* ZMD.Common.Proto: [Prototyping]
 
 ****************************************************************************************************/

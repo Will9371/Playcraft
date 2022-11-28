@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BlendDirection : MonoBehaviour
 {
-    [SerializeField] List<WeightedDirection> weightedDirections = new List<WeightedDirection>();
+    [SerializeField] List<WeightedDirection> weightedDirections = new();
     [SerializeField] Vector3Event Output;
     
     [SerializeField] float gizmoLineLength = 1f;

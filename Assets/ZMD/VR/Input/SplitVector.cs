@@ -5,7 +5,7 @@ namespace ZMD
 {
     public class SplitVector : MonoBehaviour
     {
-        [SerializeField] SplitVectorInstance[] splitVectors = default;
+        [SerializeField] SplitVectorInstance[] splitVectors;
 
         public void Split(Vector2 value)
         {
