@@ -19,10 +19,7 @@ namespace ZMD
     {    
         Transform source;
         
-        public FindHitsInPath(Transform source)
-        {
-            this.source = source;
-        }
+        public FindHitsInPath(Transform source) { this.source = source; }
 
         public List<IndexedRaycastHit> Input(Vector3[] path)
         {

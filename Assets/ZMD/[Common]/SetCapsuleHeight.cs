@@ -1,24 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ZMD
 {
-    public class SetCapsuleHeight : MonoBehaviour
+    [Serializable]
+    public class SetCapsuleHeight
     {
         [SerializeField] CapsuleCollider capsule;
         [SerializeField] float changeSpeed = 1f;
         
-        float targetHeight;
+        [ReadOnly] public float targetHeight;
+        public void Start() { targetHeight = capsule.height; }
         
-        void Start()
+        float heightDelta;
+        public void Update()
         {
-            targetHeight = capsule.height;
-        }
-        
-        public void InputTargetHeight(float value) { targetHeight = value; }
-
-        void Update()
-        {
-            var heightDelta = targetHeight - capsule.height;
+            heightDelta = targetHeight - capsule.height;
             if (Mathf.Abs(heightDelta) < .01f)
                 return;
                 

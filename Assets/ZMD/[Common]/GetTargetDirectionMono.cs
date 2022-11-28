@@ -21,7 +21,6 @@ namespace ZMD
         }
         
         public void SetTarget(Transform target) { process.target = target; }
-
         public void GetDirection() { Output.Invoke(targetDirection); }
     }
     

@@ -2,6 +2,7 @@
 
 namespace ZMD
 {
+    /// DEPRECATE
     public class FilterCollidersByTag : MonoBehaviour
     {
         [SerializeField] string[] respondToTags;

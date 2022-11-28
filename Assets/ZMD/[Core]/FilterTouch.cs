@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace ZMD
 {
+    public enum CollisionType { Any, Trigger, Collision }
+    public enum TouchType { Begin, End, Continuous }
+
     [Serializable] public class FilterTrigger
     {
         [SerializeField] TouchType touchType;
@@ -30,13 +33,7 @@ namespace ZMD
     [Serializable] public class FilterCollision
     {
         [SerializeField] TouchType touchType;
-
-        public bool RequestActivate(Collision other, TouchType touchType)
-        {            
-            return this.touchType == touchType;
-        }
+        public bool RequestActivate(Collision other, TouchType touchType) 
+        { return this.touchType == touchType; }
     }
-        
-    public enum CollisionType { Any, Trigger, Collision }
-    public enum TouchType { Begin, End, Continuous }
 }

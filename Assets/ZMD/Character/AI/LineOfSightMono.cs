@@ -21,7 +21,7 @@ namespace ZMD
         [Tooltip("True: draw debug lines for all raycasts.")]
         [SerializeField] bool debug;
 
-        List<Collider> inSight = new List<Collider>();
+        List<Collider> inSight = new();
         
         Vector3 targetVector;
         Ray ray;

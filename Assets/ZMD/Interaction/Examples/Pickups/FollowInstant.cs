@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 // REFACTOR: variation too broad, split into separate components -> physical, non-physical
+// Or RENAME for more specific purpose -> remove from Character cameras, specialize on pickups
 namespace ZMD
 {
     public class FollowInstant : MonoBehaviour
@@ -77,23 +78,3 @@ namespace ZMD
         }
     }
 }
-
-// Quaternion selfRotationOffset;
-// From SetTarget: selfRotationOffset = Quaternion.Inverse(otherBeginRotation) * transform.rotation;
-
-// Best: jumps on begin to face target consistently, otherwise OK
-//Quaternion selfRotation => target.rotation; 
-//Quaternion selfRotation => target.rotation * Quaternion.Inverse(Quaternion.identity);   // Same   
-        
-// OK, jumps to face forward on begin
-//Quaternion selfRotation => target.rotation * Quaternion.Inverse(selfBeginRotation); 
-//Quaternion selfRotation => target.rotation * selfBeginRotation;    // jumps based on start
-
-
-// NG
-//Quaternion selfRotation => selfBeginRotation * targetRotationDelta;    // Expected
-//Quaternion selfRotation => selfBeginRotation * Quaternion.Inverse(targetRotationDelta);
-//Quaternion selfRotation => selfBeginRotation * target.rotation;
-//Quaternion selfRotation => selfBeginRotation * Quaternion.Inverse(target.rotation);
-//Quaternion selfRotation => targetRotationDelta;
-// transform.rotation = Quaternion.Inverse(otherBeginRotation) * target.rotation;

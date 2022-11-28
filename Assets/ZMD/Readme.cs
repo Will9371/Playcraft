@@ -16,4 +16,7 @@ ZMD: DEFAULT, [Core]
 * ZMD.Common: [Common]
 * ZMD.Common.Proto: [Prototyping]
 
+Questions:
+Should Prototyping be part of Common or separate?
+
 ****************************************************************************************************/

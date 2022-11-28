@@ -4,6 +4,22 @@ using UnityEngine;
 
 namespace ZMD
 {
+    /// Access SmoothFollow as a standalone component
+    /// Coordinates continuous movement and rotation to follow a target transform
+    public class SmoothFollowMono : MonoBehaviour
+    {
+        [SerializeField] SmoothFollow process;
+        
+        void Update() { process.Update(); }
+        public void SetTarget(Transform value) { process.SetTarget(value); }
+        
+        void OnValidate() 
+        {
+            process.SetSelf(transform); 
+            process.OnValidate(); 
+        }
+    }
+    
     /// Coordinates continuous movement and rotation to follow a target transform
     [Serializable]
     public class SmoothFollow
@@ -12,10 +28,8 @@ namespace ZMD
         public float moveSpeed;
         public float turnSpeed;
         
-        [HideInInspector] 
-        public SmoothFollowPosition position;
-        [HideInInspector] 
-        public SmoothFollowRotation rotation;
+        [HideInInspector] public SmoothFollowPosition position;
+        [HideInInspector] public SmoothFollowRotation rotation;
         
         public void Update()
         {

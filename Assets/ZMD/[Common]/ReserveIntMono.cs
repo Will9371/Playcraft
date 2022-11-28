@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 
 namespace ZMD
 {
-    /// Allows multiple sources to get non-overlapping integers from a range
     public class ReserveIntMono : MonoBehaviour
     {
         [SerializeField] ReserveInt process;
@@ -14,7 +13,7 @@ namespace ZMD
         public int SetIfAvailableOrGetRandom(int value, int sourceId) { return process.SetIfAvailableOrGetRandom(value, sourceId); }
     }
     
-        /// Allows multiple sources to get non-overlapping integers from a range
+    /// Allows multiple sources to get non-overlapping integers from a range
     [Serializable]
     public class ReserveInt
     {

@@ -14,14 +14,7 @@ namespace ZMD
             process.SetExitTrigger(Exit);
         }
 
-        void Enter(Collider self, Collider other)
-        {
-            Debug.Log($"Enter: {self} {other}");
-        }
-        
-        void Exit(Collider self, Collider other)
-        {
-            Debug.Log($"Exit: {self} {other}");
-        }
+        void Enter(Collider self, Collider other) { Debug.Log($"Enter: {self} {other}"); }
+        void Exit(Collider self, Collider other) { Debug.Log($"Exit: {self} {other}"); }
     }
 }

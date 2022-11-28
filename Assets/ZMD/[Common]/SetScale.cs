@@ -21,10 +21,7 @@ namespace ZMD
             targetYScale = transform.localScale.y;
         }
         
-        public void InputTargetScale(Vector3 value)
-        {
-            InputTargetYScale(value.y);
-        }
+        public void InputTargetScale(Vector3 value) { InputTargetYScale(value.y); }
 
         public void InputTargetYScale(float value) { targetYScale = value; }
         

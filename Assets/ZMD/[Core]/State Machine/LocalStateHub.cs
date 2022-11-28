@@ -6,7 +6,7 @@ namespace ZMD
     public class LocalStateHub : MonoBehaviour
     {
         SO priorState;
-        public SO state;    // For debug
+        [ReadOnly] public SO state;
         public Action<SO> OnStateEnter;
         
         public void SetState(SO value)
@@ -16,9 +16,6 @@ namespace ZMD
             OnStateEnter?.Invoke(value);
         }
         
-        public void ReturnToPriorState()
-        {
-            SetState(priorState);
-        }
+        public void ReturnToPriorState() { SetState(priorState); }
     }
 }
