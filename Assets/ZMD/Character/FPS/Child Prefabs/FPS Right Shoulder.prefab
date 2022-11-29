@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.07299999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4883253357203406330}
   - {fileID: 2332703924223705496}
@@ -60,6 +61,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.1469}
   m_LocalScale: {x: 0.10000002, y: 0.20000002, z: 0.49377915}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 638447302215448775}
   m_RootOrder: 0
@@ -83,6 +85,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -91,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 220d86aee1de6074a8f001177d479f9a, type: 2}
+  - {fileID: 2100000, guid: a404b9dc49c039144a59c0a6a691be6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,6 +143,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 638447302215448775}
   - {fileID: 2666260249180694114}
@@ -187,6 +191,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8101673297796200025}
   m_Father: {fileID: 0}
@@ -205,11 +210,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   process:
-    self: {fileID: 2856791749298568180}
-    useLocal: 1
+    data:
+      self: {fileID: 0}
+      useLocal: 0
+      useCurve: 0
+      curve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
     start: {x: 0.3, y: 1, z: 0}
     end: {x: 0.3, y: 0.7, z: 0}
-    reverse: 0
+    curvedPercent: 0
 --- !u!1 &7574721256009555587
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +250,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4969197726342384329}
   m_RootOrder: 1
@@ -280,6 +294,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2, y: -0.025, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4969197726342384329}
   m_Father: {fileID: 2856791749298568180}
@@ -297,14 +312,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c475d5b6f50f54584be9933a14ad5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickInput:
-  - button: 1
-    pressType: 0
-    Output:
+  bindings:
+  - input:
+      button: 1
+      pressType: 0
+    output:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6963549414704334546}
-          m_TargetAssemblyTypeName: 
+          m_TargetAssemblyTypeName: Gun, Assembly-CSharp
           m_MethodName: Shoot
           m_Mode: 1
           m_Arguments:
@@ -344,6 +360,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.081, z: 0.3664}
   m_LocalScale: {x: 0.1, y: 0.3836243, z: 0.100000046}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 638447302215448775}
   m_RootOrder: 1
@@ -367,6 +384,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -375,7 +393,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 220d86aee1de6074a8f001177d479f9a, type: 2}
+  - {fileID: 2100000, guid: a404b9dc49c039144a59c0a6a691be6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
