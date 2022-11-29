@@ -18,4 +18,6 @@ namespace ZMD
     
     public interface IGetBool { bool Message(string value); }    
     public interface IGetFloat { float Message(string value); }
+    
+    public interface IBool { bool State { get; } }
 }
