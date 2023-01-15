@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
+using TMPro;
 
 namespace ZMD.Dialog
 {
@@ -49,6 +49,6 @@ namespace ZMD.Dialog
     [Serializable] struct ResponseOption
     {
         public GameObject button;
-        public Text text;
+        public TMP_Text text;
     }
 }

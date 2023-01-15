@@ -2,12 +2,13 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 namespace ZMD
 {
     public class TypewriterText : MonoBehaviour
     {
-        [SerializeField] Text text;
+        [SerializeField] TMP_Text text;
         [SerializeField] UnityEvent OnComplete;
         [Tooltip("In characters per second")]
         [SerializeField] float speed = 10;
