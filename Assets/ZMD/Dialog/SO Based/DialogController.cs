@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
-using TMPro;
 
 namespace ZMD.Dialog
 {
@@ -10,13 +9,14 @@ namespace ZMD.Dialog
         [Serializable] class DialogNodeEvent : UnityEvent<DialogNode> { }
     
         [SerializeField] DialogNode node;
-        [SerializeField] ResponseOption[] responses;
+        [SerializeField] ResponseButtons response;
         [SerializeField] TagEvent RelayEvent;
         [SerializeField] DialogNodeEvent RelayNode;
         
         void Start()
         {
             RelayNode.Invoke(node);
+            response.onClick = Transition;
         }
         
         public void Transition(int index)
@@ -28,27 +28,6 @@ namespace ZMD.Dialog
                 RelayEvent.Invoke(item);
         }
         
-        // REFACTOR: move to buttons
-        public void DisplayOptions()
-        {
-            var nodeResponseCount = node.responses.Length;
-        
-            for (int i = 0; i < responses.Length; i++)
-            {
-                var withinList = i < nodeResponseCount;
-            
-                if (withinList)
-                    responses[i].text.text = node.responses[i].response;
-                    
-                responses[i].button.SetActive(withinList);
-            }
-        }
-    }
-    
-    // REFACTOR: move to buttons
-    [Serializable] struct ResponseOption
-    {
-        public GameObject button;
-        public TMP_Text text;
+        public void DisplayOptions() => response.Refresh(node);
     }
 }
