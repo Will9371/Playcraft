@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df6a31ec318a254eae9af3311b7aaaf, type: 3}
+  m_Name: Question
+  m_EditorClassIdentifier: 
+  narrative: What brings ye to Camelot?
+  responses:
+  - node: {fileID: 11400000, guid: 23a4972a3fb5de54e8a157798e58eb2e, type: 2}
+    response: To seek my fortune
+  - node: {fileID: 11400000, guid: 767784fb1b95dcb4fab2d9d8091ae2f6, type: 2}
+    response: I am king, I am here for my people
+  events: []
