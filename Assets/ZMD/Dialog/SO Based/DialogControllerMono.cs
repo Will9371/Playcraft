@@ -24,7 +24,7 @@ namespace ZMD.Dialog
         NarrativeHub narrativeHub => NarrativeHub.instance;
     
         [SerializeField] GameObject display;
-        [SerializeField] SO ending;
+        [SerializeField] DialogNode ending;
         [SerializeField] ResponseButtons response;
         
         DialogNode _node;
@@ -66,16 +66,23 @@ namespace ZMD.Dialog
         {
             node = node.responses[index].node;
             
+            // UnityEvent based
             foreach (var item in node.events)
-            {
-                if (item == ending) 
-                {
-                    display.SetActive(false);
-                    inProgress = false;
-                    narrativeHub.systemRefresh?.Invoke();
-                }
-                else onTriggerEvent?.Invoke(item);
-            }
+                onTriggerEvent?.Invoke(item);
+
+            // SO/C# event based
+            foreach (var occasion in node.occasions)
+                occasion.Trigger();
+            
+            if (node == ending)
+                EndConversation();
+        }
+        
+        void EndConversation()
+        {
+            display.SetActive(false);
+            inProgress = false;
+            narrativeHub.systemRefresh?.Invoke();            
         }
         
         public void DisplayOptions() => response.Refresh(node);

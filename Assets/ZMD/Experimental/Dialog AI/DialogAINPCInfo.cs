@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[CreateAssetMenu(menuName = "ZMD/Dialog/AI/NPC")]
+//[CreateAssetMenu(menuName = "ZMD/Dialog/AI/NPC")]
 public class DialogAINPCInfo : ScriptableObject
 {
     public DialogAIState[] states;

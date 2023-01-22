@@ -22,6 +22,9 @@ namespace ZMD.Dialog
             allNarrativeProgress = new List<NarrativeProgress>();
             foreach (var narrative in self.narratives)
                 allNarrativeProgress.Add(new NarrativeProgress(narrative));
+                
+            self.RegisterConcerns();
+            self.onTriggerOccasion += RespondToOccasion;
         }
         
         public void OnDestroy()
@@ -31,6 +34,9 @@ namespace ZMD.Dialog
                 dialog.onTriggerEvent -= RespondToEvent;
                 narrativeHub.systemRefresh -= RefreshRelationships;
             }
+            
+            self.UnregisterConcerns();
+            self.onTriggerOccasion -= RespondToOccasion;
         }
         
         void RespondToEvent(SO eventId)
@@ -112,6 +118,12 @@ namespace ZMD.Dialog
         public void GainAffection(float value) => activeRelationship.affection += value;
         public void GainFear(float value) => activeRelationship.fear += value;
         public void GainTrust(float value) => activeRelationship.trust += value;
+        
+        void RespondToOccasion(OccasionInfo occasion, RelationshipParameters impact)
+        {
+            // TBD: logic re occasion (store to prevent repeat, specific reactions, etc)
+            activeRelationship.AddBase(impact);
+        }
 
         [Serializable]
         public class EventOfInterest
@@ -128,7 +140,7 @@ namespace ZMD.Dialog
                 if (onceOnly) locked = true;
             }
         }
-        
+
         [Serializable]
         public class NarrativeProgress
         {

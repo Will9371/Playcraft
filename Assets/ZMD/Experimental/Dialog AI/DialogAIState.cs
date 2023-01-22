@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ZMD/Dialog/AI/State")]
+//[CreateAssetMenu(menuName = "ZMD/Dialog/AI/State")]
 public class DialogAIState : ScriptableObject
 {
     public string statement;

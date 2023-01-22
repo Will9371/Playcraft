@@ -39,6 +39,8 @@ namespace ZMD.Dialog
         
         public void AddReputation(RelationshipParameters other, RelationshipParameters empathy, RelationshipParameters source = null) => 
             reputationBonus.Add(other, empathy, source);
+            
+        public void AddBase(RelationshipParameters other) => baseValues.Add(other);
     }
 
     [Serializable]
@@ -66,6 +68,13 @@ namespace ZMD.Dialog
             fear.Add(other.fear, empathy.fear, source?.fear);
             trust.Add(other.trust, empathy.trust, source?.trust);
         }
+        
+        public void Add(RelationshipParameters other)
+        {
+            affection.Add(other.affection);
+            fear.Add(other.fear);
+            trust.Add(other.trust);
+        }
     }
 
     [Serializable]
@@ -81,5 +90,7 @@ namespace ZMD.Dialog
             if (source != null) change *= source.value;
             value += change;
         }
+        
+        public void Add(RelationshipParameter other) => value += other.value;
     }
 }

@@ -9,6 +9,7 @@ namespace ZMD.Dialog
         public string narrative;
         public ResponseOptions[] responses;
         public SO[] events;
+        public OccasionInfo[] occasions;
         
         [Serializable] public struct ResponseOptions
         {
