@@ -8,8 +8,8 @@ namespace ZMD.Dialog
     public class ActorMono : MonoBehaviour
     {
         DialogController dialog => narrativeHub.dialog.process;
-        NarrativeHub narrativeHub => NarrativeHub.instance;
-
+        NarrativeHub narrativeHub => NarrativeHub.instance;  PressType
+        
         public ActorInfo self;
         public List<Relationship> relationships;
         public EventOfInterest[] eventsOfInterest;

@@ -17,3 +17,5 @@ MonoBehaviour:
   - node: {fileID: 11400000, guid: 01d2468ead4f77b4796159144148180b, type: 2}
     response: End conversation
   events: []
+  occasions:
+  - {fileID: 11400000, guid: 15749af3082e72245a41eead8b22aad6, type: 2}

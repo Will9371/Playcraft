@@ -11,7 +11,7 @@ namespace ZMD.Dialog
         
         public RelationshipParameters baseValues;
         
-        [HideInInspector]
+        [ReadOnly]
         public RelationshipParameters reputationBonus;
         
         public float affection 

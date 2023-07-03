@@ -18,3 +18,4 @@ MonoBehaviour:
     response: End conversation
   events:
   - {fileID: 11400000, guid: 5f1194ded9e32184dbb61462c3d227f8, type: 2}
+  occasions: []

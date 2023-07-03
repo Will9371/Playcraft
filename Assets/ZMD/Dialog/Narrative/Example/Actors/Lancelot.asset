@@ -82,3 +82,13 @@ MonoBehaviour:
       value: 0
     trust:
       value: 0
+  concerns:
+  - bindings:
+    - occasion: {fileID: 11400000, guid: 15749af3082e72245a41eead8b22aad6, type: 2}
+      impact:
+        affection:
+          value: -0.1
+        fear:
+          value: 0
+        trust:
+          value: -0.2
